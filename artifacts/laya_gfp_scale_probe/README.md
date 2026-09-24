@@ -1,0 +1,1 @@
+Training-only GFP sample-scale / learning-rate probes. See [report](../../research/laya_gfp_scale_probe.md). Final weights remain local. New train-only predictions, traces, frozen code, and the historical training-only reference are included.

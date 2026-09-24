@@ -71,3 +71,11 @@ All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/
 | GFP-DEV-1024 | Mean pooling + fresh readout, 1,024 train / 128 dev, 512 updates / 16 epochs, warmup + cosine LR | COMPLETE; near-constant predictions persist; best-dev step 192 RMSE 0.86940, final RMSE 0.87097; position ridge RMSE 0.69972 |
 
 [Report and evidence](../research/laya_gfp_development.md). Run finished 2026-09-24T12:00:36.724564+00:00. All 512 updates finite, each training example seen exactly 16 times, nine evaluation points retained, selected weights save/reload probability and scalar errors both zero. No new test access. This reused development set is not a confirmatory evaluation. Next: training-only diagnosis of sample-scale / per-example-exposure / optimizer sensitivity; do not expand the formal multitask suite yet.
+
+### GFP training-only scale / learning-rate controls
+
+| Run | Scope | Status |
+|---|---|---|
+| GFP-SCALE-LR | N32 high/low LR ×512; N1024 low LR ×1,024; historical N1024 high LR training-only reference | COMPLETE 2026-09-24 13:57:47 UTC; 55.00 min, 2,048 new updates; N32 low-LR RMSE 0.02420; N1024 low-LR RMSE 0.80900→0.70786 between 512→1,024 updates |
+
+[Report and evidence](../research/laya_gfp_scale_probe.md). All new outputs are training-only. Matched initialization and batch orders verified; all recorded metrics recomputed; all three final checkpoints reload exactly. Lower LR improves tiny-set fitting, while the longer large-subset run partly recovers from near-constant prediction but still underfits (normalized RMSE 0.87320). Same-exposure comparisons do not fully isolate sample size from update count/LR history. Next: a predeclared longer-budget convergence check; exact optimizer continuation would require replaying the recorded prefix because checkpoints contain model state only. No further run or dev/test evaluation launched.

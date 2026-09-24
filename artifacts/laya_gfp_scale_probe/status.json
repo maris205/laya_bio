@@ -1,0 +1,148 @@
+{
+  "created_utc": "2026-09-24T13:02:47.289641+00:00",
+  "status": "complete",
+  "pid": 118678,
+  "dev_access": false,
+  "test_access": false,
+  "source_sha256": {
+    "laya_gfp_scale_probe.py": "5c78363a2c962bf4cdd04af70b743cc47946b7ac16a692d3b0428f4697ce99ea",
+    "run_laya_gfp_scale_probe.py": "7a83a5d2b7604812a83dc750c0a7d89887d6cc1fca8b058e1ae3f08bc6b2de15",
+    "laya_gfp_development.py": "940259251d23e88b4eb12038338e61bec3e087f2a8d02883ab1118f3e75b1100",
+    "laya_multitask_experiment.py": "d7ff0abee265bbd7731c50bbc0c85273a6e35a8c4c95c954e324d824f9ab22e6",
+    "laya_multitask_data.py": "3d8f10a985c55851a45e7e62b7cfe4e097f425505bed07983ea7a5d4da046763",
+    "laya_formal_experiment.py": "1efb0d960803d8ecb40163e75292648a34e77b9b44e71c4f15366d041d66cd25",
+    "laya_metrics.py": "2a7e0faa96aeb8c4e890546a66c773b795c08061df01638edd0ad4713a2134fa"
+  },
+  "reference_sha256": {
+    "training.jsonl": "dac847d62ac3cd260cccc29131526f10459e80f79568d8cea4d0967ed028b243",
+    "train_step0000_predictions.jsonl": "418e898c1b349c5b32104023b9bdf7ba887620dbb7775b41a372e507bb9364bf",
+    "train_step0064_predictions.jsonl": "8b57e8169fb7536e4413cdab2f8619872a65c797fc9eb3ac0deb956e53077e84",
+    "train_step0128_predictions.jsonl": "4f5673a70606532c513ae807ba320315b117d4970b74affc721a22d73b4a1cfa",
+    "train_step0192_predictions.jsonl": "41541064cb710c049d7974822a72d33a74ea5731deb6ec32ce2b84a43825a708",
+    "train_step0256_predictions.jsonl": "fea5021d9b080e4ca374b35e08fb4a9441c15f38709e3dd3131c92274e75091c",
+    "train_step0320_predictions.jsonl": "cf295ba2dfd03f968e94d1295bbb70db6cd268d1f68e862475eac6410b146f1e",
+    "train_step0384_predictions.jsonl": "488d70194724347514636fc617e748db0a9ff7c686a5c5f30cd428b5c79f6c59",
+    "train_step0448_predictions.jsonl": "823103c7916a5834bdd6c866e929d2e6579d66b2d6c107657cf058a1a39b5dfc",
+    "train_step0512_predictions.jsonl": "140c0c9bb6eccfee89bc3ed1789ba4d5dd2f9e80e39856e200b940ad139d6fa9"
+  },
+  "protocol": {
+    "arms": [
+      [
+        "n32_high",
+        32,
+        1.0,
+        512
+      ],
+      [
+        "n32_low",
+        32,
+        0.2,
+        512
+      ],
+      [
+        "n1024_low",
+        1024,
+        0.2,
+        1024
+      ]
+    ],
+    "reference": "completed N1024/high LR, training outputs only",
+    "primary": "full selected-training scalar normalized RMSE",
+    "secondary": [
+      "training Spearman",
+      "training prediction std",
+      "five-bin accuracy/NLL",
+      "shared anchor32 metrics"
+    ],
+    "comparison_budget": "2x2 at step512; N1024/low continuation at768,1024",
+    "equal_exposure_readouts": "32 samples at step16 versus 1024 at512; atstep32 versus1024at1024; LR history/update count differs",
+    "fit_reference": "normalized scalar RMSE <=0.15; categorical accuracy>=31/32 and NLL<=0.15 on N32 only",
+    "run_policy": "complete all arms, no adaptive early stopping or extra arms",
+    "checkpoint": "retain final model-only weights after exact reload check"
+  },
+  "runs": [
+    {
+      "name": "n32_high",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/frozen_code/laya_gfp_scale_probe.py",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/n32_high",
+        "--reference",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/reference_training_only",
+        "--samples",
+        "32",
+        "--lr-scale",
+        "1.0",
+        "--updates",
+        "512"
+      ],
+      "status": "complete",
+      "pid": 118698,
+      "exit_code": 0
+    },
+    {
+      "name": "n32_low",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/frozen_code/laya_gfp_scale_probe.py",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/n32_low",
+        "--reference",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/reference_training_only",
+        "--samples",
+        "32",
+        "--lr-scale",
+        "0.2",
+        "--updates",
+        "512"
+      ],
+      "status": "complete",
+      "pid": 119264,
+      "exit_code": 0
+    },
+    {
+      "name": "n1024_low",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/frozen_code/laya_gfp_scale_probe.py",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/n1024_low",
+        "--reference",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_scale_probe_v1/reference_training_only",
+        "--samples",
+        "1024",
+        "--lr-scale",
+        "0.2",
+        "--updates",
+        "1024"
+      ],
+      "status": "complete",
+      "pid": 119818,
+      "exit_code": 0
+    }
+  ],
+  "updated_utc": "2026-09-24T13:57:47.459361+00:00",
+  "total_wall_seconds": 3300.169158112956
+}

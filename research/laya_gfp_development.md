@@ -56,3 +56,7 @@
 - [运行配置](../artifacts/laya_gfp_development/run_config.json)、[冻结代码](../artifacts/laya_gfp_development/frozen_code/)
 - [训练脚本](../scripts/laya_gfp_development.py)、[汇总脚本](../scripts/summarize_laya_gfp_development.py)
 - [前一轮 32 样本拟合](laya_convergence.md)、[历史开发集与 CPU 对照](laya_task_diagnostics.md)
+
+## 后续进展
+
+[只使用训练集的规模／学习率对照](laya_gfp_scale_probe.md)已完成。较低学习率明显改善 32 样本拟合，但大样本相同 512 步预算的 RMSE 仍接近常数；将大样本低学习率轨迹延长至 1,024 步后，训练 RMSE 从 0.80900 降至 0.70786，出现实质改善但仍欠拟合。该后续未评估新的开发集结果。
