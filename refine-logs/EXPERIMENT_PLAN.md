@@ -1,141 +1,95 @@
-# Experiment plan: Jev-style decision models for biological sequences
+# Active experiment plan: biological vocabulary → CPT → supervised classification
 
-Date: 2026-09-24. **Status: formal design remains prospective; two separate six-task engineering pilots are complete, and the three-pass development round is complete (dev only).** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
+Date: 2026-09-24. The user paused the previous direct-supervision/GFP diagnostic route. Its reports and checkpoints remain intact; the proposed 2,048-update GFP extension will not run. See [route-change record](ROUTE_CHANGE_20260924.md) and [archived interface plan](EXPERIMENT_PLAN_interface_20260924_paused.md).
 
-The [completed splice/GFP diagnostic follow-up](../research/laya_task_diagnostics.md) includes four exposure-matched single-task runs and one splice name-correction arm. Neither recovered useful task fitting at this budget. The subsequent [32-example fitting checks](../research/laya_microfit.md) are complete: the candidate scorer can memorize both tasks, order augmentation resolves the observed tiny-set permutation gap, but the GFP shared-head control fails at both tested learning rates. The [ten-run GFP readout/loss diagnosis](../research/laya_readout_diagnostics.md) is also complete: replacing the pretrained readout improves regression, but all configurations still fail the final fitting gate. The subsequent [512-update convergence check](../research/laya_convergence.md) exactly replays the first 128 updates and passes both fitting gates at its final checkpoint. The subsequent [1,024-example GFP development validation](../research/laya_gfp_development.md) is complete: 512 updates / 16 epochs produce near-constant predictions and fail to recover training fit. Best-dev RMSE 0.86940 remains worse than position ridge 0.69972. The [training-only scale/LR controls](../research/laya_gfp_scale_probe.md) are now complete: lower LR improves N32 fitting, has little N1024 RMSE benefit at 512 updates, and its extension to 1,024 updates lowers training RMSE to 0.70786 without reaching full fit. Before expanding the formal suite, validate longer-budget convergence on this fixed low-LR trajectory and resolve the remaining splice source-lineage gap. These follow-up diagnostics were chosen after seeing development results.
+## Problem and claims
 
-## Problem anchor
+**Problem:** Small diagnostic training sets and a text-derived encoder without biological CPT do not establish a useful biological adaptation pipeline. Establish a conventional, well-audited baseline with thousands of labeled examples before expanding tasks.
 
-A biological decision model should reuse one sequence/question/candidate interface across biological decision tasks and preserve the identity of the supplied output labels. The core question is whether that interface gives a useful combination of task reuse, predictive quality, and operational reliability relative to fixed-head and sequence–language alternatives. BPE is a supporting representation choice.
+**Primary hypothesis:** Biological masked-language CPT, including correct adaptation of newly added token embeddings, improves downstream classification or its labeled-data efficiency compared with the same vocabulary/model trained directly with supervision. This is a hypothesis, not an assumed benefit.
 
-Many downstream tasks are categorical, ordinal, binary, or multilabel. The expanded design maps them to Choice, Score, and Noul; sequence generation and structure reconstruction remain outside its scope. The released two-task study only exercised Choice; separate engineering runs now exercise all three primitives. Shared encoders with multiple heads already support several tasks. Candidate membership is guaranteed by index lookup, but biological correctness, question understanding, order stability, and unseen-task transfer must be measured separately.
+**Supporting hypothesis:** Cumulative multitask SFT can learn additional tasks while retaining previously learned tasks. This requires explicit per-task development metrics and replay of prior training tasks.
 
-## Claim map
+Do not infer zero-shot capability from MLM improvement. A fresh fixed classification head is not a meaningful zero-shot system; a semantic candidate interface requires separate alignment and evaluation.
 
-| Claim | Minimum convincing evidence | Current evidence | Required blocks |
+## Paused evidence
+
+The old two-task study and six-task engineering pilots remain no-additional-CPT evidence. The latest GFP train-only diagnosis reached 0.70786 training RMSE on 1,024 examples after 1,024 updates, still underfitting. It is not a CPT result or a sufficient-data SFT evaluation. No historical manuscript numbers are overwritten.
+
+## First-round systems
+
+| Arm | Vocabulary and initialization | Before SFT | Classifier and SFT protocol |
 |---|---|---|---|
-| C1: A shared candidate scorer provides useful biological decisions while preserving supplied label identities | Joint-task accuracy/F1; exact ID/label lookup; compare with both shared fixed heads and free/constrained generation | Joint DNA/protein results; structural in-set output; BPE-matched B1 comparison | B1, B4 |
-| C2: Task and candidate inputs enable reuse beyond a fixed output inventory | Multiple tasks in one modality; controlled question/label changes; held-out-task evaluation before a transfer claim | Not established: present task identity is confounded with modality | B2, B3 |
+| A: no CPT | Same new DNA/protein BPE, mean of original raw-fragment embeddings | No unsupervised embedding adaptation or CPT | Identical fresh mean-pooled LayerNorm/linear head; same data/order/seed/budget |
+| B: CPT | Exactly the same vocabulary/initial encoder | New-row/MLM-head warmup, then full-encoder MLM CPT | Identical fresh classifier initialization and SFT protocol |
 
-Anti-claims to rule out: one model per task is necessary; any zero-invalid-label result demonstrates Jev superiority; BPE is the cause of the interface benefit; a scorer merely learns class positions or modality; constrained generation cannot be equally valid.
+The backbone starts from the original Laya ModernBERT encoder. The previous Laya contextual typed head is not used in this conventional fixed-head baseline. The original checkpoint lacks its upstream MLM prediction head, so a new MLM head must be initialized and trained explicitly. MLM-head learning is logged separately from subsequent full-encoder CPT. CPT uses ModernBERT masked prediction, not an autoregressive objective.
 
-## Comparison systems
+Historical raw-tokenizer results are context, not a matched control for this new classifier. A raw-tokenizer no-CPT control can be added later if vocabulary effects need isolation; the primary A/B comparison holds vocabulary expansion fixed.
 
-Three families, with the generator's output interfaces sharing **one identical trained checkpoint**:
+## Data and representation
 
-| ID | System | Task-specific parameters | Output path | Role |
+- First supervised task: promoter detection, binary, **16,766 train / 1,052 selection-dev** in the existing frozen formal split. The 4,096-example subset is a deterministic balanced subset of full train.
+- Next supervised task: protein structural class, seven classes, **15,593 train / 939 selection-dev** before common input-eligibility checks. Minority classes need per-class reporting.
+- Initial CPT snapshot: 32,768 DNA + 32,768 protein + 8,192 text training examples; validation 512 DNA + 512 protein + 128 text examples. Deterministic random byte-offset sampling of local historical corpora is length-biased and is not called record-uniform sampling.
+- Fresh 1,024-entry source BPE per biological modality, fit only on admitted CPT training samples. Source padding/unknown entries are excluded from additions; each biological piece gets a distinct modality-specific model ID. Natural-language IDs remain unchanged. Mandatory alphabet entries prevent silent character loss; unobserved added tokens are explicitly reported.
+- Natural-language fragments initialize each new row by the mean of their original tokenizer embeddings. All original IDs and rows must remain unchanged at initialization. Biological encoding must round-trip exactly.
+- A whole corpus line is excluded if it shares a 31-mer with protected DNA sequences (both strands), or a 15-mer with protected protein sequences. Protected sequences are the first two tasks' selection-dev/calibration/test memberships; targets are not used for this filtering and no test inference is performed. CPT train is similarly guarded against its own sampled biological validation sequences.
+- This filtering is conservative and does not establish global homology or parent independence. New downstream tasks require a new contamination admission audit. Existing downstream evaluation memberships have been used historically; no new blind-test claim.
+- CPT windows are at most 256 model tokens and log cropping; supervised promoter inputs must fit in full with zero truncation.
+
+## Embedding and MLM acceptance checks
+
+1. Preserve base token IDs and verify original embedding rows at initialization.
+2. Track input and masked-target occurrences separately for every added ID. Decoder gradients alone do not establish meaningful input exposure.
+3. Warmup freezes encoder parameters and old embedding rows. Old-row gradients are masked, the embedding parameter group has **zero weight decay**, and optimizer state is fresh; assert actual old-row invariance. Merely zeroing gradients under AdamW is insufficient.
+4. Verify new embedding and MLM-head gradients are finite and nonzero, record per-row weight changes, and distinguish unobserved alphabet reserve rows.
+5. After warmup, remove the old-row mask and train the encoder; log old/new-row changes and trainable parameter counts. Input embeddings and the MLM decoder remain tied.
+6. Use fixed masked validation inputs for comparable MLM curves, plus dynamic training masks. Report validation losses by DNA/protein/text, including warmup and full-CPT phases separately.
+7. Save and reload exact model predictions; save final CPT optimizer/RNG/sampler state so future CPT budget extensions need not silently restart AdamW.
+
+Technical references: [ModernBERT MLM implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/modernbert/modeling_modernbert.py), [PyTorch AdamW](https://docs.pytorch.org/docs/main/generated/torch.optim.AdamW.html). Runtime behavior is also checked against the locally installed versions.
+
+## Initial bounded run matrix
+
+Values below are the intended first recipe; verify feasibility and embedding behavior in a short smoke test before freezing the production snapshot. Any preflight-driven adjustment must be recorded before examining development results.
+
+| Run | Purpose | Data | Intended budget | Status |
 |---|---|---|---|---|
-| C | Laya-Bio shared candidate scorer | No task-specific output matrix | Candidate probabilities → argmax index → exact supplied label | Main method |
-| H-M | Same Laya initialization, shared encoder, separate task heads | One linear matrix per trained task | Head probabilities → canonical label | Essential fixed-head control |
-| H-S | Same initialization, separate encoder/head per task | Whole model per task | Head probabilities → canonical label | Sharing/accuracy/storage comparison |
-| G-F | Joint sequence–language SFT model | No task-specific matrix | Greedy unconstrained answer text | Free generation control |
-| G-C | Same checkpoint as G-F | None added | Token-prefix constraints over complete allowed labels plus EOS | Constraint control |
-| G-L | Same checkpoint as G-F | None added | Teacher-forced log-likelihood of each exact allowed label plus EOS | Finite-choice likelihood control |
+| DATA-01 | Admission, new vocabulary and full-task data | Filtered CPT + frozen SFT splits | CPU preprocessing | COMPLETE |
+| EMB-01 | Validate embedding/decoder training correctness and cost | Synthetic tiny model + a short real-model train-only smoke | No result claim | PASS |
+| CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | TODO |
+| A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | TODO |
+| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | TODO |
 
-C versus H-M uses the same raw representation, backbone initialization, data exposure, optimizer budget, and training seeds. Retain the existing BPE-matched comparison as historical evidence; the old study lacks a raw H-M run. Pooling differences must still be disclosed. A shared C encoder plus opaque/nonsemantic label ablation can probe semantics but must not be described as an exact causal isolation of the whole architecture.
+CPT intended per-effective-batch mixture: 14 DNA / 14 protein / 4 text. MLM masking: 15% eligible body tokens with 80% mask / 10% within-modality random token / 10% unchanged. Ensure at least one eligible target per sequence. Target counts determine loss normalization across micro-batches. Use BF16 autocast and FP32 parameters; gradient checkpointing and clipping 1.0.
 
-The concrete resource-conscious generator starting point is [Qwen/Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B/tree/c1899de289a04d12100db370d81485cdf75e47ca), revision `c1899de289a04d12100db370d81485cdf75e47ca` (public metadata checked 2026-09-24). Jointly SFT its canonical-label answers on exactly the same biological training examples, without extra CPT. Disable thinking in the documented chat template. It is a small sequence–language baseline, **not a reproduction of LLaMA-Gene or ChatNT** and not a parameter/pretraining-matched causal control for ModernBERT. Report those differences. A published biological generator is a useful later external baseline if compute permits, not a replacement for the same-checkpoint decoding comparison.
+Warmup intended LR 1e-3 for new embedding rows and 1e-4 for the MLM head, old rows invariant. Full CPT intended encoder/embedding LR 2e-5, MLM-head LR 1e-4, linear warmup then cosine to 10% of peak. Embeddings/norms/biases have no weight decay; other matrices use 0.01. Freeze exact schedules after smoke timing.
 
-## Typed output design and 12-task scope
+SFT intended encoder/embedding LR 2e-5, fresh classifier LR 1e-4, 5% warmup then cosine; same seed, head initialization, batch sequence, three epochs and final-step reporting in A/B at each sample count. Full-data epochs have a normalized final partial batch. The 4K/full comparison is fixed-epoch, not equal-compute; report updates and presentations. No early stopping or selective omission of negative outcomes. Initial run uses one seed; three-seed confirmation and further data sizes follow only after the pipeline is operational.
 
-The [task catalog](../research/biological_decision_task_catalog.md) provides 12 priority tasks and 12 extension views with primary sources, audit status, and caveats. These are proposed tasks, not new results. Core IDs C01–C12 are promoter, splice, TF binding, structural class, Sec/Tat, single-label prokaryotic localization, protein homology pairs, DNA–protein coding pairs, GFP fluorescence, stability, multilabel localization, and GO molecular function. C08 is a translation-consistency diagnostic, not independent evidence for broad natural biological prediction.
+## Metrics and decision gates
 
-- **Choice:** mutually exclusive candidates; CE; exact supplied ID lookup.
-- **Noul:** probability that a proposition is true, implemented initially through shared yes/no candidate scoring and binary CE. Use it for binary tasks and separately for each multilabel proposition. Multilabel probabilities are marginals, not one softmax across labels. Known-target masks and native annotation-recovery conventions must be explicit; absent GO annotation is not an experimentally confirmed negative.
-- **Score:** distribution over ordered levels, with expected level index. For native continuous assays, the initial design uses five ordered bins, thresholds fit on training data only and anchors equal to training-bin means; merge tied thresholds and report the resulting level count. Predict the original assay value by the anchor expectation. Use CE initially, an ordinal-loss ablation only if scheduled before evaluation. Report native-unit MAE/RMSE and Spearman, oracle quantization error and out-of-range coverage. Add H-M/H-S scalar MSE regression controls; an ordinal comparison alone cannot establish an advantage for continuous prediction.
-- Shared scoring parameters can implement all three paths; any type-specific projection must be counted and shared across tasks of that type. This is proposed implementation, not a capability established by released weights.
-- Preserve sequence roles and boundaries for pairs. Protein homology supports an A/B swap diagnostic; DNA/protein role exchange is not a meaning-preserving transformation.
+- CPT: masked NLL and masked accuracy by modality; fixed validation masks; actual input/masked-token counts; new-row coverage, gradient norms and weight changes; old-row invariance during warmup.
+- SFT: fixed selection-dev Accuracy, Macro-F1, per-class recall/confusion, NLL; full-train metrics at the beginning/end and development curves per epoch. Failed/nonfinite runs are recorded, not dropped.
+- Main A/B verdict uses paired development performance at the fixed final SFT step, not the best point selected retrospectively. Bootstrap uncertainty on a reused development set is descriptive, not fresh-test confirmation.
+- Engineering gate: exact encoding/initialization, finite meaningful gradients, immutable old rows during adaptation, and checkpoint round-trip pass before production training.
+- Scientific gate: CPT need not win. If it loses, inspect representation/forgetting/MLM exposure and retain A as a legitimate baseline. Do not repeatedly tune solely to force CPT superiority.
+- No test metrics are computed in this first round. Dataset size is not a universal sufficiency guarantee; inspect class support and learning curves.
 
-For G-F/G-C/G-L, use the same trained generator for every inference mode. Multilabel inference asks one yes/no proposition per label, avoiding enumeration of all label subsets; Score uses the ordered level strings. The same proposition exposures apply to C and G, and total sequence encodings and full-label-panel runtime must be reported. A supplementary numeric-generation baseline may address native continuous values, but is outside the minimum run count. For GO start with the 32 most frequent training MF terms (ties by stable GO ID), freeze ontology/date and ancestor propagation, and call the resulting task **GO-MF-Lite**, not full GO prediction.
+## Subsequent updates to both branches
 
-## Data and split gate
+1. Compare fixed CPT budgets and matched SFT training, while retaining the no-CPT reference.
+2. Add seeds and a meaningful labeled-data curve, including few-shot points only after the full-data anchor is established.
+3. Train A alone, then A+B, then A+B+C on each branch, continuing its own encoder and retaining previous task data. Record every old and new task after each stage. Single-task anchors and per-task exposure counts distinguish interference from budget changes.
+4. Evaluate zero-shot only for a trained semantic label/candidate interface with a clearly withheld task; never relabel random-head behavior as biological zero-shot.
 
-1. Preserve `legacy_v1` numbers, manifests and all old test memberships. The four upstream DNA repositories expose a single pool named `train`, which contains old test members; that pool must never be ingested as training wholesale. The source-only audit inspected public labels for provenance/translation checks and is not a blind performance evaluation.
-2. Core pilot set: C01/C02/C04/C07/C09/C11, spanning all three primitives, two modalities, pairs, and multilabel output. Expand to all 12 only after admission. Local/upstream audits are complete for available files; TAPE, DeepLoc and GO data still need downloading, version pinning, and admission. Sources and hashes are in `artifacts/laya_task_expansion/`.
-3. Freeze source file/revision, label ontology, provenance, component terms, task semantics and tokenizer eligibility before training. Some source cards contain only YAML and do not establish biological provenance. Quarantine conflicting sequence groups rather than resolving them with test labels. Do not equate synthetic similarity with natural homology.
-4. Build a global cross-task sequence/RC/homology-parent registry. All annotations and all pair endpoints for a group remain on one side of train/dev/calibration/test. Use genomic locus/chromosome grouping when coordinates exist; otherwise disclose unavailable coordinates and use sequence-cluster grouping without claiming chromosome independence. Protein clustering tool/version/identity/coverage must be fixed and reported. Exact deduplication alone is insufficient.
-5. For pair sources, partition endpoint/parent groups before generating negatives, or split existing pairs by connected components. Report giant components; if independent partitions cannot be formed, rebuild with documented construction or reject the task. Check length/composition and alignment-similarity baselines. Add deterministic standard-code translation for C08: it perfectly separates the downloaded original and rand_v2 pools, so model accuracy there is not evidence of general biological reasoning.
-6. The existing local audits found subcellular train members in old fold/signal test. Preserve old test groups globally and remove affected training membership in the new protocol. Do not reshuffle the old evaluation into training. Retain native public benchmark evaluation definitions as a separate comparable view, subject to cross-task leakage audit.
-7. Confirmatory claims require a frozen, independently held-out evaluation manifest created before model development on that evaluation. Public legacy benchmarks and previously inspected labels are exploratory replication evidence; if no new uninspected independent set is available, explicitly keep that claim exploratory. Neither fresh random splits nor a new filename restore blindness.
-8. Compute actual model-tokenizer lengths for the full question, all sequences and output definitions. Freeze a common full-input subset and excluded counts per task/class/model; no silent truncation. Long DNA–protein pairs and localization proteins make this a material gate. Across systems, use the same eligible biological entities.
-9. Use independent biological annotations for multiple questions about the same sequence. Template edits do not create a new task. Multilabel thresholds and temperature fits use calibration only, never test; benchmark-specific Fmax may be reported only as a clearly marked oracle-threshold metric, alongside frozen-threshold F1.
+## Compute and storage
 
-## B1 — Valid labels and useful predictions (MUST)
+One local RTX 4080 SUPER, approximately 32 GiB reported GPU memory. About 15 GiB disk space was free at admission. Keep the final CPT model and resume state, and final full-data A/B weights. Small-data checkpoints may be removed only after verified reload as a predeclared policy; retain their predictions/metrics. Do not delete historical assets. Publish measured seconds/update after smoke before forecasting total runtime. This is the first bounded comparison round, not an unbounded search or a claim that all corpus bytes have been pretrained.
 
-**Claim:** C1. **Main table:** rows C/H-M/H-S/G-F/G-C/G-L; columns per-task and within-primitive summaries, strict invalid rate, canonical mapping-failure rate, wrong-in-set rate; an additional cost table covers B4.
+## Production recipe frozen after train-only smoke
 
-Use the same held-out examples, candidate definitions, and three seeds. G-F/G-C/G-L use identical prompts and checkpoint. For G-F/G-C, greedy decoding with no sampling; `max_new_tokens` is fixed from the longest tokenized allowed label including EOS plus a documented margin, not chosen after seeing test outputs. Verify the constrained trie against the exact tokenizer/context boundary; EOS is legal only at an allowed-label leaf. Truncation, runtime failure, or no legal terminal output is a failed response, not dropped from the denominator.
+GPU smoke passed on 2026-09-24: two new-row/head warmup updates, two full-encoder updates, and one 64-example SFT update. Old rows remained exactly invariant during warmup; new embeddings and MLM head had finite nonzero gradients; the encoder acquired gradients after unfreezing; saved/reloaded MLM logits were exactly equal. Peak allocated GPU memory was 7,995,594,240 bytes. Full-CPT updates took about 0.73 s and the first SFT update 1.28 s. These short-run timings imply roughly 60–75 minutes for the complete bounded round including initial/final full-training evaluation, periodic MLM validation, model construction and checkpoint writes.
 
-For G-L, score the **complete** label plus EOS by sum of conditional token log-probabilities and normalize across candidates. Record length bias and an optional length-normalized dev diagnostic; never select the formula on test. These are candidate-renormalized scores, not the probability of successful unconstrained generation. For G-C, probabilities require this separate complete-label scoring pass; include that cost when comparing probability-producing interfaces.
-
-Metrics have separate definitions:
-
-1. Strict contract violation: decoded answer, after a predeclared leading/trailing whitespace rule, is not exactly one permitted canonical string/ID. Explanations and synonyms violate the strict contract even if interpretable.
-2. Semantic mapping failure: a frozen alias table cannot map the response to exactly one allowed class; multiple/contradictory labels are ambiguous. Report benign aliases separately from invented labels. No fuzzy substring extraction or LLM relabeling after outcomes are seen.
-3. Wrong-in-set: a valid canonical class differs from the gold class. Do not relabel this as output drift.
-4. End-to-end accuracy/F1: failed or invalid outputs are errors on the original denominator. Also report alias-normalized performance and valid-only accuracy, clearly secondary.
-5. NLL, Brier, ECE and calibration coverage for systems with a defined full candidate distribution; never substitute self-reported prose confidence.
-6. Binary tasks: AUROC/AUPRC, MCC and frozen-threshold F1. Multilabel: micro/macro-AUPRC, micro/macro-F1, per-label support and missing-target handling; do not use subset accuracy alone. Score: native-scale MAE/RMSE, Spearman, level calibration and discretization diagnostics. Do not average accuracy, AUPRC, and correlation into a fabricated overall score. Invalid Score outputs remain in a reported failure rate; rank/error metrics on valid outputs must disclose coverage and a predeclared train-mean fallback score on the full denominator.
-
-**Success:** a useful accuracy/reuse/cost tradeoff against H-M and G-C/G-L, while keeping the output contract intact. Lower invalid rate than G-F alone is insufficient. **Failure:** if G-C/G-L equal or dominate the method, narrow the contribution to an open biological encoder adaptation; do not claim a unique anti-hallucination mechanism. Structural zero-invalid behavior is not a statistical performance discovery.
-
-## B2 — Task sharing and held-out task transfer (MUST for generality)
-
-**Claim:** C2. Compare the joint C and H-M models with H-S across the admitted suite, with four independent-model anchors (C01 promoter, C07 homology pairs, C09 fluorescence, C11 multilabel localization). Match per-task example presentations across joint and single-task runs and report total compute/storage separately. Joint sampling uses a frozen balanced task schedule for the redesigned study; do not claim that this is the old study's sampler. Report per-task results so gains on large tasks cannot hide negative transfer.
-
-For each task, provide two alternate, meaning-preserving question templates, checked without inspecting test predictions. For transfer, train separate leave-one-task-out variants excluding the localization family (C06 and C11; target C06) or C10 stability, including equivalent annotations from other sources; evaluate C and G-F/G-C/G-L without held-out-task adaptation; H-M has no corresponding head and is `not applicable` for strict zero-shot, rather than assigned an arbitrary low accuracy. If low-shot adaptation is later claimed, give all systems the same budgets (e.g. 16/64/256 examples per class) and label those runs separately.
-
-**Success:** useful performance on same-modality tasks and preserved performance under verified question changes; held-out-task scores are additionally required for an unseen-task claim. **Failure:** success only on fixed trained schemas supports multi-task supervised reuse, not general task understanding. No numerical transfer gain is assumed in advance. A checkpoint trained on all 12 tasks cannot be called zero-shot on any of those tasks. Keeping DeepLoc (C11) while withholding only prokaryotic localization (C06) would instead be a related-domain/schema transfer test, not the strict localization-family test. Score transfer requires externally specified levels and numerical anchors fixed without looking at held-out-task target values; if no such scale is defensible, C10 remains an adaptation experiment rather than strict zero-shot native-scale prediction. Do not derive held-out-task bins from its training targets while claiming no task supervision. Remove duplicate/related-source annotations and held-out-task calibration from each transfer training pool; report residual pretraining overlap uncertainty.
-
-## B3 — Label identity and decision stability (MUST)
-
-**Claim:** C2 and boundary of C1. Predefine original labels, independently verified aliases/short descriptions, and three deterministic candidate permutations per example. Align predictions to semantic IDs before comparison. Return opaque IDs with visible descriptions in a separately marked interface stress test, and randomize the ID/description association per example; use a no-description version to test the shortcut. The opaque-ID response format is a changed prompt condition for the generator, not automatically an in-distribution test.
-
-Report accuracy/F1, strict validity, mapping failure, semantic prediction agreement, and probability divergence by intervention; do not equate unchanged accuracy with per-example stability. Audit ambiguous ontology names before aliases are admitted. Candidate removal with the true label absent belongs to a separate abstention/open-set experiment and is not pooled with this closed-set block.
-
-**Success:** changes preserve useful semantic decisions, not just valid strings. **Failure:** order/wording sensitivity prevents a broad “no semantic drift” claim even if all outputs remain legal. Existing 9.04% BPE protein order flips already show this distinction.
-
-## B4 — Cost and uncertainty (MUST for efficiency claims)
-
-Use the same RTX 4080 SUPER, precision, and software versions. Fix input-length and candidate-count bins, 20 warm-up calls, 200 measured calls per bin (or all examples if fewer), and three repetitions. Measure CUDA-synchronized batch-1 median/p95 latency, a fixed feasible batch throughput, and peak allocated GPU memory. Include tokenization, construction of constraints, answer parsing, and complete candidate scoring if probabilities are requested; report model-only time separately. Report OOM/timeout coverage; no dropping failed long examples.
-
-Time all labels in the requested multilabel panel; do not count one yes/no call as a complete 32-label prediction. Report number of encoder/generator calls and chunking overhead. Use a separate calibration split for all fitted temperatures. Show NLL/Brier/ECE together with accuracy. The original 41-minute training runs are not inference-latency evidence. **Failure:** no measured throughput/latency benefit means no speed claim, regardless of non-autoregressive output.
-
-## Training recipe and compute planning
-
-- Seeds: 20260922, 20260923, 20260924; new data manifests remain distinct from old ones.
-- C/H-M: raw tokenizer, original Laya initialization, BF16, effective batch 32, initial engineering AdamW LR 2e-5, weight decay 0.01, warm-up 5%; final learning-rate recipe remains open after the 32-example fitting diagnostics; no additional CPT. CE/BCE or MSE according to the predeclared output path. H-M uses appropriate binary/sigmoid/scalar heads rather than an incompatible all-purpose softmax.
-- Task-balanced schedule: three passes over the 1,024-example engineering subset were an initial probe and did not fit splice/GFP adequately. Freeze a revised exposure budget after training-convergence and development checks, before any new test evaluation; sample larger tasks without replacement per cycle. Record both biological-entity presentations and expanded label-proposition presentations. Normalize the multilabel loss per observed label then per example, so many-label tasks do not dominate just by vocabulary size. Match entity exposures for C/H-M/G; disclose the additional sequence calls needed by proposition methods.
-- H-M readout diagnostics: CLS/mean pooling, isolated CE/MSE and conditional adapter ablations have been tested on 32 GFP training examples. Retaining the typed head with a fresh LayerNorm readout gives the lowest observed MAE/RMSE in the 128-update structural controls. Its exact-replay extension to 512 updates now passes both tiny-set fitting gates. The 1,024-example train/dev validation is complete but does not establish a usable recipe: 16 epochs still yield mean-like predictions. Training-only 2×2 scale/LR controls and the low-LR 1,024-update extension are complete: training RMSE improves from 0.80900 at 512 to 0.70786 at 1,024, but fit remains inadequate. A longer fixed-budget convergence check remains necessary before a full-task recipe; sample size and per-example exposure are not completely separated. Log architecture, objective, parameters and compute. Tiny-set success is not a generalization result or an equal-budget comparison with C.
-- Choice order: the scorer now supports `--resample-choice-order`, which regenerates per-example candidate permutations each update and remaps targets. Score and Noul retain their defined orders. Use training-only fitting/order checks to establish a viable recipe, then verify semantic agreement on separate development examples; tiny-set agreement is not a general invariance guarantee.
-- G: canonical-answer SFT, answer-token loss only, no thinking; same entity/panel exposure schedule. Use BF16 and gradient accumulation/activation checkpointing as needed on the available RTX 4080 SUPER (the current driver reports approximately 32 GiB; record each run’s actual capacity). A 100-update train/dev pilot determines feasible batch/memory/time before freezing any recipe adjustment. Full tuning versus LoRA must be disclosed if a memory gate forces a change.
-- Main suite: C/H-M/G × 3 seeds = **9 joint fits**. H-S for four anchors × 3 seeds = **12 fits**, giving **21 main fits**. H-S is therefore not an all-12-task claim. Generator free/constrained/likelihood modes share the same 3 trained G checkpoints. Score tasks in H-M carry a scalar control and an ordinal control; count both heads/losses and disclose joint supervision. If interference makes this comparison unsuitable, use separately budgeted controls instead of hiding extra fits.
-- Transfer extension: two leave-one-task-out settings (C06 and C10) × two eligible interface models (C and G) × three seeds = **12 additional fits**. Strict zero-shot fixed heads are not applicable. Full plan with transfer is **33 fits**; excluding those runs permits only supervised multitask claims.
-- Pilot compute allowance: at most 2 GPU-hours before re-estimating. Do not inherit the earlier three-task 12–30-hour estimate for this expanded suite. After the pilot publish `sum(fits × admitted updates × measured seconds/update) + all-mode evaluation + calibration + timing`, with task-length and label-panel factors and 20% scheduling contingency. Dataset sizes after grouping/eligibility and multilabel expansion are not yet known; a total GPU-hour promise now would be unsupported.
-- Failure gates: inadequate independent evaluation, unresolved label provenance, unacceptable full-input coverage, giant paired components, or inference cost from many labels. A failed task is reported as unadmitted, not replaced silently with a near-duplicate.
-
-## Run order and decision gates
-
-| Stage | Work | Gate / status |
-|---|---|---|
-| M0a | Existing local pools + user-supplied upstream audits | DONE source/schema audits only; no frozen v2 split |
-| M0b | Acquire TAPE/DeepLoc/GO; full provenance/group/tokenizer audit | TODO; freeze 6-task pilot then 12-task scope |
-| M0c | Implement typed scorer, pair serializer, masked targets, score bins, parsers/trie | PARTIAL; C/H-M typed/pair/bin and tiny fitting diagnostics implemented; generator parsers/trie and GO masks remain pending |
-| M1 | PILOT-C/HM/G, each 100 updates on six tasks | PARTIAL; C/H-M engineering pilots complete; G and full data admission still pending; no new test access |
-| M2 | C/H-M/G × 3 seeds plus four H-S anchors × 3 | TODO; 21 main fits, fixed recipe and per-task exposure |
-| M3 | Development contract, semantic, calibration and generator modes | TODO; freeze aliases, thresholds, constraints and metrics |
-| M4 | One frozen evaluation and same-hardware cost measurement | TODO; all failures/seeds reported, no test-based retuning |
-| M5 | Separate leave-C06-out and leave-C10-out training/evaluation | TODO; 12 extra fits required before unseen-task claims |
-
-The first model runs are **PILOT-C**, **PILOT-HM**, and **PILOT-G** on the six-task development suite, only after M0. The subsequent six-task engineering pilot is documented in [the execution report](../research/laya_multitask_pilot.md). It uses development data with exact/RC and endpoint-component guards while the full global homology/provenance gate remains open. It is not the confirmatory M2/M4 experiment. Its dev diagnostics cannot be promoted to new blind-test evidence.
-
-## Scope cuts
-
-Additional CPT, another BPE search, more upstream encoders, multi-agent reasoning, proprietary Jev replication, and broad open-ended biological reasoning are outside the core story. A larger biological generator is an optional external validation after the shared-checkpoint decoding comparison. Do not claim “first” without a separate novelty search.
-
-## Sources and evidence status
-
-- [Official Jev announcement](https://typesafe.ai/blog/introducing-system-one-models-and-jev) and [TypeSafe interface documentation](https://docs.typesafe.ai/introduction): naming and decision-interface motivation only; no imported biological performance claim.
-- [Laya implementation](https://github.com/NandhaKishorM/laya): open backbone and candidate interface, pinned to the original project revision in the paper.
-- [PICARD, EMNLP 2021](https://aclanthology.org/2021.emnlp-main.779/): precedent for constrained decoding, not a biological benchmark result.
-- The old frozen results and [new framing note](../research/jev_style_reframing.md) distinguish completed evidence from this plan. No external reviewer score or new model result has been fabricated.
+Production micro-batch is frozen at 8. All planned budgets, schedules, data sizes and final-step metrics above are retained. The CPT training snapshot contains 73,728 sequences and 17,002,452 model tokens, but only 36,864 presentations are scheduled in this first CPT run; do not equate snapshot size with processed tokens or an entire epoch. The four unobserved added input tokens are DNA:N and protein:J/N/O; report their exposure separately. Original base vocabulary 50,368 expands to 52,412. SFT inputs require at most 93 model tokens, with zero truncation. Raw sample and source-BPE hashes are identical before/after the preprocessing speed fix.

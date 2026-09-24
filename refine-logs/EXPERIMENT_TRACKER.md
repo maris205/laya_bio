@@ -79,3 +79,7 @@ All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/
 | GFP-SCALE-LR | N32 high/low LR ×512; N1024 low LR ×1,024; historical N1024 high LR training-only reference | COMPLETE 2026-09-24 13:57:47 UTC; 55.00 min, 2,048 new updates; N32 low-LR RMSE 0.02420; N1024 low-LR RMSE 0.80900→0.70786 between 512→1,024 updates |
 
 [Report and evidence](../research/laya_gfp_scale_probe.md). All new outputs are training-only. Matched initialization and batch orders verified; all recorded metrics recomputed; all three final checkpoints reload exactly. Lower LR improves tiny-set fitting, while the longer large-subset run partly recovers from near-constant prediction but still underfits (normalized RMSE 0.87320). Same-exposure comparisons do not fully isolate sample size from update count/LR history. Next: a predeclared longer-budget convergence check; exact optimizer continuation would require replaying the recorded prefix because checkpoints contain model state only. No further run or dev/test evaluation launched.
+
+## Active route change — 2026-09-24
+
+The user paused the direct-SFT/GFP diagnostic route. The proposed 2,048-update GFP extension is PAUSED and will not launch. Existing results/checkpoints remain preserved. [Route-change record](ROUTE_CHANGE_20260924.md). Active work now follows vocabulary expansion → embedding/MLM-head adaptation → biological CPT → matched no-CPT/CPT single-task SFT with thousands of examples → cumulative multitask SFT.
