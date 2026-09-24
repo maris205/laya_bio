@@ -1,0 +1,44 @@
+{
+  "promoter": {
+    "primitive": "noul",
+    "n_outputs": 2
+  },
+  "splice": {
+    "primitive": "choice",
+    "n_outputs": 3
+  },
+  "structural_class": {
+    "primitive": "choice",
+    "n_outputs": 7
+  },
+  "homology_pair": {
+    "primitive": "noul",
+    "n_outputs": 2
+  },
+  "fluorescence": {
+    "primitive": "score",
+    "n_outputs": 5,
+    "thresholds": [
+      3.141272211074829,
+      3.4799447059631348,
+      3.6054962158203123,
+      3.7054280757904055
+    ],
+    "anchors": [
+      1.7097083533682473,
+      3.337997840090496,
+      3.5458731662993337,
+      3.6584719692788474,
+      3.769515191054926
+    ],
+    "train_min": 1.2975002527236938,
+    "train_max": 4.020859241485596,
+    "fit_entities": 1024,
+    "mean": 3.2039797494653612,
+    "std": 0.8106411840519695
+  },
+  "multilabel_location": {
+    "primitive": "multilabel",
+    "n_outputs": 10
+  }
+}

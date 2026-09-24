@@ -54,4 +54,12 @@ All seven runs completed by 2026-09-24 07:56 UTC. [Report and evidence](../resea
 | GFP-POOL-LOSS | CLS/mean × joint/CE/MSE; six matched 128-update fits | COMPLETE; no supervised branch passes its final fit gate |
 | GFP-ADAPTER | Three conditional structural ablations and one MSE-only control | COMPLETE; fresh readout improves MAE/RMSE, but no final fit gate passed |
 
-All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/laya_readout_diagnostics.md). No dev/test rows were read. Next: fixed-configuration longer-budget convergence check; not yet run.
+All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/laya_readout_diagnostics.md). No dev/test rows were read. Follow-up: the fixed-configuration longer-budget check below is now complete.
+
+### GFP convergence follow-up
+
+| Run | Scope | Status |
+|---|---|---|
+| GFP-CONVERGENCE-512 | Same native-readout configuration, 32 training examples, update budget 128→512 | COMPLETE 2026-09-24 09:59:24 UTC; first 128 optimization records and predictions exactly match; both fitting gates pass at updates 384, 448 and 512 |
+
+[Report and evidence](../research/laya_convergence.md). Final Accuracy 96.88%, NLL 0.04707, scalar MAE 0.03367, RMSE 0.04596. No dev/test evaluation. Next: 1,024-example GFP training/development validation; not yet run.

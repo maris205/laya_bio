@@ -47,3 +47,15 @@ def test_order_augmentation_preserves_examples_and_gold_semantics():
             assert item['qtype']==0
         orders.append(tuple(out[0]['items'][0]['order']))
     assert len(set(orders))>1 and entities==original
+
+
+def test_training_prefix_ignores_time_but_detects_optimizer_changes():
+    trace=[{'step':1,'loss':.2,'lr':1e-4,'gradient_norm':.3,'gradient_norms_by_module':{'head':.1},'seconds':2.}]
+    replay=copy.deepcopy(trace);replay[0]['seconds']=7.
+    assert m.compare_training_prefix(replay,trace)['exact_optimization_trace_match']
+    for field in ['loss','lr','gradient_norm']:
+        changed=copy.deepcopy(replay);changed[0][field]+=.0001
+        check=m.compare_training_prefix(changed,trace)
+        assert not check['exact_optimization_trace_match'] and check['mismatch_steps']==[1]
+    changed=copy.deepcopy(replay);changed[0]['gradient_norms_by_module']['head']+=.1
+    assert not m.compare_training_prefix(changed,trace)['exact_optimization_trace_match']

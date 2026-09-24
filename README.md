@@ -12,7 +12,8 @@ The paper now centers on a shared biological decision interface, with BPE as a s
 - [Six-task joint-training pilot and completed development round](research/laya_multitask_pilot.md)
 - [Splice/GFP diagnostics, matched single-task controls, and splice label-name correction](research/laya_task_diagnostics.md)
 - [Completed 32-example fitting checks and candidate-order augmentation](research/laya_microfit.md)
-- [Completed GFP readout/loss diagnostics: regression improves, fitting gate remains unmet](research/laya_readout_diagnostics.md)
+- [GFP readout/loss diagnostics: controlled 128-update runs](research/laya_readout_diagnostics.md)
+- [Completed 512-update GFP convergence check: fitting criteria passed with exact prefix replay](research/laya_convergence.md)
 - [Chinese manuscript](research/laya_bio_paper_draft.md)
 - [Release and verification record](research/laya_large_data_release.md)
 

@@ -1,0 +1,12 @@
+{
+  "updates_compared": 128,
+  "exact_optimization_trace_match": true,
+  "mismatch_steps": [],
+  "max_loss_difference": 0.0,
+  "max_gradient_norm_difference": 0.0,
+  "exact_prediction_match": true,
+  "exact_final_metrics_match": true,
+  "configuration_match": true,
+  "max_probability_difference": 0.0,
+  "max_scalar_difference": 0.0
+}
