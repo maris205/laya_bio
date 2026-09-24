@@ -12,6 +12,11 @@
       "sha256": "ea00db6e38e9743853c05d4027033c9fdbf34641e8219f4847530c906ac8e03b"
     },
     {
+      "source_relative": "source_release_identity_check.json",
+      "archive_relative": "source_release_identity_check.json",
+      "sha256": "652d6f891fc966081b73663225e368623c9b3f1f2285ce578b1d9964634626c2"
+    },
+    {
       "source_relative": "base_encoder_config.json",
       "archive_relative": "base_encoder_config.json",
       "sha256": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d"

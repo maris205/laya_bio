@@ -1,0 +1,1256 @@
+{
+  "data": {
+    "schema": "biocpt-first-round-v2-source-QC",
+    "seed": 20260925,
+    "source_downstream_sha256": {
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_selection_dev.jsonl": "3dffdee6768f4553b8afd13792dc55918d908c20bb5f6242a5cf74927aa37582",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_calibration.jsonl": "1b6be563db394b8ff2b676062ec5dc1146f444af4fdb467d6207d0d20b6c0e3a",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_test.jsonl": "7cfae07d045bfc3d24f6a8912fc5c38cb71e619a6c7c4111aba12e512cf549d7",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_selection_dev.jsonl": "a89e20ae978e278fec82335b696f34382e7c762bc41aaeecd5841b25af8601bf",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_calibration.jsonl": "aa0a7680bf99500befc1498f60b3a7a502e49240baf20ff6afcaae452bc04592",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_test.jsonl": "15cd76121f7e3b71d5b4ef2269239a03a28131f5cff61898e77e482dc6e1e3af",
+      "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_train.jsonl": "06e25601806907372b4d37a934f1a833366996131dbdcf22e7660e19db443b07"
+    },
+    "heldout_sequence_counts_for_exclusion": {
+      "promoter_detection:selection_dev": 1052,
+      "promoter_detection:calibration": 1053,
+      "promoter_detection:test": 2145,
+      "fold_class:selection_dev": 939,
+      "fold_class:calibration": 942,
+      "fold_class:test": 1994
+    },
+    "test_targets_used": false,
+    "test_inference": false,
+    "corpus": {
+      "dna": {
+        "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/dna_32g.txt",
+        "source_bytes": 32420152883,
+        "source_mtime_ns": 1789989046851707754,
+        "train": 32768,
+        "validation": 512,
+        "attempts": 41831,
+        "rejected": {
+          "downstream_holdout_long_kmer": 3764,
+          "cpt_validation_long_kmer": 4758,
+          "duplicate_exact_or_dna_rc": 29
+        },
+        "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+        "full_source_hash_recomputed": false,
+        "used_line_hashes_and_bytes_snapshotted": true
+      },
+      "protein": {
+        "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_lucaone_15g.txt",
+        "source_bytes": 15388772546,
+        "source_mtime_ns": 1789989127247256075,
+        "train": 32768,
+        "validation": 512,
+        "attempts": 35332,
+        "rejected": {
+          "alphabet_or_length": 1279,
+          "downstream_holdout_long_kmer": 547,
+          "cpt_validation_long_kmer": 201,
+          "duplicate_exact_or_dna_rc": 25
+        },
+        "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+        "full_source_hash_recomputed": false,
+        "used_line_hashes_and_bytes_snapshotted": true
+      },
+      "text": {
+        "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/openwebtext.txt",
+        "source_bytes": 39587458433,
+        "source_mtime_ns": 1789989425461142454,
+        "train": 8192,
+        "validation": 128,
+        "attempts": 15721,
+        "rejected": {
+          "short_text": 7394,
+          "duplicate_exact_or_dna_rc": 7
+        },
+        "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+        "full_source_hash_recomputed": false,
+        "used_line_hashes_and_bytes_snapshotted": true
+      }
+    },
+    "cpt_lengths": {
+      "train": {
+        "rows": 73728,
+        "tokens": 13611857,
+        "cropped_rows": 7375
+      },
+      "validation": {
+        "rows": 1152,
+        "tokens": 211058,
+        "cropped_rows": 100
+      }
+    },
+    "sft": {
+      "train_4096": {
+        "rows": 4096,
+        "labels": {
+          "1": 2048,
+          "0": 2048
+        },
+        "max_tokens": 90,
+        "truncation": 0
+      },
+      "train_full": {
+        "rows": 16766,
+        "labels": {
+          "1": 8371,
+          "0": 8395
+        },
+        "max_tokens": 93,
+        "truncation": 0
+      },
+      "dev": {
+        "rows": 1052,
+        "labels": {
+          "1": 531,
+          "0": 521
+        },
+        "max_tokens": 90,
+        "truncation": 0
+      }
+    },
+    "old_vocab_size": 50368,
+    "new_vocab_size": 52412,
+    "added_by_modality": {
+      "dna": 1022,
+      "protein": 1022
+    },
+    "unobserved_added_tokens_in_cpt_train": [
+      "<BIO_DNA:N>",
+      "<BIO_PROTEIN:J>",
+      "<BIO_PROTEIN:O>"
+    ],
+    "vocab_fit": "fresh DNA/protein BPE fitted only on filtered CPT training samples; 1024 source entries per modality",
+    "residue_composition_audit": {
+      "character_counts": {
+        "dna": {
+          "A": 9800803,
+          "C": 6583528,
+          "G": 6580096,
+          "T": 9803573
+        },
+        "protein": {
+          "A": 1041048,
+          "B": 2,
+          "C": 165144,
+          "D": 648529,
+          "E": 744788,
+          "F": 457515,
+          "G": 837117,
+          "H": 268882,
+          "I": 637685,
+          "K": 593163,
+          "L": 1157441,
+          "M": 268400,
+          "N": 459623,
+          "P": 606960,
+          "Q": 463796,
+          "R": 699488,
+          "S": 853138,
+          "T": 663891,
+          "U": 1,
+          "V": 794690,
+          "W": 152306,
+          "X": 2425,
+          "Y": 341057,
+          "Z": 2
+        }
+      },
+      "required_canonical_amino_acids": "ACDEFGHIKLMNPQRSTVWY",
+      "missing_canonical_amino_acids": [],
+      "protein_source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_lucaone_15g.txt",
+      "status": "pass"
+    },
+    "encoding": "explicit source-piece to distinct model-ID mapping; natural language uses unchanged base IDs",
+    "guards": "any shared 31-mer (DNA, both strands) or 15-mer (protein) with protected downstream sequences or CPT validation rejects a training corpus line",
+    "limitations": [
+      "Fixed promoter/fold heldouts only; future tasks require a new contamination admission audit.",
+      "Long-kmer filtering is conservative but is not a full homology/parent-cluster independence guarantee.",
+      "Downstream development/test memberships have historical prior use; no fresh confirmatory test claim.",
+      "Random-byte sampling is length-biased; corpus upstream provenance remains historical."
+    ],
+    "output_sha256": {
+      "cpt_train.jsonl": "e60354d02ce21fae2099bec1f63ecedd669c3f84dc4b821e6a99aec903393ac2",
+      "cpt_validation.jsonl": "53e4974089b8cc60a29622a740d3d32634147f7fac91bf77aefb10ad69fde5f7",
+      "raw_train.jsonl": "f1647ee1a2233046b7ddf7f39a2456552d2df5225f3c0bd8e460568690d0251b",
+      "raw_validation.jsonl": "7c34adac916cb86e6c3aec59b9d3dfcf7fe72d3858cddc5b1b5a42d2de8b13a7",
+      "representation/base_tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+      "representation/base_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+      "representation/expanded_tokenizer/tokenizer.json": "04bfe5d872b8f93ee0c975c3d51b941a49918e08ca3df6aa02ec8cedc3f8f47c",
+      "representation/expanded_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+      "representation/new_tokens.json": "90ac08ed121440faaac7be6bb0a6ed723faea1e03aa59e33bee37c2c7e134bd4",
+      "representation/source_tokenizers/dna.json": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3",
+      "representation/source_tokenizers/protein.json": "246515b085c11dce0be76a93ee05b13cfd1cc4d6dd810de069943365bb063796",
+      "residue_composition_audit.json": "c141b74532f85b54a417b180cf6aa07e3208d17b83e5768689b29d989d2c250d",
+      "sft_dev.jsonl": "e7acd10a3ef2b45cd94adb2eb0be8ede0b769cead533e112d09a126ccbaf5f9f",
+      "sft_train_4096.jsonl": "26ed06e317979c748b8285ebc863712b17cc49753c425580061d2bdb670700d5",
+      "sft_train_full.jsonl": "cb71b00d1ca09e90d970bbe921663e6c8852d6a84d21bf88bd053f99884f80a2"
+    }
+  },
+  "round": {
+    "created_utc": "2026-09-24T15:30:45.527107+00:00",
+    "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+    "code_sha256": {
+      "laya_biocpt_data.py": "cc9a2d36d0b91b612a3c425d1206591af6a9e2e27ab938b2e9527f0b6700dcfb",
+      "laya_biocpt_train.py": "42a5a2c3d52fe57758331366e2349def4007834cbfedc6d0990d1479d0568953",
+      "run_laya_biocpt_round.py": "8b6d5fc7072f08983c36ac14484efb12cbcd18110f42a6648d8438dd2543c474",
+      "test_laya_biocpt.py": "a548b4d0797644d09f3ce9a07e8bfb83d5b5466307fd6de758a1b5792bc0484c"
+    },
+    "smoke": {
+      "status": "complete",
+      "updates": 4,
+      "timing": {
+        "warmup": 0.9189696040702984,
+        "full": 0.7141792540205643
+      },
+      "peak_gpu_bytes": 7989482496,
+      "checkpoint_reload_exact": true,
+      "checkpoint_sha256": "eda25aa738f42cb64ff68aa3baf87e68f2d9fb4eca0ef8b7884075fdddc73ba2",
+      "natural_input_token_coverage": 1855,
+      "masked_target_token_coverage": 1012,
+      "added_token_count": 2044,
+      "sft_seconds_per_update": 1.4716563320253044
+    },
+    "micro": 8,
+    "run_order": [
+      "cpt",
+      "no_cpt_4096",
+      "cpt_4096",
+      "no_cpt_full",
+      "cpt_full"
+    ],
+    "first_round_only": true,
+    "test_access": false,
+    "full_SFT_updates_each": 786,
+    "small_SFT_updates_each": 192
+  },
+  "cpt_curve": [
+    {
+      "step": 0,
+      "phase": "initial",
+      "validation": {
+        "dna": {
+          "nll": 14.410855853016868,
+          "masked_accuracy": 0.0,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 14.251536538613514,
+          "masked_accuracy": 0.0,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 12.806435006563781,
+          "masked_accuracy": 0.0,
+          "targets": 1952
+        }
+      }
+    },
+    {
+      "step": 128,
+      "phase": "warmup",
+      "validation": {
+        "dna": {
+          "nll": 6.050909593688642,
+          "masked_accuracy": 0.042797791816060554,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 6.110642936938068,
+          "masked_accuracy": 0.060424312953182346,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 5.9663851222053905,
+          "masked_accuracy": 0.23616803278688525,
+          "targets": 1952
+        }
+      }
+    },
+    {
+      "step": 384,
+      "phase": "full",
+      "validation": {
+        "dna": {
+          "nll": 5.675697146465589,
+          "masked_accuracy": 0.0813840987991577,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 5.642440799996224,
+          "masked_accuracy": 0.09488855071166413,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 3.1054027823151134,
+          "masked_accuracy": 0.48975409836065575,
+          "targets": 1952
+        }
+      }
+    },
+    {
+      "step": 640,
+      "phase": "full",
+      "validation": {
+        "dna": {
+          "nll": 5.569413350822645,
+          "masked_accuracy": 0.09418928916965455,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 5.524361769287175,
+          "masked_accuracy": 0.09784262823381971,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 2.504016055435431,
+          "masked_accuracy": 0.5655737704918032,
+          "targets": 1952
+        }
+      }
+    },
+    {
+      "step": 896,
+      "phase": "full",
+      "validation": {
+        "dna": {
+          "nll": 5.517835520997845,
+          "masked_accuracy": 0.09976666097547095,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 5.47182068958373,
+          "masked_accuracy": 0.10294512577208845,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 2.2654571767713203,
+          "masked_accuracy": 0.5993852459016393,
+          "targets": 1952
+        }
+      }
+    },
+    {
+      "step": 1152,
+      "phase": "full",
+      "validation": {
+        "dna": {
+          "nll": 5.497451821304902,
+          "masked_accuracy": 0.10232769904957031,
+          "targets": 17571
+        },
+        "protein": {
+          "nll": 5.449069033291418,
+          "masked_accuracy": 0.10276609077074568,
+          "targets": 11171
+        },
+        "text": {
+          "nll": 2.1956730436106198,
+          "masked_accuracy": 0.6137295081967213,
+          "targets": 1952
+        }
+      }
+    }
+  ],
+  "cpt_status": {
+    "status": "complete",
+    "updates": 1152,
+    "timing": {
+      "warmup": 0.750748189891965,
+      "full": 0.792523831373046
+    },
+    "peak_gpu_bytes": 7999491072,
+    "checkpoint_reload_exact": true,
+    "checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+    "natural_input_token_coverage": 2040,
+    "masked_target_token_coverage": 2039,
+    "added_token_count": 2044
+  },
+  "warmup_embedding_check": {
+    "old_rows_equal": true,
+    "old_row_max_change": 0.0,
+    "new_row_mean_l2_change": 0.3290954530239105,
+    "seconds_per_step_including_evaluation": 0.750748189891965
+  },
+  "full_embedding_check": {
+    "old_rows_equal": false,
+    "old_row_max_change": 0.012887214310467243,
+    "new_row_mean_l2_change": 0.3292064666748047,
+    "seconds_per_step_including_evaluation": 0.792523831373046
+  },
+  "runs": {
+    "no_cpt_4096": {
+      "config": {
+        "arm": "no_CPT",
+        "samples": 4096,
+        "epochs": 3,
+        "updates": 192,
+        "effective_batch": 64,
+        "micro_batch": 8,
+        "batch_order_sha256": "6029308f1f58eef4511e05fe2100f7795307364a47e0372a812b310dea258d88",
+        "initial_classifier_sha256": "18ad82e1278a2ab962e2c281cb18042d83dc08f78d5eccf4d4016f4056d5ac16",
+        "seed": 20260925,
+        "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+        "encoder_initial_checkpoint_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+        "test_access": false,
+        "final_step_primary": true,
+        "precision": "FP32 parameters, BF16 autocast"
+      },
+      "status": {
+        "status": "complete",
+        "updates": 192,
+        "checkpoint_reload_exact": true,
+        "checkpoint_sha256": "9c64d705f11c9ab5669c8ce3bd6c88fa0396c3545c84798626d915d28429f180",
+        "checkpoint_retained": false,
+        "peak_gpu_bytes": 7749598208
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "dev",
+          "accuracy": 0.49524714828897337,
+          "macro_f1": 0.3312142403051494,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              521,
+              0
+            ],
+            [
+              531,
+              0
+            ]
+          ],
+          "nll": 0.8250128395280976,
+          "rows": 1052
+        },
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "train",
+          "accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              2048,
+              0
+            ],
+            [
+              2048,
+              0
+            ]
+          ],
+          "nll": 0.8208100546653897,
+          "rows": 4096
+        },
+        {
+          "epoch": 1,
+          "step": 64,
+          "split": "dev",
+          "accuracy": 0.7576045627376425,
+          "macro_f1": 0.7573043466460394,
+          "per_class_recall": [
+            0.800383877159309,
+            0.7156308851224106
+          ],
+          "confusion": [
+            [
+              417,
+              104
+            ],
+            [
+              151,
+              380
+            ]
+          ],
+          "nll": 0.5271117961979783,
+          "rows": 1052
+        },
+        {
+          "epoch": 2,
+          "step": 128,
+          "split": "dev",
+          "accuracy": 0.7709125475285171,
+          "macro_f1": 0.7631035774787124,
+          "per_class_recall": [
+            0.9616122840690979,
+            0.583804143126177
+          ],
+          "confusion": [
+            [
+              501,
+              20
+            ],
+            [
+              221,
+              310
+            ]
+          ],
+          "nll": 0.483068659755287,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 192,
+          "split": "dev",
+          "accuracy": 0.8250950570342205,
+          "macro_f1": 0.8244453151074543,
+          "per_class_recall": [
+            0.8944337811900192,
+            0.7570621468926554
+          ],
+          "confusion": [
+            [
+              466,
+              55
+            ],
+            [
+              129,
+              402
+            ]
+          ],
+          "nll": 0.38732687834219753,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 192,
+          "split": "train",
+          "accuracy": 0.833984375,
+          "macro_f1": 0.8329903533892655,
+          "per_class_recall": [
+            0.9111328125,
+            0.7568359375
+          ],
+          "confusion": [
+            [
+              1866,
+              182
+            ],
+            [
+              498,
+              1550
+            ]
+          ],
+          "nll": 0.38239696006943447,
+          "rows": 4096
+        }
+      ],
+      "final_dev": {
+        "epoch": 3,
+        "step": 192,
+        "split": "dev",
+        "accuracy": 0.8250950570342205,
+        "macro_f1": 0.8244453151074543,
+        "per_class_recall": [
+          0.8944337811900192,
+          0.7570621468926554
+        ],
+        "confusion": [
+          [
+            466,
+            55
+          ],
+          [
+            129,
+            402
+          ]
+        ],
+        "nll": 0.38732687834219753,
+        "rows": 1052
+      },
+      "final_train": {
+        "epoch": 3,
+        "step": 192,
+        "split": "train",
+        "accuracy": 0.833984375,
+        "macro_f1": 0.8329903533892655,
+        "per_class_recall": [
+          0.9111328125,
+          0.7568359375
+        ],
+        "confusion": [
+          [
+            1866,
+            182
+          ],
+          [
+            498,
+            1550
+          ]
+        ],
+        "nll": 0.38239696006943447,
+        "rows": 4096
+      }
+    },
+    "cpt_4096": {
+      "config": {
+        "arm": "CPT",
+        "samples": 4096,
+        "epochs": 3,
+        "updates": 192,
+        "effective_batch": 64,
+        "micro_batch": 8,
+        "batch_order_sha256": "6029308f1f58eef4511e05fe2100f7795307364a47e0372a812b310dea258d88",
+        "initial_classifier_sha256": "18ad82e1278a2ab962e2c281cb18042d83dc08f78d5eccf4d4016f4056d5ac16",
+        "seed": 20260925,
+        "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+        "encoder_initial_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+        "test_access": false,
+        "final_step_primary": true,
+        "precision": "FP32 parameters, BF16 autocast"
+      },
+      "status": {
+        "status": "complete",
+        "updates": 192,
+        "checkpoint_reload_exact": true,
+        "checkpoint_sha256": "dd1a5d872ee9d184e4052ad54494e467dc2a07dc6077f6bb381cbf984baa237f",
+        "checkpoint_retained": false,
+        "peak_gpu_bytes": 7749598208
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "dev",
+          "accuracy": 0.49524714828897337,
+          "macro_f1": 0.3312142403051494,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              521,
+              0
+            ],
+            [
+              531,
+              0
+            ]
+          ],
+          "nll": 0.9578979340265843,
+          "rows": 1052
+        },
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "train",
+          "accuracy": 0.5,
+          "macro_f1": 0.3333333333333333,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              2048,
+              0
+            ],
+            [
+              2048,
+              0
+            ]
+          ],
+          "nll": 0.9439067762212342,
+          "rows": 4096
+        },
+        {
+          "epoch": 1,
+          "step": 64,
+          "split": "dev",
+          "accuracy": 0.6663498098859315,
+          "macro_f1": 0.6301795860237185,
+          "per_class_recall": [
+            0.9884836852207294,
+            0.3502824858757062
+          ],
+          "confusion": [
+            [
+              515,
+              6
+            ],
+            [
+              345,
+              186
+            ]
+          ],
+          "nll": 0.6211931668681796,
+          "rows": 1052
+        },
+        {
+          "epoch": 2,
+          "step": 128,
+          "split": "dev",
+          "accuracy": 0.8726235741444867,
+          "macro_f1": 0.872474235757295,
+          "per_class_recall": [
+            0.8464491362763915,
+            0.8983050847457628
+          ],
+          "confusion": [
+            [
+              441,
+              80
+            ],
+            [
+              54,
+              477
+            ]
+          ],
+          "nll": 0.31454615153487153,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 192,
+          "split": "dev",
+          "accuracy": 0.8754752851711026,
+          "macro_f1": 0.8754562666341327,
+          "per_class_recall": [
+            0.8963531669865643,
+            0.8549905838041432
+          ],
+          "confusion": [
+            [
+              467,
+              54
+            ],
+            [
+              77,
+              454
+            ]
+          ],
+          "nll": 0.30328245407719495,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 192,
+          "split": "train",
+          "accuracy": 0.90625,
+          "macro_f1": 0.9061984732824427,
+          "per_class_recall": [
+            0.9296875,
+            0.8828125
+          ],
+          "confusion": [
+            [
+              1904,
+              144
+            ],
+            [
+              240,
+              1808
+            ]
+          ],
+          "nll": 0.23542030701801026,
+          "rows": 4096
+        }
+      ],
+      "final_dev": {
+        "epoch": 3,
+        "step": 192,
+        "split": "dev",
+        "accuracy": 0.8754752851711026,
+        "macro_f1": 0.8754562666341327,
+        "per_class_recall": [
+          0.8963531669865643,
+          0.8549905838041432
+        ],
+        "confusion": [
+          [
+            467,
+            54
+          ],
+          [
+            77,
+            454
+          ]
+        ],
+        "nll": 0.30328245407719495,
+        "rows": 1052
+      },
+      "final_train": {
+        "epoch": 3,
+        "step": 192,
+        "split": "train",
+        "accuracy": 0.90625,
+        "macro_f1": 0.9061984732824427,
+        "per_class_recall": [
+          0.9296875,
+          0.8828125
+        ],
+        "confusion": [
+          [
+            1904,
+            144
+          ],
+          [
+            240,
+            1808
+          ]
+        ],
+        "nll": 0.23542030701801026,
+        "rows": 4096
+      }
+    },
+    "no_cpt_full": {
+      "config": {
+        "arm": "no_CPT",
+        "samples": 16766,
+        "epochs": 3,
+        "updates": 786,
+        "effective_batch": 64,
+        "micro_batch": 8,
+        "batch_order_sha256": "cd221b591d51741cc25b92f438b301542ff04d3a4032b67885b7d83916784893",
+        "initial_classifier_sha256": "18ad82e1278a2ab962e2c281cb18042d83dc08f78d5eccf4d4016f4056d5ac16",
+        "seed": 20260925,
+        "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+        "encoder_initial_checkpoint_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+        "test_access": false,
+        "final_step_primary": true,
+        "precision": "FP32 parameters, BF16 autocast"
+      },
+      "status": {
+        "status": "complete",
+        "updates": 786,
+        "checkpoint_reload_exact": true,
+        "checkpoint_sha256": "f390bf64cd27383a33433763f1073aba270cd59c57d8b06249345b06a413b4de",
+        "checkpoint_retained": true,
+        "peak_gpu_bytes": 7745378304
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "dev",
+          "accuracy": 0.49524714828897337,
+          "macro_f1": 0.3312142403051494,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              521,
+              0
+            ],
+            [
+              531,
+              0
+            ]
+          ],
+          "nll": 0.8250128395280976,
+          "rows": 1052
+        },
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "train",
+          "accuracy": 0.5007157342240248,
+          "macro_f1": 0.33365128571996344,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              8395,
+              0
+            ],
+            [
+              8371,
+              0
+            ]
+          ],
+          "nll": 0.8207773404268016,
+          "rows": 16766
+        },
+        {
+          "epoch": 1,
+          "step": 262,
+          "split": "dev",
+          "accuracy": 0.8878326996197718,
+          "macro_f1": 0.8878310779551237,
+          "per_class_recall": [
+            0.9001919385796545,
+            0.8757062146892656
+          ],
+          "confusion": [
+            [
+              469,
+              52
+            ],
+            [
+              66,
+              465
+            ]
+          ],
+          "nll": 0.28163107134219956,
+          "rows": 1052
+        },
+        {
+          "epoch": 2,
+          "step": 524,
+          "split": "dev",
+          "accuracy": 0.8906844106463878,
+          "macro_f1": 0.8906621815687419,
+          "per_class_recall": [
+            0.9136276391554703,
+            0.8681732580037664
+          ],
+          "confusion": [
+            [
+              476,
+              45
+            ],
+            [
+              70,
+              461
+            ]
+          ],
+          "nll": 0.2707429699266398,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 786,
+          "split": "dev",
+          "accuracy": 0.9001901140684411,
+          "macro_f1": 0.9001856947287095,
+          "per_class_recall": [
+            0.9021113243761996,
+            0.8983050847457628
+          ],
+          "confusion": [
+            [
+              470,
+              51
+            ],
+            [
+              54,
+              477
+            ]
+          ],
+          "nll": 0.2511228184458219,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 786,
+          "split": "train",
+          "accuracy": 0.9232375044733389,
+          "macro_f1": 0.9232369995447869,
+          "per_class_recall": [
+            0.9193567599761763,
+            0.9271293752239875
+          ],
+          "confusion": [
+            [
+              7718,
+              677
+            ],
+            [
+              610,
+              7761
+            ]
+          ],
+          "nll": 0.1970595526780623,
+          "rows": 16766
+        }
+      ],
+      "final_dev": {
+        "epoch": 3,
+        "step": 786,
+        "split": "dev",
+        "accuracy": 0.9001901140684411,
+        "macro_f1": 0.9001856947287095,
+        "per_class_recall": [
+          0.9021113243761996,
+          0.8983050847457628
+        ],
+        "confusion": [
+          [
+            470,
+            51
+          ],
+          [
+            54,
+            477
+          ]
+        ],
+        "nll": 0.2511228184458219,
+        "rows": 1052
+      },
+      "final_train": {
+        "epoch": 3,
+        "step": 786,
+        "split": "train",
+        "accuracy": 0.9232375044733389,
+        "macro_f1": 0.9232369995447869,
+        "per_class_recall": [
+          0.9193567599761763,
+          0.9271293752239875
+        ],
+        "confusion": [
+          [
+            7718,
+            677
+          ],
+          [
+            610,
+            7761
+          ]
+        ],
+        "nll": 0.1970595526780623,
+        "rows": 16766
+      }
+    },
+    "cpt_full": {
+      "config": {
+        "arm": "CPT",
+        "samples": 16766,
+        "epochs": 3,
+        "updates": 786,
+        "effective_batch": 64,
+        "micro_batch": 8,
+        "batch_order_sha256": "cd221b591d51741cc25b92f438b301542ff04d3a4032b67885b7d83916784893",
+        "initial_classifier_sha256": "18ad82e1278a2ab962e2c281cb18042d83dc08f78d5eccf4d4016f4056d5ac16",
+        "seed": 20260925,
+        "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+        "encoder_initial_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+        "test_access": false,
+        "final_step_primary": true,
+        "precision": "FP32 parameters, BF16 autocast"
+      },
+      "status": {
+        "status": "complete",
+        "updates": 786,
+        "checkpoint_reload_exact": true,
+        "checkpoint_sha256": "88b8d0170773e373b49bea2c242c4cdc9ddc9ee939eb8d2145c80c5244ad4bbf",
+        "checkpoint_retained": true,
+        "peak_gpu_bytes": 7745378304
+      },
+      "curve": [
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "dev",
+          "accuracy": 0.49524714828897337,
+          "macro_f1": 0.3312142403051494,
+          "per_class_recall": [
+            1.0,
+            0.0
+          ],
+          "confusion": [
+            [
+              521,
+              0
+            ],
+            [
+              531,
+              0
+            ]
+          ],
+          "nll": 0.9578979340265843,
+          "rows": 1052
+        },
+        {
+          "epoch": 0,
+          "step": 0,
+          "split": "train",
+          "accuracy": 0.5006560897053561,
+          "macro_f1": 0.3336248012718601,
+          "per_class_recall": [
+            0.9998808814770697,
+            0.0
+          ],
+          "confusion": [
+            [
+              8394,
+              1
+            ],
+            [
+              8371,
+              0
+            ]
+          ],
+          "nll": 0.9437704252742782,
+          "rows": 16766
+        },
+        {
+          "epoch": 1,
+          "step": 262,
+          "split": "dev",
+          "accuracy": 0.7861216730038023,
+          "macro_f1": 0.7756770203994598,
+          "per_class_recall": [
+            0.5758157389635317,
+            0.992467043314501
+          ],
+          "confusion": [
+            [
+              300,
+              221
+            ],
+            [
+              4,
+              527
+            ]
+          ],
+          "nll": 0.459408865430103,
+          "rows": 1052
+        },
+        {
+          "epoch": 2,
+          "step": 524,
+          "split": "dev",
+          "accuracy": 0.8916349809885932,
+          "macro_f1": 0.8916208791208791,
+          "per_class_recall": [
+            0.8886756238003839,
+            0.8945386064030132
+          ],
+          "confusion": [
+            [
+              463,
+              58
+            ],
+            [
+              56,
+              475
+            ]
+          ],
+          "nll": 0.24704453313031174,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 786,
+          "split": "dev",
+          "accuracy": 0.8992395437262357,
+          "macro_f1": 0.899168113425926,
+          "per_class_recall": [
+            0.8809980806142035,
+            0.9171374764595104
+          ],
+          "confusion": [
+            [
+              459,
+              62
+            ],
+            [
+              44,
+              487
+            ]
+          ],
+          "nll": 0.2446353469946393,
+          "rows": 1052
+        },
+        {
+          "epoch": 3,
+          "step": 786,
+          "split": "train",
+          "accuracy": 0.9512107837289753,
+          "macro_f1": 0.9511981274776368,
+          "per_class_recall": [
+            0.9337701012507444,
+            0.9687014693584995
+          ],
+          "confusion": [
+            [
+              7839,
+              556
+            ],
+            [
+              262,
+              8109
+            ]
+          ],
+          "nll": 0.132747119770771,
+          "rows": 16766
+        }
+      ],
+      "final_dev": {
+        "epoch": 3,
+        "step": 786,
+        "split": "dev",
+        "accuracy": 0.8992395437262357,
+        "macro_f1": 0.899168113425926,
+        "per_class_recall": [
+          0.8809980806142035,
+          0.9171374764595104
+        ],
+        "confusion": [
+          [
+            459,
+            62
+          ],
+          [
+            44,
+            487
+          ]
+        ],
+        "nll": 0.2446353469946393,
+        "rows": 1052
+      },
+      "final_train": {
+        "epoch": 3,
+        "step": 786,
+        "split": "train",
+        "accuracy": 0.9512107837289753,
+        "macro_f1": 0.9511981274776368,
+        "per_class_recall": [
+          0.9337701012507444,
+          0.9687014693584995
+        ],
+        "confusion": [
+          [
+            7839,
+            556
+          ],
+          [
+            262,
+            8109
+          ]
+        ],
+        "nll": 0.132747119770771,
+        "rows": 16766
+      }
+    }
+  },
+  "comparisons": {
+    "4096": {
+      "accuracy_delta_CPT_minus_no_CPT": 0.05038022813688213,
+      "paired_group_bootstrap_95_percentile_CI": [
+        0.03136882129277566,
+        0.07034220532319392
+      ],
+      "bootstrap_replicates": 10000,
+      "groups": 1052,
+      "interpretation": "descriptive development uncertainty, not blind-test confirmation"
+    },
+    "full": {
+      "accuracy_delta_CPT_minus_no_CPT": -0.0009505703422053232,
+      "paired_group_bootstrap_95_percentile_CI": [
+        -0.014258555133079848,
+        0.012357414448669201
+      ],
+      "bootstrap_replicates": 10000,
+      "groups": 1052,
+      "interpretation": "descriptive development uncertainty, not blind-test confirmation"
+    }
+  }
+}

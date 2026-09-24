@@ -21,7 +21,7 @@ def main():
     ax=axes[0,0]
     curves=r['cpt_curve']
     for modality,color in [('dna','#2474b5'),('protein','#e07829'),('text','#777777')]:
-        ax.plot([v['step'] for v in curves],[v['validation'][modality]['nll'] for v in curves],marker='o',label=modality.capitalize(),color=color)
+        ax.plot([v['step'] for v in curves],[v['validation'][modality]['nll'] for v in curves],marker='o',label=('DNA' if modality=='dna' else modality.capitalize()),color=color)
     ax.axvline(128,color='#999999',linestyle=':',linewidth=1)
     ax.set(xlabel='CPT update (128-step embedding/head warmup)',ylabel='Fixed-mask validation NLL',title='A. MLM adaptation includes a fresh prediction head')
     ax.legend(frameon=False)

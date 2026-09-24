@@ -60,7 +60,7 @@ Values below are the intended first recipe; verify feasibility and embedding beh
 | EMB-01 | Validate embedding/decoder training correctness and cost | Synthetic tiny model + a short real-model train-only smoke | No result claim | PASS |
 | CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | COMPLETE (v2) |
 | A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | COMPLETE (v2) |
-| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | RUNNING (v2) |
+| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | COMPLETE (v2) |
 
 CPT intended per-effective-batch mixture: 14 DNA / 14 protein / 4 text. MLM masking: 15% eligible body tokens with 80% mask / 10% within-modality random token / 10% unchanged. Ensure at least one eligible target per sequence. Target counts determine loss normalization across micro-batches. Use BF16 autocast and FP32 parameters; gradient checkpointing and clipping 1.0.
 
@@ -106,6 +106,10 @@ DNA source/BPE and all three promoter SFT JSONL files have identical hashes to v
 
 Primary artifacts: `/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2`. The complete corrected round is expected to require about 65–75 minutes after launch. The faulty source and all diagnostic artifacts remain intact.
 
-## Corrected 4K result (full pair still running)
+## Completed corrected round
 
-No-CPT/CPT development accuracy is 0.825095/0.875475 at the fixed 192-update endpoint, a +5.038 pp paired difference; macro-F1 is 0.824445/0.875456. Descriptive paired-group 95% interval: [+3.137,+7.034] pp. The repeated no-CPT baseline exactly matches the original 192-step trace and all six prediction files. Both full-data 786-update fits continue under the same frozen recipe.
+All five fits and the independent audit passed. Fixed-final-step no-CPT/CPT accuracy is 82.51%/87.55% with 4,096 labels (+5.04 pp; descriptive 95% interval [+3.14,+7.03] pp), and 90.02%/89.92% with 16,766 labels (−0.10 pp; interval [−1.43,+1.24] pp). The evidence supports a benefit at the smaller tested label budget under this recipe, not a universal CPT advantage. Full-data CPT fits training more strongly (95.12% versus 92.32%) without higher development accuracy.
+
+The corrected round took 70.54 minutes. The corrected-v2 smoke (recorded in its immutable round manifest) used 7,989,482,496 peak GPU bytes, about 0.714 s/full-CPT update and 1.472 s/first-SFT update; the earlier preflight timing paragraph above describes the original v1 smoke estimate. All final retained model hashes/reloads, 24 metric points, full CPT mask/sampler replay and saved continuation state were verified. No test inference. [Final report and curves](../research/laya_biocpt_round1.md).
+
+The old interface/GFP route remains paused. Further seed confirmation, protein-task SFT and few-shot/zero-shot studies remain planned; this round does not claim their completion.

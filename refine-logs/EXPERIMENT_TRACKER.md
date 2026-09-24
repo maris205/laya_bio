@@ -95,3 +95,7 @@ A whole-file scan of historical protein_uni_16.txt (16,955,660,631 bytes; SHA256
 ### 2026-09-24: corrected-source 4K pair complete
 
 With canonical-residue-complete admitted protein data, 128+1,024 CPT updates and identical 192-update promoter SFT produce 82.51%/87.55% no-CPT/CPT development accuracy (+5.04 pp; descriptive paired-group 95% interval [+3.14,+7.03] pp). Macro-F1: 0.8244/0.8755. Protein N receives 27,991 natural occurrences and 4,196 targets. Old-row warmup invariance and all checkpoint reload checks pass. No-CPT repetition is exact, not an independent seed. Full-data pair remains running. [Corrected primary report](../research/laya_biocpt_round1.md).
+
+### 2026-09-24 UTC: corrected traditional CPT/SFT round complete
+
+All five fits completed in 70.54 minutes. Promoter dev no-CPT/CPT accuracy: 4K 82.51%/87.55% (+5.04 pp, descriptive paired-group 95% interval [+3.14,+7.03]); full16,766 90.02%/89.92% (−0.10 pp, interval [−1.43,+1.24]). Full-data train accuracy 92.32%/95.12%: stronger training fit without dev-accuracy improvement. All 24 metric points independently reproduced; 1,152 CPT sampling/masking steps and saved RNG/sampler state match replay; all retained checkpoint hashes and reloads pass. Actual CPT input 6,770,136 tokens / 990,605 masked targets. Protein N has 24,210 natural visible inputs and 4,196 targets after the source repair. Single seed, reused dev, no test inference or few/zero-shot claim. Old route remains paused. [Final report](../research/laya_biocpt_round1.md).

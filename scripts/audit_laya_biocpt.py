@@ -95,6 +95,7 @@ def main():
                'masked_target_occurrences':targets[e['expanded_id']]} for e in entries]
     # Every published train/dev metric is independently recomputed with sklearn.
     metric_checks=0
+    max_probability_sum_error=0.
     for name in ['no_cpt_4096','cpt_4096','no_cpt_full','cpt_full']:
         folder=root/name
         cfg=load(folder/'run_config.json')
@@ -118,7 +119,12 @@ def main():
             probs=np.array([r['probs'] for r in pred])
             assert np.array_equal(probs.argmax(-1),yh)
             np.testing.assert_allclose(probs.sum(1),1,rtol=0,atol=1e-6)
-            np.testing.assert_allclose([accuracy_score(y,yh),f1_score(y,yh,average='macro'),log_loss(y,probs,labels=[0,1])],[point['accuracy'],point['macro_f1'],point['nll']],atol=1e-7,rtol=1e-6)
+            max_probability_sum_error=max(max_probability_sum_error,float(np.abs(probs.sum(1)-1).max()))
+            # Stored values are FP32 softmax outputs, now represented as FP64.
+            # Remove only their measured summation roundoff before sklearn's
+            # FP64 probability validation; original predictions stay unchanged.
+            normalized_probs=probs/probs.sum(1,keepdims=True)
+            np.testing.assert_allclose([accuracy_score(y,yh),f1_score(y,yh,average='macro'),log_loss(y,normalized_probs,labels=[0,1])],[point['accuracy'],point['macro_f1'],point['nll']],atol=1e-7,rtol=1e-6)
             assert confusion_matrix(y,yh,labels=[0,1]).tolist()==point['confusion']
             np.testing.assert_allclose(recall_score(y,yh,labels=[0,1],average=None),point['per_class_recall'])
             metric_checks+=1
@@ -146,6 +152,8 @@ def main():
     result={'status':'pass','hashed_files_checked':len(checked)+1,'CPT_updates_replayed':1152,'CPT_actual_presentations':dict(presentations),'CPT_actual_input_tokens_including_prefix_special':input_tokens,'CPT_actual_masked_targets':sum(r['masked_targets'] for r in ct),'CPT_token_input_and_target_counts_exact':True,'natural_visible_input_token_coverage':sum(v['natural_occurrences_visible_after_masking']>0 for v in exposure),'tokens_without_natural_visible_input':[v['token'] for v in exposure if not v['natural_occurrences_visible_after_masking']],'old_rows_exactly_invariant_during_warmup':True,'SFT_metric_points_independently_recomputed':metric_checks,'all_retained_checkpoint_hashes_verified':True,'paired_classifier_initialization_and_batch_order_match':True,'test_inference':False}
     a.output.parent.mkdir(parents=True,exist_ok=True)
     result['encoder_first_MLP_matrix_max_change']=change
+    result['max_saved_FP32_probability_sum_roundoff']=max_probability_sum_error
+    result['independent_NLL_check']='Normalize only measured FP32 summation roundoff before sklearn FP64 log_loss; compare original NLL with atol=1e-7, rtol=1e-6.'
     result['canonical_residue_composition_independently_recomputed']=True
     result['protein_N_characters_in_admitted_training_snapshot']=composition['protein']['N']
     result['resume_sampler_and_mask_RNG_match_exact_replay']=True

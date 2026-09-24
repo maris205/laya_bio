@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "hashed_files_checked": 20,
+  "CPT_updates_replayed": 1152,
+  "CPT_actual_presentations": {
+    "dna": 16128,
+    "text": 4608,
+    "protein": 16128
+  },
+  "CPT_actual_input_tokens_including_prefix_special": 6770136,
+  "CPT_actual_masked_targets": 990605,
+  "CPT_token_input_and_target_counts_exact": true,
+  "natural_visible_input_token_coverage": 2039,
+  "tokens_without_natural_visible_input": [
+    "<BIO_DNA:N>",
+    "<BIO_PROTEIN:J>",
+    "<BIO_PROTEIN:O>",
+    "<BIO_PROTEIN:U>",
+    "<BIO_PROTEIN:Z>"
+  ],
+  "old_rows_exactly_invariant_during_warmup": true,
+  "SFT_metric_points_independently_recomputed": 24,
+  "all_retained_checkpoint_hashes_verified": true,
+  "paired_classifier_initialization_and_batch_order_match": true,
+  "test_inference": false,
+  "encoder_first_MLP_matrix_max_change": 0.002601703628897667,
+  "max_saved_FP32_probability_sum_roundoff": 8.754432201385498e-08,
+  "independent_NLL_check": "Normalize only measured FP32 summation roundoff before sklearn FP64 log_loss; compare original NLL with atol=1e-7, rtol=1e-6.",
+  "canonical_residue_composition_independently_recomputed": true,
+  "protein_N_characters_in_admitted_training_snapshot": 459623,
+  "resume_sampler_and_mask_RNG_match_exact_replay": true,
+  "resume_optimizer_parameter_states": 173,
+  "resume_optimizer_full_phase_steps": 1024,
+  "same_arm_initial_dev_predictions_identical_across_data_sizes": true,
+  "CPT_actual_masked_targets_by_modality": {
+    "dna": 560260,
+    "protein": 359079,
+    "text": 71266
+  }
+}
