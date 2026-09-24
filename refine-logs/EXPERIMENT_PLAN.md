@@ -1,6 +1,6 @@
 # Experiment plan: Jev-style decision models for biological sequences
 
-Date: 2026-09-24. **Status: formal design remains prospective; two separate six-task engineering pilots are complete, and a three-pass development round is running.** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
+Date: 2026-09-24. **Status: formal design remains prospective; two separate six-task engineering pilots are complete, and the three-pass development round is complete (dev only).** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
 
 ## Problem anchor
 

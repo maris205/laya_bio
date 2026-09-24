@@ -1,0 +1,655 @@
+{
+  "status": "engineering_pilot_not_confirmatory",
+  "constant_baselines": {
+    "description": "Training-only class/prevalence/mean constants; no sequence input. Score also reports the training median for MAE.",
+    "metrics": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.453125,
+        "macro_f1": 0.3118279569892473,
+        "nll": 0.6997768558764313,
+        "mcc": 0.0,
+        "auroc": 0.5,
+        "auprc": 0.453125
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.5703125,
+        "macro_f1": 0.24212271973466004,
+        "nll": 0.9869985469008178
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.3515625,
+        "macro_f1": 0.07431874483897605,
+        "nll": 1.6078208097137954
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 0.890625,
+        "macro_f1": 0.47107438016528924,
+        "nll": 0.5989599118990716,
+        "mcc": 0.0,
+        "auroc": 0.5,
+        "auprc": 0.890625
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.28125,
+        "macro_f1": 0.08780487804878048,
+        "nll": 1.6095697137542606,
+        "score_prediction": {
+          "mae": 0.6292742364639707,
+          "rmse": 0.875036778833733,
+          "spearman": null
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0,
+        "training_median": {
+          "mae": 0.5623234296217561,
+          "rmse": 0.9829873726468145,
+          "constant": 3.5493682622909546
+        }
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.29635840693804405,
+        "macro_auprc_observed_labels": 0.12109375,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.0,
+        "macro_f1_at_0_5": 0.0,
+        "brier_mean_per_label": 0.09252290725708008
+      },
+      "homology_alignment_baseline": {
+        "description": "Global affine-gap alignment score / maximum sequence length; not a probability. Threshold maximizes train MCC over 101 train-score quantiles.",
+        "match": 1.0,
+        "mismatch": -1.0,
+        "gap_open": -2.0,
+        "gap_extend": -0.5,
+        "train_selected_threshold": -0.2770725096001806,
+        "dev_accuracy": 1.0,
+        "dev_mcc": 1.0,
+        "dev_auroc": 1.0,
+        "dev_auprc": 1.0
+      }
+    },
+    "support": {
+      "promoter": {
+        "train_class_counts": [
+          484,
+          540
+        ],
+        "dev_class_counts": [
+          70,
+          58
+        ]
+      },
+      "splice": {
+        "train_class_counts": [
+          221,
+          201,
+          602
+        ],
+        "dev_class_counts": [
+          21,
+          34,
+          73
+        ]
+      },
+      "structural_class": {
+        "train_class_counts": [
+          145,
+          206,
+          352,
+          223,
+          22,
+          11,
+          65
+        ],
+        "dev_class_counts": [
+          16,
+          29,
+          45,
+          23,
+          0,
+          2,
+          13
+        ]
+      },
+      "homology_pair": {
+        "train_class_counts": [
+          445,
+          579
+        ],
+        "dev_class_counts": [
+          14,
+          114
+        ]
+      },
+      "fluorescence": {
+        "train_class_counts": [
+          205,
+          205,
+          204,
+          205,
+          205
+        ],
+        "dev_class_counts": [
+          36,
+          23,
+          29,
+          19,
+          21
+        ]
+      },
+      "multilabel_location": {
+        "train_positive_counts": [
+          342.0,
+          333.0,
+          122.0,
+          161.0,
+          98.0,
+          43.0,
+          82.0,
+          55.0,
+          53.0,
+          12.0
+        ],
+        "dev_positive_counts": [
+          46.0,
+          41.0,
+          22.0,
+          18.0,
+          12.0,
+          2.0,
+          3.0,
+          4.0,
+          6.0,
+          1.0
+        ]
+      }
+    }
+  },
+  "candidate": {
+    "kind": "candidate",
+    "seed": 20260924,
+    "updates": 576,
+    "effective_entity_batch": 32,
+    "micro_batch": 4,
+    "lr": 2e-05,
+    "task_info": {
+      "promoter": {
+        "primitive": "noul",
+        "n_outputs": 2
+      },
+      "splice": {
+        "primitive": "choice",
+        "n_outputs": 3
+      },
+      "structural_class": {
+        "primitive": "choice",
+        "n_outputs": 7
+      },
+      "homology_pair": {
+        "primitive": "noul",
+        "n_outputs": 2
+      },
+      "fluorescence": {
+        "primitive": "score",
+        "n_outputs": 5,
+        "thresholds": [
+          3.141272211074829,
+          3.4799447059631348,
+          3.6054962158203123,
+          3.7054280757904055
+        ],
+        "anchors": [
+          1.7097083533682473,
+          3.337997840090496,
+          3.5458731662993337,
+          3.6584719692788474,
+          3.769515191054926
+        ],
+        "train_min": 1.2975002527236938,
+        "train_max": 4.020859241485596,
+        "fit_entities": 1024,
+        "mean": 3.2039797494653612,
+        "std": 0.8106411840519695
+      },
+      "multilabel_location": {
+        "primitive": "multilabel",
+        "n_outputs": 10
+      }
+    },
+    "data_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+    "script_sha256": "382b83d6f8be74c73dd3540453b3c9c1f1853b09b8bdee839dd23a08a461e993",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_total_gib": 31.47540283203125,
+    "test_access": false,
+    "status": "engineering_pilot_not_confirmatory",
+    "initialization": "original_Laya_not_legacy_task_finetune",
+    "score_control_loss": null,
+    "complete": true,
+    "training_seconds": 2223.924146360019,
+    "peak_allocated_gib": 7.886582851409912,
+    "entity_presentations": {
+      "multilabel_location": 3072,
+      "fluorescence": 3072,
+      "splice": 3072,
+      "homology_pair": 3072,
+      "structural_class": 3072,
+      "promoter": 3072
+    },
+    "proposition_presentations": {
+      "multilabel_location": 30720,
+      "fluorescence": 3072,
+      "splice": 3072,
+      "homology_pair": 3072,
+      "structural_class": 3072,
+      "promoter": 3072
+    },
+    "type_embedding_update_norms": {
+      "choice": 0.007782205007970333,
+      "score": 0.013367624953389168,
+      "noul": 0.011818364262580872
+    },
+    "before": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.453125,
+        "macro_f1": 0.3118279569892473,
+        "nll": 1.0260544892421528,
+        "mcc": 0.0,
+        "auroc": 0.40923645320197044,
+        "auprc": 0.4308749550791529
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.484375,
+        "macro_f1": 0.25376811594202897,
+        "nll": 1.0443946677925358
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.03125,
+        "macro_f1": 0.028936170212765955,
+        "nll": 1.9687527418574449
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 0.3046875,
+        "macro_f1": 0.2814884894355093,
+        "nll": 0.9785340839382388,
+        "mcc": -0.10784549470606127,
+        "auroc": 0.35964912280701755,
+        "auprc": 0.8509698072362251
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.1796875,
+        "macro_f1": 0.06133333333333333,
+        "nll": 1.7824501396729264,
+        "score_prediction": {
+          "mae": 0.5692682603339239,
+          "rmse": 0.9238987907563493,
+          "spearman": -0.12770188397229146
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.11748863720341382,
+        "macro_auprc_observed_labels": 0.16169573930779063,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.21081081081081082,
+        "macro_f1_at_0_5": 0.1772927676643859,
+        "brier_mean_per_label": 0.2535954525383161
+      }
+    },
+    "after": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.8359375,
+        "macro_f1": 0.8329916123019572,
+        "nll": 0.3598251039976653,
+        "mcc": 0.6686123974547408,
+        "auroc": 0.9307881773399015,
+        "auprc": 0.9275735100748557
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.5703125,
+        "macro_f1": 0.2753584468786179,
+        "nll": 0.9691312168924782
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.484375,
+        "macro_f1": 0.2988409704036873,
+        "nll": 1.3178770254155396
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "nll": 0.0012156689772673118,
+        "mcc": 1.0,
+        "auroc": 1.0,
+        "auprc": 1.0
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.1484375,
+        "macro_f1": 0.05170068027210885,
+        "nll": 1.612466909170252,
+        "score_prediction": {
+          "mae": 0.6241847071701271,
+          "rmse": 0.8766147487765689,
+          "spearman": 0.113220531063657
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.3264401707874424,
+        "macro_auprc_observed_labels": 0.19944870556908517,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.0718562874251497,
+        "macro_f1_at_0_5": 0.0322061191626409,
+        "brier_mean_per_label": 0.09142939234353722
+      }
+    },
+    "dev_eval_seconds": 11.384019945049658,
+    "reload_max_probability_error": 0.0,
+    "checkpoint_reload_passed": true,
+    "checkpoint_sha256": "ba80bea2e6a22eecde4fb650322c8da6d5c0b6cff85faf079013c448104e02f0",
+    "limitations": [
+      "No new global homology clustering or genomic-coordinate split.",
+      "GFP native variant split intentionally shares a parent protein.",
+      "Limited source provenance for local paired homology.",
+      "Only Laya full-input eligibility checked; not a common generator subset yet.",
+      "Dev outcomes are engineering diagnostics, not held-out paper test results."
+    ]
+  },
+  "shared_heads": {
+    "kind": "shared_heads",
+    "seed": 20260924,
+    "updates": 576,
+    "effective_entity_batch": 32,
+    "micro_batch": 4,
+    "lr": 2e-05,
+    "task_info": {
+      "promoter": {
+        "primitive": "noul",
+        "n_outputs": 2
+      },
+      "splice": {
+        "primitive": "choice",
+        "n_outputs": 3
+      },
+      "structural_class": {
+        "primitive": "choice",
+        "n_outputs": 7
+      },
+      "homology_pair": {
+        "primitive": "noul",
+        "n_outputs": 2
+      },
+      "fluorescence": {
+        "primitive": "score",
+        "n_outputs": 5,
+        "thresholds": [
+          3.141272211074829,
+          3.4799447059631348,
+          3.6054962158203123,
+          3.7054280757904055
+        ],
+        "anchors": [
+          1.7097083533682473,
+          3.337997840090496,
+          3.5458731662993337,
+          3.6584719692788474,
+          3.769515191054926
+        ],
+        "train_min": 1.2975002527236938,
+        "train_max": 4.020859241485596,
+        "fit_entities": 1024,
+        "mean": 3.2039797494653612,
+        "std": 0.8106411840519695
+      },
+      "multilabel_location": {
+        "primitive": "multilabel",
+        "n_outputs": 10
+      }
+    },
+    "data_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+    "script_sha256": "382b83d6f8be74c73dd3540453b3c9c1f1853b09b8bdee839dd23a08a461e993",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "gpu_total_gib": 31.47540283203125,
+    "test_access": false,
+    "status": "engineering_pilot_not_confirmatory",
+    "initialization": "original_Laya_not_legacy_task_finetune",
+    "score_control_loss": "half ordinal CE plus half standardized scalar MSE",
+    "complete": true,
+    "training_seconds": 997.7893641670235,
+    "peak_allocated_gib": 7.879580020904541,
+    "entity_presentations": {
+      "multilabel_location": 3072,
+      "fluorescence": 3072,
+      "splice": 3072,
+      "homology_pair": 3072,
+      "structural_class": 3072,
+      "promoter": 3072
+    },
+    "proposition_presentations": {
+      "multilabel_location": 3072,
+      "fluorescence": 3072,
+      "splice": 3072,
+      "homology_pair": 3072,
+      "structural_class": 3072,
+      "promoter": 3072
+    },
+    "type_embedding_update_norms": {
+      "choice": 0.009800311177968979,
+      "score": 0.028082488104701042,
+      "noul": 0.019793620333075523
+    },
+    "before": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.546875,
+        "macro_f1": 0.35353535353535354,
+        "nll": 1.1299920434224382,
+        "mcc": 0.0,
+        "auroc": 0.5077586206896552,
+        "auprc": 0.5367939336758853
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.5703125,
+        "macro_f1": 0.24212271973466004,
+        "nll": 1.1702110661911211
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.3515625,
+        "macro_f1": 0.07431874483897605,
+        "nll": 1.9636697801131384
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 0.109375,
+        "macro_f1": 0.09859154929577464,
+        "nll": 2.762323094826169,
+        "mcc": 0.0,
+        "auroc": 0.5535714285714286,
+        "auprc": 0.9229025052533265
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.28125,
+        "macro_f1": 0.08780487804878048,
+        "nll": 2.0391975026159503,
+        "score_prediction": {
+          "mae": 0.954499877564564,
+          "rmse": 0.9841256566255319,
+          "spearman": -0.23052833822476076
+        },
+        "scalar_prediction": {
+          "mae": 2.2076011946428404,
+          "rmse": 2.3721813673531984,
+          "spearman": -0.17033190702049225
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.12437158163910293,
+        "macro_auprc_observed_labels": 0.13458894217618259,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.23376623376623376,
+        "macro_f1_at_0_5": 0.07923885036635299,
+        "brier_mean_per_label": 0.2496677120490051
+      }
+    },
+    "after": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.7578125,
+        "macro_f1": 0.7465346534653465,
+        "nll": 0.5455669791620179,
+        "mcc": 0.5155520721199816,
+        "auroc": 0.8091133004926109,
+        "auprc": 0.8148327801264196
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.5703125,
+        "macro_f1": 0.24212271973466004,
+        "nll": 0.9790171623576593
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.421875,
+        "macro_f1": 0.14622531939605107,
+        "nll": 1.5285447983364735
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 0.921875,
+        "macro_f1": 0.8454852728150652,
+        "nll": 0.26253468644529293,
+        "mcc": 0.7294955398698875,
+        "auroc": 0.9887218045112782,
+        "auprc": 0.9986672709204125
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.2265625,
+        "macro_f1": 0.07388535031847134,
+        "nll": 1.633205482663978,
+        "score_prediction": {
+          "mae": 0.6564119202731706,
+          "rmse": 0.868761757063001,
+          "spearman": 0.08723319027217394
+        },
+        "scalar_prediction": {
+          "mae": 0.6224689389148055,
+          "rmse": 0.8776307516404673,
+          "spearman": -0.02045605845632005
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.26889873212202836,
+        "macro_auprc_observed_labels": 0.1413670096038812,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.0,
+        "macro_f1_at_0_5": 0.0,
+        "brier_mean_per_label": 0.09389082256542913
+      }
+    },
+    "dev_eval_seconds": 4.601022589020431,
+    "reload_max_probability_error": 0.0,
+    "checkpoint_reload_passed": true,
+    "checkpoint_sha256": "28578cdb1421545fdd79badd4205edea082fb33f06086a9e2063f2e187a680c3",
+    "limitations": [
+      "No new global homology clustering or genomic-coordinate split.",
+      "GFP native variant split intentionally shares a parent protein.",
+      "Limited source provenance for local paired homology.",
+      "Only Laya full-input eligibility checked; not a common generator subset yet.",
+      "Dev outcomes are engineering diagnostics, not held-out paper test results."
+    ]
+  },
+  "matched_entity_exposure": true
+}

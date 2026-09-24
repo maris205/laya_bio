@@ -1,6 +1,6 @@
 # Jev-style biological decision experiment tracker
 
-Updated 2026-09-24. **Formal suite prospective; two six-task 100-update engineering pilots are complete; the three-pass development round is running.** Task IDs are defined in the [24-view catalog](../research/biological_decision_task_catalog.md). Core task IDs C01–C12 are distinct from run IDs below.
+Updated 2026-09-24. **Formal suite prospective; two six-task 100-update engineering pilots are complete; the three-pass development round is complete (dev only).** Task IDs are defined in the [24-view catalog](../research/biological_decision_task_catalog.md). Core task IDs C01–C12 are distinct from run IDs below.
 
 | Run/work ID | Purpose | Status |
 |---|---|---|
@@ -31,4 +31,4 @@ Pilot results and their narrower admission scope are tracked in the [execution r
 
 | Additional run | Scope | Status |
 |---|---|---|
-| DEV-ROUND1-C/HM | Same 6,144-entity training subset; each task three passes; 576 updates/model | LAUNCHED 2026-09-24 03:39 UTC; candidate then shared heads; 2-hour total cap; dev only |
+| DEV-ROUND1-C/HM | Same 6,144-entity training subset; each task three passes; 576 updates/model | COMPLETE 2026-09-24 04:34 UTC; both 576 steps, hashes/reload PASS; 55.54 minutes total; dev only |

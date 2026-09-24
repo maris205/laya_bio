@@ -1,6 +1,6 @@
 # 六任务联合训练 pilot
 
-日期：2026-09-24。状态：两个 100 步 pilot 已完成；六任务子集三遍曝光训练队列已启动。该轮是工程性可行性实验，不能代替新的同源隔离测试或正式三 seed 比较。
+日期：2026-09-24。状态：两个 100 步 pilot 已完成；六任务子集三遍曝光训练也已完成。该轮是工程性可行性实验，不能代替新的同源隔离测试或正式三 seed 比较。
 
 ## 问题与训练设置
 
@@ -55,12 +55,33 @@
 
 共享评分器纯训练耗时 6.42 分钟，共享多头 2.57 分钟，峰值 allocated 显存分别 7.89/7.88 GiB。候选面板重复编码序列，成本高于一次输出十个 sigmoid 的共享多头；这些是训练成本，不是推理延迟比较。
 
-## 已启动的后续训练
+## 已完成的三遍曝光训练
 
 从相同原始初始化重新开始，在同一六任务开发子集上，每个任务完整曝光三遍。共享评分器和共享多头各 576 步、有效 batch 32，单卡顺序运行；不是从 pilot checkpoint 续训。保持原学习率和任务均衡规则，不因查看 dev 结果换任务、改标签或选择最优 checkpoint。
 
-启动时间为 2026-09-24 03:39 UTC；根据 pilot 实测预计总共约 55–65 分钟，队列总时限两小时。此估计会随实际运行速度变化。两项完成后自动保存 checkpoint、dev 结果、重载校验及对比 JSON。
+运行时间为 2026-09-24 03:39–04:34 UTC，实际总耗时 55.54 分钟；两个进程正常退出，均跑满 576 步。每任务恰好曝光 3,072 个样本。两个 checkpoint 的 SHA-256 与记录一致，重载 dev 概率最大差均为 0，训练损失和梯度全部有限，日志未发现 OOM 或异常栈。
 
-本地目录：`/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/development_round1/`。`status.json` 为实时队列状态；`candidate.log` / `shared_heads.log` 为日志；最终 `comparison.json` 自动汇总。Git 中的 [launch record](../artifacts/laya_multitask_pilot/development_round1_launch.json) 是启动快照，不是任务已完成的证明。
+本地目录：`/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/development_round1/`。`status.json` 为实时队列状态；`candidate.log` / `shared_heads.log` 为日志；最终 `comparison.json` 已自动汇总。Git 中的 [launch record](../artifacts/laya_multitask_pilot/development_round1_launch.json) 是启动快照，不是任务已完成的证明。
 
 调度脚本：[run_laya_multitask_round.py](../scripts/run_laya_multitask_round.py)。它先核验两个 pilot 的完成/重载状态和 GPU 空闲，再顺序执行，并在失败或总时限到达后停止。本轮仍没有全局同源独立性、生成式对照、12 任务全量训练或正式三 seed 结果。
+
+### 三遍曝光后的 dev 结果
+
+仍为单 seed、每任务 128 个 dev 样本，原测试集未做新推理。表中的共享多头也已训练 576 步，并使用相同生物样本曝光预算。
+
+| 任务 | 指标 | 简单基线 | 共享评分器 | 共享多头 |
+|---|---|---:|---:|---:|
+| 启动子 | Accuracy ↑ | 45.31% | 83.59% | 75.78% |
+| 剪接 | Accuracy ↑ | 57.03% | 57.03% | 57.03% |
+| 结构类别 | Accuracy ↑ | 35.16% | 48.44% | 42.19% |
+| 双蛋白同源 | AUROC ↑ | 1.0000（序列比对） | 1.0000 | 0.9887 |
+| GFP 荧光 | MAE ↓ | 0.5623（训练中位数） | 0.6242 | 0.6225（标量头） |
+| 多标签定位 | Micro-AUPRC ↑ | 0.2964（训练先验） | 0.3264 | 0.2689 |
+
+评分器相对 100 步 pilot 的启动子 Accuracy 从 77.34% 提升到 83.59%，结构类别从 43.75% 到 48.44%；本轮相对多头分别高 7.81 和 6.25 个百分点。这是当前开发子集的观察，不是跨 seed 显著性或测试集结论。
+
+剪接 Accuracy 仍等于多数类基线；评分器 Macro-F1 从 0.2421 到 0.2754，但不能据此说该任务已经学好。GFP Score 的 Spearman 从 -0.0951 到 0.1132，训练末尾 CE 约 1.61，接近五类均匀预测的交叉熵；MAE 仍差于训练中位数，尚无有效回归优势。多标签 Micro-AUPRC 有改善，但固定 0.5 阈值的 Micro-F1 仅 0.0719，多头为 0；需要在独立 calibration 上处理阈值，不能在当前 dev 上追分。
+
+同源配对评分器 Accuracy/AUROC 均为 1，仍与简单比对持平，不能当成核心方法优势。下一步应优先诊断剪接标签/输入及 Score 的可学习性，并为多标签增加独立校准，再决定是否扩大到 12 个任务及多 seed。可通过同预算的单任务锚点区分联合训练干扰与底座/输入表示不足；本轮尚未做这项因果区分。
+
+纯训练耗时：评分器 37.07 分钟、多头 16.63 分钟；峰值 allocated 显存分别 7.89/7.88 GiB。完整结果及完成状态见 [round1 artifacts](../artifacts/laya_multitask_round1/)。本次检查未启动新训练或新测试集推理。
