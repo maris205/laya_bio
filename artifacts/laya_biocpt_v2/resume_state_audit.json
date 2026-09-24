@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "global_step": 1152,
+  "phase": "full",
+  "optimizer_parameter_states": 173,
+  "optimizer_step_values": [
+    1024.0
+  ],
+  "sampler_positions": {
+    "dna": 16128,
+    "protein": 16128,
+    "text": 4608
+  },
+  "saved_torch_rng": true,
+  "saved_cuda_rng": true,
+  "saved_mask_rng": true,
+  "saved_sampler_rng": true,
+  "saved_python_numpy_rng": true,
+  "resume_bytes": 3184219486,
+  "resume_sha256": "cb74488a80401d5c9d1fd086a37f0fe1fc148b8a1efb63f9677a5d5d564938e7"
+}

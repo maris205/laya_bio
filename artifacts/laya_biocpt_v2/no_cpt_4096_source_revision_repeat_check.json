@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "same_seed_repeat_not_an_independent_seed": true,
+  "SFT_updates_with_exact_loss_and_gradient_trace_match": 192,
+  "prediction_files_identical_byte_for_byte": {
+    "dev_epoch0_predictions.jsonl": true,
+    "train_epoch0_predictions.jsonl": true,
+    "dev_epoch1_predictions.jsonl": true,
+    "dev_epoch2_predictions.jsonl": true,
+    "dev_epoch3_predictions.jsonl": true,
+    "train_epoch3_predictions.jsonl": true
+  },
+  "interpretation": "DNA input encoding, initialization on used IDs, classifier and optimizer behavior are unchanged by the protein source correction."
+}

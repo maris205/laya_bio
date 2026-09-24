@@ -58,9 +58,9 @@ Values below are the intended first recipe; verify feasibility and embedding beh
 |---|---|---|---|---|
 | DATA-01 | Admission, new vocabulary and full-task data | Filtered CPT + frozen SFT splits | CPU preprocessing | COMPLETE |
 | EMB-01 | Validate embedding/decoder training correctness and cost | Synthetic tiny model + a short real-model train-only smoke | No result claim | PASS |
-| CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | QUEUED (v2) |
-| A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | QUEUED (v2) |
-| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | QUEUED (v2) |
+| CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | COMPLETE (v2) |
+| A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | COMPLETE (v2) |
+| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | RUNNING (v2) |
 
 CPT intended per-effective-batch mixture: 14 DNA / 14 protein / 4 text. MLM masking: 15% eligible body tokens with 80% mask / 10% within-modality random token / 10% unchanged. Ensure at least one eligible target per sequence. Target counts determine loss normalization across micro-batches. Use BF16 autocast and FP32 parameters; gradient checkpointing and clipping 1.0.
 
@@ -105,3 +105,7 @@ The v2 protein source is the local historical `protein_lucaone_15g.txt`. Its adm
 DNA source/BPE and all three promoter SFT JSONL files have identical hashes to v1. All optimizer settings, initial model, classifier, seeds, batch sizes, budgets and endpoint definitions remain fixed. Protein samples and protein BPE are regenerated from the substituted source; their MLM losses are not directly compared to v1 as a controlled vocabulary-only effect. Repeat all four SFT runs in v2, including both no-CPT baselines, to preserve an uncomplicated complete paired record. This source correction follows already-observed v1 development outcomes and remains exploratory; no blind confirmation claim.
 
 Primary artifacts: `/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2`. The complete corrected round is expected to require about 65–75 minutes after launch. The faulty source and all diagnostic artifacts remain intact.
+
+## Corrected 4K result (full pair still running)
+
+No-CPT/CPT development accuracy is 0.825095/0.875475 at the fixed 192-update endpoint, a +5.038 pp paired difference; macro-F1 is 0.824445/0.875456. Descriptive paired-group 95% interval: [+3.137,+7.034] pp. The repeated no-CPT baseline exactly matches the original 192-step trace and all six prediction files. Both full-data 786-update fits continue under the same frozen recipe.

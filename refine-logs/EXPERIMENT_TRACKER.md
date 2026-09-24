@@ -91,3 +91,7 @@ CPT completed 128 new-row/head warmup + 1,024 full-encoder updates with verified
 ### 2026-09-24: protein-source defect; supersede v1 and repeat complete matrix
 
 A whole-file scan of historical protein_uni_16.txt (16,955,660,631 bytes; SHA256 fc8de807efdfc94b51d54bfd73a66403b76c8a49bd0b056184356736bc3d5876) finds zero N/n characters. Preserve v1 CPT/4K diagnostic results; stop its incomplete full-data queue. Switch to historical LucaOne protein data, require all 20 canonical residues, verify old-source rejection and unchanged DNA/SFT hashes, and repeat the same complete CPT + four-SFT matrix as v2. No changes motivated by selecting better development scores. Root cause upstream unknown. [Superseded diagnostic](../research/laya_biocpt_source_diagnostic.md), [corrected round](../research/laya_biocpt_round1.md).
+
+### 2026-09-24: corrected-source 4K pair complete
+
+With canonical-residue-complete admitted protein data, 128+1,024 CPT updates and identical 192-update promoter SFT produce 82.51%/87.55% no-CPT/CPT development accuracy (+5.04 pp; descriptive paired-group 95% interval [+3.14,+7.03] pp). Macro-F1: 0.8244/0.8755. Protein N receives 27,991 natural occurrences and 4,196 targets. Old-row warmup invariance and all checkpoint reload checks pass. No-CPT repetition is exact, not an independent seed. Full-data pair remains running. [Corrected primary report](../research/laya_biocpt_round1.md).

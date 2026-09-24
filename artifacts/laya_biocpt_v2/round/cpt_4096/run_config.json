@@ -1,0 +1,16 @@
+{
+  "arm": "CPT",
+  "samples": 4096,
+  "epochs": 3,
+  "updates": 192,
+  "effective_batch": 64,
+  "micro_batch": 8,
+  "batch_order_sha256": "6029308f1f58eef4511e05fe2100f7795307364a47e0372a812b310dea258d88",
+  "initial_classifier_sha256": "18ad82e1278a2ab962e2c281cb18042d83dc08f78d5eccf4d4016f4056d5ac16",
+  "seed": 20260925,
+  "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+  "encoder_initial_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+  "test_access": false,
+  "final_step_primary": true,
+  "precision": "FP32 parameters, BF16 autocast"
+}

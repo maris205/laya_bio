@@ -1,0 +1,18 @@
+{
+  "warmup_steps": 128,
+  "full_steps": 1024,
+  "micro_batch": 8,
+  "effective_batch": 32,
+  "mixture": {
+    "dna": 14,
+    "protein": 14,
+    "text": 4
+  },
+  "seed": 20260925,
+  "data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+  "base_model_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+  "test_access": false,
+  "fresh_MLM_head": true,
+  "optimizer_reset_after_warmup": true,
+  "smoke_only": false
+}

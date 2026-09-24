@@ -1,18 +1,20 @@
 {
   "status": "running",
-  "current": "cpt",
+  "current": "no_cpt_full",
   "command": [
     "/root/miniconda3/bin/python",
     "-u",
     "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/round/frozen_code/laya_biocpt_train.py",
-    "cpt",
+    "sft",
     "--model-dir",
     "/root/autodl-tmp/jev_gene/artifacts/laya_model",
     "--data-dir",
     "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/data",
     "--output",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/round/cpt",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/round/no_cpt_full",
     "--micro",
-    "8"
+    "8",
+    "--samples",
+    "full"
   ]
 }
