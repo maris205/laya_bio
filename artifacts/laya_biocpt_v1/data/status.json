@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "created_utc": "2026-09-24T14:42:38.326683+00:00",
+  "test_targets_used": false,
+  "test_inference": false,
+  "heldout_sequences_used_for_exclusion_only": true,
+  "phase": "complete",
+  "updated_utc": "2026-09-24T14:44:55.710706+00:00",
+  "protected_sequence_counts": {
+    "promoter_detection:selection_dev": 1052,
+    "promoter_detection:calibration": 1053,
+    "promoter_detection:test": 2145,
+    "fold_class:selection_dev": 939,
+    "fold_class:calibration": 942,
+    "fold_class:test": 1994
+  },
+  "guard_kmers": {
+    "dna": 2242730,
+    "protein": 620424
+  },
+  "accepted": 8192,
+  "attempts": 15487,
+  "sft": {
+    "train_4096": {
+      "rows": 4096,
+      "labels": {
+        "1": 2048,
+        "0": 2048
+      },
+      "max_tokens": 90,
+      "truncation": 0
+    },
+    "train_full": {
+      "rows": 16766,
+      "labels": {
+        "1": 8371,
+        "0": 8395
+      },
+      "max_tokens": 93,
+      "truncation": 0
+    },
+    "dev": {
+      "rows": 1052,
+      "labels": {
+        "1": 531,
+        "0": 521
+      },
+      "max_tokens": 90,
+      "truncation": 0
+    }
+  },
+  "new_vocab_size": 52412,
+  "unobserved_new_tokens": 4
+}

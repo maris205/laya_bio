@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "updates": 192,
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "0eae54fe4d790dc192ecf7f57b124da4ebf2d6cf84b26f124df235d41bc80d1d",
+  "checkpoint_retained": false,
+  "peak_gpu_bytes": 7749598208
+}

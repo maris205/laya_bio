@@ -83,3 +83,11 @@ All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/
 ## Active route change — 2026-09-24
 
 The user paused the direct-SFT/GFP diagnostic route. The proposed 2,048-update GFP extension is PAUSED and will not launch. Existing results/checkpoints remain preserved. [Route-change record](ROUTE_CHANGE_20260924.md). Active work now follows vocabulary expansion → embedding/MLM-head adaptation → biological CPT → matched no-CPT/CPT single-task SFT with thousands of examples → cumulative multitask SFT.
+
+### 2026-09-24: conventional CPT first paired result (partial)
+
+CPT completed 128 new-row/head warmup + 1,024 full-encoder updates with verified old-row invariance and exact checkpoint reload. On promoter detection with 4,096 labels and matched three-epoch SFT, no-CPT/CPT development accuracy is 82.51%/87.74%, a +5.23 pp paired difference (descriptive group-bootstrap 95% interval [+3.14,+7.32] pp). Both 16,766-example fits remain in the frozen running queue. One seed; no test inference, few-shot or zero-shot claim. [Interim report](../research/laya_biocpt_round1.md).
+
+### 2026-09-24: protein-source defect; supersede v1 and repeat complete matrix
+
+A whole-file scan of historical protein_uni_16.txt (16,955,660,631 bytes; SHA256 fc8de807efdfc94b51d54bfd73a66403b76c8a49bd0b056184356736bc3d5876) finds zero N/n characters. Preserve v1 CPT/4K diagnostic results; stop its incomplete full-data queue. Switch to historical LucaOne protein data, require all 20 canonical residues, verify old-source rejection and unchanged DNA/SFT hashes, and repeat the same complete CPT + four-SFT matrix as v2. No changes motivated by selecting better development scores. Root cause upstream unknown. [Superseded diagnostic](../research/laya_biocpt_source_diagnostic.md), [corrected round](../research/laya_biocpt_round1.md).

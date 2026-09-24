@@ -84,6 +84,8 @@ def main():
     p.add_argument('--workspace', type=Path, required=True)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--model-dir', type=Path, required=True)
+    p.add_argument('--protein-file', default='protein_lucaone_15g.txt',
+                   help='Protein source admitted by canonical-amino-acid composition checks')
     a = p.parse_args()
     if a.output.exists():
         raise FileExistsError(a.output)
@@ -112,7 +114,7 @@ def main():
             source_files[str(path)] = spec['sha256']
     status('guard_ready', protected_sequence_counts=heldout_counts, guard_kmers={k: len(v) for k,v in guarded.items()})
     counts = {'dna': (32768, 512), 'protein': (32768, 512), 'text': (8192, 128)}
-    names = {'dna': 'dna_32g.txt', 'protein': 'protein_uni_16.txt', 'text': 'openwebtext.txt'}
+    names = {'dna': 'dna_32g.txt', 'protein': a.protein_file, 'text': 'openwebtext.txt'}
     raw = {'train': [], 'validation': []}
     corpus_stats = {}
     for index, modality in enumerate(['dna', 'protein', 'text']):
@@ -183,6 +185,20 @@ def main():
                                   'full_source_hash_recomputed': False, 'used_line_hashes_and_bytes_snapshotted': True}
     for split, rows in raw.items():
         write_lines(a.output / ('raw_' + split + '.jsonl'), rows)
+    composition = {m: Counter() for m in ['dna','protein']}
+    for row in raw['train']:
+        if row['modality'] in composition:
+            composition[row['modality']].update(row['content'])
+    missing_amino_acids = sorted(set('ACDEFGHIKLMNPQRSTVWY') - set(composition['protein']))
+    composition_audit = {'character_counts': {m: dict(sorted(c.items())) for m,c in composition.items()},
+                         'required_canonical_amino_acids': 'ACDEFGHIKLMNPQRSTVWY',
+                         'missing_canonical_amino_acids': missing_amino_acids,
+                         'protein_source': str(a.workspace / 'data/01_raw_cpt' / a.protein_file),
+                         'status': 'pass' if not missing_amino_acids else 'fail'}
+    write_json(a.output / 'residue_composition_audit.json', composition_audit)
+    if missing_amino_acids:
+        status('failed_source_composition', status='failed', missing_amino_acids=missing_amino_acids)
+        raise ValueError('Protein corpus lacks canonical amino acids: ' + str(missing_amino_acids))
     status('fit_vocabulary')
     rep = a.output / 'representation'
     rep.mkdir()
@@ -268,12 +284,13 @@ def main():
         write_lines(a.output / ('sft_' + name + '.jsonl'), out)
         sft_counts[name] = {'rows': len(rows), 'labels': dict(Counter(r['label'] for r in rows)), 'max_tokens': max(len(r['ids']) for r in out), 'truncation': 0}
     assert not {r['group_id'] for r in supervised['train']} & {r['group_id'] for r in supervised['selection_dev']}
-    metadata = {'schema': 'biocpt-first-round-v1', 'seed': SEED, 'source_downstream_sha256': source_files,
+    metadata = {'schema': 'biocpt-first-round-v2-source-QC', 'seed': SEED, 'source_downstream_sha256': source_files,
                 'heldout_sequence_counts_for_exclusion': heldout_counts, 'test_targets_used': False, 'test_inference': False,
                 'corpus': corpus_stats, 'cpt_lengths': length_stats, 'sft': sft_counts, 'old_vocab_size': base_size,
                 'new_vocab_size': len(expanded), 'added_by_modality': dict(Counter(e['modality'] for e in entries)),
                 'unobserved_added_tokens_in_cpt_train': [e['token'] for e in entries if not e['cpt_train_input_occurrences']],
                 'vocab_fit': 'fresh DNA/protein BPE fitted only on filtered CPT training samples; 1024 source entries per modality',
+                'residue_composition_audit': composition_audit,
                 'encoding': 'explicit source-piece to distinct model-ID mapping; natural language uses unchanged base IDs',
                 'guards': 'any shared 31-mer (DNA, both strands) or 15-mer (protein) with protected downstream sequences or CPT validation rejects a training corpus line',
                 'limitations': ['Fixed promoter/fold heldouts only; future tasks require a new contamination admission audit.',

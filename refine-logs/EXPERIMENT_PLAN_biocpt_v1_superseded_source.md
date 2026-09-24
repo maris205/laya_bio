@@ -1,6 +1,6 @@
 # Active experiment plan: biological vocabulary → CPT → supervised classification
 
-Date: 2026-09-24. **Active revision: v2, correcting the protein source after the v1 composition audit.** The user paused the previous direct-supervision/GFP diagnostic route. Its reports and checkpoints remain intact; the proposed 2,048-update GFP extension will not run. See [route-change record](ROUTE_CHANGE_20260924.md) and [archived interface plan](EXPERIMENT_PLAN_interface_20260924_paused.md).
+Date: 2026-09-24. The user paused the previous direct-supervision/GFP diagnostic route. Its reports and checkpoints remain intact; the proposed 2,048-update GFP extension will not run. See [route-change record](ROUTE_CHANGE_20260924.md) and [archived interface plan](EXPERIMENT_PLAN_interface_20260924_paused.md).
 
 ## Problem and claims
 
@@ -58,9 +58,9 @@ Values below are the intended first recipe; verify feasibility and embedding beh
 |---|---|---|---|---|
 | DATA-01 | Admission, new vocabulary and full-task data | Filtered CPT + frozen SFT splits | CPU preprocessing | COMPLETE |
 | EMB-01 | Validate embedding/decoder training correctness and cost | Synthetic tiny model + a short real-model train-only smoke | No result claim | PASS |
-| CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | QUEUED (v2) |
-| A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | QUEUED (v2) |
-| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | QUEUED (v2) |
+| CPT-01 | Warmup new rows/MLM head, then adapt encoder | Balanced CPT mixture | 128 warmup + 1,024 full-CPT updates; effective batch 32 | COMPLETE |
+| A-4K / B-4K | Paired data-efficiency point | 4,096 promoter train | 3 epochs, effective batch 64 | COMPLETE |
+| A-FULL / B-FULL | Paired sufficient-data anchor | 16,766 promoter train | 3 epochs, effective batch 64 | RUNNING |
 
 CPT intended per-effective-batch mixture: 14 DNA / 14 protein / 4 text. MLM masking: 15% eligible body tokens with 80% mask / 10% within-modality random token / 10% unchanged. Ensure at least one eligible target per sequence. Target counts determine loss normalization across micro-batches. Use BF16 autocast and FP32 parameters; gradient checkpointing and clipping 1.0.
 
@@ -92,16 +92,8 @@ One local RTX 4080 SUPER, approximately 32 GiB reported GPU memory. About 15 GiB
 
 GPU smoke passed on 2026-09-24: two new-row/head warmup updates, two full-encoder updates, and one 64-example SFT update. Old rows remained exactly invariant during warmup; new embeddings and MLM head had finite nonzero gradients; the encoder acquired gradients after unfreezing; saved/reloaded MLM logits were exactly equal. Peak allocated GPU memory was 7,995,594,240 bytes. Full-CPT updates took about 0.73 s and the first SFT update 1.28 s. These short-run timings imply roughly 60–75 minutes for the complete bounded round including initial/final full-training evaluation, periodic MLM validation, model construction and checkpoint writes.
 
-Production micro-batch is frozen at 8. All planned budgets, schedules, data sizes and final-step metrics above are retained. The CPT training snapshot contains 73,728 sequences and 13,611,857 model tokens, but only 36,864 presentations are scheduled in this first CPT run; do not equate snapshot size with processed tokens or an entire epoch. The corrected snapshot has three unobserved added input tokens: DNA:N and protein:J/O; report their exposure separately. Canonical residue N is present in the corrected protein corpus. Original base vocabulary 50,368 expands to 52,412. SFT inputs require at most 93 model tokens, with zero truncation. Raw sample and source-BPE hashes are identical before/after the preprocessing speed fix.
+Production micro-batch is frozen at 8. All planned budgets, schedules, data sizes and final-step metrics above are retained. The CPT training snapshot contains 73,728 sequences and 17,002,452 model tokens, but only 36,864 presentations are scheduled in this first CPT run; do not equate snapshot size with processed tokens or an entire epoch. The four unobserved added input tokens are DNA:N and protein:J/N/O; report their exposure separately. Original base vocabulary 50,368 expands to 52,412. SFT inputs require at most 93 model tokens, with zero truncation. Raw sample and source-BPE hashes are identical before/after the preprocessing speed fix.
 
-## Source-quality correction, frozen before v2 training
+## Interim observed result (4K pair complete; full pair pending)
 
-The initial historical `protein_uni_16.txt` source failed a composition audit discovered while examining uncovered embedding rows. A complete 16,955,660,631-byte scan found zero uppercase N and zero lowercase n across 16,466,361 newline-delimited records. N is the canonical amino-acid code for asparagine, so this is not an acceptable missing reserve symbol for broad protein pretraining. Upstream processing history is unknown; no claim is made about how N disappeared. The current sampler only uppercases and slices and does not delete residues.
-
-The v1 CPT and paired 4K results are preserved as a superseded source diagnostic (+5.23 pp on promoter development), not the primary clean-source result. Its full-data no-CPT run was stopped during epoch two and its full-data CPT run was not started. These outcomes are disclosed rather than dropped from the record.
-
-The v2 protein source is the local historical `protein_lucaone_15g.txt`. Its admitted training sample contains all 20 canonical amino acids, including 459,623 N characters. A new pretraining admission gate rejects a broad protein corpus if any canonical amino acid is absent. An end-to-end negative test with the previous source fails on N exactly as expected. This is a composition check, not a complete upstream-provenance guarantee.
-
-DNA source/BPE and all three promoter SFT JSONL files have identical hashes to v1. All optimizer settings, initial model, classifier, seeds, batch sizes, budgets and endpoint definitions remain fixed. Protein samples and protein BPE are regenerated from the substituted source; their MLM losses are not directly compared to v1 as a controlled vocabulary-only effect. Repeat all four SFT runs in v2, including both no-CPT baselines, to preserve an uncomplicated complete paired record. This source correction follows already-observed v1 development outcomes and remains exploratory; no blind confirmation claim.
-
-Primary artifacts: `/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2`. The complete corrected round is expected to require about 65–75 minutes after launch. The faulty source and all diagnostic artifacts remain intact.
+The fixed 192-update comparison gives no-CPT accuracy 0.825095 and CPT accuracy 0.877376, a +5.228 pp difference. Macro-F1 is 0.824445 versus 0.877375. Paired group-bootstrap 95% descriptive interval: [+3.137, +7.319] pp. Both checkpoint reload checks pass. Full-data runs continue unchanged at 786 updates each. See the [result report](../research/laya_biocpt_round1.md).

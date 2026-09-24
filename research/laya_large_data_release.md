@@ -1,5 +1,8 @@
 # Laya-Bio 权重与历史语料公开发布记录
 
+> **Source-quality update (2026-09-24):** A complete scan of historical `protein_uni_16.txt` finds zero N/n characters. Its exact SHA-256 matches the archived source manifest. Byte-preserving release integrity does not imply biological completeness; this file is rejected for continued broad protein CPT. See the [composition audit and correction](laya_protein_source_quality.md).
+
+
 完成时间：2026-09-23T18:02:28Z。三个仓库均为公开仓库，可匿名访问。
 
 | 内容 | 公开仓库 | 本次发布文件 | 大小 |

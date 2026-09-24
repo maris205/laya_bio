@@ -1,0 +1,18 @@
+{
+  "captured_utc": "2026-09-24T15:01:03.992591+00:00",
+  "python": "3.12.3 | packaged by Anaconda, Inc. | (main, Apr 19 2024, 16:50:38) [GCC 11.2.0]",
+  "platform": "Linux-5.4.0-153-generic-x86_64-with-glibc2.35",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.5.3",
+  "tokenizers": "0.22.2",
+  "numpy": "2.4.4",
+  "safetensors": "0.6.2",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "gpu_total_bytes": 33796456448,
+  "base_encoder_config_sha256": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d",
+  "base_encoder_config_mtime_ns": 1790071408157932219,
+  "original_protocol_git_commit": "b7add363b8b54929ec13bf3f50fc4da213f091f1",
+  "source_correction": "v2 canonical-residue admission gate; exact corrected source hashes in round/manifest.json",
+  "record_updated_utc": "2026-09-24T15:35:06.516367+00:00"
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "biocpt-first-round-v2-source-QC",
+  "seed": 20260925,
+  "source_downstream_sha256": {
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_selection_dev.jsonl": "3dffdee6768f4553b8afd13792dc55918d908c20bb5f6242a5cf74927aa37582",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_calibration.jsonl": "1b6be563db394b8ff2b676062ec5dc1146f444af4fdb467d6207d0d20b6c0e3a",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_test.jsonl": "7cfae07d045bfc3d24f6a8912fc5c38cb71e619a6c7c4111aba12e512cf549d7",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_selection_dev.jsonl": "a89e20ae978e278fec82335b696f34382e7c762bc41aaeecd5841b25af8601bf",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_calibration.jsonl": "aa0a7680bf99500befc1498f60b3a7a502e49240baf20ff6afcaae452bc04592",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_test.jsonl": "15cd76121f7e3b71d5b4ef2269239a03a28131f5cff61898e77e482dc6e1e3af",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_train.jsonl": "06e25601806907372b4d37a934f1a833366996131dbdcf22e7660e19db443b07"
+  },
+  "heldout_sequence_counts_for_exclusion": {
+    "promoter_detection:selection_dev": 1052,
+    "promoter_detection:calibration": 1053,
+    "promoter_detection:test": 2145,
+    "fold_class:selection_dev": 939,
+    "fold_class:calibration": 942,
+    "fold_class:test": 1994
+  },
+  "test_targets_used": false,
+  "test_inference": false,
+  "corpus": {
+    "dna": {
+      "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/dna_32g.txt",
+      "source_bytes": 32420152883,
+      "source_mtime_ns": 1789989046851707754,
+      "train": 32768,
+      "validation": 512,
+      "attempts": 41831,
+      "rejected": {
+        "downstream_holdout_long_kmer": 3764,
+        "cpt_validation_long_kmer": 4758,
+        "duplicate_exact_or_dna_rc": 29
+      },
+      "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+      "full_source_hash_recomputed": false,
+      "used_line_hashes_and_bytes_snapshotted": true
+    },
+    "protein": {
+      "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_lucaone_15g.txt",
+      "source_bytes": 15388772546,
+      "source_mtime_ns": 1789989127247256075,
+      "train": 32768,
+      "validation": 512,
+      "attempts": 35332,
+      "rejected": {
+        "alphabet_or_length": 1279,
+        "downstream_holdout_long_kmer": 547,
+        "cpt_validation_long_kmer": 201,
+        "duplicate_exact_or_dna_rc": 25
+      },
+      "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+      "full_source_hash_recomputed": false,
+      "used_line_hashes_and_bytes_snapshotted": true
+    },
+    "text": {
+      "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/openwebtext.txt",
+      "source_bytes": 39587458433,
+      "source_mtime_ns": 1789989425461142454,
+      "train": 8192,
+      "validation": 128,
+      "attempts": 15721,
+      "rejected": {
+        "short_text": 7394,
+        "duplicate_exact_or_dna_rc": 7
+      },
+      "sampling": "deterministic random byte offsets, skip partial line; length-biased, not uniform over records",
+      "full_source_hash_recomputed": false,
+      "used_line_hashes_and_bytes_snapshotted": true
+    }
+  },
+  "cpt_lengths": {
+    "train": {
+      "rows": 73728,
+      "tokens": 13611857,
+      "cropped_rows": 7375
+    },
+    "validation": {
+      "rows": 1152,
+      "tokens": 211058,
+      "cropped_rows": 100
+    }
+  },
+  "sft": {
+    "train_4096": {
+      "rows": 4096,
+      "labels": {
+        "1": 2048,
+        "0": 2048
+      },
+      "max_tokens": 90,
+      "truncation": 0
+    },
+    "train_full": {
+      "rows": 16766,
+      "labels": {
+        "1": 8371,
+        "0": 8395
+      },
+      "max_tokens": 93,
+      "truncation": 0
+    },
+    "dev": {
+      "rows": 1052,
+      "labels": {
+        "1": 531,
+        "0": 521
+      },
+      "max_tokens": 90,
+      "truncation": 0
+    }
+  },
+  "old_vocab_size": 50368,
+  "new_vocab_size": 52412,
+  "added_by_modality": {
+    "dna": 1022,
+    "protein": 1022
+  },
+  "unobserved_added_tokens_in_cpt_train": [
+    "<BIO_DNA:N>",
+    "<BIO_PROTEIN:J>",
+    "<BIO_PROTEIN:O>"
+  ],
+  "vocab_fit": "fresh DNA/protein BPE fitted only on filtered CPT training samples; 1024 source entries per modality",
+  "residue_composition_audit": {
+    "character_counts": {
+      "dna": {
+        "A": 9800803,
+        "C": 6583528,
+        "G": 6580096,
+        "T": 9803573
+      },
+      "protein": {
+        "A": 1041048,
+        "B": 2,
+        "C": 165144,
+        "D": 648529,
+        "E": 744788,
+        "F": 457515,
+        "G": 837117,
+        "H": 268882,
+        "I": 637685,
+        "K": 593163,
+        "L": 1157441,
+        "M": 268400,
+        "N": 459623,
+        "P": 606960,
+        "Q": 463796,
+        "R": 699488,
+        "S": 853138,
+        "T": 663891,
+        "U": 1,
+        "V": 794690,
+        "W": 152306,
+        "X": 2425,
+        "Y": 341057,
+        "Z": 2
+      }
+    },
+    "required_canonical_amino_acids": "ACDEFGHIKLMNPQRSTVWY",
+    "missing_canonical_amino_acids": [],
+    "protein_source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_lucaone_15g.txt",
+    "status": "pass"
+  },
+  "encoding": "explicit source-piece to distinct model-ID mapping; natural language uses unchanged base IDs",
+  "guards": "any shared 31-mer (DNA, both strands) or 15-mer (protein) with protected downstream sequences or CPT validation rejects a training corpus line",
+  "limitations": [
+    "Fixed promoter/fold heldouts only; future tasks require a new contamination admission audit.",
+    "Long-kmer filtering is conservative but is not a full homology/parent-cluster independence guarantee.",
+    "Downstream development/test memberships have historical prior use; no fresh confirmatory test claim.",
+    "Random-byte sampling is length-biased; corpus upstream provenance remains historical."
+  ],
+  "output_sha256": {
+    "cpt_train.jsonl": "e60354d02ce21fae2099bec1f63ecedd669c3f84dc4b821e6a99aec903393ac2",
+    "cpt_validation.jsonl": "53e4974089b8cc60a29622a740d3d32634147f7fac91bf77aefb10ad69fde5f7",
+    "raw_train.jsonl": "f1647ee1a2233046b7ddf7f39a2456552d2df5225f3c0bd8e460568690d0251b",
+    "raw_validation.jsonl": "7c34adac916cb86e6c3aec59b9d3dfcf7fe72d3858cddc5b1b5a42d2de8b13a7",
+    "representation/base_tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "representation/base_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+    "representation/expanded_tokenizer/tokenizer.json": "04bfe5d872b8f93ee0c975c3d51b941a49918e08ca3df6aa02ec8cedc3f8f47c",
+    "representation/expanded_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+    "representation/new_tokens.json": "90ac08ed121440faaac7be6bb0a6ed723faea1e03aa59e33bee37c2c7e134bd4",
+    "representation/source_tokenizers/dna.json": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3",
+    "representation/source_tokenizers/protein.json": "246515b085c11dce0be76a93ee05b13cfd1cc4d6dd810de069943365bb063796",
+    "residue_composition_audit.json": "c141b74532f85b54a417b180cf6aa07e3208d17b83e5768689b29d989d2c250d",
+    "sft_dev.jsonl": "e7acd10a3ef2b45cd94adb2eb0be8ede0b769cead533e112d09a126ccbaf5f9f",
+    "sft_train_4096.jsonl": "26ed06e317979c748b8285ebc863712b17cc49753c425580061d2bdb670700d5",
+    "sft_train_full.jsonl": "cb71b00d1ca09e90d970bbe921663e6c8852d6a84d21bf88bd053f99884f80a2"
+  }
+}

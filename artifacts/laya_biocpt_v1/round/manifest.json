@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-09-24T14:46:22.367862+00:00",
+  "data_manifest_sha256": "02179d18cd5a7f4d3f520d0770f56e60e3693d8f2792c750001b8c77667985eb",
+  "code_sha256": {
+    "laya_biocpt_data.py": "7b331bdf5b1934891633e08dea7895b9e25f274314df2d4d6fffb70f585806b4",
+    "laya_biocpt_train.py": "42a5a2c3d52fe57758331366e2349def4007834cbfedc6d0990d1479d0568953",
+    "run_laya_biocpt_round.py": "a308573d0eacff597342f648dea2a2d9eb4fb213cbcaa15589876710e1c50c0a",
+    "test_laya_biocpt.py": "a548b4d0797644d09f3ce9a07e8bfb83d5b5466307fd6de758a1b5792bc0484c"
+  },
+  "smoke": {
+    "status": "complete",
+    "updates": 4,
+    "timing": {
+      "warmup": 0.9828507240163162,
+      "full": 0.725091555970721
+    },
+    "peak_gpu_bytes": 7995594240,
+    "checkpoint_reload_exact": true,
+    "checkpoint_sha256": "d5537eed3bda1ed0d01a1eb9fc1fd407d2a7c38d0f6443ded5d86e07f82b8c69",
+    "natural_input_token_coverage": 1934,
+    "masked_target_token_coverage": 1118,
+    "added_token_count": 2044,
+    "sft_seconds_per_update": 1.283529422013089
+  },
+  "micro": 8,
+  "run_order": [
+    "cpt",
+    "no_cpt_4096",
+    "cpt_4096",
+    "no_cpt_full",
+    "cpt_full"
+  ],
+  "first_round_only": true,
+  "test_access": false,
+  "full_SFT_updates_each": 786,
+  "small_SFT_updates_each": 192
+}

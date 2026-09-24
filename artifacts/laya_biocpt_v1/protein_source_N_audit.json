@@ -1,0 +1,12 @@
+{
+  "source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_uni_16.txt",
+  "bytes_scanned": 16955660631,
+  "whole_file_sha256": "fc8de807efdfc94b51d54bfd73a66403b76c8a49bd0b056184356736bc3d5876",
+  "uppercase_N_count": 0,
+  "lowercase_n_count": 0,
+  "newline_count": 16466361,
+  "seconds": 69.78936333511956,
+  "completed_utc": "2026-09-24T15:27:25.038148+00:00",
+  "source_quality": "quarantined for broad protein CPT if N count is zero",
+  "root_cause": "unknown upstream processing; local preparation only uppercases and slices, and does not remove N"
+}

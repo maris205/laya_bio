@@ -1,0 +1,5137 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[UNK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "Whitespace"
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "[UNK]",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "[PAD]": 0,
+      "[UNK]": 1,
+      "A": 2,
+      "C": 3,
+      "G": 4,
+      "N": 5,
+      "T": 6,
+      "TT": 7,
+      "AA": 8,
+      "TG": 9,
+      "CA": 10,
+      "TA": 11,
+      "CC": 12,
+      "GG": 13,
+      "TC": 14,
+      "GA": 15,
+      "TAA": 16,
+      "GC": 17,
+      "AAA": 18,
+      "TTA": 19,
+      "TCA": 20,
+      "TGA": 21,
+      "TTTT": 22,
+      "GAA": 23,
+      "TCC": 24,
+      "CAA": 25,
+      "CTG": 26,
+      "CTT": 27,
+      "GTT": 28,
+      "GTG": 29,
+      "GCA": 30,
+      "CCA": 31,
+      "GGA": 32,
+      "GTA": 33,
+      "GCC": 34,
+      "TAAA": 35,
+      "CTA": 36,
+      "AAAA": 37,
+      "CTC": 38,
+      "GTC": 39,
+      "TATT": 40,
+      "GAAA": 41,
+      "TGTG": 42,
+      "TCTT": 43,
+      "CACA": 44,
+      "TGTT": 45,
+      "TATA": 46,
+      "CAAA": 47,
+      "CATT": 48,
+      "TGAA": 49,
+      "CAGA": 50,
+      "TCTG": 51,
+      "CAGG": 52,
+      "TCAA": 53,
+      "GAGA": 54,
+      "TAAAA": 55,
+      "GGAA": 56,
+      "GCTT": 57,
+      "CCTT": 58,
+      "CTGA": 59,
+      "GCTG": 60,
+      "GTGA": 61,
+      "CTCA": 62,
+      "GTAA": 63,
+      "GATT": 64,
+      "GCAA": 65,
+      "CATG": 66,
+      "GTCA": 67,
+      "TATG": 68,
+      "CGG": 69,
+      "GAGG": 70,
+      "TTATT": 71,
+      "CCTG": 72,
+      "CCAA": 73,
+      "CTCC": 74,
+      "CTAA": 75,
+      "TCCA": 76,
+      "TACA": 77,
+      "GTTA": 78,
+      "GATG": 79,
+      "GAAAA": 80,
+      "TCTA": 81,
+      "TTAA": 82,
+      "CTTA": 83,
+      "GTTTT": 84,
+      "GGTT": 85,
+      "GTCC": 86,
+      "CTTTT": 87,
+      "GCCA": 88,
+      "CGA": 89,
+      "GGGG": 90,
+      "CAAAA": 91,
+      "TTTG": 92,
+      "TAGA": 93,
+      "CCCA": 94,
+      "GGTG": 95,
+      "TCTC": 96,
+      "CATA": 97,
+      "TTTA": 98,
+      "GACA": 99,
+      "CCCC": 100,
+      "TAATT": 101,
+      "TAGG": 102,
+      "TGGG": 103,
+      "GCTA": 104,
+      "TCAAA": 105,
+      "TGTA": 106,
+      "GATA": 107,
+      "TGCA": 108,
+      "GGCA": 109,
+      "TCATT": 110,
+      "TGGA": 111,
+      "GGGA": 112,
+      "CCTA": 113,
+      "CGC": 114,
+      "TTTTTT": 115,
+      "AAATT": 116,
+      "TCCTT": 117,
+      "GTAAA": 118,
+      "CTGAA": 119,
+      "TGATT": 120,
+      "CGTG": 121,
+      "TCTCA": 122,
+      "GAATT": 123,
+      "TAAAAA": 124,
+      "CGTT": 125,
+      "GCAAA": 126,
+      "TCTGA": 127,
+      "CACC": 128,
+      "TCTCC": 129,
+      "CTAAA": 130,
+      "GGTA": 131,
+      "TGAAA": 132,
+      "TAATA": 133,
+      "TTATA": 134,
+      "GGCC": 135,
+      "GGAAA": 136,
+      "CTGTT": 137,
+      "GTGAA": 138,
+      "TGCC": 139,
+      "CTCTT": 140,
+      "CAATT": 141,
+      "GTATT": 142,
+      "TCCAA": 143,
+      "CAGAA": 144,
+      "CTTAA": 145,
+      "GAGAA": 146,
+      "GTTAA": 147,
+      "GTGTT": 148,
+      "AAAAAA": 149,
+      "GACC": 150,
+      "GCATT": 151,
+      "CAGC": 152,
+      "GTCTT": 153,
+      "CGAA": 154,
+      "TTTTAA": 155,
+      "CCATT": 156,
+      "CTCAA": 157,
+      "GCCAA": 158,
+      "CGCA": 159,
+      "CAGCA": 160,
+      "GCTGA": 161,
+      "GTCAA": 162,
+      "CCAAA": 163,
+      "CGGA": 164,
+      "TCTTA": 165,
+      "GCCTT": 166,
+      "GCTCA": 167,
+      "TAATG": 168,
+      "CTATT": 169,
+      "TATTTT": 170,
+      "TATTA": 171,
+      "CTTTG": 172,
+      "TACC": 173,
+      "TCTAA": 174,
+      "TCCTG": 175,
+      "TATAA": 176,
+      "CAGTG": 177,
+      "TCTTTT": 178,
+      "CAGTT": 179,
+      "CTCTG": 180,
+      "CTGTG": 181,
+      "GAGGA": 182,
+      "TTATG": 183,
+      "CACAA": 184,
+      "GAAAAA": 185,
+      "CGCC": 186,
+      "TGATG": 187,
+      "CGTA": 188,
+      "CAGGA": 189,
+      "GTTTG": 190,
+      "TCAAAA": 191,
+      "GGGAA": 192,
+      "CATCA": 193,
+      "CACTG": 194,
+      "TACAA": 195,
+      "GGCTG": 196,
+      "GAGC": 197,
+      "CACTT": 198,
+      "GAGCA": 199,
+      "CCTCA": 200,
+      "GGATT": 201,
+      "GACAA": 202,
+      "CCCTG": 203,
+      "GCCTG": 204,
+      "GATGA": 205,
+      "TAGAA": 206,
+      "GAGTT": 207,
+      "TACTT": 208,
+      "GTCTG": 209,
+      "CACCA": 210,
+      "CCCCA": 211,
+      "TATCA": 212,
+      "CATTA": 213,
+      "CAAAAA": 214,
+      "CATTTT": 215,
+      "GACTT": 216,
+      "TAAATT": 217,
+      "CATAA": 218,
+      "GCTC": 219,
+      "CCTCC": 220,
+      "GGAGG": 221,
+      "TATTAA": 222,
+      "CCCTT": 223,
+      "GTGTG": 224,
+      "GAATG": 225,
+      "CATGA": 226,
+      "TCATG": 227,
+      "CAGTA": 228,
+      "GGCTT": 229,
+      "GGCCA": 230,
+      "GATAA": 231,
+      "TAGTT": 232,
+      "GAGTG": 233,
+      "TAATAA": 234,
+      "CCTGA": 235,
+      "GACTG": 236,
+      "TATGA": 237,
+      "GCTCC": 238,
+      "CAATG": 239,
+      "GGGCA": 240,
+      "TTATTA": 241,
+      "TACTG": 242,
+      "GGTGA": 243,
+      "GGTCA": 244,
+      "GACCA": 245,
+      "GATCA": 246,
+      "AAATG": 247,
+      "CAGCC": 248,
+      "GTAAAA": 249,
+      "CATC": 250,
+      "GCTAA": 251,
+      "CCTC": 252,
+      "GGCAA": 253,
+      "GGGC": 254,
+      "TATC": 255,
+      "GGATG": 256,
+      "CCCAA": 257,
+      "CGTC": 258,
+      "TTTTTTTT": 259,
+      "GAAATT": 260,
+      "GGGTG": 261,
+      "GGGTT": 262,
+      "TACCA": 263,
+      "TAGCA": 264,
+      "GGGGA": 265,
+      "GATTA": 266,
+      "CTAAAA": 267,
+      "CCATG": 268,
+      "GCATG": 269,
+      "GGAAAA": 270,
+      "GAGTA": 271,
+      "TCTCTT": 272,
+      "GATTTT": 273,
+      "CTATG": 274,
+      "GCTTA": 275,
+      "CAGGAA": 276,
+      "GGTAA": 277,
+      "TGTGTT": 278,
+      "TAGTA": 279,
+      "CCTAA": 280,
+      "TTATTTT": 281,
+      "CATCC": 282,
+      "TATATT": 283,
+      "CACTA": 284,
+      "GCAAAA": 285,
+      "TACTA": 286,
+      "GATC": 287,
+      "TGTGAA": 288,
+      "CAAATT": 289,
+      "TAGTG": 290,
+      "TAAAAAA": 291,
+      "GTTATT": 292,
+      "TGAATT": 293,
+      "GAGCC": 294,
+      "TGTTAA": 295,
+      "GACTA": 296,
+      "TATTTG": 297,
+      "TAGC": 298,
+      "TAAATG": 299,
+      "CTTATT": 300,
+      "CAGAAA": 301,
+      "GTATG": 302,
+      "GAGAAA": 303,
+      "CATTAA": 304,
+      "CCTTA": 305,
+      "TTTTTG": 306,
+      "GCGG": 307,
+      "TATAAA": 308,
+      "AAAATT": 309,
+      "TAGGA": 310,
+      "GGTTA": 311,
+      "TCTGTT": 312,
+      "TATCC": 313,
+      "TCTGTG": 314,
+      "GAAGAA": 315,
+      "TCTTAA": 316,
+      "CACATT": 317,
+      "GCTTTT": 318,
+      "TCTCTG": 319,
+      "CTTCC": 320,
+      "TCAATT": 321,
+      "AAAAAAAA": 322,
+      "GGCTA": 323,
+      "GATCC": 324,
+      "TGTTTG": 325,
+      "TGTGTG": 326,
+      "GAAGG": 327,
+      "CTTTA": 328,
+      "GCAGG": 329,
+      "CTGGG": 330,
+      "GAAATG": 331,
+      "GAAGA": 332,
+      "TCATCA": 333,
+      "CTGAAA": 334,
+      "CAGTC": 335,
+      "CTTCTT": 336,
+      "TCGG": 337,
+      "TTATAA": 338,
+      "CCAAAA": 339,
+      "CCCTA": 340,
+      "CCTTTT": 341,
+      "GTTTA": 342,
+      "TCTTTG": 343,
+      "TGAGG": 344,
+      "GTAATT": 345,
+      "CACAAA": 346,
+      "TCTGAA": 347,
+      "AAATA": 348,
+      "CCAGG": 349,
+      "CCCTC": 350,
+      "TCCATT": 351,
+      "GCAGCA": 352,
+      "CTGCTG": 353,
+      "TCAGG": 354,
+      "CAACAA": 355,
+      "GTTTTA": 356,
+      "CTCATT": 357,
+      "GAATA": 358,
+      "CATAAA": 359,
+      "CAGATT": 360,
+      "TGAGA": 361,
+      "TCAGA": 362,
+      "CGTCA": 363,
+      "CACTC": 364,
+      "TAATTA": 365,
+      "GGAGA": 366,
+      "TCTATT": 367,
+      "CGAAA": 368,
+      "CGATT": 369,
+      "CATATT": 370,
+      "CGCTG": 371,
+      "GTGGG": 372,
+      "GTGAAA": 373,
+      "TCCAAA": 374,
+      "CTCCTT": 375,
+      "GTTGTT": 376,
+      "CGTGA": 377,
+      "CATTTG": 378,
+      "CTTGG": 379,
+      "TAAAATT": 380,
+      "TCTAAA": 381,
+      "CAAATG": 382,
+      "CTGATT": 383,
+      "GCTGTG": 384,
+      "TATATG": 385,
+      "GTCATT": 386,
+      "CTCAAA": 387,
+      "CTGTA": 388,
+      "GGAGGA": 389,
+      "CGAGG": 390,
+      "CACACACA": 391,
+      "CTTTTA": 392,
+      "GCTCTG": 393,
+      "TCCCC": 394,
+      "GCAGA": 395,
+      "CAATA": 396,
+      "CAAGG": 397,
+      "TAATTTT": 398,
+      "CTTTCA": 399,
+      "TCGA": 400,
+      "TGATA": 401,
+      "TGAGAA": 402,
+      "GGAATT": 403,
+      "TATATATA": 404,
+      "GGGTA": 405,
+      "TAAGA": 406,
+      "GTTTCA": 407,
+      "CTGCC": 408,
+      "GAAAAAA": 409,
+      "TTAATT": 410,
+      "CAAGA": 411,
+      "TCCACA": 412,
+      "GTTAAA": 413,
+      "TCCCCA": 414,
+      "TCCAGG": 415,
+      "CGTAA": 416,
+      "CTTAAA": 417,
+      "CGCTT": 418,
+      "GCCCC": 419,
+      "GCAATT": 420,
+      "GCGC": 421,
+      "CGAGA": 422,
+      "GATTAA": 423,
+      "TGAATG": 424,
+      "CAGTGA": 425,
+      "TCATA": 426,
+      "CAGCTT": 427,
+      "GGAGAA": 428,
+      "GCTGTT": 429,
+      "CTAATT": 430,
+      "CTCCAA": 431,
+      "TCTCAA": 432,
+      "TCCCTG": 433,
+      "TGATGA": 434,
+      "TATTTA": 435,
+      "TCCTCA": 436,
+      "GGGCC": 437,
+      "CTTCTG": 438,
+      "GTCAAA": 439,
+      "TAACAA": 440,
+      "CCACCA": 441,
+      "GTGGTG": 442,
+      "TTACA": 443,
+      "GCCACA": 444,
+      "GCCAGG": 445,
+      "GCGA": 446,
+      "TCACC": 447,
+      "TCAGAA": 448,
+      "CAGATG": 449,
+      "TAATGA": 450,
+      "TTATTAA": 451,
+      "GTGATT": 452,
+      "GTTCTT": 453,
+      "TAACA": 454,
+      "CTCTA": 455,
+      "AAAAAAA": 456,
+      "CGGAA": 457,
+      "CTTTTTT": 458,
+      "TAAGAA": 459,
+      "GCTGAA": 460,
+      "GTTGG": 461,
+      "CCACC": 462,
+      "TTAGA": 463,
+      "CTCCA": 464,
+      "CTGGA": 465,
+      "TTACTT": 466,
+      "TTACAA": 467,
+      "GTCCTT": 468,
+      "GTATA": 469,
+      "TCCAGA": 470,
+      "GTTTTTT": 471,
+      "CTCTGA": 472,
+      "CGATG": 473,
+      "AAAATG": 474,
+      "GTTCC": 475,
+      "TAAATA": 476,
+      "TCCTCC": 477,
+      "TCCATG": 478,
+      "TAAGG": 479,
+      "GCTCTT": 480,
+      "CAGCTG": 481,
+      "GCCAAA": 482,
+      "TCTCCA": 483,
+      "TTAGG": 484,
+      "TCACTT": 485,
+      "GTGCTG": 486,
+      "CGTTA": 487,
+      "CATCTT": 488,
+      "GAGATT": 489,
+      "TAACTT": 490,
+      "GCAGAA": 491,
+      "CAGGTT": 492,
+      "TTAGAA": 493,
+      "CATGTT": 494,
+      "CTCCTG": 495,
+      "TGAAAAA": 496,
+      "CCAGA": 497,
+      "TATATA": 498,
+      "CCTTAA": 499,
+      "TCCCTT": 500,
+      "TCACTG": 501,
+      "TCGAA": 502,
+      "TTTTAAA": 503,
+      "GCCATT": 504,
+      "CAAGAA": 505,
+      "CAGCAA": 506,
+      "TCAGCA": 507,
+      "CACATG": 508,
+      "GAGGAA": 509,
+      "GTGCC": 510,
+      "GTTCTG": 511,
+      "CTATA": 512,
+      "TCTCTA": 513,
+      "TGACC": 514,
+      "GCCCTG": 515,
+      "CGGTT": 516,
+      "TATTTTA": 517,
+      "TGACTT": 518,
+      "CGCAA": 519,
+      "CGTCC": 520,
+      "TGAGTT": 521,
+      "CATATA": 522,
+      "GATAAA": 523,
+      "CACTGA": 524,
+      "TGGAA": 525,
+      "GCAGTG": 526,
+      "TCAGTT": 527,
+      "TCGTT": 528,
+      "GTCTA": 529,
+      "TCACCA": 530,
+      "GCCAGA": 531,
+      "GCACC": 532,
+      "TGTGTGTG": 533,
+      "TTTTTA": 534,
+      "CTGCTT": 535,
+      "TGACAA": 536,
+      "GTGTA": 537,
+      "CGTTTT": 538,
+      "CCTTTG": 539,
+      "CAGTCA": 540,
+      "TCCTA": 541,
+      "TCTATA": 542,
+      "CCAATT": 543,
+      "CATCTG": 544,
+      "GCTTTG": 545,
+      "GACAGA": 546,
+      "CAGTAA": 547,
+      "CCTCTT": 548,
+      "TTATCA": 549,
+      "CCTCTG": 550,
+      "TCGTG": 551,
+      "GGTTTT": 552,
+      "CATGTG": 553,
+      "GAGTC": 554,
+      "CTTCCA": 555,
+      "GCGTG": 556,
+      "GAAAATT": 557,
+      "CATGAA": 558,
+      "GCTTAA": 559,
+      "GATTTG": 560,
+      "CGCCA": 561,
+      "GACAAA": 562,
+      "CAAAAAA": 563,
+      "CTGGAA": 564,
+      "TCCTGA": 565,
+      "GTTTAA": 566,
+      "CCAGCA": 567,
+      "CTCTCA": 568,
+      "CCAGAA": 569,
+      "TCAATG": 570,
+      "GTCCAA": 571,
+      "GATATT": 572,
+      "TCAAAAA": 573,
+      "GAGATG": 574,
+      "TCTATG": 575,
+      "TTACC": 576,
+      "GCCATG": 577,
+      "GGAGCA": 578,
+      "TAGAAA": 579,
+      "CAGGTG": 580,
+      "TAATCA": 581,
+      "CGGTG": 582,
+      "GTGATG": 583,
+      "CCGG": 584,
+      "GCTATT": 585,
+      "CACCTG": 586,
+      "GCTAAA": 587,
+      "CCACTG": 588,
+      "TACAAA": 589,
+      "TTAGTT": 590,
+      "CTGATG": 591,
+      "CTTGA": 592,
+      "GAGGTT": 593,
+      "GTAGG": 594,
+      "GTTTTAA": 595,
+      "TCACAA": 596,
+      "TAAGTT": 597,
+      "TCAGTG": 598,
+      "CACTCA": 599,
+      "TCATTTT": 600,
+      "GTAGA": 601,
+      "TGACTG": 602,
+      "GAAGCA": 603,
+      "GCGCC": 604,
+      "TTACTG": 605,
+      "TCCCAA": 606,
+      "TGAGGA": 607,
+      "CCATA": 608,
+      "CAAAATT": 609,
+      "TTACTA": 610,
+      "CACGG": 611,
+      "TTAAAAA": 612,
+      "CCCAAA": 613,
+      "TAAGTA": 614,
+      "TAATAAA": 615,
+      "CCCAGG": 616,
+      "CATCAA": 617,
+      "TAAAATG": 618,
+      "CTTTTAA": 619,
+      "TACATT": 620,
+      "TAACTG": 621,
+      "GTGGAA": 622,
+      "GACTC": 623,
+      "TATTAAA": 624,
+      "GATGAA": 625,
+      "GGGAAA": 626,
+      "GTTCAA": 627,
+      "GTTGAA": 628,
+      "TTATGA": 629,
+      "CACCTT": 630,
+      "TAAGTG": 631,
+      "GTCCTG": 632,
+      "TAAAAAAA": 633,
+      "GCATA": 634,
+      "GGAATG": 635,
+      "TAACTA": 636,
+      "GTCTCA": 637,
+      "CCAGGA": 638,
+      "CATATG": 639,
+      "CCTGTG": 640,
+      "TTTTCTT": 641,
+      "GCACTG": 642,
+      "GCAGGA": 643,
+      "GACATT": 644,
+      "GAACAA": 645,
+      "GCGTT": 646,
+      "CTCTCC": 647,
+      "GGGAGG": 648,
+      "CACCAA": 649,
+      "TAGCC": 650,
+      "TACACA": 651,
+      "GAGCTG": 652,
+      "GCAATG": 653,
+      "TAACC": 654,
+      "TGAGTG": 655,
+      "GAACTT": 656,
+      "CATACA": 657,
+      "CAGTTA": 658,
+      "GACACA": 659,
+      "GGTCC": 660,
+      "GGAAAAA": 661,
+      "TCGTA": 662,
+      "GAAGGA": 663,
+      "GCGCA": 664,
+      "TCGCC": 665,
+      "CCACAA": 666,
+      "CTTCAA": 667,
+      "CCCACA": 668,
+      "GTTGTG": 669,
+      "TATGTT": 670,
+      "TGAGCA": 671,
+      "TCTACA": 672,
+      "GCGGA": 673,
+      "GATGTT": 674,
+      "CTGCAA": 675,
+      "TAAGCA": 676,
+      "GGTTTG": 677,
+      "GCTCAA": 678,
+      "GCCCCA": 679,
+      "CAGCCA": 680,
+      "TCATTA": 681,
+      "GTATTTT": 682,
+      "CCTGTT": 683,
+      "CTTGTT": 684,
+      "TAAATAAA": 685,
+      "CAGAAAA": 686,
+      "GCCTCA": 687,
+      "CTAAAAA": 688,
+      "TCGGA": 689,
+      "GTAAAAA": 690,
+      "GAACC": 691,
+      "GTAATG": 692,
+      "TCGCA": 693,
+      "GGGAGA": 694,
+      "CTTCTA": 695,
+      "GTCATG": 696,
+      "TAATATT": 697,
+      "GTTTGA": 698,
+      "GTAGAA": 699,
+      "CTGGGA": 700,
+      "GGCTC": 701,
+      "GGCAGG": 702,
+      "CTGTGA": 703,
+      "CTCATG": 704,
+      "TCAGTA": 705,
+      "GTTGA": 706,
+      "GGCGG": 707,
+      "GGCAGA": 708,
+      "CCCAGA": 709,
+      "CTTTGA": 710,
+      "TCAGGA": 711,
+      "TATCTT": 712,
+      "GCTCCA": 713,
+      "CACTTA": 714,
+      "GTGGCA": 715,
+      "GTGGGA": 716,
+      "GTCTGA": 717,
+      "GAGGTG": 718,
+      "TAACCA": 719,
+      "CCCTCC": 720,
+      "CTGCCA": 721,
+      "GCGAA": 722,
+      "CTTTAA": 723,
+      "TTACCA": 724,
+      "TCACTA": 725,
+      "CCTGAA": 726,
+      "GGCAAA": 727,
+      "GCAAAAA": 728,
+      "TTAGTA": 729,
+      "CTTTCC": 730,
+      "GCTATA": 731,
+      "GTTCCA": 732,
+      "GAAAATG": 733,
+      "TGATTTT": 734,
+      "GCCTCC": 735,
+      "GAAAAAAA": 736,
+      "GGGGTG": 737,
+      "TTATATT": 738,
+      "TTATAAA": 739,
+      "CTTGAA": 740,
+      "GTGGA": 741,
+      "TTAGCA": 742,
+      "GAGAGAGA": 743,
+      "TCAAATT": 744,
+      "GTTTCC": 745,
+      "TATGTG": 746,
+      "GTTCTA": 747,
+      "GCTATG": 748,
+      "TAAGGA": 749,
+      "CAAGCA": 750,
+      "GCCTA": 751,
+      "CTAATG": 752,
+      "CACGA": 753,
+      "TGACTA": 754,
+      "CAACTT": 755,
+      "TGACCA": 756,
+      "GAAATA": 757,
+      "TTATTTG": 758,
+      "TTAGTG": 759,
+      "GGGCTG": 760,
+      "CAAGGA": 761,
+      "CCCGG": 762,
+      "CATTTA": 763,
+      "CCAAAAA": 764,
+      "GTCTTTT": 765,
+      "TAATTAA": 766,
+      "TATTTATT": 767,
+      "CCCCTT": 768,
+      "TGATCA": 769,
+      "GTGCTT": 770,
+      "GTTATG": 771,
+      "GATGTG": 772,
+      "CTGTCA": 773,
+      "CATCCA": 774,
+      "GTCTCC": 775,
+      "TTAGGA": 776,
+      "TGATAA": 777,
+      "CACTAA": 778,
+      "CAACC": 779,
+      "GAAGTT": 780,
+      "GACAGG": 781,
+      "TCTGAAA": 782,
+      "CTGGCA": 783,
+      "GCTACA": 784,
+      "TATGAA": 785,
+      "CAAGTT": 786,
+      "CAATAA": 787,
+      "CTTGGA": 788,
+      "CCCATT": 789,
+      "CAAGTG": 790,
+      "TCGC": 791,
+      "GATATA": 792,
+      "CCCTGA": 793,
+      "GAGCAA": 794,
+      "GAAGTG": 795,
+      "TAAATAA": 796,
+      "CCACTT": 797,
+      "CCCTCA": 798,
+      "GGGTC": 799,
+      "GGCACA": 800,
+      "GTTGTA": 801,
+      "CTTATG": 802,
+      "TGTTTA": 803,
+      "CTGGTG": 804,
+      "CCAGTG": 805,
+      "CAATGA": 806,
+      "TTAATG": 807,
+      "GAAGTA": 808,
+      "GCCTGA": 809,
+      "CCTCCA": 810,
+      "GAATAA": 811,
+      "TCGTC": 812,
+      "GACGG": 813,
+      "TCCTTTT": 814,
+      "CGAAAA": 815,
+      "GAGCTT": 816,
+      "CTTGTG": 817,
+      "CACCCA": 818,
+      "GGTGTG": 819,
+      "CCTAAA": 820,
+      "CCTCAA": 821,
+      "GGATA": 822,
+      "GATCTT": 823,
+      "GGGGAA": 824,
+      "GAATGA": 825,
+      "GCAGTT": 826,
+      "GAACTG": 827,
+      "TCTAAAA": 828,
+      "GTAGTA": 829,
+      "TATGAAA": 830,
+      "CTATTTT": 831,
+      "GCATCA": 832,
+      "TTATATA": 833,
+      "AAAAAAAAA": 834,
+      "CTCTTTT": 835,
+      "CAACTG": 836,
+      "GACATG": 837,
+      "CCCCTG": 838,
+      "CAAAATG": 839,
+      "CAAGTA": 840,
+      "CCAATG": 841,
+      "GGCTCA": 842,
+      "TAATATA": 843,
+      "CTTGTA": 844,
+      "GCGTA": 845,
+      "TAATCC": 846,
+      "GGCATT": 847,
+      "CCATCA": 848,
+      "CATCTA": 849,
+      "TCTCAAA": 850,
+      "GCAGCC": 851,
+      "TATTTCA": 852,
+      "GAATTTT": 853,
+      "GGTGAA": 854,
+      "GAAGAAA": 855,
+      "GTTTTTG": 856,
+      "TGAGTA": 857,
+      "CAATTA": 858,
+      "CATAGA": 859,
+      "GAGGAAA": 860,
+      "GAGTCA": 861,
+      "GGCTGA": 862,
+      "GCTCTA": 863,
+      "CAAATA": 864,
+      "GCCCTT": 865,
+      "CACTCC": 866,
+      "GGCCTG": 867,
+      "TAATTTA": 868,
+      "GAATCA": 869,
+      "CATTAAA": 870,
+      "GCACCA": 871,
+      "CATAAAA": 872,
+      "CAGTCC": 873,
+      "GAACCA": 874,
+      "CAATTTT": 875,
+      "GAGTGA": 876,
+      "CAACCA": 877,
+      "TCCCTA": 878,
+      "GTAAATT": 879,
+      "GGTCTT": 880,
+      "CACAAAA": 881,
+      "GACTGA": 882,
+      "CTTTCTT": 883,
+      "CTGTTTT": 884,
+      "GTGTGA": 885,
+      "GGTAAA": 886,
+      "TACAGA": 887,
+      "TATATTTT": 888,
+      "CAGGAAA": 889,
+      "CAGCTA": 890,
+      "GACGA": 891,
+      "CAGTTTT": 892,
+      "GTGGTA": 893,
+      "CCCATG": 894,
+      "CAATCA": 895,
+      "TAAGAAA": 896,
+      "GCAGTA": 897,
+      "GTTGGA": 898,
+      "GACTCA": 899,
+      "GAATTA": 900,
+      "CAACTA": 901,
+      "CGCTA": 902,
+      "CCCCAA": 903,
+      "TATTTAA": 904,
+      "TCATGA": 905,
+      "CTCTTA": 906,
+      "CTGAATT": 907,
+      "GCACTT": 908,
+      "GGCCTT": 909,
+      "GAACTA": 910,
+      "CCAGCC": 911,
+      "CCGTG": 912,
+      "TGTGAAA": 913,
+      "CTGCTA": 914,
+      "TGTTAAA": 915,
+      "TCTCATT": 916,
+      "GGGCTT": 917,
+      "TCTTATT": 918,
+      "CTCAAAA": 919,
+      "CTGTAA": 920,
+      "TGATTA": 921,
+      "GGGATG": 922,
+      "GACCTG": 923,
+      "CCCCCA": 924,
+      "GGACTT": 925,
+      "GTGTTTT": 926,
+      "TCTTTA": 927,
+      "TTTTAATT": 928,
+      "GGTGTT": 929,
+      "CTGGTT": 930,
+      "CTACTT": 931,
+      "GGCATG": 932,
+      "TTAGAAA": 933,
+      "GACCTT": 934,
+      "TAATTTG": 935,
+      "CCATTTT": 936,
+      "TCTCCTT": 937,
+      "GATCTG": 938,
+      "GTTGCA": 939,
+      "GCGTC": 940,
+      "AAAATA": 941,
+      "GATCAA": 942,
+      "TCAGCC": 943,
+      "CAAAAAAA": 944,
+      "GGAGTG": 945,
+      "TCTTCTT": 946,
+      "CTAAATT": 947,
+      "GAGAAAA": 948,
+      "CATTTTA": 949,
+      "GACCAA": 950,
+      "TCATAA": 951,
+      "GGGATT": 952,
+      "GTGGTT": 953,
+      "GGTC": 954,
+      "GGATGA": 955,
+      "CCGCC": 956,
+      "CATGAAA": 957,
+      "TATGTA": 958,
+      "GGACTG": 959,
+      "CACCCC": 960,
+      "GTGTCA": 961,
+      "TCTTAAA": 962,
+      "GCACAA": 963,
+      "GTCTTA": 964,
+      "GTGCCA": 965,
+      "CTCTAA": 966,
+      "GTACTT": 967,
+      "GAGTTA": 968,
+      "CCTATT": 969,
+      "GAAAGAA": 970,
+      "GGGTCA": 971,
+      "TCTCCAA": 972,
+      "GGAGTT": 973,
+      "CTACAA": 974,
+      "TCTCTCTC": 975,
+      "GATATG": 976,
+      "CTTAATT": 977,
+      "TAGATT": 978,
+      "TAACAAA": 979,
+      "GCTAGA": 980,
+      "CTTGCA": 981,
+      "GAGTAA": 982,
+      "GGGTGA": 983,
+      "TTACATT": 984,
+      "TTTTGTT": 985,
+      "CTGAAAA": 986,
+      "CACTTTT": 987,
+      "CTAGAA": 988,
+      "TACTC": 989,
+      "GCTAGG": 990,
+      "TATCTG": 991,
+      "GGTCTG": 992,
+      "TTTGAAA": 993,
+      "CAATAAA": 994,
+      "GTATTA": 995,
+      "CAAACAAA": 996,
+      "GATGAAA": 997,
+      "CTACCA": 998,
+      "TCTGATT": 999,
+      "CTTCCTT": 1000,
+      "GGCTCC": 1001,
+      "GTAGTT": 1002,
+      "CTGTCC": 1003,
+      "CGTGAA": 1004,
+      "GCATTTT": 1005,
+      "GTTTATT": 1006,
+      "GGCCAA": 1007,
+      "GCATGA": 1008,
+      "TAAATTA": 1009,
+      "CTTTTTG": 1010,
+      "GATACA": 1011,
+      "TCCAAAA": 1012,
+      "GGACCA": 1013,
+      "GGACAA": 1014,
+      "GGAGCC": 1015,
+      "CAGGCTG": 1016,
+      "GGCGA": 1017,
+      "CTTTATT": 1018,
+      "CGTAAA": 1019,
+      "TAGAGA": 1020,
+      "GGGGTT": 1021,
+      "GAAGCC": 1022,
+      "TCTTTTTT": 1023
+    },
+    "merges": [
+      [
+        "T",
+        "T"
+      ],
+      [
+        "A",
+        "A"
+      ],
+      [
+        "T",
+        "G"
+      ],
+      [
+        "C",
+        "A"
+      ],
+      [
+        "T",
+        "A"
+      ],
+      [
+        "C",
+        "C"
+      ],
+      [
+        "G",
+        "G"
+      ],
+      [
+        "T",
+        "C"
+      ],
+      [
+        "G",
+        "A"
+      ],
+      [
+        "T",
+        "AA"
+      ],
+      [
+        "G",
+        "C"
+      ],
+      [
+        "AA",
+        "A"
+      ],
+      [
+        "TT",
+        "A"
+      ],
+      [
+        "T",
+        "CA"
+      ],
+      [
+        "TG",
+        "A"
+      ],
+      [
+        "TT",
+        "TT"
+      ],
+      [
+        "G",
+        "AA"
+      ],
+      [
+        "T",
+        "CC"
+      ],
+      [
+        "C",
+        "AA"
+      ],
+      [
+        "C",
+        "TG"
+      ],
+      [
+        "C",
+        "TT"
+      ],
+      [
+        "G",
+        "TT"
+      ],
+      [
+        "G",
+        "TG"
+      ],
+      [
+        "G",
+        "CA"
+      ],
+      [
+        "C",
+        "CA"
+      ],
+      [
+        "GG",
+        "A"
+      ],
+      [
+        "G",
+        "TA"
+      ],
+      [
+        "G",
+        "CC"
+      ],
+      [
+        "TAA",
+        "A"
+      ],
+      [
+        "C",
+        "TA"
+      ],
+      [
+        "AA",
+        "AA"
+      ],
+      [
+        "C",
+        "TC"
+      ],
+      [
+        "G",
+        "TC"
+      ],
+      [
+        "TA",
+        "TT"
+      ],
+      [
+        "G",
+        "AAA"
+      ],
+      [
+        "TG",
+        "TG"
+      ],
+      [
+        "TC",
+        "TT"
+      ],
+      [
+        "CA",
+        "CA"
+      ],
+      [
+        "TG",
+        "TT"
+      ],
+      [
+        "TA",
+        "TA"
+      ],
+      [
+        "C",
+        "AAA"
+      ],
+      [
+        "CA",
+        "TT"
+      ],
+      [
+        "TG",
+        "AA"
+      ],
+      [
+        "CA",
+        "GA"
+      ],
+      [
+        "TC",
+        "TG"
+      ],
+      [
+        "CA",
+        "GG"
+      ],
+      [
+        "TC",
+        "AA"
+      ],
+      [
+        "GA",
+        "GA"
+      ],
+      [
+        "TAA",
+        "AA"
+      ],
+      [
+        "GG",
+        "AA"
+      ],
+      [
+        "GC",
+        "TT"
+      ],
+      [
+        "CC",
+        "TT"
+      ],
+      [
+        "C",
+        "TGA"
+      ],
+      [
+        "GC",
+        "TG"
+      ],
+      [
+        "G",
+        "TGA"
+      ],
+      [
+        "C",
+        "TCA"
+      ],
+      [
+        "G",
+        "TAA"
+      ],
+      [
+        "GA",
+        "TT"
+      ],
+      [
+        "GC",
+        "AA"
+      ],
+      [
+        "CA",
+        "TG"
+      ],
+      [
+        "G",
+        "TCA"
+      ],
+      [
+        "TA",
+        "TG"
+      ],
+      [
+        "C",
+        "GG"
+      ],
+      [
+        "GA",
+        "GG"
+      ],
+      [
+        "TTA",
+        "TT"
+      ],
+      [
+        "CC",
+        "TG"
+      ],
+      [
+        "CC",
+        "AA"
+      ],
+      [
+        "C",
+        "TCC"
+      ],
+      [
+        "C",
+        "TAA"
+      ],
+      [
+        "TC",
+        "CA"
+      ],
+      [
+        "TA",
+        "CA"
+      ],
+      [
+        "G",
+        "TTA"
+      ],
+      [
+        "GA",
+        "TG"
+      ],
+      [
+        "GAA",
+        "AA"
+      ],
+      [
+        "TC",
+        "TA"
+      ],
+      [
+        "TT",
+        "AA"
+      ],
+      [
+        "C",
+        "TTA"
+      ],
+      [
+        "G",
+        "TTTT"
+      ],
+      [
+        "GG",
+        "TT"
+      ],
+      [
+        "G",
+        "TCC"
+      ],
+      [
+        "C",
+        "TTTT"
+      ],
+      [
+        "GC",
+        "CA"
+      ],
+      [
+        "C",
+        "GA"
+      ],
+      [
+        "GG",
+        "GG"
+      ],
+      [
+        "CAA",
+        "AA"
+      ],
+      [
+        "TT",
+        "TG"
+      ],
+      [
+        "TA",
+        "GA"
+      ],
+      [
+        "CC",
+        "CA"
+      ],
+      [
+        "GG",
+        "TG"
+      ],
+      [
+        "TC",
+        "TC"
+      ],
+      [
+        "CA",
+        "TA"
+      ],
+      [
+        "TT",
+        "TA"
+      ],
+      [
+        "GA",
+        "CA"
+      ],
+      [
+        "CC",
+        "CC"
+      ],
+      [
+        "TAA",
+        "TT"
+      ],
+      [
+        "TA",
+        "GG"
+      ],
+      [
+        "TG",
+        "GG"
+      ],
+      [
+        "GC",
+        "TA"
+      ],
+      [
+        "TC",
+        "AAA"
+      ],
+      [
+        "TG",
+        "TA"
+      ],
+      [
+        "GA",
+        "TA"
+      ],
+      [
+        "TG",
+        "CA"
+      ],
+      [
+        "GG",
+        "CA"
+      ],
+      [
+        "TCA",
+        "TT"
+      ],
+      [
+        "TG",
+        "GA"
+      ],
+      [
+        "GG",
+        "GA"
+      ],
+      [
+        "CC",
+        "TA"
+      ],
+      [
+        "C",
+        "GC"
+      ],
+      [
+        "TTTT",
+        "TT"
+      ],
+      [
+        "AAA",
+        "TT"
+      ],
+      [
+        "TCC",
+        "TT"
+      ],
+      [
+        "G",
+        "TAAA"
+      ],
+      [
+        "CTG",
+        "AA"
+      ],
+      [
+        "TGA",
+        "TT"
+      ],
+      [
+        "C",
+        "GTG"
+      ],
+      [
+        "TC",
+        "TCA"
+      ],
+      [
+        "GAA",
+        "TT"
+      ],
+      [
+        "TAA",
+        "AAA"
+      ],
+      [
+        "C",
+        "GTT"
+      ],
+      [
+        "GC",
+        "AAA"
+      ],
+      [
+        "TC",
+        "TGA"
+      ],
+      [
+        "CA",
+        "CC"
+      ],
+      [
+        "TC",
+        "TCC"
+      ],
+      [
+        "C",
+        "TAAA"
+      ],
+      [
+        "GG",
+        "TA"
+      ],
+      [
+        "TG",
+        "AAA"
+      ],
+      [
+        "TAA",
+        "TA"
+      ],
+      [
+        "TTA",
+        "TA"
+      ],
+      [
+        "GG",
+        "CC"
+      ],
+      [
+        "GG",
+        "AAA"
+      ],
+      [
+        "CTG",
+        "TT"
+      ],
+      [
+        "GTG",
+        "AA"
+      ],
+      [
+        "TG",
+        "CC"
+      ],
+      [
+        "CTC",
+        "TT"
+      ],
+      [
+        "CAA",
+        "TT"
+      ],
+      [
+        "GTA",
+        "TT"
+      ],
+      [
+        "TCC",
+        "AA"
+      ],
+      [
+        "CA",
+        "GAA"
+      ],
+      [
+        "CTT",
+        "AA"
+      ],
+      [
+        "GA",
+        "GAA"
+      ],
+      [
+        "GTT",
+        "AA"
+      ],
+      [
+        "GTG",
+        "TT"
+      ],
+      [
+        "AAAA",
+        "AA"
+      ],
+      [
+        "GA",
+        "CC"
+      ],
+      [
+        "GCA",
+        "TT"
+      ],
+      [
+        "CA",
+        "GC"
+      ],
+      [
+        "GTC",
+        "TT"
+      ],
+      [
+        "C",
+        "GAA"
+      ],
+      [
+        "TTTT",
+        "AA"
+      ],
+      [
+        "CCA",
+        "TT"
+      ],
+      [
+        "CTC",
+        "AA"
+      ],
+      [
+        "GCC",
+        "AA"
+      ],
+      [
+        "C",
+        "GCA"
+      ],
+      [
+        "CA",
+        "GCA"
+      ],
+      [
+        "GC",
+        "TGA"
+      ],
+      [
+        "GTC",
+        "AA"
+      ],
+      [
+        "CC",
+        "AAA"
+      ],
+      [
+        "C",
+        "GGA"
+      ],
+      [
+        "TC",
+        "TTA"
+      ],
+      [
+        "GCC",
+        "TT"
+      ],
+      [
+        "GC",
+        "TCA"
+      ],
+      [
+        "TAA",
+        "TG"
+      ],
+      [
+        "CTA",
+        "TT"
+      ],
+      [
+        "TA",
+        "TTTT"
+      ],
+      [
+        "TA",
+        "TTA"
+      ],
+      [
+        "CTT",
+        "TG"
+      ],
+      [
+        "TA",
+        "CC"
+      ],
+      [
+        "TC",
+        "TAA"
+      ],
+      [
+        "TCC",
+        "TG"
+      ],
+      [
+        "TA",
+        "TAA"
+      ],
+      [
+        "CA",
+        "GTG"
+      ],
+      [
+        "TC",
+        "TTTT"
+      ],
+      [
+        "CA",
+        "GTT"
+      ],
+      [
+        "CTC",
+        "TG"
+      ],
+      [
+        "CTG",
+        "TG"
+      ],
+      [
+        "GA",
+        "GGA"
+      ],
+      [
+        "TTA",
+        "TG"
+      ],
+      [
+        "CA",
+        "CAA"
+      ],
+      [
+        "GAA",
+        "AAA"
+      ],
+      [
+        "C",
+        "GCC"
+      ],
+      [
+        "TGA",
+        "TG"
+      ],
+      [
+        "C",
+        "GTA"
+      ],
+      [
+        "CA",
+        "GGA"
+      ],
+      [
+        "GTT",
+        "TG"
+      ],
+      [
+        "TC",
+        "AAAA"
+      ],
+      [
+        "GG",
+        "GAA"
+      ],
+      [
+        "CA",
+        "TCA"
+      ],
+      [
+        "CA",
+        "CTG"
+      ],
+      [
+        "TA",
+        "CAA"
+      ],
+      [
+        "GG",
+        "CTG"
+      ],
+      [
+        "GA",
+        "GC"
+      ],
+      [
+        "CA",
+        "CTT"
+      ],
+      [
+        "GA",
+        "GCA"
+      ],
+      [
+        "CC",
+        "TCA"
+      ],
+      [
+        "GGA",
+        "TT"
+      ],
+      [
+        "GA",
+        "CAA"
+      ],
+      [
+        "CC",
+        "CTG"
+      ],
+      [
+        "GCC",
+        "TG"
+      ],
+      [
+        "GA",
+        "TGA"
+      ],
+      [
+        "TA",
+        "GAA"
+      ],
+      [
+        "GA",
+        "GTT"
+      ],
+      [
+        "TA",
+        "CTT"
+      ],
+      [
+        "GTC",
+        "TG"
+      ],
+      [
+        "CA",
+        "CCA"
+      ],
+      [
+        "CC",
+        "CCA"
+      ],
+      [
+        "TA",
+        "TCA"
+      ],
+      [
+        "CA",
+        "TTA"
+      ],
+      [
+        "CAA",
+        "AAA"
+      ],
+      [
+        "CA",
+        "TTTT"
+      ],
+      [
+        "GA",
+        "CTT"
+      ],
+      [
+        "TAAA",
+        "TT"
+      ],
+      [
+        "CA",
+        "TAA"
+      ],
+      [
+        "GC",
+        "TC"
+      ],
+      [
+        "CC",
+        "TCC"
+      ],
+      [
+        "GGA",
+        "GG"
+      ],
+      [
+        "TATT",
+        "AA"
+      ],
+      [
+        "CC",
+        "CTT"
+      ],
+      [
+        "GTG",
+        "TG"
+      ],
+      [
+        "GAA",
+        "TG"
+      ],
+      [
+        "CA",
+        "TGA"
+      ],
+      [
+        "TCA",
+        "TG"
+      ],
+      [
+        "CA",
+        "GTA"
+      ],
+      [
+        "GG",
+        "CTT"
+      ],
+      [
+        "GG",
+        "CCA"
+      ],
+      [
+        "GA",
+        "TAA"
+      ],
+      [
+        "TA",
+        "GTT"
+      ],
+      [
+        "GA",
+        "GTG"
+      ],
+      [
+        "TAA",
+        "TAA"
+      ],
+      [
+        "CC",
+        "TGA"
+      ],
+      [
+        "GA",
+        "CTG"
+      ],
+      [
+        "TA",
+        "TGA"
+      ],
+      [
+        "GC",
+        "TCC"
+      ],
+      [
+        "CAA",
+        "TG"
+      ],
+      [
+        "GG",
+        "GCA"
+      ],
+      [
+        "TTA",
+        "TTA"
+      ],
+      [
+        "TA",
+        "CTG"
+      ],
+      [
+        "GG",
+        "TGA"
+      ],
+      [
+        "GG",
+        "TCA"
+      ],
+      [
+        "GA",
+        "CCA"
+      ],
+      [
+        "GA",
+        "TCA"
+      ],
+      [
+        "AAA",
+        "TG"
+      ],
+      [
+        "CA",
+        "GCC"
+      ],
+      [
+        "G",
+        "TAAAA"
+      ],
+      [
+        "CA",
+        "TC"
+      ],
+      [
+        "GC",
+        "TAA"
+      ],
+      [
+        "CC",
+        "TC"
+      ],
+      [
+        "GG",
+        "CAA"
+      ],
+      [
+        "GG",
+        "GC"
+      ],
+      [
+        "TA",
+        "TC"
+      ],
+      [
+        "GGA",
+        "TG"
+      ],
+      [
+        "CC",
+        "CAA"
+      ],
+      [
+        "C",
+        "GTC"
+      ],
+      [
+        "TTTT",
+        "TTTT"
+      ],
+      [
+        "GAAA",
+        "TT"
+      ],
+      [
+        "GG",
+        "GTG"
+      ],
+      [
+        "GG",
+        "GTT"
+      ],
+      [
+        "TA",
+        "CCA"
+      ],
+      [
+        "TA",
+        "GCA"
+      ],
+      [
+        "GG",
+        "GGA"
+      ],
+      [
+        "GA",
+        "TTA"
+      ],
+      [
+        "C",
+        "TAAAA"
+      ],
+      [
+        "CCA",
+        "TG"
+      ],
+      [
+        "GCA",
+        "TG"
+      ],
+      [
+        "GG",
+        "AAAA"
+      ],
+      [
+        "GA",
+        "GTA"
+      ],
+      [
+        "TC",
+        "TCTT"
+      ],
+      [
+        "GA",
+        "TTTT"
+      ],
+      [
+        "CTA",
+        "TG"
+      ],
+      [
+        "GC",
+        "TTA"
+      ],
+      [
+        "CAGG",
+        "AA"
+      ],
+      [
+        "GG",
+        "TAA"
+      ],
+      [
+        "TGTG",
+        "TT"
+      ],
+      [
+        "TA",
+        "GTA"
+      ],
+      [
+        "CC",
+        "TAA"
+      ],
+      [
+        "TTA",
+        "TTTT"
+      ],
+      [
+        "CA",
+        "TCC"
+      ],
+      [
+        "TA",
+        "TATT"
+      ],
+      [
+        "CA",
+        "CTA"
+      ],
+      [
+        "GC",
+        "AAAA"
+      ],
+      [
+        "TA",
+        "CTA"
+      ],
+      [
+        "GA",
+        "TC"
+      ],
+      [
+        "TGTG",
+        "AA"
+      ],
+      [
+        "CAAA",
+        "TT"
+      ],
+      [
+        "TA",
+        "GTG"
+      ],
+      [
+        "TAA",
+        "AAAA"
+      ],
+      [
+        "G",
+        "TTATT"
+      ],
+      [
+        "TGAA",
+        "TT"
+      ],
+      [
+        "GA",
+        "GCC"
+      ],
+      [
+        "TGTT",
+        "AA"
+      ],
+      [
+        "GA",
+        "CTA"
+      ],
+      [
+        "TATT",
+        "TG"
+      ],
+      [
+        "TA",
+        "GC"
+      ],
+      [
+        "TAAA",
+        "TG"
+      ],
+      [
+        "C",
+        "TTATT"
+      ],
+      [
+        "CA",
+        "GAAA"
+      ],
+      [
+        "GTA",
+        "TG"
+      ],
+      [
+        "GA",
+        "GAAA"
+      ],
+      [
+        "CATT",
+        "AA"
+      ],
+      [
+        "CC",
+        "TTA"
+      ],
+      [
+        "TTTT",
+        "TG"
+      ],
+      [
+        "GC",
+        "GG"
+      ],
+      [
+        "TA",
+        "TAAA"
+      ],
+      [
+        "AAAA",
+        "TT"
+      ],
+      [
+        "TA",
+        "GGA"
+      ],
+      [
+        "GG",
+        "TTA"
+      ],
+      [
+        "TC",
+        "TGTT"
+      ],
+      [
+        "TA",
+        "TCC"
+      ],
+      [
+        "TC",
+        "TGTG"
+      ],
+      [
+        "GAA",
+        "GAA"
+      ],
+      [
+        "TCTT",
+        "AA"
+      ],
+      [
+        "CACA",
+        "TT"
+      ],
+      [
+        "GC",
+        "TTTT"
+      ],
+      [
+        "TC",
+        "TCTG"
+      ],
+      [
+        "CTT",
+        "CC"
+      ],
+      [
+        "TCAA",
+        "TT"
+      ],
+      [
+        "AAAA",
+        "AAAA"
+      ],
+      [
+        "GG",
+        "CTA"
+      ],
+      [
+        "GA",
+        "TCC"
+      ],
+      [
+        "TGTT",
+        "TG"
+      ],
+      [
+        "TGTG",
+        "TG"
+      ],
+      [
+        "GAA",
+        "GG"
+      ],
+      [
+        "CTT",
+        "TA"
+      ],
+      [
+        "GCA",
+        "GG"
+      ],
+      [
+        "CTG",
+        "GG"
+      ],
+      [
+        "GAAA",
+        "TG"
+      ],
+      [
+        "GAA",
+        "GA"
+      ],
+      [
+        "TCA",
+        "TCA"
+      ],
+      [
+        "CTG",
+        "AAA"
+      ],
+      [
+        "CA",
+        "GTC"
+      ],
+      [
+        "CTT",
+        "CTT"
+      ],
+      [
+        "TC",
+        "GG"
+      ],
+      [
+        "TTA",
+        "TAA"
+      ],
+      [
+        "CC",
+        "AAAA"
+      ],
+      [
+        "CC",
+        "CTA"
+      ],
+      [
+        "CC",
+        "TTTT"
+      ],
+      [
+        "GTT",
+        "TA"
+      ],
+      [
+        "TCTT",
+        "TG"
+      ],
+      [
+        "TGA",
+        "GG"
+      ],
+      [
+        "GTAA",
+        "TT"
+      ],
+      [
+        "CA",
+        "CAAA"
+      ],
+      [
+        "TC",
+        "TGAA"
+      ],
+      [
+        "AAA",
+        "TA"
+      ],
+      [
+        "CCA",
+        "GG"
+      ],
+      [
+        "CC",
+        "CTC"
+      ],
+      [
+        "TC",
+        "CATT"
+      ],
+      [
+        "GCA",
+        "GCA"
+      ],
+      [
+        "CTG",
+        "CTG"
+      ],
+      [
+        "TCA",
+        "GG"
+      ],
+      [
+        "CAA",
+        "CAA"
+      ],
+      [
+        "GTT",
+        "TTA"
+      ],
+      [
+        "CTCA",
+        "TT"
+      ],
+      [
+        "GAA",
+        "TA"
+      ],
+      [
+        "CA",
+        "TAAA"
+      ],
+      [
+        "CAGA",
+        "TT"
+      ],
+      [
+        "TGA",
+        "GA"
+      ],
+      [
+        "TCA",
+        "GA"
+      ],
+      [
+        "C",
+        "GTCA"
+      ],
+      [
+        "CA",
+        "CTC"
+      ],
+      [
+        "TAA",
+        "TTA"
+      ],
+      [
+        "GGA",
+        "GA"
+      ],
+      [
+        "TC",
+        "TATT"
+      ],
+      [
+        "C",
+        "GAAA"
+      ],
+      [
+        "C",
+        "GATT"
+      ],
+      [
+        "CA",
+        "TATT"
+      ],
+      [
+        "C",
+        "GCTG"
+      ],
+      [
+        "GTG",
+        "GG"
+      ],
+      [
+        "GTG",
+        "AAA"
+      ],
+      [
+        "TCC",
+        "AAA"
+      ],
+      [
+        "CTCC",
+        "TT"
+      ],
+      [
+        "GTT",
+        "GTT"
+      ],
+      [
+        "C",
+        "GTGA"
+      ],
+      [
+        "CATT",
+        "TG"
+      ],
+      [
+        "CTT",
+        "GG"
+      ],
+      [
+        "TAAAA",
+        "TT"
+      ],
+      [
+        "TC",
+        "TAAA"
+      ],
+      [
+        "CAAA",
+        "TG"
+      ],
+      [
+        "CTGA",
+        "TT"
+      ],
+      [
+        "GC",
+        "TGTG"
+      ],
+      [
+        "TATA",
+        "TG"
+      ],
+      [
+        "GTCA",
+        "TT"
+      ],
+      [
+        "CTC",
+        "AAA"
+      ],
+      [
+        "CTG",
+        "TA"
+      ],
+      [
+        "GGA",
+        "GGA"
+      ],
+      [
+        "C",
+        "GAGG"
+      ],
+      [
+        "CACA",
+        "CACA"
+      ],
+      [
+        "CTT",
+        "TTA"
+      ],
+      [
+        "GC",
+        "TCTG"
+      ],
+      [
+        "TCC",
+        "CC"
+      ],
+      [
+        "GCA",
+        "GA"
+      ],
+      [
+        "CAA",
+        "TA"
+      ],
+      [
+        "CAA",
+        "GG"
+      ],
+      [
+        "TAA",
+        "TTTT"
+      ],
+      [
+        "CTT",
+        "TCA"
+      ],
+      [
+        "TC",
+        "GA"
+      ],
+      [
+        "TGA",
+        "TA"
+      ],
+      [
+        "TGA",
+        "GAA"
+      ],
+      [
+        "GGAA",
+        "TT"
+      ],
+      [
+        "TATA",
+        "TATA"
+      ],
+      [
+        "GG",
+        "GTA"
+      ],
+      [
+        "TAA",
+        "GA"
+      ],
+      [
+        "GTT",
+        "TCA"
+      ],
+      [
+        "CTG",
+        "CC"
+      ],
+      [
+        "GAA",
+        "AAAA"
+      ],
+      [
+        "TTAA",
+        "TT"
+      ],
+      [
+        "CAA",
+        "GA"
+      ],
+      [
+        "TC",
+        "CACA"
+      ],
+      [
+        "GTT",
+        "AAA"
+      ],
+      [
+        "TCC",
+        "CCA"
+      ],
+      [
+        "TC",
+        "CAGG"
+      ],
+      [
+        "C",
+        "GTAA"
+      ],
+      [
+        "CTT",
+        "AAA"
+      ],
+      [
+        "C",
+        "GCTT"
+      ],
+      [
+        "GCC",
+        "CC"
+      ],
+      [
+        "GCAA",
+        "TT"
+      ],
+      [
+        "GC",
+        "GC"
+      ],
+      [
+        "C",
+        "GAGA"
+      ],
+      [
+        "GATT",
+        "AA"
+      ],
+      [
+        "TGAA",
+        "TG"
+      ],
+      [
+        "CA",
+        "GTGA"
+      ],
+      [
+        "TCA",
+        "TA"
+      ],
+      [
+        "CA",
+        "GCTT"
+      ],
+      [
+        "GGA",
+        "GAA"
+      ],
+      [
+        "GC",
+        "TGTT"
+      ],
+      [
+        "CTAA",
+        "TT"
+      ],
+      [
+        "CTCC",
+        "AA"
+      ],
+      [
+        "TC",
+        "TCAA"
+      ],
+      [
+        "TCC",
+        "CTG"
+      ],
+      [
+        "TGA",
+        "TGA"
+      ],
+      [
+        "TATT",
+        "TA"
+      ],
+      [
+        "TCC",
+        "TCA"
+      ],
+      [
+        "GG",
+        "GCC"
+      ],
+      [
+        "CTT",
+        "CTG"
+      ],
+      [
+        "GTC",
+        "AAA"
+      ],
+      [
+        "TAA",
+        "CAA"
+      ],
+      [
+        "CCA",
+        "CCA"
+      ],
+      [
+        "GTG",
+        "GTG"
+      ],
+      [
+        "TTA",
+        "CA"
+      ],
+      [
+        "GC",
+        "CACA"
+      ],
+      [
+        "GC",
+        "CAGG"
+      ],
+      [
+        "GC",
+        "GA"
+      ],
+      [
+        "TCA",
+        "CC"
+      ],
+      [
+        "TCA",
+        "GAA"
+      ],
+      [
+        "CAGA",
+        "TG"
+      ],
+      [
+        "TAA",
+        "TGA"
+      ],
+      [
+        "TTATT",
+        "AA"
+      ],
+      [
+        "GTGA",
+        "TT"
+      ],
+      [
+        "GTT",
+        "CTT"
+      ],
+      [
+        "TAA",
+        "CA"
+      ],
+      [
+        "CTC",
+        "TA"
+      ],
+      [
+        "AAAA",
+        "AAA"
+      ],
+      [
+        "C",
+        "GGAA"
+      ],
+      [
+        "CTTTT",
+        "TT"
+      ],
+      [
+        "TAA",
+        "GAA"
+      ],
+      [
+        "GC",
+        "TGAA"
+      ],
+      [
+        "GTT",
+        "GG"
+      ],
+      [
+        "CCA",
+        "CC"
+      ],
+      [
+        "TTA",
+        "GA"
+      ],
+      [
+        "CTC",
+        "CA"
+      ],
+      [
+        "CTG",
+        "GA"
+      ],
+      [
+        "TTA",
+        "CTT"
+      ],
+      [
+        "TTA",
+        "CAA"
+      ],
+      [
+        "GTCC",
+        "TT"
+      ],
+      [
+        "GTA",
+        "TA"
+      ],
+      [
+        "TC",
+        "CAGA"
+      ],
+      [
+        "GTTTT",
+        "TT"
+      ],
+      [
+        "CTC",
+        "TGA"
+      ],
+      [
+        "C",
+        "GATG"
+      ],
+      [
+        "AAAA",
+        "TG"
+      ],
+      [
+        "GTT",
+        "CC"
+      ],
+      [
+        "TAAA",
+        "TA"
+      ],
+      [
+        "TCC",
+        "TCC"
+      ],
+      [
+        "TC",
+        "CATG"
+      ],
+      [
+        "TAA",
+        "GG"
+      ],
+      [
+        "GC",
+        "TCTT"
+      ],
+      [
+        "CA",
+        "GCTG"
+      ],
+      [
+        "GCC",
+        "AAA"
+      ],
+      [
+        "TC",
+        "TCCA"
+      ],
+      [
+        "TTA",
+        "GG"
+      ],
+      [
+        "TCA",
+        "CTT"
+      ],
+      [
+        "GTG",
+        "CTG"
+      ],
+      [
+        "C",
+        "GTTA"
+      ],
+      [
+        "CA",
+        "TCTT"
+      ],
+      [
+        "GAGA",
+        "TT"
+      ],
+      [
+        "TAA",
+        "CTT"
+      ],
+      [
+        "GCA",
+        "GAA"
+      ],
+      [
+        "CAGG",
+        "TT"
+      ],
+      [
+        "TTA",
+        "GAA"
+      ],
+      [
+        "CA",
+        "TGTT"
+      ],
+      [
+        "CTCC",
+        "TG"
+      ],
+      [
+        "TGAA",
+        "AAA"
+      ],
+      [
+        "CCA",
+        "GA"
+      ],
+      [
+        "TATA",
+        "TA"
+      ],
+      [
+        "CCTT",
+        "AA"
+      ],
+      [
+        "TCC",
+        "CTT"
+      ],
+      [
+        "TCA",
+        "CTG"
+      ],
+      [
+        "TC",
+        "GAA"
+      ],
+      [
+        "TTTT",
+        "AAA"
+      ],
+      [
+        "GC",
+        "CATT"
+      ],
+      [
+        "CAA",
+        "GAA"
+      ],
+      [
+        "CA",
+        "GCAA"
+      ],
+      [
+        "TCA",
+        "GCA"
+      ],
+      [
+        "CACA",
+        "TG"
+      ],
+      [
+        "GA",
+        "GGAA"
+      ],
+      [
+        "GTG",
+        "CC"
+      ],
+      [
+        "GTT",
+        "CTG"
+      ],
+      [
+        "CTA",
+        "TA"
+      ],
+      [
+        "TC",
+        "TCTA"
+      ],
+      [
+        "TGA",
+        "CC"
+      ],
+      [
+        "GCC",
+        "CTG"
+      ],
+      [
+        "CGG",
+        "TT"
+      ],
+      [
+        "TATT",
+        "TTA"
+      ],
+      [
+        "TGA",
+        "CTT"
+      ],
+      [
+        "C",
+        "GCAA"
+      ],
+      [
+        "C",
+        "GTCC"
+      ],
+      [
+        "TGA",
+        "GTT"
+      ],
+      [
+        "CA",
+        "TATA"
+      ],
+      [
+        "GA",
+        "TAAA"
+      ],
+      [
+        "CA",
+        "CTGA"
+      ],
+      [
+        "TG",
+        "GAA"
+      ],
+      [
+        "GCA",
+        "GTG"
+      ],
+      [
+        "TCA",
+        "GTT"
+      ],
+      [
+        "TC",
+        "GTT"
+      ],
+      [
+        "GTC",
+        "TA"
+      ],
+      [
+        "TCA",
+        "CCA"
+      ],
+      [
+        "GC",
+        "CAGA"
+      ],
+      [
+        "GCA",
+        "CC"
+      ],
+      [
+        "TGTG",
+        "TGTG"
+      ],
+      [
+        "TTTT",
+        "TA"
+      ],
+      [
+        "CTG",
+        "CTT"
+      ],
+      [
+        "TGA",
+        "CAA"
+      ],
+      [
+        "GTG",
+        "TA"
+      ],
+      [
+        "C",
+        "GTTTT"
+      ],
+      [
+        "CCTT",
+        "TG"
+      ],
+      [
+        "CA",
+        "GTCA"
+      ],
+      [
+        "TCC",
+        "TA"
+      ],
+      [
+        "TC",
+        "TATA"
+      ],
+      [
+        "CCAA",
+        "TT"
+      ],
+      [
+        "CA",
+        "TCTG"
+      ],
+      [
+        "GCTT",
+        "TG"
+      ],
+      [
+        "GA",
+        "CAGA"
+      ],
+      [
+        "CA",
+        "GTAA"
+      ],
+      [
+        "CC",
+        "TCTT"
+      ],
+      [
+        "TTA",
+        "TCA"
+      ],
+      [
+        "CC",
+        "TCTG"
+      ],
+      [
+        "TC",
+        "GTG"
+      ],
+      [
+        "GG",
+        "TTTT"
+      ],
+      [
+        "CA",
+        "TGTG"
+      ],
+      [
+        "GA",
+        "GTC"
+      ],
+      [
+        "CTT",
+        "CCA"
+      ],
+      [
+        "GC",
+        "GTG"
+      ],
+      [
+        "GAAAA",
+        "TT"
+      ],
+      [
+        "CA",
+        "TGAA"
+      ],
+      [
+        "GCTT",
+        "AA"
+      ],
+      [
+        "GATT",
+        "TG"
+      ],
+      [
+        "C",
+        "GCCA"
+      ],
+      [
+        "GA",
+        "CAAA"
+      ],
+      [
+        "CAA",
+        "AAAA"
+      ],
+      [
+        "CTG",
+        "GAA"
+      ],
+      [
+        "TCC",
+        "TGA"
+      ],
+      [
+        "GTT",
+        "TAA"
+      ],
+      [
+        "CCA",
+        "GCA"
+      ],
+      [
+        "CTC",
+        "TCA"
+      ],
+      [
+        "CCA",
+        "GAA"
+      ],
+      [
+        "TCAA",
+        "TG"
+      ],
+      [
+        "GTCC",
+        "AA"
+      ],
+      [
+        "GA",
+        "TATT"
+      ],
+      [
+        "TCAA",
+        "AAA"
+      ],
+      [
+        "GAGA",
+        "TG"
+      ],
+      [
+        "TC",
+        "TATG"
+      ],
+      [
+        "TTA",
+        "CC"
+      ],
+      [
+        "GC",
+        "CATG"
+      ],
+      [
+        "GGA",
+        "GCA"
+      ],
+      [
+        "TA",
+        "GAAA"
+      ],
+      [
+        "CAGG",
+        "TG"
+      ],
+      [
+        "TAA",
+        "TCA"
+      ],
+      [
+        "CGG",
+        "TG"
+      ],
+      [
+        "GTGA",
+        "TG"
+      ],
+      [
+        "CC",
+        "GG"
+      ],
+      [
+        "GC",
+        "TATT"
+      ],
+      [
+        "CA",
+        "CCTG"
+      ],
+      [
+        "GC",
+        "TAAA"
+      ],
+      [
+        "CCA",
+        "CTG"
+      ],
+      [
+        "TA",
+        "CAAA"
+      ],
+      [
+        "TTA",
+        "GTT"
+      ],
+      [
+        "CTGA",
+        "TG"
+      ],
+      [
+        "CTT",
+        "GA"
+      ],
+      [
+        "GAGG",
+        "TT"
+      ],
+      [
+        "GTA",
+        "GG"
+      ],
+      [
+        "GTTTT",
+        "AA"
+      ],
+      [
+        "TCA",
+        "CAA"
+      ],
+      [
+        "TAA",
+        "GTT"
+      ],
+      [
+        "TCA",
+        "GTG"
+      ],
+      [
+        "CA",
+        "CTCA"
+      ],
+      [
+        "TCA",
+        "TTTT"
+      ],
+      [
+        "GTA",
+        "GA"
+      ],
+      [
+        "TGA",
+        "CTG"
+      ],
+      [
+        "GAA",
+        "GCA"
+      ],
+      [
+        "GC",
+        "GCC"
+      ],
+      [
+        "TTA",
+        "CTG"
+      ],
+      [
+        "TCC",
+        "CAA"
+      ],
+      [
+        "TGA",
+        "GGA"
+      ],
+      [
+        "CCA",
+        "TA"
+      ],
+      [
+        "CAAAA",
+        "TT"
+      ],
+      [
+        "TTA",
+        "CTA"
+      ],
+      [
+        "CA",
+        "CGG"
+      ],
+      [
+        "TTAA",
+        "AAA"
+      ],
+      [
+        "CC",
+        "CAAA"
+      ],
+      [
+        "TAA",
+        "GTA"
+      ],
+      [
+        "TAA",
+        "TAAA"
+      ],
+      [
+        "CC",
+        "CAGG"
+      ],
+      [
+        "CA",
+        "TCAA"
+      ],
+      [
+        "TAAAA",
+        "TG"
+      ],
+      [
+        "CTTTT",
+        "AA"
+      ],
+      [
+        "TA",
+        "CATT"
+      ],
+      [
+        "TAA",
+        "CTG"
+      ],
+      [
+        "GTG",
+        "GAA"
+      ],
+      [
+        "GA",
+        "CTC"
+      ],
+      [
+        "TATT",
+        "AAA"
+      ],
+      [
+        "GA",
+        "TGAA"
+      ],
+      [
+        "GG",
+        "GAAA"
+      ],
+      [
+        "GTT",
+        "CAA"
+      ],
+      [
+        "GTT",
+        "GAA"
+      ],
+      [
+        "TTA",
+        "TGA"
+      ],
+      [
+        "CA",
+        "CCTT"
+      ],
+      [
+        "TAA",
+        "GTG"
+      ],
+      [
+        "GTCC",
+        "TG"
+      ],
+      [
+        "TAAAA",
+        "AAA"
+      ],
+      [
+        "GCA",
+        "TA"
+      ],
+      [
+        "GGAA",
+        "TG"
+      ],
+      [
+        "TAA",
+        "CTA"
+      ],
+      [
+        "GTC",
+        "TCA"
+      ],
+      [
+        "CCA",
+        "GGA"
+      ],
+      [
+        "CA",
+        "TATG"
+      ],
+      [
+        "CC",
+        "TGTG"
+      ],
+      [
+        "TTTT",
+        "CTT"
+      ],
+      [
+        "GCA",
+        "CTG"
+      ],
+      [
+        "GCA",
+        "GGA"
+      ],
+      [
+        "GA",
+        "CATT"
+      ],
+      [
+        "GAA",
+        "CAA"
+      ],
+      [
+        "GC",
+        "GTT"
+      ],
+      [
+        "CTC",
+        "TCC"
+      ],
+      [
+        "GG",
+        "GAGG"
+      ],
+      [
+        "CA",
+        "CCAA"
+      ],
+      [
+        "TA",
+        "GCC"
+      ],
+      [
+        "TA",
+        "CACA"
+      ],
+      [
+        "GA",
+        "GCTG"
+      ],
+      [
+        "GCAA",
+        "TG"
+      ],
+      [
+        "TAA",
+        "CC"
+      ],
+      [
+        "TGA",
+        "GTG"
+      ],
+      [
+        "GAA",
+        "CTT"
+      ],
+      [
+        "CA",
+        "TACA"
+      ],
+      [
+        "CA",
+        "GTTA"
+      ],
+      [
+        "GA",
+        "CACA"
+      ],
+      [
+        "GG",
+        "TCC"
+      ],
+      [
+        "GGAA",
+        "AAA"
+      ],
+      [
+        "TC",
+        "GTA"
+      ],
+      [
+        "GAA",
+        "GGA"
+      ],
+      [
+        "GC",
+        "GCA"
+      ],
+      [
+        "TC",
+        "GCC"
+      ],
+      [
+        "CCA",
+        "CAA"
+      ],
+      [
+        "CTT",
+        "CAA"
+      ],
+      [
+        "CC",
+        "CACA"
+      ],
+      [
+        "GTT",
+        "GTG"
+      ],
+      [
+        "TA",
+        "TGTT"
+      ],
+      [
+        "TGA",
+        "GCA"
+      ],
+      [
+        "TC",
+        "TACA"
+      ],
+      [
+        "GC",
+        "GGA"
+      ],
+      [
+        "GA",
+        "TGTT"
+      ],
+      [
+        "CTG",
+        "CAA"
+      ],
+      [
+        "TAA",
+        "GCA"
+      ],
+      [
+        "GGTT",
+        "TG"
+      ],
+      [
+        "GC",
+        "TCAA"
+      ],
+      [
+        "GCC",
+        "CCA"
+      ],
+      [
+        "CA",
+        "GCCA"
+      ],
+      [
+        "TCA",
+        "TTA"
+      ],
+      [
+        "GTA",
+        "TTTT"
+      ],
+      [
+        "CC",
+        "TGTT"
+      ],
+      [
+        "CTT",
+        "GTT"
+      ],
+      [
+        "TAAA",
+        "TAAA"
+      ],
+      [
+        "CA",
+        "GAAAA"
+      ],
+      [
+        "GCC",
+        "TCA"
+      ],
+      [
+        "CTAA",
+        "AAA"
+      ],
+      [
+        "TC",
+        "GGA"
+      ],
+      [
+        "GTAA",
+        "AAA"
+      ],
+      [
+        "GAA",
+        "CC"
+      ],
+      [
+        "GTAA",
+        "TG"
+      ],
+      [
+        "TC",
+        "GCA"
+      ],
+      [
+        "GG",
+        "GAGA"
+      ],
+      [
+        "CTT",
+        "CTA"
+      ],
+      [
+        "GTCA",
+        "TG"
+      ],
+      [
+        "TAA",
+        "TATT"
+      ],
+      [
+        "GTT",
+        "TGA"
+      ],
+      [
+        "GTA",
+        "GAA"
+      ],
+      [
+        "CTG",
+        "GGA"
+      ],
+      [
+        "GG",
+        "CTC"
+      ],
+      [
+        "GG",
+        "CAGG"
+      ],
+      [
+        "CTG",
+        "TGA"
+      ],
+      [
+        "CTCA",
+        "TG"
+      ],
+      [
+        "TCA",
+        "GTA"
+      ],
+      [
+        "GTT",
+        "GA"
+      ],
+      [
+        "GG",
+        "CGG"
+      ],
+      [
+        "GG",
+        "CAGA"
+      ],
+      [
+        "CC",
+        "CAGA"
+      ],
+      [
+        "CTT",
+        "TGA"
+      ],
+      [
+        "TCA",
+        "GGA"
+      ],
+      [
+        "TA",
+        "TCTT"
+      ],
+      [
+        "GC",
+        "TCCA"
+      ],
+      [
+        "CA",
+        "CTTA"
+      ],
+      [
+        "GTG",
+        "GCA"
+      ],
+      [
+        "GTG",
+        "GGA"
+      ],
+      [
+        "GTC",
+        "TGA"
+      ],
+      [
+        "GAGG",
+        "TG"
+      ],
+      [
+        "TAA",
+        "CCA"
+      ],
+      [
+        "CC",
+        "CTCC"
+      ],
+      [
+        "CTG",
+        "CCA"
+      ],
+      [
+        "GC",
+        "GAA"
+      ],
+      [
+        "CTT",
+        "TAA"
+      ],
+      [
+        "TTA",
+        "CCA"
+      ],
+      [
+        "TCA",
+        "CTA"
+      ],
+      [
+        "CC",
+        "TGAA"
+      ],
+      [
+        "GG",
+        "CAAA"
+      ],
+      [
+        "GCAA",
+        "AAA"
+      ],
+      [
+        "TTA",
+        "GTA"
+      ],
+      [
+        "CTT",
+        "TCC"
+      ],
+      [
+        "GC",
+        "TATA"
+      ],
+      [
+        "GTT",
+        "CCA"
+      ],
+      [
+        "GAAAA",
+        "TG"
+      ],
+      [
+        "TGA",
+        "TTTT"
+      ],
+      [
+        "GCC",
+        "TCC"
+      ],
+      [
+        "GAAAA",
+        "AAA"
+      ],
+      [
+        "GGGG",
+        "TG"
+      ],
+      [
+        "TTA",
+        "TATT"
+      ],
+      [
+        "TTA",
+        "TAAA"
+      ],
+      [
+        "CTT",
+        "GAA"
+      ],
+      [
+        "GTG",
+        "GA"
+      ],
+      [
+        "TTA",
+        "GCA"
+      ],
+      [
+        "GAGA",
+        "GAGA"
+      ],
+      [
+        "TCAAA",
+        "TT"
+      ],
+      [
+        "GTT",
+        "TCC"
+      ],
+      [
+        "TA",
+        "TGTG"
+      ],
+      [
+        "GTT",
+        "CTA"
+      ],
+      [
+        "GC",
+        "TATG"
+      ],
+      [
+        "TAA",
+        "GGA"
+      ],
+      [
+        "CAA",
+        "GCA"
+      ],
+      [
+        "GCC",
+        "TA"
+      ],
+      [
+        "CTAA",
+        "TG"
+      ],
+      [
+        "CA",
+        "CGA"
+      ],
+      [
+        "TGA",
+        "CTA"
+      ],
+      [
+        "CAA",
+        "CTT"
+      ],
+      [
+        "TGA",
+        "CCA"
+      ],
+      [
+        "GAAA",
+        "TA"
+      ],
+      [
+        "TTATT",
+        "TG"
+      ],
+      [
+        "TTA",
+        "GTG"
+      ],
+      [
+        "GG",
+        "GCTG"
+      ],
+      [
+        "CAA",
+        "GGA"
+      ],
+      [
+        "CC",
+        "CGG"
+      ],
+      [
+        "CATT",
+        "TA"
+      ],
+      [
+        "CCAA",
+        "AAA"
+      ],
+      [
+        "GTC",
+        "TTTT"
+      ],
+      [
+        "TAA",
+        "TTAA"
+      ],
+      [
+        "TATT",
+        "TATT"
+      ],
+      [
+        "CC",
+        "CCTT"
+      ],
+      [
+        "TGA",
+        "TCA"
+      ],
+      [
+        "GTG",
+        "CTT"
+      ],
+      [
+        "GTTA",
+        "TG"
+      ],
+      [
+        "GA",
+        "TGTG"
+      ],
+      [
+        "CTG",
+        "TCA"
+      ],
+      [
+        "CA",
+        "TCCA"
+      ],
+      [
+        "GTC",
+        "TCC"
+      ],
+      [
+        "TTA",
+        "GGA"
+      ],
+      [
+        "TGA",
+        "TAA"
+      ],
+      [
+        "CA",
+        "CTAA"
+      ],
+      [
+        "CAA",
+        "CC"
+      ],
+      [
+        "GAA",
+        "GTT"
+      ],
+      [
+        "GA",
+        "CAGG"
+      ],
+      [
+        "TCTG",
+        "AAA"
+      ],
+      [
+        "CTG",
+        "GCA"
+      ],
+      [
+        "GC",
+        "TACA"
+      ],
+      [
+        "TA",
+        "TGAA"
+      ],
+      [
+        "CAA",
+        "GTT"
+      ],
+      [
+        "CAA",
+        "TAA"
+      ],
+      [
+        "CTT",
+        "GGA"
+      ],
+      [
+        "CC",
+        "CATT"
+      ],
+      [
+        "CAA",
+        "GTG"
+      ],
+      [
+        "TC",
+        "GC"
+      ],
+      [
+        "GA",
+        "TATA"
+      ],
+      [
+        "CC",
+        "CTGA"
+      ],
+      [
+        "GA",
+        "GCAA"
+      ],
+      [
+        "GAA",
+        "GTG"
+      ],
+      [
+        "TAAA",
+        "TAA"
+      ],
+      [
+        "CCA",
+        "CTT"
+      ],
+      [
+        "CC",
+        "CTCA"
+      ],
+      [
+        "GG",
+        "GTC"
+      ],
+      [
+        "GG",
+        "CACA"
+      ],
+      [
+        "GTT",
+        "GTA"
+      ],
+      [
+        "CTTA",
+        "TG"
+      ],
+      [
+        "TGTT",
+        "TA"
+      ],
+      [
+        "CTG",
+        "GTG"
+      ],
+      [
+        "CCA",
+        "GTG"
+      ],
+      [
+        "CAA",
+        "TGA"
+      ],
+      [
+        "TTAA",
+        "TG"
+      ],
+      [
+        "GAA",
+        "GTA"
+      ],
+      [
+        "GCC",
+        "TGA"
+      ],
+      [
+        "CC",
+        "TCCA"
+      ],
+      [
+        "GAA",
+        "TAA"
+      ],
+      [
+        "TC",
+        "GTC"
+      ],
+      [
+        "GA",
+        "CGG"
+      ],
+      [
+        "TCC",
+        "TTTT"
+      ],
+      [
+        "C",
+        "GAAAA"
+      ],
+      [
+        "GA",
+        "GCTT"
+      ],
+      [
+        "CTT",
+        "GTG"
+      ],
+      [
+        "CA",
+        "CCCA"
+      ],
+      [
+        "GG",
+        "TGTG"
+      ],
+      [
+        "CC",
+        "TAAA"
+      ],
+      [
+        "CC",
+        "TCAA"
+      ],
+      [
+        "GGA",
+        "TA"
+      ],
+      [
+        "GA",
+        "TCTT"
+      ],
+      [
+        "GG",
+        "GGAA"
+      ],
+      [
+        "GAA",
+        "TGA"
+      ],
+      [
+        "GCA",
+        "GTT"
+      ],
+      [
+        "GAA",
+        "CTG"
+      ],
+      [
+        "TC",
+        "TAAAA"
+      ],
+      [
+        "GTA",
+        "GTA"
+      ],
+      [
+        "TATG",
+        "AAA"
+      ],
+      [
+        "CTA",
+        "TTTT"
+      ],
+      [
+        "GCA",
+        "TCA"
+      ],
+      [
+        "TTA",
+        "TATA"
+      ],
+      [
+        "AAAAAA",
+        "AAA"
+      ],
+      [
+        "CTC",
+        "TTTT"
+      ],
+      [
+        "CAA",
+        "CTG"
+      ],
+      [
+        "GA",
+        "CATG"
+      ],
+      [
+        "CC",
+        "CCTG"
+      ],
+      [
+        "CAAAA",
+        "TG"
+      ],
+      [
+        "CAA",
+        "GTA"
+      ],
+      [
+        "CCAA",
+        "TG"
+      ],
+      [
+        "GG",
+        "CTCA"
+      ],
+      [
+        "TAA",
+        "TATA"
+      ],
+      [
+        "CTT",
+        "GTA"
+      ],
+      [
+        "GC",
+        "GTA"
+      ],
+      [
+        "TAA",
+        "TCC"
+      ],
+      [
+        "GG",
+        "CATT"
+      ],
+      [
+        "CCA",
+        "TCA"
+      ],
+      [
+        "CA",
+        "TCTA"
+      ],
+      [
+        "TCTC",
+        "AAA"
+      ],
+      [
+        "GCA",
+        "GCC"
+      ],
+      [
+        "TATT",
+        "TCA"
+      ],
+      [
+        "GAA",
+        "TTTT"
+      ],
+      [
+        "GG",
+        "TGAA"
+      ],
+      [
+        "GAA",
+        "GAAA"
+      ],
+      [
+        "GTTTT",
+        "TG"
+      ],
+      [
+        "TGA",
+        "GTA"
+      ],
+      [
+        "CAA",
+        "TTA"
+      ],
+      [
+        "CA",
+        "TAGA"
+      ],
+      [
+        "GAGG",
+        "AAA"
+      ],
+      [
+        "GA",
+        "GTCA"
+      ],
+      [
+        "GG",
+        "CTGA"
+      ],
+      [
+        "GC",
+        "TCTA"
+      ],
+      [
+        "CAAA",
+        "TA"
+      ],
+      [
+        "GCC",
+        "CTT"
+      ],
+      [
+        "CA",
+        "CTCC"
+      ],
+      [
+        "GG",
+        "CCTG"
+      ],
+      [
+        "TAA",
+        "TTTA"
+      ],
+      [
+        "GAA",
+        "TCA"
+      ],
+      [
+        "CATT",
+        "AAA"
+      ],
+      [
+        "GCA",
+        "CCA"
+      ],
+      [
+        "CA",
+        "TAAAA"
+      ],
+      [
+        "CA",
+        "GTCC"
+      ],
+      [
+        "GAA",
+        "CCA"
+      ],
+      [
+        "CAA",
+        "TTTT"
+      ],
+      [
+        "GA",
+        "GTGA"
+      ],
+      [
+        "CAA",
+        "CCA"
+      ],
+      [
+        "TCC",
+        "CTA"
+      ],
+      [
+        "GTAAA",
+        "TT"
+      ],
+      [
+        "GG",
+        "TCTT"
+      ],
+      [
+        "CA",
+        "CAAAA"
+      ],
+      [
+        "GA",
+        "CTGA"
+      ],
+      [
+        "CTT",
+        "TCTT"
+      ],
+      [
+        "CTG",
+        "TTTT"
+      ],
+      [
+        "GTG",
+        "TGA"
+      ],
+      [
+        "GG",
+        "TAAA"
+      ],
+      [
+        "TA",
+        "CAGA"
+      ],
+      [
+        "TATA",
+        "TTTT"
+      ],
+      [
+        "CAGG",
+        "AAA"
+      ],
+      [
+        "CA",
+        "GCTA"
+      ],
+      [
+        "GA",
+        "CGA"
+      ],
+      [
+        "CA",
+        "GTTTT"
+      ],
+      [
+        "GTG",
+        "GTA"
+      ],
+      [
+        "CC",
+        "CATG"
+      ],
+      [
+        "CAA",
+        "TCA"
+      ],
+      [
+        "TAA",
+        "GAAA"
+      ],
+      [
+        "GCA",
+        "GTA"
+      ],
+      [
+        "GTT",
+        "GGA"
+      ],
+      [
+        "GA",
+        "CTCA"
+      ],
+      [
+        "GAA",
+        "TTA"
+      ],
+      [
+        "CAA",
+        "CTA"
+      ],
+      [
+        "C",
+        "GCTA"
+      ],
+      [
+        "CC",
+        "CCAA"
+      ],
+      [
+        "TATT",
+        "TAA"
+      ],
+      [
+        "TCA",
+        "TGA"
+      ],
+      [
+        "CTC",
+        "TTA"
+      ],
+      [
+        "CTGAA",
+        "TT"
+      ],
+      [
+        "GCA",
+        "CTT"
+      ],
+      [
+        "GG",
+        "CCTT"
+      ],
+      [
+        "GAA",
+        "CTA"
+      ],
+      [
+        "CCA",
+        "GCC"
+      ],
+      [
+        "CC",
+        "GTG"
+      ],
+      [
+        "TGTG",
+        "AAA"
+      ],
+      [
+        "CTG",
+        "CTA"
+      ],
+      [
+        "TGTT",
+        "AAA"
+      ],
+      [
+        "TC",
+        "TCATT"
+      ],
+      [
+        "GG",
+        "GCTT"
+      ],
+      [
+        "TC",
+        "TTATT"
+      ],
+      [
+        "CTC",
+        "AAAA"
+      ],
+      [
+        "CTG",
+        "TAA"
+      ],
+      [
+        "TGA",
+        "TTA"
+      ],
+      [
+        "GG",
+        "GATG"
+      ],
+      [
+        "GA",
+        "CCTG"
+      ],
+      [
+        "CC",
+        "CCCA"
+      ],
+      [
+        "GGA",
+        "CTT"
+      ],
+      [
+        "GTG",
+        "TTTT"
+      ],
+      [
+        "TCTT",
+        "TA"
+      ],
+      [
+        "TTTTAA",
+        "TT"
+      ],
+      [
+        "GG",
+        "TGTT"
+      ],
+      [
+        "CTG",
+        "GTT"
+      ],
+      [
+        "CTA",
+        "CTT"
+      ],
+      [
+        "GG",
+        "CATG"
+      ],
+      [
+        "TTA",
+        "GAAA"
+      ],
+      [
+        "GA",
+        "CCTT"
+      ],
+      [
+        "TAA",
+        "TTTG"
+      ],
+      [
+        "CCA",
+        "TTTT"
+      ],
+      [
+        "TC",
+        "TCCTT"
+      ],
+      [
+        "GA",
+        "TCTG"
+      ],
+      [
+        "GTT",
+        "GCA"
+      ],
+      [
+        "GC",
+        "GTC"
+      ],
+      [
+        "AAAA",
+        "TA"
+      ],
+      [
+        "GA",
+        "TCAA"
+      ],
+      [
+        "TCA",
+        "GCC"
+      ],
+      [
+        "CAAAA",
+        "AAA"
+      ],
+      [
+        "GGA",
+        "GTG"
+      ],
+      [
+        "TCTT",
+        "CTT"
+      ],
+      [
+        "CTAAA",
+        "TT"
+      ],
+      [
+        "GA",
+        "GAAAA"
+      ],
+      [
+        "CATT",
+        "TTA"
+      ],
+      [
+        "GA",
+        "CCAA"
+      ],
+      [
+        "TCA",
+        "TAA"
+      ],
+      [
+        "GG",
+        "GATT"
+      ],
+      [
+        "GTG",
+        "GTT"
+      ],
+      [
+        "GG",
+        "TC"
+      ],
+      [
+        "GGA",
+        "TGA"
+      ],
+      [
+        "CC",
+        "GCC"
+      ],
+      [
+        "CATG",
+        "AAA"
+      ],
+      [
+        "TATG",
+        "TA"
+      ],
+      [
+        "GGA",
+        "CTG"
+      ],
+      [
+        "CA",
+        "CCCC"
+      ],
+      [
+        "GTG",
+        "TCA"
+      ],
+      [
+        "TCTT",
+        "AAA"
+      ],
+      [
+        "GCA",
+        "CAA"
+      ],
+      [
+        "GTC",
+        "TTA"
+      ],
+      [
+        "GTG",
+        "CCA"
+      ],
+      [
+        "CTC",
+        "TAA"
+      ],
+      [
+        "GTA",
+        "CTT"
+      ],
+      [
+        "GA",
+        "GTTA"
+      ],
+      [
+        "CC",
+        "TATT"
+      ],
+      [
+        "GAAA",
+        "GAA"
+      ],
+      [
+        "GG",
+        "GTCA"
+      ],
+      [
+        "TCTCC",
+        "AA"
+      ],
+      [
+        "GGA",
+        "GTT"
+      ],
+      [
+        "CTA",
+        "CAA"
+      ],
+      [
+        "TCTC",
+        "TCTC"
+      ],
+      [
+        "GA",
+        "TATG"
+      ],
+      [
+        "CTTAA",
+        "TT"
+      ],
+      [
+        "TA",
+        "GATT"
+      ],
+      [
+        "TAA",
+        "CAAA"
+      ],
+      [
+        "GC",
+        "TAGA"
+      ],
+      [
+        "CTT",
+        "GCA"
+      ],
+      [
+        "GA",
+        "GTAA"
+      ],
+      [
+        "GG",
+        "GTGA"
+      ],
+      [
+        "TTA",
+        "CATT"
+      ],
+      [
+        "TTTT",
+        "GTT"
+      ],
+      [
+        "CTG",
+        "AAAA"
+      ],
+      [
+        "CA",
+        "CTTTT"
+      ],
+      [
+        "CTA",
+        "GAA"
+      ],
+      [
+        "TA",
+        "CTC"
+      ],
+      [
+        "GC",
+        "TAGG"
+      ],
+      [
+        "TA",
+        "TCTG"
+      ],
+      [
+        "GG",
+        "TCTG"
+      ],
+      [
+        "TTTG",
+        "AAA"
+      ],
+      [
+        "CAA",
+        "TAAA"
+      ],
+      [
+        "GTA",
+        "TTA"
+      ],
+      [
+        "CAAA",
+        "CAAA"
+      ],
+      [
+        "GATG",
+        "AAA"
+      ],
+      [
+        "CTA",
+        "CCA"
+      ],
+      [
+        "TC",
+        "TGATT"
+      ],
+      [
+        "CTT",
+        "CCTT"
+      ],
+      [
+        "GG",
+        "CTCC"
+      ],
+      [
+        "GTA",
+        "GTT"
+      ],
+      [
+        "CTG",
+        "TCC"
+      ],
+      [
+        "CGTG",
+        "AA"
+      ],
+      [
+        "GCA",
+        "TTTT"
+      ],
+      [
+        "GTT",
+        "TATT"
+      ],
+      [
+        "GG",
+        "CCAA"
+      ],
+      [
+        "GCA",
+        "TGA"
+      ],
+      [
+        "TAAA",
+        "TTA"
+      ],
+      [
+        "CTTTT",
+        "TG"
+      ],
+      [
+        "GA",
+        "TACA"
+      ],
+      [
+        "TCC",
+        "AAAA"
+      ],
+      [
+        "GGA",
+        "CCA"
+      ],
+      [
+        "GGA",
+        "CAA"
+      ],
+      [
+        "GGA",
+        "GCC"
+      ],
+      [
+        "CAGG",
+        "CTG"
+      ],
+      [
+        "GG",
+        "CGA"
+      ],
+      [
+        "CTT",
+        "TATT"
+      ],
+      [
+        "C",
+        "GTAAA"
+      ],
+      [
+        "TA",
+        "GAGA"
+      ],
+      [
+        "GG",
+        "GGTT"
+      ],
+      [
+        "GAA",
+        "GCC"
+      ],
+      [
+        "TC",
+        "TTTTTT"
+      ]
+    ]
+  }
+}

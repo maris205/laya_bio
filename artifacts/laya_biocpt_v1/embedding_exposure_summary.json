@@ -1,0 +1,56 @@
+{
+  "dna": {
+    "tokens": 1022,
+    "natural_input_count_quantiles": [
+      0.0,
+      722.75,
+      1215.5,
+      3008.75,
+      37850.0
+    ],
+    "target_count_quantiles": [
+      0.0,
+      110.0,
+      181.0,
+      453.0,
+      5719.0
+    ],
+    "weight_delta_l2_quantiles": [
+      0.20956842601299286,
+      0.3039197474718094,
+      0.33360908925533295,
+      0.365273617208004,
+      0.5804052352905273
+    ],
+    "seen_but_no_masked_target": []
+  },
+  "protein": {
+    "tokens": 1022,
+    "natural_input_count_quantiles": [
+      0.0,
+      719.0,
+      1114.0,
+      3055.25,
+      49544.0
+    ],
+    "target_count_quantiles": [
+      0.0,
+      108.25,
+      169.0,
+      461.0,
+      7375.0
+    ],
+    "weight_delta_l2_quantiles": [
+      0.16388927400112152,
+      0.2930901423096657,
+      0.33325810730457306,
+      0.374735064804554,
+      0.6655096411705017
+    ],
+    "seen_but_no_masked_target": [
+      "<BIO_PROTEIN:B>",
+      "<BIO_PROTEIN:U>",
+      "<BIO_PROTEIN:Z>"
+    ]
+  }
+}

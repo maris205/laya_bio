@@ -18,6 +18,8 @@ def main():
     a=p.parse_args()
     data=a.root/'data'
     assert json.loads((data/'status.json').read_text())['status']=='complete'
+    source_qc=json.loads((data/'residue_composition_audit.json').read_text())
+    assert source_qc['status']=='pass' and not source_qc['missing_canonical_amino_acids']
     smoke=json.loads((a.root/'smoke/status.json').read_text())
     assert smoke['status']=='complete' and smoke['checkpoint_reload_exact'] and smoke['sft_seconds_per_update']>0
     out=a.root/'round'

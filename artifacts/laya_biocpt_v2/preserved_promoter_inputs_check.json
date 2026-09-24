@@ -1,0 +1,22 @@
+{
+  "sft_train_4096.jsonl": {
+    "corrected_sha256": "26ed06e317979c748b8285ebc863712b17cc49753c425580061d2bdb670700d5",
+    "previous_sha256": "26ed06e317979c748b8285ebc863712b17cc49753c425580061d2bdb670700d5",
+    "identical": true
+  },
+  "sft_train_full.jsonl": {
+    "corrected_sha256": "cb71b00d1ca09e90d970bbe921663e6c8852d6a84d21bf88bd053f99884f80a2",
+    "previous_sha256": "cb71b00d1ca09e90d970bbe921663e6c8852d6a84d21bf88bd053f99884f80a2",
+    "identical": true
+  },
+  "sft_dev.jsonl": {
+    "corrected_sha256": "e7acd10a3ef2b45cd94adb2eb0be8ede0b769cead533e112d09a126ccbaf5f9f",
+    "previous_sha256": "e7acd10a3ef2b45cd94adb2eb0be8ede0b769cead533e112d09a126ccbaf5f9f",
+    "identical": true
+  },
+  "representation/source_tokenizers/dna.json": {
+    "corrected_sha256": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3",
+    "previous_sha256": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3",
+    "identical": true
+  }
+}

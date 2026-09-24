@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "expected_rejection": true,
+  "missing_canonical_amino_acids": [
+    "N"
+  ],
+  "rejected_source": "protein_uni_16.txt",
+  "positive_source_composition_pass": true
+}

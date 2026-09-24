@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "historical_release_manifest": "releases/laya-bio-historical-corpora/corpus_manifest.json",
+  "source_original_path": "data/01_raw_cpt/protein_uni_16.txt",
+  "source_sha256": "fc8de807efdfc94b51d54bfd73a66403b76c8a49bd0b056184356736bc3d5876",
+  "byte_count": 16955660631,
+  "exact_source_identity_matches_full_scan": true
+}

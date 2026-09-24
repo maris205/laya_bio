@@ -1,0 +1,22 @@
+{
+  "status": "stopped_source_quality_revision",
+  "current": "no_cpt_full",
+  "command": [
+    "/root/miniconda3/bin/python",
+    "-u",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v1/round/frozen_code/laya_biocpt_train.py",
+    "sft",
+    "--model-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+    "--data-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v1/data",
+    "--output",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v1/round/no_cpt_full",
+    "--micro",
+    "8",
+    "--samples",
+    "full"
+  ],
+  "reason": "Superseded after source-quality audit found no asparagine N in historical protein_uni_16.txt samples; corrected source and canonical-residue admission check required before further mixed biological CPT claims.",
+  "stopped_utc": "2026-09-24T15:25:08.424425+00:00"
+}

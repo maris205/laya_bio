@@ -1,0 +1,40 @@
+{
+  "character_counts": {
+    "dna": {
+      "A": 9800803,
+      "C": 6583528,
+      "G": 6580096,
+      "T": 9803573
+    },
+    "protein": {
+      "A": 1041048,
+      "B": 2,
+      "C": 165144,
+      "D": 648529,
+      "E": 744788,
+      "F": 457515,
+      "G": 837117,
+      "H": 268882,
+      "I": 637685,
+      "K": 593163,
+      "L": 1157441,
+      "M": 268400,
+      "N": 459623,
+      "P": 606960,
+      "Q": 463796,
+      "R": 699488,
+      "S": 853138,
+      "T": 663891,
+      "U": 1,
+      "V": 794690,
+      "W": 152306,
+      "X": 2425,
+      "Y": 341057,
+      "Z": 2
+    }
+  },
+  "required_canonical_amino_acids": "ACDEFGHIKLMNPQRSTVWY",
+  "missing_canonical_amino_acids": [],
+  "protein_source": "/root/autodl-tmp/jev_gene/data/01_raw_cpt/protein_lucaone_15g.txt",
+  "status": "pass"
+}

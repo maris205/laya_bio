@@ -1,0 +1,84 @@
+{
+  "source_root": "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2",
+  "completed_runs": [],
+  "sources": [
+    {
+      "source_relative": "runtime_environment.json",
+      "archive_relative": "runtime_environment.json",
+      "sha256": "c69a1e14082e2743fe4f29ec90bd58f8efca34adaa67e4d62124c2ba5355f422"
+    },
+    {
+      "source_relative": "source_release_identity_check.json",
+      "archive_relative": "source_release_identity_check.json",
+      "sha256": "652d6f891fc966081b73663225e368623c9b3f1f2285ce578b1d9964634626c2"
+    },
+    {
+      "source_relative": "base_encoder_config.json",
+      "archive_relative": "base_encoder_config.json",
+      "sha256": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d"
+    },
+    {
+      "source_relative": "rejected_protein_source_N_audit.json",
+      "archive_relative": "rejected_protein_source_N_audit.json",
+      "sha256": "9da7965bc52eef596b297966eeb2eb999af2e533412738f943192c23853c46a2"
+    },
+    {
+      "source_relative": "negative_admission_test.json",
+      "archive_relative": "negative_admission_test.json",
+      "sha256": "1bdcd5a4b2db539045d48547316de5d4685bbf68b9bbcb538f62995b21c6356c"
+    },
+    {
+      "source_relative": "preserved_promoter_inputs_check.json",
+      "archive_relative": "preserved_promoter_inputs_check.json",
+      "sha256": "d09c7f3fc2a9ec4c309c81b74025622b99235eceedbf00b0d15ecdb3b4045bbb"
+    },
+    {
+      "source_relative": "data/residue_composition_audit.json",
+      "archive_relative": "data/residue_composition_audit.json",
+      "sha256": "c141b74532f85b54a417b180cf6aa07e3208d17b83e5768689b29d989d2c250d"
+    },
+    {
+      "source_relative": "data/manifest.json",
+      "archive_relative": "data/manifest.json",
+      "sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175"
+    },
+    {
+      "source_relative": "data/status.json",
+      "archive_relative": "data/status.json",
+      "sha256": "43af34190063d5d1346e64f85384e549f736dec5969a1981181c26ea8efcce1d"
+    },
+    {
+      "source_relative": "data/representation/new_tokens.json",
+      "archive_relative": "data/representation/new_tokens.json",
+      "sha256": "90ac08ed121440faaac7be6bb0a6ed723faea1e03aa59e33bee37c2c7e134bd4"
+    },
+    {
+      "source_relative": "data/representation/source_tokenizers/dna.json",
+      "archive_relative": "data/representation/source_tokenizers/dna.json",
+      "sha256": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3"
+    },
+    {
+      "source_relative": "data/representation/source_tokenizers/protein.json",
+      "archive_relative": "data/representation/source_tokenizers/protein.json",
+      "sha256": "246515b085c11dce0be76a93ee05b13cfd1cc4d6dd810de069943365bb063796"
+    },
+    {
+      "source_relative": "round/manifest.json",
+      "archive_relative": "round/manifest.json",
+      "sha256": "1243143ebeba236dd340cd1dd6a2cb3e706258044b4a7d9eaee9fd5483a664c9"
+    },
+    {
+      "source_relative": "round/status.json",
+      "archive_relative": "round/status.json",
+      "sha256": "4828727b952d8991ab8d2214da79aa5255f6b6e9c6d0372f8ada3bd9354be8cc"
+    },
+    {
+      "source_relative": "round/EXPERIMENT_PLAN.md",
+      "archive_relative": "round/EXPERIMENT_PLAN.md",
+      "sha256": "23ddfa9d26fe6a91c1da0fb3252cc5bd5355309a365395b6edc98199b59ffcc4"
+    }
+  ],
+  "weights_included": false,
+  "raw_sequences_included": false,
+  "test_inference": false
+}

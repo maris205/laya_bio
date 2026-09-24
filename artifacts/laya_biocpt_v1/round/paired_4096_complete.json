@@ -1,0 +1,10 @@
+{
+  "accuracy_delta_CPT_minus_no_CPT": 0.05228136882129278,
+  "paired_group_bootstrap_95_percentile_CI": [
+    0.03136882129277566,
+    0.07319391634980989
+  ],
+  "bootstrap_replicates": 10000,
+  "groups": 1052,
+  "interpretation": "descriptive development uncertainty, not blind-test confirmation"
+}

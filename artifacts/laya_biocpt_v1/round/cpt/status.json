@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "updates": 1152,
+  "timing": {
+    "warmup": 0.7639831061951554,
+    "full": 0.7994838765323493
+  },
+  "peak_gpu_bytes": 8005710848,
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "b6cfdfd8934601995136e1ce8c4e7aad5913b25f852d3790d39db1713bd0d85b",
+  "natural_input_token_coverage": 2040,
+  "masked_target_token_coverage": 2037,
+  "added_token_count": 2044
+}
