@@ -1,0 +1,12 @@
+{
+  "train": {
+    "rows": 1024,
+    "identical_to_historical_cpu_control": true,
+    "sha256": "bea2ee79661f9a3fbad0a566505a465f7ca6836dff664d21eba7c8bbb6e4a581"
+  },
+  "dev": {
+    "rows": 128,
+    "identical_to_historical_cpu_control": true,
+    "sha256": "abcfbaafeff7a86e1ea406de9396736d7d8bfab1e18f942f2d1248b2f3894bf6"
+  }
+}

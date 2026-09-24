@@ -1,0 +1,22 @@
+{
+  "step": 192,
+  "dev": {
+    "n_entities": 128,
+    "accuracy": 0.28125,
+    "macro_f1": 0.08780487804878048,
+    "nll": 1.5904082076473025,
+    "score_prediction": {
+      "mae": 0.6575443100561535,
+      "rmse": 0.8686202075177833,
+      "spearman": 0.03527450440110664
+    },
+    "scalar_prediction": {
+      "mae": 0.6523926503585193,
+      "rmse": 0.869402404753527,
+      "spearman": -0.050669509454159226,
+      "prediction_std": 0.00046149643552836114
+    },
+    "oracle_quantization_mae": 0.1992560127021817,
+    "outside_training_range_fraction": 0.0
+  }
+}

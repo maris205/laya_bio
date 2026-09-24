@@ -62,4 +62,12 @@ All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/
 |---|---|---|
 | GFP-CONVERGENCE-512 | Same native-readout configuration, 32 training examples, update budget 128→512 | COMPLETE 2026-09-24 09:59:24 UTC; first 128 optimization records and predictions exactly match; both fitting gates pass at updates 384, 448 and 512 |
 
-[Report and evidence](../research/laya_convergence.md). Final Accuracy 96.88%, NLL 0.04707, scalar MAE 0.03367, RMSE 0.04596. No dev/test evaluation. Next: 1,024-example GFP training/development validation; not yet run.
+[Report and evidence](../research/laya_convergence.md). Final Accuracy 96.88%, NLL 0.04707, scalar MAE 0.03367, RMSE 0.04596. No dev/test evaluation. Follow-up: the 1,024-example GFP training/development validation below is complete.
+
+### GFP full-subset development validation
+
+| Run | Scope | Status |
+|---|---|---|
+| GFP-DEV-1024 | Mean pooling + fresh readout, 1,024 train / 128 dev, 512 updates / 16 epochs, warmup + cosine LR | COMPLETE; near-constant predictions persist; best-dev step 192 RMSE 0.86940, final RMSE 0.87097; position ridge RMSE 0.69972 |
+
+[Report and evidence](../research/laya_gfp_development.md). Run finished 2026-09-24T12:00:36.724564+00:00. All 512 updates finite, each training example seen exactly 16 times, nine evaluation points retained, selected weights save/reload probability and scalar errors both zero. No new test access. This reused development set is not a confirmatory evaluation. Next: training-only diagnosis of sample-scale / per-example-exposure / optimizer sensitivity; do not expand the formal multitask suite yet.

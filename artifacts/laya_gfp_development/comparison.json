@@ -1,0 +1,178 @@
+{
+  "test_access": false,
+  "best_step": 192,
+  "final_step": 512,
+  "controls": {
+    "position_ridge": {
+      "train": {
+        "mae": 0.35012414474666526,
+        "rmse": 0.4837979012051424,
+        "spearman": 0.7054490065936165,
+        "prediction_std": 0.4155752418111137
+      },
+      "dev": {
+        "mae": 0.49299992481329985,
+        "rmse": 0.699723155184719,
+        "spearman": 0.6111647589651678,
+        "prediction_std": 0.29742395743665984
+      }
+    },
+    "train_mean_constant_dev": {
+      "mae": 0.6292742364639707,
+      "rmse": 0.875036778833733,
+      "spearman": null,
+      "prediction_std": 0.0
+    },
+    "train_median_constant_dev": {
+      "mae": 0.5623234296217561,
+      "rmse": 0.9829873726468145,
+      "spearman": null,
+      "prediction_std": 0.0
+    }
+  },
+  "initial": {
+    "step": 0,
+    "epochs": 0.0,
+    "seconds": 8.420237662969157,
+    "train": {
+      "n_entities": 1024,
+      "accuracy": 0.2001953125,
+      "macro_f1": 0.06672091131000814,
+      "nll": 1.79784908366375,
+      "score_prediction": {
+        "mae": 0.7084080231720346,
+        "rmse": 0.829748864479151,
+        "spearman": -0.023680225467448465
+      },
+      "scalar_prediction": {
+        "mae": 0.7561785670195778,
+        "rmse": 0.8485758968491632,
+        "spearman": -0.022158484657072163,
+        "prediction_std": 0.004545848100277856
+      },
+      "oracle_quantization_mae": 0.12774770052120132,
+      "outside_training_range_fraction": 0.0
+    },
+    "train_evaluation_seconds": 4.144283761968836,
+    "dev": {
+      "n_entities": 128,
+      "accuracy": 0.28125,
+      "macro_f1": 0.08780487804878048,
+      "nll": 1.688215845206928,
+      "score_prediction": {
+        "mae": 0.7177509314128271,
+        "rmse": 0.8692431182824514,
+        "spearman": -0.05993107325872953
+      },
+      "scalar_prediction": {
+        "mae": 0.7586595685991048,
+        "rmse": 0.8766472300162267,
+        "spearman": 0.15490854683278193,
+        "prediction_std": 0.003925604943840567
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "dev_evaluation_seconds": 0.4648268409073353
+  },
+  "best": {
+    "step": 192,
+    "epochs": 6.0,
+    "seconds": 343.52004329580814,
+    "train": {
+      "n_entities": 1024,
+      "accuracy": 0.2001953125,
+      "macro_f1": 0.06672091131000814,
+      "nll": 1.6180682555827965,
+      "score_prediction": {
+        "mae": 0.6382828151784921,
+        "rmse": 0.8133696726938993,
+        "spearman": 0.009115842564443302
+      },
+      "scalar_prediction": {
+        "mae": 0.6312131690159026,
+        "rmse": 0.8124668190214891,
+        "spearman": -0.010348397390795454,
+        "prediction_std": 0.0004016218384772012
+      },
+      "oracle_quantization_mae": 0.12774770052120132,
+      "outside_training_range_fraction": 0.0
+    },
+    "train_evaluation_seconds": 5.308478340040892,
+    "dev": {
+      "n_entities": 128,
+      "accuracy": 0.28125,
+      "macro_f1": 0.08780487804878048,
+      "nll": 1.5904082076473025,
+      "score_prediction": {
+        "mae": 0.6575443100561535,
+        "rmse": 0.8686202075177833,
+        "spearman": 0.03527450440110664
+      },
+      "scalar_prediction": {
+        "mae": 0.6523926503585193,
+        "rmse": 0.869402404753527,
+        "spearman": -0.050669509454159226,
+        "prediction_std": 0.00046149643552836114
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "dev_evaluation_seconds": 0.5668701999820769
+  },
+  "final": {
+    "step": 512,
+    "epochs": 16.0,
+    "seconds": 871.9229675189126,
+    "train": {
+      "n_entities": 1024,
+      "accuracy": 0.2001953125,
+      "macro_f1": 0.06672091131000814,
+      "nll": 1.609790416008933,
+      "score_prediction": {
+        "mae": 0.6066783181071983,
+        "rmse": 0.8107155609989324,
+        "spearman": 0.039428799159528224
+      },
+      "scalar_prediction": {
+        "mae": 0.6204522358513893,
+        "rmse": 0.8114240508941888,
+        "spearman": -0.005213209653373715,
+        "prediction_std": 0.0004974595064423372
+      },
+      "oracle_quantization_mae": 0.12774770052120132,
+      "outside_training_range_fraction": 0.0
+    },
+    "train_evaluation_seconds": 4.090997599065304,
+    "dev": {
+      "n_entities": 128,
+      "accuracy": 0.28125,
+      "macro_f1": 0.08780487804878048,
+      "nll": 1.6054025188930416,
+      "score_prediction": {
+        "mae": 0.6345256846532141,
+        "rmse": 0.8735059070300946,
+        "spearman": -0.06320998579708442
+      },
+      "scalar_prediction": {
+        "mae": 0.6446370347823385,
+        "rmse": 0.8709693272838209,
+        "spearman": 0.0984412476896752,
+        "prediction_std": 0.0008306631927056114
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "dev_evaluation_seconds": 0.41959412093274295
+  },
+  "checks": {
+    "finite_updates": 512,
+    "complete_epochs": 16,
+    "source_hashes": true,
+    "checkpoint_hash": true,
+    "prediction_rmse_recomputed": true,
+    "best_checkpoint_selection": true,
+    "reload_probability_error": 0.0,
+    "reload_scalar_error": 0.0
+  }
+}

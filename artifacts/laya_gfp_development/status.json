@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "created_utc": "2026-09-24T11:45:53.266543+00:00",
+  "pid": 115768,
+  "test_access": false,
+  "updated_utc": "2026-09-24T12:00:36.724564+00:00",
+  "step": 512,
+  "best_step": 192,
+  "latest": {
+    "step": 512,
+    "epochs": 16.0,
+    "seconds": 871.9229675189126,
+    "train": {
+      "n_entities": 1024,
+      "accuracy": 0.2001953125,
+      "macro_f1": 0.06672091131000814,
+      "nll": 1.609790416008933,
+      "score_prediction": {
+        "mae": 0.6066783181071983,
+        "rmse": 0.8107155609989324,
+        "spearman": 0.039428799159528224
+      },
+      "scalar_prediction": {
+        "mae": 0.6204522358513893,
+        "rmse": 0.8114240508941888,
+        "spearman": -0.005213209653373715,
+        "prediction_std": 0.0004974595064423372
+      },
+      "oracle_quantization_mae": 0.12774770052120132,
+      "outside_training_range_fraction": 0.0
+    },
+    "train_evaluation_seconds": 4.090997599065304,
+    "dev": {
+      "n_entities": 128,
+      "accuracy": 0.28125,
+      "macro_f1": 0.08780487804878048,
+      "nll": 1.6054025188930416,
+      "score_prediction": {
+        "mae": 0.6345256846532141,
+        "rmse": 0.8735059070300946,
+        "spearman": -0.06320998579708442
+      },
+      "scalar_prediction": {
+        "mae": 0.6446370347823385,
+        "rmse": 0.8709693272838209,
+        "spearman": 0.0984412476896752,
+        "prediction_std": 0.0008306631927056114
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "dev_evaluation_seconds": 0.41959412093274295
+  },
+  "total_wall_seconds": 883.4580078870058
+}

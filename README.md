@@ -14,6 +14,7 @@ The paper now centers on a shared biological decision interface, with BPE as a s
 - [Completed 32-example fitting checks and candidate-order augmentation](research/laya_microfit.md)
 - [GFP readout/loss diagnostics: controlled 128-update runs](research/laya_readout_diagnostics.md)
 - [Completed 512-update GFP convergence check: fitting criteria passed with exact prefix replay](research/laya_convergence.md)
+- [Completed 1,024-example GFP development validation: near-constant predictions persist](research/laya_gfp_development.md)
 - [Chinese manuscript](research/laya_bio_paper_draft.md)
 - [Release and verification record](research/laya_large_data_release.md)
 

@@ -69,3 +69,7 @@
 - [固定 512 步运行器](../scripts/run_laya_convergence.py)
 - [32 样本训练与前缀校验](../scripts/laya_microfit.py)
 - [结果核验与学习曲线](../scripts/summarize_laya_convergence.py)
+
+## 后续进展
+
+[1,024 样本训练与开发集验证](laya_gfp_development.md)已完成。512 次更新对应每例 16 次曝光，训练和开发预测仍接近常数，未超过位置岭回归。上述 32 样本拟合结论仍然成立，但没有自动推广为扩大样本后的有效学习。

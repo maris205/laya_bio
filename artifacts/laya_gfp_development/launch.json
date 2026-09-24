@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/root/miniconda3/bin/python",
+    "-u",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_development_v1/frozen_code/laya_gfp_development.py",
+    "--data-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+    "--model-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+    "--laya-repo",
+    "/root/autodl-tmp/laya_bio/vendor/laya",
+    "--output",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/gfp_development_v1/run",
+    "--provenance",
+    "/root/autodl-tmp/laya_bio/artifacts/laya_convergence/provenance.json"
+  ],
+  "source_sha256": {
+    "laya_gfp_development.py": "940259251d23e88b4eb12038338e61bec3e087f2a8d02883ab1118f3e75b1100",
+    "laya_multitask_experiment.py": "d7ff0abee265bbd7731c50bbc0c85273a6e35a8c4c95c954e324d824f9ab22e6",
+    "laya_multitask_data.py": "3d8f10a985c55851a45e7e62b7cfe4e097f425505bed07983ea7a5d4da046763",
+    "laya_formal_experiment.py": "1efb0d960803d8ecb40163e75292648a34e77b9b44e71c4f15366d041d66cd25",
+    "laya_metrics.py": "2a7e0faa96aeb8c4e890546a66c773b795c08061df01638edd0ad4713a2134fa"
+  },
+  "test_access": false
+}
