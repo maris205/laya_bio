@@ -96,15 +96,13 @@ def score_loss_values(logits, scalar, labels, targets, objective):
 
 
 class SharedHeads(nn.Module):
-    def __init__(self,base,task_info,pooling='cls',score_loss='joint',bypass_head=False,native_readout=False):
+    def __init__(self,base,task_info,pooling='cls',score_loss='joint'):
         super().__init__();self.encoder=base.encoder;self.head=base.head;self.type_emb=base.type_emb
         self.pooling=pooling;self.score_loss=score_loss
         self.readout=nn.Sequential(*list(base.scorer.children())[:-1])
         d=base.encoder.config.hidden_size
         self.classifiers=nn.ModuleDict({t:nn.Linear(d,s['n_outputs']) for t,s in task_info.items()})
         self.regressors=nn.ModuleDict({t:nn.Linear(d,1) for t,s in task_info.items() if s['primitive']=='score'})
-        if bypass_head:self.head=None
-        if native_readout:self.readout=nn.LayerNorm(d)
     def forward(self,input_ids,attention_mask,qtype,task):
         h=self.encoder(input_ids=input_ids,attention_mask=attention_mask).last_hidden_state
         h=h+self.type_emb(qtype)[:,None,:]
@@ -114,7 +112,7 @@ class SharedHeads(nn.Module):
         return self.classifiers[task](h).float(),scalar
 
 
-def build(kind,model_dir,laya_repo,task_info,device,checkpoint=None,pooling='cls',score_loss='joint',bypass_head=False,native_readout=False):
+def build(kind,model_dir,laya_repo,task_info,device,checkpoint=None,pooling='cls',score_loss='joint'):
     _,build_model,_=core.import_laya(str(laya_repo))
     cfg=json.loads((model_dir/'rl_agent_config.json').read_text());cfg.update(gradient_checkpointing=True)
     base=core.load_model(model_dir,cfg,build_model,torch.device('cpu'),trainable=True)
@@ -122,9 +120,8 @@ def build(kind,model_dir,laya_repo,task_info,device,checkpoint=None,pooling='cls
     if checkpoint is not None:
         saved=json.loads((checkpoint/'rl_agent_config.json').read_text())
         pooling=saved.get('shared_heads_pooling','cls');score_loss=saved.get('shared_heads_score_loss','joint')
-        bypass_head=saved.get('shared_heads_bypass_head',False);native_readout=saved.get('shared_heads_native_readout',False)
-    if kind=='shared_heads':cfg.update(shared_heads_pooling=pooling,shared_heads_score_loss=score_loss,shared_heads_bypass_head=bypass_head,shared_heads_native_readout=native_readout)
-    model=base if kind=='candidate' else SharedHeads(base,task_info,pooling,score_loss,bypass_head,native_readout)
+    if kind=='shared_heads':cfg.update(shared_heads_pooling=pooling,shared_heads_score_loss=score_loss)
+    model=base if kind=='candidate' else SharedHeads(base,task_info,pooling,score_loss)
     if checkpoint is not None:model.load_state_dict(load_file(str(checkpoint/'model.safetensors')),strict=True)
     return model.to(device),cfg
 
@@ -246,11 +243,9 @@ def main():
     p.add_argument('--train-diagnostics-cap',type=int,default=0)
     p.add_argument('--pooling',choices=['cls','mean'],default='cls')
     p.add_argument('--score-loss',choices=['joint','ce','mse'],default='joint')
-    p.add_argument('--bypass-shared-head',action='store_true')
-    p.add_argument('--native-readout',action='store_true')
     a=p.parse_args()
     if a.resample_choice_order and a.kind!='candidate':p.error('--resample-choice-order applies to candidate scoring only')
-    if a.kind!='shared_heads' and (a.pooling!='cls' or a.score_loss!='joint' or a.bypass_shared_head or a.native_readout):p.error('Pooling, readout and Score loss options apply to shared heads only')
+    if a.kind!='shared_heads' and (a.pooling!='cls' or a.score_loss!='joint'):p.error('Pooling and Score loss options apply to shared heads only')
     if a.only_task and a.updates%len(data.TASKS):p.error('Single-task reference schedule must contain complete task cycles')
     if a.output.exists():raise FileExistsError(a.output)
     if not torch.cuda.is_available():raise RuntimeError('CUDA required')
@@ -278,10 +273,9 @@ def main():
             'gpu':torch.cuda.get_device_name(),'gpu_total_gib':torch.cuda.get_device_properties(0).total_memory/2**30,
             'test_access':False,'status':'engineering_pilot_not_confirmatory','initialization':'original_Laya_not_legacy_task_finetune',
             'shared_heads_pooling':a.pooling if a.kind=='shared_heads' else None,
-            'shared_heads_bypass_head':a.bypass_shared_head,'shared_heads_native_readout':a.native_readout,
             'score_control_loss':a.score_loss if a.kind=='shared_heads' else None}
     (a.output/'run_config.json').write_text(json.dumps(config,indent=2)+'\n')
-    model,cfg=build(a.kind,a.model_dir,a.laya_repo,task_info,device,pooling=a.pooling,score_loss=a.score_loss,bypass_head=a.bypass_shared_head,native_readout=a.native_readout)
+    model,cfg=build(a.kind,a.model_dir,a.laya_repo,task_info,device,pooling=a.pooling,score_loss=a.score_loss)
     type_before=model.type_emb.weight.detach().cpu().clone()
     print(json.dumps({'event':'loaded','kind':a.kind,'task_info':task_info,'parameters':sum(p.numel() for p in model.parameters() if p.requires_grad)}),flush=True)
     if a.only_task:entities['dev']=[e for e in entities['dev'] if e['task']==a.only_task]

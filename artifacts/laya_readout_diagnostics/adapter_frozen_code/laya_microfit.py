@@ -106,7 +106,7 @@ def main():
             'bypass_shared_head':a.bypass_shared_head,'native_readout':a.native_readout,
             'checkpoint_retained':not a.discard_checkpoint_after_verification,
             'classification_supervised':a.kind=='candidate' or a.score_loss!='mse',
-            'scalar_supervised':a.task=='fluorescence' and a.kind=='shared_heads' and a.score_loss!='ce',
+            'scalar_supervised':a.kind=='shared_heads' and a.score_loss!='ce',
             'scalar_fit_threshold':'standardized training RMSE <= 0.15',
             'dropout':'original model train mode','precision':'BF16 autocast, FP32 weights',
             'fit_threshold':'training-panel accuracy >=31/32 AND NLL <=0.15; no early stopping',

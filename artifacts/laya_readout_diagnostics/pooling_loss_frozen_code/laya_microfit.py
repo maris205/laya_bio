@@ -76,12 +76,10 @@ def main():
     p.add_argument('--pooling',choices=['cls','mean'],default='cls')
     p.add_argument('--score-loss',choices=['joint','ce','mse'],default='joint')
     p.add_argument('--probe-readout',action='store_true')
-    p.add_argument('--bypass-shared-head',action='store_true')
-    p.add_argument('--native-readout',action='store_true')
     p.add_argument('--discard-checkpoint-after-verification',action='store_true')
     a=p.parse_args()
     if a.resample_choice_order and (a.task!='splice' or a.kind!='candidate'):p.error('Order-resampling arm is defined only for splice candidate scoring')
-    if (a.pooling!='cls' or a.score_loss!='joint' or a.probe_readout or a.bypass_shared_head or a.native_readout) and (a.kind!='shared_heads' or a.task!='fluorescence'):p.error('Readout/loss diagnostics require GFP shared heads')
+    if (a.pooling!='cls' or a.score_loss!='joint' or a.probe_readout) and (a.kind!='shared_heads' or a.task!='fluorescence'):p.error('Readout/loss diagnostics require GFP shared heads')
     if a.output.exists():raise FileExistsError(a.output)
     torch.set_num_threads(8);exp.core.set_seed(a.seed);device=torch.device('cuda')
     manifest_path=a.data_dir/'manifest.json';manifest=json.loads(manifest_path.read_text())
@@ -103,10 +101,9 @@ def main():
             'schedule':'linear warmup 8 updates, then constant learning rate','weight_decay':.01,'clip_norm':1.,
             'choice_order_policy':'resample independently per example and update' if a.resample_choice_order else 'one fixed permutation per example',
             'pooling':a.pooling,'score_loss':a.score_loss,'probe_readout':a.probe_readout,
-            'bypass_shared_head':a.bypass_shared_head,'native_readout':a.native_readout,
             'checkpoint_retained':not a.discard_checkpoint_after_verification,
             'classification_supervised':a.kind=='candidate' or a.score_loss!='mse',
-            'scalar_supervised':a.task=='fluorescence' and a.kind=='shared_heads' and a.score_loss!='ce',
+            'scalar_supervised':a.kind=='shared_heads' and a.score_loss!='ce',
             'scalar_fit_threshold':'standardized training RMSE <= 0.15',
             'dropout':'original model train mode','precision':'BF16 autocast, FP32 weights',
             'fit_threshold':'training-panel accuracy >=31/32 AND NLL <=0.15; no early stopping',
@@ -119,7 +116,7 @@ def main():
                            'Subset is deliberately class-balanced; not representative prevalence.',
                            'Score bins, anchors and scalar normalization retain the prior 1,024-training-row specification.']}
     (a.output/'run_config.json').write_text(json.dumps(config,indent=2)+'\n')
-    model,cfg=exp.build(a.kind,a.model_dir,a.laya_repo,info,device,pooling=a.pooling,score_loss=a.score_loss,bypass_head=a.bypass_shared_head,native_readout=a.native_readout)
+    model,cfg=exp.build(a.kind,a.model_dir,a.laya_repo,info,device,pooling=a.pooling,score_loss=a.score_loss)
     config['trainable_parameters']=sum(p.numel() for p in model.parameters() if p.requires_grad)
     print(json.dumps({'event':'loaded','task':a.task,'kind':a.kind,'lr':a.lr,'trainable_parameters':config['trainable_parameters']}),flush=True)
     history=[]

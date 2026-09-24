@@ -1,0 +1,1737 @@
+{
+  "dev_access": false,
+  "test_access": false,
+  "runs": {
+    "cls_joint": {
+      "pooling": "cls",
+      "loss": "joint",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": true,
+      "scalar_supervised": true,
+      "class_fit": false,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6089665837510563,
+        "score_prediction": {
+          "mae": 0.6367813308421814,
+          "rmse": 0.8188621677648412,
+          "spearman": -0.2778542525674919,
+          "prediction_std": 0.0011519924560416286
+        },
+        "scalar_prediction": {
+          "mae": 0.7122362473937193,
+          "rmse": 0.8290558270928937,
+          "spearman": -0.20891341886068682,
+          "prediction_std": 0.0022818782542084084
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0004961781816501656
+      },
+      "standardized_rmse": 1.022716145445361,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1906557083129883,
+        "eval_standardized_mse": 7.946386814117432,
+        "readout_gradient_ce_norm": 2.718050956726074,
+        "readout_gradient_mse_norm": 41.047218322753906,
+        "readout_gradient_cosine": -0.03079487383365631,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.028658507391810417,
+            "mean_vector_norm": 38.65610122680664,
+            "mean_pairwise_cosine": 0.9988793134689331,
+            "centered_frobenius_norm": 7.3254780769348145,
+            "effective_rank": 1.4755733013153076
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.054048895835876465,
+            "mean_vector_norm": 35.8475227355957,
+            "mean_pairwise_cosine": 0.9953937530517578,
+            "centered_frobenius_norm": 14.76511287689209,
+            "effective_rank": 1.1739081144332886
+          },
+          "head_cls": {
+            "mean_feature_std": 1.1155223846435547,
+            "mean_vector_norm": 10722.052734375,
+            "mean_pairwise_cosine": 0.9999856352806091,
+            "centered_frobenius_norm": 235.20883178710938,
+            "effective_rank": 2.2786755561828613
+          },
+          "head_mean": {
+            "mean_feature_std": 3.669156551361084,
+            "mean_vector_norm": 10460.7109375,
+            "mean_pairwise_cosine": 0.9998824000358582,
+            "centered_frobenius_norm": 811.7171020507812,
+            "effective_rank": 1.0356602668762207
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0017044772394001484,
+            "mean_vector_norm": 65.72865295410156,
+            "mean_pairwise_cosine": 0.999987781047821,
+            "centered_frobenius_norm": 1.3614439964294434,
+            "effective_rank": 2.037203311920166
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.004614102188497782,
+            "mean_vector_norm": 65.7940673828125,
+            "mean_pairwise_cosine": 0.9998722672462463,
+            "centered_frobenius_norm": 4.153174877166748,
+            "effective_rank": 1.126210331916809
+          }
+        },
+        "eval_ce": 1.609657883644104,
+        "eval_standardized_mse": 1.0459482669830322,
+        "readout_gradient_ce_norm": 0.24443510174751282,
+        "readout_gradient_mse_norm": 2.4627342224121094,
+        "readout_gradient_cosine": -0.08408034592866898,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.608295188785561,
+        "score_prediction": {
+          "mae": 0.636728661719572,
+          "rmse": 0.8188591528907129,
+          "spearman": -0.2719853838663964,
+          "prediction_std": 0.0011519924560416286
+        },
+        "scalar_prediction": {
+          "mae": 0.7118899041144001,
+          "rmse": 0.8287372484260863,
+          "spearman": -0.16967207900313386,
+          "prediction_std": 0.002281878254208409
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0004961781816501656
+      },
+      "seconds": 230.51781463995576,
+      "checkpoint_sha256": "a744108699a1852c8e9ba11d6de55d0d83d108cc5136f9cc93e4818d952aa8f8"
+    },
+    "mean_joint": {
+      "pooling": "mean",
+      "loss": "joint",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": true,
+      "scalar_supervised": true,
+      "class_fit": false,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6069804333372284,
+        "score_prediction": {
+          "mae": 0.638169329044542,
+          "rmse": 0.8186426147031385,
+          "spearman": -0.20228193877194453,
+          "prediction_std": 0.0002931493908383908
+        },
+        "scalar_prediction": {
+          "mae": 0.6234594135654445,
+          "rmse": 0.8195065084084142,
+          "spearman": -0.24582862633512206,
+          "prediction_std": 0.0005603680578625654
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0002493719006929627
+      },
+      "standardized_rmse": 1.010936187959427,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1912882328033447,
+        "eval_standardized_mse": 8.544384956359863,
+        "readout_gradient_ce_norm": 2.6114723682403564,
+        "readout_gradient_mse_norm": 42.75958251953125,
+        "readout_gradient_cosine": -0.031521834433078766,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.0003705257549881935,
+            "mean_vector_norm": 25.050830841064453,
+            "mean_pairwise_cosine": 0.999999463558197,
+            "centered_frobenius_norm": 0.11913593113422394,
+            "effective_rank": 3.964693546295166
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.00035994770587421954,
+            "mean_vector_norm": 25.049039840698242,
+            "mean_pairwise_cosine": 0.9999995231628418,
+            "centered_frobenius_norm": 0.0906277671456337,
+            "effective_rank": 1.316548228263855
+          },
+          "head_cls": {
+            "mean_feature_std": 0.07775212824344635,
+            "mean_vector_norm": 8066.10888671875,
+            "mean_pairwise_cosine": 0.9999995231628418,
+            "centered_frobenius_norm": 33.17281723022461,
+            "effective_rank": 5.192205429077148
+          },
+          "head_mean": {
+            "mean_feature_std": 0.02677617222070694,
+            "mean_vector_norm": 8063.9267578125,
+            "mean_pairwise_cosine": 1.0,
+            "centered_frobenius_norm": 8.77945613861084,
+            "effective_rank": 2.3355281352996826
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0004364072810858488,
+            "mean_vector_norm": 65.14742279052734,
+            "mean_pairwise_cosine": 0.999998927116394,
+            "centered_frobenius_norm": 0.38874420523643494,
+            "effective_rank": 8.066198348999023
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.00019337644334882498,
+            "mean_vector_norm": 65.16034698486328,
+            "mean_pairwise_cosine": 0.9999995231628418,
+            "centered_frobenius_norm": 0.26602494716644287,
+            "effective_rank": 4.031257152557373
+          }
+        },
+        "eval_ce": 1.6071999073028564,
+        "eval_standardized_mse": 1.0219919681549072,
+        "readout_gradient_ce_norm": 0.037970323115587234,
+        "readout_gradient_mse_norm": 0.6857736110687256,
+        "readout_gradient_cosine": 0.034179359674453735,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.606797334717261,
+        "score_prediction": {
+          "mae": 0.6382167282603386,
+          "rmse": 0.818698240623236,
+          "spearman": -0.3978148971956129,
+          "prediction_std": 0.0002931493908383908
+        },
+        "scalar_prediction": {
+          "mae": 0.623408389778759,
+          "rmse": 0.8194559043132348,
+          "spearman": -0.24047248045704653,
+          "prediction_std": 0.0005603680578625654
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0002493719006929627
+      },
+      "seconds": 205.893718913896,
+      "checkpoint_sha256": "beaadc84008bf58f82f44bf67bd79c98b80f9d21495302bc03fb42106e4aefb0"
+    },
+    "cls_ce": {
+      "pooling": "cls",
+      "loss": "ce",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": true,
+      "scalar_supervised": false,
+      "class_fit": false,
+      "scalar_fit": null,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.375,
+        "macro_f1": 0.27515151515151515,
+        "nll": 1.4125763249675733,
+        "score_prediction": {
+          "mae": 0.6195311082909871,
+          "rmse": 0.7722318933702659,
+          "spearman": 0.6034277360143218,
+          "prediction_std": 0.21420338124138666
+        },
+        "scalar_prediction": {
+          "mae": 2.087296194181117,
+          "rmse": 2.225530656843526,
+          "spearman": 0.5943801052839961,
+          "prediction_std": 0.23521754257899685
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          23,
+          4,
+          0,
+          0,
+          5
+        ],
+        "probability_std_mean": 0.08458444443749674
+      },
+      "standardized_rmse": null,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1906557083129883,
+        "eval_standardized_mse": 7.946386814117432,
+        "readout_gradient_ce_norm": 2.718050956726074,
+        "readout_gradient_mse_norm": 41.047218322753906,
+        "readout_gradient_cosine": -0.03079487383365631,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.47825881838798523,
+            "mean_vector_norm": 39.04090881347656,
+            "mean_pairwise_cosine": 0.587434709072113,
+            "centered_frobenius_norm": 142.4503936767578,
+            "effective_rank": 1.2543468475341797
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.4806389808654785,
+            "mean_vector_norm": 37.817901611328125,
+            "mean_pairwise_cosine": 0.5579554438591003,
+            "centered_frobenius_norm": 142.83612060546875,
+            "effective_rank": 1.1557422876358032
+          },
+          "head_cls": {
+            "mean_feature_std": 82.35116577148438,
+            "mean_vector_norm": 10164.853515625,
+            "mean_pairwise_cosine": 0.8873903751373291,
+            "centered_frobenius_norm": 17837.255859375,
+            "effective_rank": 1.1380826234817505
+          },
+          "head_mean": {
+            "mean_feature_std": 84.10704040527344,
+            "mean_vector_norm": 9954.322265625,
+            "mean_pairwise_cosine": 0.8756970763206482,
+            "centered_frobenius_norm": 18320.55078125,
+            "effective_rank": 1.076515555381775
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.13421952724456787,
+            "mean_vector_norm": 69.242919921875,
+            "mean_pairwise_cosine": 0.8986189961433411,
+            "centered_frobenius_norm": 129.2634735107422,
+            "effective_rank": 1.0251795053482056
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.13845887780189514,
+            "mean_vector_norm": 69.3917007446289,
+            "mean_pairwise_cosine": 0.895387589931488,
+            "centered_frobenius_norm": 133.3749237060547,
+            "effective_rank": 1.0121370553970337
+          }
+        },
+        "eval_ce": 1.4125804901123047,
+        "eval_standardized_mse": 7.537196636199951,
+        "readout_gradient_ce_norm": 0.4012617766857147,
+        "readout_gradient_mse_norm": 38.277854919433594,
+        "readout_gradient_cosine": 0.002208794467151165,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.125,
+        "macro_f1": 0.05333333333333333,
+        "nll": 1.8505798626412755,
+        "score_prediction": {
+          "mae": 0.6751075937163751,
+          "rmse": 0.8516683466005223,
+          "spearman": 0.030794611072419827,
+          "prediction_std": 0.21420338124138666
+        },
+        "scalar_prediction": {
+          "mae": 2.087296194181117,
+          "rmse": 2.253166114869612,
+          "spearman": 0.11200678067470486,
+          "prediction_std": 0.23521754257899685
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          23,
+          4,
+          0,
+          0,
+          5
+        ],
+        "probability_std_mean": 0.08458444443749676
+      },
+      "seconds": 228.68455201992765,
+      "checkpoint_sha256": "9a8720563107f4ed00705c4ebdadb0de4bafc8a4e6550d0893773af972f4e528"
+    },
+    "mean_ce": {
+      "pooling": "mean",
+      "loss": "ce",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": true,
+      "scalar_supervised": false,
+      "class_fit": false,
+      "scalar_fit": null,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.1875,
+        "macro_f1": 0.06315789473684211,
+        "nll": 1.7824862879350296,
+        "score_prediction": {
+          "mae": 0.5122086095675195,
+          "rmse": 0.8749935176991963,
+          "spearman": 0.5564421137226209,
+          "prediction_std": 0.0015650195582959303
+        },
+        "scalar_prediction": {
+          "mae": 2.2357290281750073,
+          "rmse": 2.38058815966009,
+          "spearman": 0.40060122679075694,
+          "prediction_std": 0.0036919714842272937
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          0,
+          0,
+          0,
+          32
+        ],
+        "probability_std_mean": 0.0008116859528882727
+      },
+      "standardized_rmse": null,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1912882328033447,
+        "eval_standardized_mse": 8.544384956359863,
+        "readout_gradient_ce_norm": 2.6114723682403564,
+        "readout_gradient_mse_norm": 42.75958251953125,
+        "readout_gradient_cosine": -0.031521834433078766,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.01692219451069832,
+            "mean_vector_norm": 36.31199645996094,
+            "mean_pairwise_cosine": 0.9996815323829651,
+            "centered_frobenius_norm": 3.6108102798461914,
+            "effective_rank": 1.746660590171814
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.019503891468048096,
+            "mean_vector_norm": 36.21490478515625,
+            "mean_pairwise_cosine": 0.9996001720428467,
+            "centered_frobenius_norm": 4.071228504180908,
+            "effective_rank": 2.0662386417388916
+          },
+          "head_cls": {
+            "mean_feature_std": 1.1666830778121948,
+            "mean_vector_norm": 9133.8427734375,
+            "mean_pairwise_cosine": 0.9999924898147583,
+            "centered_frobenius_norm": 256.41259765625,
+            "effective_rank": 1.686869502067566
+          },
+          "head_mean": {
+            "mean_feature_std": 1.2358431816101074,
+            "mean_vector_norm": 9127.4619140625,
+            "mean_pairwise_cosine": 0.9999900460243225,
+            "centered_frobenius_norm": 267.3209228515625,
+            "effective_rank": 1.483989953994751
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0013611483154818416,
+            "mean_vector_norm": 64.23700714111328,
+            "mean_pairwise_cosine": 0.9999926090240479,
+            "centered_frobenius_norm": 0.9825406670570374,
+            "effective_rank": 2.8685543537139893
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.0015121281612664461,
+            "mean_vector_norm": 64.23579406738281,
+            "mean_pairwise_cosine": 0.9999880194664001,
+            "centered_frobenius_norm": 1.2435779571533203,
+            "effective_rank": 2.0496137142181396
+          }
+        },
+        "eval_ce": 1.7829396724700928,
+        "eval_standardized_mse": 8.624049186706543,
+        "readout_gradient_ce_norm": 2.385343074798584,
+        "readout_gradient_mse_norm": 43.45405578613281,
+        "readout_gradient_cosine": 0.0604390874505043,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.1875,
+        "macro_f1": 0.06315789473684211,
+        "nll": 1.787430135501156,
+        "score_prediction": {
+          "mae": 0.5125317658034212,
+          "rmse": 0.8759856221597823,
+          "spearman": -0.04218249378912419,
+          "prediction_std": 0.0015650195582959303
+        },
+        "scalar_prediction": {
+          "mae": 2.2357290281750073,
+          "rmse": 2.3806186787775814,
+          "spearman": 0.3425430779805023,
+          "prediction_std": 0.0036919714842272937
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          0,
+          0,
+          0,
+          32
+        ],
+        "probability_std_mean": 0.0008116859528882727
+      },
+      "seconds": 213.17971958592534,
+      "checkpoint_sha256": "0e7909085a3d7eebcf6002e6100ebac006b67c3b41dbee84731e0fd28e94092f"
+    },
+    "cls_mse": {
+      "pooling": "cls",
+      "loss": "mse",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": false,
+      "scalar_supervised": true,
+      "class_fit": null,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 2.090688609142025,
+        "score_prediction": {
+          "mae": 0.7720828421391122,
+          "rmse": 0.8321826047653667,
+          "spearman": 0.46026945477884634,
+          "prediction_std": 0.08763706423618597
+        },
+        "scalar_prediction": {
+          "mae": 0.5394410179111628,
+          "rmse": 0.77379574791167,
+          "spearman": 0.46671826107852443,
+          "prediction_std": 0.11524681417000107
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.019579427727703567
+      },
+      "standardized_rmse": 0.9545477865359264,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1906557083129883,
+        "eval_standardized_mse": 7.946386814117432,
+        "readout_gradient_ce_norm": 2.718050956726074,
+        "readout_gradient_mse_norm": 41.047218322753906,
+        "readout_gradient_cosine": -0.03079487383365631,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.2675297260284424,
+            "mean_vector_norm": 38.537235260009766,
+            "mean_pairwise_cosine": 0.8981406688690186,
+            "centered_frobenius_norm": 66.28633117675781,
+            "effective_rank": 1.0547147989273071
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.28040173649787903,
+            "mean_vector_norm": 38.299232482910156,
+            "mean_pairwise_cosine": 0.8885844349861145,
+            "centered_frobenius_norm": 68.97051239013672,
+            "effective_rank": 1.0239206552505493
+          },
+          "head_cls": {
+            "mean_feature_std": 20.645526885986328,
+            "mean_vector_norm": 6086.48583984375,
+            "mean_pairwise_cosine": 0.9896032214164734,
+            "centered_frobenius_norm": 4572.82568359375,
+            "effective_rank": 1.0064250230789185
+          },
+          "head_mean": {
+            "mean_feature_std": 20.64674949645996,
+            "mean_vector_norm": 5953.97021484375,
+            "mean_pairwise_cosine": 0.9897703528404236,
+            "centered_frobenius_norm": 4574.08642578125,
+            "effective_rank": 1.0037099123001099
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.042969200760126114,
+            "mean_vector_norm": 72.41499328613281,
+            "mean_pairwise_cosine": 0.9885938167572021,
+            "centered_frobenius_norm": 42.28110122680664,
+            "effective_rank": 1.0023722648620605
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.04320888593792915,
+            "mean_vector_norm": 72.61690521240234,
+            "mean_pairwise_cosine": 0.9888606071472168,
+            "centered_frobenius_norm": 41.9108772277832,
+            "effective_rank": 1.0019901990890503
+          }
+        },
+        "eval_ce": 2.0900325775146484,
+        "eval_standardized_mse": 0.9111614227294922,
+        "readout_gradient_ce_norm": 2.1053545475006104,
+        "readout_gradient_mse_norm": 2.129131317138672,
+        "readout_gradient_cosine": -0.05305243656039238,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 2.13904371870725,
+        "score_prediction": {
+          "mae": 0.8181245393750565,
+          "rmse": 0.8816283338877201,
+          "spearman": 0.040142975147975844,
+          "prediction_std": 0.08763706423618597
+        },
+        "scalar_prediction": {
+          "mae": 0.5996552709013513,
+          "rmse": 0.8424021686233837,
+          "spearman": -0.015630832226822128,
+          "prediction_std": 0.11524681417000107
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.019579427727703567
+      },
+      "seconds": 201.84971164097078,
+      "checkpoint_sha256": "4582c0395feef8ba6d01838effb8d6079192b62e0810191a9dad3a65696382a6"
+    },
+    "mean_mse": {
+      "pooling": "mean",
+      "loss": "mse",
+      "bypass_head": false,
+      "native_readout": false,
+      "classification_supervised": false,
+      "scalar_supervised": true,
+      "class_fit": null,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 2.397272625091903,
+        "score_prediction": {
+          "mae": 1.11419622785272,
+          "rmse": 1.1386227173654062,
+          "spearman": -0.24053534688987616,
+          "prediction_std": 0.0015588771154714904
+        },
+        "scalar_prediction": {
+          "mae": 0.6415875465046254,
+          "rmse": 0.8184957084376261,
+          "spearman": -0.044415665764360054,
+          "prediction_std": 0.0006088712116414551
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.00035758089565817786
+      },
+      "standardized_rmse": 1.0096892737997791,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0035331263206899166,
+            "mean_vector_norm": 67.41732788085938,
+            "mean_pairwise_cosine": 0.9999465346336365,
+            "centered_frobenius_norm": 2.7758495807647705,
+            "effective_rank": 1.6228878498077393
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.005666967481374741,
+            "mean_vector_norm": 69.2060317993164,
+            "mean_pairwise_cosine": 0.9999210834503174,
+            "centered_frobenius_norm": 3.673780679702759,
+            "effective_rank": 1.994179368019104
+          }
+        },
+        "eval_ce": 2.1912882328033447,
+        "eval_standardized_mse": 8.544384956359863,
+        "readout_gradient_ce_norm": 2.6114723682403564,
+        "readout_gradient_mse_norm": 42.75958251953125,
+        "readout_gradient_cosine": -0.031521834433078766,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.0003386222815606743,
+            "mean_vector_norm": 25.35231590270996,
+            "mean_pairwise_cosine": 0.9999997019767761,
+            "centered_frobenius_norm": 0.10145170986652374,
+            "effective_rank": 3.4526920318603516
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.00012311457248870283,
+            "mean_vector_norm": 25.26746940612793,
+            "mean_pairwise_cosine": 1.0,
+            "centered_frobenius_norm": 0.03677763417363167,
+            "effective_rank": 1.918972134590149
+          },
+          "head_cls": {
+            "mean_feature_std": 0.043199438601732254,
+            "mean_vector_norm": 6023.03515625,
+            "mean_pairwise_cosine": 0.9999998807907104,
+            "centered_frobenius_norm": 17.853158950805664,
+            "effective_rank": 8.303893089294434
+          },
+          "head_mean": {
+            "mean_feature_std": 0.01185542531311512,
+            "mean_vector_norm": 6035.07421875,
+            "mean_pairwise_cosine": 1.0,
+            "centered_frobenius_norm": 3.320204019546509,
+            "effective_rank": 6.655491828918457
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.00021807428856845945,
+            "mean_vector_norm": 71.1935806274414,
+            "mean_pairwise_cosine": 0.9999998807907104,
+            "centered_frobenius_norm": 0.2158181369304657,
+            "effective_rank": 9.806952476501465
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.00015973456902429461,
+            "mean_vector_norm": 71.15336608886719,
+            "mean_pairwise_cosine": 0.9999998807907104,
+            "centered_frobenius_norm": 0.21102340519428253,
+            "effective_rank": 10.843206405639648
+          }
+        },
+        "eval_ce": 2.397275447845459,
+        "eval_standardized_mse": 1.019472360610962,
+        "readout_gradient_ce_norm": 3.7867462635040283,
+        "readout_gradient_mse_norm": 0.02058858796954155,
+        "readout_gradient_cosine": 0.05456848442554474,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 2.396761446407431,
+        "score_prediction": {
+          "mae": 1.1137413294300111,
+          "rmse": 1.1382226787508578,
+          "spearman": 0.06526721302804568,
+          "prediction_std": 0.0015588771154714902
+        },
+        "scalar_prediction": {
+          "mae": 0.6416246547131238,
+          "rmse": 0.8185205426517616,
+          "spearman": 0.10351266037970107,
+          "prediction_std": 0.0006088712116414551
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.00035758089565817786
+      },
+      "seconds": 206.80540843610652,
+      "checkpoint_sha256": "c1c934e5101cf54042bfe76514adc1e45d0a0ee5e973f86ad9490debf9707553"
+    },
+    "bypass_head": {
+      "pooling": "mean",
+      "loss": "joint",
+      "bypass_head": true,
+      "native_readout": false,
+      "classification_supervised": true,
+      "scalar_supervised": true,
+      "class_fit": false,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6066735474073015,
+        "score_prediction": {
+          "mae": 0.6413908023827891,
+          "rmse": 0.818602458966014,
+          "spearman": -0.2803447199859456,
+          "prediction_std": 0.00015189554465815764
+        },
+        "scalar_prediction": {
+          "mae": 0.6412906808366376,
+          "rmse": 0.8185588800356043,
+          "spearman": -0.01579134601019221,
+          "prediction_std": 0.0001851282699177155
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 7.773055503234416e-05
+      },
+      "standardized_rmse": 1.0097672017403043,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 48.982078552246094,
+            "mean_pairwise_cosine": 0.9986097812652588,
+            "centered_frobenius_norm": 10.205673217773438,
+            "effective_rank": 11.625068664550781
+          },
+          "head_mean": {
+            "mean_feature_std": 0.05388806760311127,
+            "mean_vector_norm": 41.1757926940918,
+            "mean_pairwise_cosine": 0.997394859790802,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.011161454021930695,
+            "mean_vector_norm": 19.66303825378418,
+            "mean_pairwise_cosine": 0.9986099004745483,
+            "centered_frobenius_norm": 4.125466823577881,
+            "effective_rank": 3.205094814300537
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.013718380592763424,
+            "mean_vector_norm": 18.915454864501953,
+            "mean_pairwise_cosine": 0.9982419610023499,
+            "centered_frobenius_norm": 4.478016376495361,
+            "effective_rank": 4.689856052398682
+          }
+        },
+        "eval_ce": 1.6650413274765015,
+        "eval_standardized_mse": 1.3020142316818237,
+        "readout_gradient_ce_norm": 1.1571561098098755,
+        "readout_gradient_mse_norm": 8.2435941696167,
+        "readout_gradient_cosine": -0.10360968112945557,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.0003650630824267864,
+            "mean_vector_norm": 25.167125701904297,
+            "mean_pairwise_cosine": 0.9999995231628418,
+            "centered_frobenius_norm": 0.10692482441663742,
+            "effective_rank": 3.6175568103790283
+          },
+          "encoder_mean": {
+            "mean_feature_std": 9.467154450248927e-05,
+            "mean_vector_norm": 25.162582397460938,
+            "mean_pairwise_cosine": 1.0000001192092896,
+            "centered_frobenius_norm": 0.022291742265224457,
+            "effective_rank": 4.8374152183532715
+          },
+          "head_cls": {
+            "mean_feature_std": 0.0003650633152574301,
+            "mean_vector_norm": 40.41376876831055,
+            "mean_pairwise_cosine": 0.9999998807907104,
+            "centered_frobenius_norm": 0.10692492872476578,
+            "effective_rank": 3.6175529956817627
+          },
+          "head_mean": {
+            "mean_feature_std": 9.467161726206541e-05,
+            "mean_vector_norm": 40.41421127319336,
+            "mean_pairwise_cosine": 1.0,
+            "centered_frobenius_norm": 0.02229166589677334,
+            "effective_rank": 4.8373799324035645
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0002465816796757281,
+            "mean_vector_norm": 16.7623233795166,
+            "mean_pairwise_cosine": 0.9999979138374329,
+            "centered_frobenius_norm": 0.14909523725509644,
+            "effective_rank": 7.194963455200195
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.00013822171604260802,
+            "mean_vector_norm": 16.770009994506836,
+            "mean_pairwise_cosine": 0.9999995231628418,
+            "centered_frobenius_norm": 0.08420882374048233,
+            "effective_rank": 12.595300674438477
+          }
+        },
+        "eval_ce": 1.6066113710403442,
+        "eval_standardized_mse": 1.019629716873169,
+        "readout_gradient_ce_norm": 0.010850442573428154,
+        "readout_gradient_mse_norm": 0.00878235325217247,
+        "readout_gradient_cosine": 0.05402907729148865,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6064599254105798,
+        "score_prediction": {
+          "mae": 0.6413977044361124,
+          "rmse": 0.8186207340499896,
+          "spearman": -0.2293729527157737,
+          "prediction_std": 0.00015189554465815764
+        },
+        "scalar_prediction": {
+          "mae": 0.641265942030972,
+          "rmse": 0.818563673585417,
+          "spearman": 0.07737759544994181,
+          "prediction_std": 0.0001851282699177155
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 7.773055503234416e-05
+      },
+      "seconds": 196.65208074008115,
+      "checkpoint_sha256": "ddf46277fb196d8b23f61f45686be5704f079a544eccb0a3002ede62c7e01c9a"
+    },
+    "native_readout": {
+      "pooling": "mean",
+      "loss": "joint",
+      "bypass_head": false,
+      "native_readout": true,
+      "classification_supervised": true,
+      "scalar_supervised": true,
+      "class_fit": false,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.34375,
+        "macro_f1": 0.2254545454545455,
+        "nll": 1.361297579918254,
+        "score_prediction": {
+          "mae": 0.33303539672761906,
+          "rmse": 0.5060597537015928,
+          "spearman": 0.5915131543493976,
+          "prediction_std": 0.5233812243807112
+        },
+        "scalar_prediction": {
+          "mae": 0.27957841099659225,
+          "rmse": 0.4817655940496291,
+          "spearman": 0.6072517718186042,
+          "prediction_std": 0.6418984469277992
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          4,
+          28,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.1126247366322964
+      },
+      "standardized_rmse": 0.5943018977169849,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 4.471445560455322,
+            "mean_vector_norm": 11162.169921875,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 931.2155151367188,
+            "effective_rank": 2.2100672721862793
+          },
+          "head_mean": {
+            "mean_feature_std": 6.337810516357422,
+            "mean_vector_norm": 9202.9072265625,
+            "mean_pairwise_cosine": 0.9998700618743896,
+            "centered_frobenius_norm": 1387.3441162109375,
+            "effective_rank": 1.5353748798370361
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.0075065698474645615,
+            "mean_vector_norm": 32.0,
+            "mean_pairwise_cosine": 0.9999287724494934,
+            "centered_frobenius_norm": 1.5036048889160156,
+            "effective_rank": 3.2185747623443604
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.010152103379368782,
+            "mean_vector_norm": 32.0,
+            "mean_pairwise_cosine": 0.9998701810836792,
+            "centered_frobenius_norm": 2.0305778980255127,
+            "effective_rank": 3.057157278060913
+          }
+        },
+        "eval_ce": 1.7811896800994873,
+        "eval_standardized_mse": 1.0837938785552979,
+        "readout_gradient_ce_norm": 0.17126746475696564,
+        "readout_gradient_mse_norm": 0.39520496129989624,
+        "readout_gradient_cosine": -0.05825356766581535,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.38738811016082764,
+            "mean_vector_norm": 27.63072967529297,
+            "mean_pairwise_cosine": 0.7075360417366028,
+            "centered_frobenius_norm": 98.62059020996094,
+            "effective_rank": 1.8644112348556519
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.25624510645866394,
+            "mean_vector_norm": 25.541187286376953,
+            "mean_pairwise_cosine": 0.8222413659095764,
+            "centered_frobenius_norm": 61.43151092529297,
+            "effective_rank": 2.1766061782836914
+          },
+          "head_cls": {
+            "mean_feature_std": 65.29944610595703,
+            "mean_vector_norm": 4586.46435546875,
+            "mean_pairwise_cosine": 0.914676308631897,
+            "centered_frobenius_norm": 14532.3818359375,
+            "effective_rank": 1.0100486278533936
+          },
+          "head_mean": {
+            "mean_feature_std": 55.548065185546875,
+            "mean_vector_norm": 4352.73583984375,
+            "mean_pairwise_cosine": 0.9275487661361694,
+            "centered_frobenius_norm": 12339.6015625,
+            "effective_rank": 1.0129038095474243
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.23128221929073334,
+            "mean_vector_norm": 31.995025634765625,
+            "mean_pairwise_cosine": 0.9146534204483032,
+            "centered_frobenius_norm": 52.04777145385742,
+            "effective_rank": 1.0409889221191406
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.21352721750736237,
+            "mean_vector_norm": 31.994909286499023,
+            "mean_pairwise_cosine": 0.9275222420692444,
+            "centered_frobenius_norm": 47.96278381347656,
+            "effective_rank": 1.0398772954940796
+          }
+        },
+        "eval_ce": 1.361403465270996,
+        "eval_standardized_mse": 0.3531947135925293,
+        "readout_gradient_ce_norm": 0.007600404787808657,
+        "readout_gradient_mse_norm": 0.009355437010526657,
+        "readout_gradient_cosine": 0.04721687361598015,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.125,
+        "macro_f1": 0.045714285714285714,
+        "nll": 2.0418758185502717,
+        "score_prediction": {
+          "mae": 0.7209056253896543,
+          "rmse": 1.0204613080596343,
+          "spearman": -0.03299422614902124,
+          "prediction_std": 0.5233812243807112
+        },
+        "scalar_prediction": {
+          "mae": 0.7549307911278331,
+          "rmse": 1.09542049164375,
+          "spearman": -0.04938050986070271,
+          "prediction_std": 0.6418984469277992
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          4,
+          28,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.1126247366322964
+      },
+      "seconds": 205.15189106902108,
+      "checkpoint_sha256": "6b02f874a0de810440bea38863293e5c34501ae2c5da36b2fb9954f334e3bb2d"
+    },
+    "native_both": {
+      "pooling": "mean",
+      "loss": "joint",
+      "bypass_head": true,
+      "native_readout": true,
+      "classification_supervised": true,
+      "scalar_supervised": true,
+      "class_fit": false,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.603653501364465,
+        "score_prediction": {
+          "mae": 0.6681264912030056,
+          "rmse": 0.8135014580754739,
+          "spearman": 0.43731671554252194,
+          "prediction_std": 0.015878591744766125
+        },
+        "scalar_prediction": {
+          "mae": 0.8029287089639867,
+          "rmse": 0.8626457102467023,
+          "spearman": 0.45814264244515296,
+          "prediction_std": 0.02742738177463085
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0034712738186256677
+      },
+      "standardized_rmse": 1.0641523367154744,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 48.982078552246094,
+            "mean_pairwise_cosine": 0.9986097812652588,
+            "centered_frobenius_norm": 10.205673217773438,
+            "effective_rank": 11.625068664550781
+          },
+          "head_mean": {
+            "mean_feature_std": 0.05388806760311127,
+            "mean_vector_norm": 41.1757926940918,
+            "mean_pairwise_cosine": 0.997394859790802,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.034423828125,
+            "mean_vector_norm": 31.99993133544922,
+            "mean_pairwise_cosine": 0.998607873916626,
+            "centered_frobenius_norm": 6.647650718688965,
+            "effective_rank": 11.670639991760254
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.04271072894334793,
+            "mean_vector_norm": 31.99990463256836,
+            "mean_pairwise_cosine": 0.9973912239074707,
+            "centered_frobenius_norm": 9.100188255310059,
+            "effective_rank": 7.718726634979248
+          }
+        },
+        "eval_ce": 1.8791755437850952,
+        "eval_standardized_mse": 1.1562769412994385,
+        "readout_gradient_ce_norm": 0.22568649053573608,
+        "readout_gradient_mse_norm": 0.5777477622032166,
+        "readout_gradient_cosine": 0.03711368888616562,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.00992425624281168,
+            "mean_vector_norm": 30.506975173950195,
+            "mean_pairwise_cosine": 0.9998527765274048,
+            "centered_frobenius_norm": 2.072378158569336,
+            "effective_rank": 2.5798707008361816
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.011067417450249195,
+            "mean_vector_norm": 29.18341827392578,
+            "mean_pairwise_cosine": 0.9997650384902954,
+            "centered_frobenius_norm": 2.5018692016601562,
+            "effective_rank": 1.2572979927062988
+          },
+          "head_cls": {
+            "mean_feature_std": 0.009924257174134254,
+            "mean_vector_norm": 44.51344299316406,
+            "mean_pairwise_cosine": 0.9999300837516785,
+            "centered_frobenius_norm": 2.0723776817321777,
+            "effective_rank": 2.5798699855804443
+          },
+          "head_mean": {
+            "mean_feature_std": 0.01106741651892662,
+            "mean_vector_norm": 43.96404266357422,
+            "mean_pairwise_cosine": 0.9998965263366699,
+            "centered_frobenius_norm": 2.501868963241577,
+            "effective_rank": 1.2572977542877197
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.007140818051993847,
+            "mean_vector_norm": 31.981508255004883,
+            "mean_pairwise_cosine": 0.9999300837516785,
+            "centered_frobenius_norm": 1.4891573190689087,
+            "effective_rank": 2.57572078704834
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.008005011826753616,
+            "mean_vector_norm": 31.980825424194336,
+            "mean_pairwise_cosine": 0.9998963475227356,
+            "centered_frobenius_norm": 1.8134349584579468,
+            "effective_rank": 1.257637619972229
+          }
+        },
+        "eval_ce": 1.6037750244140625,
+        "eval_standardized_mse": 1.1324201822280884,
+        "readout_gradient_ce_norm": 0.035559479147195816,
+        "readout_gradient_mse_norm": 0.5529168844223022,
+        "readout_gradient_cosine": -0.0455540306866169,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6136785407572387,
+        "score_prediction": {
+          "mae": 0.6747362690884051,
+          "rmse": 0.8218750888977914,
+          "spearman": 0.08027859237536657,
+          "prediction_std": 0.015878591744766125
+        },
+        "scalar_prediction": {
+          "mae": 0.8143085595701849,
+          "rmse": 0.8760231032859156,
+          "spearman": 0.12479672463699687,
+          "prediction_std": 0.02742738177463085
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0034712738186256677
+      },
+      "seconds": 196.15442285500467,
+      "checkpoint_sha256": "cfe3eaebb800c3ecd5c7d8a1af6ded35eb70713c6813949aaa072ced5a9423cb"
+    },
+    "native_both_mse": {
+      "pooling": "mean",
+      "loss": "mse",
+      "bypass_head": true,
+      "native_readout": true,
+      "classification_supervised": false,
+      "scalar_supervised": true,
+      "class_fit": null,
+      "scalar_fit": false,
+      "final": {
+        "n_entities": 32,
+        "accuracy": 0.1875,
+        "macro_f1": 0.06315789473684211,
+        "nll": 1.8397499364194965,
+        "score_prediction": {
+          "mae": 0.5362920219376467,
+          "rmse": 0.8562056546678223,
+          "spearman": -0.6790100939023659,
+          "prediction_std": 0.006182517432920729
+        },
+        "scalar_prediction": {
+          "mae": 0.47282360932867273,
+          "rmse": 0.566433909070646,
+          "spearman": 0.7355585195319658,
+          "prediction_std": 0.8454525965805103
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0062084763801278555
+      },
+      "standardized_rmse": 0.6987480036967039,
+      "readout_initial": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 37.09366989135742,
+            "mean_pairwise_cosine": 0.997565746307373,
+            "centered_frobenius_norm": 10.205674171447754,
+            "effective_rank": 11.62507152557373
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.05388806387782097,
+            "mean_vector_norm": 28.033817291259766,
+            "mean_pairwise_cosine": 0.9946117997169495,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "head_cls": {
+            "mean_feature_std": 0.052725326269865036,
+            "mean_vector_norm": 48.982078552246094,
+            "mean_pairwise_cosine": 0.9986097812652588,
+            "centered_frobenius_norm": 10.205673217773438,
+            "effective_rank": 11.625068664550781
+          },
+          "head_mean": {
+            "mean_feature_std": 0.05388806760311127,
+            "mean_vector_norm": 41.1757926940918,
+            "mean_pairwise_cosine": 0.997394859790802,
+            "centered_frobenius_norm": 11.905451774597168,
+            "effective_rank": 7.414802074432373
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.034423828125,
+            "mean_vector_norm": 31.99993133544922,
+            "mean_pairwise_cosine": 0.998607873916626,
+            "centered_frobenius_norm": 6.647650718688965,
+            "effective_rank": 11.670639991760254
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.04271072894334793,
+            "mean_vector_norm": 31.99990463256836,
+            "mean_pairwise_cosine": 0.9973912239074707,
+            "centered_frobenius_norm": 9.100188255310059,
+            "effective_rank": 7.718726634979248
+          }
+        },
+        "eval_ce": 1.8791755437850952,
+        "eval_standardized_mse": 1.1562769412994385,
+        "readout_gradient_ce_norm": 0.22568649053573608,
+        "readout_gradient_mse_norm": 0.5777477622032166,
+        "readout_gradient_cosine": 0.03711368888616562,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "readout_final": {
+        "features": {
+          "encoder_cls": {
+            "mean_feature_std": 0.17455743253231049,
+            "mean_vector_norm": 37.52106475830078,
+            "mean_pairwise_cosine": 0.9656893014907837,
+            "centered_frobenius_norm": 38.2259407043457,
+            "effective_rank": 1.8371435403823853
+          },
+          "encoder_mean": {
+            "mean_feature_std": 0.17781072854995728,
+            "mean_vector_norm": 36.769405364990234,
+            "mean_pairwise_cosine": 0.9584254026412964,
+            "centered_frobenius_norm": 41.15195083618164,
+            "effective_rank": 1.3306691646575928
+          },
+          "head_cls": {
+            "mean_feature_std": 0.1745574176311493,
+            "mean_vector_norm": 50.00592803955078,
+            "mean_pairwise_cosine": 0.9809195399284363,
+            "centered_frobenius_norm": 38.2259407043457,
+            "effective_rank": 1.8371435403823853
+          },
+          "head_mean": {
+            "mean_feature_std": 0.17781072854995728,
+            "mean_vector_norm": 49.574462890625,
+            "mean_pairwise_cosine": 0.9774711728096008,
+            "centered_frobenius_norm": 41.15195083618164,
+            "effective_rank": 1.3306692838668823
+          },
+          "readout_cls": {
+            "mean_feature_std": 0.11347897350788116,
+            "mean_vector_norm": 31.99003791809082,
+            "mean_pairwise_cosine": 0.9808976650238037,
+            "centered_frobenius_norm": 24.617570877075195,
+            "effective_rank": 1.853261113166809
+          },
+          "readout_mean": {
+            "mean_feature_std": 0.11674743890762329,
+            "mean_vector_norm": 31.989707946777344,
+            "mean_pairwise_cosine": 0.9774449467658997,
+            "centered_frobenius_norm": 26.74987030029297,
+            "effective_rank": 1.3425732851028442
+          }
+        },
+        "eval_ce": 1.8401696681976318,
+        "eval_standardized_mse": 0.4882487952709198,
+        "readout_gradient_ce_norm": 0.2291431427001953,
+        "readout_gradient_mse_norm": 0.7815902233123779,
+        "readout_gradient_cosine": -0.03659989684820175,
+        "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+      },
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.1875,
+        "macro_f1": 0.06315789473684211,
+        "nll": 1.8046318276117668,
+        "score_prediction": {
+          "mae": 0.53280810253089,
+          "rmse": 0.8496242637891842,
+          "spearman": -0.012465628073801534,
+          "prediction_std": 0.006182517432920729
+        },
+        "scalar_prediction": {
+          "mae": 1.0294919175502488,
+          "rmse": 1.3467163308355858,
+          "spearman": -0.030992119122638297,
+          "prediction_std": 0.8454525965805103
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          0,
+          32,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0062084763801278555
+      },
+      "seconds": 196.24333737115376,
+      "checkpoint_sha256": "939590197927327bba025f12d2d833e3a2d3fa59621bc77bea08deb20716f960"
+    }
+  },
+  "scope": "same 32 training examples; not generalization"
+}

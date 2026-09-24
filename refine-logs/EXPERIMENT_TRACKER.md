@@ -46,3 +46,12 @@ See [diagnostic report](../research/laya_task_diagnostics.md). Historical splice
 | MICROFIT-HM-LR | Additional matched 1e-4 GFP shared-head control | COMPLETE; still fails fitting; readout/loss diagnosis required |
 
 All seven runs completed by 2026-09-24 07:56 UTC. [Report and evidence](../research/laya_microfit.md). No dev or test samples were read in these checks.
+
+### GFP readout/loss follow-up
+
+| Run | Scope | Status |
+|---|---|---|
+| GFP-POOL-LOSS | CLS/mean × joint/CE/MSE; six matched 128-update fits | COMPLETE; no supervised branch passes its final fit gate |
+| GFP-ADAPTER | Three conditional structural ablations and one MSE-only control | COMPLETE; fresh readout improves MAE/RMSE, but no final fit gate passed |
+
+All ten completed by 2026-09-24 09:09:47 UTC. [Report and evidence](../research/laya_readout_diagnostics.md). No dev/test rows were read. Next: fixed-configuration longer-budget convergence check; not yet run.

@@ -1,0 +1,385 @@
+{
+  "kind": "shared_heads",
+  "task": "fluorescence",
+  "lr": 0.0001,
+  "updates": 128,
+  "seed": 20260924,
+  "effective_batch": 32,
+  "micro_batch": 4,
+  "schedule": "linear warmup 8 updates, then constant learning rate",
+  "weight_decay": 0.01,
+  "clip_norm": 1.0,
+  "choice_order_policy": "one fixed permutation per example",
+  "pooling": "mean",
+  "score_loss": "joint",
+  "probe_readout": true,
+  "bypass_shared_head": false,
+  "native_readout": true,
+  "checkpoint_retained": false,
+  "classification_supervised": true,
+  "scalar_supervised": true,
+  "scalar_fit_threshold": "standardized training RMSE <= 0.15",
+  "dropout": "original model train mode",
+  "precision": "BF16 autocast, FP32 weights",
+  "fit_threshold": "training-panel accuracy >=31/32 AND NLL <=0.15; no early stopping",
+  "dev_access": false,
+  "test_access": false,
+  "selection": "stratified by training label; SHA256 microfit-v1:id, deterministic class quotas",
+  "selected_ids": [
+    "fluorescence:train:20482",
+    "fluorescence:train:9120",
+    "fluorescence:train:12115",
+    "fluorescence:train:11253",
+    "fluorescence:train:13843",
+    "fluorescence:train:2485",
+    "fluorescence:train:9158",
+    "fluorescence:train:19997",
+    "fluorescence:train:6699",
+    "fluorescence:train:2354",
+    "fluorescence:train:20016",
+    "fluorescence:train:6145",
+    "fluorescence:train:10221",
+    "fluorescence:train:21021",
+    "fluorescence:train:13517",
+    "fluorescence:train:10713",
+    "fluorescence:train:9530",
+    "fluorescence:train:8916",
+    "fluorescence:train:19426",
+    "fluorescence:train:12503",
+    "fluorescence:train:10846",
+    "fluorescence:train:16609",
+    "fluorescence:train:10016",
+    "fluorescence:train:4742",
+    "fluorescence:train:14566",
+    "fluorescence:train:10474",
+    "fluorescence:train:17701",
+    "fluorescence:train:8550",
+    "fluorescence:train:20744",
+    "fluorescence:train:16491",
+    "fluorescence:train:6705",
+    "fluorescence:train:2329"
+  ],
+  "label_counts": {
+    "2": 6,
+    "1": 7,
+    "0": 7,
+    "3": 6,
+    "4": 6
+  },
+  "subset_sha256": "00b06240d5b2c948269c87325440ea9819e660fd0224c2a8dc9872f839ab2974",
+  "manifest_sha256": "496de6f3cadb20b8778ca21f9b23f9b087f4cc7623c744bdd44a487d6d4ce6b1",
+  "script_sha256": "a87988653b8eda46829edbe9aa916345cc91aadeac7fa70529bcc34727fc9607",
+  "train_source_sha256": "267f2bca99705bed54aa464183bcfa0ec089f6f8cb489f1704af871037d67a1e",
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "limitations": [
+    "Training memorization diagnostic only; no generalization evaluation.",
+    "Subset is deliberately class-balanced; not representative prevalence.",
+    "Score bins, anchors and scalar normalization retain the prior 1,024-training-row specification."
+  ],
+  "trainable_parameters": 420010014,
+  "complete": true,
+  "actual_updates": 128,
+  "entity_presentations": 4096,
+  "training_and_periodic_eval_seconds": 205.15189106902108,
+  "peak_allocated_gib": 7.8425703048706055,
+  "initial": {
+    "step": 0,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 0.21875,
+      "macro_f1": 0.07179487179487179,
+      "nll": 1.7811855633248292,
+      "score_prediction": {
+        "mae": 0.7146865475861928,
+        "rmse": 0.829080334695011,
+        "spearman": 0.3966275659824046,
+        "prediction_std": 0.001038392322189924
+      },
+      "scalar_prediction": {
+        "mae": 0.7560239334219172,
+        "rmse": 0.843921443034427,
+        "spearman": 0.11913622415670452,
+        "prediction_std": 0.005390108327813852
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        32,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probability_std_mean": 0.0008496333716952288
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.21875,
+      "macro_f1": 0.07179487179487179,
+      "nll": 1.7811855633248292,
+      "score_prediction": {
+        "mae": 0.7146865475861928,
+        "rmse": 0.829080334695011,
+        "spearman": 0.3966275659824046,
+        "prediction_std": 0.001038392322189924
+      },
+      "scalar_prediction": {
+        "mae": 0.7560239334219172,
+        "rmse": 0.843921443034427,
+        "spearman": 0.11913622415670452,
+        "prediction_std": 0.005390108327813852
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        32,
+        0,
+        0,
+        0,
+        0
+      ],
+      "probability_std_mean": 0.0008496333716952288
+    },
+    "readout_probe": {
+      "features": {
+        "encoder_cls": {
+          "mean_feature_std": 0.052725326269865036,
+          "mean_vector_norm": 37.09366989135742,
+          "mean_pairwise_cosine": 0.997565746307373,
+          "centered_frobenius_norm": 10.205674171447754,
+          "effective_rank": 11.62507152557373
+        },
+        "encoder_mean": {
+          "mean_feature_std": 0.05388806387782097,
+          "mean_vector_norm": 28.033817291259766,
+          "mean_pairwise_cosine": 0.9946117997169495,
+          "centered_frobenius_norm": 11.905451774597168,
+          "effective_rank": 7.414802074432373
+        },
+        "head_cls": {
+          "mean_feature_std": 4.471445560455322,
+          "mean_vector_norm": 11162.169921875,
+          "mean_pairwise_cosine": 0.9999287724494934,
+          "centered_frobenius_norm": 931.2155151367188,
+          "effective_rank": 2.2100672721862793
+        },
+        "head_mean": {
+          "mean_feature_std": 6.337810516357422,
+          "mean_vector_norm": 9202.9072265625,
+          "mean_pairwise_cosine": 0.9998700618743896,
+          "centered_frobenius_norm": 1387.3441162109375,
+          "effective_rank": 1.5353748798370361
+        },
+        "readout_cls": {
+          "mean_feature_std": 0.0075065698474645615,
+          "mean_vector_norm": 32.0,
+          "mean_pairwise_cosine": 0.9999287724494934,
+          "centered_frobenius_norm": 1.5036048889160156,
+          "effective_rank": 3.2185747623443604
+        },
+        "readout_mean": {
+          "mean_feature_std": 0.010152103379368782,
+          "mean_vector_norm": 32.0,
+          "mean_pairwise_cosine": 0.9998701810836792,
+          "centered_frobenius_norm": 2.0305778980255127,
+          "effective_rank": 3.057157278060913
+        }
+      },
+      "eval_ce": 1.7811896800994873,
+      "eval_standardized_mse": 1.0837938785552979,
+      "readout_gradient_ce_norm": 0.17126746475696564,
+      "readout_gradient_mse_norm": 0.39520496129989624,
+      "readout_gradient_cosine": -0.05825356766581535,
+      "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+    }
+  },
+  "final": {
+    "step": 128,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 0.34375,
+      "macro_f1": 0.2254545454545455,
+      "nll": 1.361297579918254,
+      "score_prediction": {
+        "mae": 0.33303539672761906,
+        "rmse": 0.5060597537015928,
+        "spearman": 0.5915131543493976,
+        "prediction_std": 0.5233812243807112
+      },
+      "scalar_prediction": {
+        "mae": 0.27957841099659225,
+        "rmse": 0.4817655940496291,
+        "spearman": 0.6072517718186042,
+        "prediction_std": 0.6418984469277992
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        4,
+        28,
+        0,
+        0,
+        0
+      ],
+      "probability_std_mean": 0.1126247366322964
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.34375,
+      "macro_f1": 0.2254545454545455,
+      "nll": 1.361297579918254,
+      "score_prediction": {
+        "mae": 0.33303539672761906,
+        "rmse": 0.5060597537015928,
+        "spearman": 0.5915131543493976,
+        "prediction_std": 0.5233812243807112
+      },
+      "scalar_prediction": {
+        "mae": 0.27957841099659225,
+        "rmse": 0.4817655940496291,
+        "spearman": 0.6072517718186042,
+        "prediction_std": 0.6418984469277992
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        4,
+        28,
+        0,
+        0,
+        0
+      ],
+      "probability_std_mean": 0.1126247366322964
+    },
+    "readout_probe": {
+      "features": {
+        "encoder_cls": {
+          "mean_feature_std": 0.38738811016082764,
+          "mean_vector_norm": 27.63072967529297,
+          "mean_pairwise_cosine": 0.7075360417366028,
+          "centered_frobenius_norm": 98.62059020996094,
+          "effective_rank": 1.8644112348556519
+        },
+        "encoder_mean": {
+          "mean_feature_std": 0.25624510645866394,
+          "mean_vector_norm": 25.541187286376953,
+          "mean_pairwise_cosine": 0.8222413659095764,
+          "centered_frobenius_norm": 61.43151092529297,
+          "effective_rank": 2.1766061782836914
+        },
+        "head_cls": {
+          "mean_feature_std": 65.29944610595703,
+          "mean_vector_norm": 4586.46435546875,
+          "mean_pairwise_cosine": 0.914676308631897,
+          "centered_frobenius_norm": 14532.3818359375,
+          "effective_rank": 1.0100486278533936
+        },
+        "head_mean": {
+          "mean_feature_std": 55.548065185546875,
+          "mean_vector_norm": 4352.73583984375,
+          "mean_pairwise_cosine": 0.9275487661361694,
+          "centered_frobenius_norm": 12339.6015625,
+          "effective_rank": 1.0129038095474243
+        },
+        "readout_cls": {
+          "mean_feature_std": 0.23128221929073334,
+          "mean_vector_norm": 31.995025634765625,
+          "mean_pairwise_cosine": 0.9146534204483032,
+          "centered_frobenius_norm": 52.04777145385742,
+          "effective_rank": 1.0409889221191406
+        },
+        "readout_mean": {
+          "mean_feature_std": 0.21352721750736237,
+          "mean_vector_norm": 31.994909286499023,
+          "mean_pairwise_cosine": 0.9275222420692444,
+          "centered_frobenius_norm": 47.96278381347656,
+          "effective_rank": 1.0398772954940796
+        }
+      },
+      "eval_ce": 1.361403465270996,
+      "eval_standardized_mse": 0.3531947135925293,
+      "readout_gradient_ce_norm": 0.007600404787808657,
+      "readout_gradient_mse_norm": 0.009355437010526657,
+      "readout_gradient_cosine": 0.04721687361598015,
+      "gradient_scope": "readout parameters only, eval mode, all 32 fitted examples; not encoder gradient conflict"
+    }
+  },
+  "training_panel_fit_passed": false,
+  "canonical_panel_fit_passed": false,
+  "scalar_fit_passed": false,
+  "rotated_sequences": {
+    "n_entities": 32,
+    "accuracy": 0.125,
+    "macro_f1": 0.045714285714285714,
+    "nll": 2.0418758185502717,
+    "score_prediction": {
+      "mae": 0.7209056253896543,
+      "rmse": 1.0204613080596343,
+      "spearman": -0.03299422614902124,
+      "prediction_std": 0.5233812243807112
+    },
+    "scalar_prediction": {
+      "mae": 0.7549307911278331,
+      "rmse": 1.09542049164375,
+      "spearman": -0.04938050986070271,
+      "prediction_std": 0.6418984469277992
+    },
+    "oracle_quantization_mae": 0.10981601711054387,
+    "outside_training_range_fraction": 0.0,
+    "predicted_class_counts": [
+      4,
+      28,
+      0,
+      0,
+      0
+    ],
+    "probability_std_mean": 0.1126247366322964
+  },
+  "reload_max_probability_error": 0.0,
+  "reload_max_scalar_error": 0.0,
+  "checkpoint_sha256": "6b02f874a0de810440bea38863293e5c34501ae2c5da36b2fb9954f334e3bb2d"
+}
