@@ -1,0 +1,25 @@
+{
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.5.3",
+    "numpy": "2.4.4",
+    "scipy": "1.16.1",
+    "scikit-learn": "1.8.0",
+    "safetensors": "0.6.2",
+    "biopython": "1.87",
+    "matplotlib": "3.10.5"
+  },
+  "initial_model_and_tokenizer_sha256": {
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model/model.safetensors": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model/rl_agent_config.json": "ebf0cd524d92342a6be5e48e9fca3d7c2babfb5a56ccd79d2171ef5d8c7f7be8",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model/encoder/config.json": "5268d24ad3b77c8151de5dcb0762ba4391619aad9ab0bda33e36fb083cfeae6d",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model/tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model/tokenizer/tokenizer_config.json": "08d4cf3ac4dca381759441b85b91a6d40e688471dcd33d15d6649eb0a9a854d1",
+    "vendor/laya/laya/common.py": "f231d42fcec84da203222fcaa89c083b22776e00341e66e118183d754e1dcabf"
+  },
+  "initialization": "Original Laya model for every run, not previous biological checkpoints",
+  "data_directory": "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+  "test_access": false,
+  "dev_access": false
+}

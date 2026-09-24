@@ -11,6 +11,7 @@ The paper now centers on a shared biological decision interface, with BPE as a s
 - [English paper (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex)
 - [Six-task joint-training pilot and completed development round](research/laya_multitask_pilot.md)
 - [Splice/GFP diagnostics, matched single-task controls, and splice label-name correction](research/laya_task_diagnostics.md)
+- [Completed 32-example fitting checks and candidate-order augmentation](research/laya_microfit.md)
 - [Chinese manuscript](research/laya_bio_paper_draft.md)
 - [Release and verification record](research/laya_large_data_release.md)
 

@@ -1,0 +1,142 @@
+{
+  "dev_access": false,
+  "test_access": false,
+  "script_sha256": "4436fc89e23cb13f58e25989b861482985955feb56f6b17a0ef5a4e129844c22",
+  "control_hyperparameters": {
+    "position_logistic_C": 1000000.0,
+    "max_iter": 4000,
+    "position_ridge_alpha": 1e-06
+  },
+  "tasks": {
+    "splice": {
+      "entities": 32,
+      "unique_sequences": 32,
+      "unique_groups": 32,
+      "selected_ids": [
+        "splice-upstream:3662",
+        "splice-upstream:24400",
+        "splice-upstream:12045",
+        "splice-upstream:6062",
+        "splice-upstream:42333",
+        "splice-upstream:22915",
+        "splice-upstream:23398",
+        "splice-upstream:16175",
+        "splice-upstream:28675",
+        "splice-upstream:36568",
+        "splice-upstream:38773",
+        "splice-upstream:17895",
+        "splice-upstream:1427",
+        "splice-upstream:6599",
+        "splice-upstream:35498",
+        "splice-upstream:39196",
+        "splice-upstream:7560",
+        "splice-upstream:29772",
+        "splice-upstream:28505",
+        "splice-upstream:28182",
+        "splice-upstream:29273",
+        "splice-upstream:26770",
+        "splice-upstream:16029",
+        "splice-upstream:38929",
+        "splice-upstream:33888",
+        "splice-upstream:11572",
+        "splice-upstream:32035",
+        "splice-upstream:41178",
+        "splice-upstream:42630",
+        "splice-upstream:13676",
+        "splice-upstream:13091",
+        "splice-upstream:28095"
+      ],
+      "label_counts": {
+        "1": 11,
+        "0": 11,
+        "2": 10
+      },
+      "subset_sha256": "e8428be19ef3ca2f06965fc3bce37dc4aecc87bb40d72454c6db862dd2452b6e",
+      "tokenization": {
+        "candidate": {
+          "unique_full_input_ids": 32,
+          "unknown_tokens": 0,
+          "min_tokens": 206,
+          "max_tokens": 227
+        },
+        "shared_heads": {
+          "unique_full_input_ids": 32,
+          "unknown_tokens": 0,
+          "min_tokens": 188,
+          "max_tokens": 209
+        }
+      },
+      "position_logistic_training_accuracy": 1.0
+    },
+    "fluorescence": {
+      "entities": 32,
+      "unique_sequences": 32,
+      "unique_groups": 32,
+      "selected_ids": [
+        "fluorescence:train:20482",
+        "fluorescence:train:9120",
+        "fluorescence:train:12115",
+        "fluorescence:train:11253",
+        "fluorescence:train:13843",
+        "fluorescence:train:2485",
+        "fluorescence:train:9158",
+        "fluorescence:train:19997",
+        "fluorescence:train:6699",
+        "fluorescence:train:2354",
+        "fluorescence:train:20016",
+        "fluorescence:train:6145",
+        "fluorescence:train:10221",
+        "fluorescence:train:21021",
+        "fluorescence:train:13517",
+        "fluorescence:train:10713",
+        "fluorescence:train:9530",
+        "fluorescence:train:8916",
+        "fluorescence:train:19426",
+        "fluorescence:train:12503",
+        "fluorescence:train:10846",
+        "fluorescence:train:16609",
+        "fluorescence:train:10016",
+        "fluorescence:train:4742",
+        "fluorescence:train:14566",
+        "fluorescence:train:10474",
+        "fluorescence:train:17701",
+        "fluorescence:train:8550",
+        "fluorescence:train:20744",
+        "fluorescence:train:16491",
+        "fluorescence:train:6705",
+        "fluorescence:train:2329"
+      ],
+      "label_counts": {
+        "2": 6,
+        "1": 7,
+        "0": 7,
+        "3": 6,
+        "4": 6
+      },
+      "subset_sha256": "00b06240d5b2c948269c87325440ea9819e660fd0224c2a8dc9872f839ab2974",
+      "tokenization": {
+        "candidate": {
+          "unique_full_input_ids": 32,
+          "unknown_tokens": 0,
+          "min_tokens": 239,
+          "max_tokens": 243
+        },
+        "shared_heads": {
+          "unique_full_input_ids": 32,
+          "unknown_tokens": 0,
+          "min_tokens": 151,
+          "max_tokens": 155
+        }
+      },
+      "alignment_reference_sha256": "dd295bd4496d5e13da909a2c59492f00f923f7957a774feeaafaf8c5c235828c",
+      "unencoded_insertions": 0,
+      "position_logistic_training_accuracy": 1.0,
+      "position_ridge_training": {
+        "mae": 1.718859777080639e-07,
+        "rmse": 2.2916818607171065e-07
+      },
+      "true_value_std": 0.8185863131583854,
+      "oracle_anchor_mae": 0.10981601711054387
+    }
+  }
+}

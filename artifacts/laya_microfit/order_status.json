@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "created_utc": "2026-09-24T07:31:41.681896+00:00",
+  "pid": 105453,
+  "dev_access": false,
+  "test_access": false,
+  "rationale": "Post-hoc check of candidate-order dependence seen on the 32 training examples; not preregistered before microfit curves",
+  "condition": "Base splice candidate passes final training-panel fit threshold but fails canonical-panel threshold",
+  "jobs": [
+    {
+      "name": "splice_candidate_resampled",
+      "status": "complete",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/microfit_order_v1/frozen_code/laya_microfit.py",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/microfit_order_v1/splice_candidate_resampled",
+        "--task",
+        "splice",
+        "--kind",
+        "candidate",
+        "--lr",
+        "2e-5",
+        "--updates",
+        "128",
+        "--resample-choice-order"
+      ],
+      "pid": 106258,
+      "exit_code": 0
+    }
+  ],
+  "updated_utc": "2026-09-24T07:52:09.134091+00:00",
+  "source_sha256": {
+    "laya_microfit.py": "a10d8f18ceabddef05ac6f89755557185f578fce66253ecaa5cf12ef9f71fdb1",
+    "laya_multitask_experiment.py": "469a077c7345555ffd32f46b366aeab09e076909a8b3638a88e77b01faf3c2e9",
+    "laya_multitask_data.py": "3d8f10a985c55851a45e7e62b7cfe4e097f425505bed07983ea7a5d4da046763",
+    "laya_formal_experiment.py": "1efb0d960803d8ecb40163e75292648a34e77b9b44e71c4f15366d041d66cd25",
+    "laya_metrics.py": "2a7e0faa96aeb8c4e890546a66c773b795c08061df01638edd0ad4713a2134fa",
+    "run_laya_microfit_order.py": "6852de3801a80e04ca8ef04c53a848ff3ffaa5dd043dfe1417dd4ead477e65c6"
+  },
+  "identical_initial_metrics_and_subset": true
+}

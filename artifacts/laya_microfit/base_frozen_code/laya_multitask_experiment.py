@@ -51,14 +51,6 @@ def make_items(rows, tokenizer, builder, kind, seed=0, training=False, max_lengt
     return entities
 
 
-def resample_choice_batch(entities, rows_by_id, tokenizer, builder, seed, step, max_length):
-    """Re-render Choice panels without changing examples or biological targets."""
-    rows=[rows_by_id[e['id']] for e in entities]
-    if not all(r['primitive']=='choice' for r in rows):
-        raise ValueError('Only Choice panels may use candidate-order augmentation')
-    return make_items(rows,tokenizer,builder,'candidate',seed+step,True,max_length)
-
-
 def collate(items,pad_id,device):
     n=len(items); length=max(len(x['ids']) for x in items)
     ids=torch.full((n,length),pad_id,dtype=torch.long)
@@ -218,10 +210,8 @@ def main():
     p.add_argument('--micro-batch',type=int,default=4);p.add_argument('--eval-batch',type=int,default=8)
     p.add_argument('--seed',type=int,default=20260924);p.add_argument('--lr',type=float,default=2e-5)
     p.add_argument('--only-task',choices=data.TASKS)
-    p.add_argument('--resample-choice-order',action='store_true',help='Re-render candidate Choice panels independently at each update; default preserves historical fixed panels')
     p.add_argument('--train-diagnostics-cap',type=int,default=0)
     a=p.parse_args()
-    if a.resample_choice_order and a.kind!='candidate':p.error('--resample-choice-order applies to candidate scoring only')
     if a.only_task and a.updates%len(data.TASKS):p.error('Single-task reference schedule must contain complete task cycles')
     if a.output.exists():raise FileExistsError(a.output)
     if not torch.cuda.is_available():raise RuntimeError('CUDA required')
@@ -242,7 +232,7 @@ def main():
     entities={s:make_items(v,tok,builder,a.kind,a.seed,s=='train',manifest['max_length']) for s,v in rows.items()}
     a.output.mkdir(parents=True)
     config={'kind':a.kind,'seed':a.seed,'updates':a.updates//len(data.TASKS) if a.only_task else a.updates,
-            'resample_choice_order':a.resample_choice_order,'schedule_updates':a.updates,'only_task':a.only_task,'train_diagnostics_cap':a.train_diagnostics_cap,
+            'schedule_updates':a.updates,'only_task':a.only_task,'train_diagnostics_cap':a.train_diagnostics_cap,
             'schedule_policy':'Replay joint batches and LR exactly; skip non-target optimizer steps' if a.only_task else 'joint','effective_entity_batch':a.effective_batch,
             'micro_batch':a.micro_batch,'lr':a.lr,'task_info':task_info,'data_manifest_sha256':hashlib.sha256((a.data_dir/'manifest.json').read_bytes()).hexdigest(),
             'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
@@ -262,14 +252,12 @@ def main():
     before,before_seconds=evaluate(model,a.kind,entities['dev'],tok,device,task_info,a.eval_batch)
     (a.output/'dev_before.json').write_text(json.dumps(metrics(before,task_info),indent=2)+'\n')
     params=[p for p in model.parameters() if p.requires_grad];optimizer=torch.optim.AdamW(params,lr=a.lr,weight_decay=.01)
-    rows_by_id={r['id']:r for r in rows['train']}
     consumed=Counter();propositions=Counter();trace=[];started=time.monotonic();optimizer_step=0
     torch.cuda.reset_peak_memory_stats();model.train()
     for step,task,chunk in training_schedule(entities['train'],a.seed,a.updates,a.effective_batch):
         if a.only_task and task!=a.only_task:continue
         optimizer_step+=1
-        loss_entities=resample_choice_batch(chunk,rows_by_id,tok,builder,a.seed,step,manifest['max_length']) if a.resample_choice_order and task_info[task]['primitive']=='choice' else chunk
-        items=[item for e in loss_entities for item in e['items']]
+        items=[item for e in chunk for item in e['items']]
         optimizer.zero_grad(set_to_none=True);step_loss=0.
         warmup=max(1,math.ceil(.05*a.updates))
         factor=step/warmup if step<=warmup else .5*(1+math.cos(math.pi*(step-warmup)/max(1,a.updates-warmup)))

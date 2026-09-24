@@ -1,0 +1,1157 @@
+{
+  "dev_access": false,
+  "test_access": false,
+  "runs": {
+    "splice_candidate_base": {
+      "task": "splice",
+      "kind": "candidate",
+      "lr": 2e-05,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 7.338831065100794e-07,
+          "predicted_class_counts": [
+            11,
+            11,
+            10
+          ],
+          "probability_std_mean": 0.4711428732205671
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 0.8125,
+          "macro_f1": 0.811904761904762,
+          "nll": 1.7924665311736674,
+          "predicted_class_counts": [
+            9,
+            17,
+            6
+          ],
+          "probability_std_mean": 0.4390895329781477
+        }
+      },
+      "first_observed_training_panel_pass_step": 8,
+      "final_training_panel_fit_passed": true,
+      "final_canonical_panel_fit_passed": false,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.28125,
+        "macro_f1": 0.2511904761904762,
+        "nll": 9.980027565885072,
+        "predicted_class_counts": [
+          9,
+          17,
+          6
+        ],
+        "probability_std_mean": 0.4390895329781477
+      },
+      "training_and_periodic_eval_seconds": 234.965046252124,
+      "checkpoint_sha256": "fdfc09b71f8464c6253621ed51de7544258ceda0a2b538b5270ce5c56732b671",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 1.1459882482886314,
+          "lr": 2.5e-06,
+          "gradient_norm": 5.8515238761901855,
+          "gradient_norms_by_module": {
+            "encoder": 5.753713130950928,
+            "head": 0.150136336684227,
+            "type_emb": 0.0037009899970144033,
+            "scorer": 1.0547784566879272
+          },
+          "seconds": 2.1006861869245768
+        },
+        {
+          "step": 32,
+          "loss": 0.8371046961026423,
+          "lr": 2e-05,
+          "gradient_norm": 119.70738983154297,
+          "gradient_norms_by_module": {
+            "encoder": 119.43201446533203,
+            "head": 1.4782098531723022,
+            "type_emb": 0.06859410554170609,
+            "scorer": 7.978927135467529
+          },
+          "seconds": 59.224285904085264
+        },
+        {
+          "step": 64,
+          "loss": 0.0002663740142452298,
+          "lr": 2e-05,
+          "gradient_norm": 0.025182973593473434,
+          "gradient_norms_by_module": {
+            "encoder": 0.004260138608515263,
+            "head": 0.0010224306024610996,
+            "type_emb": 4.809254460269585e-05,
+            "scorer": 0.024798907339572906
+          },
+          "seconds": 117.05389785999432
+        },
+        {
+          "step": 128,
+          "loss": 3.553905653319589e-06,
+          "lr": 2e-05,
+          "gradient_norm": 0.0005550631904043257,
+          "gradient_norms_by_module": {
+            "encoder": 0.00041167193558067083,
+            "head": 9.446881449548528e-05,
+            "type_emb": 4.457637714949669e-06,
+            "scorer": 0.0003601070784498006
+          },
+          "seconds": 234.5593347819522
+        }
+      ]
+    },
+    "splice_shared_heads_base": {
+      "task": "splice",
+      "kind": "shared_heads",
+      "lr": 2e-05,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 0.0030427466588203353,
+          "predicted_class_counts": [
+            11,
+            11,
+            10
+          ],
+          "probability_std_mean": 0.4689416256510944
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 0.0030427466588203353,
+          "predicted_class_counts": [
+            11,
+            11,
+            10
+          ],
+          "probability_std_mean": 0.4689416256510944
+        }
+      },
+      "first_observed_training_panel_pass_step": 64,
+      "final_training_panel_fit_passed": true,
+      "final_canonical_panel_fit_passed": true,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.28125,
+        "macro_f1": 0.2787878787878788,
+        "nll": 5.263418540800006,
+        "predicted_class_counts": [
+          11,
+          11,
+          10
+        ],
+        "probability_std_mean": 0.468941761520175
+      },
+      "training_and_periodic_eval_seconds": 240.02680663391948,
+      "checkpoint_sha256": "4ccb4788310eceaf85d308693d8b336e0011cd191064ab798cdc46b9072059c1",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 1.6158422529697418,
+          "lr": 2.5e-06,
+          "gradient_norm": 37.254207611083984,
+          "gradient_norms_by_module": {
+            "encoder": 1.1504456996917725,
+            "head": 0.16430602967739105,
+            "type_emb": 0.002997633768245578,
+            "readout": 4.276765823364258,
+            "classifiers": 36.989654541015625
+          },
+          "seconds": 1.7568828489165753
+        },
+        {
+          "step": 32,
+          "loss": 0.3435014430433512,
+          "lr": 2e-05,
+          "gradient_norm": 8.451642036437988,
+          "gradient_norms_by_module": {
+            "encoder": 2.270371437072754,
+            "head": 0.10439857095479965,
+            "type_emb": 0.002198806731030345,
+            "readout": 1.2768205404281616,
+            "classifiers": 8.039557456970215
+          },
+          "seconds": 59.224861706839874
+        },
+        {
+          "step": 64,
+          "loss": 0.048415552591905,
+          "lr": 2e-05,
+          "gradient_norm": 1.8233308792114258,
+          "gradient_norms_by_module": {
+            "encoder": 0.5142855644226074,
+            "head": 0.026633813977241516,
+            "type_emb": 0.0005071297055110335,
+            "readout": 0.2816217243671417,
+            "classifiers": 1.726275086402893
+          },
+          "seconds": 118.88671390293166
+        },
+        {
+          "step": 128,
+          "loss": 0.003959060704801232,
+          "lr": 2e-05,
+          "gradient_norm": 0.2291012853384018,
+          "gradient_norms_by_module": {
+            "encoder": 0.06139769405126572,
+            "head": 0.0021832750644534826,
+            "type_emb": 3.250631198170595e-05,
+            "readout": 0.02970864064991474,
+            "classifiers": 0.21870151162147522
+          },
+          "seconds": 239.6273078150116
+        }
+      ]
+    },
+    "fluorescence_candidate_base": {
+      "task": "fluorescence",
+      "kind": "candidate",
+      "lr": 2e-05,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 0.90625,
+          "macro_f1": 0.9131907308377898,
+          "nll": 0.3364325931207516,
+          "score_prediction": {
+            "mae": 0.28824416630443866,
+            "rmse": 0.5629749902660204,
+            "spearman": 0.875733137829912,
+            "prediction_std": 0.8468901471240643
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            10,
+            5,
+            6,
+            5,
+            6
+          ],
+          "probability_std_mean": 0.3815728587541141
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 0.90625,
+          "macro_f1": 0.9131907308377898,
+          "nll": 0.3364325931207516,
+          "score_prediction": {
+            "mae": 0.28824416630443866,
+            "rmse": 0.5629749902660204,
+            "spearman": 0.875733137829912,
+            "prediction_std": 0.8468901471240643
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            10,
+            5,
+            6,
+            5,
+            6
+          ],
+          "probability_std_mean": 0.3815728587541141
+        }
+      },
+      "first_observed_training_panel_pass_step": 96,
+      "final_training_panel_fit_passed": false,
+      "final_canonical_panel_fit_passed": false,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.125,
+        "macro_f1": 0.13636363636363635,
+        "nll": 10.15326609367818,
+        "score_prediction": {
+          "mae": 1.069622340114195,
+          "rmse": 1.3783641297424631,
+          "spearman": -0.18951612903225803,
+          "prediction_std": 0.8468901471240644
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          10,
+          5,
+          6,
+          5,
+          6
+        ],
+        "probability_std_mean": 0.3815728587541141
+      },
+      "training_and_periodic_eval_seconds": 216.68583545391448,
+      "checkpoint_sha256": "4f40e06d0b3632e7a92cc3b8c81d32d3463e42c794a968ecebfd0257eceace46",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 1.6864568293094635,
+          "lr": 2.5e-06,
+          "gradient_norm": 16.964218139648438,
+          "gradient_norms_by_module": {
+            "encoder": 16.852087020874023,
+            "head": 0.1720208078622818,
+            "type_emb": 0.0042723617516458035,
+            "scorer": 1.939640760421753
+          },
+          "seconds": 2.094122879905626
+        },
+        {
+          "step": 32,
+          "loss": 0.3788886433467269,
+          "lr": 2e-05,
+          "gradient_norm": 21.5056209564209,
+          "gradient_norms_by_module": {
+            "encoder": 21.206817626953125,
+            "head": 0.18190912902355194,
+            "type_emb": 0.0069305868819355965,
+            "scorer": 3.5678412914276123
+          },
+          "seconds": 60.08439107704908
+        },
+        {
+          "step": 64,
+          "loss": 0.35283191667258507,
+          "lr": 2e-05,
+          "gradient_norm": 95.54203033447266,
+          "gradient_norms_by_module": {
+            "encoder": 95.49266815185547,
+            "head": 0.36187559366226196,
+            "type_emb": 0.013769126497209072,
+            "scorer": 3.0493109226226807
+          },
+          "seconds": 114.99191385600716
+        },
+        {
+          "step": 128,
+          "loss": 0.00010015644420491299,
+          "lr": 2e-05,
+          "gradient_norm": 0.021543672308325768,
+          "gradient_norms_by_module": {
+            "encoder": 0.019423574209213257,
+            "head": 0.001242424943484366,
+            "type_emb": 4.756119960802607e-05,
+            "scorer": 0.009236270561814308
+          },
+          "seconds": 216.31091511901468
+        }
+      ]
+    },
+    "fluorescence_shared_heads_base": {
+      "task": "fluorescence",
+      "kind": "shared_heads",
+      "lr": 2e-05,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 0.21875,
+          "macro_f1": 0.07179487179487179,
+          "nll": 1.657396316717159,
+          "score_prediction": {
+            "mae": 0.7852186308798813,
+            "rmse": 0.8608978150720816,
+            "spearman": -0.5516862170087976,
+            "prediction_std": 0.005860422973896061
+          },
+          "scalar_prediction": {
+            "mae": 0.989775816191366,
+            "rmse": 1.0089217318168564,
+            "spearman": 0.6136037519968905,
+            "prediction_std": 0.02370220310186171
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            32,
+            0,
+            0,
+            0,
+            0
+          ],
+          "probability_std_mean": 0.002621833965774116
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 0.21875,
+          "macro_f1": 0.07179487179487179,
+          "nll": 1.657396316717159,
+          "score_prediction": {
+            "mae": 0.7852186308798813,
+            "rmse": 0.8608978150720816,
+            "spearman": -0.5516862170087976,
+            "prediction_std": 0.005860422973896061
+          },
+          "scalar_prediction": {
+            "mae": 0.989775816191366,
+            "rmse": 1.0089217318168564,
+            "spearman": 0.6136037519968905,
+            "prediction_std": 0.02370220310186171
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            32,
+            0,
+            0,
+            0,
+            0
+          ],
+          "probability_std_mean": 0.002621833965774116
+        }
+      },
+      "first_observed_training_panel_pass_step": null,
+      "final_training_panel_fit_passed": false,
+      "final_canonical_panel_fit_passed": false,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.6482868235491628,
+        "score_prediction": {
+          "mae": 0.7808591927124096,
+          "rmse": 0.8557998633846848,
+          "spearman": -0.001099706744868035,
+          "prediction_std": 0.005860422973896061
+        },
+        "scalar_prediction": {
+          "mae": 1.0032337264734787,
+          "rmse": 1.0227104601483472,
+          "spearman": 0.16482392011734384,
+          "prediction_std": 0.023702203101861715
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          32,
+          0,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.002621833965774116
+      },
+      "training_and_periodic_eval_seconds": 203.13894560886547,
+      "checkpoint_sha256": "08b063984b2b013cf8be990c200661de31b89ac92cf94d5b52ce9db1b6c7387d",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 4.796798199415207,
+          "lr": 2.5e-06,
+          "gradient_norm": 166.94674682617188,
+          "gradient_norms_by_module": {
+            "encoder": 9.12275218963623,
+            "head": 0.872521698474884,
+            "type_emb": 0.02651805430650711,
+            "readout": 19.278301239013672,
+            "classifiers": 10.487417221069336,
+            "regressors": 165.2440185546875
+          },
+          "seconds": 1.819729506969452
+        },
+        {
+          "step": 32,
+          "loss": 1.5328151881694794,
+          "lr": 2e-05,
+          "gradient_norm": 22.316543579101562,
+          "gradient_norms_by_module": {
+            "encoder": 0.05571318417787552,
+            "head": 0.09422047436237335,
+            "type_emb": 0.0005823245737701654,
+            "readout": 2.5245440006256104,
+            "classifiers": 7.509606838226318,
+            "regressors": 20.862613677978516
+          },
+          "seconds": 51.49317775294185
+        },
+        {
+          "step": 64,
+          "loss": 1.337116613984108,
+          "lr": 2e-05,
+          "gradient_norm": 14.894816398620605,
+          "gradient_norms_by_module": {
+            "encoder": 0.7818604111671448,
+            "head": 0.10421530902385712,
+            "type_emb": 0.001970321638509631,
+            "readout": 1.6157151460647583,
+            "classifiers": 5.8675537109375,
+            "regressors": 13.571832656860352
+          },
+          "seconds": 102.24293555598706
+        },
+        {
+          "step": 128,
+          "loss": 1.6063717752695084,
+          "lr": 2e-05,
+          "gradient_norm": 50.33457946777344,
+          "gradient_norms_by_module": {
+            "encoder": 2.4992828369140625,
+            "head": 0.29630279541015625,
+            "type_emb": 0.008448963053524494,
+            "readout": 5.702378273010254,
+            "classifiers": 4.970086097717285,
+            "regressors": 49.69926071166992
+          },
+          "seconds": 202.7964451739099
+        }
+      ]
+    },
+    "fluorescence_candidate_lr_rescue": {
+      "task": "fluorescence",
+      "kind": "candidate",
+      "lr": 0.0001,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 9.197810567478125e-06,
+          "score_prediction": {
+            "mae": 0.10981721099945377,
+            "rmse": 0.22992455998893477,
+            "spearman": 0.9684750733137829,
+            "prediction_std": 0.7817849409677098
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            7,
+            7,
+            6,
+            6,
+            6
+          ],
+          "probability_std_mean": 0.3995423201931053
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 9.197810567478125e-06,
+          "score_prediction": {
+            "mae": 0.10981721099945377,
+            "rmse": 0.22992455998893477,
+            "spearman": 0.9684750733137829,
+            "prediction_std": 0.7817849409677098
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            7,
+            7,
+            6,
+            6,
+            6
+          ],
+          "probability_std_mean": 0.3995423201931053
+        }
+      },
+      "first_observed_training_panel_pass_step": 96,
+      "final_training_panel_fit_passed": true,
+      "final_canonical_panel_fit_passed": true,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.15625,
+        "macro_f1": 0.1571428571428571,
+        "nll": 11.065927158972753,
+        "score_prediction": {
+          "mae": 0.8905396010475586,
+          "rmse": 1.2623759717963694,
+          "spearman": -0.008064516129032258,
+          "prediction_std": 0.7817849409677098
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          7,
+          7,
+          6,
+          6,
+          6
+        ],
+        "probability_std_mean": 0.3995423201931053
+      },
+      "training_and_periodic_eval_seconds": 208.05991416797042,
+      "checkpoint_sha256": "70d356a5db2f406402a56457570a38305781782fade2b0f03366a4186e1496b9",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 1.6864568293094635,
+          "lr": 1.25e-05,
+          "gradient_norm": 16.964218139648438,
+          "gradient_norms_by_module": {
+            "encoder": 16.852087020874023,
+            "head": 0.1720208078622818,
+            "type_emb": 0.0042723617516458035,
+            "scorer": 1.939640760421753
+          },
+          "seconds": 1.7155481779482216
+        },
+        {
+          "step": 32,
+          "loss": 1.9508830457925797,
+          "lr": 0.0001,
+          "gradient_norm": 19.534456253051758,
+          "gradient_norms_by_module": {
+            "encoder": 9.673713684082031,
+            "head": 0.6711066961288452,
+            "type_emb": 0.025137130171060562,
+            "scorer": 16.95768928527832
+          },
+          "seconds": 52.285934115061536
+        },
+        {
+          "step": 64,
+          "loss": 0.10824973188573495,
+          "lr": 0.0001,
+          "gradient_norm": 1.2514982223510742,
+          "gradient_norms_by_module": {
+            "encoder": 0.9326413869857788,
+            "head": 0.03904305025935173,
+            "type_emb": 0.0014130083145573735,
+            "scorer": 0.8336076736450195
+          },
+          "seconds": 104.06077286601067
+        },
+        {
+          "step": 128,
+          "loss": 1.7121214682447317e-05,
+          "lr": 0.0001,
+          "gradient_norm": 0.0018533787224441767,
+          "gradient_norms_by_module": {
+            "encoder": 0.00037212748429737985,
+            "head": 6.895538535900414e-05,
+            "type_emb": 3.1965721518645296e-06,
+            "scorer": 0.0018143232446163893
+          },
+          "seconds": 207.6835858200211
+        }
+      ]
+    },
+    "splice_candidate_resampled": {
+      "task": "splice",
+      "kind": "candidate",
+      "lr": 2e-05,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 6.780039010257722e-07,
+          "predicted_class_counts": [
+            11,
+            11,
+            10
+          ],
+          "probability_std_mean": 0.4711429125599141
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "nll": 7.227078868755081e-07,
+          "predicted_class_counts": [
+            11,
+            11,
+            10
+          ],
+          "probability_std_mean": 0.47114287964473317
+        }
+      },
+      "first_observed_training_panel_pass_step": 16,
+      "final_training_panel_fit_passed": true,
+      "final_canonical_panel_fit_passed": true,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.28125,
+        "macro_f1": 0.2787878787878788,
+        "nll": 11.320801504848678,
+        "predicted_class_counts": [
+          11,
+          11,
+          10
+        ],
+        "probability_std_mean": 0.47114287964473317
+      },
+      "training_and_periodic_eval_seconds": 208.94829508685507,
+      "checkpoint_sha256": "234fe3ded511611401ec7f132f493ac8cf90bc12591fd1a10abc98bed61ad306",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 1.1405842304229736,
+          "lr": 2.5e-06,
+          "gradient_norm": 5.742187976837158,
+          "gradient_norms_by_module": {
+            "encoder": 5.663423538208008,
+            "head": 0.13608688116073608,
+            "type_emb": 0.0035517660435289145,
+            "scorer": 0.9379935264587402
+          },
+          "seconds": 1.7219809719827026
+        },
+        {
+          "step": 32,
+          "loss": 1.2319012459016676e-05,
+          "lr": 2e-05,
+          "gradient_norm": 0.0028975580353289843,
+          "gradient_norms_by_module": {
+            "encoder": 0.002641471801325679,
+            "head": 0.000283389410469681,
+            "type_emb": 1.3612371731142048e-05,
+            "scorer": 0.0011567081091925502
+          },
+          "seconds": 51.13918957603164
+        },
+        {
+          "step": 64,
+          "loss": 0.006262258324426284,
+          "lr": 2e-05,
+          "gradient_norm": 9.133598327636719,
+          "gradient_norms_by_module": {
+            "encoder": 9.131575584411621,
+            "head": 0.12154746055603027,
+            "type_emb": 0.004986102227121592,
+            "scorer": 0.14884698390960693
+          },
+          "seconds": 103.69828182295896
+        },
+        {
+          "step": 128,
+          "loss": 9.797501867581104e-07,
+          "lr": 2e-05,
+          "gradient_norm": 0.00016848143422976136,
+          "gradient_norms_by_module": {
+            "encoder": 0.00013066540122963488,
+            "head": 3.2009258575271815e-05,
+            "type_emb": 1.3503164382200339e-06,
+            "scorer": 0.00010142055543838069
+          },
+          "seconds": 208.58591739088297
+        }
+      ]
+    },
+    "fluorescence_shared_heads_lr_control": {
+      "task": "fluorescence",
+      "kind": "shared_heads",
+      "lr": 0.0001,
+      "final": {
+        "step": 128,
+        "training_panel": {
+          "n_entities": 32,
+          "accuracy": 0.21875,
+          "macro_f1": 0.07179487179487179,
+          "nll": 1.6089665837510563,
+          "score_prediction": {
+            "mae": 0.6367813308421814,
+            "rmse": 0.8188621677648412,
+            "spearman": -0.2778542525674919,
+            "prediction_std": 0.0011519924560416286
+          },
+          "scalar_prediction": {
+            "mae": 0.7122362473937193,
+            "rmse": 0.8290558270928937,
+            "spearman": -0.20891341886068682,
+            "prediction_std": 0.0022818782542084084
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            0,
+            32,
+            0,
+            0,
+            0
+          ],
+          "probability_std_mean": 0.0004961781816501656
+        },
+        "canonical_panel": {
+          "n_entities": 32,
+          "accuracy": 0.21875,
+          "macro_f1": 0.07179487179487179,
+          "nll": 1.6089665837510563,
+          "score_prediction": {
+            "mae": 0.6367813308421814,
+            "rmse": 0.8188621677648412,
+            "spearman": -0.2778542525674919,
+            "prediction_std": 0.0011519924560416286
+          },
+          "scalar_prediction": {
+            "mae": 0.7122362473937193,
+            "rmse": 0.8290558270928937,
+            "spearman": -0.20891341886068682,
+            "prediction_std": 0.0022818782542084084
+          },
+          "oracle_quantization_mae": 0.10981601711054387,
+          "outside_training_range_fraction": 0.0,
+          "predicted_class_counts": [
+            0,
+            32,
+            0,
+            0,
+            0
+          ],
+          "probability_std_mean": 0.0004961781816501656
+        }
+      },
+      "first_observed_training_panel_pass_step": null,
+      "final_training_panel_fit_passed": false,
+      "final_canonical_panel_fit_passed": false,
+      "rotated_sequences": {
+        "n_entities": 32,
+        "accuracy": 0.21875,
+        "macro_f1": 0.07179487179487179,
+        "nll": 1.608295188785561,
+        "score_prediction": {
+          "mae": 0.636728661719572,
+          "rmse": 0.8188591528907129,
+          "spearman": -0.2719853838663964,
+          "prediction_std": 0.0011519924560416286
+        },
+        "scalar_prediction": {
+          "mae": 0.7118899041144001,
+          "rmse": 0.8287372484260863,
+          "spearman": -0.16967207900313386,
+          "prediction_std": 0.002281878254208409
+        },
+        "oracle_quantization_mae": 0.10981601711054387,
+        "outside_training_range_fraction": 0.0,
+        "predicted_class_counts": [
+          0,
+          32,
+          0,
+          0,
+          0
+        ],
+        "probability_std_mean": 0.0004961781816501656
+      },
+      "training_and_periodic_eval_seconds": 203.6802392960526,
+      "checkpoint_sha256": "a744108699a1852c8e9ba11d6de55d0d83d108cc5136f9cc93e4818d952aa8f8",
+      "gradient_probes": [
+        {
+          "step": 1,
+          "loss": 4.796798199415207,
+          "lr": 1.25e-05,
+          "gradient_norm": 166.94674682617188,
+          "gradient_norms_by_module": {
+            "encoder": 9.12275218963623,
+            "head": 0.872521698474884,
+            "type_emb": 0.02651805430650711,
+            "readout": 19.278301239013672,
+            "classifiers": 10.487417221069336,
+            "regressors": 165.2440185546875
+          },
+          "seconds": 1.717562458012253
+        },
+        {
+          "step": 32,
+          "loss": 1.3233252167701721,
+          "lr": 0.0001,
+          "gradient_norm": 6.345643997192383,
+          "gradient_norms_by_module": {
+            "encoder": 0.10609794408082962,
+            "head": 0.07958140969276428,
+            "type_emb": 0.002910398179665208,
+            "readout": 0.8752966523170471,
+            "classifiers": 1.133934497833252,
+            "regressors": 6.180424213409424
+          },
+          "seconds": 51.286219963105395
+        },
+        {
+          "step": 64,
+          "loss": 1.2983195632696152,
+          "lr": 0.0001,
+          "gradient_norm": 6.60800838470459,
+          "gradient_norms_by_module": {
+            "encoder": 0.7118595838546753,
+            "head": 0.08823157846927643,
+            "type_emb": 0.002429372863844037,
+            "readout": 0.903415858745575,
+            "classifiers": 0.45989373326301575,
+            "regressors": 6.490268230438232
+          },
+          "seconds": 102.09793648100458
+        },
+        {
+          "step": 128,
+          "loss": 1.324489802122116,
+          "lr": 0.0001,
+          "gradient_norm": 9.796222686767578,
+          "gradient_norms_by_module": {
+            "encoder": 0.32738685607910156,
+            "head": 0.05159443989396095,
+            "type_emb": 0.0006055787671357393,
+            "readout": 1.1874182224273682,
+            "classifiers": 0.8141646385192871,
+            "regressors": 9.684178352355957
+          },
+          "seconds": 203.33251006016508
+        }
+      ]
+    }
+  },
+  "checkpoint_and_finite_trace_checks": true,
+  "all_candidate_orders": {
+    "dev_access": false,
+    "test_access": false,
+    "entities": 32,
+    "permutations": 6,
+    "script_sha256": "8a0fec375b8ca3e4e139b4d51b2d7215de4c3e0ee2d78fb821338818ab3f93b2",
+    "models": {
+      "fixed_order_training": {
+        "by_order": [
+          {
+            "order": [
+              0,
+              1,
+              2
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 0.8125,
+              "macro_f1": 0.811904761904762,
+              "nll": 1.7924665311736674,
+              "predicted_class_counts": [
+                9,
+                17,
+                6
+              ],
+              "probability_std_mean": 0.4390895329781477
+            }
+          },
+          {
+            "order": [
+              0,
+              2,
+              1
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 1.4603166729299072e-06,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.4711423711095624
+            }
+          },
+          {
+            "order": [
+              1,
+              0,
+              2
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 0.9375,
+              "macro_f1": 0.9376603564246584,
+              "nll": 0.5638807838185805,
+              "predicted_class_counts": [
+                12,
+                11,
+                9
+              ],
+              "probability_std_mean": 0.4622416042319423
+            }
+          },
+          {
+            "order": [
+              1,
+              2,
+              0
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 0.96875,
+              "macro_f1": 0.9696342305037957,
+              "nll": 0.0925768458417913,
+              "predicted_class_counts": [
+                12,
+                10,
+                10
+              ],
+              "probability_std_mean": 0.46588364900615264
+            }
+          },
+          {
+            "order": [
+              2,
+              0,
+              1
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 0.96875,
+              "macro_f1": 0.9696342305037957,
+              "nll": 0.12846048746655933,
+              "predicted_class_counts": [
+                12,
+                10,
+                10
+              ],
+              "probability_std_mean": 0.4700427396101376
+            }
+          },
+          {
+            "order": [
+              2,
+              1,
+              0
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 0.0003479239214906263,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.47090298696278926
+            }
+          }
+        ],
+        "min_accuracy": 0.8125,
+        "max_accuracy": 1.0,
+        "mean_accuracy": 0.9479166666666666,
+        "fraction_examples_same_prediction_all_orders": 0.78125
+      },
+      "resampled_order_training": {
+        "by_order": [
+          {
+            "order": [
+              0,
+              1,
+              2
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 7.227078868755081e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.47114287964473317
+            }
+          },
+          {
+            "order": [
+              0,
+              2,
+              1
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 6.8172916045953e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.471142905635989
+            }
+          },
+          {
+            "order": [
+              1,
+              0,
+              2
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 6.03498008903357e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.4711429659892385
+            }
+          },
+          {
+            "order": [
+              1,
+              2,
+              0
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 5.923220982619428e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.471142970181266
+            }
+          },
+          {
+            "order": [
+              2,
+              0,
+              1
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 8.605443062710236e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.47114278158583
+            }
+          },
+          {
+            "order": [
+              2,
+              1,
+              0
+            ],
+            "metrics": {
+              "n_entities": 32,
+              "accuracy": 1.0,
+              "macro_f1": 1.0,
+              "nll": 8.121149712789303e-07,
+              "predicted_class_counts": [
+                11,
+                11,
+                10
+              ],
+              "probability_std_mean": 0.4711428107311069
+            }
+          }
+        ],
+        "min_accuracy": 1.0,
+        "max_accuracy": 1.0,
+        "mean_accuracy": 1.0,
+        "fraction_examples_same_prediction_all_orders": 1.0
+      }
+    }
+  }
+}

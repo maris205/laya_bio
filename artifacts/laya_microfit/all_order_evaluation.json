@@ -1,0 +1,253 @@
+{
+  "dev_access": false,
+  "test_access": false,
+  "entities": 32,
+  "permutations": 6,
+  "script_sha256": "8a0fec375b8ca3e4e139b4d51b2d7215de4c3e0ee2d78fb821338818ab3f93b2",
+  "models": {
+    "fixed_order_training": {
+      "by_order": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 0.8125,
+            "macro_f1": 0.811904761904762,
+            "nll": 1.7924665311736674,
+            "predicted_class_counts": [
+              9,
+              17,
+              6
+            ],
+            "probability_std_mean": 0.4390895329781477
+          }
+        },
+        {
+          "order": [
+            0,
+            2,
+            1
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 1.4603166729299072e-06,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.4711423711095624
+          }
+        },
+        {
+          "order": [
+            1,
+            0,
+            2
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 0.9375,
+            "macro_f1": 0.9376603564246584,
+            "nll": 0.5638807838185805,
+            "predicted_class_counts": [
+              12,
+              11,
+              9
+            ],
+            "probability_std_mean": 0.4622416042319423
+          }
+        },
+        {
+          "order": [
+            1,
+            2,
+            0
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 0.96875,
+            "macro_f1": 0.9696342305037957,
+            "nll": 0.0925768458417913,
+            "predicted_class_counts": [
+              12,
+              10,
+              10
+            ],
+            "probability_std_mean": 0.46588364900615264
+          }
+        },
+        {
+          "order": [
+            2,
+            0,
+            1
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 0.96875,
+            "macro_f1": 0.9696342305037957,
+            "nll": 0.12846048746655933,
+            "predicted_class_counts": [
+              12,
+              10,
+              10
+            ],
+            "probability_std_mean": 0.4700427396101376
+          }
+        },
+        {
+          "order": [
+            2,
+            1,
+            0
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 0.0003479239214906263,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.47090298696278926
+          }
+        }
+      ],
+      "min_accuracy": 0.8125,
+      "max_accuracy": 1.0,
+      "mean_accuracy": 0.9479166666666666,
+      "fraction_examples_same_prediction_all_orders": 0.78125
+    },
+    "resampled_order_training": {
+      "by_order": [
+        {
+          "order": [
+            0,
+            1,
+            2
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 7.227078868755081e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.47114287964473317
+          }
+        },
+        {
+          "order": [
+            0,
+            2,
+            1
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 6.8172916045953e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.471142905635989
+          }
+        },
+        {
+          "order": [
+            1,
+            0,
+            2
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 6.03498008903357e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.4711429659892385
+          }
+        },
+        {
+          "order": [
+            1,
+            2,
+            0
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 5.923220982619428e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.471142970181266
+          }
+        },
+        {
+          "order": [
+            2,
+            0,
+            1
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 8.605443062710236e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.47114278158583
+          }
+        },
+        {
+          "order": [
+            2,
+            1,
+            0
+          ],
+          "metrics": {
+            "n_entities": 32,
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "nll": 8.121149712789303e-07,
+            "predicted_class_counts": [
+              11,
+              11,
+              10
+            ],
+            "probability_std_mean": 0.4711428107311069
+          }
+        }
+      ],
+      "min_accuracy": 1.0,
+      "max_accuracy": 1.0,
+      "mean_accuracy": 1.0,
+      "fraction_examples_same_prediction_all_orders": 1.0
+    }
+  }
+}

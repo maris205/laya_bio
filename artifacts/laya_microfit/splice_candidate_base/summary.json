@@ -1,0 +1,188 @@
+{
+  "kind": "candidate",
+  "task": "splice",
+  "lr": 2e-05,
+  "updates": 128,
+  "seed": 20260924,
+  "effective_batch": 32,
+  "micro_batch": 4,
+  "schedule": "linear warmup 8 updates, then constant learning rate",
+  "weight_decay": 0.01,
+  "clip_norm": 1.0,
+  "dropout": "original model train mode",
+  "precision": "BF16 autocast, FP32 weights",
+  "fit_threshold": "training-panel accuracy >=31/32 AND NLL <=0.15; no early stopping",
+  "dev_access": false,
+  "test_access": false,
+  "selection": "stratified by training label; SHA256 microfit-v1:id, deterministic class quotas",
+  "selected_ids": [
+    "splice-upstream:3662",
+    "splice-upstream:24400",
+    "splice-upstream:12045",
+    "splice-upstream:6062",
+    "splice-upstream:42333",
+    "splice-upstream:22915",
+    "splice-upstream:23398",
+    "splice-upstream:16175",
+    "splice-upstream:28675",
+    "splice-upstream:36568",
+    "splice-upstream:38773",
+    "splice-upstream:17895",
+    "splice-upstream:1427",
+    "splice-upstream:6599",
+    "splice-upstream:35498",
+    "splice-upstream:39196",
+    "splice-upstream:7560",
+    "splice-upstream:29772",
+    "splice-upstream:28505",
+    "splice-upstream:28182",
+    "splice-upstream:29273",
+    "splice-upstream:26770",
+    "splice-upstream:16029",
+    "splice-upstream:38929",
+    "splice-upstream:33888",
+    "splice-upstream:11572",
+    "splice-upstream:32035",
+    "splice-upstream:41178",
+    "splice-upstream:42630",
+    "splice-upstream:13676",
+    "splice-upstream:13091",
+    "splice-upstream:28095"
+  ],
+  "label_counts": {
+    "1": 11,
+    "0": 11,
+    "2": 10
+  },
+  "subset_sha256": "e8428be19ef3ca2f06965fc3bce37dc4aecc87bb40d72454c6db862dd2452b6e",
+  "manifest_sha256": "496de6f3cadb20b8778ca21f9b23f9b087f4cc7623c744bdd44a487d6d4ce6b1",
+  "script_sha256": "8460d36ba8d00f14efb25708d8ebc29b6dc0fefccab24ebf86807d94052e5199",
+  "train_source_sha256": "267f2bca99705bed54aa464183bcfa0ec089f6f8cb489f1704af871037d67a1e",
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "limitations": [
+    "Training memorization diagnostic only; no generalization evaluation.",
+    "Subset is deliberately class-balanced; not representative prevalence.",
+    "Score bins, anchors and scalar normalization retain the prior 1,024-training-row specification."
+  ],
+  "trainable_parameters": 421029889,
+  "complete": true,
+  "actual_updates": 128,
+  "entity_presentations": 4096,
+  "training_and_periodic_eval_seconds": 234.965046252124,
+  "peak_allocated_gib": 7.869948387145996,
+  "initial": {
+    "step": 0,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 0.3125,
+      "macro_f1": 0.22747747747747749,
+      "nll": 1.1550050941202783,
+      "predicted_class_counts": [
+        5,
+        26,
+        1
+      ],
+      "probability_std_mean": 0.042797222490059926
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.28125,
+      "macro_f1": 0.1885885885885886,
+      "nll": 1.1579676713760545,
+      "predicted_class_counts": [
+        4,
+        26,
+        2
+      ],
+      "probability_std_mean": 0.03849030568624817
+    }
+  },
+  "final": {
+    "step": 128,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "nll": 7.338831065100794e-07,
+      "predicted_class_counts": [
+        11,
+        11,
+        10
+      ],
+      "probability_std_mean": 0.4711428732205671
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.8125,
+      "macro_f1": 0.811904761904762,
+      "nll": 1.7924665311736674,
+      "predicted_class_counts": [
+        9,
+        17,
+        6
+      ],
+      "probability_std_mean": 0.4390895329781477
+    }
+  },
+  "training_panel_fit_passed": true,
+  "canonical_panel_fit_passed": false,
+  "rotated_sequences": {
+    "n_entities": 32,
+    "accuracy": 0.28125,
+    "macro_f1": 0.2511904761904762,
+    "nll": 9.980027565885072,
+    "predicted_class_counts": [
+      9,
+      17,
+      6
+    ],
+    "probability_std_mean": 0.4390895329781477
+  },
+  "reload_max_probability_error": 0.0,
+  "reload_max_scalar_error": 0.0,
+  "checkpoint_sha256": "fdfc09b71f8464c6253621ed51de7544258ceda0a2b538b5270ce5c56732b671"
+}

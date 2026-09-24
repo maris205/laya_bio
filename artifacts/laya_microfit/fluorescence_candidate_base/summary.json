@@ -1,0 +1,240 @@
+{
+  "kind": "candidate",
+  "task": "fluorescence",
+  "lr": 2e-05,
+  "updates": 128,
+  "seed": 20260924,
+  "effective_batch": 32,
+  "micro_batch": 4,
+  "schedule": "linear warmup 8 updates, then constant learning rate",
+  "weight_decay": 0.01,
+  "clip_norm": 1.0,
+  "dropout": "original model train mode",
+  "precision": "BF16 autocast, FP32 weights",
+  "fit_threshold": "training-panel accuracy >=31/32 AND NLL <=0.15; no early stopping",
+  "dev_access": false,
+  "test_access": false,
+  "selection": "stratified by training label; SHA256 microfit-v1:id, deterministic class quotas",
+  "selected_ids": [
+    "fluorescence:train:20482",
+    "fluorescence:train:9120",
+    "fluorescence:train:12115",
+    "fluorescence:train:11253",
+    "fluorescence:train:13843",
+    "fluorescence:train:2485",
+    "fluorescence:train:9158",
+    "fluorescence:train:19997",
+    "fluorescence:train:6699",
+    "fluorescence:train:2354",
+    "fluorescence:train:20016",
+    "fluorescence:train:6145",
+    "fluorescence:train:10221",
+    "fluorescence:train:21021",
+    "fluorescence:train:13517",
+    "fluorescence:train:10713",
+    "fluorescence:train:9530",
+    "fluorescence:train:8916",
+    "fluorescence:train:19426",
+    "fluorescence:train:12503",
+    "fluorescence:train:10846",
+    "fluorescence:train:16609",
+    "fluorescence:train:10016",
+    "fluorescence:train:4742",
+    "fluorescence:train:14566",
+    "fluorescence:train:10474",
+    "fluorescence:train:17701",
+    "fluorescence:train:8550",
+    "fluorescence:train:20744",
+    "fluorescence:train:16491",
+    "fluorescence:train:6705",
+    "fluorescence:train:2329"
+  ],
+  "label_counts": {
+    "2": 6,
+    "1": 7,
+    "0": 7,
+    "3": 6,
+    "4": 6
+  },
+  "subset_sha256": "00b06240d5b2c948269c87325440ea9819e660fd0224c2a8dc9872f839ab2974",
+  "manifest_sha256": "496de6f3cadb20b8778ca21f9b23f9b087f4cc7623c744bdd44a487d6d4ce6b1",
+  "script_sha256": "8460d36ba8d00f14efb25708d8ebc29b6dc0fefccab24ebf86807d94052e5199",
+  "train_source_sha256": "267f2bca99705bed54aa464183bcfa0ec089f6f8cb489f1704af871037d67a1e",
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "limitations": [
+    "Training memorization diagnostic only; no generalization evaluation.",
+    "Subset is deliberately class-balanced; not representative prevalence.",
+    "Score bins, anchors and scalar normalization retain the prior 1,024-training-row specification."
+  ],
+  "trainable_parameters": 421029889,
+  "complete": true,
+  "actual_updates": 128,
+  "entity_presentations": 4096,
+  "training_and_periodic_eval_seconds": 216.68583545391448,
+  "peak_allocated_gib": 7.862046241760254,
+  "initial": {
+    "step": 0,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 0.1875,
+      "macro_f1": 0.06315789473684211,
+      "nll": 1.689654810017978,
+      "score_prediction": {
+        "mae": 0.5306576972817368,
+        "rmse": 0.854292577476653,
+        "spearman": -0.12023460410557184,
+        "prediction_std": 0.012035973569763488
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        0,
+        31,
+        0,
+        0,
+        1
+      ],
+      "probability_std_mean": 0.009556498595894872
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.1875,
+      "macro_f1": 0.06315789473684211,
+      "nll": 1.689654810017978,
+      "score_prediction": {
+        "mae": 0.5306576972817368,
+        "rmse": 0.854292577476653,
+        "spearman": -0.12023460410557184,
+        "prediction_std": 0.012035973569763488
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        0,
+        31,
+        0,
+        0,
+        1
+      ],
+      "probability_std_mean": 0.009556498595894872
+    }
+  },
+  "final": {
+    "step": 128,
+    "training_panel": {
+      "n_entities": 32,
+      "accuracy": 0.90625,
+      "macro_f1": 0.9131907308377898,
+      "nll": 0.3364325931207516,
+      "score_prediction": {
+        "mae": 0.28824416630443866,
+        "rmse": 0.5629749902660204,
+        "spearman": 0.875733137829912,
+        "prediction_std": 0.8468901471240643
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        10,
+        5,
+        6,
+        5,
+        6
+      ],
+      "probability_std_mean": 0.3815728587541141
+    },
+    "canonical_panel": {
+      "n_entities": 32,
+      "accuracy": 0.90625,
+      "macro_f1": 0.9131907308377898,
+      "nll": 0.3364325931207516,
+      "score_prediction": {
+        "mae": 0.28824416630443866,
+        "rmse": 0.5629749902660204,
+        "spearman": 0.875733137829912,
+        "prediction_std": 0.8468901471240643
+      },
+      "oracle_quantization_mae": 0.10981601711054387,
+      "outside_training_range_fraction": 0.0,
+      "predicted_class_counts": [
+        10,
+        5,
+        6,
+        5,
+        6
+      ],
+      "probability_std_mean": 0.3815728587541141
+    }
+  },
+  "training_panel_fit_passed": false,
+  "canonical_panel_fit_passed": false,
+  "rotated_sequences": {
+    "n_entities": 32,
+    "accuracy": 0.125,
+    "macro_f1": 0.13636363636363635,
+    "nll": 10.15326609367818,
+    "score_prediction": {
+      "mae": 1.069622340114195,
+      "rmse": 1.3783641297424631,
+      "spearman": -0.18951612903225803,
+      "prediction_std": 0.8468901471240644
+    },
+    "oracle_quantization_mae": 0.10981601711054387,
+    "outside_training_range_fraction": 0.0,
+    "predicted_class_counts": [
+      10,
+      5,
+      6,
+      5,
+      6
+    ],
+    "probability_std_mean": 0.3815728587541141
+  },
+  "reload_max_probability_error": 0.0,
+  "reload_max_scalar_error": 0.0,
+  "checkpoint_sha256": "4f40e06d0b3632e7a92cc3b8c81d32d3463e42c794a968ecebfd0257eceace46"
+}

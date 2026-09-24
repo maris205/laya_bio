@@ -36,3 +36,13 @@ Pilot results and their narrower admission scope are tracked in the [execution r
 | DEV-DIAG-S-NAMES | Splice candidate-name correction, 96-update candidate control; existing joint train-subset evaluation | COMPLETE 2026-09-24 07:05 UTC; corrected names still majority-only; full upstream lineage remains unverified |
 
 See [diagnostic report](../research/laya_task_diagnostics.md). Historical splice label-name matching is internal consistency only; biological interpretation of the historical names is withdrawn. Current builds use the source-code-supported correction documented in the report. No formal-suite runs or new test inference were added.
+
+### Training-only microfit follow-up
+
+| Run | Scope | Status |
+|---|---|---|
+| MICROFIT-BASE/LR | Four base runs and conditional GFP candidate LR control; 32 training examples, 128 updates each | COMPLETE; candidate can fit Choice/Score; fixed Choice panels show order sensitivity |
+| MICROFIT-ORDER | Per-update Choice permutation; six-order evaluation on the same fitted sequences | COMPLETE; all six orders 100% on the 32 training examples; no generalization claim |
+| MICROFIT-HM-LR | Additional matched 1e-4 GFP shared-head control | COMPLETE; still fails fitting; readout/loss diagnosis required |
+
+All seven runs completed by 2026-09-24 07:56 UTC. [Report and evidence](../research/laya_microfit.md). No dev or test samples were read in these checks.
