@@ -6,10 +6,11 @@ Laya-Bio is an open biological sequence decision model: **sequence + natural-lan
 
 The paper now centers on a shared biological decision interface, with BPE as a secondary representation comparison. Candidate selection keeps the output inside the supplied label set; it does not guarantee the correct biological class, order invariance, or unseen-task understanding. Shared fixed heads and constrained generation can also enforce valid outputs.
 
-**Evidence status:** the completed two-task, four-condition, three-seed study is unchanged. Raw candidate scoring reaches 91.10% DNA and 59.97% protein test accuracy. The new design catalogs 12 priority tasks plus 12 extension views, mapping Choice, Score, and Noul to multiclass, ordered-score, binary, multilabel, and paired-sequence problems. It adds free/constrained generation and separate held-out-task tests. The formal follow-up suite remains pending. A separate [six-task engineering pilot](research/laya_multitask_pilot.md) now has two completed 100-update train/dev runs; the longer three-pass development round has also completed. These are not new held-out paper results. No additional neural continual pretraining was performed.
+**Evidence status:** the completed two-task, four-condition, three-seed study is unchanged. Raw candidate scoring reaches 91.10% DNA and 59.97% protein test accuracy. The new design catalogs 12 priority tasks plus 12 extension views, mapping Choice, Score, and Noul to multiclass, ordered-score, binary, multilabel, and paired-sequence problems. It adds free/constrained generation and separate held-out-task tests. The formal follow-up suite remains pending. A separate [six-task engineering pilot](research/laya_multitask_pilot.md) now has two completed 100-update train/dev runs; the longer three-pass development round has also completed. Five matched single-task diagnostic runs have also completed; they found persistent weak fitting on splice/GFP and prompted a versioned splice class-name correction. These are not new held-out paper results. No additional neural continual pretraining was performed.
 
 - [English paper (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex)
 - [Six-task joint-training pilot and completed development round](research/laya_multitask_pilot.md)
+- [Splice/GFP diagnostics, matched single-task controls, and splice label-name correction](research/laya_task_diagnostics.md)
 - [Chinese manuscript](research/laya_bio_paper_draft.md)
 - [Release and verification record](research/laya_large_data_release.md)
 

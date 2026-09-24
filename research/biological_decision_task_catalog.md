@@ -62,7 +62,7 @@ C08 是纳入 12 项的机制诊断，不为自然生物任务广度增加一票
 可复核材料：[本地 8 任务审计](../artifacts/laya_task_expansion/admission_audit.json)、[上游池与双序列审计](../artifacts/laya_task_expansion/upstream_audit.json)、[固定版本](../artifacts/laya_task_expansion/upstream_datasets.json)、[下载 SHA-256](../artifacts/laya_task_expansion/download_receipt.json)。审计脚本见 [local](../scripts/audit_laya_task_expansion.py) 与 [upstream](../scripts/audit_laya_upstream_tasks.py)。
 
 - 四个新 DNA 仓库及 `gene_lan_transfer` 的八个配置都只有名为 `train` 的未划分池。该名字不是安全训练许可：DNA 上游池包含旧本地 test 成员。所有旧 test 及其同源/反向互补组保持隔离，不能把全池随机重切后声称新盲测。
-- DNA 数字标签与旧文本标签的匹配支持：promoter/core `1→promoter, 0→non-promoter`；splice `1→acceptor, 2→donor, 0→non-splice`；TF `1→binding, 0→background`。启动子冲突组出现少量相反标注，须整组隔离并追查，不能按测试多数投票“修正”。
+- DNA 数字标签与旧文本标签的匹配支持：promoter/core `1→promoter, 0→non-promoter`；splice 的旧映射 `1→acceptor, 2→donor, 0→non-splice` **仅是与旧本地文本一致，未验证语义，现已撤回该解释**；依据 SpliceFinder 原代码和训练 motif，新构建器采用 `0→acceptor, 1→donor, 2→non-splice`，详见 [后续诊断](laya_task_diagnostics.md)；TF `1→binding, 0→background`。启动子冲突组出现少量相反标注，须整组隔离并追查，不能按测试多数投票“修正”。
 - 本地结构类别与定位任务有 55 条完全相同序列；结构类别与神经肽任务有 11 条；信号肽与定位任务有 3 条。定位 train 包含一条旧 fold test 和一条旧 signal test 成员。必须做跨任务的全局分组。
 - 两套蛋白同源配对数据格式解析全部通过；各自原生 train/val/test 未发现完全相同的端点序列或无序配对交叉。**这仍未证明家族/同源簇独立。** 最大合计长度为 500/499 字符。
 - `dna_protein_pair` 的 2,000 正、2,000 负及 `rand_v2` 的 8,000 正、8,000 负可由 frame-0 标准密码表精确翻译匹配完全区分；这是全池构造诊断，不能报告为独立测试成绩。`rand` 中仅 4,368/8,000 正例精确匹配，不能在未核实遗传密码、起始规则等前断言其他标签错误。

@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/deepomicslab/SpliceFinder/master/iteration_process/generate_seq/generate.py",
+    "file": "generate.py",
+    "sha256": "7811bc272da24fae1491370b3666c38148c613732d8205326a60de7fe2d97540"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/deepomicslab/SpliceFinder/master/SpliceFinder_sourcecode/test/test_Cla.py",
+    "file": "test_Cla.py",
+    "sha256": "a607688d08ae6af7a81146022c2d2b52f7b6d292f8dd5b6a4c911e1ce00c7eb2"
+  }
+]

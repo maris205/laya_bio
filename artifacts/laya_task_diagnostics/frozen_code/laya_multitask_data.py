@@ -155,8 +155,7 @@ def main():
         rows.append({'id':f'splice-upstream:{i}', 'task':'splice', 'inputs':inp,'group_key':key,'split':split,
                      'source_split':'unpartitioned_source_pool', 'primitive':'choice',
                      'question':'Which splice-site category describes this DNA sequence?',
-                     # SpliceFinder code: 0 acceptor, 1 donor, 2 non-splice; see diagnostic report.
-                     'choices':['Acceptor site','Donor site','Non-splice site'], 'label':int(r['label'])})
+                     'choices':['Non-splice site','Acceptor site','Donor site'], 'label':int(r['label'])})
     for native,split in [('train','train'),('valid','dev')]:
         path = source / f'tape/fluorescence/fluorescence_{native}.json'; remember(path)
         for i,r in enumerate(json.loads(path.read_text())):
@@ -230,8 +229,6 @@ def main():
               'script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'source_sha256':source_hashes,'max_length':a.max_length,'available_before_caps':availability,
               'excluded':dict(excluded),'score_spec':score_spec,'locations':LOCATIONS,
-              'splice_label_names':{'0':'Acceptor site','1':'Donor site','2':'Non-splice site'},
-              'splice_name_evidence':'SpliceFinder original code and training motifs; full dnagpt lineage unverified',
               'legacy_test_targets_used':False,'legacy_test_model_evaluation':False,
               'train_dev_exact_component_overlap':0,'protected_test_component_overlap':0,
               'native_splits':{'fluorescence':'train/valid; test not read',

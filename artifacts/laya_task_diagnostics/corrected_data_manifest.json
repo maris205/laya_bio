@@ -1,0 +1,176 @@
+{
+  "status": "engineering_pilot_not_confirmatory",
+  "tasks": [
+    "promoter",
+    "splice",
+    "structural_class",
+    "homology_pair",
+    "fluorescence",
+    "multilabel_location"
+  ],
+  "outputs": {
+    "train": {
+      "file": "train.jsonl",
+      "sha256": "267f2bca99705bed54aa464183bcfa0ec089f6f8cb489f1704af871037d67a1e",
+      "entities": 6144,
+      "by_task": {
+        "promoter": 1024,
+        "splice": 1024,
+        "structural_class": 1024,
+        "homology_pair": 1024,
+        "fluorescence": 1024,
+        "multilabel_location": 1024
+      },
+      "propositions": 15360
+    },
+    "dev": {
+      "file": "dev.jsonl",
+      "sha256": "00d91137429955b9ecc30bd5b3c787125116d0857b5c27cba9055f0cdf15b2eb",
+      "entities": 768,
+      "by_task": {
+        "promoter": 128,
+        "splice": 128,
+        "structural_class": 128,
+        "homology_pair": 128,
+        "fluorescence": 128,
+        "multilabel_location": 128
+      },
+      "propositions": 1920
+    }
+  },
+  "script_sha256": "d60610b8b250742474a9071411067682757951365a0b641e725e69425c4e7335",
+  "source_sha256": {
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_core_promoter_detection.jsonl": "572dd3b71872f78203b341d82ae07ffb06973fcffe72ce7268527d23e35e3f2d",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_fold_class.jsonl": "00c6f2f81003dac040a861fc4a1728d05e30fd4b7b7a0febff107ae39937859c",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_npp.jsonl": "167763f31e1ecba91eb3e953176a9b04ab242cc1ebd523b2a8271dbcbf5cf7a4",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_promoter_detection.jsonl": "ec37e887c1430751235a4564b84870428360bfb8c0f34162c5ea9f60373a59ef",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_signal_peptide.jsonl": "9941c8852aadd165fb40dbb42dd6d56a4b7a53730c30d8b5b1d23d0a4edbcd07",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_splice_site.jsonl": "cc26ff6789b461a86efda6cea872144528b27e64f17e67921548eea58b0dfa22",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_subcellular_loc.jsonl": "99ec94f1e0e010a1822268f75f98630bd16e8af227de518f13d53d064f2a0a1f",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/lg_tf_prediction.jsonl": "153ebd659d6d090000dca9185dcf5888ef5fd39befde1aa42771f4b032256ab9",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/protein_homology_remote.jsonl": "5ed8a648709da5ca1074bcdf2288eddfcc63cdbb78b801e2c7e8dd04fb21a043",
+    "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/jsonl/protein_homology_std.jsonl": "80ddcbd12676b81cd04b4e8e33ff3693368dcbf0f8792c58a538c9327e5c485b",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/dna_splice_site_prediction/data/train-00000-of-00001.parquet": "2de5b19de1c7e72e7f8192adef853d48787b602bc3ae1fb205f69e820508cc3c",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/tape/fluorescence/fluorescence_train.json": "0a57cc0d1424ae67777bf3f836b559acab7f73063f6a928ddb833eb04640a156",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/tape/fluorescence/fluorescence_valid.json": "7aab37c3b7ff18553d16ce172b828178ecd7fd4968e9b29852192953f9b90a0f",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/deeploc2/Swissprot_Train_Validation_dataset.csv": "29a07b293fed2994a966b70bdcd6bacc59915b8b01fa200cb2b07d8db18384a2"
+  },
+  "max_length": 1024,
+  "available_before_caps": {
+    "train": {
+      "promoter": 16766,
+      "splice": 35938,
+      "structural_class": 11065,
+      "homology_pair": 12304,
+      "fluorescence": 21446,
+      "multilabel_location": 16612
+    },
+    "dev": {
+      "promoter": 2105,
+      "splice": 3909,
+      "structural_class": 1321,
+      "homology_pair": 844,
+      "fluorescence": 5362,
+      "multilabel_location": 5534
+    }
+  },
+  "excluded": {
+    "structural_class:protected_legacy_test_or_reserved_partition_component": 5051,
+    "structural_class:component_in_dev": 37,
+    "promoter:conflicting_annotations": 4,
+    "promoter:duplicate_entity_or_pair": 20,
+    "homology_pair:protected_legacy_test_or_reserved_partition_component": 1314,
+    "homology_pair:component_in_dev": 596,
+    "splice:protected_legacy_test_or_reserved_partition_component": 4808,
+    "splice:duplicate_entity_or_pair": 962,
+    "splice:conflicting_annotations": 2,
+    "multilabel_location:full_input_over_budget": 626,
+    "multilabel_location:protected_legacy_test_or_reserved_partition_component": 56,
+    "multilabel_location:component_in_dev": 13
+  },
+  "score_spec": {
+    "thresholds": [
+      3.141272211074829,
+      3.4799447059631348,
+      3.6054962158203123,
+      3.7054280757904055
+    ],
+    "anchors": [
+      1.7097083533682473,
+      3.337997840090496,
+      3.5458731662993337,
+      3.6584719692788474,
+      3.769515191054926
+    ],
+    "train_min": 1.2975002527236938,
+    "train_max": 4.020859241485596,
+    "fit_entities": 1024
+  },
+  "locations": [
+    "Cytoplasm",
+    "Nucleus",
+    "Extracellular",
+    "Cell membrane",
+    "Mitochondrion",
+    "Plastid",
+    "Endoplasmic reticulum",
+    "Lysosome/Vacuole",
+    "Golgi apparatus",
+    "Peroxisome"
+  ],
+  "legacy_test_targets_used": false,
+  "legacy_test_model_evaluation": false,
+  "train_dev_exact_component_overlap": 0,
+  "protected_test_component_overlap": 0,
+  "native_splits": {
+    "fluorescence": "train/valid; test not read",
+    "deeploc2": "partitions 0/1/2 train, 3 dev, 4 held aside"
+  },
+  "limitations": [
+    "No new global homology clustering or genomic-coordinate split.",
+    "GFP native variant split intentionally shares a parent protein.",
+    "Limited source provenance for local paired homology.",
+    "Only Laya full-input eligibility checked; not a common generator subset yet.",
+    "Dev outcomes are engineering diagnostics, not held-out paper test results.",
+    "Historical splice names differed from SpliceFinder convention; this version corrects text only. Upstream lineage remains incompletely documented."
+  ],
+  "splice_semantic_correction": {
+    "old_choices": [
+      "Non-splice site",
+      "Acceptor site",
+      "Donor site"
+    ],
+    "new_choices": [
+      "Acceptor site",
+      "Donor site",
+      "Non-splice site"
+    ],
+    "numeric_targets_unchanged": true,
+    "rows_and_splits_unchanged": true,
+    "source_urls": [
+      "https://github.com/deepomicslab/SpliceFinder/blob/master/SpliceFinder_sourcecode/test/test_Cla.py",
+      "https://github.com/deepomicslab/SpliceFinder/blob/master/iteration_process/generate_seq/generate.py",
+      "https://huggingface.co/datasets/dnagpt/dna_splice_site_prediction"
+    ],
+    "training_motif_audit": {
+      "0": {
+        "n": 221,
+        "AG_at_zero_based_198": 221,
+        "GT_at_zero_based_200": 35
+      },
+      "1": {
+        "n": 201,
+        "AG_at_zero_based_198": 112,
+        "GT_at_zero_based_200": 200
+      },
+      "2": {
+        "n": 602,
+        "AG_at_zero_based_198": 227,
+        "GT_at_zero_based_200": 160
+      }
+    },
+    "evidence_status": "Source-code-supported correction consistent with training motifs; complete dnagpt source lineage remains unverified.",
+    "parent_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+    "correction_script_sha256": "4947920d37e3fdef8f54a5df44259f771b669df0a23811bfd42ac021235ffe0a"
+  }
+}

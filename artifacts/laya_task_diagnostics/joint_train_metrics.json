@@ -1,0 +1,53 @@
+{
+  "test_access": false,
+  "train_subset_selection": "First 128 existing hash-ordered training rows per task, same as single-task diagnostics",
+  "models": {
+    "candidate": {
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.546875,
+        "macro_f1": 0.2709237735144471,
+        "nll": 0.9497853966035735
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.1640625,
+        "macro_f1": 0.056375838926174496,
+        "nll": 1.6099578489422797,
+        "score_prediction": {
+          "mae": 0.6655419112670837,
+          "rmse": 0.8970078958017695,
+          "spearman": 0.23593116947089662
+        },
+        "oracle_quantization_mae": 0.11809639714904119,
+        "outside_training_range_fraction": 0.0
+      }
+    },
+    "shared_heads": {
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.53125,
+        "macro_f1": 0.23129251700680273,
+        "nll": 1.02418294296194
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.203125,
+        "macro_f1": 0.06753246753246753,
+        "nll": 1.6679957559839846,
+        "score_prediction": {
+          "mae": 0.7063315310723978,
+          "rmse": 0.8924613476545848,
+          "spearman": -0.061012700965339964
+        },
+        "scalar_prediction": {
+          "mae": 0.6636055364415427,
+          "rmse": 0.8989243305167272,
+          "spearman": -0.1214525098651409
+        },
+        "oracle_quantization_mae": 0.11809639714904119,
+        "outside_training_range_fraction": 0.0
+      }
+    }
+  }
+}

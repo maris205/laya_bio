@@ -1,0 +1,113 @@
+{
+  "kind": "shared_heads",
+  "seed": 20260924,
+  "updates": 96,
+  "schedule_updates": 576,
+  "only_task": "splice",
+  "train_diagnostics_cap": 128,
+  "schedule_policy": "Replay joint batches and LR exactly; skip non-target optimizer steps",
+  "effective_entity_batch": 32,
+  "micro_batch": 4,
+  "lr": 2e-05,
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "data_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+  "script_sha256": "037926882241cba5409606b0b4643e31214ae38503f3f3bd9a833e3475d775ed",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "gpu_total_gib": 31.47540283203125,
+  "test_access": false,
+  "status": "engineering_pilot_not_confirmatory",
+  "initialization": "original_Laya_not_legacy_task_finetune",
+  "score_control_loss": "half ordinal CE plus half standardized scalar MSE",
+  "complete": true,
+  "training_seconds": 146.70418541296385,
+  "peak_allocated_gib": 7.8641228675842285,
+  "entity_presentations": {
+    "splice": 3072
+  },
+  "proposition_presentations": {
+    "splice": 3072
+  },
+  "type_embedding_update_norms": {
+    "choice": 0.004885806702077389,
+    "score": 0.0003090130630880594,
+    "noul": 0.00030365705606527627
+  },
+  "before": {
+    "splice": {
+      "n_entities": 128,
+      "accuracy": 0.5703125,
+      "macro_f1": 0.24212271973466004,
+      "nll": 1.1702110661911211
+    }
+  },
+  "after": {
+    "splice": {
+      "n_entities": 128,
+      "accuracy": 0.5703125,
+      "macro_f1": 0.24212271973466004,
+      "nll": 0.9840559937186908
+    }
+  },
+  "train_diagnostic": {
+    "splice": {
+      "n_entities": 128,
+      "accuracy": 0.53125,
+      "macro_f1": 0.23129251700680273,
+      "nll": 1.0243922895910393
+    }
+  },
+  "dev_eval_seconds": 0.5113467951305211,
+  "reload_max_probability_error": 0.0,
+  "checkpoint_reload_passed": true,
+  "checkpoint_sha256": "0af394fafe7423c04bca278b5f53d53f2d7779db1ee3bc14053abff5e045b081",
+  "limitations": [
+    "No new global homology clustering or genomic-coordinate split.",
+    "GFP native variant split intentionally shares a parent protein.",
+    "Limited source provenance for local paired homology.",
+    "Only Laya full-input eligibility checked; not a common generator subset yet.",
+    "Dev outcomes are engineering diagnostics, not held-out paper test results."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "test_access": false,
+  "jobs": [
+    {
+      "name": "corrected_splice_candidate",
+      "status": "complete",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/single_task_diagnostics_v2/frozen_code/laya_multitask_experiment.py",
+        "--kind",
+        "candidate",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v2_splice_names",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/diagnostic_followup_v1/corrected_splice_candidate",
+        "--updates",
+        "576",
+        "--only-task",
+        "splice",
+        "--train-diagnostics-cap",
+        "128",
+        "--seed",
+        "20260924"
+      ],
+      "pid": 103983,
+      "exit_code": 0
+    },
+    {
+      "name": "joint_train_evaluation",
+      "status": "complete",
+      "command": [
+        "/root/miniconda3/bin/python",
+        "-u",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/single_task_diagnostics_v2/frozen_code/evaluate_laya_joint_train_diagnostics.py",
+        "--data-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v1",
+        "--model-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+        "--laya-repo",
+        "/root/autodl-tmp/laya_bio/vendor/laya",
+        "--joint-dir",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/development_round1",
+        "--output",
+        "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/diagnostic_followup_v1/joint_train_metrics.json"
+      ],
+      "pid": 104176,
+      "exit_code": 0
+    }
+  ],
+  "created_utc": "2026-09-24T06:54:48.959984+00:00",
+  "pid": 103518,
+  "updated_utc": "2026-09-24T07:05:00.259955+00:00",
+  "evaluator_sha256": "737d3bb446a6d238612c5d5aefc127898bea978c868d36d6724ac9979657709e",
+  "total_wall_seconds_including_wait": 611.2999679220375
+}

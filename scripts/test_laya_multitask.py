@@ -54,3 +54,24 @@ def test_multilabel_metrics_use_all_labels_and_report_missing_support():
     m=e.metrics(rows,{'multilabel_location':{'primitive':'multilabel','n_outputs':10}})['multilabel_location']
     assert m['micro_auprc']==1 and m['micro_f1_at_0_5']==1
     assert m['n_entities']==3 and m['macro_auprc_label_count']==3
+
+
+def test_single_task_replays_joint_examples_and_learning_rate_indices():
+    import random
+    from collections import Counter
+    entities=[{'id':f'{t}:{i}','task':t} for t in d.TASKS for i in range(7)]
+    # Independent copy of the previously used joint sampler, including RNG calls.
+    rng=random.Random(19);pools={t:[x for x in entities if x['task']==t] for t in d.TASKS}
+    for pool in pools.values():rng.shuffle(pool)
+    cursor=Counter();cycle=[];expected=[]
+    for step in range(1,37):
+        if not cycle:cycle=d.TASKS.copy();rng.shuffle(cycle)
+        task=cycle.pop();chunk=[];pool=pools[task]
+        while len(chunk)<4:
+            if cursor[task]>=len(pool):rng.shuffle(pool);cursor[task]=0
+            chunk.append(pool[cursor[task]]['id']);cursor[task]+=1
+        expected.append((step,task,chunk))
+    actual=[(s,t,[r['id'] for r in batch]) for s,t,batch in e.training_schedule(entities,19,36,4)]
+    assert actual==expected
+    single=[row for row in actual if row[1]=='splice']
+    assert single==[row for row in expected if row[1]=='splice'] and len(single)==6

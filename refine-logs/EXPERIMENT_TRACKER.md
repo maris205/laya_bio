@@ -32,3 +32,7 @@ Pilot results and their narrower admission scope are tracked in the [execution r
 | Additional run | Scope | Status |
 |---|---|---|
 | DEV-ROUND1-C/HM | Same 6,144-entity training subset; each task three passes; 576 updates/model | COMPLETE 2026-09-24 04:34 UTC; both 576 steps, hashes/reload PASS; 55.54 minutes total; dev only |
+| DEV-DIAG-S/GFP-C/HM | Four single-task controls, 96 updates each, exact target-batch/LR replay | COMPLETE 2026-09-24 07:01 UTC; initialization/batches/reload checks PASS; no clear recovery from single-task training |
+| DEV-DIAG-S-NAMES | Splice candidate-name correction, 96-update candidate control; existing joint train-subset evaluation | COMPLETE 2026-09-24 07:05 UTC; corrected names still majority-only; full upstream lineage remains unverified |
+
+See [diagnostic report](../research/laya_task_diagnostics.md). Historical splice label-name matching is internal consistency only; biological interpretation of the historical names is withdrawn. Current builds use the source-code-supported correction documented in the report. No formal-suite runs or new test inference were added.

@@ -206,7 +206,7 @@ def main():
     p.add_argument('--kind',choices=['candidate','shared_heads'],required=True)
     p.add_argument('--data-dir',type=Path,required=True);p.add_argument('--model-dir',type=Path,required=True)
     p.add_argument('--laya-repo',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
-    p.add_argument('--updates',type=int,default=100,help='Joint schedule length; with --only-task, only target steps perform optimization');p.add_argument('--effective-batch',type=int,default=32)
+    p.add_argument('--updates',type=int,default=100);p.add_argument('--effective-batch',type=int,default=32)
     p.add_argument('--micro-batch',type=int,default=4);p.add_argument('--eval-batch',type=int,default=8)
     p.add_argument('--seed',type=int,default=20260924);p.add_argument('--lr',type=float,default=2e-5)
     p.add_argument('--only-task',choices=data.TASKS)

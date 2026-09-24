@@ -2,6 +2,8 @@
 
 Date: 2026-09-24. **Status: formal design remains prospective; two separate six-task engineering pilots are complete, and the three-pass development round is complete (dev only).** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
 
+The [completed splice/GFP diagnostic follow-up](../research/laya_task_diagnostics.md) includes four exposure-matched single-task runs and one splice name-correction arm. Neither recovered useful task fitting at this budget. Before expanding the formal suite, prioritize a small-training-subset fitting check and representation/readout diagnostics, and resolve the remaining splice source-lineage gap. These follow-up diagnostics were chosen after seeing development results.
+
 ## Problem anchor
 
 A biological decision model should reuse one sequence/question/candidate interface across biological decision tasks and preserve the identity of the supplied output labels. The core question is whether that interface gives a useful combination of task reuse, predictive quality, and operational reliability relative to fixed-head and sequence–language alternatives. BPE is a supporting representation choice.
