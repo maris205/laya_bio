@@ -1,4 +1,9 @@
-\section{Model and adaptation}
+\section{Laya-Bio: a shared biological decision interface}
+\paragraph{Input and output contract.}
+The interface is $(s,q,C)\mapsto(p,\hat\jmath)$: a sequence, a question, and a nonempty list of uniquely identified candidate labels yield probabilities and a selected candidate index. For finite logits, $\hat\jmath=\arg\max_{1\leq j\leq K}p_j$, and the application returns the supplied label $c_{\hat\jmath}$ through an exact lookup. Consequently $c_{\hat\jmath}\in C$ by construction. This removes output-label invention and answer-string parsing from the decision path; it does not prove that $c_{\hat\jmath}$ is correct, that the candidates cover the true answer, or that their semantics are understood. Empty lists, nonfinite scores, or ambiguous label identifiers should fail validation rather than silently produce a decision.
+
+One scorer is shared across tasks and candidate counts. New candidate strings do not require a new output matrix, subject to the input-length budget, but useful prediction on new labels remains an empirical transfer question. The experiments below use only the two trained task schemas. We evaluate the \emph{choice} interface; Score, Noul panels for multilabel prediction, and paired-sequence extensions are specified prospectively in Appendix~\ref{sec:prospective}, not evaluated here.
+
 \paragraph{Candidate scoring.}
 An example comprises task context $q$, sequence $s$, ordered candidate strings $C=(c_1,\ldots,c_K)$, and target index $y$. Here $K\in\{2,7\}$. The original Laya builder places a marker before each candidate and includes the task instructions and sequence state. The encoder, choice-type embedding, and two contextual head blocks produce candidate-marker states $h_j$. A shared layer-normalization/MLP scorer yields $z_j=g_\theta(h_j)$. We minimize ordinary supervised cross-entropy,
 \begin{equation}
@@ -7,7 +12,7 @@ An example comprises task context $q$, sequence $s$, ordered candidate strings $
 \end{equation}
 We train the encoder, input embeddings, contextual head, type embedding, and candidate scorer. The unused action head is frozen. This is a CE adaptation, not a reproduction or comparison of the upstream reinforcement-learning objective. Training candidate order is a deterministic hash-based permutation of each sample ID and seed; it remains fixed for that run rather than changing each epoch. Targets follow the permutation. Standard evaluation uses the canonical order.
 
-\paragraph{Biological BPE.}
+\paragraph{Secondary input-representation comparison.}
 The \emph{raw candidate} condition uses the original Laya tokenizer for the complete textual input. The \emph{\BioBPE{} candidate} condition tokenizes biological sequences separately with historical DNA/protein BPE vocabularies and maps their IDs directly to added model rows. Natural-language context and candidates retain the original tokenizer. The historical source recipe sampled about 1~GiB per modality and used BPE minimum frequency 10. These are externally fitted vocabularies, not vocabularies fitted exclusively on this experiment's training split.
 
 The source vocabularies omitted DNA N and protein N/J, allowing silent character loss. We append those characters in a copy, preserve existing IDs and merges, and require the concatenated source pieces and inverse model-ID mapping to reconstruct every encoded sequence. Excluding source padding/unknown symbols gives 19,999 DNA and 8,000 protein additions: 50,368 original rows become 78,367 rows. For a new piece $v$ decomposed by the original tokenizer as $b_1,\ldots,b_m$, initialize

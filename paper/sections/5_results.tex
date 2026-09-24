@@ -1,14 +1,17 @@
-\section{Results and diagnostics}
+\section{Initial results: accuracy and decision reliability}
 \begin{table}[t]
 \centering\small
 \input{tables/main_results.tex}
 \caption{Fixed-checkpoint test results (\%, mean $\pm$ sample SD over three seeds). F1 is macro-F1 over the fixed class set. All models use the same eligible examples.}
 \label{tab:main}
 \end{table}
+\paragraph{One candidate model across two biological tasks.}
+Each candidate checkpoint jointly serves both tasks with the same output scorer. Raw-input candidate scoring reaches 91.10\% DNA and 59.97\% protein accuracy (Table~\ref{tab:main}). This establishes supervised reuse across the two trained schemas, rather than transfer to an unseen question. Output-set membership follows from candidate-index selection; the fixed-head control also returns a valid class. Valid output alone therefore cannot explain a predictive advantage or distinguish the two systems.
+
 \paragraph{Candidate scoring versus the implemented fixed head.}
 The \BioBPE{} candidate model attains 90.16\% DNA accuracy and 59.05\% protein accuracy (Table~\ref{tab:main}). Relative to B1, the paired mean differences are $+1.40\pm0.42$ and $+7.91\pm5.69$ percentage points, respectively; all three seeds favor candidate scoring on both tasks. Protein macro-F1 increases by $12.28\pm4.56$ points. B1 protein accuracy varies substantially, from 45.65\% to 56.35\%. This comparison supports the current candidate configuration under the tested budget, but input format, pooling, and output-layer initialization differ, so it does not isolate a causal benefit of candidate semantics.
 
-\paragraph{Token compression does not yield a predictive or training-time gain.}
+\paragraph{Secondary representation result.}
 Raw candidate scoring has higher test accuracy than \BioBPE{} on both tasks: the paired \BioBPE{} differences are $-0.93\pm0.29$ points for DNA and $-0.92\pm0.49$ points for protein, negative in all seeds. The dev DNA difference was $+0.60$ points, so that advantage does not carry to test. The pooled training-input median falls from 173 to 96 tokens, but mean training time is 41.20 minutes for raw and 41.24 minutes for \BioBPE{}. Peak allocated memory rises from 7.89 to 8.41~GiB. We therefore report compression, a larger embedding matrix, and observed cost rather than infer acceleration from token counts. We did not optimize kernels or measure a separate inference-latency benchmark.
 
 \begin{table}[t]

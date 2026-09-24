@@ -1,0 +1,98 @@
+[
+  {
+    "repository": "dnagpt/dna_splice_site_prediction",
+    "revision": "4a53a74077adf39db7acd7261361743bc87403cb",
+    "file": "data/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/dna_splice_site_prediction/data/train-00000-of-00001.parquet",
+    "bytes": 8797976,
+    "sha256": "2de5b19de1c7e72e7f8192adef853d48787b602bc3ae1fb205f69e820508cc3c"
+  },
+  {
+    "repository": "dnagpt/dna_core_promoter",
+    "revision": "809065798bf4928f67397ddba23e4aa9cc5ac3ed",
+    "file": "data/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/dna_core_promoter/data/train-00000-of-00001.parquet",
+    "bytes": 2197851,
+    "sha256": "adc5842c1fd39e8c74ba5d0625bba0406230950363e176979a453af02cbf2b30"
+  },
+  {
+    "repository": "dnagpt/dna_promoter_300",
+    "revision": "5e882a4c412e0259b2184f1e827506a125931a9d",
+    "file": "data/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/dna_promoter_300/data/train-00000-of-00001.parquet",
+    "bytes": 8661645,
+    "sha256": "45daa614c9ba5487f6863ef9ab1faaf165fffb3c2d605f92ef6d291ce08bf438"
+  },
+  {
+    "repository": "dnagpt/dna_transcription_factor_prediction",
+    "revision": "2d276b4d522a4533c419422683b2214eb7bf7381",
+    "file": "data/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/dna_transcription_factor_prediction/data/train-00000-of-00001.parquet",
+    "bytes": 1764410,
+    "sha256": "e3a39ea742106b52d50293b7e39a28a4502ba2872f0b690a5858f83fabb22e03"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_protein_pair/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_protein_pair/train-00000-of-00001.parquet",
+    "bytes": 2594650,
+    "sha256": "4bc85d2752236bdf6035de550ff54f933ca8cd0f360bcefb4561541d70aa18f1"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_protein_pair_rand/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_protein_pair_rand/train-00000-of-00001.parquet",
+    "bytes": 18894709,
+    "sha256": "c72adbf4fc94344660a1bd8823a23c9b15f2bc3898fc0e3e9bd46fe5f79b2b0e"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_protein_pair_rand_v2/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_protein_pair_rand_v2/train-00000-of-00001.parquet",
+    "bytes": 17532868,
+    "sha256": "4ef8b909f7d63bbc7bb78605551c9ca207eaf362ae1fe793a58d345b8f384957"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_sim_pair_150bp/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_sim_pair_150bp/train-00000-of-00001.parquet",
+    "bytes": 2933986,
+    "sha256": "b369abac3b0cca29f6687cd460d87d09b847bc5ab5ec36e749541740f5b37d24"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_sim_pair_50bp/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_sim_pair_50bp/train-00000-of-00001.parquet",
+    "bytes": 1065972,
+    "sha256": "82746dc86747486678d9eaa1c4ab5236a3b2a2e24cf3b1cf78bc0930cb2f91d2"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "dna_sim_pair_simple_150bp/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/dna_sim_pair_simple_150bp/train-00000-of-00001.parquet",
+    "bytes": 2443680,
+    "sha256": "079c61aed989f4e2f0732248efa3549f786d074152d1f6bf6c7913c4f5904f89"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "protein_sim_pair_150bp/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/protein_sim_pair_150bp/train-00000-of-00001.parquet",
+    "bytes": 1847847,
+    "sha256": "ef507116fa391b80f61350e283bfd4b15efa2e15cb645f5110f23b42e315ef94"
+  },
+  {
+    "repository": "dnagpt/gene_lan_transfer",
+    "revision": "b695eba151061ed0c79782d9bda8c7ba838059c8",
+    "file": "protein_sim_pair_450bp/train-00000-of-00001.parquet",
+    "path": "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/gene_lan_transfer/protein_sim_pair_450bp/train-00000-of-00001.parquet",
+    "bytes": 5205983,
+    "sha256": "df474326256f9613e47e568e4e534509759991c273f5ad2d58bf9172faceb54f"
+  }
+]

@@ -1,0 +1,56 @@
+\section{Prospective experiments for the decision-interface claim}
+\label{sec:prospective}
+\textbf{Status.} This is a follow-up design formulated after the reported test results were inspected. It describes experiments to run, not additional evidence. Existing numbers remain the initial two-task study. New design choices will be fixed using development data, and confirmatory evaluation will require a new, independently held-out biological evaluation set; the old test cannot be presented as a fresh blind test.
+
+\paragraph{Three decision primitives and input arity.}
+The completed model evaluates Choice only. A proposed extension follows Jev's three interfaces: \textbf{Choice} assigns a distribution over mutually exclusive labels; \textbf{Noul} returns the probability that a proposition is true; \textbf{Score} assigns probabilities to ordered levels and returns an expected level index. Binary biological tasks fit Noul (or equivalently two-way Choice). Multilabel tasks require a separate Noul probability for each label, allowing multiple positives; they must not use one competing softmax over all labels. A continuous assay can be adapted to Score using training-defined ordered bins and numerical anchors, but this does not make Score an unrestricted native regressor. Original-scale errors, rank correlation, quantization error, and a scalar-regression control are necessary.
+
+Inputs become a list of sequences with explicit modality and role, plus the question and output specification. Protein homology uses two protein sequences; coding correspondence uses a DNA and a protein sequence. Pair boundaries and roles are retained. No paired, Score, or multilabel result is claimed for the existing weights.
+
+\begin{table}[ht]
+\centering\small
+\begin{tabular}{p{.08\linewidth}p{.36\linewidth}p{.19\linewidth}p{.26\linewidth}}
+\toprule
+ID & Priority task & Interface / input & Admission status \\
+\midrule
+C01 & Promoter detection & Noul / DNA & Source pool audited \\
+C02 & Splice-site type (3 classes) & Choice / DNA & Source pool audited \\
+C03 & TF binding-site detection & Noul / DNA & Source pool audited \\
+C04 & Structural class (7 classes) & Choice / protein & Existing study task \\
+C05 & Sec versus Tat signal peptide & Choice / protein & Local schema audited \\
+C06 & Prokaryotic location (6 classes) & Choice / protein & Local schema audited \\
+C07 & Protein homology & Noul / protein pair & Two local views audited \\
+C08 & DNA--protein correspondence & Noul / mixed pair & Translation diagnostic \\
+C09 & GFP fluorescence & Score / protein & TAPE source verified \\
+C10 & Protein stability & Score / protein & TAPE source verified \\
+C11 & Multilabel cellular localization & Noul panel / protein & DeepLoc source verified \\
+C12 & GO molecular function & Noul panel / protein & DeepGO source verified \\
+\bottomrule
+\end{tabular}
+\caption{Proposed 12-task suite, not completed experiments. Source/schema auditing does not establish homology independence, a frozen new split, or tokenizer eligibility. C08 is a mechanistic consistency diagnostic, not independent evidence of natural biological task breadth.}
+\label{tab:planned_tasks}
+\end{table}
+
+\paragraph{Sources and scope.}
+The added public DNA pools are \path{dnagpt/dna_promoter_300}, \path{dna_splice_site_prediction}, and \path{dna_transcription_factor_prediction}; \path{dnagpt/gene_lan_transfer} supplies coding pairs. TAPE supplies fluorescence and stability tasks \citep{rao2019tape}; DeepLoc 2.0 supplies genuine multilabel localization \citep{thumuluri2022deeploc}; DeepGOZero provides a documented source for function annotation \citep{kulmanov2022deepgozero}. The initial GO design restricts evaluation to 32 training-selected molecular-function terms and must be called GO-MF-Lite, not full GO prediction. Missing GO annotations are not confirmed biological negatives; annotation-recovery conventions and target masks must be specified. The repository catalog records 12 additional views, including DMS effects, enhancer activity, chromatin features, RNA binding preference, and protein interactions. Related windows and synthetic-similarity variants are not independent task families.
+
+\paragraph{Data gates and feasibility.}
+The new DNA sources contain one pool named \texttt{train}, including old test members. Those members and their groups must remain isolated. Across local tasks, some localization training sequences also occur in old structural-class and signal-peptide test data, requiring a global registry. Paired examples must be divided by endpoint/parent groups, not random pair rows; exact endpoint separation alone does not prove homology independence. Conflicting labels require quarantine and provenance review. Full-input tokenizer eligibility is especially important for long coding pairs and localization proteins. Standard frame-zero translation exactly separates positive and negative examples in two downloaded coding-pair configurations; it is a mandatory rule baseline and explains why that task is a diagnostic. This is a source audit, not a held-out result.
+
+\paragraph{Three model families.}
+The primary comparison will include (i) a sequence encoder with task-specific heads, both independently trained and sharing an encoder; (ii) a sequence--language generator evaluated with free generation, finite-label constrained decoding, and exact candidate likelihood scoring; and (iii) Laya-Bio candidate scoring. The encoder and candidate variants will share initialization, sequence representation, supervision, and trainable-parameter accounting. The three generator interfaces use identical checkpoints and prompts. Cross-architecture comparisons will report pretraining differences, parameter counts, example presentations, and measured cost rather than claim an isolated architectural effect. Raw sequence input is the reference representation; BPE remains a secondary ablation, with both prior representations retained in the historical results.
+
+\paragraph{Block 1: label validity and biological accuracy.}
+On the same examples and candidate sets, separately report (a) exact output-contract violations, (b) unambiguous canonical-label mapping failures, and (c) wrong in-set predictions. A frozen alias dictionary may recognize a harmless synonym in analysis, but must not erase its strict contract violation. Exact string-to-ID mapping, not an LLM judge, defines validity. Invalid, ambiguous, truncated, and failed responses count against end-to-end accuracy and macro-F1; conditional accuracy among valid outputs is secondary. Fixed heads and completed constrained decoders should also have zero out-of-set labels. Any advantage beyond validity must therefore appear in predictive quality, reusable task handling, calibration, or measured cost. For probabilistic systems, evaluate NLL/Brier and calibration independently of prose confidence claims. Binary tasks additionally require AUROC/AUPRC and MCC; multilabel tasks require micro/macro-AUPRC and frozen-threshold F1; Score tasks require original-scale MAE/RMSE and Spearman. Do not average these heterogeneous metrics into an overall accuracy. Shared-head controls must include sigmoid multilabel and scalar-regression outputs.
+
+\paragraph{Block 2: shared task handling and transfer.}
+Use the proposed suite to include several tasks in each sequence modality; where available, ask different labeled questions about the same sequence. This removes modality as a sufficient task selector. Compare joint versus single-task training under the same per-task exposure, and compare shared candidate scoring against the shared-encoder multihead control. Train separate leave-one-task-out variants for localization (C06) and stability (C10): exclude C11 as well for strict localization-family transfer. No held-out-task supervision or calibration is allowed; Score levels and anchors require an external specification independent of held-out targets. A model jointly trained on all 12 tasks is not zero-shot on any of them. Report zero-shot candidate/generator results separately from fixed-head few-shot adaptation, for which a new head is required. Report a new-task learning curve if sample-efficient adaptation is claimed. If only trained tasks work, retain the narrower shared-supervision claim.
+
+\paragraph{Block 3: label identity versus semantic stability.}
+Predefine meaning-preserving question paraphrases, verified label aliases/descriptions, and candidate permutations. Return opaque candidate IDs while presenting descriptions; randomize the ID-to-description association per example to prevent fixed output-coordinate shortcuts. A no-description version tests reliance on label meaning. These interventions must preserve gold semantic labels through explicit mappings. Report validity and accuracy for each variant, canonicalized prediction agreement, and the change in probabilities. A valid but changed or wrong answer is semantic instability, not an out-of-set error. Missing-gold candidates form a separate open-set stress test requiring an explicit abstention policy; they must not be included as ordinary closed-set errors with an unavailable target.
+
+\paragraph{Block 4: operational cost and uncertainty.}
+Measure batch-1 median and 95th-percentile latency, fixed-batch throughput, and peak GPU memory on the same hardware, including tokenization, label constraints, and output parsing. For multilabel tasks, measure the entire label panel, including repeated sequence encodings and any chunking; one binary call is not a full-panel prediction. Freeze warm-up, input-length bins, candidate counts, output-length limits, and repetition counts before timing. Report model compute separately from network latency if a hosted baseline is used. Fit calibration only on the calibration split. Probability quality and accuracy must accompany timing: a fast but inaccurate or poorly calibrated decision model does not establish a useful advantage. No latency superiority is claimed from the present training-time measurements.
+
+\paragraph{Execution boundary.}
+Run definitions and gates are in \path{refine-logs/EXPERIMENT_PLAN.md} and \path{refine-logs/EXPERIMENT_TRACKER.md}. A six-task pilot (C01/C02/C04/C07/C09/C11) precedes admission of the full suite and a measured compute estimate. The main plan has 21 fits: three joint model families and four independent-task anchors, each over three seeds. Two leave-one-task-out settings add 12 candidate/generator fits. These transfer tests are required before unseen-task claims.

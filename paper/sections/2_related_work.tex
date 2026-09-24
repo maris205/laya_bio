@@ -1,4 +1,8 @@
 \section{Related work}
+
+\paragraph{Decision interfaces and constrained outputs.}
+TypeSafe introduces Jev as a System One model with typed decisions \citep{almeida2026jev}; our use of that name refers to the interface. Laya supplies the open implementation used in this study \citep{laya2026}. The biological question is whether a shared candidate scorer can combine reusable task inputs with reliable predictions, rather than whether label constraints alone are new. Constrained autoregressive decoding already restricts permitted outputs \citep{scholak2021picard}; exact likelihood scoring over a finite label list is another necessary control. We therefore distinguish unambiguous output identity from correct biological interpretation and include constrained generation in the prospective design.
+
 \paragraph{Sequence--text alignment and instruction tuning.}
 Joint use of biological sequences and natural language predates this study. ProtST augments protein representation learning with biomedical descriptions and evaluates supervised and zero-shot prediction \citep{xu2023protst}. BioTranslator maps biological features and textual descriptions into a shared space for zero-shot biomedical classification \citep{xu2023biotranslator}. These methods motivate explicit attention to label semantics, but our two fixed label sets do not test their zero-shot setting. A candidate string can be present in an input without the model demonstrating transferable semantic understanding.
 

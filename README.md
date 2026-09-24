@@ -1,12 +1,20 @@
 # Laya-Bio
 
-**Candidate Scoring and Reliability on Short Biological Sequences**
+**Jev-Style Decision Models for Biological Sequences**
 
-Laya-Bio studies adaptation of the open Laya typed-decision encoder to DNA promoter detection and seven-class coarse protein structure classification. The study compares raw candidate scoring, historical biological-BPE candidate scoring, a fixed-class B1 head, and a trained text-only control across three seeds. Raw candidate input gives higher test accuracy on both tasks; biological BPE reduces input length without improving measured training time. No additional neural continual pretraining was performed.
+Laya-Bio is an open biological sequence decision model: **sequence + natural-language question + candidate labels → candidate probabilities and an exact label selection**. One shared scorer handles the trained DNA and protein tasks without task-specific output matrices. “Jev-style” describes the typed candidate interface, inspired by [TypeSafe's Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev); this project adapts the open Laya encoder.
+
+The paper now centers on a shared biological decision interface, with BPE as a secondary representation comparison. Candidate selection keeps the output inside the supplied label set; it does not guarantee the correct biological class, order invariance, or unseen-task understanding. Shared fixed heads and constrained generation can also enforce valid outputs.
+
+**Evidence status:** the completed two-task, four-condition, three-seed study is unchanged. Raw candidate scoring reaches 91.10% DNA and 59.97% protein test accuracy. The new design catalogs 12 priority tasks plus 12 extension views, mapping Choice, Score, and Noul to multiclass, ordered-score, binary, multilabel, and paired-sequence problems. It adds free/constrained generation and separate held-out-task tests. Those follow-up experiments have not been run. No additional neural continual pretraining was performed.
 
 - [English paper (PDF)](paper/main.pdf) · [LaTeX source](paper/main.tex)
 - [Chinese manuscript](research/laya_bio_paper_draft.md)
 - [Release and verification record](research/laya_large_data_release.md)
+
+- [Biological decision task catalog: 12 priority + 12 extension views](research/biological_decision_task_catalog.md)
+- [Reframing and claim boundaries](research/jev_style_reframing.md)
+- [Follow-up experiment plan](refine-logs/EXPERIMENT_PLAN.md) · [Run tracker](refine-logs/EXPERIMENT_TRACKER.md)
 
 ## Public releases
 
@@ -68,7 +76,7 @@ All release files were checked against remote sizes and hashes. Anonymous access
 
 ## Rebuild the manuscript
 
-The small result summaries required to rebuild the paper are included in `artifacts/`. Run `python paper/build.py` from the project root with the dependencies listed in [paper/README.md](paper/README.md). This regenerates figures, tables, and the PDF without model training or test inference. The fixed Hugging Face benchmark release preserves its original manuscript snapshot; the working manuscript includes the later public-availability update.
+The small result summaries required to rebuild the paper are included in `artifacts/`. Run `python paper/build.py` from the project root with the dependencies listed in [paper/README.md](paper/README.md). This regenerates figures, tables, and the PDF without model training or test inference. The fixed Hugging Face benchmark release preserves its original manuscript snapshot; the working manuscript includes the later public-availability and Jev-style framing updates.
 
 ## Repository contents and full experiment assets
 

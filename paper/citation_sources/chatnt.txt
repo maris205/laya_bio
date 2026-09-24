@@ -1,0 +1,7 @@
+Verified bibliographic metadata
+Source: https://api.crossref.org/works/10.1038/s42256-025-01047-1/transform/application/x-bibtex
+Source checked: 2026-09-23
+Packaged: 2026-09-24
+This record contains metadata, not a full web-page copy.
+
+@article{almeida2025chatnt, title={A multimodal conversational agent for DNA, RNA and protein tasks}, volume={7}, ISSN={2522-5839}, url={http://dx.doi.org/10.1038/s42256-025-01047-1}, DOI={10.1038/s42256-025-01047-1}, number={6}, journal={Nature Machine Intelligence}, publisher={Springer Science and Business Media LLC}, author={de Almeida, Bernardo P. and Richard, Guillaume and Dalla-Torre, Hugo and Blum, Christopher and Hexemer, Lorenz and Pandey, Priyanka and Laurent, Stefan and Rajesh, Chandana and Lopez, Marie and Laterre, Alexandre and Lang, Maren and \c{S}ahin, U\u{g}ur and Beguir, Karim and Pierrot, Thomas}, year={2025}, month=jun, pages={928--941} }

@@ -1,0 +1,9 @@
+Verified source: https://api.crossref.org/works/10.1093/nar/gkac278/transform/application/x-bibtex
+Retrieved: 2026-09-24
+Metadata normalized to ASCII-compatible BibTeX:
+@article{thumuluri2022deeploc,
+ title={{DeepLoc 2.0}: multi-label subcellular localization prediction using protein language models},
+ author={Thumuluri, Vineet and Almagro Armenteros, Jos{\'e} Juan and Johansen, Alexander Rosenberg and Nielsen, Henrik and Winther, Ole},
+ journal={Nucleic Acids Research}, volume={50}, number={W1}, pages={W228--W234}, year={2022},
+ doi={10.1093/nar/gkac278}, url={https://doi.org/10.1093/nar/gkac278}
+}

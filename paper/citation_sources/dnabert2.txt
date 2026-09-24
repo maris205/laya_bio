@@ -1,0 +1,16 @@
+Verified bibliographic metadata
+Source: https://proceedings.iclr.cc/paper_files/paper/5845-/bibtex
+Source checked: 2026-09-23
+Packaged: 2026-09-24
+This record contains metadata, not a full web-page copy.
+
+@inproceedings{zhou2024dnabert,
+ author = {Zhou, Zhihan and Ji, Yanrong and Li, Weijian and Dutta, Pratik and Davuluri, Ramana and Liu, Han},
+ booktitle = {International Conference on Learning Representations},
+ editor = {B. Kim and Y. Yue and S. Chaudhuri and K. Fragkiadaki and M. Khan and Y. Sun},
+ pages = {41642--41665},
+ title = {DNABERT-2: Efficient Foundation Model and Benchmark For Multi-Species Genomes},
+ url = {https://proceedings.iclr.cc/paper_files/paper/2024/file/b633e7052970b8f5aa1a69164d99e9e8-Paper-Conference.pdf},
+ volume = {2024},
+ year = {2024}
+}

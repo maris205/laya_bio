@@ -4,71 +4,120 @@
     "url": "https://aclanthology.org/2025.acl-long.127.bib",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/modernbert.txt",
-    "sha256": "cc67cf3df10b2b1137db5c064ee0f3008cba66d47f59b88c018e8072c8a88991",
-    "kind": "verified scholarly metadata"
+    "sha256": "13a59538e3eb9db2b6ce5061afcb61ac579d69a93e1ba103e34dfe51bba3de60",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "cc67cf3df10b2b1137db5c064ee0f3008cba66d47f59b88c018e8072c8a88991"
   },
   {
     "name": "protst",
     "url": "https://proceedings.mlr.press/v202/xu23t.html",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/protst.txt",
-    "sha256": "a6756698924946f9ef6785f66720cc17c9597be32e2ad90769b6bf3f6cc7e4f0",
-    "kind": "verified scholarly metadata"
+    "sha256": "1fbe3434eb8cbfb4aed0311685a15ee490eff82f1e2b23966f5ea2ddb90f4f3b",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "a6756698924946f9ef6785f66720cc17c9597be32e2ad90769b6bf3f6cc7e4f0"
   },
   {
     "name": "guo",
     "url": "https://proceedings.mlr.press/v70/guo17a.html",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/guo.txt",
-    "sha256": "fcd644b81c1d06d034060e3ff8079ccc6acc2213dbf846043b92059ce10d26f8",
-    "kind": "verified scholarly metadata"
+    "sha256": "ccf919aa9f9c20386fee01d85be5653448318ba801ece660c892cc418520073c",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "fcd644b81c1d06d034060e3ff8079ccc6acc2213dbf846043b92059ce10d26f8"
   },
   {
     "name": "biotranslator",
     "url": "https://api.crossref.org/works/10.1038/s41467-023-36476-2/transform/application/x-bibtex",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/biotranslator.txt",
-    "sha256": "087fdb1227ea344f20ffc0c71e486496cb25cd6e5e81515b4eaff6821e289570",
-    "kind": "verified scholarly metadata"
+    "sha256": "fe888f2a8e99d4c7da2ea0a31642b2812be3a109a7eeafdec60bac3295bea840",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "087fdb1227ea344f20ffc0c71e486496cb25cd6e5e81515b4eaff6821e289570"
   },
   {
     "name": "chatnt",
     "url": "https://api.crossref.org/works/10.1038/s42256-025-01047-1/transform/application/x-bibtex",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/chatnt.txt",
-    "sha256": "8aa61fc1cdd043cee0ecb2811df697b00734b7a59aad84eaf7cd9847f0a9c0b3",
-    "kind": "verified scholarly metadata"
+    "sha256": "7a67c1a24cd4fd08623d3e8f17d52909324d23792659eab3203d38857df69d49",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "8aa61fc1cdd043cee0ecb2811df697b00734b7a59aad84eaf7cd9847f0a9c0b3"
   },
   {
     "name": "dnabert2",
     "url": "https://proceedings.iclr.cc/paper_files/paper/5845-/bibtex",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/dnabert2.txt",
-    "sha256": "4ef3f3691b9132dbbda57ac059f4ea21904c1fcb892bcf01333cf1c2b3baccfd",
-    "kind": "verified scholarly metadata"
+    "sha256": "4c8a208938bac8cbb8ffd9563a4410a2fde694155b29960578b02d24b8e98799",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "4ef3f3691b9132dbbda57ac059f4ea21904c1fcb892bcf01333cf1c2b3baccfd"
   },
   {
     "name": "llamagene",
     "url": "https://export.arxiv.org/api/query?id_list=2412.00471",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/llamagene.txt",
-    "sha256": "af0955034c038cf96a1d9bbb9425e11b1a7f1d0cd40b808556fec677a2cfa950",
-    "kind": "verified scholarly metadata"
+    "sha256": "021dafef2f4df58b60ddbb1be4eef9a711a55472382b3096a464f147b086126c",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "af0955034c038cf96a1d9bbb9425e11b1a7f1d0cd40b808556fec677a2cfa950"
   },
   {
     "name": "biopaws",
     "url": "https://huggingface.co/datasets/dnagpt/biopaws-2/raw/main/README.md",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/biopaws.txt",
-    "sha256": "eae6b41fd3740416d4831c6c941f1cbff80cf2ba8489ca4e981a47e121a34653",
-    "kind": "software/dataset documentation"
+    "sha256": "7cebe713fff32e80993df415b34f617e58bc34f937599b55ccedd37c1e195a86",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "eae6b41fd3740416d4831c6c941f1cbff80cf2ba8489ca4e981a47e121a34653"
   },
   {
     "name": "laya",
     "url": "https://raw.githubusercontent.com/NandhaKishorM/laya/573e5b62696ba441230cd6be71d593331b5d23af/README.md",
     "retrieved_date": "2026-09-23",
     "saved_path": "paper/citation_sources/laya.txt",
-    "sha256": "c9ab5604180d03a89514786b7f60fcd805909cf932a22672c511898a782ad682",
-    "kind": "software/dataset documentation"
+    "sha256": "e09c24ff620989b804116197e214b4740399f898bf38609d901ee4281c67cd57",
+    "kind": "verified bibliographic metadata summary; original source capture fingerprint retained",
+    "original_source_capture_sha256": "c9ab5604180d03a89514786b7f60fcd805909cf932a22672c511898a782ad682"
+  },
+  {
+    "name": "jev",
+    "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+    "retrieved_date": "2026-09-24",
+    "saved_path": "paper/citation_sources/jev.txt",
+    "sha256": "219065fa9fbd3948101a6db1e29395854bc694607bf116a3902b3c347a54e74e",
+    "kind": "verified bibliographic record; not a full article copy"
+  },
+  {
+    "name": "picard",
+    "url": "https://aclanthology.org/2021.emnlp-main.779/",
+    "retrieved_date": "2026-09-24",
+    "saved_path": "paper/citation_sources/picard.txt",
+    "sha256": "3ea64587e56c8eaf084c8531331a1c16128ae2f508cc04c31d686c4ce39e0a1d",
+    "kind": "verified bibliographic record; not a full article copy"
+  },
+  {
+    "name": "tape",
+    "url": "https://github.com/songlab-cal/tape",
+    "retrieved_date": "2026-09-24",
+    "saved_path": "paper/citation_sources/tape.txt",
+    "sha256": "08bbc274ce2b5c1909f534b28d8ad9c7fdcaca7b50449eaca27e7ae728613378",
+    "kind": "verified scholarly metadata; source research only, no new experiment"
+  },
+  {
+    "name": "deeploc",
+    "url": "https://api.crossref.org/works/10.1093/nar/gkac278/transform/application/x-bibtex",
+    "retrieved_date": "2026-09-24",
+    "saved_path": "paper/citation_sources/deeploc.txt",
+    "sha256": "88ffb5e6961384ad10c0525490802e7307efd191624013307f46e9c55d18c8e2",
+    "kind": "verified scholarly metadata; source research only, no new experiment"
+  },
+  {
+    "name": "deepgozero",
+    "url": "https://api.crossref.org/works/10.1093/bioinformatics/btac256/transform/application/x-bibtex",
+    "retrieved_date": "2026-09-24",
+    "saved_path": "paper/citation_sources/deepgozero.txt",
+    "sha256": "73ba7dbce789ab263aff9f2fc07a0f8852d711681e24099dd8ae4db0017b63b8",
+    "kind": "verified scholarly metadata; source research only, no new experiment"
   }
 ]

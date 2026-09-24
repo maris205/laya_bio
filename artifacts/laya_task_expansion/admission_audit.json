@@ -1,0 +1,549 @@
+{
+  "created_utc": "2026-09-24T02:29:06.316656+00:00",
+  "status": "admission_audit_only_not_a_frozen_training_split",
+  "test_targets_inspected": false,
+  "model_evaluation_performed": false,
+  "task_count": 8,
+  "proposed_joint_training_tasks": [
+    "promoter_detection",
+    "fold_class",
+    "signal_peptide",
+    "npp",
+    "subcellular_loc"
+  ],
+  "reports": [
+    {
+      "task": "promoter_detection",
+      "modality": "dna",
+      "proposed_role": "joint_train",
+      "source_file": "lg_promoter_detection.jsonl",
+      "source_sha256": "ec37e887c1430751235a4564b84870428360bfb8c0f34162c5ea9f60373a59ef",
+      "classes": [
+        "Non-promoter",
+        "promoter"
+      ],
+      "counts": {
+        "rows": 21042,
+        "valid_user_sequence_rows": 21042
+      },
+      "raw_splits": {
+        "train": 16786,
+        "val": 2109,
+        "test": 2147
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "train": {
+          "n": 16786,
+          "min": 300,
+          "median": 300,
+          "p95": 300,
+          "max": 300,
+          "over_512_characters": 0
+        },
+        "val": {
+          "n": 2109,
+          "min": 300,
+          "median": 300,
+          "p95": 300,
+          "max": 300,
+          "over_512_characters": 0
+        },
+        "test": {
+          "n": 2147,
+          "min": 300,
+          "median": 300,
+          "p95": 300,
+          "max": 300,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {
+        "train": {
+          "promoter": 8383,
+          "Non-promoter": 8403
+        },
+        "val": {
+          "promoter": 1066,
+          "Non-promoter": 1043
+        }
+      },
+      "trainval_conflicting_exact_rc_groups": 2,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:dna_train": 15122,
+        "llama-gene:dna_eva": 5920
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 21042
+      }
+    },
+    {
+      "task": "fold_class",
+      "modality": "protein",
+      "proposed_role": "joint_train",
+      "source_file": "lg_fold_class.jsonl",
+      "source_sha256": "00c6f2f81003dac040a861fc4a1728d05e30fd4b7b7a0febff107ae39937859c",
+      "classes": [
+        "All Alpha",
+        "All Beta",
+        "Alpha and Beta",
+        "Alpha plus Beta",
+        "Multi-domain Proteins",
+        "Mixed Structures",
+        "Small Proteins and Peptides"
+      ],
+      "counts": {
+        "rows": 19468,
+        "valid_user_sequence_rows": 19468
+      },
+      "raw_splits": {
+        "train": 15593,
+        "test": 1994,
+        "val": 1881
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "train": {
+          "n": 15593,
+          "min": 20,
+          "median": 151,
+          "p95": 374,
+          "max": 512,
+          "over_512_characters": 0
+        },
+        "test": {
+          "n": 1994,
+          "min": 24,
+          "median": 149,
+          "p95": 375,
+          "max": 511,
+          "over_512_characters": 0
+        },
+        "val": {
+          "n": 1881,
+          "min": 26,
+          "median": 148,
+          "p95": 362,
+          "max": 511,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {
+        "train": {
+          "All Alpha": 2627,
+          "Alpha plus Beta": 3754,
+          "All Beta": 3239,
+          "Alpha and Beta": 4604,
+          "Small Proteins and Peptides": 874,
+          "Mixed Structures": 220,
+          "Multi-domain Proteins": 275
+        },
+        "val": {
+          "All Beta": 404,
+          "Alpha and Beta": 567,
+          "Alpha plus Beta": 435,
+          "All Alpha": 302,
+          "Small Proteins and Peptides": 108,
+          "Mixed Structures": 33,
+          "Multi-domain Proteins": 32
+        }
+      },
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:prot_train": 17528,
+        "llama-gene:prot_eva": 1940
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 19468
+      }
+    },
+    {
+      "task": "signal_peptide",
+      "modality": "protein",
+      "proposed_role": "joint_train",
+      "source_file": "lg_signal_peptide.jsonl",
+      "source_sha256": "9941c8852aadd165fb40dbb42dd6d56a4b7a53730c30d8b5b1d23d0a4edbcd07",
+      "classes": [
+        "sec",
+        "tat"
+      ],
+      "counts": {
+        "rows": 8304,
+        "valid_user_sequence_rows": 8304
+      },
+      "raw_splits": {
+        "train": 6530,
+        "test": 872,
+        "val": 902
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "train": {
+          "n": 6530,
+          "min": 43,
+          "median": 70,
+          "p95": 70,
+          "max": 70,
+          "over_512_characters": 0
+        },
+        "test": {
+          "n": 872,
+          "min": 41,
+          "median": 70,
+          "p95": 70,
+          "max": 70,
+          "over_512_characters": 0
+        },
+        "val": {
+          "n": 902,
+          "min": 51,
+          "median": 70,
+          "p95": 70,
+          "max": 70,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {
+        "train": {
+          "sec": 5478,
+          "tat": 1052
+        },
+        "val": {
+          "sec": 732,
+          "tat": 170
+        }
+      },
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:prot_train": 7474,
+        "llama-gene:prot_eva": 830
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 8304
+      }
+    },
+    {
+      "task": "npp",
+      "modality": "protein",
+      "proposed_role": "joint_train",
+      "source_file": "lg_npp.jsonl",
+      "source_sha256": "167763f31e1ecba91eb3e953176a9b04ab242cc1ebd523b2a8271dbcbf5cf7a4",
+      "classes": [
+        "non-NPP",
+        "NPP"
+      ],
+      "counts": {
+        "rows": 3364,
+        "valid_user_sequence_rows": 3364
+      },
+      "raw_splits": {
+        "train": 2718,
+        "val": 313,
+        "test": 333
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "train": {
+          "n": 2718,
+          "min": 21,
+          "median": 195,
+          "p95": 1135,
+          "max": 5128,
+          "over_512_characters": 497
+        },
+        "val": {
+          "n": 313,
+          "min": 41,
+          "median": 241,
+          "p95": 1342,
+          "max": 4567,
+          "over_512_characters": 74
+        },
+        "test": {
+          "n": 333,
+          "min": 25,
+          "median": 199,
+          "p95": 1283,
+          "max": 2569,
+          "over_512_characters": 75
+        }
+      },
+      "trainval_label_counts": {
+        "train": {
+          "NPP": 1837,
+          "non-NPP": 881
+        },
+        "val": {
+          "NPP": 234,
+          "non-NPP": 79
+        }
+      },
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:prot_train": 3028,
+        "llama-gene:prot_eva": 336
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 3364
+      }
+    },
+    {
+      "task": "subcellular_loc",
+      "modality": "protein",
+      "proposed_role": "joint_train",
+      "source_file": "lg_subcellular_loc.jsonl",
+      "source_sha256": "99ec94f1e0e010a1822268f75f98630bd16e8af227de518f13d53d064f2a0a1f",
+      "classes": [
+        "CYtoplasmicMembrane",
+        "Cellwall",
+        "Cytoplasmic",
+        "Extracellular",
+        "OuterMembrane",
+        "Periplasmic"
+      ],
+      "counts": {
+        "rows": 12993,
+        "valid_user_sequence_rows": 12993
+      },
+      "raw_splits": {
+        "val": 1201,
+        "train": 10654,
+        "test": 1138
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "val": {
+          "n": 1201,
+          "min": 21,
+          "median": 394,
+          "p95": 872,
+          "max": 2021,
+          "over_512_characters": 319
+        },
+        "train": {
+          "n": 10654,
+          "min": 20,
+          "median": 401,
+          "p95": 881,
+          "max": 5488,
+          "over_512_characters": 3126
+        },
+        "test": {
+          "n": 1138,
+          "min": 24,
+          "median": 378,
+          "p95": 880,
+          "max": 5627,
+          "over_512_characters": 299
+        }
+      },
+      "trainval_label_counts": {
+        "val": {
+          "Extracellular": 101,
+          "Cytoplasmic": 641,
+          "OuterMembrane": 105,
+          "CYtoplasmicMembrane": 280,
+          "Periplasmic": 64,
+          "Cellwall": 10
+        },
+        "train": {
+          "CYtoplasmicMembrane": 2304,
+          "Extracellular": 1112,
+          "Periplasmic": 527,
+          "OuterMembrane": 701,
+          "Cytoplasmic": 5907,
+          "Cellwall": 103
+        }
+      },
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:prot_train": 11695,
+        "llama-gene:prot_eva": 1298
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 12993
+      }
+    },
+    {
+      "task": "splice_site",
+      "modality": "dna",
+      "proposed_role": "held_out_task",
+      "source_file": "lg_splice_site.jsonl",
+      "source_sha256": "cc26ff6789b461a86efda6cea872144528b27e64f17e67921548eea58b0dfa22",
+      "classes": [
+        "Non-Splice Sites",
+        "Acceptor Sites",
+        "Donor Sites"
+      ],
+      "counts": {
+        "rows": 4562,
+        "valid_user_sequence_rows": 4562
+      },
+      "raw_splits": {
+        "test": 4562
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "test": {
+          "n": 4562,
+          "min": 400,
+          "median": 400,
+          "p95": 400,
+          "max": 400,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {},
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:dna_eva": 4562
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 4562
+      }
+    },
+    {
+      "task": "tf_prediction",
+      "modality": "dna",
+      "proposed_role": "held_out_task_conditional_on_label_provenance",
+      "source_file": "lg_tf_prediction.jsonl",
+      "source_sha256": "153ebd659d6d090000dca9185dcf5888ef5fd39befde1aa42771f4b032256ab9",
+      "classes": [
+        "Background Sequences",
+        "Binding Sites"
+      ],
+      "counts": {
+        "rows": 3437,
+        "valid_user_sequence_rows": 3437
+      },
+      "raw_splits": {
+        "test": 3437
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "test": {
+          "n": 3437,
+          "min": 101,
+          "median": 101,
+          "p95": 101,
+          "max": 101,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {},
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:dna_eva": 3437
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 3437
+      }
+    },
+    {
+      "task": "core_promoter_detection",
+      "modality": "dna",
+      "proposed_role": "related_domain_transfer_not_new_task_family",
+      "source_file": "lg_core_promoter_detection.jsonl",
+      "source_sha256": "572dd3b71872f78203b341d82ae07ffb06973fcffe72ce7268527d23e35e3f2d",
+      "classes": [
+        "Non-promoter",
+        "promoter"
+      ],
+      "counts": {
+        "rows": 5920,
+        "valid_user_sequence_rows": 5920
+      },
+      "raw_splits": {
+        "test": 5920
+      },
+      "errors": {},
+      "sequence_character_lengths": {
+        "test": {
+          "n": 5920,
+          "min": 70,
+          "median": 70,
+          "p95": 70,
+          "max": 70,
+          "over_512_characters": 0
+        }
+      },
+      "trainval_label_counts": {},
+      "trainval_conflicting_exact_rc_groups": 0,
+      "instruction_template_count": 1,
+      "within_task_cross_split_exact_rc_groups": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "sources": {
+        "llama-gene:dna_eva": 5920
+      },
+      "source_license_declarations": {
+        "Apache-2.0": 5920
+      }
+    }
+  ],
+  "cross_task_exact_rc_shared_groups": {
+    "fold_class:subcellular_loc": 55,
+    "fold_class:npp": 11,
+    "signal_peptide:subcellular_loc": 3
+  },
+  "cross_task_trainval_to_test_group_overlap": {
+    "subcellular_loc/train -> fold_class/test": 1,
+    "subcellular_loc/train -> signal_peptide/test": 1
+  },
+  "transfer_test_groups_overlapping_joint_trainval": {
+    "splice_site": 0,
+    "tf_prediction": 0,
+    "core_promoter_detection": 0
+  },
+  "limitations": [
+    "Raw counts precede deduplication, conflicts, homology and tokenizer eligibility.",
+    "No homology clustering or full-input token-length audit in this script.",
+    "NPP ontology and TF binding context require upstream semantic verification.",
+    "Core promoter is related-domain transfer, not an independent new task family.",
+    "Test-only tasks are not converted into supervised training data."
+  ]
+}

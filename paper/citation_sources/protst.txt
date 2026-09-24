@@ -1,0 +1,19 @@
+Verified bibliographic metadata
+Source: https://proceedings.mlr.press/v202/xu23t.html
+Source checked: 2026-09-23
+Packaged: 2026-09-24
+This record contains metadata, not a full web-page copy.
+
+@InProceedings{xu2023protst,
+  title = 	 {{P}rot{ST}: Multi-Modality Learning of Protein Sequences and Biomedical Texts},
+  author =       {Xu, Minghao and Yuan, Xinyu and Miret, Santiago and Tang, Jian},
+  booktitle = 	 {Proceedings of the 40th International Conference on Machine Learning},
+  pages = 	 {38749--38767},
+  year = 	 {2023},
+  editor = 	 {Krause, Andreas and Brunskill, Emma and Cho, Kyunghyun and Engelhardt, Barbara and Sabato, Sivan and Scarlett, Jonathan},
+  volume = 	 {202},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {23--29 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v202/xu23t/xu23t.pdf},
+  url = 	 {https://proceedings.mlr.press/v202/xu23t.html}}

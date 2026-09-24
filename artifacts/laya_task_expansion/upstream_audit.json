@@ -1,0 +1,470 @@
+{
+  "created_utc": "2026-09-24T02:48:43.985821+00:00",
+  "software": {
+    "pyarrow": "21.0.0",
+    "biopython": "1.87"
+  },
+  "status": "source_pool_audit_not_experiment_results",
+  "test_memberships_preserved": true,
+  "public_labels_read_for_provenance_checks": true,
+  "dna": [
+    {
+      "repository": "dnagpt/dna_promoter_300",
+      "source_sha256": "45daa614c9ba5487f6863ef9ab1faaf165fffb3c2d605f92ef6d291ce08bf438",
+      "task": "promoter_detection",
+      "rows": 59195,
+      "public_split": "train_only_pool",
+      "label_counts": {
+        "0": 29597,
+        "1": 29598
+      },
+      "character_lengths": {
+        "min": 300,
+        "median": 300,
+        "p95": 300,
+        "max": 300
+      },
+      "exact_unique_sequences": 59018,
+      "rc_unique_groups": 59015,
+      "conflicting_exact_groups": 15,
+      "conflicting_rc_groups": 15,
+      "legacy_rows": 21042,
+      "legacy_groups_found_by_split": {
+        "train": 16767,
+        "val": 2105,
+        "test": 2145
+      },
+      "upstream_groups_not_in_legacy_view": 37998,
+      "numeric_to_legacy_label_mapping_counts": {
+        "1": {
+          "promoter": 10534,
+          "Non-promoter": 2
+        },
+        "0": {
+          "Non-promoter": 10507,
+          "promoter": 5
+        }
+      }
+    },
+    {
+      "repository": "dnagpt/dna_core_promoter",
+      "source_sha256": "adc5842c1fd39e8c74ba5d0625bba0406230950363e176979a453af02cbf2b30",
+      "task": "core_promoter_detection",
+      "rows": 59196,
+      "public_split": "train_only_pool",
+      "label_counts": {
+        "0": 29598,
+        "1": 29598
+      },
+      "character_lengths": {
+        "min": 70,
+        "median": 70,
+        "p95": 70,
+        "max": 70
+      },
+      "exact_unique_sequences": 58934,
+      "rc_unique_groups": 58934,
+      "conflicting_exact_groups": 64,
+      "conflicting_rc_groups": 64,
+      "legacy_rows": 5920,
+      "legacy_groups_found_by_split": {
+        "test": 5918
+      },
+      "upstream_groups_not_in_legacy_view": 53016,
+      "numeric_to_legacy_label_mapping_counts": {
+        "0": {
+          "Non-promoter": 2977,
+          "promoter": 9
+        },
+        "1": {
+          "promoter": 2943,
+          "Non-promoter": 5
+        }
+      }
+    },
+    {
+      "repository": "dnagpt/dna_splice_site_prediction",
+      "source_sha256": "2de5b19de1c7e72e7f8192adef853d48787b602bc3ae1fb205f69e820508cc3c",
+      "task": "splice_site",
+      "rows": 45619,
+      "public_split": "train_only_pool",
+      "label_counts": {
+        "1": 9999,
+        "0": 10000,
+        "2": 25620
+      },
+      "character_lengths": {
+        "min": 400,
+        "median": 400,
+        "p95": 400,
+        "max": 400
+      },
+      "exact_unique_sequences": 44393,
+      "rc_unique_groups": 44393,
+      "conflicting_exact_groups": 1,
+      "conflicting_rc_groups": 1,
+      "legacy_rows": 4562,
+      "legacy_groups_found_by_split": {
+        "test": 4545
+      },
+      "upstream_groups_not_in_legacy_view": 39848,
+      "numeric_to_legacy_label_mapping_counts": {
+        "1": {
+          "Acceptor Sites": 1005
+        },
+        "2": {
+          "Donor Sites": 2508
+        },
+        "0": {
+          "Non-Splice Sites": 1049
+        }
+      }
+    },
+    {
+      "repository": "dnagpt/dna_transcription_factor_prediction",
+      "source_sha256": "e3a39ea742106b52d50293b7e39a28a4502ba2872f0b690a5858f83fabb22e03",
+      "task": "tf_prediction",
+      "rows": 34378,
+      "public_split": "train_only_pool",
+      "label_counts": {
+        "1": 17189,
+        "0": 17189
+      },
+      "character_lengths": {
+        "min": 101,
+        "median": 101,
+        "p95": 101,
+        "max": 101
+      },
+      "exact_unique_sequences": 34369,
+      "rc_unique_groups": 34369,
+      "conflicting_exact_groups": 0,
+      "conflicting_rc_groups": 0,
+      "legacy_rows": 3437,
+      "legacy_groups_found_by_split": {
+        "test": 3437
+      },
+      "upstream_groups_not_in_legacy_view": 30932,
+      "numeric_to_legacy_label_mapping_counts": {
+        "1": {
+          "Binding Sites": 1774
+        },
+        "0": {
+          "Background Sequences": 1663
+        }
+      }
+    }
+  ],
+  "gene_lan_transfer": [
+    {
+      "config": "dna_protein_pair",
+      "source_sha256": "4bc85d2752236bdf6035de550ff54f933ca8cd0f360bcefb4561541d70aa18f1",
+      "rows": 4000,
+      "label_counts": {
+        "1": 2000,
+        "0": 2000
+      },
+      "length_sentence1": {
+        "min": 96,
+        "median": 933,
+        "p95": 1161,
+        "max": 1797
+      },
+      "length_sentence2": {
+        "min": 32,
+        "median": 311,
+        "p95": 387,
+        "max": 599
+      },
+      "unique_ordered_pairs": 3976,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 7579,
+      "frame0_translation_diagnostic": {
+        "1": {
+          "n": 2000,
+          "frame0_standard_code_exact": 2000,
+          "exact_ignoring_first_residue": 2000
+        },
+        "0": {
+          "n": 2000,
+          "frame0_standard_code_exact": 0,
+          "exact_ignoring_first_residue": 0
+        }
+      },
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "dna_protein_pair_rand",
+      "source_sha256": "c72adbf4fc94344660a1bd8823a23c9b15f2bc3898fc0e3e9bd46fe5f79b2b0e",
+      "rows": 16000,
+      "label_counts": {
+        "1": 8000,
+        "0": 8000
+      },
+      "length_sentence1": {
+        "min": 68,
+        "median": 993,
+        "p95": 3681,
+        "max": 65535
+      },
+      "length_sentence2": {
+        "min": 22,
+        "median": 323,
+        "p95": 1037,
+        "max": 20404
+      },
+      "unique_ordered_pairs": 15893,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 28846,
+      "frame0_translation_diagnostic": {
+        "1": {
+          "n": 8000,
+          "frame0_standard_code_exact": 4368,
+          "exact_ignoring_first_residue": 4797
+        },
+        "0": {
+          "n": 8000,
+          "frame0_standard_code_exact": 0,
+          "exact_ignoring_first_residue": 0
+        }
+      },
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "dna_protein_pair_rand_v2",
+      "source_sha256": "4ef8b909f7d63bbc7bb78605551c9ca207eaf362ae1fe793a58d345b8f384957",
+      "rows": 16000,
+      "label_counts": {
+        "1": 8000,
+        "0": 8000
+      },
+      "length_sentence1": {
+        "min": 34,
+        "median": 987,
+        "p95": 3204,
+        "max": 47496
+      },
+      "length_sentence2": {
+        "min": 11,
+        "median": 328,
+        "p95": 1032,
+        "max": 15831
+      },
+      "unique_ordered_pairs": 15872,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 26366,
+      "frame0_translation_diagnostic": {
+        "1": {
+          "n": 8000,
+          "frame0_standard_code_exact": 8000,
+          "exact_ignoring_first_residue": 8000
+        },
+        "0": {
+          "n": 8000,
+          "frame0_standard_code_exact": 0,
+          "exact_ignoring_first_residue": 0
+        }
+      },
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "dna_sim_pair_150bp",
+      "source_sha256": "b369abac3b0cca29f6687cd460d87d09b847bc5ab5ec36e749541740f5b37d24",
+      "rows": 20000,
+      "label_counts": {
+        "1": 10000,
+        "0": 10000
+      },
+      "length_sentence1": {
+        "min": 23,
+        "median": 150,
+        "p95": 150,
+        "max": 150
+      },
+      "length_sentence2": {
+        "min": 23,
+        "median": 150,
+        "p95": 161,
+        "max": 177
+      },
+      "unique_ordered_pairs": 19928,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 35033,
+      "frame0_translation_diagnostic": {},
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "dna_sim_pair_50bp",
+      "source_sha256": "82746dc86747486678d9eaa1c4ab5236a3b2a2e24cf3b1cf78bc0930cb2f91d2",
+      "rows": 20000,
+      "label_counts": {
+        "1": 10000,
+        "0": 10000
+      },
+      "length_sentence1": {
+        "min": 23,
+        "median": 51,
+        "p95": 51,
+        "max": 51
+      },
+      "length_sentence2": {
+        "min": 22,
+        "median": 50,
+        "p95": 55,
+        "max": 61
+      },
+      "unique_ordered_pairs": 19899,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 34933,
+      "frame0_translation_diagnostic": {},
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "dna_sim_pair_simple_150bp",
+      "source_sha256": "079c61aed989f4e2f0732248efa3549f786d074152d1f6bf6c7913c4f5904f89",
+      "rows": 18000,
+      "label_counts": {
+        "1": 9000,
+        "0": 9000
+      },
+      "length_sentence1": {
+        "min": 150,
+        "median": 150,
+        "p95": 150,
+        "max": 150
+      },
+      "length_sentence2": {
+        "min": 2,
+        "median": 141,
+        "p95": 161,
+        "max": 165
+      },
+      "unique_ordered_pairs": 17302,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 29323,
+      "frame0_translation_diagnostic": {},
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "protein_sim_pair_150bp",
+      "source_sha256": "ef507116fa391b80f61350e283bfd4b15efa2e15cb645f5110f23b42e315ef94",
+      "rows": 18000,
+      "label_counts": {
+        "1": 9000,
+        "0": 9000
+      },
+      "length_sentence1": {
+        "min": 21,
+        "median": 50,
+        "p95": 50,
+        "max": 50
+      },
+      "length_sentence2": {
+        "min": 21,
+        "median": 50,
+        "p95": 54,
+        "max": 164
+      },
+      "unique_ordered_pairs": 17900,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 31803,
+      "frame0_translation_diagnostic": {},
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    },
+    {
+      "config": "protein_sim_pair_450bp",
+      "source_sha256": "df474326256f9613e47e568e4e534509759991c273f5ad2d58bf9172faceb54f",
+      "rows": 18000,
+      "label_counts": {
+        "1": 9000,
+        "0": 9000
+      },
+      "length_sentence1": {
+        "min": 21,
+        "median": 150,
+        "p95": 150,
+        "max": 150
+      },
+      "length_sentence2": {
+        "min": 21,
+        "median": 150,
+        "p95": 161,
+        "max": 182
+      },
+      "unique_ordered_pairs": 17936,
+      "conflicting_ordered_pairs": 0,
+      "unique_component_sequences": 31967,
+      "frame0_translation_diagnostic": {},
+      "semantic_status": "binary paired data; construction and label semantics require provenance; diagnostic is not an independent biological benchmark"
+    }
+  ],
+  "gene_config_shared_component_sequences": {
+    "dna_protein_pair : dna_protein_pair_rand_v2": 12,
+    "dna_protein_pair : protein_sim_pair_450bp": 4,
+    "dna_protein_pair : dna_protein_pair_rand": 4,
+    "dna_protein_pair_rand : dna_protein_pair_rand_v2": 12526,
+    "dna_protein_pair_rand : protein_sim_pair_450bp": 716,
+    "dna_protein_pair_rand_v2 : protein_sim_pair_450bp": 759,
+    "dna_protein_pair_rand : dna_sim_pair_150bp": 39,
+    "dna_protein_pair_rand_v2 : dna_sim_pair_150bp": 34,
+    "dna_protein_pair_rand : protein_sim_pair_150bp": 20,
+    "protein_sim_pair_150bp : protein_sim_pair_450bp": 44,
+    "dna_protein_pair_rand_v2 : protein_sim_pair_150bp": 25,
+    "dna_protein_pair_rand_v2 : dna_sim_pair_50bp": 1,
+    "dna_sim_pair_150bp : dna_sim_pair_50bp": 1
+  },
+  "protein_homology": [
+    {
+      "task": "protein_homology_std",
+      "source_sha256": "80ddcbd12676b81cd04b4e8e33ff3693368dcbf0f8792c58a538c9327e5c485b",
+      "rows": 16168,
+      "raw_splits": {
+        "train": 14206,
+        "test": 1110,
+        "val": 852
+      },
+      "errors": {},
+      "combined_character_lengths": {
+        "min": 80,
+        "median": 298,
+        "p95": 472,
+        "max": 500
+      },
+      "shared_component_sequences": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "unordered_pairs_in_multiple_splits": 0
+    },
+    {
+      "task": "protein_homology_remote",
+      "source_sha256": "5ed8a648709da5ca1074bcdf2288eddfcc63cdbb78b801e2c7e8dd04fb21a043",
+      "rows": 25647,
+      "raw_splits": {
+        "train": 24821,
+        "test": 404,
+        "val": 422
+      },
+      "errors": {},
+      "combined_character_lengths": {
+        "min": 81,
+        "median": 246,
+        "p95": 422,
+        "max": 499
+      },
+      "shared_component_sequences": {
+        "train:val": 0,
+        "train:test": 0,
+        "val:test": 0
+      },
+      "unordered_pairs_in_multiple_splits": 0
+    }
+  ],
+  "limitations": [
+    "Paired examples must be split by component/parent clusters, not by pair rows.",
+    "A direct standard-code translation diagnostic is not validation of source construction or alternative genetic codes.",
+    "All upstream DNA and gene_lan_transfer configs have one train pool; a new grouped protocol is needed.",
+    "Synthetic sequence similarity must not be relabeled as natural homology."
+  ]
+}

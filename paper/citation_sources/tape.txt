@@ -1,0 +1,9 @@
+Verified source: https://github.com/songlab-cal/tape
+Retrieved: 2026-09-24
+Metadata normalized to ASCII-compatible BibTeX:
+@inproceedings{rao2019tape,
+ title={Evaluating Protein Transfer Learning with {TAPE}},
+ author={Rao, Roshan and Bhattacharya, Nicholas and Thomas, Neil and Duan, Yan and Chen, Xi and Canny, John and Abbeel, Pieter and Song, Yun S.},
+ booktitle={Advances in Neural Information Processing Systems},
+ year={2019}, url={https://arxiv.org/abs/1906.08230}
+}

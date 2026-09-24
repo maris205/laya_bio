@@ -1,0 +1,14 @@
+Verified bibliographic metadata
+Source: https://raw.githubusercontent.com/NandhaKishorM/laya/573e5b62696ba441230cd6be71d593331b5d23af/README.md
+Source checked: 2026-09-23
+Packaged: 2026-09-24
+This record contains metadata, not a full web-page copy.
+
+@misc{laya2026,
+ author = {{NandhaKishorM}},
+ title = {{Laya}: Typed-Decision Encoder Software},
+ year = {2026},
+ howpublished = {Software repository and model card},
+ url = {https://github.com/NandhaKishorM/laya},
+ note = {Source revision 573e5b62696ba441230cd6be71d593331b5d23af; accessed 2026-09-23}
+}

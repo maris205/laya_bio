@@ -1,0 +1,14 @@
+Verified bibliographic metadata
+Source: https://huggingface.co/datasets/dnagpt/biopaws-2/raw/main/README.md
+Source checked: 2026-09-23
+Packaged: 2026-09-24
+This record contains metadata, not a full web-page copy.
+
+@misc{wang2026biopaws,
+ author = {Wang, Liang},
+ title = {{BioPAWS-2}: A Unified Chat-Form Instruction-Tuning Dataset and Benchmark for Biological Foundation Models},
+ year = {2026},
+ howpublished = {Hugging Face dataset card},
+ url = {https://huggingface.co/datasets/dnagpt/biopaws-2},
+ note = {Dataset documentation; local experimental files identified by SHA-256}
+}

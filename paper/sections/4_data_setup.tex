@@ -1,4 +1,7 @@
-\section{Data and evaluation protocol}
+\section{Initial experimental design and evidence scope}
+\paragraph{Claim-driven comparisons.}
+We organize the completed study around shared-parameter biological prediction and decision reliability. Candidate versus B1 compares a shared scorer with task-specific output matrices; importantly, B1 already shares its encoder across tasks. The text-only control tests whether the observed performance requires sequences. Candidate permutations test decision stability while leaving valid labels unchanged. Raw versus biological BPE tests a secondary representation choice. These comparisons cannot isolate general instruction understanding: task identity is confounded with DNA/protein modality, and each task has one fixed template. The prospective design in Appendix~\ref{sec:prospective} adds generative controls and same-modality task transfer; those experiments have not been run.
+
 \begin{table}[t]
 \centering\small
 \input{tables/data.tex}

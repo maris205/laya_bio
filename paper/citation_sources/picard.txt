@@ -1,0 +1,1 @@
+Torsten Scholak, Nathan Schucher, Dzmitry Bahdanau. PICARD: Parsing Incrementally for Constrained Auto-Regressive Decoding from Language Models. EMNLP 2021, pp. 9895–9901. DOI 10.18653/v1/2021.emnlp-main.779. Verified 2026-09-24.
