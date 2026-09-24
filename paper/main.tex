@@ -1,0 +1,42 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,graphicx,microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+\setlength{\tabcolsep}{5pt}
+\input{math_commands.tex}
+\title{Laya-Bio: Candidate Scoring and Reliability\protect\\on Short Biological Sequences}
+\author{Liang Wang$^{1,*}$\\[4pt]
+\small $^1$School of Artificial Intelligence and Automation,\\
+\small Huazhong University of Science and Technology, 430070, P.R. China}
+\hypersetup{pdfauthor={Liang Wang},pdftitle={Laya-Bio: Candidate Scoring and Reliability on Short Biological Sequences}}
+\date{Working manuscript, September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{sections/0_abstract.tex}
+\end{abstract}
+\input{sections/1_introduction.tex}
+\input{sections/2_related_work.tex}
+\input{sections/3_method.tex}
+\input{sections/4_data_setup.tex}
+\input{sections/5_results.tex}
+\input{sections/6_limitations.tex}
+\input{sections/7_conclusion.tex}
+\label{main_end}
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\input{sections/A_reproducibility.tex}
+\end{document}

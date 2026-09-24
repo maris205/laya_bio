@@ -1,0 +1,14 @@
+\begin{tabular}{llrrrr}
+\toprule
+Model & Task & NLL (raw) & NLL (cal.) & Brier (cal.) & ECE (cal.) \\
+\midrule
+Raw candidate & DNA & $0.243 \pm 0.014$ & $0.222 \pm 0.010$ & $0.133 \pm 0.007$ & $0.011 \pm 0.005$ \\
+BioBPE candidate & DNA & $0.314 \pm 0.011$ & $0.249 \pm 0.002$ & $0.147 \pm 0.002$ & $0.022 \pm 0.001$ \\
+BioBPE fixed head (B1) & DNA & $0.300 \pm 0.012$ & $0.279 \pm 0.008$ & $0.165 \pm 0.005$ & $0.018 \pm 0.001$ \\
+Text-only candidate & DNA & $0.693 \pm 0.000$ & $0.693 \pm 0.000$ & $0.500 \pm 0.000$ & $0.004 \pm 0.003$ \\
+Raw candidate & Protein & $1.190 \pm 0.034$ & $1.044 \pm 0.024$ & $0.529 \pm 0.009$ & $0.054 \pm 0.011$ \\
+BioBPE candidate & Protein & $1.184 \pm 0.023$ & $1.057 \pm 0.014$ & $0.539 \pm 0.004$ & $0.049 \pm 0.002$ \\
+BioBPE fixed head (B1) & Protein & $1.241 \pm 0.059$ & $1.236 \pm 0.063$ & $0.619 \pm 0.037$ & $0.042 \pm 0.014$ \\
+Text-only candidate & Protein & $1.630 \pm 0.001$ & $1.628 \pm 0.001$ & $0.781 \pm 0.000$ & $0.009 \pm 0.007$ \\
+\bottomrule
+\end{tabular}

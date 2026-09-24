@@ -1,0 +1,15 @@
+% Canonical figure environments are included in sections/5_results.tex.
+% Standalone snippets for reuse; do not also input this file into main.tex.
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.91\linewidth]{figures/sequence_diagnostics.pdf}
+\caption{Dev original-label matching after sequence removal and composition-preserving shuffling. Error bars are sample SD across three seeds; shuffled values first average three replicas. Intervention labels are not assumed biologically valid.}
+\label{fig:sequence}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.91\linewidth]{figures/candidate_order.pdf}
+\caption{Mean dev prediction changes after one nonidentity candidate permutation per example. Correct-to-wrong and wrong-to-correct changes can cancel in accuracy while individual predictions remain unstable.}
+\label{fig:order}
+\end{figure}

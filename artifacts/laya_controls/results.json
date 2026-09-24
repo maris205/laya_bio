@@ -1,0 +1,48 @@
+{
+  "no_cpt": true,
+  "test_access": false,
+  "completed_seeds": {
+    "candidate": [
+      20260922,
+      20260923,
+      20260924
+    ],
+    "b1": [
+      20260922,
+      20260923,
+      20260924
+    ],
+    "text_only": [
+      20260922,
+      20260923,
+      20260924
+    ]
+  },
+  "paired_accuracy_delta_control_minus_candidate": {
+    "b1": {
+      "promoter_detection": {
+        "mean": -0.013307984790874547,
+        "std": 0.008712121093071928,
+        "n": 3
+      },
+      "fold_class": {
+        "mean": -0.07307415406767458,
+        "std": 0.043268478621502404,
+        "n": 3
+      }
+    },
+    "text_only": {
+      "promoter_detection": {
+        "mean": -0.4049429657794677,
+        "std": 0.005782093659979291,
+        "n": 3
+      },
+      "fold_class": {
+        "mean": -0.2973362131029518,
+        "std": 0.008728837763126083,
+        "n": 3
+      }
+    }
+  },
+  "report": "/root/autodl-tmp/jev_gene/research/laya_controls_results.md"
+}

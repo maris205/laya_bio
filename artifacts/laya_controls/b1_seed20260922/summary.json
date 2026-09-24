@@ -1,0 +1,272 @@
+{
+  "formal": true,
+  "smoke_only": false,
+  "kind": "b1",
+  "condition": "full_bpe",
+  "seed": 20260922,
+  "no_cpt": true,
+  "test_access": false,
+  "evaluated_splits": [
+    "selection_dev",
+    "calibration"
+  ],
+  "class_names": {
+    "promoter_detection": [
+      "Non-promoter",
+      "promoter"
+    ],
+    "fold_class": [
+      "All Alpha",
+      "All Beta",
+      "Alpha and Beta",
+      "Alpha plus Beta",
+      "Multi-domain Proteins",
+      "Mixed Structures",
+      "Small Proteins and Peptides"
+    ]
+  },
+  "n_rows": {
+    "train": 32050,
+    "selection_dev": 1978,
+    "calibration": 1986
+  },
+  "item_stats": {
+    "train": {
+      "n": 32050,
+      "length_p50": 73,
+      "length_p95": 151,
+      "length_max": 239,
+      "truncated_count": 0,
+      "membership_sha256": "be3d2bbe683b21db4259440920690eb4c58ba4a9020b8b2aa0dafa46cd9ace91"
+    },
+    "selection_dev": {
+      "n": 1978,
+      "length_p50": 73,
+      "length_p95": 155,
+      "length_max": 212,
+      "truncated_count": 0,
+      "membership_sha256": "e6f66b67ad95af968cef7d56d75b2fb1a63a81bd0ad865b79e80f383c0464df9"
+    },
+    "calibration": {
+      "n": 1986,
+      "length_p50": 73,
+      "length_p95": 148,
+      "length_max": 223,
+      "truncated_count": 0,
+      "membership_sha256": "cf5f102a8d7068719392be615ccf3c192dd0fcc750c5c729e8eb69c1cfc95219"
+    }
+  },
+  "training": {
+    "updates": 3005,
+    "epochs_requested": 3,
+    "warmup_fraction": 0.05,
+    "warmup_steps": 151,
+    "micro_batch": 8,
+    "grad_accum": 4,
+    "examples_consumed": 96160,
+    "effective_batch": 32,
+    "loss_first": 1.7717686593532562,
+    "loss_last": 0.8367663025856018,
+    "loss_min": 0.3254138045012951,
+    "loss_max": 1.8100906312465668,
+    "grad_norm_max": 684.5901489257812,
+    "seconds": 2566.289766550064,
+    "finite": true,
+    "amp_dtype": "torch.bfloat16",
+    "lr_final": 0.0,
+    "peak_allocated_gib": 8.41313886642456,
+    "peak_reserved_gib": 9.25
+  },
+  "trainable_parameters": 449709065,
+  "embedding_trainable": true,
+  "embedding_receives_sequence_supervision": true,
+  "expansion": {
+    "old_vocab_size": 50368,
+    "new_vocab_size": 78367,
+    "added_by_modality": {
+      "dna": 19999,
+      "protein": 8000
+    },
+    "raw_fragment_mean_initialization": true,
+    "old_rows_unchanged_at_initialization": true,
+    "maximum_initialization_error": 0.0,
+    "fallback_initializations": 0
+  },
+  "new_embedding_gradient_probe": {
+    "fold_class": {
+      "active_new_ids": 101,
+      "gradient_norm": 2.4584169387817383
+    },
+    "promoter_detection": {
+      "active_new_ids": 100,
+      "gradient_norm": 0.08528628945350647
+    }
+  },
+  "evaluation": {
+    "selection_dev": {
+      "raw": {
+        "fold_class": {
+          "n": 926,
+          "accuracy": 0.46652267818574517,
+          "balanced_accuracy": 0.3566594142881115,
+          "macro_f1": 0.34597404731976394,
+          "mcc": 0.3043415519947529,
+          "nll": 1.2563874607217056,
+          "brier": 0.6375663657059947,
+          "ece15": 0.032126147164272846
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "accuracy": 0.8821292775665399,
+          "balanced_accuracy": 0.8820644060567284,
+          "macro_f1": 0.8821020056975113,
+          "mcc": 0.7642614258811602,
+          "nll": 0.3084002831823725,
+          "brier": 0.18208084869033897,
+          "ece15": 0.033810004186872855
+        },
+        "all": {
+          "n": 1978,
+          "accuracy": 0.6875631951466128,
+          "balanced_accuracy": 0.6360962450973051,
+          "macro_f1": 0.6311138917148045,
+          "mcc": null,
+          "nll": 0.7522001448615547,
+          "brier": 0.39531623228816365,
+          "ece15": 0.03302170711764757
+        }
+      },
+      "calibrated": {
+        "fold_class": {
+          "n": 926,
+          "accuracy": 0.46652267818574517,
+          "balanced_accuracy": 0.3566594142881115,
+          "macro_f1": 0.34597404731976394,
+          "mcc": 0.3043415519947529,
+          "nll": 1.256422030167178,
+          "brier": 0.637630159373339,
+          "ece15": 0.022160922510399438
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "accuracy": 0.8821292775665399,
+          "balanced_accuracy": 0.8820644060567284,
+          "macro_f1": 0.8821020056975113,
+          "mcc": 0.7642614258811602,
+          "nll": 0.30177548449760366,
+          "brier": 0.17998531207124527,
+          "ece15": 0.017948618158888107
+        },
+        "all": {
+          "n": 1978,
+          "accuracy": 0.6875631951466128,
+          "balanced_accuracy": 0.6360962450973051,
+          "macro_f1": 0.6311138917148045,
+          "mcc": null,
+          "nll": 0.7486929270102558,
+          "brier": 0.3942315853784944,
+          "ece15": 0.019920606950343867
+        }
+      }
+    },
+    "calibration": {
+      "raw": {
+        "fold_class": {
+          "n": 933,
+          "accuracy": 0.46730975348338694,
+          "balanced_accuracy": 0.37005224298910105,
+          "macro_f1": 0.36088536212690764,
+          "mcc": 0.30666935946151874,
+          "nll": 1.263451316282795,
+          "brier": 0.6430246587261297,
+          "ece15": 0.029809045980312032
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "accuracy": 0.8841405508072174,
+          "balanced_accuracy": 0.8840882195892803,
+          "macro_f1": 0.8841170357861922,
+          "mcc": 0.7682595970565115,
+          "nll": 0.2883613403414627,
+          "brier": 0.16936781246309845,
+          "ece15": 0.03693505866103942
+        },
+        "all": {
+          "n": 1986,
+          "accuracy": 0.6883182275931521,
+          "balanced_accuracy": 0.6426000191018849,
+          "macro_f1": 0.6383088023903651,
+          "mcc": null,
+          "nll": 0.7464474166522698,
+          "brier": 0.3918863610851569,
+          "ece15": 0.033587339712842716
+        }
+      },
+      "calibrated": {
+        "fold_class": {
+          "n": 933,
+          "accuracy": 0.46730975348338694,
+          "balanced_accuracy": 0.37005224298910105,
+          "macro_f1": 0.36088536212690764,
+          "mcc": 0.30666935946151874,
+          "nll": 1.2632988540214547,
+          "brier": 0.6429458932107791,
+          "ece15": 0.03152505843452794
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "accuracy": 0.8841405508072174,
+          "balanced_accuracy": 0.8840882195892803,
+          "macro_f1": 0.8841170357861922,
+          "mcc": 0.7682595970565115,
+          "nll": 0.2815943994062165,
+          "brier": 0.16645834550276611,
+          "ece15": 0.03330252256528017
+        },
+        "all": {
+          "n": 1986,
+          "accuracy": 0.6883182275931521,
+          "balanced_accuracy": 0.6426000191018849,
+          "macro_f1": 0.6383088023903651,
+          "mcc": null,
+          "nll": 0.7427878818614116,
+          "brier": 0.39030672516619824,
+          "ece15": 0.03246749032258539
+        }
+      }
+    }
+  },
+  "calibration_temperature": {
+    "promoter_detection": {
+      "temperature": 1.213107791073,
+      "objective": 0.2815943994062165,
+      "nll_before": 0.2883613403414627,
+      "nll_after": 0.2815943994062165,
+      "success": true,
+      "n_iter": 44,
+      "bounds": [
+        0.05,
+        20.0
+      ]
+    },
+    "fold_class": {
+      "temperature": 1.0228319311565037,
+      "objective": 1.2632988540214547,
+      "nll_before": 1.263451316282795,
+      "nll_after": 1.2632988540214547,
+      "success": true,
+      "n_iter": 44,
+      "bounds": [
+        0.05,
+        20.0
+      ]
+    }
+  },
+  "calibration_temperature_fit_on": "calibration",
+  "checkpoint": "/root/autodl-tmp/jev_gene/artifacts/laya_controls/b1_seed20260922/checkpoint",
+  "checkpoint_reload_logits_match": true,
+  "checkpoint_reload_input_ids_match": true,
+  "representation_sha256": "ebd01d5e75dcc150df6839d18ad304842573daea9e8719d42fb2c9659b32dcda",
+  "selection_policy": "final fixed-budget checkpoint",
+  "b1_architecture": "pretrained encoder + contextual head + readout MLP; CLS pool; new 2/7-class output matrices"
+}

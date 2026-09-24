@@ -1,0 +1,74 @@
+[
+  {
+    "name": "modernbert",
+    "url": "https://aclanthology.org/2025.acl-long.127.bib",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/modernbert.txt",
+    "sha256": "cc67cf3df10b2b1137db5c064ee0f3008cba66d47f59b88c018e8072c8a88991",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "protst",
+    "url": "https://proceedings.mlr.press/v202/xu23t.html",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/protst.txt",
+    "sha256": "a6756698924946f9ef6785f66720cc17c9597be32e2ad90769b6bf3f6cc7e4f0",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "guo",
+    "url": "https://proceedings.mlr.press/v70/guo17a.html",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/guo.txt",
+    "sha256": "fcd644b81c1d06d034060e3ff8079ccc6acc2213dbf846043b92059ce10d26f8",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "biotranslator",
+    "url": "https://api.crossref.org/works/10.1038/s41467-023-36476-2/transform/application/x-bibtex",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/biotranslator.txt",
+    "sha256": "087fdb1227ea344f20ffc0c71e486496cb25cd6e5e81515b4eaff6821e289570",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "chatnt",
+    "url": "https://api.crossref.org/works/10.1038/s42256-025-01047-1/transform/application/x-bibtex",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/chatnt.txt",
+    "sha256": "8aa61fc1cdd043cee0ecb2811df697b00734b7a59aad84eaf7cd9847f0a9c0b3",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "dnabert2",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/5845-/bibtex",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/dnabert2.txt",
+    "sha256": "4ef3f3691b9132dbbda57ac059f4ea21904c1fcb892bcf01333cf1c2b3baccfd",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "llamagene",
+    "url": "https://export.arxiv.org/api/query?id_list=2412.00471",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/llamagene.txt",
+    "sha256": "af0955034c038cf96a1d9bbb9425e11b1a7f1d0cd40b808556fec677a2cfa950",
+    "kind": "verified scholarly metadata"
+  },
+  {
+    "name": "biopaws",
+    "url": "https://huggingface.co/datasets/dnagpt/biopaws-2/raw/main/README.md",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/biopaws.txt",
+    "sha256": "eae6b41fd3740416d4831c6c941f1cbff80cf2ba8489ca4e981a47e121a34653",
+    "kind": "software/dataset documentation"
+  },
+  {
+    "name": "laya",
+    "url": "https://raw.githubusercontent.com/NandhaKishorM/laya/573e5b62696ba441230cd6be71d593331b5d23af/README.md",
+    "retrieved_date": "2026-09-23",
+    "saved_path": "paper/citation_sources/laya.txt",
+    "sha256": "c9ab5604180d03a89514786b7f60fcd805909cf932a22672c511898a782ad682",
+    "kind": "software/dataset documentation"
+  }
+]

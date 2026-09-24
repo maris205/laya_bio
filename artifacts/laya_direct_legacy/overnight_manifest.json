@@ -1,0 +1,20 @@
+{
+  "seeds": [
+    20260922,
+    20260923,
+    20260924
+  ],
+  "conditions": [
+    "raw",
+    "full_bpe"
+  ],
+  "additional_jobs": 4,
+  "poll_seconds": 60,
+  "no_cpt": true,
+  "test_access": false,
+  "stop_after": "three complete matched seed pairs",
+  "hashes": {
+    "scripts/laya_overnight.py": "f0f9e33b2544239d640acb6bd1edf7e4d5aaa13ce1e9d81ab70061459e03fb6b",
+    "artifacts/laya_direct_legacy/frozen_pair/run_manifest.json": "f739e47b3ff1facae7724261578bb5977dacd440c8fdffae5d8e85f0107e3ecf"
+  }
+}

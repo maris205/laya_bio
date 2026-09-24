@@ -1,0 +1,461 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-22T12:39:20.168787+00:00",
+  "seed": 20260922,
+  "validation_fraction_selection_dev": 0.5,
+  "schema": [
+    "id",
+    "task",
+    "modality",
+    "context",
+    "sequence",
+    "choices",
+    "label",
+    "source_split",
+    "split",
+    "sequence_sha256",
+    "group_id"
+  ],
+  "policy": [
+    "Normalize the final nonempty user-message line with strip and uppercase; preserve sequence orientation.",
+    "Validate all rows and stop on a schema/alphabet error rather than silently dropping malformed rows.",
+    "Primary identity is SHA-256 of the normalized exact sequence.",
+    "For DNA only, a partition group is SHA-256 of min(sequence, reverse_complement(sequence)); this does not imply label equivalence.",
+    "Using train+val only, exclude every exact sequence with conflicting labels and every DNA RC group with conflicting labels; never majority-vote or relabel.",
+    "Within each source split retain the first exact-sequence occurrence in source-line order; distinct RC sequences with consistent train+val labels can coexist in one group.",
+    "Retain train first, then exclude validation records whose exact/RC partition group is in retained train.",
+    "Split retained val at group level, stratified by canonical label, into approximately 50% selection_dev and 50% calibration using a fixed seed; each class appears in both.",
+    "Test is processed only after training and validation membership is fixed. Deduplicate test by exact sequence and exclude test group overlap with retained train/val; no test labels affect any exclusion or partition.",
+    "Test labels are converted to canonical indices only for an eventual locked evaluation; no test label histogram, conflict analysis, model evaluation, or performance access is performed here.",
+    "Raw files are never modified. Source provenance and historical clustering summaries are documented; no homology-independence claim is made."
+  ],
+  "script_sha256": "2e13133add691fd9151abe058f7b774208d76de4232bdc43f9599c962760687f",
+  "tasks": {
+    "promoter_detection": {
+      "task": "promoter_detection",
+      "modality": "dna",
+      "choices": [
+        "Non-promoter",
+        "promoter"
+      ],
+      "input": {
+        "path": "data/03_sft_biopaws2/jsonl/lg_promoter_detection.jsonl",
+        "sha256": "ec37e887c1430751235a4564b84870428360bfb8c0f34162c5ea9f60373a59ef",
+        "rows": 21042,
+        "split_counts": {
+          "test": 2147,
+          "train": 16786,
+          "val": 2109
+        }
+      },
+      "source_metadata": {
+        "field_counts": {
+          "answer_short": 21042,
+          "choices": 21042,
+          "id": 21042,
+          "images": 21042,
+          "license": 21042,
+          "messages": 21042,
+          "metric": 21042,
+          "modality": 21042,
+          "source": 21042,
+          "split": 21042,
+          "task_family": 21042,
+          "task_id": 21042
+        },
+        "source_counts": {
+          "llama-gene:dna_eva": 5920,
+          "llama-gene:dna_train": 15122
+        },
+        "source_by_split": {
+          "train": {
+            "llama-gene:dna_eva": 4730,
+            "llama-gene:dna_train": 12056
+          },
+          "val": {
+            "llama-gene:dna_eva": 605,
+            "llama-gene:dna_train": 1504
+          },
+          "test": {
+            "llama-gene:dna_eva": 585,
+            "llama-gene:dna_train": 1562
+          }
+        },
+        "row_level_group_ids_found": false,
+        "homology_independence_verified": false,
+        "historical_summary_path": "data/03_sft_biopaws2/docs/leakage_stats.json",
+        "historical_summary_sha256": "c27891bb8cdc364f7d7d7801a43a48d99621897b6e3811798f73a5b4488948ed",
+        "historical_task_summary": {
+          "n_rows": 21042,
+          "exact": {
+            "unique_seqs": 21018,
+            "exact_cross_split_dups": 0,
+            "test_seqs": 2145,
+            "test_exact_in_train": 0,
+            "test_exact_leak_rate": 0.0
+          },
+          "mmseqs": {
+            "n_seqs_clustered": 21018,
+            "n_clusters": 17145,
+            "min_seq_id": 0.5,
+            "coverage": 0.5,
+            "test_clusters": 1758,
+            "test_clusters_sharing_train": 23,
+            "homology_leak_rate": 0.0131
+          }
+        },
+        "historical_row_count_matches": true,
+        "historical_summary_current_sequence_hashes_verified": false,
+        "scope": "Historical aggregate only; no row-level membership or per-input hash binding. Not used for partitioning, model choices, or claims of homology independence."
+      },
+      "audit": {
+        "raw_cross_split_exact_overlap": {
+          "train__val": 0,
+          "train__test": 0,
+          "val__test": 0
+        },
+        "raw_cross_split_partition_group_overlap": {
+          "train__val": 0,
+          "train__test": 0,
+          "val__test": 0
+        },
+        "raw_groups_with_distinct_rc_sequences": 0,
+        "train_val_exact_label_conflict_hashes": [
+          "67e77cc2a3bffe882c8963b8c8c999eb6278cb099c3e5fe8fe00c3ce3c940efa",
+          "fef7e37e209eacf48c5afbbd2860ed77a0097886467ed07527b9a1bf31ee9477"
+        ],
+        "train_val_partition_label_conflict_group_ids": [
+          "promoter_detection:156c031520f09dbe9897f73cc2fd4dd713ac2b45f739590fe610d6ef91e1ad70",
+          "promoter_detection:67e77cc2a3bffe882c8963b8c8c999eb6278cb099c3e5fe8fe00c3ce3c940efa"
+        ],
+        "train_val_additional_conflicting_rc_group_ids": [],
+        "final_cross_split_partition_group_overlap": {
+          "train__selection_dev": 0,
+          "train__calibration": 0,
+          "train__test": 0,
+          "selection_dev__calibration": 0,
+          "selection_dev__test": 0,
+          "calibration__test": 0
+        },
+        "test_label_statistics_computed": false,
+        "test_used_to_filter_train_val": false
+      },
+      "validation_stratification": {
+        "0": {
+          "source_val_rows": 1042,
+          "group_count": 1042,
+          "target_dev_rows": 521,
+          "selection_dev_rows": 521,
+          "calibration_rows": 521
+        },
+        "1": {
+          "source_val_rows": 1063,
+          "group_count": 1063,
+          "target_dev_rows": 531,
+          "selection_dev_rows": 531,
+          "calibration_rows": 532
+        }
+      },
+      "files": {
+        "train": {
+          "path": "artifacts/laya_formal_data/promoter_detection_train.jsonl",
+          "sha256": "06e25601806907372b4d37a934f1a833366996131dbdcf22e7660e19db443b07",
+          "rows": 16766,
+          "unique_exact_sequences": 16766,
+          "partition_groups": 16766,
+          "ordered_ids_sha256": "ef78799642b0015109211fbf8bf72fc0244e895afb73e77e5c5bec2ca1bb9dfa",
+          "sorted_sequence_hashes_sha256": "47c17b8e3bc8fe049d94d5767e25f70df5a656ef49691c281f8929c06d7adad1",
+          "label_counts": {
+            "0": 8395,
+            "1": 8371
+          }
+        },
+        "selection_dev": {
+          "path": "artifacts/laya_formal_data/promoter_detection_selection_dev.jsonl",
+          "sha256": "3dffdee6768f4553b8afd13792dc55918d908c20bb5f6242a5cf74927aa37582",
+          "rows": 1052,
+          "unique_exact_sequences": 1052,
+          "partition_groups": 1052,
+          "ordered_ids_sha256": "84bba92cb5c8cb65fe94e5dc5ba62c2c34d796426c02494e38fa0df87dcdb959",
+          "sorted_sequence_hashes_sha256": "43c8751be0924150bf32efc70cc9fdde66b0b32bbe9b214457dc28e8375e14fc",
+          "label_counts": {
+            "0": 521,
+            "1": 531
+          }
+        },
+        "calibration": {
+          "path": "artifacts/laya_formal_data/promoter_detection_calibration.jsonl",
+          "sha256": "1b6be563db394b8ff2b676062ec5dc1146f444af4fdb467d6207d0d20b6c0e3a",
+          "rows": 1053,
+          "unique_exact_sequences": 1053,
+          "partition_groups": 1053,
+          "ordered_ids_sha256": "c541a52bfc39490834df2d11fff96faa6cc2cec0df3ca7651133ef33b66ea1bc",
+          "sorted_sequence_hashes_sha256": "7c490f02ee8ca9c01313ecd599726bd2ac9fd640136f2b2fad7c179b04f2c396",
+          "label_counts": {
+            "0": 521,
+            "1": 532
+          }
+        },
+        "test": {
+          "path": "artifacts/laya_formal_data/promoter_detection_test.jsonl",
+          "sha256": "7cfae07d045bfc3d24f6a8912fc5c38cb71e619a6c7c4111aba12e512cf549d7",
+          "rows": 2145,
+          "unique_exact_sequences": 2145,
+          "partition_groups": 2145,
+          "ordered_ids_sha256": "79a678033442aa08d03e7970fdc61c9c404ee5f044e54837fbf58f2a1341b9d6",
+          "sorted_sequence_hashes_sha256": "c957c7fac780517f6740a54fa97397f61913d824521f1473af97d13d126e10ab"
+        }
+      },
+      "exclusions": {
+        "path": "artifacts/laya_formal_data/promoter_detection_exclusions.jsonl",
+        "sha256": "e63dbb95caae7be7a57db91387d6a5f7dfb004e9cc7a6a23732a94861390a2ea",
+        "counts_by_source_split": {
+          "train": {
+            "same_split_exact_duplicate": 16,
+            "train_val_exact_label_conflict": 4
+          },
+          "val": {
+            "same_split_exact_duplicate": 4
+          },
+          "test": {
+            "same_split_exact_duplicate": 2
+          }
+        }
+      }
+    },
+    "fold_class": {
+      "task": "fold_class",
+      "modality": "protein",
+      "choices": [
+        "All Alpha",
+        "All Beta",
+        "Alpha and Beta",
+        "Alpha plus Beta",
+        "Multi-domain Proteins",
+        "Mixed Structures",
+        "Small Proteins and Peptides"
+      ],
+      "input": {
+        "path": "data/03_sft_biopaws2/jsonl/lg_fold_class.jsonl",
+        "sha256": "00c6f2f81003dac040a861fc4a1728d05e30fd4b7b7a0febff107ae39937859c",
+        "rows": 19468,
+        "split_counts": {
+          "test": 1994,
+          "train": 15593,
+          "val": 1881
+        }
+      },
+      "source_metadata": {
+        "field_counts": {
+          "answer_short": 19468,
+          "choices": 19468,
+          "id": 19468,
+          "images": 19468,
+          "license": 19468,
+          "messages": 19468,
+          "metric": 19468,
+          "modality": 19468,
+          "source": 19468,
+          "split": 19468,
+          "task_family": 19468,
+          "task_id": 19468
+        },
+        "source_counts": {
+          "llama-gene:prot_eva": 1940,
+          "llama-gene:prot_train": 17528
+        },
+        "source_by_split": {
+          "train": {
+            "llama-gene:prot_eva": 1529,
+            "llama-gene:prot_train": 14064
+          },
+          "test": {
+            "llama-gene:prot_eva": 208,
+            "llama-gene:prot_train": 1786
+          },
+          "val": {
+            "llama-gene:prot_eva": 203,
+            "llama-gene:prot_train": 1678
+          }
+        },
+        "row_level_group_ids_found": false,
+        "homology_independence_verified": false,
+        "historical_summary_path": "data/03_sft_biopaws2/docs/leakage_stats.json",
+        "historical_summary_sha256": "c27891bb8cdc364f7d7d7801a43a48d99621897b6e3811798f73a5b4488948ed",
+        "historical_task_summary": {
+          "n_rows": 19468,
+          "exact": {
+            "unique_seqs": 19752,
+            "exact_cross_split_dups": 0,
+            "test_seqs": 2004,
+            "test_exact_in_train": 0,
+            "test_exact_leak_rate": 0.0
+          },
+          "mmseqs": {
+            "n_seqs_clustered": 19752,
+            "n_clusters": 15110,
+            "min_seq_id": 0.5,
+            "coverage": 0.5,
+            "test_clusters": 1526,
+            "test_clusters_sharing_train": 7,
+            "homology_leak_rate": 0.0046
+          }
+        },
+        "historical_row_count_matches": true,
+        "historical_summary_current_sequence_hashes_verified": false,
+        "scope": "Historical aggregate only; no row-level membership or per-input hash binding. Not used for partitioning, model choices, or claims of homology independence."
+      },
+      "audit": {
+        "raw_cross_split_exact_overlap": {
+          "train__val": 0,
+          "train__test": 0,
+          "val__test": 0
+        },
+        "raw_cross_split_partition_group_overlap": {
+          "train__val": 0,
+          "train__test": 0,
+          "val__test": 0
+        },
+        "raw_groups_with_distinct_rc_sequences": null,
+        "train_val_exact_label_conflict_hashes": [],
+        "train_val_partition_label_conflict_group_ids": [],
+        "train_val_additional_conflicting_rc_group_ids": [],
+        "final_cross_split_partition_group_overlap": {
+          "train__selection_dev": 0,
+          "train__calibration": 0,
+          "train__test": 0,
+          "selection_dev__calibration": 0,
+          "selection_dev__test": 0,
+          "calibration__test": 0
+        },
+        "test_label_statistics_computed": false,
+        "test_used_to_filter_train_val": false
+      },
+      "validation_stratification": {
+        "0": {
+          "source_val_rows": 302,
+          "group_count": 302,
+          "target_dev_rows": 151,
+          "selection_dev_rows": 151,
+          "calibration_rows": 151
+        },
+        "1": {
+          "source_val_rows": 404,
+          "group_count": 404,
+          "target_dev_rows": 202,
+          "selection_dev_rows": 202,
+          "calibration_rows": 202
+        },
+        "2": {
+          "source_val_rows": 567,
+          "group_count": 567,
+          "target_dev_rows": 283,
+          "selection_dev_rows": 283,
+          "calibration_rows": 284
+        },
+        "3": {
+          "source_val_rows": 435,
+          "group_count": 435,
+          "target_dev_rows": 217,
+          "selection_dev_rows": 217,
+          "calibration_rows": 218
+        },
+        "4": {
+          "source_val_rows": 32,
+          "group_count": 32,
+          "target_dev_rows": 16,
+          "selection_dev_rows": 16,
+          "calibration_rows": 16
+        },
+        "5": {
+          "source_val_rows": 33,
+          "group_count": 33,
+          "target_dev_rows": 16,
+          "selection_dev_rows": 16,
+          "calibration_rows": 17
+        },
+        "6": {
+          "source_val_rows": 108,
+          "group_count": 108,
+          "target_dev_rows": 54,
+          "selection_dev_rows": 54,
+          "calibration_rows": 54
+        }
+      },
+      "files": {
+        "train": {
+          "path": "artifacts/laya_formal_data/fold_class_train.jsonl",
+          "sha256": "257ff0feff28f0efbfa555d9b927417a01b68daea3d88e15749499a4613c5bbe",
+          "rows": 15593,
+          "unique_exact_sequences": 15593,
+          "partition_groups": 15593,
+          "ordered_ids_sha256": "d995cef6fb28e70c950f9305b063265a9eb5190e656495b19cb40a734c9d991c",
+          "sorted_sequence_hashes_sha256": "f1939055c2e04e7d17c188053ca32a9f3a1a6b1c420122d7dd42839880b9d053",
+          "label_counts": {
+            "0": 2627,
+            "1": 3239,
+            "2": 4604,
+            "3": 3754,
+            "4": 275,
+            "5": 220,
+            "6": 874
+          }
+        },
+        "selection_dev": {
+          "path": "artifacts/laya_formal_data/fold_class_selection_dev.jsonl",
+          "sha256": "a89e20ae978e278fec82335b696f34382e7c762bc41aaeecd5841b25af8601bf",
+          "rows": 939,
+          "unique_exact_sequences": 939,
+          "partition_groups": 939,
+          "ordered_ids_sha256": "d048f91697f5ce5fd625103dc3879192c51bd60b15d159d6e37ccd3b72e7a1b0",
+          "sorted_sequence_hashes_sha256": "4a726b1f0ce6561764b0f213fafacd56bf685d2b29eec18ba83d9fd0df13d3bd",
+          "label_counts": {
+            "0": 151,
+            "1": 202,
+            "2": 283,
+            "3": 217,
+            "4": 16,
+            "5": 16,
+            "6": 54
+          }
+        },
+        "calibration": {
+          "path": "artifacts/laya_formal_data/fold_class_calibration.jsonl",
+          "sha256": "aa0a7680bf99500befc1498f60b3a7a502e49240baf20ff6afcaae452bc04592",
+          "rows": 942,
+          "unique_exact_sequences": 942,
+          "partition_groups": 942,
+          "ordered_ids_sha256": "9be4b55fa3bba672ce86c94e7b3c230521d38c37aec4bdceacd67a7d580d9d3a",
+          "sorted_sequence_hashes_sha256": "5a8d35a40b6dbb9a1ac6ea71592fa1d786e621047c401d2e2be5188e6b540d48",
+          "label_counts": {
+            "0": 151,
+            "1": 202,
+            "2": 284,
+            "3": 218,
+            "4": 16,
+            "5": 17,
+            "6": 54
+          }
+        },
+        "test": {
+          "path": "artifacts/laya_formal_data/fold_class_test.jsonl",
+          "sha256": "15cd76121f7e3b71d5b4ef2269239a03a28131f5cff61898e77e482dc6e1e3af",
+          "rows": 1994,
+          "unique_exact_sequences": 1994,
+          "partition_groups": 1994,
+          "ordered_ids_sha256": "594b187aff37c84396cad05ffc700dd1a630cb509f1c14880edd0736b6688ada",
+          "sorted_sequence_hashes_sha256": "006aa832299dc3337edc6b7276ba0bccaa8894bd9b3a638d6c96d362fd4e10e4"
+        }
+      },
+      "exclusions": {
+        "path": "artifacts/laya_formal_data/fold_class_exclusions.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "counts_by_source_split": {
+          "train": {},
+          "val": {},
+          "test": {}
+        }
+      }
+    }
+  }
+}

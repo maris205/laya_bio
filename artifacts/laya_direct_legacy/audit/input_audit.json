@@ -1,0 +1,135 @@
+{
+  "no_cpt": true,
+  "test_access": false,
+  "seed": 20260922,
+  "eligibility_policy": "same frozen common-complete sample IDs as first 64-token pair",
+  "representation_sha256": "ebd01d5e75dcc150df6839d18ad304842573daea9e8719d42fb2c9659b32dcda",
+  "conditions": {
+    "raw": {
+      "train": {
+        "fold_class": {
+          "n": 15284,
+          "length_p50": 145,
+          "length_p95": 258,
+          "length_max": 318,
+          "truncated_count": 0,
+          "membership_sha256": "be432ba4a866ac7bef6b10238b3d0f62114c47fde06638b840da6f9a46efdae0"
+        },
+        "promoter_detection": {
+          "n": 16766,
+          "length_p50": 174,
+          "length_p95": 180,
+          "length_max": 194,
+          "truncated_count": 0,
+          "membership_sha256": "ef78799642b0015109211fbf8bf72fc0244e895afb73e77e5c5bec2ca1bb9dfa"
+        }
+      },
+      "selection_dev": {
+        "fold_class": {
+          "n": 926,
+          "length_p50": 145,
+          "length_p95": 257,
+          "length_max": 303,
+          "truncated_count": 0,
+          "membership_sha256": "4fb3fd827583af9d9a87c26a0acf1216cd9c4ccac23d72d1fd12a20a884b8133"
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "length_p50": 174,
+          "length_p95": 179,
+          "length_max": 185,
+          "truncated_count": 0,
+          "membership_sha256": "84bba92cb5c8cb65fe94e5dc5ba62c2c34d796426c02494e38fa0df87dcdb959"
+        }
+      },
+      "calibration": {
+        "fold_class": {
+          "n": 933,
+          "length_p50": 144,
+          "length_p95": 258,
+          "length_max": 310,
+          "truncated_count": 0,
+          "membership_sha256": "67eb9135be8b21b6c31b339b1236112b7c90d2c7955e4334abc19c38c9237eb8"
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "length_p50": 174,
+          "length_p95": 179,
+          "length_max": 187,
+          "truncated_count": 0,
+          "membership_sha256": "c541a52bfc39490834df2d11fff96faa6cc2cec0df3ca7651133ef33b66ea1bc"
+        }
+      }
+    },
+    "full_bpe": {
+      "train": {
+        "fold_class": {
+          "n": 15284,
+          "length_p50": 127,
+          "length_p95": 216,
+          "length_max": 282,
+          "truncated_count": 0,
+          "membership_sha256": "be432ba4a866ac7bef6b10238b3d0f62114c47fde06638b840da6f9a46efdae0"
+        },
+        "promoter_detection": {
+          "n": 16766,
+          "length_p50": 93,
+          "length_p95": 97,
+          "length_max": 103,
+          "truncated_count": 0,
+          "membership_sha256": "ef78799642b0015109211fbf8bf72fc0244e895afb73e77e5c5bec2ca1bb9dfa"
+        }
+      },
+      "selection_dev": {
+        "fold_class": {
+          "n": 926,
+          "length_p50": 127,
+          "length_p95": 214,
+          "length_max": 255,
+          "truncated_count": 0,
+          "membership_sha256": "4fb3fd827583af9d9a87c26a0acf1216cd9c4ccac23d72d1fd12a20a884b8133"
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "length_p50": 93,
+          "length_p95": 97,
+          "length_max": 102,
+          "truncated_count": 0,
+          "membership_sha256": "84bba92cb5c8cb65fe94e5dc5ba62c2c34d796426c02494e38fa0df87dcdb959"
+        }
+      },
+      "calibration": {
+        "fold_class": {
+          "n": 933,
+          "length_p50": 126,
+          "length_p95": 216,
+          "length_max": 266,
+          "truncated_count": 0,
+          "membership_sha256": "67eb9135be8b21b6c31b339b1236112b7c90d2c7955e4334abc19c38c9237eb8"
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "length_p50": 93,
+          "length_p95": 97,
+          "length_max": 100,
+          "truncated_count": 0,
+          "membership_sha256": "c541a52bfc39490834df2d11fff96faa6cc2cec0df3ca7651133ef33b66ea1bc"
+        }
+      }
+    }
+  },
+  "train_token_coverage": {
+    "dna": {
+      "added": 19999,
+      "observed": 18448,
+      "occurrences": 904113
+    },
+    "protein": {
+      "added": 8000,
+      "observed": 7972,
+      "occurrences": 1147014
+    }
+  },
+  "same_samples_labels_candidate_markers": true,
+  "full_sequence_reconstruction_checked": true
+}

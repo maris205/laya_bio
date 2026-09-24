@@ -1,0 +1,23 @@
+\section{Model and adaptation}
+\paragraph{Candidate scoring.}
+An example comprises task context $q$, sequence $s$, ordered candidate strings $C=(c_1,\ldots,c_K)$, and target index $y$. Here $K\in\{2,7\}$. The original Laya builder places a marker before each candidate and includes the task instructions and sequence state. The encoder, choice-type embedding, and two contextual head blocks produce candidate-marker states $h_j$. A shared layer-normalization/MLP scorer yields $z_j=g_\theta(h_j)$. We minimize ordinary supervised cross-entropy,
+\begin{equation}
+\mathcal L(\theta)=-\frac1N\sum_{i=1}^{N}\log
+\frac{\exp z_{i,y_i}}{\sum_{j=1}^{K_i}\exp z_{i,j}}.
+\end{equation}
+We train the encoder, input embeddings, contextual head, type embedding, and candidate scorer. The unused action head is frozen. This is a CE adaptation, not a reproduction or comparison of the upstream reinforcement-learning objective. Training candidate order is a deterministic hash-based permutation of each sample ID and seed; it remains fixed for that run rather than changing each epoch. Targets follow the permutation. Standard evaluation uses the canonical order.
+
+\paragraph{Biological BPE.}
+The \emph{raw candidate} condition uses the original Laya tokenizer for the complete textual input. The \emph{\BioBPE{} candidate} condition tokenizes biological sequences separately with historical DNA/protein BPE vocabularies and maps their IDs directly to added model rows. Natural-language context and candidates retain the original tokenizer. The historical source recipe sampled about 1~GiB per modality and used BPE minimum frequency 10. These are externally fitted vocabularies, not vocabularies fitted exclusively on this experiment's training split.
+
+The source vocabularies omitted DNA N and protein N/J, allowing silent character loss. We append those characters in a copy, preserve existing IDs and merges, and require the concatenated source pieces and inverse model-ID mapping to reconstruct every encoded sequence. Excluding source padding/unknown symbols gives 19,999 DNA and 8,000 protein additions: 50,368 original rows become 78,367 rows. For a new piece $v$ decomposed by the original tokenizer as $b_1,\ldots,b_m$, initialize
+\begin{equation}
+E_{\mathrm{new}}(v)=\frac1m\sum_{r=1}^{m}E_{\mathrm{old}}(b_r).
+\end{equation}
+The decomposition uses the bare biological fragment, without marker text. Original embedding rows remain unchanged at initialization. Added rows and the model are then optimized by the same supervised loss. Some added tokens never occur in the training set, so not every row receives direct sequence supervision.
+
+\paragraph{Controls.}
+The \emph{\BioBPE{} fixed head (B1)} uses the same initial encoder, biological embeddings, contextual head blocks, type embedding, and readout MLP. It omits candidate strings, pools the CLS state, and uses newly initialized two- and seven-class linear output matrices selected by the known task. Its 449.709 million trainable parameters are close to the candidate model's 449.701 million, but its input and pooling operation differ. The \emph{text-only candidate} retains the candidate architecture and training budget while removing sequences during both training and evaluation. In canonical evaluation, all examples of a task then have identical inputs. This trained control is distinct from removing a sequence only at inference time.
+
+\paragraph{Calibration.}
+For each checkpoint and task, fit a scalar $T\in[0.05,20]$ by minimizing calibration-set negative log-likelihood (NLL), and evaluate $p_j=\softmax(z/T)_j$ on test. These temperatures are fixed before test inference. Positive $T$ does not change class predictions. Raw and calibrated probability metrics are reported separately.

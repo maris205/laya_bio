@@ -1,0 +1,12 @@
+{
+  "dna_1g.txt": {
+    "path": "/root/autodl-fs/omnigene_v2/scripts/vocab/corpus/dna_1g.txt",
+    "bytes": 1067478842,
+    "sha256": "7e2246ad70ed759bfbf1a45ce7afe8802fdca28eafead6c4e33b0a70f6e8a90a"
+  },
+  "protein_1g.txt": {
+    "path": "/root/autodl-fs/omnigene_v2/scripts/vocab/corpus/protein_1g.txt",
+    "bytes": 1073742142,
+    "sha256": "60409ceca6a88d09b4780c66f83dda28f61b1183cccc5887a9b64b442078f384"
+  }
+}

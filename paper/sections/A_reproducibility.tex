@@ -1,0 +1,73 @@
+\section{Reproducibility and complete results}
+\paragraph{Versions and artifacts.}
+The starting model is \texttt{convaiinnovations/laya-typed-decisions}, revision
+\nolinkurl{f9ab0b228f0fc0f14d873dbc99038f135c2da1b2}.
+The upstream Laya source revision is
+\nolinkurl{573e5b62696ba441230cd6be71d593331b5d23af}.
+The initial weight SHA-256 is
+\nolinkurl{4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e}.
+The final test manifest hashes 288 files and is stored at
+\path{artifacts/laya_locked_test/manifest.json}.
+Its SHA-256 is
+\nolinkurl{9b1594ec0255318ff30486fbea20e3a0172ca1292d1661c040c67800ac86c10e}.
+The manifest predates test inference and is checked again after all evaluations. Every checkpoint exactly reproduced its complete dev logits; all test logits were finite. Each model evaluated the same 4,097 sample IDs without truncation. Independent sklearn/SciPy metric recomputation agreed to a maximum absolute error of $2.22\times10^{-16}$.
+
+\paragraph{Data, code, and model availability.}
+\label{sec:availability}
+The benchmark snapshots, cleaned splits, paper-eligible subsets, frozen manifests, per-example predictions and logits, training/evaluation code, BPE assets, and manuscript materials are publicly available at \href{https://huggingface.co/datasets/dnagpt/laya-bio/tree/0307d5910b0a37f54caecd444241db6b56331701}{\texttt{dnagpt/laya-bio}} (revision \nolinkurl{0307d5910b0a37f54caecd444241db6b56331701}). The default configuration contains 32,050 training, 1,978 selection-dev, 1,986 calibration, and 4,097 test examples; the larger cleaned data are provided separately and are not the paper's evaluation subset.
+
+All twelve final checkpoints (four conditions, three seeds), the original initialization weights, tokenizers, configurations, and loading code are available at \href{https://huggingface.co/dnagpt/laya-bio-models/tree/6d727dd4125d783ab719a35c6b55dd7a69276a8d}{\texttt{dnagpt/laya-bio-models}} (revision \nolinkurl{6d727dd4125d783ab719a35c6b55dd7a69276a8d}; 22.46~GB). Seven historical corpus files and the two actual BPE-training samples are archived at \href{https://huggingface.co/datasets/dnagpt/laya-bio-historical-corpora/tree/bd70a7d157741f8d19ad150adfa350a9b02ba417}{\texttt{dnagpt/laya-bio-historical-corpora}} (revision \nolinkurl{bd70a7d157741f8d19ad150adfa350a9b02ba417}). This archive preserves 106.98~GB of original bytes in 404 lossless Zstandard shards; the 42.55~GB release includes manifests and a SHA-256-verifying restoration script. These historical resources do not imply additional neural continual pretraining in this study.
+
+Release files were checked against remote sizes and content hashes. Anonymous access was verified, including a complete download and restoration of the archived PDB 3Di file. Source declarations and component-specific license terms are preserved; the archive is not assigned a blanket license. Upstream provenance and benchmark overlap remain incompletely resolved, as discussed in the limitations. The released local snapshots, rather than the current BioPAWS-2 page contents, define the experimental data.
+
+\paragraph{Implementation details.}
+Input length is capped at 1,024 tokens and the upstream candidate header budget is 256. The original builder's choice instruction is \emph{Choose the correct biological label for the sequence.} The state prefix contains \texttt{Task context:} followed by the cleaned task instruction and \texttt{Sequence:} followed by the sequence. Candidate strings are the canonical class names in Table~\ref{tab:classes}; gold answers are not part of the input. The protein class labels are reproduced as dataset categories, without treating them as a complete structural ontology.
+
+The joint training loop shuffles the combined sample list without class weighting. It uses gradient clipping at norm 1.0, 151 warmup updates, and the final fixed-budget checkpoint. The budget is approximately three passes, but example presentations are reported explicitly because the sampler reshuffles when a full micro-batch no longer fits. AdamW and BF16 settings are shared. Calibration optimizes a single task-specific temperature per checkpoint on the calibration split. Macro metrics retain all two or seven classes; Brier uses the unnormalized sum across classes. ECE15 uses the maximum predicted probability and equal-width bins, including confidence 1 in the final bin.
+
+The historical BPE recipe sampled about 1~GiB each from DNA and protein text using seed 42, with minimum frequency 10. The original vocabulary files, repair details, source scripts, and corpus hashes are preserved. Training observes 18,448 of the 19,999 added DNA tokens and 7,972 of the 8,000 protein tokens. Tokens unobserved in sequences are not claimed to have direct task supervision. The original vocabulary was not retrained on the benchmark.
+
+\begin{table}[ht]
+\centering\small
+\input{tables/seeds.tex}
+\caption{All test seeds; no best-seed selection. Classification metrics are percentages.}
+\label{tab:seeds}
+\end{table}
+
+\begin{table}[ht]
+\centering\scriptsize
+\input{tables/all_metrics.tex}
+\caption{Additional test metrics, mean $\pm$ sample SD. Balanced accuracy is in percent; MCC, Brier, and ECE are unscaled. Calibrated Brier and ECE are in Table~\ref{tab:calibration}.}
+\label{tab:allmetrics}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\input{tables/resources.tex}
+\caption{Measured training cost and trainable parameter counts. Times exclude subsequent evaluation and checkpoint reload checks. Peak allocated memory is the PyTorch training measurement, not the GPU driver's full process footprint. Equal supervision does not imply equal computation.}
+\label{tab:resources}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\input{tables/lengths.tex}
+\caption{Full training-input lengths, including task context and candidates, on the common subset. Values are tokens, not nucleotides or residues.}
+\label{tab:lengths}
+\end{table}
+
+\begin{table}[ht]
+\centering\scriptsize
+\input{tables/diagnostics.tex}
+\caption{Dev diagnostics (\%). Original is accuracy; removed/shuffled are matching rates against original labels, without assuming intervention-label validity. Order agreement compares semantic predictions after canonicalizing the permutation. Values are mean $\pm$ sample SD.}
+\label{tab:diagnostics}
+\end{table}
+
+\begin{table}[ht]
+\centering\small
+\input{tables/class_counts.tex}
+\caption{Canonical task classes and eligible test support. The trained text-only protein control predicts class 2 for every example in all three seeds.}
+\label{tab:classes}
+\end{table}
+
+\paragraph{Development history and test boundary.}
+An earlier single-seed experiment used a compact 64-token extension and wrapped sequence pieces, with a frozen-model reference. Those scores are development history and are not mixed into the final raw-input or \BioBPE{} test comparisons. The complete-input list inherited from that stage was held fixed in the later three-seed study. Subsequent experiments used the complete historical BPE and added B1/text-only controls and dev sequence/order diagnostics. The final test included only the four conditions and three seeds listed in Table~\ref{tab:seeds}. No test-dependent perturbation, hyperparameter search, or new training followed this evaluation.

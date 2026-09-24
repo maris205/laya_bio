@@ -1,0 +1,263 @@
+{
+  "formal": true,
+  "smoke_only": false,
+  "kind": "text_only",
+  "condition": "full_bpe",
+  "seed": 20260924,
+  "no_cpt": true,
+  "test_access": false,
+  "evaluated_splits": [
+    "selection_dev",
+    "calibration"
+  ],
+  "class_names": {
+    "promoter_detection": [
+      "Non-promoter",
+      "promoter"
+    ],
+    "fold_class": [
+      "All Alpha",
+      "All Beta",
+      "Alpha and Beta",
+      "Alpha plus Beta",
+      "Multi-domain Proteins",
+      "Mixed Structures",
+      "Small Proteins and Peptides"
+    ]
+  },
+  "n_rows": {
+    "train": 32050,
+    "selection_dev": 1978,
+    "calibration": 1986
+  },
+  "item_stats": {
+    "train": {
+      "n": 32050,
+      "length_p50": 39,
+      "length_p95": 62,
+      "length_max": 62,
+      "truncated_count": 0,
+      "membership_sha256": "be3d2bbe683b21db4259440920690eb4c58ba4a9020b8b2aa0dafa46cd9ace91"
+    },
+    "selection_dev": {
+      "n": 1978,
+      "length_p50": 39,
+      "length_p95": 62,
+      "length_max": 62,
+      "truncated_count": 0,
+      "membership_sha256": "e6f66b67ad95af968cef7d56d75b2fb1a63a81bd0ad865b79e80f383c0464df9"
+    },
+    "calibration": {
+      "n": 1986,
+      "length_p50": 39,
+      "length_p95": 62,
+      "length_max": 62,
+      "truncated_count": 0,
+      "membership_sha256": "cf5f102a8d7068719392be615ccf3c192dd0fcc750c5c729e8eb69c1cfc95219"
+    }
+  },
+  "training": {
+    "updates": 3005,
+    "epochs_requested": 3,
+    "warmup_fraction": 0.05,
+    "warmup_steps": 151,
+    "micro_batch": 8,
+    "grad_accum": 4,
+    "examples_consumed": 96160,
+    "effective_batch": 32,
+    "loss_first": 1.3113035261631012,
+    "loss_last": 1.052541807293892,
+    "loss_min": 0.8390197604894638,
+    "loss_max": 1.558957278728485,
+    "grad_norm_max": 13.215265274047852,
+    "seconds": 2455.6225163936615,
+    "finite": true,
+    "amp_dtype": "torch.bfloat16",
+    "lr_final": 0.0,
+    "peak_allocated_gib": 8.398452758789062,
+    "peak_reserved_gib": 8.919921875
+  },
+  "trainable_parameters": 449700865,
+  "embedding_trainable": true,
+  "embedding_receives_sequence_supervision": false,
+  "expansion": {
+    "old_vocab_size": 50368,
+    "new_vocab_size": 78367,
+    "added_by_modality": {
+      "dna": 19999,
+      "protein": 8000
+    },
+    "raw_fragment_mean_initialization": true,
+    "old_rows_unchanged_at_initialization": true,
+    "maximum_initialization_error": 0.0,
+    "fallback_initializations": 0
+  },
+  "new_embedding_gradient_probe": null,
+  "evaluation": {
+    "selection_dev": {
+      "raw": {
+        "fold_class": {
+          "n": 926,
+          "accuracy": 0.2991360691144708,
+          "balanced_accuracy": 0.14285714285714285,
+          "macro_f1": 0.06578791117444484,
+          "mcc": 0.0,
+          "nll": 1.6269733821145416,
+          "brier": 0.7797402626872403,
+          "ece15": 0.0003514456472443195
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "accuracy": 0.49524714828897337,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3312142403051494,
+          "mcc": 0.0,
+          "nll": 0.6931919415890665,
+          "brier": 0.5000447607820538,
+          "ece15": 0.0067059667769799325
+        },
+        "all": {
+          "n": 1978,
+          "accuracy": 0.4034378159757331,
+          "balanced_accuracy": 0.3328036978188646,
+          "macro_f1": 0.20695499825508246,
+          "mcc": null,
+          "nll": 1.1303413925125194,
+          "brier": 0.6309841110167366,
+          "ece15": 0.003731099958913614
+        }
+      },
+      "calibrated": {
+        "fold_class": {
+          "n": 926,
+          "accuracy": 0.2991360691144708,
+          "balanced_accuracy": 0.14285714285714285,
+          "macro_f1": 0.06578791117444484,
+          "mcc": 0.0,
+          "nll": 1.6259219119041166,
+          "brier": 0.7799508055049854,
+          "ece15": 0.012196913358323624
+        },
+        "promoter_detection": {
+          "n": 1052,
+          "accuracy": 0.49524714828897337,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3312142403051494,
+          "mcc": 0.0,
+          "nll": 0.6931490562161312,
+          "brier": 0.5000018756561618,
+          "ece15": 0.004850507959784978
+        },
+        "all": {
+          "n": 1978,
+          "accuracy": 0.4034378159757331,
+          "balanced_accuracy": 0.3328036978188646,
+          "macro_f1": 0.20695499825508246,
+          "mcc": null,
+          "nll": 1.1298263385048442,
+          "brier": 0.6310598680929721,
+          "ece15": 0.008289725047270715
+        }
+      }
+    },
+    "calibration": {
+      "raw": {
+        "fold_class": {
+          "n": 933,
+          "accuracy": 0.2979635584137192,
+          "balanced_accuracy": 0.14285714285714285,
+          "macro_f1": 0.0655892414769376,
+          "mcc": 0.0,
+          "nll": 1.6353275238797917,
+          "brier": 0.7809688895739935,
+          "ece15": 0.0008209243278213818
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "accuracy": 0.49477682811016144,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3310038119440915,
+          "mcc": 0.0,
+          "nll": 0.6931956159654634,
+          "brier": 0.500048435139762,
+          "ece15": 0.007176286955791755
+        },
+        "all": {
+          "n": 1986,
+          "accuracy": 0.40231621349446123,
+          "balanced_accuracy": 0.33221838584376345,
+          "macro_f1": 0.20631509379411436,
+          "mcc": null,
+          "nll": 1.1357983702877537,
+          "brier": 0.6320216395643029,
+          "ece15": 0.004190610555038302
+        }
+      },
+      "calibrated": {
+        "fold_class": {
+          "n": 933,
+          "accuracy": 0.2979635584137192,
+          "balanced_accuracy": 0.14285714285714285,
+          "macro_f1": 0.0655892414769376,
+          "mcc": 0.0,
+          "nll": 1.6334486410653728,
+          "brier": 0.7811349454335217,
+          "ece15": 0.011024589762844206
+        },
+        "promoter_detection": {
+          "n": 1053,
+          "accuracy": 0.49477682811016144,
+          "balanced_accuracy": 0.5,
+          "macro_f1": 0.3310038119440915,
+          "mcc": 0.0,
+          "nll": 0.6931492399349511,
+          "brier": 0.5000020593749793,
+          "ece15": 0.005320828138596911
+        },
+        "all": {
+          "n": 1986,
+          "accuracy": 0.40231621349446123,
+          "balanced_accuracy": 0.33221838584376345,
+          "macro_f1": 0.20631509379411436,
+          "mcc": null,
+          "nll": 1.1348911036080043,
+          "brier": 0.6320750617378292,
+          "ece15": 0.008000389868417015
+        }
+      }
+    }
+  },
+  "calibration_temperature": {
+    "promoter_detection": {
+      "temperature": 20.0,
+      "objective": 0.6931492399349511,
+      "nll_before": 0.6931956159654634,
+      "nll_after": 0.6931492399349511,
+      "success": true,
+      "n_iter": 44,
+      "bounds": [
+        0.05,
+        20.0
+      ]
+    },
+    "fold_class": {
+      "temperature": 1.1099634852449332,
+      "objective": 1.6334486410653728,
+      "nll_before": 1.6353275238797917,
+      "nll_after": 1.6334486410653728,
+      "success": true,
+      "n_iter": 44,
+      "bounds": [
+        0.05,
+        20.0
+      ]
+    }
+  },
+  "calibration_temperature_fit_on": "calibration",
+  "checkpoint": "/root/autodl-tmp/jev_gene/artifacts/laya_controls/text_only_seed20260924/checkpoint",
+  "checkpoint_reload_logits_match": true,
+  "checkpoint_reload_input_ids_match": true,
+  "representation_sha256": "ebd01d5e75dcc150df6839d18ad304842573daea9e8719d42fb2c9659b32dcda",
+  "selection_policy": "final fixed-budget checkpoint",
+  "b1_architecture": null
+}

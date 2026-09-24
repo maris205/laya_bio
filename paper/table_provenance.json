@@ -1,0 +1,17 @@
+{
+  "source": "artifacts/laya_locked_test/results.json",
+  "source_sha256": "8a532a5e18eb1b92c3837dad1f387509c74980bc95638fd0aabe2ed8d9401273",
+  "tables": [
+    "all_metrics.tex",
+    "calibration.tex",
+    "class_counts.tex",
+    "data.tex",
+    "diagnostics.tex",
+    "lengths.tex",
+    "main_results.tex",
+    "resources.tex",
+    "seeds.tex"
+  ],
+  "test_manifest_sha256": "9b1594ec0255318ff30486fbea20e3a0172ca1292d1661c040c67800ac86c10e",
+  "no_new_evaluation": true
+}

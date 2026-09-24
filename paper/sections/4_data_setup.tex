@@ -1,0 +1,19 @@
+\section{Data and evaluation protocol}
+\begin{table}[t]
+\centering\small
+\input{tables/data.tex}
+\caption{Common eligible examples after data cleaning and the inherited complete-input filter. Dev is used for diagnostics; calibration is used only for temperature fitting.}
+\label{tab:data}
+\end{table}
+\paragraph{Tasks and provenance.}
+We use local BioPAWS-2 JSONL views \citep{wang2026biopaws} whose source fields identify LLaMA-Gene DNA/protein instruction data \citep{wang2024llamagene}. Promoter inputs contain 300 nucleotides; protein inputs contain at most 512 residues and belong to seven broad structural classes. This is structural-class prediction, not fine-grained fold identification. Task context is extracted from the user message, while the assistant answer is used only as a target. Each task has one context template and one fixed canonical candidate set. Local file hashes, rather than a mutable dataset page, identify the exact experimental data.
+
+\paragraph{Cleaning and partitioning.}
+We remove within-split exact duplicates, and exclude train/validation exact-sequence label conflicts. DNA partition groups also use reverse-complement canonicalization; conflicting train/validation groups are excluded without relabeling. Retained training groups take precedence over validation. The remaining validation groups are split approximately equally, stratified by class, into dev and calibration using seed 20260922. Test is deduplicated and checked against retained training/validation groups after those memberships are fixed. Test labels do not determine filtering or partitions. Exact/partition-group overlap is zero; this does not establish homology independence.
+
+Table~\ref{tab:data} uses the complete-input eligibility list frozen in an earlier representation audit. That audit used longer wrapped sequence encodings; its filter excludes 309 protein training, 13 dev, 9 calibration, and 42 test examples from the cleaned views. All DNA examples in the cleaned views are retained. We retain this common subset for every final model even though the final representations are shorter. Thus the protein test covers 1,952/1,994 (97.89\%) of the cleaned test view, and results are conditional on this inherited subset. No final input is truncated.
+
+\paragraph{Training and fixed test evaluation.}
+Each condition starts independently from the same Laya checkpoint and uses seeds 20260922, 20260923, and 20260924. Joint training samples the combined tasks without task reweighting. Every run uses 3,005 updates, 96,160 example presentations, micro-batch 8 with accumulation 4, AdamW at $2\times10^{-5}$, weight decay 0.01, and 5\% warmup followed by cosine decay. We use BF16 on one RTX 4080 SUPER and select the last checkpoint, without early stopping. This matches supervision, not FLOPs or parameter count across representations.
+
+Before test inference, a manifest fixes all twelve checkpoints, their temperatures, input files, and evaluation code. Each checkpoint must reproduce its full saved dev logits before evaluation. Test is evaluated once per checkpoint at batch size 16, with no retraining, seed selection, or temperature refitting. We report task-specific accuracy and macro-F1, with balanced accuracy and Matthews correlation coefficient (MCC) in the appendix. Probability metrics are NLL, multiclass Brier score, and expected calibration error with 15 equal-width confidence bins (ECE15). Means and sample standard deviations summarize the three training seeds; they are not confidence intervals over independent biological samples.
