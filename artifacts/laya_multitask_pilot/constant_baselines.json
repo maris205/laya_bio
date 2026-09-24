@@ -1,0 +1,186 @@
+{
+  "status": "engineering_pilot_not_confirmatory",
+  "constant_baselines": {
+    "description": "Training-only class/prevalence/mean constants; no sequence input. Score also reports the training median for MAE.",
+    "metrics": {
+      "promoter": {
+        "n_entities": 128,
+        "accuracy": 0.453125,
+        "macro_f1": 0.3118279569892473,
+        "nll": 0.6997768558764313,
+        "mcc": 0.0,
+        "auroc": 0.5,
+        "auprc": 0.453125
+      },
+      "splice": {
+        "n_entities": 128,
+        "accuracy": 0.5703125,
+        "macro_f1": 0.24212271973466004,
+        "nll": 0.9869985469008178
+      },
+      "structural_class": {
+        "n_entities": 128,
+        "accuracy": 0.3515625,
+        "macro_f1": 0.07431874483897605,
+        "nll": 1.6078208097137954
+      },
+      "homology_pair": {
+        "n_entities": 128,
+        "accuracy": 0.890625,
+        "macro_f1": 0.47107438016528924,
+        "nll": 0.5989599118990716,
+        "mcc": 0.0,
+        "auroc": 0.5,
+        "auprc": 0.890625
+      },
+      "fluorescence": {
+        "n_entities": 128,
+        "accuracy": 0.28125,
+        "macro_f1": 0.08780487804878048,
+        "nll": 1.6095697137542606,
+        "score_prediction": {
+          "mae": 0.6292742364639707,
+          "rmse": 0.875036778833733,
+          "spearman": null
+        },
+        "oracle_quantization_mae": 0.1992560127021817,
+        "outside_training_range_fraction": 0.0,
+        "training_median": {
+          "mae": 0.5623234296217561,
+          "rmse": 0.9829873726468145,
+          "constant": 3.5493682622909546
+        }
+      },
+      "multilabel_location": {
+        "n_entities": 128,
+        "n_labels": 10,
+        "micro_auprc": 0.29635840693804405,
+        "macro_auprc_observed_labels": 0.12109375,
+        "macro_auprc_label_count": 10,
+        "positive_support": [
+          46,
+          41,
+          22,
+          18,
+          12,
+          2,
+          3,
+          4,
+          6,
+          1
+        ],
+        "micro_f1_at_0_5": 0.0,
+        "macro_f1_at_0_5": 0.0,
+        "brier_mean_per_label": 0.09252290725708008
+      },
+      "homology_alignment_baseline": {
+        "description": "Global affine-gap alignment score / maximum sequence length; not a probability. Threshold maximizes train MCC over 101 train-score quantiles.",
+        "match": 1.0,
+        "mismatch": -1.0,
+        "gap_open": -2.0,
+        "gap_extend": -0.5,
+        "train_selected_threshold": -0.2770725096001806,
+        "dev_accuracy": 1.0,
+        "dev_mcc": 1.0,
+        "dev_auroc": 1.0,
+        "dev_auprc": 1.0
+      }
+    },
+    "support": {
+      "promoter": {
+        "train_class_counts": [
+          484,
+          540
+        ],
+        "dev_class_counts": [
+          70,
+          58
+        ]
+      },
+      "splice": {
+        "train_class_counts": [
+          221,
+          201,
+          602
+        ],
+        "dev_class_counts": [
+          21,
+          34,
+          73
+        ]
+      },
+      "structural_class": {
+        "train_class_counts": [
+          145,
+          206,
+          352,
+          223,
+          22,
+          11,
+          65
+        ],
+        "dev_class_counts": [
+          16,
+          29,
+          45,
+          23,
+          0,
+          2,
+          13
+        ]
+      },
+      "homology_pair": {
+        "train_class_counts": [
+          445,
+          579
+        ],
+        "dev_class_counts": [
+          14,
+          114
+        ]
+      },
+      "fluorescence": {
+        "train_class_counts": [
+          205,
+          205,
+          204,
+          205,
+          205
+        ],
+        "dev_class_counts": [
+          36,
+          23,
+          29,
+          19,
+          21
+        ]
+      },
+      "multilabel_location": {
+        "train_positive_counts": [
+          342.0,
+          333.0,
+          122.0,
+          161.0,
+          98.0,
+          43.0,
+          82.0,
+          55.0,
+          53.0,
+          12.0
+        ],
+        "dev_positive_counts": [
+          46.0,
+          41.0,
+          22.0,
+          18.0,
+          12.0,
+          2.0,
+          3.0,
+          4.0,
+          6.0,
+          1.0
+        ]
+      }
+    }
+  }
+}

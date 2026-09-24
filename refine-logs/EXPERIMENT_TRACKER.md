@@ -1,6 +1,6 @@
 # Jev-style biological decision experiment tracker
 
-Updated 2026-09-24. **Prospective; no new model training or inference.** Task IDs are defined in the [24-view catalog](../research/biological_decision_task_catalog.md). Core task IDs C01–C12 are distinct from run IDs below.
+Updated 2026-09-24. **Formal suite prospective; two six-task 100-update engineering pilots are complete; the three-pass development round is running.** Task IDs are defined in the [24-view catalog](../research/biological_decision_task_catalog.md). Core task IDs C01–C12 are distinct from run IDs below.
 
 | Run/work ID | Purpose | Status |
 |---|---|---|
@@ -8,10 +8,12 @@ Updated 2026-09-24. **Prospective; no new model training or inference.** Task ID
 | SOURCE-LOCAL | Eight local single-sequence files, 79,090 rows; schema and membership audit | COMPLETE; homology/tokenizer admission pending |
 | SOURCE-HF | Four DNA pools and eight gene_lan_transfer configs; pinned downloads and checks | COMPLETE; source cards do not fully define provenance |
 | SOURCE-PAIR | Two local protein homology pair views; parser and exact endpoint split check | COMPLETE; biological homology-cluster independence unverified |
-| SOURCE-LIT | TAPE, DeepLoc, GO and optional benchmarks | PRIMARY SOURCES VERIFIED; full data admission TODO |
+| SOURCE-LIT | TAPE, DeepLoc, GO and optional benchmarks | TAPE fluorescence + DeepLoc data downloaded; GO/stability and full admission TODO |
 | DATA-V2 | Global entity/RC/homology groups, preserved old test, fresh evaluation, common length subset | TODO |
-| CONTRACT-V2 | Choice/Score/Noul, masks, pair roles, native-unit Score mapping, generator constraints | TODO |
-| PILOT-C/HM/G | Six tasks C01/C02/C04/C07/C09/C11; 100 updates per system | TODO after admission |
+| CONTRACT-V2 | Choice/Score/Noul, masks, pair roles, native-unit Score mapping, generator constraints | Candidate/shared-head implementation + 5 regression checks PASS; generator path TODO |
+| PILOT-C | Six tasks, original Laya shared scorer, 100 updates | COMPLETE; reload PASS, engineering dev only |
+| PILOT-HM | Matched shared encoder with task heads, 100 updates | COMPLETE; reload PASS, engineering dev only |
+| PILOT-G | Same six tasks, generator SFT | TODO; common generator-tokenizer eligibility pending |
 | MAIN-C-s1..s3 | Shared typed scorer, admitted core suite | TODO |
 | MAIN-HM-s1..s3 | Shared encoder with proper task-specific output heads | TODO |
 | MAIN-G-s1..s3 | Joint SFT; same checkpoint for free/constrained/likelihood inference | TODO |
@@ -24,3 +26,9 @@ Updated 2026-09-24. **Prospective; no new model training or inference.** Task ID
 | BPE-V2 / LOWSHOT | Representation and sample-efficiency extensions | OPTIONAL, not scheduled |
 
 Main count: 9 joint + 12 anchor fits = **21**. Transfer adds **12**, total **33** if all gates pass. The count is not a completed run report or a compute reservation. New GPU-hour estimates depend on the six-task pilot and final admitted data/label counts. Tasks failing provenance, grouping, context length or independent-evaluation gates remain visibly unadmitted.
+
+Pilot results and their narrower admission scope are tracked in the [execution report](../research/laya_multitask_pilot.md). Exact/RC and pair-endpoint separation do not close the global homology gate.
+
+| Additional run | Scope | Status |
+|---|---|---|
+| DEV-ROUND1-C/HM | Same 6,144-entity training subset; each task three passes; 576 updates/model | LAUNCHED 2026-09-24 03:39 UTC; candidate then shared heads; 2-hour total cap; dev only |

@@ -1,0 +1,22 @@
+{
+  "pid": 96659,
+  "command": [
+    "/root/miniconda3/bin/python",
+    "-u",
+    "scripts/run_laya_multitask_round.py",
+    "--data-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/pilot_data_v1",
+    "--model-dir",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_model",
+    "--laya-repo",
+    "/root/autodl-tmp/laya_bio/vendor/laya",
+    "--pilot-root",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2",
+    "--output",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_multitask_v2/development_round1",
+    "--epochs",
+    "3",
+    "--max-hours",
+    "2"
+  ]
+}

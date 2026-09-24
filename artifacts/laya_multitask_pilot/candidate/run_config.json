@@ -1,0 +1,60 @@
+{
+  "kind": "candidate",
+  "seed": 20260924,
+  "updates": 100,
+  "effective_entity_batch": 32,
+  "micro_batch": 4,
+  "lr": 2e-05,
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "data_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+  "script_sha256": "382b83d6f8be74c73dd3540453b3c9c1f1853b09b8bdee839dd23a08a461e993",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "gpu_total_gib": 31.47540283203125,
+  "test_access": false,
+  "status": "engineering_pilot_not_confirmatory",
+  "initialization": "original_Laya_not_legacy_task_finetune",
+  "score_control_loss": null
+}

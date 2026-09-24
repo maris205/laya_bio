@@ -1,0 +1,12 @@
+{
+  "tape": {
+    "url": "https://s3.amazonaws.com/songlabdata/proteindata/data_raw_pytorch/fluorescence.tar.gz",
+    "sha256": "3c7caffd28a40f0dc8791fa311f90af4423654bd90c72fdc1e5bb191c79e175a",
+    "bytes": 1410354
+  },
+  "deeploc2": {
+    "url": "https://services.healthtech.dtu.dk/services/DeepLoc-2.0/data/Swissprot_Train_Validation_dataset.csv",
+    "sha256": "29a07b293fed2994a966b70bdcd6bacc59915b8b01fa200cb2b07d8db18384a2",
+    "bytes": 17724293
+  }
+}

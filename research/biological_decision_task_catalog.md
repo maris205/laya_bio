@@ -31,9 +31,9 @@
 | C06 | 原核蛋白属于哪个亚细胞位置 | Choice，6 类 | 本地 LLaMA-Gene 转换快照 `lg_subcellular_loc` | 本地 12,993 行；已审计 | 本数据是单标签；部分序列与其他任务交叉，最长 5,627 aa |
 | C07 | 两个蛋白是否同源 | Noul，双蛋白 | 本地 `protein_homology_std` / `protein_homology_remote` | 16,168 / 25,647 行；格式审计通过 | 两个数据视图不算两个独立任务；天然同源定义、家族来源及簇隔离待核实 |
 | C08 | DNA 与蛋白是否形成编码配对 | Noul，DNA＋蛋白 | [dnagpt/gene_lan_transfer](https://huggingface.co/datasets/dnagpt/gene_lan_transfer) `dna_protein_pair_rand_v2` | 16,000 行；已下载审计 | 定位为一致性诊断：当前样本可由标准密码表直接翻译完全判别；必须有规则基线 |
-| C09 | GFP 变体的荧光水平多高 | Score | [TAPE fluorescence](https://github.com/songlab-cal/tape) | 来源已核实；数据准入待做 | 保留突变距离/亲本关系；训练集定义等级；同时比较标量回归 |
+| C09 | GFP 变体的荧光水平多高 | Score | [TAPE fluorescence](https://github.com/songlab-cal/tape) | 数据已下载；六任务工程 pilot，完整准入待做 | 保留突变距离/亲本关系；训练集定义等级；同时比较标量回归 |
 | C10 | 蛋白序列的稳定性水平多高 | Score | [TAPE stability](https://github.com/songlab-cal/tape) | 来源已核实；数据准入待做 | 保留原生评估与设计家族；报告原观测尺度，不虚构物理单位 |
-| C11 | 蛋白可同时定位到哪些细胞区室 | 多个 Noul，10 标签 | [DeepLoc 2.0](https://academic.oup.com/nar/article/50/W1/W228/6576357) | 来源已核实；数据准入待做 | 真多标签，与 C06 不同；冻结 2.0 数据版本及同源划分 |
+| C11 | 蛋白可同时定位到哪些细胞区室 | 多个 Noul，10 标签 | [DeepLoc 2.0](https://academic.oup.com/nar/article/50/W1/W228/6576357) | 28,303 条官方 train/validation 数据已下载；工程 pilot | 真多标签，与 C06 不同；冻结 2.0 数据版本及同源划分 |
 | C12 | 蛋白具有哪些分子功能 | 多个 Noul，GO MF | [DeepGOZero](https://github.com/bio-ontology-research-group/deepgozero) / [论文](https://academic.oup.com/bioinformatics/article/38/Supplement_1/i238/6617515) | 来源已核实；先规划训练集高频 32 个 MF 项的 Lite 视图 | 固定 GO/注释日期；未注释不等于实验阴性；报告注释恢复口径与掩码 |
 
 C08 是纳入 12 项的机制诊断，不为自然生物任务广度增加一票。C12 的 32 项由训练集计数确定，不依据 test 可预测性筛选；完整 GO 评价属于后续扩展，不能将 Lite 结果称为全 GO 功能预测。

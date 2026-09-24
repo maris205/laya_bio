@@ -1,0 +1,229 @@
+{
+  "kind": "candidate",
+  "seed": 20260924,
+  "updates": 100,
+  "effective_entity_batch": 32,
+  "micro_batch": 4,
+  "lr": 2e-05,
+  "task_info": {
+    "promoter": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "splice": {
+      "primitive": "choice",
+      "n_outputs": 3
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "n_outputs": 7
+    },
+    "homology_pair": {
+      "primitive": "noul",
+      "n_outputs": 2
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "n_outputs": 5,
+      "thresholds": [
+        3.141272211074829,
+        3.4799447059631348,
+        3.6054962158203123,
+        3.7054280757904055
+      ],
+      "anchors": [
+        1.7097083533682473,
+        3.337997840090496,
+        3.5458731662993337,
+        3.6584719692788474,
+        3.769515191054926
+      ],
+      "train_min": 1.2975002527236938,
+      "train_max": 4.020859241485596,
+      "fit_entities": 1024,
+      "mean": 3.2039797494653612,
+      "std": 0.8106411840519695
+    },
+    "multilabel_location": {
+      "primitive": "multilabel",
+      "n_outputs": 10
+    }
+  },
+  "data_manifest_sha256": "5330dcfb7b64e7c60b66be3d8a7728e3318893b7a7e73e59b5983d9fe1e17247",
+  "script_sha256": "382b83d6f8be74c73dd3540453b3c9c1f1853b09b8bdee839dd23a08a461e993",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "gpu_total_gib": 31.47540283203125,
+  "test_access": false,
+  "status": "engineering_pilot_not_confirmatory",
+  "initialization": "original_Laya_not_legacy_task_finetune",
+  "score_control_loss": null,
+  "complete": true,
+  "training_seconds": 385.3408402421046,
+  "peak_allocated_gib": 7.886582851409912,
+  "entity_presentations": {
+    "multilabel_location": 544,
+    "fluorescence": 512,
+    "splice": 544,
+    "homology_pair": 544,
+    "structural_class": 544,
+    "promoter": 512
+  },
+  "proposition_presentations": {
+    "multilabel_location": 5440,
+    "fluorescence": 512,
+    "splice": 544,
+    "homology_pair": 544,
+    "structural_class": 544,
+    "promoter": 512
+  },
+  "type_embedding_update_norms": {
+    "choice": 0.004318367689847946,
+    "score": 0.004792412277311087,
+    "noul": 0.0033440140541642904
+  },
+  "before": {
+    "promoter": {
+      "n_entities": 128,
+      "accuracy": 0.453125,
+      "macro_f1": 0.3118279569892473,
+      "nll": 1.0260544892421528,
+      "mcc": 0.0,
+      "auroc": 0.40923645320197044,
+      "auprc": 0.4308749550791529
+    },
+    "splice": {
+      "n_entities": 128,
+      "accuracy": 0.484375,
+      "macro_f1": 0.25376811594202897,
+      "nll": 1.0443946677925358
+    },
+    "structural_class": {
+      "n_entities": 128,
+      "accuracy": 0.03125,
+      "macro_f1": 0.028936170212765955,
+      "nll": 1.9687527418574449
+    },
+    "homology_pair": {
+      "n_entities": 128,
+      "accuracy": 0.3046875,
+      "macro_f1": 0.2814884894355093,
+      "nll": 0.9785340839382388,
+      "mcc": -0.10784549470606127,
+      "auroc": 0.35964912280701755,
+      "auprc": 0.8509698072362251
+    },
+    "fluorescence": {
+      "n_entities": 128,
+      "accuracy": 0.1796875,
+      "macro_f1": 0.06133333333333333,
+      "nll": 1.7824501396729264,
+      "score_prediction": {
+        "mae": 0.5692682603339239,
+        "rmse": 0.9238987907563493,
+        "spearman": -0.12770188397229146
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "multilabel_location": {
+      "n_entities": 128,
+      "n_labels": 10,
+      "micro_auprc": 0.11748863720341382,
+      "macro_auprc_observed_labels": 0.16169573930779063,
+      "macro_auprc_label_count": 10,
+      "positive_support": [
+        46,
+        41,
+        22,
+        18,
+        12,
+        2,
+        3,
+        4,
+        6,
+        1
+      ],
+      "micro_f1_at_0_5": 0.21081081081081082,
+      "macro_f1_at_0_5": 0.1772927676643859,
+      "brier_mean_per_label": 0.2535954525383161
+    }
+  },
+  "after": {
+    "promoter": {
+      "n_entities": 128,
+      "accuracy": 0.7734375,
+      "macro_f1": 0.7593204953640666,
+      "nll": 0.6118069350955398,
+      "mcc": 0.5567445347320581,
+      "auroc": 0.7470443349753695,
+      "auprc": 0.7770985626764952
+    },
+    "splice": {
+      "n_entities": 128,
+      "accuracy": 0.5703125,
+      "macro_f1": 0.24212271973466004,
+      "nll": 0.9718842749784077
+    },
+    "structural_class": {
+      "n_entities": 128,
+      "accuracy": 0.4375,
+      "macro_f1": 0.18820028011204482,
+      "nll": 1.3585323315597742
+    },
+    "homology_pair": {
+      "n_entities": 128,
+      "accuracy": 0.9375,
+      "macro_f1": 0.8707070707070708,
+      "nll": 0.13640458946828835,
+      "mcc": 0.7692246349896499,
+      "auroc": 0.9987468671679198,
+      "auprc": 0.9998487598306111
+    },
+    "fluorescence": {
+      "n_entities": 128,
+      "accuracy": 0.2734375,
+      "macro_f1": 0.08588957055214724,
+      "nll": 1.6067177843792468,
+      "score_prediction": {
+        "mae": 0.6394919668642197,
+        "rmse": 0.872292446597494,
+        "spearman": -0.09506621630717726
+      },
+      "oracle_quantization_mae": 0.1992560127021817,
+      "outside_training_range_fraction": 0.0
+    },
+    "multilabel_location": {
+      "n_entities": 128,
+      "n_labels": 10,
+      "micro_auprc": 0.3019163849169137,
+      "macro_auprc_observed_labels": 0.15668702032279494,
+      "macro_auprc_label_count": 10,
+      "positive_support": [
+        46,
+        41,
+        22,
+        18,
+        12,
+        2,
+        3,
+        4,
+        6,
+        1
+      ],
+      "micro_f1_at_0_5": 0.0,
+      "macro_f1_at_0_5": 0.0,
+      "brier_mean_per_label": 0.09336335011931646
+    }
+  },
+  "dev_eval_seconds": 11.032301665050909,
+  "reload_max_probability_error": 0.0,
+  "checkpoint_reload_passed": true,
+  "checkpoint_sha256": "7211baf47b3f85951638beed8ad00515efa006048bde3bbaba3d750344185cb1",
+  "limitations": [
+    "No new global homology clustering or genomic-coordinate split.",
+    "GFP native variant split intentionally shares a parent protein.",
+    "Limited source provenance for local paired homology.",
+    "Only Laya full-input eligibility checked; not a common generator subset yet.",
+    "Dev outcomes are engineering diagnostics, not held-out paper test results."
+  ]
+}

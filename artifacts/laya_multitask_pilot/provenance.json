@@ -1,0 +1,11 @@
+{
+  "code_sha256": {
+    "scripts/laya_multitask_data.py": "d60610b8b250742474a9071411067682757951365a0b641e725e69425c4e7335",
+    "scripts/laya_multitask_experiment.py": "382b83d6f8be74c73dd3540453b3c9c1f1853b09b8bdee839dd23a08a461e993",
+    "scripts/laya_formal_experiment.py": "1efb0d960803d8ecb40163e75292648a34e77b9b44e71c4f15366d041d66cd25",
+    "vendor/laya/laya/common.py": "f231d42fcec84da203222fcaa89c083b22776e00341e66e118183d754e1dcabf"
+  },
+  "initialization_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+  "stage": "six_task_engineering_pilot",
+  "formal_test_access": false
+}

@@ -1,6 +1,6 @@
 # Experiment plan: Jev-style decision models for biological sequences
 
-Date: 2026-09-24. **Status: prospective design, not executed.** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
+Date: 2026-09-24. **Status: formal design remains prospective; two separate six-task engineering pilots are complete, and a three-pass development round is running.** The existing twelve-model results remain an initial study. This redesign was written after those test results were seen; it is not preregistration of the original experiment.
 
 ## Problem anchor
 
@@ -104,7 +104,7 @@ Time all labels in the requested multilabel panel; do not count one yes/no call 
 - Seeds: 20260922, 20260923, 20260924; new data manifests remain distinct from old ones.
 - C/H-M: raw tokenizer, original Laya initialization, BF16, effective batch 32, initial AdamW LR 2e-5, weight decay 0.01, warm-up 5%; no additional CPT. CE/BCE or MSE according to the predeclared output path. H-M uses appropriate binary/sigmoid/scalar heads rather than an incompatible all-purpose softmax.
 - Task-balanced schedule: after admission, set per-task entity presentations to three times the smallest admitted task's training count (sample larger tasks without replacement per cycle). Record both biological-entity presentations and expanded label-proposition presentations. Normalize the multilabel loss per observed label then per example, so many-label tasks do not dominate just by vocabulary size. Match entity exposures for C/H-M/G; disclose the additional sequence calls needed by proposition methods.
-- G: canonical-answer SFT, answer-token loss only, no thinking; same entity/panel exposure schedule. Use BF16 and gradient accumulation/activation checkpointing as needed on the 16-GB RTX 4080 SUPER. A 100-update train/dev pilot determines feasible batch/memory/time before freezing any recipe adjustment. Full tuning versus LoRA must be disclosed if a memory gate forces a change.
+- G: canonical-answer SFT, answer-token loss only, no thinking; same entity/panel exposure schedule. Use BF16 and gradient accumulation/activation checkpointing as needed on the available RTX 4080 SUPER (the current driver reports approximately 32 GiB; record each run’s actual capacity). A 100-update train/dev pilot determines feasible batch/memory/time before freezing any recipe adjustment. Full tuning versus LoRA must be disclosed if a memory gate forces a change.
 - Main suite: C/H-M/G × 3 seeds = **9 joint fits**. H-S for four anchors × 3 seeds = **12 fits**, giving **21 main fits**. H-S is therefore not an all-12-task claim. Generator free/constrained/likelihood modes share the same 3 trained G checkpoints. Score tasks in H-M carry a scalar control and an ordinal control; count both heads/losses and disclose joint supervision. If interference makes this comparison unsuitable, use separately budgeted controls instead of hiding extra fits.
 - Transfer extension: two leave-one-task-out settings (C06 and C10) × two eligible interface models (C and G) × three seeds = **12 additional fits**. Strict zero-shot fixed heads are not applicable. Full plan with transfer is **33 fits**; excluding those runs permits only supervised multitask claims.
 - Pilot compute allowance: at most 2 GPU-hours before re-estimating. Do not inherit the earlier three-task 12–30-hour estimate for this expanded suite. After the pilot publish `sum(fits × admitted updates × measured seconds/update) + all-mode evaluation + calibration + timing`, with task-length and label-panel factors and 20% scheduling contingency. Dataset sizes after grouping/eligibility and multilabel expansion are not yet known; a total GPU-hour promise now would be unsupported.
@@ -123,7 +123,7 @@ Time all labels in the requested multilabel panel; do not count one yes/no call 
 | M4 | One frozen evaluation and same-hardware cost measurement | TODO; all failures/seeds reported, no test-based retuning |
 | M5 | Separate leave-C06-out and leave-C10-out training/evaluation | TODO; 12 extra fits required before unseen-task claims |
 
-The first model runs are **PILOT-C**, **PILOT-HM**, and **PILOT-G** on the six-task development suite, only after M0. This revision performed source research and read-only data audits; it did not launch any of those runs.
+The first model runs are **PILOT-C**, **PILOT-HM**, and **PILOT-G** on the six-task development suite, only after M0. The subsequent six-task engineering pilot is documented in [the execution report](../research/laya_multitask_pilot.md). It uses development data with exact/RC and endpoint-component guards while the full global homology/provenance gate remains open. It is not the confirmatory M2/M4 experiment. Its dev diagnostics cannot be promoted to new blind-test evidence.
 
 ## Scope cuts
 
