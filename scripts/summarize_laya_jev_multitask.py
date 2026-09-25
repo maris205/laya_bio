@@ -93,6 +93,8 @@ def main():
         result['decision_checks'][task]=checks
     result['baselines']=baselines
     result['decision_scope']='Practical finite-budget route decision, not proof of architectural capacity. No-CPT joint usefulness must be considered separately from CPT effects. No matched alternative-backbone speed comparison has been run.'
+    audit_path=a.output/'audit.json'
+    if audit_path.exists():result['audit']=load(audit_path)
     write_json(a.output/'summary.json',result)
     lines=['# One Laya checkpoint, three tasks, JEV-style output','',
        'Fixed final-epoch results. Each task has 8,192 training examples; three epochs; one seed; reused development sets; no new test inference. All models use a shared typed candidate scorer with no task-specific output head.','',
@@ -108,6 +110,19 @@ def main():
         for name,c in comps.items():
             scale=100 if c['metric']=='accuracy' else 1;lo,hi=c['paired_entity_bootstrap_95_CI'];unit=' pp' if scale==100 else ' native RMSE'
             lines.append(f'- {task}, {name}: {scale*c["right_minus_left"]:+.4f}{unit}; descriptive 95% interval [{scale*lo:+.4f}, {scale*hi:+.4f}].')
+    lines+=['','## Engineering decision','',
+      'NO-CPT joint is the recommended checkpoint from this bounded round: it is the only shared model that passes all three frozen usefulness gates. CPT joint slightly improves classification Accuracy but worsens GFP RMSE, MAE and Spearman, and does not pass the GFP MAE constant-baseline gate. This is a one-seed development decision, not a backbone-superiority claim.']
+    if 'audit' in result:
+        audit=result['audit'];lines+=['',
+          f'Independent audit: **{audit["status"].upper()}**. It reconstructed {audit["encoded_rows_reconstructed"]:,} encoded rows, recomputed {audit["metric_points_recomputed"]} metric points, checked {audit["prediction_files_checked"]} prediction files, and verified both retained model hashes, frozen schedules/exposures, shared initialization and absence of task-specific heads.']
+    lines+=['','## Portable mixed-task inference and raw-input cost','',
+      '| Arm | Task | p50 (ms) | p95 (ms) | Batch-16 requests/s |','|---|---|---:|---:|---:|']
+    for arm in ['no_cpt_joint','cpt_joint']:
+        for task in TASKS:
+            b=result['runs'][arm]['end_to_end_benchmark'][task]
+            lines.append(f'| {arm} | {task} | {b["single_request_p50_ms"]:.2f} | {b["single_request_p95_ms"]:.2f} | {b["batched_requests_per_second"]:.2f} |')
+    lines+=['',
+      'Both exported joint checkpoints reproduce the saved homogeneous-batch probabilities exactly for the same raw inputs. In the 48-request interleaved Noul/Choice/Score check, both preserve every argmax; maximum probability differences versus the original homogeneous BF16 evaluation are 0.0181 (no-CPT) and 0.0100 (CPT). The difference reflects changed batch shapes and padding.']
     lines+=['','## Interpretation boundaries','',
       '- Classification output validity is enforced by the candidate interface and is separate from biological accuracy.',
       '- Score outputs are an ordered distribution with a native-unit expected value. Interpolated training targets and a continuous loss differ from the earlier hard-bin pilot.',
@@ -115,7 +130,7 @@ def main():
       '- Training diagnostics use fixed 1,024-entity subsets per task. Development uses all 1,052 / 939 / 5,362 admitted examples.',
       '- Reverse Choice order is a fixed diagnostic, not exhaustive instruction or order invariance.',
       '- Native GFP train/valid variants share a parent. The whole saved CPT protein sample has no 15mer overlap with GFP train/valid; this is not a global homology guarantee.',
-      '- Cached-tokenization inference timings include panel assembly and model execution, but do not establish a speed advantage over Qwen or OmniGene4.',
+      '- Raw-sequence timings include tokenization, textual rubric/panel assembly, device transfer, model execution, softmax and typed-answer construction on a warm loaded model. They exclude file/network I/O and do not establish a speed advantage over Qwen or OmniGene4.',
       '- A CPT failure is not automatically a Laya failure: inspect the matched no-CPT joint model. Negative results apply to this finite budget and recipe.',
       '',f'Local raw evidence: `{a.root}`.']
     (a.output/'REPORT.md').write_text('\n'.join(lines)+'\n')

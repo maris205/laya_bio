@@ -102,13 +102,34 @@ All five fits completed in 70.54 minutes. Promoter dev no-CPT/CPT accuracy: 4K 8
 
 ## 2026-09-25: one-model JEV-style three-task decision round
 
-User confirmed the primary objective is one checkpoint, multiple tasks, unified JEV-style output; few-shot is deferred. Continue Laya for one bounded target-form experiment before deciding whether to switch to Qwen adaptation. [Active plan](EXPERIMENT_PLAN.md).
+User confirmed the primary objective is one checkpoint, multiple tasks, unified JEV-style output; few-shot is deferred. The bounded Laya target-form matrix completed at 2026-09-25 05:16 UTC. [Completed plan](EXPERIMENT_PLAN.md), [result record](../research/laya_jev_multitask_round1.md).
 
-| Run | Purpose | State |
+| Run/work item | Purpose | State |
 |---|---|---|
-| JEV-DATA | 8,192/task, full dev, direct BIO IDs, GFP–CPT admission | COMPLETE; zero 15mer overlaps and no truncation |
-| JEV-SMOKE | Shared typed scorer; all three primitives; reload | PASS |
-| CPT-JOINT / NO-CPT-JOINT | One model across Noul/Choice/Score | RUNNING queue; 1,152 updates each |
-| CPT-PROMOTER / CPT-STRUCTURE / CPT-SCORE | Same-interface single-task references | PLANNED; 384 updates each |
+| JEV-DATA | 8,192/task, full dev, direct BIO IDs, GFP–CPT admission | COMPLETE; 24,576 train / 7,353 dev; zero saved-CPT 15mer overlaps; no truncation |
+| JEV-SMOKE | Shared typed scorer; all three primitives; reload | PASS; finite positive encoder/scorer gradients, exact reload, 7.61 GiB peak |
+| CPT-JOINT | One CPT-initialized model across Noul/Choice/Score | COMPLETE; 1,152 updates; exact reload; model retained |
+| NO-CPT-JOINT | Expanded original model across Noul/Choice/Score | COMPLETE; 1,152 updates; exact reload; model retained |
+| CPT-PROMOTER | Same-interface single-task reference | COMPLETE; 384 updates; exact reload |
+| CPT-STRUCTURE | Same-interface single-task reference | COMPLETE; 384 updates; exact reload |
+| CPT-SCORE | Same-interface single-task reference | COMPLETE; 384 updates; exact reload |
+| JEV-SUMMARY | Final-epoch metrics, paired descriptive intervals and frozen decision gates | COMPLETE; NO-CPT joint passes all three usefulness gates |
+| JEV-AUDIT | Independent metric/hash/exposure/order/Score/checkpoint verification | PASS; 31,929 rows, 54 metric points, 30 prediction files |
+| JEV-PORTABLE | Two portable joint exports, raw mixed-task alignment and end-to-end timing | PASS; exact same-shape probabilities, 48/48 mixed argmax per arm |
+| JEV-ARCHIVE | Plots, compact evidence archive and final report | COMPLETE; 87 files, no raw sequences/model states/test predictions |
 
-Old GFP microfit extension remains paused. Previous conventional-head CPT results remain archived; this round has not yet produced development results.
+Fixed final-epoch development snapshot:
+
+| Task / metric | Constant | CPT single | NO-CPT joint | CPT joint |
+|---|---:|---:|---:|---:|
+| Promoter Accuracy | 49.52% | 88.50% | 88.12% | 88.88% |
+| Promoter Macro-F1 | 0.3312 | 0.8850 | 0.8812 | 0.8888 |
+| Structure Accuracy | 30.14% | 58.47% | 55.48% | 56.87% |
+| Structure Macro-F1 | 0.0662 | 0.4507 | 0.4959 | 0.4390 |
+| GFP RMSE ↓ | 0.8357 | 0.7066 | **0.6993** | 0.7512 |
+| GFP MAE ↓ | 0.5095 | 0.5411 | **0.4921** | 0.6229 |
+| GFP Spearman ↑ | — | 0.4341 | **0.4589** | 0.3682 |
+
+The final engineering choice is NO-CPT-JOINT: it is the only shared model that passes the frozen usefulness gate on all three tasks. CPT improves classification Accuracy slightly but degrades GFP RMSE/MAE/Spearman, so CPT is not a universal gain and CPT-JOINT is not the default checkpoint. CPT joint versus its CPT single-task references triggers no predeclared material-retention flag; the reference does not isolate pure gradient interference because joint training adds other-task updates and changes optimizer/dropout history.
+
+Reverse Choice order preserves semantic argmax for 89.35% of CPT-joint and 90.73% of no-CPT-joint examples, so valid output and similar aggregate accuracy do not establish candidate-order invariance. Results are one seed on reused dev sets; no new test inference, family-independent GFP claim, unknown-task claim, or cross-backbone speed claim. Old GFP microfit extension remains paused. This round is complete; no Qwen or OmniGene4 training is launched automatically before user selection of the next phase.

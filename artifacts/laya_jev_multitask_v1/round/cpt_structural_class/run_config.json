@@ -1,0 +1,46 @@
+{
+  "arm": "cpt",
+  "task": "structural_class",
+  "seed": 20260926,
+  "epochs": 3,
+  "effective_batch": 64,
+  "micro_batch": 8,
+  "eval_micro_batch": 16,
+  "updates": 384,
+  "encoder_lr": 2e-05,
+  "typed_head_scorer_lr": 0.0001,
+  "schedule": "5% warmup; cosine to 10%; single tasks replay joint global LR positions",
+  "initial_shared_head_sha256": "15d87253bbef7cf7f1dc4ecff4009e3fb0eca211c3f1f2e58104f596304d5054",
+  "batch_order_sha256_by_task": {
+    "promoter": "eb3720621168fe98775f73aebd4b3a980d8c5b2f93cfb0cffc29edf122c11974",
+    "structural_class": "26fa594a19423f7b9f0b8dd95ae05a097d461c6b1be9f8faba0c7feaffdd7c1d",
+    "fluorescence": "a61cce4a65e6d158a9be09007503764b8d082e16fe390ec69f7f0019b90036df"
+  },
+  "training_panel_order_sha256": "2b404fffdb34da15e8726c1719b5652d54bdf4d6c39c98f48de2b4c162c2bf51",
+  "data_manifest_sha256": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+  "initial_model_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+  "cpt_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+  "trainable_parameters": 423122945,
+  "score_spec": {
+    "anchors": [
+      1.296086311340332,
+      1.9797308444976807,
+      2.6633753776550293,
+      3.347019910812378,
+      4.030664443969727
+    ],
+    "train_mean": 3.1773752785957186,
+    "train_median": 3.5501139163970947,
+    "train_std": 0.8349439125427316,
+    "train_min": 1.296086311340332,
+    "train_max": 4.030664443969727,
+    "fit_entities": 8192,
+    "target": "linear interpolation between neighboring fixed native-unit anchors",
+    "loss": "0.5 soft-target cross-entropy + 0.5 standardized MSE of expected native score",
+    "calibration_fit": false
+  },
+  "head": "Original shared Laya 2-layer typed transformer and shared marker scorer; no task-specific heads; no temperature calibration.",
+  "smoke_only": false,
+  "test_inference": false,
+  "model_retention": "Joint models retained; anchors may be removed after exact reload verification."
+}

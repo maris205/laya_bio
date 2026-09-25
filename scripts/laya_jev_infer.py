@@ -35,12 +35,13 @@ class Predictor:
         if primitive=='score':
             anchors=[float(v) for v in request['anchors']]
             assert len(anchors)>=2 and all(a<b for a,b in zip(anchors,anchors[1:]))
-            choices=[f'log fluorescence = {v:.8g}' for v in anchors]
-        elif primitive=='noul':choices=request.get('choices',['false: not a promoter','true: promoter']);assert len(choices)==2
+            units=str(request.get('units','native units'))
+            choices=[f'{units} = {v:.8g}' for v in anchors]
+        elif primitive=='noul':choices=request.get('choices',['false: no, the statement does not hold','true: yes, the statement holds']);assert len(choices)==2
         else:choices=request['choices'];assert len(choices)>=2 and len(set(choices))==len(choices)
         row={'id':str(request.get('id',index)),'group_id':'inference','task':request.get('task','custom'),'primitive':primitive,
              'modality':modality,'sequence':seq,'question':request['question'],'choices':choices,'label':0}
-        if primitive=='score':row['anchors']=anchors
+        if primitive=='score':row.update(anchors=anchors,units=units)
         row=self.rep.prepare(row)
         if row['length']>self.config['max_input_tokens']:raise ValueError('Full request exceeds admitted context; no truncation is performed.')
         return render(row)
@@ -55,7 +56,7 @@ class Predictor:
             answer={'id':row['id'],'type':row['primitive'],'probabilities':probs}
             if row['primitive']=='noul':answer['answer']=bool(best)
             elif row['primitive']=='choice':answer.update(index=best,answer=row['choices'][best])
-            else:answer.update(level=best,value=sum(v*p for v,p in zip(row['anchors'],probs)),units='log fluorescence')
+            else:answer.update(level=best,value=sum(v*p for v,p in zip(row['anchors'],probs)),units=row['units'])
             answers.append(answer)
         return answers
 

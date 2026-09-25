@@ -18,7 +18,8 @@ def main():
         dest=a.output/rel;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
         assert sha(src)==sha(dest);files.append({'source_relative':str(rel),'archive_relative':str(rel),'sha256':sha(src)})
     for rel in ['data/manifest.json','data/cpt_admission.json','data/status.json','smoke/status.json','smoke/run_config.json','smoke/training_trace.jsonl',
-                'round/manifest.json','round/EXPERIMENT_PLAN.md','round/status.json','contract_tests.log']:
+                'round/manifest.json','round/EXPERIMENT_PLAN.md','round/status.json','contract_tests.log',
+                'analysis/REPORT.md','analysis/summary.json','analysis/audit.json','analysis/decision_round.png','analysis/decision_round.pdf']:
         copy(Path(rel))
     for name in ['cpt_joint','no_cpt_joint','cpt_promoter','cpt_structural_class','cpt_fluorescence']:
         folder=a.root/'round'/name;status=folder/'status.json'

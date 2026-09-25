@@ -1,22 +1,13 @@
 {
-  "status": "running",
-  "current": "cpt_promoter",
-  "command": [
-    "/root/miniconda3/bin/python",
-    "-u",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/frozen_code/laya_jev_multitask_train.py",
-    "--model-dir",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_model",
-    "--cpt-root",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2",
-    "--data-dir",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/data",
-    "--output",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/cpt_promoter",
-    "--arm",
-    "cpt",
-    "--task",
-    "promoter"
+  "status": "complete",
+  "runs": [
+    "cpt_joint",
+    "no_cpt_joint",
+    "cpt_promoter",
+    "cpt_structural_class",
+    "cpt_fluorescence"
   ],
-  "created_utc": "2026-09-25T03:33:18.437971+00:00"
+  "created_utc": "2026-09-25T03:33:18.437971+00:00",
+  "completed_utc": "2026-09-25T05:16:34.069591+00:00",
+  "elapsed_seconds": 6195.6316375590395
 }

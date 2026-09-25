@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "mixed_task_requests": 48,
+  "one_model_instance": true,
+  "same_shape_raw_inference_matches_saved_predictions_exactly": true,
+  "max_probability_difference_from_original_homogeneous_eval": 0.018121778964996338,
+  "argmax_agreement_fraction": 1.0,
+  "numerical_note": "BF16 mixed-batch versus homogeneous-batch shape differences; same-shape training checkpoint reload was exact.",
+  "model_sha256": "54af51943fe5c19cc701973b201805b2aecdfb9acce09890480eb0deec680fc5",
+  "portable_files": {
+    "decision_config.json": "251d5d8b0bbce4c8f925f69fe01ea1f9ce32dd508522fd3dfdb968148b54dd82",
+    "encoder/config.json": "4a8eea4e768884931b579afcb948cafa2bc1ae139f91e42fbcd73b399e2c4500",
+    "representation/new_tokens.json": "90ac08ed121440faaac7be6bb0a6ed723faea1e03aa59e33bee37c2c7e134bd4",
+    "representation/source_tokenizers/dna.json": "ff3e797fe62c6fbf5126af811d9fab00711e310ee7adf41a7c2f1fc9315a9ce3",
+    "representation/source_tokenizers/protein.json": "246515b085c11dce0be76a93ee05b13cfd1cc4d6dd810de069943365bb063796",
+    "representation/base_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+    "representation/base_tokenizer/tokenizer.json": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "representation/expanded_tokenizer/tokenizer_config.json": "5926e6ec4294f80294bd98d9176defa9fbae7f140525d06a1da987488e74a973",
+    "representation/expanded_tokenizer/tokenizer.json": "04bfe5d872b8f93ee0c975c3d51b941a49918e08ca3df6aa02ec8cedc3f8f47c"
+  }
+}

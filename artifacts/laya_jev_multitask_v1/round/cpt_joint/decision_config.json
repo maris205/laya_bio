@@ -1,0 +1,56 @@
+{
+  "model_type": "shared_laya_jev",
+  "model_sha256": "574dff0b32b09a80194e4350eeabc5899f6a838833ced9b8d534a0471994a406",
+  "max_input_tokens": 512,
+  "training_arm": "cpt_joint",
+  "training_data_manifest_sha256": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+  "task_templates": {
+    "promoter": {
+      "primitive": "noul",
+      "modality": "dna",
+      "question": "Is this DNA sequence a promoter?",
+      "choices": [
+        "false: not a promoter",
+        "true: promoter"
+      ]
+    },
+    "structural_class": {
+      "primitive": "choice",
+      "modality": "protein",
+      "question": "Which structural class describes this protein?",
+      "choices": [
+        "All Alpha",
+        "All Beta",
+        "Alpha and Beta",
+        "Alpha plus Beta",
+        "Multi-domain Proteins",
+        "Mixed Structures",
+        "Small Proteins and Peptides"
+      ]
+    },
+    "fluorescence": {
+      "primitive": "score",
+      "modality": "protein",
+      "question": "What is the log-fluorescence level of this GFP variant?",
+      "choices": [
+        "log fluorescence = 1.2960863",
+        "log fluorescence = 1.9797308",
+        "log fluorescence = 2.6633754",
+        "log fluorescence = 3.3470199",
+        "log fluorescence = 4.0306644"
+      ],
+      "anchors": [
+        1.296086311340332,
+        1.9797308444976807,
+        2.6633753776550293,
+        3.347019910812378,
+        4.030664443969727
+      ],
+      "units": "log fluorescence"
+    }
+  },
+  "head_layers": 2,
+  "task_specific_heads": false,
+  "temperature_calibration": false,
+  "scope": "Three supervised tasks. Custom rubrics are accepted structurally but unseen-task quality has not been validated."
+}

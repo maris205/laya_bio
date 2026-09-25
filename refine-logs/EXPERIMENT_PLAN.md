@@ -1,6 +1,6 @@
 # Laya decision round: one model, multiple tasks, JEV-style outputs
 
-**Date:** 2026-09-25. **Status:** preparation and train-only preflight; freeze before production development evaluation.
+**Date:** 2026-09-25. **Status:** complete; the frozen five-run matrix, independent audit, portable joint-checkpoint checks, plots and compact archive all passed.
 
 **User objective:** a single model checkpoint jointly handles biological tasks with a unified JEV-style output contract, with useful task quality and practical inference cost. The backbone is replaceable (Laya first, Qwen adaptation as the next candidate, OmniGene4 later). Few-shot/zero-shot and a universal CPT advantage are not current requirements.
 
@@ -76,3 +76,21 @@ Data admission is complete. CPU tests and a three-update train-only GPU smoke pr
 ### Preflight completed; production settings frozen
 
 CPU contract checks passed. Train-only GPU smoke completed one effective 64-entity update per task, with positive encoder/scorer gradients and exact reload. Peak allocated GPU memory 8,170,972,160 bytes (7.61 GiB). Observed seconds/update: promoter 1.5003, structure 2.3762, GFP 1.5183. Micro-batch 8 and evaluation batch 16 are retained. The approximate production forecast is 115–150 minutes including evaluation/checkpoint overhead; short-smoke timing is uncertain. Frozen run order: CPT joint → no-CPT joint → CPT promoter → CPT structure → CPT GFP. No development outcomes were inspected to choose this recipe.
+
+### Fixed matrix, verification and delivery completed
+
+All five production runs completed at 2026-09-25 05:16 UTC in 6,195.63 seconds (103.26 minutes), inside the predeclared forecast. Total production work was 3,456 updates and 221,184 entity presentations. Every run reports finite training, the planned three exposures per selected target entity, and exact final-checkpoint reload. The two joint checkpoints are retained; single-task weights were removed only after reload verification as predeclared.
+
+| Task / metric | Constant | CPT single | No-CPT joint | CPT joint |
+|---|---:|---:|---:|---:|
+| Promoter Accuracy | 49.52% | 88.50% | 88.12% | 88.88% |
+| Promoter Macro-F1 | 0.3312 | 0.8850 | 0.8812 | 0.8888 |
+| Structure Accuracy | 30.14% | 58.47% | 55.48% | 56.87% |
+| Structure Macro-F1 | 0.0662 | 0.4507 | 0.4959 | 0.4390 |
+| GFP RMSE ↓ | 0.8357 | 0.7066 | **0.6993** | 0.7512 |
+| GFP MAE ↓ | 0.5095 | 0.5411 | **0.4921** | 0.6229 |
+| GFP Spearman ↑ | — | 0.4341 | **0.4589** | 0.3682 |
+
+The final engineering choice is NO-CPT-JOINT because it is the shared model that passes all three frozen usefulness gates. CPT-JOINT slightly improves classification Accuracy but degrades all three GFP continuous/ranking metrics and fails the GFP MAE baseline gate. No CPT-joint versus CPT-single comparison crosses the predeclared material-retention threshold. Reverse-order Choice semantic argmax agreement is 89.35% for CPT joint and 90.73% for no-CPT joint, so order sensitivity remains material.
+
+Independent audit passed after reconstructing 31,929 encoded rows, recomputing 54 metric points and checking 30 prediction files. Both portable joint exports match saved probabilities exactly for same-shaped raw-input batches; each preserves all 48 argmax decisions in interleaved Noul/Choice/Score inference. Raw-input p50 latency ranges from 23.55 to 32.91 ms across arms/tasks. Final PNG/PDF figures and an 87-file compact archive preserve audit, summary, frozen code, traces and losslessly compressed predictions without raw sequences or model states. No new test inference or new backbone training was performed.

@@ -1,0 +1,26 @@
+{
+  "promoter": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 32.681033946573734,
+    "single_request_p95_ms": 40.592497366014854,
+    "batched_requests_per_second": 348.59973806705113,
+    "scope": "Raw biological sequence and textual rubric tokenization, panel assembly, H2D, full model, softmax, D2H, typed answer construction; warm loaded model; excludes file/network IO."
+  },
+  "structural_class": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 32.914471928961575,
+    "single_request_p95_ms": 41.057259973604225,
+    "batched_requests_per_second": 235.4536911219891,
+    "scope": "Raw biological sequence and textual rubric tokenization, panel assembly, H2D, full model, softmax, D2H, typed answer construction; warm loaded model; excludes file/network IO."
+  },
+  "fluorescence": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 24.038752540946007,
+    "single_request_p95_ms": 30.696256423834704,
+    "batched_requests_per_second": 277.10716871905294,
+    "scope": "Raw biological sequence and textual rubric tokenization, panel assembly, H2D, full model, softmax, D2H, typed answer construction; warm loaded model; excludes file/network IO."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "hashed_source_code_files": 21,
+  "encoded_rows_reconstructed": 31929,
+  "metric_points_recomputed": 54,
+  "prediction_files_checked": 30,
+  "max_saved_probability_sum_roundoff": 1.8722494132816792e-07,
+  "continuous_training_targets_preserve_native_values": true,
+  "GFP_CPT_15mer_admission_independently_recomputed": true,
+  "CPT_protein_rows_rechecked": 33280,
+  "all_typed_outputs_valid": true,
+  "retained_model_hashes_verified": [
+    "cpt_joint",
+    "no_cpt_joint"
+  ],
+  "shared_head_initialization_identical_all_runs": true,
+  "CPT_single_and_joint_initial_dev_predictions_identical": true,
+  "frozen_schedules_and_panel_hashes_reproduced": true,
+  "actual_trainer_exposure_histograms_match_three_epochs": true,
+  "no_task_specific_heads_in_retained_models": true,
+  "CPT_joint_resume_optimizer_step": 1152,
+  "CPT_joint_resume_parameter_states": 201,
+  "test_inference": false,
+  "NLL_check": "FP32 probability sum roundoff normalized only for independent FP64 sklearn log_loss."
+}

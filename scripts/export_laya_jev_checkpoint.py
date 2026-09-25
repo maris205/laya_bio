@@ -23,11 +23,12 @@ def main():
     for task in manifest['tasks']:
         r=next(r for r in train if r['task']==task)
         templates[task]={k:r[k] for k in ['primitive','modality','question','choices']}
-        if r['primitive']=='score':templates[task]['anchors']=manifest['score_spec']['anchors']
+        if r['primitive']=='score':templates[task].update(anchors=manifest['score_spec']['anchors'],units='log fluorescence')
     config=ModernBertConfig.from_pretrained(a.model_dir/'encoder');config.vocab_size=json.loads((a.cpt_root/'data/manifest.json').read_text())['new_vocab_size'];config.reference_compile=False
     config.save_pretrained(folder/'encoder')
     shutil.copytree(a.cpt_root/'data/representation',folder/'representation',dirs_exist_ok=True)
     dc={'model_type':'shared_laya_jev','model_sha256':state['checkpoint_sha256'],'max_input_tokens':manifest['max_length'],
+        'training_arm':a.arm,'training_data_manifest_sha256':sha(a.root/'data/manifest.json'),
         'task_templates':templates,'head_layers':2,'task_specific_heads':False,'temperature_calibration':False,
         'scope':'Three supervised tasks. Custom rubrics are accepted structurally but unseen-task quality has not been validated.'}
     write_json(folder/'decision_config.json',dc)
