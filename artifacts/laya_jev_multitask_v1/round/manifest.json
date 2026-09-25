@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-09-25T03:33:18.437971+00:00",
+  "code_sha256": {
+    "laya_jev_multitask_train.py": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1",
+    "laya_jev_multitask_data.py": "ed2d80b6c4b8157d5c424f9154fce403446ed4a2936a269df84b02393565a2d2",
+    "laya_biocpt_train.py": "42a5a2c3d52fe57758331366e2349def4007834cbfedc6d0990d1479d0568953",
+    "laya_biocpt_data.py": "cc9a2d36d0b91b612a3c425d1206591af6a9e2e27ab938b2e9527f0b6700dcfb",
+    "test_laya_jev_multitask.py": "953291aea4941f917a6141f551b55f28c69b120a90e048035f3b75947964a779",
+    "run_laya_jev_multitask.py": "985799e1dea1fd768014fee62b72fb1ee46b50d57284b97e494a7385877b56d8"
+  },
+  "data_manifest_sha256": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+  "initial_model_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+  "cpt_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+  "run_order": [
+    "cpt_joint",
+    "no_cpt_joint",
+    "cpt_promoter",
+    "cpt_structural_class",
+    "cpt_fluorescence"
+  ],
+  "smoke": {
+    "status": "complete",
+    "updates": 3,
+    "checkpoint_reload_exact": true,
+    "checkpoint_sha256": "96035ad51373119edd48dc9f8235471984ed1bacfc44d3f1a2c65947305521f8",
+    "model_retained": false,
+    "peak_gpu_bytes": 8170972160,
+    "elapsed_seconds": 30.038474848959595,
+    "seconds_per_update_by_task": {
+      "structural_class": 2.3762221101205796,
+      "fluorescence": 1.518272154033184,
+      "promoter": 1.500313452910632
+    },
+    "presentations_by_task": {
+      "promoter": 64,
+      "structural_class": 64,
+      "fluorescence": 64
+    },
+    "per_entity_exposure_histogram": {
+      "1": 192
+    },
+    "completed_utc": "2026-09-25T03:30:43.123671+00:00",
+    "test_inference": false
+  },
+  "production_updates": 3456,
+  "test_inference": false,
+  "python": "3.12.3",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.5.3",
+    "tokenizers": "0.22.2",
+    "safetensors": "0.6.2",
+    "numpy": "2.4.4",
+    "scipy": "1.16.1",
+    "scikit-learn": "1.8.0"
+  },
+  "estimated_minutes_before_dev": [
+    115,
+    150
+  ],
+  "GPU": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 595.71.05"
+}

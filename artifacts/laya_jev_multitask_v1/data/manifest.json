@@ -1,0 +1,162 @@
+{
+  "status": "complete",
+  "tasks": [
+    "promoter",
+    "structural_class",
+    "fluorescence"
+  ],
+  "outputs": {
+    "train": {
+      "file": "train.jsonl",
+      "sha256": "d75a08362828db3d1b9a42f355c9eacba5736bac1a4f71e0d2b9627a99c14fbf",
+      "rows": 24576,
+      "by_task": {
+        "promoter": 8192,
+        "structural_class": 8192,
+        "fluorescence": 8192
+      },
+      "lengths": {
+        "promoter": {
+          "max": 116,
+          "median": 102.0
+        },
+        "structural_class": {
+          "max": 309,
+          "median": 122.0
+        },
+        "fluorescence": {
+          "max": 207,
+          "median": 204.0
+        }
+      },
+      "classes": {
+        "promoter": {
+          "0": 4102,
+          "1": 4090
+        },
+        "structural_class": {
+          "1": 1702,
+          "0": 1380,
+          "2": 2419,
+          "3": 1972,
+          "6": 459,
+          "4": 144,
+          "5": 116
+        },
+        "fluorescence": {
+          "3": 4756,
+          "0": 1263,
+          "4": 1861,
+          "1": 208,
+          "2": 104
+        }
+      }
+    },
+    "dev": {
+      "file": "dev.jsonl",
+      "sha256": "127d26a77ff11a4a39afbf2a72e94d08edbbb84eaeaa014d478e710d98b86b0d",
+      "rows": 7353,
+      "by_task": {
+        "promoter": 1052,
+        "structural_class": 939,
+        "fluorescence": 5362
+      },
+      "lengths": {
+        "promoter": {
+          "max": 113,
+          "median": 103.0
+        },
+        "structural_class": {
+          "max": 306,
+          "median": 121.0
+        },
+        "fluorescence": {
+          "max": 207,
+          "median": 204.0
+        }
+      },
+      "classes": {
+        "promoter": {
+          "0": 521,
+          "1": 531
+        },
+        "structural_class": {
+          "0": 151,
+          "3": 217,
+          "2": 283,
+          "1": 202,
+          "6": 54,
+          "4": 16,
+          "5": 16
+        },
+        "fluorescence": {
+          "4": 1194,
+          "0": 803,
+          "3": 3122,
+          "1": 176,
+          "2": 67
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/manifest.json": "b0b5badf61b151cf34ff9e1357af6475bf7698eea77686e021fc6ca9c9e02cf4",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_calibration.jsonl": "1b6be563db394b8ff2b676062ec5dc1146f444af4fdb467d6207d0d20b6c0e3a",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_test.jsonl": "7cfae07d045bfc3d24f6a8912fc5c38cb71e619a6c7c4111aba12e512cf549d7",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_train.jsonl": "06e25601806907372b4d37a934f1a833366996131dbdcf22e7660e19db443b07",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/promoter_detection_selection_dev.jsonl": "3dffdee6768f4553b8afd13792dc55918d908c20bb5f6242a5cf74927aa37582",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_calibration.jsonl": "aa0a7680bf99500befc1498f60b3a7a502e49240baf20ff6afcaae452bc04592",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_test.jsonl": "15cd76121f7e3b71d5b4ef2269239a03a28131f5cff61898e77e482dc6e1e3af",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_train.jsonl": "257ff0feff28f0efbfa555d9b927417a01b68daea3d88e15749499a4613c5bbe",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_formal_data/fold_class_selection_dev.jsonl": "a89e20ae978e278fec82335b696f34382e7c762bc41aaeecd5841b25af8601bf",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/tape/fluorescence/fluorescence_train.json": "0a57cc0d1424ae67777bf3f836b559acab7f73063f6a928ddb833eb04640a156",
+    "/root/autodl-tmp/jev_gene/data/05_task_extension_sources/tape/fluorescence/fluorescence_valid.json": "7aab37c3b7ff18553d16ce172b828178ecd7fd4968e9b29852192953f9b90a0f",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/data/raw_train.jsonl": "f1647ee1a2233046b7ddf7f39a2456552d2df5225f3c0bd8e460568690d0251b",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_biocpt_v2/data/raw_validation.jsonl": "7c34adac916cb86e6c3aec59b9d3dfcf7fe72d3858cddc5b1b5a42d2de8b13a7"
+  },
+  "score_spec": {
+    "anchors": [
+      1.296086311340332,
+      1.9797308444976807,
+      2.6633753776550293,
+      3.347019910812378,
+      4.030664443969727
+    ],
+    "train_mean": 3.1773752785957186,
+    "train_median": 3.5501139163970947,
+    "train_std": 0.8349439125427316,
+    "train_min": 1.296086311340332,
+    "train_max": 4.030664443969727,
+    "fit_entities": 8192,
+    "target": "linear interpolation between neighboring fixed native-unit anchors",
+    "loss": "0.5 soft-target cross-entropy + 0.5 standardized MSE of expected native score",
+    "calibration_fit": false
+  },
+  "max_length": 512,
+  "train_per_task": 8192,
+  "available_before_cap": {
+    "dev": {
+      "promoter": 1052,
+      "structural_class": 939,
+      "fluorescence": 5362
+    },
+    "train": {
+      "promoter": 16766,
+      "structural_class": 15593,
+      "fluorescence": 21446
+    }
+  },
+  "exclusions": {},
+  "cpt_data_manifest_sha256": "e461630d0f41617b11521066096437e8bef883ad23df4a7528140bc481507175",
+  "cpt_checkpoint_sha256": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+  "test_inference": false,
+  "test_targets_used": false,
+  "all_inputs_untruncated": true,
+  "train_dev_exact_RC_overlap": 0,
+  "limitations": [
+    "One-seed engineering decision round; reused development sets.",
+    "GFP native split shares parent protein.",
+    "No full homology-independence claim.",
+    "8192 labels per task is a bounded data budget, not full-data saturation."
+  ]
+}

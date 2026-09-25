@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "new_task": "fluorescence",
+  "GFP_native_train_and_valid_15mers": 59002,
+  "CPT_protein_snapshots_checked": 33280,
+  "overlapping_CPT_rows": [],
+  "test_targets_used": false,
+  "GFP_test_file_read": false,
+  "limitation": "15mer exclusion does not establish family independence. Native GFP train/valid share a parent."
+}

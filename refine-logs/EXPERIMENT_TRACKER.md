@@ -99,3 +99,16 @@ With canonical-residue-complete admitted protein data, 128+1,024 CPT updates and
 ### 2026-09-24 UTC: corrected traditional CPT/SFT round complete
 
 All five fits completed in 70.54 minutes. Promoter dev no-CPT/CPT accuracy: 4K 82.51%/87.55% (+5.04 pp, descriptive paired-group 95% interval [+3.14,+7.03]); full16,766 90.02%/89.92% (−0.10 pp, interval [−1.43,+1.24]). Full-data train accuracy 92.32%/95.12%: stronger training fit without dev-accuracy improvement. All 24 metric points independently reproduced; 1,152 CPT sampling/masking steps and saved RNG/sampler state match replay; all retained checkpoint hashes and reloads pass. Actual CPT input 6,770,136 tokens / 990,605 masked targets. Protein N has 24,210 natural visible inputs and 4,196 targets after the source repair. Single seed, reused dev, no test inference or few/zero-shot claim. Old route remains paused. [Final report](../research/laya_biocpt_round1.md).
+
+## 2026-09-25: one-model JEV-style three-task decision round
+
+User confirmed the primary objective is one checkpoint, multiple tasks, unified JEV-style output; few-shot is deferred. Continue Laya for one bounded target-form experiment before deciding whether to switch to Qwen adaptation. [Active plan](EXPERIMENT_PLAN.md).
+
+| Run | Purpose | State |
+|---|---|---|
+| JEV-DATA | 8,192/task, full dev, direct BIO IDs, GFP–CPT admission | COMPLETE; zero 15mer overlaps and no truncation |
+| JEV-SMOKE | Shared typed scorer; all three primitives; reload | PASS |
+| CPT-JOINT / NO-CPT-JOINT | One model across Noul/Choice/Score | RUNNING queue; 1,152 updates each |
+| CPT-PROMOTER / CPT-STRUCTURE / CPT-SCORE | Same-interface single-task references | PLANNED; 384 updates each |
+
+Old GFP microfit extension remains paused. Previous conventional-head CPT results remain archived; this round has not yet produced development results.
