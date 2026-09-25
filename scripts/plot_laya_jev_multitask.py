@@ -38,9 +38,10 @@ def main():
     ax.set(xlabel='Observed log fluorescence',ylabel='Predicted expected log fluorescence',title='CPT joint · full GFP development set')
     ax=axes[1,2];x=np.arange(3);width=.34
     for shift,name,color,label in [(-width/2,'no_cpt_joint','#777777','No-CPT joint'),(width/2,'cpt_joint','#2474b5','CPT joint')]:
-        values=[s['runs'][name]['inference_benchmark'][t]['single_request_p50_ms'] for t in tasks]
+        bench=s['runs'][name].get('end_to_end_benchmark',s['runs'][name]['inference_benchmark'])
+        values=[bench[t]['single_request_p50_ms'] for t in tasks]
         ax.bar(x+shift,values,width,color=color,label=label)
-    ax.set(xticks=x,xticklabels=['Promoter','Structure','GFP'],ylabel='Single-request p50 latency (ms)',title='Full candidate panel · cached tokenization');ax.legend(frameon=False,fontsize=8)
+    ax.set(xticks=x,xticklabels=['Promoter','Structure','GFP'],ylabel='Single-request p50 latency (ms)',title=('Raw sequence → typed answer' if all('end_to_end_benchmark' in s['runs'][n] for n in ['cpt_joint','no_cpt_joint']) else 'Full panel · cached tokenization'));ax.legend(frameon=False,fontsize=8)
     fig.suptitle('One Laya model, three tasks, shared JEV-style output\n8,192 labels/task · one seed · fixed final epoch · reused development sets',fontsize=14)
     for ext in ['png','pdf']:fig.savefig(a.output/('decision_round.'+ext),dpi=180)
     plt.close(fig)

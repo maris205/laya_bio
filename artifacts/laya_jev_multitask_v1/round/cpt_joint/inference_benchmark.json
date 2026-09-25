@@ -1,0 +1,32 @@
+{
+  "promoter": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 24.221066967584193,
+    "single_request_p95_ms": 26.973203371744603,
+    "batched_requests_per_second": 485.89672590189053,
+    "mean_input_tokens": 102.578125,
+    "all_candidates_scored_in_one_encoder_call": true,
+    "scope": "Cached biological/text tokenization; includes panel assembly, CPU packing, H2D, model, softmax, D2H; excludes file/network latency."
+  },
+  "structural_class": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 24.41986696794629,
+    "single_request_p95_ms": 25.665448245126754,
+    "batched_requests_per_second": 285.4121109070276,
+    "mean_input_tokens": 132.8125,
+    "all_candidates_scored_in_one_encoder_call": true,
+    "scope": "Cached biological/text tokenization; includes panel assembly, CPU packing, H2D, model, softmax, D2H; excludes file/network latency."
+  },
+  "fluorescence": {
+    "requests": 64,
+    "batch_size": 16,
+    "single_request_p50_ms": 24.393997504375875,
+    "single_request_p95_ms": 26.066082972101864,
+    "batched_requests_per_second": 317.2019741274261,
+    "mean_input_tokens": 203.96875,
+    "all_candidates_scored_in_one_encoder_call": true,
+    "scope": "Cached biological/text tokenization; includes panel assembly, CPU packing, H2D, model, softmax, D2H; excludes file/network latency."
+  }
+}

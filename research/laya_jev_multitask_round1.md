@@ -1,6 +1,6 @@
 # One Laya model, three tasks, JEV-style output: decision round
 
-**Status: running; no completed-round result yet.** The user-defined objective is one model with a shared JEV-style interface and useful task quality/inference efficiency. Few-shot is not a current objective. This is a bounded engineering decision on whether to continue the Laya backbone before considering Qwen biological adaptation and, later, OmniGene4.
+**Status: CPT joint model complete; four matched controls remain in progress.** The user-defined objective is one model with a shared JEV-style interface and useful task quality/inference efficiency. Few-shot is not a current objective. This is a bounded engineering decision on whether to continue the Laya backbone before considering Qwen biological adaptation and, later, OmniGene4.
 
 ## Frozen setting
 
@@ -24,3 +24,11 @@ The shared-model inference entry point is [laya_jev_infer.py](../scripts/laya_je
 - [Active plan and decision gates](../refine-logs/EXPERIMENT_PLAN.md)
 
 Local full experiment root: `/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1`. Previous results and checkpoints remain intact. The old GFP microfit extension stays paused.
+
+## First completed joint model (controls pending)
+
+The fixed third-epoch CPT joint model reaches promoter Accuracy **88.88%**, macro-F1 **0.8888**; protein-structure Accuracy **56.87%**, macro-F1 **0.4390**; GFP native RMSE **0.7512**, MAE **0.6229**, Spearman **0.3682**. GFP improves RMSE over the train-mean constant (0.8357), but its MAE remains worse than the train-median constant (0.5095). It has not passed the full predeclared usefulness gate. Two rare structural classes retain zero recall.
+
+The fixed 1,024-per-task training diagnostic has promoter Accuracy 96.00%, structural Accuracy 68.36%, and GFP RMSE 0.7509. This is a diagnostic subset, not full-training evaluation. The canonical/reversed structural panels score 56.87%/56.76%; this single reversal is not exhaustive invariance evidence.
+
+All 24,576 selected training entities were presented exactly three times, and checkpoint reload predictions match exactly. The first joint fit took 34.37 minutes. Cached-tokenization p50 single-request latency is about 24 ms/task; raw-to-answer timing and mixed-task portable export remain pending. No-CPT joint training is now running; the three CPT single-task anchors follow. No final backbone decision is made before those controls.

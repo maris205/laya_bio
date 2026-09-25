@@ -1,0 +1,160 @@
+{
+  "source_root": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1",
+  "files": [
+    {
+      "source_relative": "data/manifest.json",
+      "archive_relative": "data/manifest.json",
+      "sha256": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4"
+    },
+    {
+      "source_relative": "data/cpt_admission.json",
+      "archive_relative": "data/cpt_admission.json",
+      "sha256": "ee38855b63906769c646c99cd33b9dcc68c82349cfa4bbfecc98e19fc7c34872"
+    },
+    {
+      "source_relative": "data/status.json",
+      "archive_relative": "data/status.json",
+      "sha256": "c53e9111a25e1bc7a3e3d99467432279ee5267848114b84deb069d59b0f8429d"
+    },
+    {
+      "source_relative": "smoke/status.json",
+      "archive_relative": "smoke/status.json",
+      "sha256": "9bf4724ee34087ab380314acdff5bc2c37b386e26bdbffa223dca8c4de1c4f27"
+    },
+    {
+      "source_relative": "smoke/run_config.json",
+      "archive_relative": "smoke/run_config.json",
+      "sha256": "741f506377003968a2c47463408b15e5bb7a64391735f42f6c5c6f6e0815e540"
+    },
+    {
+      "source_relative": "smoke/training_trace.jsonl",
+      "archive_relative": "smoke/training_trace.jsonl",
+      "sha256": "03125ce5c6c04bb4ef9f86ce42b545c369f0f27e0540db4c3bb738e18eb7fcf6"
+    },
+    {
+      "source_relative": "round/manifest.json",
+      "archive_relative": "round/manifest.json",
+      "sha256": "1b11c7391207a813c8abaad33c6bc33940b9380d0c9587228bfbb0532f556ae9"
+    },
+    {
+      "source_relative": "round/EXPERIMENT_PLAN.md",
+      "archive_relative": "round/EXPERIMENT_PLAN.md",
+      "sha256": "e701dc3ea99ae3d9fc50780f687e4eb60847b568255b96bb3b11fc7b507cccf1"
+    },
+    {
+      "source_relative": "round/status.json",
+      "archive_relative": "round/status.json",
+      "sha256": "2ea53be22630a58a07f5c2c9132c07d3904865adf9794a387c5333aaf285d577"
+    },
+    {
+      "source_relative": "contract_tests.log",
+      "archive_relative": "contract_tests.log",
+      "sha256": "a00815eb17f1f4d9c0f476fc54b9b7fedb096755a64cabb75b235f94cf83714b"
+    },
+    {
+      "source_relative": "round/cpt_joint/dev_epoch0_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "8d12a4d026682f7f8151d88f7b5c07177ea989a36eb8bce0233af839cc8a275d",
+      "compressed_sha256": "81769da87a7623b8e45b5854613fefb292caca037ae43c28f8d703e2b62e47e7"
+    },
+    {
+      "source_relative": "round/cpt_joint/dev_epoch1_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "d8bed1cd6d4a9846831fc3325757c8773474a71222640e8f67f30371155436b3",
+      "compressed_sha256": "7e2cee06dc664cb14fad45e47bdb1a3ef226c0b76fe0d43577eaa667a9049bc3"
+    },
+    {
+      "source_relative": "round/cpt_joint/dev_epoch2_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "5275030ce1a704d358cc921d9177a0ed90a6c8e0793690379d872665e94244c3",
+      "compressed_sha256": "c1d39dd886d0be69b85907f89b5fc1cbd267331e382023b5a1c9d4da391ab3f6"
+    },
+    {
+      "source_relative": "round/cpt_joint/dev_epoch3_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "91684a0ebed23359f9d4249c553fabdacbeaf447697c73320258a99b200ee85a",
+      "compressed_sha256": "49b1ed68bc16b8e8958ef1fc1e798efd9d1ea8e5769b5f5081ee76ec6c54e0f7"
+    },
+    {
+      "source_relative": "round/cpt_joint/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "f14feea081c18ccd00ca85c2819a96f8c4269abedda1a60d604bbb83cda38765",
+      "compressed_sha256": "18ceda91cb19a8638fc4e12a6aa4c0fb65e5a50cd546877a679dacbdc552ff94"
+    },
+    {
+      "source_relative": "round/cpt_joint/inference_benchmark.json",
+      "archive_relative": "round/cpt_joint/inference_benchmark.json",
+      "sha256": "018084cb6eceb456c200c0d398ddc9220d31174375ba4e704434dcd60d541a9f"
+    },
+    {
+      "source_relative": "round/cpt_joint/learning_curve.jsonl",
+      "archive_relative": "round/cpt_joint/learning_curve.jsonl",
+      "sha256": "36ff815da59eb0ab566d18fd9949af81ada678929f27b7b2b09befd422309e8f"
+    },
+    {
+      "source_relative": "round/cpt_joint/reversed_choice_metrics.json",
+      "archive_relative": "round/cpt_joint/reversed_choice_metrics.json",
+      "sha256": "5a4f099ce3d1b3709b7c282c5e7c04f56989f485ebd391edff18fb14ab22c18f"
+    },
+    {
+      "source_relative": "round/cpt_joint/run_config.json",
+      "archive_relative": "round/cpt_joint/run_config.json",
+      "sha256": "10dbbcc8f653d8f4ecf18bdb0bc5c7ab9df3cdb3decde2b579abc059b703bbae"
+    },
+    {
+      "source_relative": "round/cpt_joint/status.json",
+      "archive_relative": "round/cpt_joint/status.json",
+      "sha256": "fee7531e6c56c9d87f6bbc993c2b224918fdba5cb6bcabc3a33b0d21345d2092"
+    },
+    {
+      "source_relative": "round/cpt_joint/train_epoch0_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "0c5232a9ab47bfac6eae4e9744b061078593e0dd6628ff265cfcd399af8c62cb",
+      "compressed_sha256": "868b9762636dcae00a6f5bb9b6836ba41925fced50beda70cc8709c0cb399ce8"
+    },
+    {
+      "source_relative": "round/cpt_joint/train_epoch3_predictions.jsonl",
+      "archive_relative": "round/cpt_joint/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "d709f3ab4c1847d9dabb89b7fc37fbe19383d257522191bd0670e37d852460c3",
+      "compressed_sha256": "a7a2ad12d77a0167f00efd88b1dfbf4bf4029adfc899278d97f7fbf84125ea0e"
+    },
+    {
+      "source_relative": "round/cpt_joint/training_trace.jsonl",
+      "archive_relative": "round/cpt_joint/training_trace.jsonl",
+      "sha256": "50a7ee53f824317e32efd5055571fe582a3adfb4b298d81ea3b7f6d7ffbb38ed"
+    },
+    {
+      "source_relative": "round/frozen_code/laya_biocpt_data.py",
+      "archive_relative": "round/frozen_code/laya_biocpt_data.py",
+      "sha256": "cc9a2d36d0b91b612a3c425d1206591af6a9e2e27ab938b2e9527f0b6700dcfb"
+    },
+    {
+      "source_relative": "round/frozen_code/laya_biocpt_train.py",
+      "archive_relative": "round/frozen_code/laya_biocpt_train.py",
+      "sha256": "42a5a2c3d52fe57758331366e2349def4007834cbfedc6d0990d1479d0568953"
+    },
+    {
+      "source_relative": "round/frozen_code/laya_jev_multitask_data.py",
+      "archive_relative": "round/frozen_code/laya_jev_multitask_data.py",
+      "sha256": "ed2d80b6c4b8157d5c424f9154fce403446ed4a2936a269df84b02393565a2d2"
+    },
+    {
+      "source_relative": "round/frozen_code/laya_jev_multitask_train.py",
+      "archive_relative": "round/frozen_code/laya_jev_multitask_train.py",
+      "sha256": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1"
+    },
+    {
+      "source_relative": "round/frozen_code/run_laya_jev_multitask.py",
+      "archive_relative": "round/frozen_code/run_laya_jev_multitask.py",
+      "sha256": "985799e1dea1fd768014fee62b72fb1ee46b50d57284b97e494a7385877b56d8"
+    },
+    {
+      "source_relative": "round/frozen_code/test_laya_jev_multitask.py",
+      "archive_relative": "round/frozen_code/test_laya_jev_multitask.py",
+      "sha256": "953291aea4941f917a6141f551b55f28c69b120a90e048035f3b75947964a779"
+    }
+  ],
+  "raw_sequences_included": false,
+  "model_states_included": false,
+  "test_predictions": false
+}
