@@ -57,6 +57,15 @@ def main():
         if (folder/'portable_export_check.json').exists():result['runs'][name]['portable_export_check']=load(folder/'portable_export_check.json')
         if (folder/'reversed_choice_metrics.json').exists():result['runs'][name]['reversed_choice_metrics']=load(folder/'reversed_choice_metrics.json')
         predictions[name]=read_lines(folder/'dev_epoch3_predictions.jsonl')
+        if (folder/'dev_reversed_choice_predictions.jsonl').exists():
+            canonical={r['id']:r for r in predictions[name] if r['task']=='structural_class'}
+            reverse=read_lines(folder/'dev_reversed_choice_predictions.jsonl')
+            assert set(canonical)=={r['id'] for r in reverse}
+            result['runs'][name]['choice_order_diagnostic']={
+                'semantic_argmax_agreement':float(np.mean([r['prediction']==canonical[r['id']]['prediction'] for r in reverse])),
+                'mean_probability_total_variation':float(np.mean([.5*np.abs(np.array(r['probs'])-canonical[r['id']]['probs']).sum() for r in reverse])),
+                'scope':'One fixed reversal, mapped to canonical labels; descriptive diagnostic, not exhaustive permutation invariance.'}
+
     train=read_lines(a.root/'data/train.jsonl');dev=read_lines(a.root/'data/dev.jsonl');baselines={}
     for task in TASKS:
         tr=[r for r in train if r['task']==task];de=[r for r in dev if r['task']==task]

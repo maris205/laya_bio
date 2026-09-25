@@ -1,6 +1,6 @@
 {
   "status": "running",
-  "current": "no_cpt_joint",
+  "current": "cpt_promoter",
   "command": [
     "/root/miniconda3/bin/python",
     "-u",
@@ -12,12 +12,11 @@
     "--data-dir",
     "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/data",
     "--output",
-    "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/no_cpt_joint",
+    "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/cpt_promoter",
     "--arm",
-    "no_cpt",
+    "cpt",
     "--task",
-    "joint",
-    "--retain-model"
+    "promoter"
   ],
   "created_utc": "2026-09-25T03:33:18.437971+00:00"
 }

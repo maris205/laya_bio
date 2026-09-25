@@ -33,7 +33,22 @@ def main():
     for name,h in recipe['code_sha256'].items():assert sha(root/'frozen_code'/name)==h;hashed+=1
     assert sha(a.root/'data/manifest.json')==recipe['data_manifest_sha256']
     assert sha(a.cpt_root/'round/cpt/model.safetensors')==recipe['cpt_checkpoint_sha256']
+    assert sha(a.cpt_root.parent/'laya_model/model.safetensors')==recipe['initial_model_sha256']
+    assert sha(a.cpt_root/'data/manifest.json')==manifest['cpt_data_manifest_sha256']
     for path,h in manifest['source_sha256'].items():assert sha(Path(path))==h;hashed+=1
+    gfp_bank=set()
+    for path in manifest['source_sha256']:
+        if Path(path).name in ['fluorescence_train.json','fluorescence_valid.json']:
+            for r in load(Path(path)):gfp_bank.update(kmers(r['primary'].upper(),15))
+    cpt_protein_rows=0
+    for split in ['train','validation']:
+        for row in read_lines(a.cpt_root/f'data/raw_{split}.jsonl'):
+            if row['modality']=='protein':
+                cpt_protein_rows+=1
+                assert not any(k in gfp_bank for k in kmers(row['content'],15))
+    admission=load(a.root/'data/cpt_admission.json')
+    assert admission['status']=='pass' and admission['GFP_native_train_and_valid_15mers']==len(gfp_bank)
+    assert admission['CPT_protein_snapshots_checked']==cpt_protein_rows
     rows={split:read_lines(a.root/'data'/manifest['outputs'][split]['file']) for split in ['train','dev']}
     for split in rows:assert sha(a.root/'data'/manifest['outputs'][split]['file'])==manifest['outputs'][split]['sha256'];hashed+=1
     assert not {r['group_id'] for r in rows['train']}&{r['group_id'] for r in rows['dev']}
@@ -69,6 +84,9 @@ def main():
     for name in RUNS:
         folder=root/name;cfg=load(folder/'run_config.json');configs[name]=cfg;status=load(folder/'status.json')
         assert status['status']=='complete' and status['checkpoint_reload_exact']
+        assert cfg['data_manifest_sha256']==recipe['data_manifest_sha256']
+        assert cfg['initial_model_sha256']==recipe['initial_model_sha256']
+        assert cfg['cpt_checkpoint_sha256']==(recipe['cpt_checkpoint_sha256'] if cfg['arm']=='cpt' else None)
         active=TASKS if cfg['task']=='joint' else [cfg['task']]
         expected=[r for r in full_schedule if r[2] in active];trace=read_lines(folder/'training_trace.jsonl')
         assert len(trace)==len(expected)==status['updates']==cfg['updates']
@@ -145,6 +163,7 @@ def main():
     assert {float(v['step']) for v in resume['optimizer']['state'].values()}=={1152.}
     result={'status':'pass','hashed_source_code_files':hashed,'encoded_rows_reconstructed':nrows,'metric_points_recomputed':checks,
        'prediction_files_checked':prediction_files,'max_saved_probability_sum_roundoff':roundoff,'continuous_training_targets_preserve_native_values':True,
+       'GFP_CPT_15mer_admission_independently_recomputed':True,'CPT_protein_rows_rechecked':cpt_protein_rows,
        'all_typed_outputs_valid':True,'retained_model_hashes_verified':retained,'shared_head_initialization_identical_all_runs':True,
        'CPT_single_and_joint_initial_dev_predictions_identical':True,'frozen_schedules_and_panel_hashes_reproduced':True,
        'actual_trainer_exposure_histograms_match_three_epochs':True,'no_task_specific_heads_in_retained_models':True,

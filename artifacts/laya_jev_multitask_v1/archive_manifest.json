@@ -44,7 +44,7 @@
     {
       "source_relative": "round/status.json",
       "archive_relative": "round/status.json",
-      "sha256": "2ea53be22630a58a07f5c2c9132c07d3904865adf9794a387c5333aaf285d577"
+      "sha256": "27d6c0214ff589b2f93b5132d628ea4eab998c53d5106c971ffd11676450da33"
     },
     {
       "source_relative": "contract_tests.log",
@@ -122,6 +122,78 @@
       "source_relative": "round/cpt_joint/training_trace.jsonl",
       "archive_relative": "round/cpt_joint/training_trace.jsonl",
       "sha256": "50a7ee53f824317e32efd5055571fe582a3adfb4b298d81ea3b7f6d7ffbb38ed"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/dev_epoch0_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "7b5db88e0ff567656724b32f024bf95423ec44ba3eb68fe065f537b2a0a40778",
+      "compressed_sha256": "3fba6e343d3a8ae6034c47d44f0f49bc64660614471cb07aaf9eba98cbe4148e"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/dev_epoch1_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "7e132d4a06316e5e5ef68902bb1b9b09847273edb8bf44c6dfb52229b2ef9bbc",
+      "compressed_sha256": "4a516b754579f67f2d03207adc855f0dad73e65c5dd53f9a290ac6f6ba09de38"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/dev_epoch2_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "c429c6f8580d918f475d207f2e15433a02e57d5fa5640fd6cf228ad24049e940",
+      "compressed_sha256": "c1bc9237b137ad650fe737ebcae5f3016dbd4be63341d4518e8ea39dcb0cff13"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/dev_epoch3_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "66feb9bb1bf149aa8d14a2276c5c52b429c7a11cdd972c5d9e6db49d2d3b168d",
+      "compressed_sha256": "50123553b453fd2ffd0d0576c05e362b0eb6fd35cb0cce09b93c5f722ae2adb7"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "15476422dfce9bce862ade5f9811463b070259588f47d00965260350b3da3082",
+      "compressed_sha256": "a835322bbbc8aecb91ae335bac0fdfca3e6a4643430bc12dabce2cc5893c1326"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/inference_benchmark.json",
+      "archive_relative": "round/no_cpt_joint/inference_benchmark.json",
+      "sha256": "ffb0c2d4e4a8bb9d4e850d40231312c503e08d2accbe4c5eae4894ad55f0e638"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/learning_curve.jsonl",
+      "archive_relative": "round/no_cpt_joint/learning_curve.jsonl",
+      "sha256": "cc4b5b26678d3258d66b097d39f7bcdecdffc506cd911ecfb202e8ef796d2e2f"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/reversed_choice_metrics.json",
+      "archive_relative": "round/no_cpt_joint/reversed_choice_metrics.json",
+      "sha256": "fd5bb10278f1d5ffcec5952b85a4d563df92dfac8d93096011cad9d2edd652f7"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/run_config.json",
+      "archive_relative": "round/no_cpt_joint/run_config.json",
+      "sha256": "7cbb3feba08ea55954142d0eeb7fb2df61d265b31135bb34b34fc68bedefb3dd"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/status.json",
+      "archive_relative": "round/no_cpt_joint/status.json",
+      "sha256": "e9656a51325a6d4e05c761de1347bf4a36bab45e384bb2c9e2c62a38fe89ad47"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/train_epoch0_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "94bdcecc6b209785f4250a540e7c8e35cdf6a25c95b6eabe9d5dbd800ebc2125",
+      "compressed_sha256": "9598aebf4cc81e684d1c7d95c7d372f28253ef21eb3d6b0c91c687316a8e0dac"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/train_epoch3_predictions.jsonl",
+      "archive_relative": "round/no_cpt_joint/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "4143f8f2feb9a25b83e8b7e9a44774b2a21966af715f2458147050f99f03d660",
+      "compressed_sha256": "dcdea0f8ec682965d9d30f56ba4418ea15fa0e83203deec5fe97c873aaefa67e"
+    },
+    {
+      "source_relative": "round/no_cpt_joint/training_trace.jsonl",
+      "archive_relative": "round/no_cpt_joint/training_trace.jsonl",
+      "sha256": "2cae68599d63c1472a3bbd13e8a1e5e9c1bf679344b214c31f9242c17f41b1d8"
     },
     {
       "source_relative": "round/frozen_code/laya_biocpt_data.py",

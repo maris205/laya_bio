@@ -1,6 +1,6 @@
 # One Laya model, three tasks, JEV-style output: decision round
 
-**Status: CPT joint model complete; four matched controls remain in progress.** The user-defined objective is one model with a shared JEV-style interface and useful task quality/inference efficiency. Few-shot is not a current objective. This is a bounded engineering decision on whether to continue the Laya backbone before considering Qwen biological adaptation and, later, OmniGene4.
+**Status: both joint models complete; three CPT single-task references are running.** The user-defined objective is one model with a shared JEV-style interface and useful task quality/inference efficiency. Few-shot is not a current objective. This is a bounded engineering decision on whether to continue the Laya backbone before considering Qwen biological adaptation and, later, OmniGene4.
 
 ## Frozen setting
 
@@ -32,3 +32,19 @@ The fixed third-epoch CPT joint model reaches promoter Accuracy **88.88%**, macr
 The fixed 1,024-per-task training diagnostic has promoter Accuracy 96.00%, structural Accuracy 68.36%, and GFP RMSE 0.7509. This is a diagnostic subset, not full-training evaluation. The canonical/reversed structural panels score 56.87%/56.76%; this single reversal is not exhaustive invariance evidence.
 
 All 24,576 selected training entities were presented exactly three times, and checkpoint reload predictions match exactly. The first joint fit took 34.37 minutes. Cached-tokenization p50 single-request latency is about 24 ms/task; raw-to-answer timing and mixed-task portable export remain pending. No-CPT joint training is now running; the three CPT single-task anchors follow. No final backbone decision is made before those controls.
+
+## Matched joint comparison (single-task references pending)
+
+| Task | Metric | No-CPT joint | CPT joint |
+|---|---|---:|---:|
+| Promoter | Accuracy | 88.12% | 88.88% |
+| Promoter | Macro-F1 | 0.8812 | 0.8888 |
+| Protein structure | Accuracy | 55.48% | 56.87% |
+| Protein structure | Macro-F1 | 0.4959 | 0.4390 |
+| GFP | RMSE ↓ | 0.6993 | 0.7512 |
+| GFP | MAE ↓ | 0.4921 | 0.6229 |
+| GFP | Spearman ↑ | 0.4589 | 0.3682 |
+
+The no-CPT joint model beats the frozen train-fitted constant baselines on all three tasks under the predeclared usefulness rule. Thus CPT's mixed effects must not be interpreted as a blanket Laya backbone failure. This is one seed, with single-task retention references still pending; no final superiority or architecture conclusion is made. Both arms expand the biological vocabulary and update all encoder/embedding parameters during supervised training. “No CPT” means no additional unsupervised neural adaptation, not an unchanged original model.
+
+Reversing the structural Choice panel preserves the selected semantic label on 89.35% of CPT and 90.73% of no-CPT requests. Similar aggregate accuracy therefore does not imply per-example candidate-order invariance. This limitation remains explicit.
