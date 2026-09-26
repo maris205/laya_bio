@@ -324,6 +324,146 @@
       }
     }
   },
+  "replicates": {
+    "seed": 20260928,
+    "groups": {
+      "task_block_gfp_last": {
+        "n": 3,
+        "runs": {
+          "original": {
+            "rmse": 0.5953103876969367,
+            "mae": 0.3578078698733046,
+            "spearman": 0.5588471546414044,
+            "prediction_sd": 0.5422336366468875,
+            "gate": true,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.8669201520912547,
+                "macro_f1": 0.8656572106175318
+              },
+              "structural_class": {
+                "accuracy": 0.5420660276890309,
+                "macro_f1": 0.45106101640230556
+              }
+            }
+          },
+          "rep1": {
+            "rmse": 0.53174137259566,
+            "mae": 0.314993507295159,
+            "spearman": 0.5810954090929837,
+            "prediction_sd": 0.6199548789628265,
+            "gate": true,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.8783269961977186,
+                "macro_f1": 0.8782988445909794
+              },
+              "structural_class": {
+                "accuracy": 0.5420660276890309,
+                "macro_f1": 0.4390835731012644
+              }
+            }
+          },
+          "rep2": {
+            "rmse": 0.5890214893375081,
+            "mae": 0.4392618819934884,
+            "spearman": 0.5593115523212057,
+            "prediction_sd": 0.6313951998729567,
+            "gate": true,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.8754752851711026,
+                "macro_f1": 0.875082372285567
+              },
+              "structural_class": {
+                "accuracy": 0.5537806176783813,
+                "macro_f1": 0.4339488978965406
+              }
+            }
+          }
+        },
+        "rmse_mean": 0.5720244165433682,
+        "rmse_range": [
+          0.53174137259566,
+          0.5953103876969367
+        ],
+        "mae_mean": 0.370687753053984,
+        "mae_range": [
+          0.314993507295159,
+          0.4392618819934884
+        ],
+        "gate_pass_rate": 1.0
+      },
+      "task_block_gfp_first": {
+        "n": 3,
+        "runs": {
+          "original": {
+            "rmse": 0.8295872842902071,
+            "mae": 0.49354509978941324,
+            "spearman": 0.37849108029699924,
+            "prediction_sd": 0.15520890035630158,
+            "gate": true,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.8802281368821293,
+                "macro_f1": 0.8796644636502288
+              },
+              "structural_class": {
+                "accuracy": 0.5814696485623003,
+                "macro_f1": 0.4506809427130823
+              }
+            }
+          },
+          "rep1": {
+            "rmse": 0.8617439838951103,
+            "mae": 0.5120696407105729,
+            "spearman": 0.3252351409564728,
+            "prediction_sd": 0.0790324905913208,
+            "gate": false,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.879277566539924,
+                "macro_f1": 0.8785929195256905
+              },
+              "structural_class": {
+                "accuracy": 0.5878594249201278,
+                "macro_f1": 0.4546751981851171
+              }
+            }
+          },
+          "rep2": {
+            "rmse": 0.8290758620606546,
+            "mae": 0.6441413896221437,
+            "spearman": 0.3116807172388592,
+            "prediction_sd": 0.02155975331565708,
+            "gate": false,
+            "classification_dev": {
+              "promoter": {
+                "accuracy": 0.8925855513307985,
+                "macro_f1": 0.8925574942494453
+              },
+              "structural_class": {
+                "accuracy": 0.5740149094781682,
+                "macro_f1": 0.4576480795216743
+              }
+            }
+          }
+        },
+        "rmse_mean": 0.8401357100819907,
+        "rmse_range": [
+          0.8290758620606546,
+          0.8617439838951103
+        ],
+        "mae_mean": 0.5499187100407099,
+        "mae_range": [
+          0.49354509978941324,
+          0.6441413896221437
+        ],
+        "gate_pass_rate": 0.3333333333333333
+      }
+    },
+    "decision": "reproducible_gfp_last_effect"
+  },
   "arm": "no_cpt",
   "collapse_prediction_sd_threshold": 0.05,
   "audit": {

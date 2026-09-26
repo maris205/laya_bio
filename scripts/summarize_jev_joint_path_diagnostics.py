@@ -16,6 +16,9 @@ RUN_ROOTS = (
     PROJECT / "artifacts/laya_jev_joint_path_diagnostics/run_followup/round",
     PROJECT / "artifacts/laya_jev_joint_path_diagnostics/run_weighting_v3/round",
 )
+REPLICATE_ROOT = PROJECT / "artifacts/laya_jev_joint_path_diagnostics/run_replicate/round"
+REPLICATE_SEED = 20260928
+REPLICATE_VARIANTS = ("task_block_gfp_last", "task_block_gfp_first")
 SEEDS = (20260927, 20260928)
 VARIANTS = ("task_block_gfp_last", "task_block_gfp_first", "task_block_gfp_last_fluo0p5", "task_block_gfp_last_fluo2p0")
 TASKS = ("promoter", "structural_class", "fluorescence")
@@ -104,6 +107,40 @@ def find_variant(seed, variant):
     return None
 
 
+def replicate_groups(seed_block, pending):
+    """Group the original run and its identical reruns; apply the frozen decision rule."""
+    groups = {}
+    for variant in REPLICATE_VARIANTS:
+        runs = {"original": seed_block["variants"][variant]} if variant in seed_block["variants"] else {}
+        for path in sorted(REPLICATE_ROOT.glob(f"seed_{REPLICATE_SEED}_no_cpt_joint_{variant}_rep*")):
+            if not path.is_dir():
+                continue
+            if load_json(path / "status.json")["status"] != "complete":
+                pending.append(str(path))
+                continue
+            runs[path.name.rsplit("_", 1)[1]] = summarize_run(path, "joint")
+        rmse = [run["dev"]["rmse"] for run in runs.values()]
+        mae = [run["dev"]["mae"] for run in runs.values()]
+        groups[variant] = {
+            "n": len(runs),
+            "runs": {name: {"rmse": run["dev"]["rmse"], "mae": run["dev"]["mae"], "spearman": run["dev"]["spearman"],
+                            "prediction_sd": run["dev"]["prediction_sd"], "gate": run["gate"],
+                            "classification_dev": run["classification_dev"]} for name, run in runs.items()},
+            "rmse_mean": statistics.mean(rmse), "rmse_range": [min(rmse), max(rmse)],
+            "mae_mean": statistics.mean(mae), "mae_range": [min(mae), max(mae)],
+            "gate_pass_rate": sum(run["gate"] for run in runs.values()) / len(runs),
+        }
+    last, first = groups["task_block_gfp_last"], groups["task_block_gfp_first"]
+    separated = all(
+        last[f"{m}_range"][1] < first[f"{m}_range"][0]
+        and first[f"{m}_mean"] - last[f"{m}_mean"] > max(last[f"{m}_range"][1] - last[f"{m}_range"][0],
+                                                         first[f"{m}_range"][1] - first[f"{m}_range"][0])
+        for m in ("rmse", "mae")
+    )
+    return {"seed": REPLICATE_SEED, "groups": groups,
+            "decision": "reproducible_gfp_last_effect" if separated else "not_separable_from_run_noise"}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=PROJECT / "artifacts/laya_jev_joint_path_diagnostics/analysis/summary.json")
@@ -129,6 +166,7 @@ def main():
         }
     output = {
         "seeds": seeds,
+        "replicates": replicate_groups(seeds[str(REPLICATE_SEED)], pending),
         "arm": "no_cpt",
         "collapse_prediction_sd_threshold": 0.05,
         "audit": {
