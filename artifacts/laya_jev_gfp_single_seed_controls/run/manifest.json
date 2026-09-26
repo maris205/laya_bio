@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-09-25T15:10:10.923732+00:00",
+  "hashes": {
+    "training_data_manifest": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+    "initial_model": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "cpt_model": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+    "frozen_trainer": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1",
+    "control_runner": "4d0c2634dc77038538f662b0f23770ef29a1cb0dfe1b72d96615eb37950db499",
+    "plan": "2c248899f9b7418ca030d2b98a1a0b662ecd34134a91b6ea4fb08af45e738877",
+    "tracker": "7d2a5bed59fe84fdc5d7d86f4e226b878012f81bfb8df9d484997f91ba35a9c4"
+  },
+  "new_runs": [
+    {
+      "seed": 20260926,
+      "arm": "no_cpt",
+      "task": "fluorescence"
+    },
+    {
+      "seed": 20260927,
+      "arm": "no_cpt",
+      "task": "fluorescence"
+    },
+    {
+      "seed": 20260927,
+      "arm": "cpt",
+      "task": "fluorescence"
+    },
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "task": "fluorescence"
+    },
+    {
+      "seed": 20260928,
+      "arm": "cpt",
+      "task": "fluorescence"
+    }
+  ],
+  "smokes": [
+    {
+      "seed": 20260927,
+      "arm": "no_cpt",
+      "task": "fluorescence"
+    },
+    {
+      "seed": 20260927,
+      "arm": "cpt",
+      "task": "fluorescence"
+    }
+  ],
+  "reused_runs": {
+    "20260926_cpt": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/cpt_fluorescence"
+  },
+  "source_round": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1",
+  "test_inference": false
+}

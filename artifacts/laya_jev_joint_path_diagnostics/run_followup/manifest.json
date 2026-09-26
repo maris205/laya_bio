@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-09-26T06:36:17.372587+00:00",
+  "hashes": {
+    "training_data_manifest": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+    "initial_model": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "cpt_model": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+    "frozen_trainer": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1",
+    "diagnostic_runner": "3c7d8c94cf3b0b4e8027d9ec0f79642a62dd54b7e5fbc36e5d14683722b735f2",
+    "plan": "d96395b2eb933f0397fc157a74b423bfdfc8b7f2cd9730605673edf8bd2b1400",
+    "tracker": "092e8699867b6e2a5145b3ac078569191ef55b532040dfbdca0e96671874b387"
+  },
+  "jobs": [
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "variant": "task_block_gfp_first"
+    },
+    {
+      "seed": 20260927,
+      "arm": "no_cpt",
+      "variant": "task_block_gfp_last"
+    }
+  ],
+  "source_round": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1",
+  "test_inference": false
+}

@@ -1,0 +1,495 @@
+{
+  "collapse_prediction_sd_threshold": 0.05,
+  "seeds": {
+    "20260926": {
+      "no_cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260926_no_cpt_gfp_single",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.8105520429320607,
+            "mae": 0.6459584349712034,
+            "spearman": 0.28166138979412675,
+            "bias": -0.05165415387913157,
+            "prediction_sd": 0.11233944927921839,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.8098500874724299,
+            "mae": 0.6423991913797558,
+            "spearman": 0.2906209590787941,
+            "bias": -0.05203906029876449,
+            "prediction_sd": 0.10697279955841096,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "64696b2631c4e560ae2bd18afda1de72389add327b159cf4e1dae9274ac7b7bc",
+            "model_retained": true,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/no_cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.6992716309721377,
+            "mae": 0.49205769932074034,
+            "spearman": 0.45885818531616307,
+            "bias": 0.013720013173609252,
+            "prediction_sd": 0.368937919746233,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.6989245730491038,
+            "mae": 0.4920612547307414,
+            "spearman": 0.45501469917890447,
+            "bias": 0.010531558517289775,
+            "prediction_sd": 0.3567495594524434,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": true,
+          "near_constant_dev": false,
+          "near_constant_train": false
+        },
+        "single_minus_joint": {
+          "rmse": 0.111280411959923,
+          "mae": 0.15390073565046308,
+          "spearman": -0.17719679552203632,
+          "prediction_sd": -0.2565984704670146
+        }
+      },
+      "cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/cpt_fluorescence",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.7065719564302687,
+            "mae": 0.5410999501858145,
+            "spearman": 0.434115351495705,
+            "bias": -0.0687133472221452,
+            "prediction_sd": 0.3626127643818409,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.7180066818148982,
+            "mae": 0.5456563620622059,
+            "spearman": 0.41003228174153333,
+            "bias": -0.07480549491603965,
+            "prediction_sd": 0.3689557281867842,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "8642db507849d997aa2a727edb98d46e0dd44096dd298c3e85fb14aa6023c8f0",
+            "model_retained": false,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.7512019053788473,
+            "mae": 0.6228713717198965,
+            "spearman": 0.3681576623342315,
+            "bias": -0.15686304336247744,
+            "prediction_sd": 0.31475809143059713,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.7508519586896066,
+            "mae": 0.6269661935520725,
+            "spearman": 0.40334981151265936,
+            "bias": -0.16520689161452953,
+            "prediction_sd": 0.3099033711868625,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false
+        },
+        "single_minus_joint": {
+          "rmse": -0.044629948948578635,
+          "mae": -0.08177142153408201,
+          "spearman": 0.06595768916147354,
+          "prediction_sd": 0.04785467295124379
+        }
+      }
+    },
+    "20260927": {
+      "no_cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260927_no_cpt_gfp_single",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.7686064624414528,
+            "mae": 0.595298940286721,
+            "spearman": 0.36750343207185304,
+            "bias": -0.05399751797019906,
+            "prediction_sd": 0.2848399523966773,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.7711911823227463,
+            "mae": 0.5958836437525359,
+            "spearman": 0.36108423086601577,
+            "bias": -0.0506070983578181,
+            "prediction_sd": 0.2621835772195939,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "3c0dbff1a282d1e7ca6cca1a8194fab1ddebfe90784e2cc6489dd55d88023675",
+            "model_retained": true,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260927_no_cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.6910070832983357,
+            "mae": 0.5278672495468733,
+            "spearman": 0.43132768156641454,
+            "bias": -0.1038609055536049,
+            "prediction_sd": 0.42120613158313486,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.7058126430652071,
+            "mae": 0.5380180046624474,
+            "spearman": 0.43123836650384684,
+            "bias": -0.10311676327149502,
+            "prediction_sd": 0.40093520548600414,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false
+        },
+        "single_minus_joint": {
+          "rmse": 0.0775993791431171,
+          "mae": 0.06743169073984778,
+          "spearman": -0.0638242494945615,
+          "prediction_sd": -0.13636617918645755
+        }
+      },
+      "cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260927_cpt_gfp_single",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.8207088294394894,
+            "mae": 0.6249543925219733,
+            "spearman": 0.3015650044492363,
+            "bias": -0.00012712836572663846,
+            "prediction_sd": 0.09664694097862542,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.8169681127926093,
+            "mae": 0.6177901370502228,
+            "spearman": 0.3125649469566567,
+            "bias": 0.0009424574029744427,
+            "prediction_sd": 0.09410524006995952,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "7a4aff11572eee733f152164e4b23fcc62d3aced9f92d32095c13a7d5adf3afc",
+            "model_retained": true,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260927_cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.8160138187949536,
+            "mae": 0.624880650554259,
+            "spearman": 0.275721050089399,
+            "bias": -0.0103283040319523,
+            "prediction_sd": 0.11373599020724554,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.8158832680509548,
+            "mae": 0.620341174314864,
+            "spearman": 0.27195050858208053,
+            "bias": -0.008531648102696382,
+            "prediction_sd": 0.11097233066302765,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false
+        },
+        "single_minus_joint": {
+          "rmse": 0.004695010644535813,
+          "mae": 7.374196771425812e-05,
+          "spearman": 0.025843954359837273,
+          "prediction_sd": -0.017089049228620118
+        }
+      }
+    },
+    "20260928": {
+      "no_cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260928_no_cpt_gfp_single",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.6302639174894025,
+            "mae": 0.4781406953331369,
+            "spearman": 0.5392061646023475,
+            "bias": -0.19189555854245127,
+            "prediction_sd": 0.5636880508943247,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.6122881168747961,
+            "mae": 0.4696010371958754,
+            "spearman": 0.5505095887187546,
+            "bias": -0.19787413115801855,
+            "prediction_sd": 0.5561733002554246,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": true,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "861cd1368f96a84d2ad1cb0ef96ab767cdb5065dd6b3e8c12f9a0dbfba1c385d",
+            "model_retained": true,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260928_no_cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.8344876663353924,
+            "mae": 0.6241122733102806,
+            "spearman": 0.19292034819599513,
+            "bias": 0.02561007895985708,
+            "prediction_sd": 0.012651948133979253,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.8321947455949575,
+            "mae": 0.618291711980338,
+            "spearman": 0.22183084462965164,
+            "bias": 0.025783219127485525,
+            "prediction_sd": 0.012087021616489481,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": true,
+          "near_constant_train": true
+        },
+        "single_minus_joint": {
+          "rmse": -0.20422374884598993,
+          "mae": -0.14597157797714372,
+          "spearman": 0.34628581640635236,
+          "prediction_sd": 0.5510361027603454
+        }
+      },
+      "cpt": {
+        "single": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260928_cpt_gfp_single",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.829562047385278,
+            "mae": 0.6178351831391541,
+            "spearman": 0.26265297703809576,
+            "bias": 0.02738629768936148,
+            "prediction_sd": 0.08185103469076889,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.8260620576567301,
+            "mae": 0.6100396665392949,
+            "spearman": 0.23918063175239138,
+            "bias": 0.029454085181994154,
+            "prediction_sd": 0.07632156320619314,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false,
+          "audit": {
+            "checkpoint_sha256": "0e55791f20bf653d674206f79b744ff6ddc176a5137a7bd01b3697831efcd7ca",
+            "model_retained": true,
+            "updates": 384,
+            "checkpoint_reload_exact": true,
+            "all_gradients_finite_nonzero": true,
+            "test_inference": false
+          }
+        },
+        "joint": {
+          "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260928_cpt_joint",
+          "dev": {
+            "rows": 5362,
+            "rmse": 0.7583177754879985,
+            "mae": 0.5200310611322683,
+            "spearman": 0.4109339245663137,
+            "bias": 0.09218670173367706,
+            "prediction_sd": 0.24079831952936312,
+            "constant_mean_rmse": 0.8357340330063724,
+            "constant_median_mae": 0.5094643353259817
+          },
+          "train": {
+            "rows": 1024,
+            "rmse": 0.7567031289943215,
+            "mae": 0.5132789543451891,
+            "spearman": 0.41761253550611915,
+            "bias": 0.09001080715489461,
+            "prediction_sd": 0.24102471648891216,
+            "constant_mean_rmse": 0.8327251172491571,
+            "constant_median_mae": 0.5026173145743087
+          },
+          "gate": false,
+          "near_constant_dev": false,
+          "near_constant_train": false
+        },
+        "single_minus_joint": {
+          "rmse": 0.07124427189727944,
+          "mae": 0.09780412200688582,
+          "spearman": -0.14828094752821797,
+          "prediction_sd": -0.15894728483859422
+        }
+      }
+    }
+  },
+  "aggregate": {
+    "rmse": {
+      "no_cpt": {
+        "single_mean": 0.7364741409543053,
+        "single_sample_sd": 0.09434148931950338,
+        "joint_mean": 0.7415887935352886,
+        "joint_sample_sd": 0.0805588363415866,
+        "single_minus_joint_mean": -0.005114652580983277
+      },
+      "cpt": {
+        "single_mean": 0.7856142777516787,
+        "single_sample_sd": 0.06859563606313944,
+        "joint_mean": 0.7751778332205999,
+        "joint_sample_sd": 0.03554352529257897,
+        "single_minus_joint_mean": 0.010436444531078873
+      }
+    },
+    "mae": {
+      "no_cpt": {
+        "single_mean": 0.5731326901970204,
+        "single_sample_sd": 0.08607674143801468,
+        "joint_mean": 0.5480124073926314,
+        "joint_sample_sd": 0.06829328785731893,
+        "single_minus_joint_mean": 0.02512028280438905
+      },
+      "cpt": {
+        "single_mean": 0.5946298419489806,
+        "single_sample_sd": 0.0464947068997248,
+        "joint_mean": 0.5892610278021413,
+        "joint_sample_sd": 0.059963326410334736,
+        "single_minus_joint_mean": 0.005368814146839355
+      }
+    },
+    "spearman": {
+      "no_cpt": {
+        "single_mean": 0.3961236621561091,
+        "single_sample_sd": 0.1311360588675407,
+        "joint_mean": 0.3610354050261909,
+        "joint_sample_sd": 0.14624119258589113,
+        "single_minus_joint_mean": 0.03508825712991818
+      },
+      "cpt": {
+        "single_mean": 0.33277777766101235,
+        "single_sample_sd": 0.08989168133001896,
+        "joint_mean": 0.3516042123299814,
+        "joint_sample_sd": 0.06910964394612287,
+        "single_minus_joint_mean": -0.01882643466896905
+      }
+    },
+    "prediction_sd": {
+      "no_cpt": {
+        "single_mean": 0.32028915085674015,
+        "single_sample_sd": 0.22775287989084503,
+        "joint_mean": 0.26759866648778236,
+        "joint_sample_sd": 0.22233165179903394,
+        "single_minus_joint_mean": 0.052690484368957756
+      },
+      "cpt": {
+        "single_mean": 0.18037024668374507,
+        "single_sample_sd": 0.1579999403589297,
+        "joint_mean": 0.22309746705573527,
+        "joint_sample_sd": 0.10167330735636913,
+        "single_minus_joint_mean": -0.04272722037199018
+      }
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "single_runs": 6,
+    "new_single_runs": 5,
+    "reused_single_runs": 1,
+    "matched_epoch0_fluorescence_predictions": true,
+    "matched_score_spec": true,
+    "matched_fluorescence_batch_order": true,
+    "test_inference": false
+  }
+}

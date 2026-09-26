@@ -1,0 +1,7 @@
+{"completed": "seed_20260927_no_cpt_gfp_single", "phase": "smoke", "elapsed_seconds": 22.20855597127229}
+{"completed": "seed_20260927_cpt_gfp_single", "phase": "smoke", "elapsed_seconds": 22.814060111530125}
+{"completed": "seed_20260926_no_cpt_gfp_single", "phase": "round", "elapsed_seconds": 787.4637925960124}
+{"completed": "seed_20260927_no_cpt_gfp_single", "phase": "round", "elapsed_seconds": 783.8156448565423}
+{"completed": "seed_20260927_cpt_gfp_single", "phase": "round", "elapsed_seconds": 790.6379669411108}
+{"completed": "seed_20260928_no_cpt_gfp_single", "phase": "round", "elapsed_seconds": 779.7147897249088}
+{"completed": "seed_20260928_cpt_gfp_single", "phase": "round", "elapsed_seconds": 776.209218101576}

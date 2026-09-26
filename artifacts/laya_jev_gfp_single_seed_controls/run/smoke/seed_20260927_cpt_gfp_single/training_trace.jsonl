@@ -1,0 +1,1 @@
+{"step": 1, "joint_schedule_step": 2, "epoch": 1, "task": "fluorescence", "loss": 2.0499617159366608, "gradient_norm": 18.987207412719727, "encoder_gradient_norm": 1.4887479543685913, "scorer_gradient_norm": 7.888299465179443, "seconds": 2.4662188589572906, "encoder_lr": 7.017543859649123e-07}

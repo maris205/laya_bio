@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/jev_gene/scripts/run_jev_joint_path_diagnostics.py", line 230, in <module>
+    main()
+  File "/root/autodl-tmp/jev_gene/scripts/run_jev_joint_path_diagnostics.py", line 223, in main
+    injected_train(args.seed, args.variant, training_args)
+  File "/root/autodl-tmp/jev_gene/scripts/run_jev_joint_path_diagnostics.py", line 99, in injected_train
+    module.main()
+  File "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/frozen_code/laya_jev_multitask_train.py", line 290, in main
+    result=train_step(model,opt,rendered,pad,a.micro,spec);torch.cuda.synchronize()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1/round/frozen_code/laya_jev_multitask_train.py", line 203, in train_step
+    logits=model(**pack(rr,pad));loss=losses(logits,rr,spec).sum()/len(rows)
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/jev_gene/scripts/run_jev_joint_path_diagnostics.py", line 83, in weighted_losses
+    factor = torch.tensor([scale if row['task'] == 'fluorescence' else 1.0 for row in rows], device=values.device)
+             ^^^^^
+NameError: name 'torch' is not defined

@@ -1,0 +1,93 @@
+{
+  "seed": 20260928,
+  "arm": "no_cpt",
+  "collapse_prediction_sd_threshold": 0.05,
+  "baseline_joint": {
+    "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260928_no_cpt_joint",
+    "dev": {
+      "rows": 5362,
+      "rmse": 0.8344876663353924,
+      "mae": 0.6241122733102806,
+      "spearman": 0.19292034819599513,
+      "bias": 0.02561007895985708,
+      "prediction_sd": 0.012651948133979253,
+      "constant_mean_rmse": 0.8357340330063724,
+      "constant_median_mae": 0.5094643353259817
+    },
+    "train": {
+      "rows": 1024,
+      "rmse": 0.8321947455949575,
+      "mae": 0.618291711980338,
+      "spearman": 0.22183084462965164,
+      "bias": 0.025783219127485525,
+      "prediction_sd": 0.012087021616489481,
+      "constant_mean_rmse": 0.8327251172491571,
+      "constant_median_mae": 0.5026173145743087
+    },
+    "gate": false,
+    "near_constant_dev": true,
+    "near_constant_train": true,
+    "checkpoint_sha256": "a184812ed480a0eadfcde9e2d58132fb14418285aea56465f27315491793c47e"
+  },
+  "matched_gfp_single": {
+    "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_gfp_single_seed_controls/run/round/seed_20260928_no_cpt_gfp_single",
+    "dev": {
+      "rows": 5362,
+      "rmse": 0.6302639174894025,
+      "mae": 0.4781406953331369,
+      "spearman": 0.5392061646023475,
+      "bias": -0.19189555854245127,
+      "prediction_sd": 0.5636880508943247,
+      "constant_mean_rmse": 0.8357340330063724,
+      "constant_median_mae": 0.5094643353259817
+    },
+    "train": {
+      "rows": 1024,
+      "rmse": 0.6122881168747961,
+      "mae": 0.4696010371958754,
+      "spearman": 0.5505095887187546,
+      "bias": -0.19787413115801855,
+      "prediction_sd": 0.5561733002554246,
+      "constant_mean_rmse": 0.8327251172491571,
+      "constant_median_mae": 0.5026173145743087
+    },
+    "gate": true,
+    "near_constant_dev": false,
+    "near_constant_train": false,
+    "checkpoint_sha256": "861cd1368f96a84d2ad1cb0ef96ab767cdb5065dd6b3e8c12f9a0dbfba1c385d"
+  },
+  "variants": {
+    "task_block_gfp_last": {
+      "path": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_joint_path_diagnostics/run/round/seed_20260928_no_cpt_joint_task_block_gfp_last",
+      "dev": {
+        "rows": 5362,
+        "rmse": 0.5953103876969367,
+        "mae": 0.3578078698733046,
+        "spearman": 0.5588471546414044,
+        "bias": 0.05080965594021262,
+        "prediction_sd": 0.5422336366468875,
+        "constant_mean_rmse": 0.8357340330063724,
+        "constant_median_mae": 0.5094643353259817
+      },
+      "train": {
+        "rows": 1024,
+        "rmse": 0.581131800713921,
+        "mae": 0.34620229575268796,
+        "spearman": 0.5387494592417157,
+        "bias": 0.04132380897740371,
+        "prediction_sd": 0.5486629978462323,
+        "constant_mean_rmse": 0.8327251172491571,
+        "constant_median_mae": 0.5026173145743087
+      },
+      "gate": true,
+      "near_constant_dev": false,
+      "near_constant_train": false,
+      "checkpoint_sha256": "4e066d23ed0b795774fa50b25bf4d1d32f9d9b022a1e4b25dfaf58d3a0adb621"
+    }
+  },
+  "audit": {
+    "status": "pass",
+    "test_inference": false,
+    "variant_count": 1
+  }
+}
