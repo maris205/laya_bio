@@ -1,0 +1,4 @@
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_first_blockeval", "phase": "smoke", "elapsed_seconds": 26.377467531710863}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_last_blockeval", "phase": "smoke", "elapsed_seconds": 25.646164989098907}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_first_blockeval", "phase": "round", "elapsed_seconds": 2253.0598411094397}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_last_blockeval", "phase": "round", "elapsed_seconds": 2248.450739670545}

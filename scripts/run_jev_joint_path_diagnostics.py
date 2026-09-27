@@ -20,11 +20,23 @@ DATA = PRIOR / "data"
 PLAN = PROJECT / "artifacts/laya_jev_joint_path_diagnostics/EXPERIMENT_PLAN.md"
 TRACKER = PROJECT / "artifacts/laya_jev_joint_path_diagnostics/EXPERIMENT_TRACKER.md"
 
-VARIANTS = ("task_block_gfp_last", "task_block_gfp_first", "task_block_gfp_last_fluo0p5", "task_block_gfp_last_fluo2p0")
+VARIANTS = (
+    "task_block_gfp_last",
+    "task_block_gfp_first",
+    "task_block_gfp_last_fluo0p5",
+    "task_block_gfp_last_fluo2p0",
+    "task_block_gfp_last_blockeval",
+    "task_block_gfp_first_blockeval",
+)
+BLOCK_STEPS = 128
 MATRICES = {
     "weighting": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_fluo0p5"},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_fluo2p0"},
+    ),
+    "blockeval": (
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval"},
     ),
     "replicate": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last", "rep": 1},
@@ -79,6 +91,36 @@ def patch_task_block(module, order):
     module.schedule = schedule
 
 
+def add_block_eval(module, output):
+    """After every task block, score the fixed train-diagnostic panel; training itself is unchanged."""
+    manifest = json.loads((DATA / "manifest.json").read_text())
+    rows = module.read_lines(DATA / manifest["outputs"]["train"]["file"])
+    panel = []
+    for task in module.TASKS:
+        pool = sorted([r for r in rows if r["task"] == task], key=lambda r: module.digest("train-eval:" + r["id"]))
+        panel.extend(pool[:1024])
+    original_step = module.train_step
+    state = {"calls": 0, "tasks": []}
+
+    def train_step(model, opt, rows, pad, micro, spec):
+        result = original_step(model, opt, rows, pad, micro, spec)
+        state["calls"] += 1
+        state["tasks"].append(rows[0]["task"])
+        smoke = len(set(state["tasks"])) == len(state["tasks"])  # smoke runs one update per task
+        if state["calls"] % BLOCK_STEPS == 0 and not smoke:
+            block_tasks = set(state["tasks"][-BLOCK_STEPS:])
+            assert len(block_tasks) == 1, block_tasks
+            metrics = module.summarize(module.evaluate(model, panel, pad, 16, spec), spec)
+            record = {"update": state["calls"], "block": state["calls"] // BLOCK_STEPS, "epoch": (state["calls"] - 1) // (3 * BLOCK_STEPS) + 1,
+                      "trained_task": block_tasks.pop(), "split": "train_diagnostic",
+                      "metrics": {t: ({k: v[k] for k in ("rmse", "mae", "spearman", "prediction_std")} if t == "fluorescence"
+                                      else {k: v[k] for k in ("accuracy", "macro_f1")}) for t, v in metrics.items()}}
+            module.append(output / "block_eval.jsonl", record)
+        return result
+
+    module.train_step = train_step
+
+
 def apply_variant(module, variant):
     if variant == "task_block_gfp_last":
         patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
@@ -93,6 +135,10 @@ def apply_variant(module, variant):
             factor = values.new_tensor([scale if row['task'] == 'fluorescence' else 1.0 for row in rows])
             return values * factor
         module.losses = weighted_losses
+    elif variant == "task_block_gfp_last_blockeval":
+        patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
+    elif variant == "task_block_gfp_first_blockeval":
+        patch_task_block(module, ("fluorescence", "promoter", "structural_class"))
     else:
         raise ValueError(f"unknown diagnostic variant: {variant}")
 
@@ -105,6 +151,8 @@ def injected_train(seed, variant, args):
     spec.loader.exec_module(module)
     module.SEED = seed
     apply_variant(module, variant)
+    if variant.endswith("_blockeval"):
+        add_block_eval(module, Path(args[args.index("--output") + 1]))
     sys.argv = [str(SOURCE), *args]
     module.main()
 

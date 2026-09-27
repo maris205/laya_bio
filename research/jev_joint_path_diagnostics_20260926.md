@@ -97,3 +97,39 @@ scorer 梯度被单一方向主导（余弦总在 ±1 附近），符号随 GFP 
 限制：epoch-3 LR 已接近下限，head/scorer 有效 LR 约 1e-5，仅 head+scorer 组连分类任务也不动，所以无法检验 scorer 冲突在高 LR 早期阶段的作用；使用全新 AdamW 而非真实 optimizer 状态；单 seed。
 
 **下一步建议**：给两种顺序各跑一次带"每个任务块后 GFP 训练诊断"的 run（只增评估钩子，训练不变），直接看 GFP-first 的 GFP 块是否曾达到良好状态、塌缩发生在哪个 epoch/块；若 epoch-1 是关键，再做"仅 epoch 1 用 GFP-last、之后用 GFP-first"的交换对照。
+
+## 逐块诊断（2026-09-27）
+
+冻结计划见 `EXPERIMENT_PLAN.md` 末节；输出 `run_blockeval`。训练与原 gfp_first / gfp_last 完全相同，仅在每个 128 步任务块后于固定训练诊断面板（每任务 1,024 条）评估一次（eval 模式、无 RNG、无 optimizer 改动）。两个 run 均 1,152 updates、精确重载、无 test inference；末轮 dev GFP RMSE/MAE/SD：gfp_first 0.8151/0.5416/0.121（fail），gfp_last 0.5260/0.3537/0.647（pass），与此前 n = 3 结果一致，可视为各顺序第 4 次重复。
+
+| 顺序 | epoch-块 | 刚训练的任务 | GFP RMSE | GFP MAE | GFP SD | Promoter Acc | Structure Acc |
+|---|---|---|---:|---:|---:|---:|---:|
+| GFP-first | 1-1 | **GFP** | 0.836 | 0.588 | 0.004 | 50.1% | 2.1% |
+| GFP-first | 1-2 | promoter | 0.832 | 0.621 | 0.004 | 82.6% | 12.2% |
+| GFP-first | 1-3 | structure | 0.840 | 0.575 | 0.004 | 51.9% | 56.4% |
+| GFP-first | 2-4 | **GFP** | 0.846 | 0.726 | 0.011 | 53.7% | 47.9% |
+| GFP-first | 2-5 | promoter | 0.840 | 0.706 | 0.007 | 91.7% | 53.2% |
+| GFP-first | 2-6 | structure | 0.835 | 0.680 | 0.010 | 78.8% | 63.3% |
+| GFP-first | 3-7 | **GFP** | 0.773 | 0.504 | 0.254 | 74.9% | 61.1% |
+| GFP-first | 3-8 | promoter | 0.816 | 0.542 | 0.108 | 93.4% | 64.3% |
+| GFP-first | 3-9 | structure | 0.815 | 0.534 | 0.121 | 94.1% | 70.7% |
+| GFP-last | 1-1 | promoter | 1.138 | 1.118 | 0.035 | 85.9% | 17.2% |
+| GFP-last | 1-2 | structure | 0.947 | 0.911 | 0.018 | 68.8% | 56.2% |
+| GFP-last | 1-3 | **GFP** | 0.770 | 0.532 | 0.226 | 77.1% | 43.8% |
+| GFP-last | 2-4 | promoter | 1.098 | 1.073 | 0.135 | 86.0% | 44.3% |
+| GFP-last | 2-5 | structure | 0.809 | 0.596 | 0.140 | 82.3% | 62.0% |
+| GFP-last | 2-6 | **GFP** | 0.617 | 0.414 | 0.520 | 81.3% | 57.8% |
+| GFP-last | 3-7 | promoter | 0.789 | 0.417 | 0.355 | 93.5% | 60.9% |
+| GFP-last | 3-8 | structure | 0.819 | 0.438 | 0.310 | 93.5% | 68.6% |
+| GFP-last | 3-9 | **GFP** | 0.518 | 0.353 | 0.647 | 93.8% | 68.9% |
+
+判读：
+
+1. **GFP-first 的 GFP 块前两次根本没学起来**：epoch 1 与 epoch 2 的 GFP 块之后 SD 分别为 0.004 与 0.011（常数输出），直到 epoch 3 的 GFP 块才起步（SD 0.254），随后一个 promoter 块又把 SD 压回 0.108。失败主要是"学不动"，其次才是"刚学会就被覆盖"。
+2. **GFP-last 的第一个 GFP 块就起步**（epoch 1，SD 0.226），epoch 2 达到 0.520。两种顺序的 GFP 块都紧接 structure 块（GFP-first 的 epoch 1 除外），所以差异集中在 epoch 1：GFP-first 让 GFP 从初始模型、在 LR warmup 与峰值期先训练，GFP-last 的 GFP 块开始前 encoder 已被 256 步分类训练塑形、LR 已过 warmup。冻结规则的严格条件（GFP-last 首块 SD > 0.3）未满足（0.226），但方向明确。
+3. **分类更新对 GFP 的影响是均值平移为主**：GFP-last 中 promoter 块使 GFP MAE 升到 1.07–1.12（MAE ≈ RMSE，整体偏移），structure 块又部分拉回；这与 scorer 上 GFP 与分类梯度近乎反向的探针结果一致。GFP 区分度（SD）在已学好时能部分保留。
+4. **分类任务之间在高 LR 阶段也强烈互相遗忘**：epoch 1 中 structure 块把 promoter 从 82.6% 打回 51.9%（GFP-first）/ 85.9% → 68.8%（GFP-last），epoch 3 降到几个点以内。这是 block 式调度的普遍代价，不只影响 GFP。
+
+**修正后的机制图景**：GFP 能否学起来取决于它第一次被训练时的起点状态／LR 位置；一旦学起来，后续分类块主要造成均值偏移与部分区分度损失，最后一个 GFP 块再把它拉回。GFP-last 的优势 = 首个 GFP 块起步成功 + 最后位置的恢复。两个未分离的因素：encoder 已被分类塑形 vs. 避开 warmup/峰值 LR。
+
+**下一步建议**：用两个单因素对照分离上述因素（均 seed 20260928 NO-CPT、GFP-first 顺序）：(a) epoch 1 改用 GFP-last 顺序、之后 GFP-first（encoder 预塑形 + 避开 warmup，一起改）；(b) 保持 GFP-first，但把 warmup 期挪到一个短的分类预热（或 GFP 块内用较低 LR）只改 LR 位置。实用 recipe 方向：细粒度 round-robin（如每 8–16 步轮换）以同时缓解 GFP 起步与分类间高 LR 遗忘。
