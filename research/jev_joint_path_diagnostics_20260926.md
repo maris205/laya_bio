@@ -66,3 +66,34 @@ GFP-last recency 效应已按预设规则确认为可复现。loss weighting 方
 3. **实用 recipe 候选**：在每个 epoch 末尾追加短的混合 replay 或 round-robin 细粒度块，目标是三任务都不依赖处在最后位置。
 
 每个候选均需同配置至少 n = 2 重复，才能与 run-to-run 噪声区分。
+
+## 任务干扰探针（2026-09-27）
+
+脚本 [`scripts/probe_jev_task_interference.py`](../scripts/probe_jev_task_interference.py)，结果 [`interference_probe/result.json`](../artifacts/laya_jev_joint_path_diagnostics/interference_probe/result.json)。只用训练集（固定 train 诊断面板，每任务 1,024 条），无 dev、无 test 推理。
+
+**A. 梯度余弦**（每任务 4 个固定 epoch-1 batch，eval 模式，按参数组）：
+
+| Checkpoint | GFP 训练偏差 | scorer GFP·promoter / GFP·structure | encoder GFP·promoter / GFP·structure |
+|---|---:|---|---|
+| 初始模型 | −0.283 | −0.999 / −0.995 | −0.10 / +0.04 |
+| 原 interleaved（GFP 塌缩） | +0.026 | −0.998 / −0.999 | +0.02 / −0.09 |
+| gfp_last | +0.041 | −0.82 / −0.72 | −0.15 / −0.18 |
+| gfp_last rep1 | +0.023 | −0.98 / −0.96 | −0.07 / +0.00 |
+| gfp_first | +0.252 | +0.998 / +0.949 | −0.02 / −0.05 |
+
+scorer 梯度被单一方向主导（余弦总在 ±1 附近），符号随 GFP 当前状态变化，与 GFP 最终好坏没有稳定对应。encoder 上的任务梯度近似正交。静态余弦不足以解释塌缩。
+
+**B. 分类-only 遗忘测试**：从 GFP 良好的 gfp_last checkpoint 出发，重放 gfp_first 在 epoch 3 中 GFP 块之后的真实 batch 与 LR 位置（promoter 128 步 + structure 128 步），全新 AdamW。
+
+| 起点 / 可训练范围 | GFP RMSE/MAE/SD：0 → 128 → 256 步 | Promoter Acc | Structure Acc |
+|---|---|---|---|
+| gfp_last / 全部 | 0.581/0.346/0.549 → 0.586/0.349/0.542 → 0.675/0.352/0.502 | 90.6 → 94.8 → 94.0% | 66.8 → 66.2 → 76.4% |
+| gfp_last rep1 / 全部 | 0.507/0.291/0.618 → 0.512/0.277/0.639 → 0.520/0.270/0.636 | 92.8 → 96.0 → 94.7% | 68.7 → 68.1 → 76.7% |
+| gfp_last / 仅 encoder | 0.581/0.346/0.549 → 0.590/0.346/0.542 → 0.679/0.356/0.488 | 90.6 → 96.6 → 96.6% | 66.8 → 66.9 → 76.7% |
+| gfp_last / 仅 head+scorer | 0.581/0.346/0.549 → 0.582/0.360/0.529 → 0.581/0.347/0.547 | 不变 | 不变 |
+
+判读：从良好 GFP 状态出发，GFP 块之后的 256 步分类更新**不会**把 GFP 压成常数（SD 始终 ≥ 0.49）；一个起点 RMSE 升 0.09（来自 structure 阶段、经 encoder），另一个起点无退化。因此"GFP 训练好后被后续任务遗忘"不是 GFP-first 失败的主要机制，此前的 recency 表述需要修正：更可能是 GFP-first 的 GFP 块本身没有把 GFP 训练到良好状态（两种顺序中 GFP 块都紧接 structure 块，唯一结构差异是 epoch 1：GFP-first 让 GFP 从初始模型、在 LR warmup 中先训练）。但 GFP 单任务同样从初始模型起步且在该 seed 恢复，这一点仍只是待检验假设。
+
+限制：epoch-3 LR 已接近下限，head/scorer 有效 LR 约 1e-5，仅 head+scorer 组连分类任务也不动，所以无法检验 scorer 冲突在高 LR 早期阶段的作用；使用全新 AdamW 而非真实 optimizer 状态；单 seed。
+
+**下一步建议**：给两种顺序各跑一次带"每个任务块后 GFP 训练诊断"的 run（只增评估钩子，训练不变），直接看 GFP-first 的 GFP 块是否曾达到良好状态、塌缩发生在哪个 epoch/块；若 epoch-1 是关键，再做"仅 epoch 1 用 GFP-last、之后用 GFP-first"的交换对照。

@@ -23,6 +23,21 @@
       "sha256": "5909cae48e9fe5a072b8d632e9f1f29dd0eef6764322e627313887992aef2d3a"
     },
     {
+      "source_relative": "interference_probe/probe.log",
+      "archive_relative": "interference_probe/probe.log",
+      "sha256": "15cb920beb0fed4d73f11bd4f6d73a88d42ac97cf9cad0479c5830f7f6ab3bd4"
+    },
+    {
+      "source_relative": "interference_probe/result.json",
+      "archive_relative": "interference_probe/result.json",
+      "sha256": "de2d2106579a6a61dbd8887f43cbf69f027868a7d09008cb79fd914c451b24f2"
+    },
+    {
+      "source_relative": "interference_probe.stdout.log",
+      "archive_relative": "interference_probe.stdout.log",
+      "sha256": "15cb920beb0fed4d73f11bd4f6d73a88d42ac97cf9cad0479c5830f7f6ab3bd4"
+    },
+    {
       "source_relative": "run/EXPERIMENT_PLAN.md",
       "archive_relative": "run/EXPERIMENT_PLAN.md",
       "sha256": "d96395b2eb933f0397fc157a74b423bfdfc8b7f2cd9730605673edf8bd2b1400"
