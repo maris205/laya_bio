@@ -27,12 +27,20 @@ VARIANTS = (
     "task_block_gfp_last_fluo2p0",
     "task_block_gfp_last_blockeval",
     "task_block_gfp_first_blockeval",
+    "round_robin_k8_gfp_last",
+    "round_robin_k32_gfp_last",
 )
 BLOCK_STEPS = 128
 MATRICES = {
     "weighting": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_fluo0p5"},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_fluo2p0"},
+    ),
+    "round_robin": (
+        {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k8_gfp_last", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k32_gfp_last", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k8_gfp_last", "rep": 2},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k32_gfp_last", "rep": 2},
     ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
@@ -91,7 +99,32 @@ def patch_task_block(module, order):
     module.schedule = schedule
 
 
-def add_block_eval(module, output):
+def patch_round_robin(module, order, chunk):
+    """Rotate tasks every `chunk` batches in a fixed cycle; per-task shuffles match patch_task_block."""
+    assert sorted(order) == sorted(module.TASKS), order
+
+    def schedule(rows):
+        by = {task: [row for row in rows if row["task"] == task] for task in module.TASKS}
+        assert len({len(value) for value in by.values()}) == 1
+        assert all(len(value) % module.BATCH == 0 for value in by.values())
+        task_batches = len(by[module.TASKS[0]]) // module.BATCH
+        assert task_batches % chunk == 0
+        rng = module.random.Random(module.SEED + 41)
+        step = 0
+        for epoch in range(1, module.EPOCHS + 1):
+            for task in module.TASKS:
+                rng.shuffle(by[task])
+            for first in range(0, task_batches, chunk):
+                for task in order:
+                    for index in range(first, first + chunk):
+                        step += 1
+                        start = index * module.BATCH
+                        yield step, epoch, task, by[task][start : start + module.BATCH]
+
+    module.schedule = schedule
+
+
+def add_block_eval(module, output, single_task_blocks=True):
     """After every task block, score the fixed train-diagnostic panel; training itself is unchanged."""
     manifest = json.loads((DATA / "manifest.json").read_text())
     rows = module.read_lines(DATA / manifest["outputs"]["train"]["file"])
@@ -109,10 +142,10 @@ def add_block_eval(module, output):
         smoke = len(set(state["tasks"])) == len(state["tasks"])  # smoke runs one update per task
         if state["calls"] % BLOCK_STEPS == 0 and not smoke:
             block_tasks = set(state["tasks"][-BLOCK_STEPS:])
-            assert len(block_tasks) == 1, block_tasks
+            assert len(block_tasks) == 1 or not single_task_blocks, block_tasks
             metrics = module.summarize(module.evaluate(model, panel, pad, 16, spec), spec)
             record = {"update": state["calls"], "block": state["calls"] // BLOCK_STEPS, "epoch": (state["calls"] - 1) // (3 * BLOCK_STEPS) + 1,
-                      "trained_task": block_tasks.pop(), "split": "train_diagnostic",
+                      "trained_task": block_tasks.pop() if len(block_tasks) == 1 else "mixed", "split": "train_diagnostic",
                       "metrics": {t: ({k: v[k] for k in ("rmse", "mae", "spearman", "prediction_std")} if t == "fluorescence"
                                       else {k: v[k] for k in ("accuracy", "macro_f1")}) for t, v in metrics.items()}}
             module.append(output / "block_eval.jsonl", record)
@@ -135,6 +168,9 @@ def apply_variant(module, variant):
             factor = values.new_tensor([scale if row['task'] == 'fluorescence' else 1.0 for row in rows])
             return values * factor
         module.losses = weighted_losses
+    elif variant.startswith("round_robin_k"):
+        chunk = int(variant.removeprefix("round_robin_k").split("_", 1)[0])
+        patch_round_robin(module, ("promoter", "structural_class", "fluorescence"), chunk)
     elif variant == "task_block_gfp_last_blockeval":
         patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
     elif variant == "task_block_gfp_first_blockeval":
@@ -153,6 +189,8 @@ def injected_train(seed, variant, args):
     apply_variant(module, variant)
     if variant.endswith("_blockeval"):
         add_block_eval(module, Path(args[args.index("--output") + 1]))
+    elif variant.startswith("round_robin_k"):
+        add_block_eval(module, Path(args[args.index("--output") + 1]), single_task_blocks=False)
     sys.argv = [str(SOURCE), *args]
     module.main()
 

@@ -1,0 +1,6 @@
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep2", "phase": "smoke", "elapsed_seconds": 28.15954908169806}
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep2", "phase": "smoke", "elapsed_seconds": 25.013233108446002}
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep1", "phase": "round", "elapsed_seconds": 2274.0974834263325}
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep1", "phase": "round", "elapsed_seconds": 2266.7812615148723}
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep2", "phase": "round", "elapsed_seconds": 2282.8291843589395}
+{"completed": "seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep2", "phase": "round", "elapsed_seconds": 2314.6406501028687}
