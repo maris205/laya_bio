@@ -1,0 +1,6 @@
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_first_lr_of_last_rep2", "phase": "smoke", "elapsed_seconds": 24.616577384993434}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_last_lr_of_first_rep2", "phase": "smoke", "elapsed_seconds": 24.849968040362}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_first_lr_of_last_rep1", "phase": "round", "elapsed_seconds": 2445.6629883330315}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_last_lr_of_first_rep1", "phase": "round", "elapsed_seconds": 2301.3053322974592}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_first_lr_of_last_rep2", "phase": "round", "elapsed_seconds": 2325.9932165574282}
+{"completed": "seed_20260928_no_cpt_joint_task_block_gfp_last_lr_of_first_rep2", "phase": "round", "elapsed_seconds": 2326.1890396606177}

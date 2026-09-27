@@ -29,7 +29,11 @@ VARIANTS = (
     "task_block_gfp_first_blockeval",
     "round_robin_k8_gfp_last",
     "round_robin_k32_gfp_last",
+    "task_block_gfp_first_lr_of_last",
+    "task_block_gfp_last_lr_of_first",
 )
+ORDER_LAST = ("promoter", "structural_class", "fluorescence")
+ORDER_FIRST = ("fluorescence", "promoter", "structural_class")
 BLOCK_STEPS = 128
 MATRICES = {
     "weighting": (
@@ -41,6 +45,12 @@ MATRICES = {
         {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k32_gfp_last", "rep": 1},
         {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k8_gfp_last", "rep": 2},
         {"seed": 20260928, "arm": "no_cpt", "variant": "round_robin_k32_gfp_last", "rep": 2},
+    ),
+    "lr_swap": (
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_lr_of_last", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_lr_of_first", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_lr_of_last", "rep": 2},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_lr_of_first", "rep": 2},
     ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
@@ -77,8 +87,12 @@ def run_name(job):
     return f"{name}_rep{job['rep']}" if "rep" in job else name
 
 
-def patch_task_block(module, order):
+def patch_task_block(module, order, lr_order=None):
+    """Per-epoch task blocks. With `lr_order`, each update's schedule step (which sets its LR) is the step the
+    same (epoch, task, index) update would occupy under `lr_order`; data and update order are unchanged."""
     assert sorted(order) == sorted(module.TASKS), order
+    lr_order = lr_order or order
+    assert sorted(lr_order) == sorted(module.TASKS), lr_order
 
     def schedule(rows):
         by = {task: [row for row in rows if row["task"] == task] for task in module.TASKS}
@@ -93,8 +107,9 @@ def patch_task_block(module, order):
             for task in order:
                 for index in range(task_batches):
                     step += 1
+                    lr_step = (epoch - 1) * len(order) * task_batches + lr_order.index(task) * task_batches + index + 1
                     start = index * module.BATCH
-                    yield step, epoch, task, by[task][start : start + module.BATCH]
+                    yield lr_step, epoch, task, by[task][start : start + module.BATCH]
 
     module.schedule = schedule
 
@@ -171,6 +186,10 @@ def apply_variant(module, variant):
     elif variant.startswith("round_robin_k"):
         chunk = int(variant.removeprefix("round_robin_k").split("_", 1)[0])
         patch_round_robin(module, ("promoter", "structural_class", "fluorescence"), chunk)
+    elif variant == "task_block_gfp_first_lr_of_last":
+        patch_task_block(module, ORDER_FIRST, lr_order=ORDER_LAST)
+    elif variant == "task_block_gfp_last_lr_of_first":
+        patch_task_block(module, ORDER_LAST, lr_order=ORDER_FIRST)
     elif variant == "task_block_gfp_last_blockeval":
         patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
     elif variant == "task_block_gfp_first_blockeval":
@@ -187,7 +206,7 @@ def injected_train(seed, variant, args):
     spec.loader.exec_module(module)
     module.SEED = seed
     apply_variant(module, variant)
-    if variant.endswith("_blockeval"):
+    if variant.endswith("_blockeval") or "_lr_of_" in variant:
         add_block_eval(module, Path(args[args.index("--output") + 1]))
     elif variant.startswith("round_robin_k"):
         add_block_eval(module, Path(args[args.index("--output") + 1]), single_task_blocks=False)

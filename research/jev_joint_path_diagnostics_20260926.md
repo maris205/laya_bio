@@ -153,3 +153,22 @@ scorer 梯度被单一方向主导（余弦总在 ±1 附近），符号随 GFP 
 轮换没有带来预期的分类稳定性收益：promoter 在 K=8/K=32 中有两次低于 85%（83.8%、78.6%），不优于按块训练。
 
 **下一步建议**：recipe 方向暂以按块 GFP-last 为基线；机制上最值得做的是对照 (b)——保持 GFP-first，只改 GFP 首块的 LR 位置（例如 epoch 1 前加一段短的分类预热，或 GFP 块内降低 LR），以区分"encoder 已被分类塑形"与"避开 warmup/峰值 LR"。若 LR 位置是主因，则可尝试"GFP 专用较低 LR 或延迟 warmup"的实用 recipe，使 GFP 不依赖处在最后位置。
+
+## 学习率位置交换实验（2026-09-27）
+
+冻结计划见 `EXPERIMENT_PLAN.md` 末节；输出 `run_lr_swap`。更新顺序与 batch 内容完全不变，只把每次更新的 LR 换成它在另一种顺序中同一（epoch, 任务, 序号）位置的 LR（离线核验：顺序不变、LR 步号为 1..1152 的排列）。4 个 formal run 均 1,152 updates、精确重载、无 test inference。
+
+| 设置 | Rep | 三个 GFP 块后 train SD | GFP dev RMSE / MAE / SD | GFP 门槛 | Promoter | Structure |
+|---|---|---|---|---|---:|---:|
+| GFP-first 顺序 + GFP-last LR | 1 | 0.005 → 0.002 → 0.004 | 0.8368 / 0.6060 / 0.005 | fail | 85.4% | 57.9% |
+| GFP-first 顺序 + GFP-last LR | 2 | 0.005 → 0.005 → 0.024 | 0.8302 / 0.6279 / 0.036 | fail | 86.1% | 57.8% |
+| GFP-last 顺序 + GFP-first LR | 1 | 0.100 → 0.313 → 0.511 | 0.6356 / 0.3921 / 0.505 | pass | 87.6% | 45.8% |
+| GFP-last 顺序 + GFP-first LR | 2 | 0.005 → 0.289 → 0.575 | 0.6200 / 0.4151 / 0.572 | pass | 87.1% | 43.9% |
+
+判读（按冻结规则）：GFP-first + GFP-last LR 两次在 epoch-1 GFP 块后都是常数（SD 0.005），且最终都塌缩，对应规则分支"LR 位置不够"：**GFP 能否学起来由它首次训练时的模型/optimizer 状态决定，而不是 LR 位置**。反向对照中 GFP-last 顺序在 GFP-first LR 下 GFP 两次都通过（一次 epoch 1 即起步，一次 epoch 2 起步）；GFP-first 顺序在 epoch 2 的 4 次记录（原顺序、逐块诊断、LR 交换 ×2）全部仍为常数。
+
+LR 的作用在代价侧：最后一个 GFP 块 LR 较高（≈0.28 vs 0.11）时，structure 被压到 44–46%（低于 54% 实用线），macro-F1 0.35–0.37。
+
+**当前机制图景**：从初始模型直接训练 GFP 会进入一个常数输出的吸收态，之后在该顺序下很难逃出（需要 epoch 3 的中等 LR 才部分逃出）；GFP 首次训练发生在分类训练之后则能起步。尚未分开的是"模型参数已被分类塑形"与"AdamW 状态带有分类梯度历史"。
+
+**下一步建议（按冻结规则）**：optimizer 状态隔离——GFP-last 顺序、原 LR，但在每个 GFP 块开始前把 AdamW 状态重置为全新（或对 GFP 使用独立 AdamW 状态）。若 GFP 仍能起步，则是模型参数状态决定；若失败，则分类的 optimizer 历史参与了起步。实用 recipe 候选：先做一段短的分类-only 预热，再用任意任务顺序训练，检验是否就能避免 GFP 吸收态。
