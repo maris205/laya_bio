@@ -33,6 +33,7 @@ VARIANTS = (
     "task_block_gfp_last_lr_of_first",
     "interleave_cls_warmup64",
     "interleave_cls_warmup128",
+    "hybrid_warmup64_final_block_gfp_last",
 )
 ORDER_LAST = ("promoter", "structural_class", "fluorescence")
 ORDER_FIRST = ("fluorescence", "promoter", "structural_class")
@@ -65,6 +66,12 @@ MATRICES = {
         {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 1},
         {"seed": 20260926, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
         {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
+    ),
+    "hybrid": (
+        {"seed": 20260927, "arm": "no_cpt", "variant": "hybrid_warmup64_final_block_gfp_last", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "hybrid_warmup64_final_block_gfp_last", "rep": 1},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "hybrid_warmup64_final_block_gfp_last", "rep": 2},
+        {"seed": 20260926, "arm": "no_cpt", "variant": "hybrid_warmup64_final_block_gfp_last", "rep": 1},
     ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
@@ -178,6 +185,24 @@ def patch_cls_warmup(module, per_task):
     module.schedule = schedule
 
 
+def patch_final_epoch_blocks(module, order):
+    """Keep the current schedule for earlier epochs; regroup the final epoch's batches into task blocks in
+    `order`, each task keeping its own batch order. Same batches, updates, exposures and LR curve."""
+    assert sorted(order) == sorted(module.TASKS), order
+    original = module.schedule
+
+    def schedule(rows):
+        items = [(epoch, task, batch) for _, epoch, task, batch in original(rows)]
+        early = [item for item in items if item[0] < module.EPOCHS]
+        final = [item for item in items if item[0] == module.EPOCHS]
+        blocks = [item for task in order for item in final if item[1] == task]
+        assert len(blocks) == len(final)
+        for step, (epoch, task, batch) in enumerate(early + blocks, 1):
+            yield step, epoch, task, batch
+
+    module.schedule = schedule
+
+
 def add_block_eval(module, output, single_task_blocks=True):
     """After every task block, score the fixed train-diagnostic panel; training itself is unchanged."""
     manifest = json.loads((DATA / "manifest.json").read_text())
@@ -229,6 +254,9 @@ def apply_variant(module, variant):
         patch_task_block(module, ORDER_FIRST, lr_order=ORDER_LAST)
     elif variant == "task_block_gfp_last_lr_of_first":
         patch_task_block(module, ORDER_LAST, lr_order=ORDER_FIRST)
+    elif variant == "hybrid_warmup64_final_block_gfp_last":
+        patch_cls_warmup(module, 64)
+        patch_final_epoch_blocks(module, ("promoter", "structural_class", "fluorescence"))
     elif variant.startswith("interleave_cls_warmup"):
         patch_cls_warmup(module, int(variant.removeprefix("interleave_cls_warmup")))
     elif variant == "task_block_gfp_last_blockeval":
@@ -249,7 +277,7 @@ def injected_train(seed, variant, args):
     apply_variant(module, variant)
     if variant.endswith("_blockeval") or "_lr_of_" in variant:
         add_block_eval(module, Path(args[args.index("--output") + 1]))
-    elif variant.startswith(("round_robin_k", "interleave_cls_warmup")):
+    elif variant.startswith(("round_robin_k", "interleave_cls_warmup", "hybrid_")):
         add_block_eval(module, Path(args[args.index("--output") + 1]), single_task_blocks=False)
     sys.argv = [str(SOURCE), *args]
     module.main()

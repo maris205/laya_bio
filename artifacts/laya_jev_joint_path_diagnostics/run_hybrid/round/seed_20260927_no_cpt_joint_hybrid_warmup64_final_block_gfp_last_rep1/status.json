@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "updates": 1152,
+  "checkpoint_reload_exact": true,
+  "checkpoint_sha256": "5cd6772b86ecd6cc955bd54867bb7024b9e3735a91afe977b77f3ac47d14d8af",
+  "model_retained": true,
+  "peak_gpu_bytes": 8178537472,
+  "elapsed_seconds": 2349.3112655300647,
+  "seconds_per_update_by_task": {
+    "promoter": 1.9048054070250753,
+    "structural_class": 1.874017671167773,
+    "fluorescence": 1.9626088078075554
+  },
+  "presentations_by_task": {
+    "promoter": 24576,
+    "structural_class": 24576,
+    "fluorescence": 24576
+  },
+  "per_entity_exposure_histogram": {
+    "3": 24576
+  },
+  "completed_utc": "2026-09-28T15:13:48.054361+00:00",
+  "test_inference": false
+}
