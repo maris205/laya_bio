@@ -60,6 +60,12 @@ MATRICES = {
         {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
         {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup128", "rep": 2},
     ),
+    "cls_warmup_xseed": (
+        {"seed": 20260926, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 1},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 1},
+        {"seed": 20260926, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
+    ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval"},
