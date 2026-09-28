@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-09-28T03:46:03.220657+00:00",
+  "hashes": {
+    "training_data_manifest": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+    "initial_model": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "cpt_model": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+    "frozen_trainer": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1",
+    "diagnostic_runner": "3e991b9db629434960a61982884ae248c754695e2c7e5fbb7154f6744998e20b",
+    "plan": "55b4f9e036a407fb925f4934822db3dd1daaf7831675ecd1446e1a8a754cc7c9",
+    "tracker": "12facb243633ed69603a495724a4eff4588d7fe1dac6dabc5b0dc904733b6dfc"
+  },
+  "jobs": [
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "variant": "interleave_cls_warmup64",
+      "rep": 1
+    },
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "variant": "interleave_cls_warmup128",
+      "rep": 1
+    },
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "variant": "interleave_cls_warmup64",
+      "rep": 2
+    },
+    {
+      "seed": 20260928,
+      "arm": "no_cpt",
+      "variant": "interleave_cls_warmup128",
+      "rep": 2
+    }
+  ],
+  "source_round": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1",
+  "test_inference": false
+}

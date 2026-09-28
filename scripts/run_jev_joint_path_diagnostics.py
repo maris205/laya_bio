@@ -31,6 +31,8 @@ VARIANTS = (
     "round_robin_k32_gfp_last",
     "task_block_gfp_first_lr_of_last",
     "task_block_gfp_last_lr_of_first",
+    "interleave_cls_warmup64",
+    "interleave_cls_warmup128",
 )
 ORDER_LAST = ("promoter", "structural_class", "fluorescence")
 ORDER_FIRST = ("fluorescence", "promoter", "structural_class")
@@ -51,6 +53,12 @@ MATRICES = {
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_lr_of_first", "rep": 1},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_lr_of_last", "rep": 2},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_lr_of_first", "rep": 2},
+    ),
+    "cls_warmup": (
+        {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup128", "rep": 1},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup64", "rep": 2},
+        {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup128", "rep": 2},
     ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
@@ -139,6 +147,31 @@ def patch_round_robin(module, order, chunk):
     module.schedule = schedule
 
 
+def patch_cls_warmup(module, per_task):
+    """Frozen random interleave, except the first `per_task` promoter and structural_class batches of epoch 1
+    move to the front (relative order kept). Same batches, updates, exposures and LR curve."""
+    original = module.schedule
+
+    def schedule(rows):
+        items = [(epoch, task, batch) for _, epoch, task, batch in original(rows)]
+        first = [item for item in items if item[0] == 1]
+        counts = {"promoter": 0, "structural_class": 0}
+        front, rest = [], []
+        for item in first:
+            if item[1] in counts and counts[item[1]] < per_task:
+                counts[item[1]] += 1
+                front.append(item)
+            else:
+                rest.append(item)
+        assert all(value == per_task for value in counts.values()), counts
+        reordered = front + rest + [item for item in items if item[0] > 1]
+        assert len(reordered) == len(items)
+        for step, (epoch, task, batch) in enumerate(reordered, 1):
+            yield step, epoch, task, batch
+
+    module.schedule = schedule
+
+
 def add_block_eval(module, output, single_task_blocks=True):
     """After every task block, score the fixed train-diagnostic panel; training itself is unchanged."""
     manifest = json.loads((DATA / "manifest.json").read_text())
@@ -190,6 +223,8 @@ def apply_variant(module, variant):
         patch_task_block(module, ORDER_FIRST, lr_order=ORDER_LAST)
     elif variant == "task_block_gfp_last_lr_of_first":
         patch_task_block(module, ORDER_LAST, lr_order=ORDER_FIRST)
+    elif variant.startswith("interleave_cls_warmup"):
+        patch_cls_warmup(module, int(variant.removeprefix("interleave_cls_warmup")))
     elif variant == "task_block_gfp_last_blockeval":
         patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
     elif variant == "task_block_gfp_first_blockeval":
@@ -208,7 +243,7 @@ def injected_train(seed, variant, args):
     apply_variant(module, variant)
     if variant.endswith("_blockeval") or "_lr_of_" in variant:
         add_block_eval(module, Path(args[args.index("--output") + 1]))
-    elif variant.startswith("round_robin_k"):
+    elif variant.startswith(("round_robin_k", "interleave_cls_warmup")):
         add_block_eval(module, Path(args[args.index("--output") + 1]), single_task_blocks=False)
     sys.argv = [str(SOURCE), *args]
     module.main()
