@@ -13,6 +13,11 @@
       "sha256": "12facb243633ed69603a495724a4eff4588d7fe1dac6dabc5b0dc904733b6dfc"
     },
     {
+      "source_relative": "analysis/gfp_calibration.json",
+      "archive_relative": "analysis/gfp_calibration.json",
+      "sha256": "1d8c2bdbcdca2e8ce1d0380b54598ff0c504b531bc49ddfb5d94ef7863f50a54"
+    },
+    {
       "source_relative": "analysis/recipe_comparison.json",
       "archive_relative": "analysis/recipe_comparison.json",
       "sha256": "f71a07fd18c31ef4f8bcbbf1e210bdf54eb940e26793faee94f111f0a85f3ba3"

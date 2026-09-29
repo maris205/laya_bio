@@ -1,0 +1,1168 @@
+{
+  "note": "Supplementary post-hoc analysis outside the frozen no-calibration protocol; calibration fit on train diagnostics only.",
+  "rule": {
+    "gfp_rmse_lt": 0.8357,
+    "gfp_mae_lt": 0.5095,
+    "gfp_sd_ge": 0.05,
+    "promoter_acc_ge": 0.85,
+    "structure_acc_ge": 0.54
+  },
+  "test_inference": false,
+  "summary": {
+    "plain_interleave": {
+      "raw": {
+        "gfp_pass": 1,
+        "pass": 1,
+        "n": 3,
+        "mae_mean": 0.5480124073926314
+      },
+      "shift": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 3,
+        "mae_mean": 0.5368915779835476
+      },
+      "affine": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 3,
+        "mae_mean": 0.5211062896875457
+      }
+    },
+    "task_block_gfp_last": {
+      "raw": {
+        "gfp_pass": 7,
+        "pass": 5,
+        "n": 8,
+        "mae_mean": 0.40561686924208545
+      },
+      "shift": {
+        "gfp_pass": 8,
+        "pass": 6,
+        "n": 8,
+        "mae_mean": 0.372091794980783
+      },
+      "affine": {
+        "gfp_pass": 8,
+        "pass": 6,
+        "n": 8,
+        "mae_mean": 0.3647043551591306
+      }
+    },
+    "cls_warmup128_updates": {
+      "raw": {
+        "gfp_pass": 4,
+        "pass": 4,
+        "n": 6,
+        "mae_mean": 0.4404319044778774
+      },
+      "shift": {
+        "gfp_pass": 4,
+        "pass": 4,
+        "n": 6,
+        "mae_mean": 0.4322052964015483
+      },
+      "affine": {
+        "gfp_pass": 4,
+        "pass": 4,
+        "n": 6,
+        "mae_mean": 0.4269176910679289
+      }
+    },
+    "cls_warmup256_updates": {
+      "raw": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.390922152430777
+      },
+      "shift": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.38748948128803995
+      },
+      "affine": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.3710626750179331
+      }
+    },
+    "hybrid_warmup_final_blocks": {
+      "raw": {
+        "gfp_pass": 3,
+        "pass": 2,
+        "n": 4,
+        "mae_mean": 0.4227557920730083
+      },
+      "shift": {
+        "gfp_pass": 3,
+        "pass": 2,
+        "n": 4,
+        "mae_mean": 0.4016076084676872
+      },
+      "affine": {
+        "gfp_pass": 3,
+        "pass": 2,
+        "n": 4,
+        "mae_mean": 0.39918919028279487
+      }
+    },
+    "round_robin_k8": {
+      "raw": {
+        "gfp_pass": 0,
+        "pass": 0,
+        "n": 2,
+        "mae_mean": 0.6470997558421971
+      },
+      "shift": {
+        "gfp_pass": 0,
+        "pass": 0,
+        "n": 2,
+        "mae_mean": 0.6276424117309858
+      },
+      "affine": {
+        "gfp_pass": 0,
+        "pass": 0,
+        "n": 2,
+        "mae_mean": 0.5884696488621031
+      }
+    },
+    "round_robin_k32": {
+      "raw": {
+        "gfp_pass": 1,
+        "pass": 1,
+        "n": 2,
+        "mae_mean": 0.5434500798755589
+      },
+      "shift": {
+        "gfp_pass": 1,
+        "pass": 0,
+        "n": 2,
+        "mae_mean": 0.5301925787251407
+      },
+      "affine": {
+        "gfp_pass": 1,
+        "pass": 0,
+        "n": 2,
+        "mae_mean": 0.5023579584449381
+      }
+    }
+  },
+  "runs": {
+    "plain_interleave": [
+      {
+        "path": "artifacts/laya_jev_multitask_v1/round/no_cpt_joint",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6992716309721377,
+          "mae": 0.49205769932074034,
+          "sd": 0.368937919746233,
+          "spearman": 0.45885818531616307,
+          "bias": 0.013720013173609252,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.30547469982539,
+          "b": -0.9829717986413105,
+          "rmse": 0.6921358235628653,
+          "mae": 0.46957414365820854,
+          "sd": 0.48163912003491743,
+          "spearman": 0.45885818531616307,
+          "bias": 0.004215944032865106,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.010531558517289596,
+          "rmse": 0.6991442922344749,
+          "mae": 0.496964597580233,
+          "sd": 0.368937919746233,
+          "spearman": 0.45885818531616307,
+          "bias": 0.003188454656319655,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260927_no_cpt_joint",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6910070832983357,
+          "mae": 0.5278672495468733,
+          "sd": 0.42120613158313486,
+          "spearman": 0.43132768156641454,
+          "bias": -0.1038609055536049,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.140352676473776,
+          "b": -0.3277274622925801,
+          "rmse": 0.680129489231807,
+          "mae": 0.4607038808166101,
+          "sd": 0.4803235394979933,
+          "spearman": 0.43132768156641454,
+          "bias": -0.0008240049713782424,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.10311676327149488,
+          "rmse": 0.683157562509407,
+          "mae": 0.4756488329108404,
+          "sd": 0.42120613158313486,
+          "spearman": 0.43132768156641454,
+          "bias": -0.0007441422821100285,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260928_no_cpt_joint",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.8344876663353924,
+          "mae": 0.6241122733102806,
+          "sd": 0.012651948133979253,
+          "spearman": 0.19292034819599513,
+          "bias": 0.02561007895985708,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 5.726884393652149,
+          "b": -15.145317291951748,
+          "rmse": 0.8289731735229926,
+          "mae": 0.6330408445878184,
+          "sd": 0.07245624431778218,
+          "spearman": 0.19292034819599513,
+          "bias": -0.00016374431197945348,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.0257832191274856,
+          "rmse": 0.8340946104004489,
+          "mae": 0.6380613034595692,
+          "sd": 0.012651948133979253,
+          "spearman": 0.19292034819599513,
+          "bias": -0.00017314016762851896,
+          "gfp_pass": false,
+          "pass": false
+        }
+      }
+    ],
+    "task_block_gfp_last": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run/round/seed_20260928_no_cpt_joint_task_block_gfp_last",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5953103876969367,
+          "mae": 0.3578078698733046,
+          "sd": 0.5422336366468875,
+          "spearman": 0.5588471546414044,
+          "bias": 0.05080965594021262,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0936331494012124,
+          "b": -0.3422763247698528,
+          "rmse": 0.5912471428196969,
+          "mae": 0.3596988600990398,
+          "sd": 0.5930046797574082,
+          "spearman": 0.5588471546414044,
+          "bias": 0.010390434466976153,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.04132380897740351,
+          "rmse": 0.5932139730786152,
+          "mae": 0.3740362131491713,
+          "sd": 0.5422336366468875,
+          "spearman": 0.5588471546414044,
+          "bias": 0.009485846962809113,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_followup/round/seed_20260927_no_cpt_joint_task_block_gfp_last",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5791198814724855,
+          "mae": 0.31421124980421167,
+          "sd": 0.5485202792035552,
+          "spearman": 0.605928724029529,
+          "bias": 0.15433457291042005,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.149798388469853,
+          "b": -0.6329628643295386,
+          "rmse": 0.5530118537361721,
+          "mae": 0.3321365486210672,
+          "sd": 0.6306877330712817,
+          "spearman": 0.605928724029529,
+          "bias": 0.019803708669814894,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.13713375319403776,
+          "rmse": 0.5584411740910401,
+          "mae": 0.3508311744777347,
+          "sd": 0.5485202792035552,
+          "spearman": 0.605928724029529,
+          "bias": 0.017200819716382307,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_replicate/round/seed_20260928_no_cpt_joint_task_block_gfp_last_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.53174137259566,
+          "mae": 0.314993507295159,
+          "sd": 0.6199548789628265,
+          "spearman": 0.5810954090929837,
+          "bias": 0.021634341532266867,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0720186433818009,
+          "b": -0.2529138588451594,
+          "rmse": 0.5310226302865769,
+          "mae": 0.3124177462977964,
+          "sd": 0.6646031883036579,
+          "spearman": 0.5810954090929837,
+          "bias": -0.0012050151781898635,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.022770168470183094,
+          "rmse": 0.5313022987896953,
+          "mae": 0.3228817035492123,
+          "sd": 0.6199548789628265,
+          "spearman": 0.5810954090929837,
+          "bias": -0.0011358269379162281,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_replicate/round/seed_20260928_no_cpt_joint_task_block_gfp_last_rep2",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5890214893375081,
+          "mae": 0.4392618819934884,
+          "sd": 0.6313951998729567,
+          "spearman": 0.5593115523212057,
+          "bias": -0.22211156771983442,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0235375903848132,
+          "b": 0.16328279062591777,
+          "rmse": 0.5457982780927654,
+          "mae": 0.3505954825044513,
+          "sd": 0.6462567214585035,
+          "spearman": 0.5593115523212057,
+          "bias": 0.01062844141313117,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.23249156687549855,
+          "rmse": 0.5456377101785443,
+          "mae": 0.35271992592360724,
+          "sd": 0.6313951998729567,
+          "spearman": 0.5593115523212057,
+          "bias": 0.010379999155664128,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_blockeval/round/seed_20260928_no_cpt_joint_task_block_gfp_last_blockeval",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5260458568541401,
+          "mae": 0.35366724362499063,
+          "sd": 0.646778655388229,
+          "spearman": 0.5898542855088498,
+          "bias": -0.1081461295536299,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0269865252367372,
+          "b": 0.04408395588362746,
+          "rmse": 0.5150476431703566,
+          "mae": 0.3072778183663685,
+          "sd": 0.6642329638944463,
+          "spearman": 0.5898542855088498,
+          "bias": 0.01864805882432901,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.12629956416282573,
+          "rmse": 0.5151293093623059,
+          "mae": 0.3111174609543314,
+          "sd": 0.646778655388229,
+          "spearman": 0.5898542855088498,
+          "bias": 0.01815343460919581,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260926_no_cpt_joint_task_block_gfp_last_blockeval_rep1",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6156877104152311,
+          "mae": 0.42972719259648823,
+          "sd": 0.54695554265694,
+          "spearman": 0.4974121252044405,
+          "bias": -0.08505095399534485,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.0247964554276294,
+          "b": 0.010826623787842937,
+          "rmse": 0.6093823643827523,
+          "mae": 0.3877752111441959,
+          "sd": 0.5605181013913276,
+          "spearman": 0.4974121252044405,
+          "bias": 0.0023462982037553036,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.08733624259074757,
+          "rmse": 0.6097892377902348,
+          "mae": 0.39232537012395235,
+          "sd": 0.54695554265694,
+          "spearman": 0.4974121252044405,
+          "bias": 0.0022852885954027184,
+          "gfp_pass": true,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260926_no_cpt_joint_task_block_gfp_last_blockeval_rep2",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7020263230407068,
+          "mae": 0.5002743722847619,
+          "sd": 0.4345352472107749,
+          "spearman": 0.4427893956774732,
+          "bias": -0.038194556390437694,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "affine": {
+          "a": 0.9915134471074363,
+          "b": 0.06456615081805817,
+          "rmse": 0.7011066193754939,
+          "mae": 0.4844561752805366,
+          "sd": 0.4308475408516374,
+          "spearman": 0.4427893956774732,
+          "bias": -0.00023224752124204458,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.03796181997158721,
+          "rmse": 0.7009865820901517,
+          "mae": 0.48335086609599065,
+          "sd": 0.4345352472107749,
+          "spearman": 0.4427893956774732,
+          "bias": -0.00023273641885048431,
+          "gfp_pass": true,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260927_no_cpt_joint_task_block_gfp_last_blockeval_rep2",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6595509689548767,
+          "mae": 0.5349916364642792,
+          "sd": 0.578198965618562,
+          "spearman": 0.563692790367922,
+          "bias": -0.32661381212293683,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.095723662361095,
+          "b": 0.06845187628226279,
+          "rmse": 0.5728640227730181,
+          "mae": 0.38327699895958894,
+          "sd": 0.6335462881809677,
+          "spearman": 0.563692790367922,
+          "bias": 0.014306263584593274,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.33965496491535063,
+          "rmse": 0.573150041477792,
+          "mae": 0.38947164557226405,
+          "sd": 0.578198965618562,
+          "spearman": 0.563692790367922,
+          "bias": 0.013041152792413802,
+          "gfp_pass": true,
+          "pass": true
+        }
+      }
+    ],
+    "cls_warmup128_updates": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6714653585357584,
+          "mae": 0.45077840216771725,
+          "sd": 0.4335799120542023,
+          "spearman": 0.4756721107626783,
+          "bias": 0.02330308396601115,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.1871594987508798,
+          "b": -0.6208820150134815,
+          "rmse": 0.6675751039395016,
+          "mae": 0.44128955512167894,
+          "sd": 0.5147285110627173,
+          "spearman": 0.4756721107626783,
+          "bias": 0.0006428544008216404,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.02278918709829325,
+          "rmse": 0.6710610688165558,
+          "mae": 0.46113857241508,
+          "sd": 0.4335799120542023,
+          "spearman": 0.4756721107626783,
+          "bias": 0.0005138968677178978,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_rep2",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5995456504335098,
+          "mae": 0.35685126828898517,
+          "sd": 0.5788865452492925,
+          "spearman": 0.5000244258603167,
+          "bias": 0.04135765496075793,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.033450076580082,
+          "b": -0.15496824830029476,
+          "rmse": 0.5983059234626948,
+          "mae": 0.36978371793242215,
+          "sd": 0.5982503445190605,
+          "spearman": 0.5000244258603167,
+          "bias": -0.006089493404450478,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.04725571581998711,
+          "rmse": 0.5981465693722454,
+          "mae": 0.3747153303535465,
+          "sd": 0.5788865452492925,
+          "spearman": 0.5000244258603167,
+          "bias": -0.00589806085922918,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_rep1",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5447979146597401,
+          "mae": 0.3179126044643549,
+          "sd": 0.6522483336921536,
+          "spearman": 0.5740573726017657,
+          "bias": -0.0021571836471375354,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0155346093565045,
+          "b": -0.048732989833572216,
+          "rmse": 0.5452294010238506,
+          "mae": 0.31505213319288095,
+          "sd": 0.6623807567594923,
+          "spearman": 0.5740573726017657,
+          "bias": -0.0016320948922661472,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.0005473759449059479,
+          "rmse": 0.5447960222479165,
+          "mae": 0.31771852154605534,
+          "sd": 0.6522483336921536,
+          "spearman": 0.5740573726017657,
+          "bias": -0.0016098077022315873,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_rep2",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6070619032621288,
+          "mae": 0.4327522183586428,
+          "sd": 0.6683226118862583,
+          "spearman": 0.5379936708080052,
+          "bias": -0.2170568549803204,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 0.9594776020706862,
+          "b": 0.3329840889106319,
+          "rmse": 0.5650991703014991,
+          "mae": 0.36200773840338474,
+          "sd": 0.641240577062245,
+          "spearman": 0.5379936708080052,
+          "bias": -0.0038553854593790637,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.21304603821087964,
+          "rmse": 0.5669449380225988,
+          "mae": 0.35877361895735,
+          "sd": 0.6683226118862583,
+          "spearman": 0.5379936708080052,
+          "bias": -0.004010816769440767,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_rep1",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7319186717518774,
+          "mae": 0.5404086372334902,
+          "sd": 0.33383738584175393,
+          "spearman": 0.40550923554165236,
+          "bias": -0.026388593133339897,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.0893293548654581,
+          "b": -0.25916124915159733,
+          "rmse": 0.7288860056786622,
+          "mae": 0.5210650657364673,
+          "sd": 0.3636588641489688,
+          "spearman": 0.40550923554165236,
+          "bias": -0.004463499096069507,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.022276757589940743,
+          "rmse": 0.7314543672731824,
+          "mae": 0.5292530035207614,
+          "sd": 0.33383738584175393,
+          "spearman": 0.40550923554165236,
+          "bias": -0.004111835543399157,
+          "gfp_pass": false,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_rep2",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7529487499063835,
+          "mae": 0.5438882963540742,
+          "sd": 0.3159313220261754,
+          "spearman": 0.38898334965674564,
+          "bias": 0.008284122899715973,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 0.9913356271889087,
+          "b": 0.011431568171940132,
+          "rmse": 0.7531317501063786,
+          "mae": 0.5523079360207394,
+          "sd": 0.31319397526943965,
+          "spearman": 0.38898334965674564,
+          "bias": -0.007848293468528044,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.016199480604782046,
+          "rmse": 0.7529447829562053,
+          "mae": 0.5516327316164965,
+          "sd": 0.3159313220261754,
+          "spearman": 0.38898334965674564,
+          "bias": -0.007915357705066071,
+          "gfp_pass": false,
+          "pass": false
+        }
+      }
+    ],
+    "cls_warmup256_updates": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup128_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6396270212947892,
+          "mae": 0.4212455727981853,
+          "sd": 0.4905674141380947,
+          "spearman": 0.5036494427987166,
+          "bias": 0.002374491227656079,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.154511332662099,
+          "b": -0.4962671796406508,
+          "rmse": 0.638243468263032,
+          "mae": 0.4042326077853994,
+          "sd": 0.5663656390571715,
+          "spearman": 0.5036494427987166,
+          "bias": -0.0032586177461554674,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.005220437300987868,
+          "rmse": 0.6396289452259856,
+          "mae": 0.42360371283691967,
+          "sd": 0.4905674141380947,
+          "spearman": 0.5036494427987166,
+          "bias": -0.002845946073331789,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup128_rep2",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5713840671032576,
+          "mae": 0.36059873206336873,
+          "sd": 0.5837916556989744,
+          "spearman": 0.5431787305829375,
+          "bias": -0.009217079146908114,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0875145989903872,
+          "b": -0.2489483111998272,
+          "rmse": 0.5715090298769523,
+          "mae": 0.3378927422504669,
+          "sd": 0.6348819483414043,
+          "spearman": 0.5431787305829375,
+          "bias": 0.018713347444479445,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.02641043104537255,
+          "rmse": 0.5715683764353693,
+          "mae": 0.3513752497391603,
+          "sd": 0.5837916556989744,
+          "spearman": 0.5431787305829375,
+          "bias": 0.017193351898464437,
+          "gfp_pass": true,
+          "pass": true
+        }
+      }
+    ],
+    "hybrid_warmup_final_blocks": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260926_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5376693172299506,
+          "mae": 0.33503118364924683,
+          "sd": 0.6314462381098798,
+          "spearman": 0.5677262822042214,
+          "bias": -0.030553946823337255,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.033412454646342,
+          "b": -0.05643026821605979,
+          "rmse": 0.5371576453805922,
+          "mae": 0.3144251941297611,
+          "sd": 0.6525444069023293,
+          "spearman": 0.5677262822042214,
+          "bias": 0.01801321074798784,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.04797908933394046,
+          "rmse": 0.5370832213126312,
+          "mae": 0.3195481166041388,
+          "sd": 0.6314462381098798,
+          "spearman": 0.5677262822042214,
+          "bias": 0.017425142510603203,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260927_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7962192968423859,
+          "mae": 0.6000642806148994,
+          "sd": 0.21284623339673972,
+          "spearman": 0.28879804215035426,
+          "bias": -0.004916046128509133,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 0.9249300496709205,
+          "b": 0.24655462461691702,
+          "rmse": 0.7972773997869598,
+          "mae": 0.5982821129626038,
+          "sd": 0.19686787722791482,
+          "spearman": 0.28879804215035426,
+          "bias": 0.003809348836496389,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.009048786417133137,
+          "rmse": 0.7962148458154614,
+          "mae": 0.5954044354561331,
+          "sd": 0.21284623339673972,
+          "spearman": 0.28879804215035426,
+          "bias": 0.004132740288624003,
+          "gfp_pass": false,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260927_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep2",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5583896224350373,
+          "mae": 0.35935948968062004,
+          "sd": 0.6185937925324548,
+          "spearman": 0.5412949864767953,
+          "bias": -0.049559181711580136,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.0272959083214936,
+          "b": -0.04781063251584916,
+          "rmse": 0.5564163207526823,
+          "mae": 0.34046803061754366,
+          "sd": 0.6354788719816659,
+          "spearman": 0.5412949864767953,
+          "bias": -0.012112178372187006,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.03776417839309287,
+          "rmse": 0.5563110461374151,
+          "mae": 0.3446602545480904,
+          "sd": 0.6185937925324548,
+          "spearman": 0.5412949864767953,
+          "bias": -0.011795003318487266,
+          "gfp_pass": true,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260928_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5794340872812311,
+          "mae": 0.39656821434726697,
+          "sd": 0.6041554922256726,
+          "spearman": 0.498239592321954,
+          "bias": -0.09962904485889112,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.023491996996469,
+          "b": 0.05027256538408542,
+          "rmse": 0.5712813585639137,
+          "mae": 0.343581423421271,
+          "sd": 0.6183483112344383,
+          "spearman": 0.498239592321954,
+          "bias": 0.022843556284670784,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.12194425811627285,
+          "rmse": 0.571240653023453,
+          "mae": 0.34681762726238663,
+          "sd": 0.6041554922256726,
+          "spearman": 0.498239592321954,
+          "bias": 0.02231521325738173,
+          "gfp_pass": true,
+          "pass": true
+        }
+      }
+    ],
+    "round_robin_k8": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.8225362127020195,
+          "mae": 0.6462344740752153,
+          "sd": 0.04500450712845539,
+          "spearman": 0.2805544139794032,
+          "bias": -0.03171559464998518,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 6.206105589394678,
+          "b": -16.299987936470306,
+          "rmse": 0.7889351259100107,
+          "mae": 0.5854349564979489,
+          "sd": 0.2793027232378596,
+          "spearman": 0.2805544139794032,
+          "bias": 0.02224663029283124,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.035153321508542223,
+          "rmse": 0.8219317247972205,
+          "mae": 0.6266006092880381,
+          "sd": 0.04500450712845539,
+          "spearman": 0.2805544139794032,
+          "bias": 0.003437726858557043,
+          "gfp_pass": false,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep2",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.8241845694410752,
+          "mae": 0.6479650376091791,
+          "sd": 0.038891395823823595,
+          "spearman": 0.3084462958604519,
+          "bias": -0.032295673167439386,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 6.160291585304085,
+          "b": -16.161131047630953,
+          "rmse": 0.7888545356427845,
+          "mae": 0.5915043412262572,
+          "sd": 0.23958233843423096,
+          "spearman": 0.3084462958604519,
+          "bias": 0.013614441345613576,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.03435900573206263,
+          "rmse": 0.8235541581102633,
+          "mae": 0.6286842141739335,
+          "sd": 0.038891395823823595,
+          "spearman": 0.3084462958604519,
+          "bias": 0.002063332564623248,
+          "gfp_pass": false,
+          "pass": false
+        }
+      }
+    ],
+    "round_robin_k32": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.720794412969452,
+          "mae": 0.5830087107864473,
+          "sd": 0.38150745322567664,
+          "spearman": 0.4223123165278965,
+          "bias": -0.1508134589516537,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "affine": {
+          "a": 1.1983028719955464,
+          "b": -0.44386932414972335,
+          "rmse": 0.7010157740862755,
+          "mae": 0.49082612281268484,
+          "sd": 0.45716147688803493,
+          "spearman": 0.4223123165278965,
+          "bias": 0.004628986715032093,
+          "gfp_pass": true,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.15464742985645374,
+          "rmse": 0.7048507542025572,
+          "mae": 0.5075482561046956,
+          "sd": 0.38150745322567664,
+          "spearman": 0.4223123165278965,
+          "bias": 0.0038339709048000135,
+          "gfp_pass": true,
+          "pass": false
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep2",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7532945201565812,
+          "mae": 0.5038914489646705,
+          "sd": 0.2575026630929149,
+          "spearman": 0.4133424112657147,
+          "bias": 0.10506633023566764,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.5660043108686446,
+          "b": -1.9626059656410675,
+          "rmse": 0.7313055565290527,
+          "mae": 0.5138897940771914,
+          "sd": 0.403250280463661,
+          "spearman": 0.4133424112657147,
+          "bias": -0.00212997412946351,
+          "gfp_pass": false,
+          "pass": false
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.10648976008785249,
+          "rmse": 0.7459327895335395,
+          "mae": 0.5528369013455858,
+          "sd": 0.2575026630929149,
+          "spearman": 0.4133424112657147,
+          "bias": -0.0014234298521848597,
+          "gfp_pass": false,
+          "pass": false
+        }
+      }
+    ]
+  }
+}
