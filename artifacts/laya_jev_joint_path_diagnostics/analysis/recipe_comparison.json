@@ -1,0 +1,573 @@
+{
+  "rule": {
+    "gfp_rmse_lt": 0.8357,
+    "gfp_mae_lt": 0.5095,
+    "gfp_sd_ge": 0.05,
+    "promoter_acc_ge": 0.85,
+    "structure_acc_ge": 0.54
+  },
+  "arm": "no_cpt",
+  "split": "dev",
+  "test_inference": false,
+  "summary": {
+    "plain_interleave": {
+      "per_seed": {
+        "20260926": {
+          "n": 1,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.4920576993207402,
+          "promoter_mean": 0.8811787072243346,
+          "structure_mean": 0.5548455804046858
+        },
+        "20260927": {
+          "n": 1,
+          "pass": 0,
+          "gfp_pass": 0,
+          "gfp_mae_mean": 0.5278672495468733,
+          "promoter_mean": 0.8925855513307985,
+          "structure_mean": 0.56975505857295
+        },
+        "20260928": {
+          "n": 1,
+          "pass": 0,
+          "gfp_pass": 0,
+          "gfp_mae_mean": 0.6241122733102806,
+          "promoter_mean": 0.8859315589353612,
+          "structure_mean": 0.5654952076677316
+        }
+      },
+      "runs": 3,
+      "pass_rate": 0.3333333333333333,
+      "gfp_pass_rate": 0.3333333333333333,
+      "seeds_all_pass": [
+        "20260926"
+      ]
+    },
+    "task_block_gfp_last": {
+      "per_seed": {
+        "20260926": {
+          "n": 2,
+          "pass": 0,
+          "gfp_pass": 2,
+          "gfp_mae_mean": 0.46500078244062504,
+          "promoter_mean": 0.856939163498099,
+          "structure_mean": 0.5410010649627264
+        },
+        "20260927": {
+          "n": 2,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.4246014431342454,
+          "promoter_mean": 0.8797528517110267,
+          "structure_mean": 0.5740149094781684
+        },
+        "20260928": {
+          "n": 4,
+          "pass": 4,
+          "gfp_pass": 4,
+          "gfp_mae_mean": 0.3664326256967357,
+          "promoter_mean": 0.8754752851711026,
+          "structure_mean": 0.558839190628328
+        }
+      },
+      "runs": 8,
+      "pass_rate": 0.625,
+      "gfp_pass_rate": 0.875,
+      "seeds_all_pass": [
+        "20260928"
+      ]
+    },
+    "cls_warmup128_updates": {
+      "per_seed": {
+        "20260926": {
+          "n": 2,
+          "pass": 2,
+          "gfp_pass": 2,
+          "gfp_mae_mean": 0.37533241141149887,
+          "promoter_mean": 0.8840304182509506,
+          "structure_mean": 0.5740149094781682
+        },
+        "20260927": {
+          "n": 2,
+          "pass": 0,
+          "gfp_pass": 0,
+          "gfp_mae_mean": 0.5421484667937821,
+          "promoter_mean": 0.8873574144486692,
+          "structure_mean": 0.580937167199148
+        },
+        "20260928": {
+          "n": 2,
+          "pass": 2,
+          "gfp_pass": 2,
+          "gfp_mae_mean": 0.4038148352283512,
+          "promoter_mean": 0.8802281368821292,
+          "structure_mean": 0.5761448349307774
+        }
+      },
+      "runs": 6,
+      "pass_rate": 0.6666666666666666,
+      "gfp_pass_rate": 0.6666666666666666,
+      "seeds_all_pass": [
+        "20260926",
+        "20260928"
+      ]
+    },
+    "cls_warmup256_updates": {
+      "per_seed": {
+        "20260928": {
+          "n": 2,
+          "pass": 2,
+          "gfp_pass": 2,
+          "gfp_mae_mean": 0.390922152430777,
+          "promoter_mean": 0.8849809885931559,
+          "structure_mean": 0.5793397231096912
+        }
+      },
+      "runs": 2,
+      "pass_rate": 1.0,
+      "gfp_pass_rate": 1.0,
+      "seeds_all_pass": [
+        "20260928"
+      ]
+    },
+    "hybrid_warmup_final_blocks": {
+      "per_seed": {
+        "20260926": {
+          "n": 1,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.33503118364924683,
+          "promoter_mean": 0.8716730038022814,
+          "structure_mean": 0.5601703940362087
+        },
+        "20260927": {
+          "n": 2,
+          "pass": 0,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.47971188514775975,
+          "promoter_mean": 0.8450570342205324,
+          "structure_mean": 0.5431309904153354
+        },
+        "20260928": {
+          "n": 1,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.39656821434726697,
+          "promoter_mean": 0.8830798479087453,
+          "structure_mean": 0.5654952076677316
+        }
+      },
+      "runs": 4,
+      "pass_rate": 0.5,
+      "gfp_pass_rate": 0.75,
+      "seeds_all_pass": [
+        "20260926",
+        "20260928"
+      ]
+    },
+    "round_robin_k8": {
+      "per_seed": {
+        "20260928": {
+          "n": 2,
+          "pass": 0,
+          "gfp_pass": 0,
+          "gfp_mae_mean": 0.6470997558421971,
+          "promoter_mean": 0.8578897338403042,
+          "structure_mean": 0.5548455804046859
+        }
+      },
+      "runs": 2,
+      "pass_rate": 0.0,
+      "gfp_pass_rate": 0.0,
+      "seeds_all_pass": []
+    },
+    "round_robin_k32": {
+      "per_seed": {
+        "20260928": {
+          "n": 2,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.5434500798755588,
+          "promoter_mean": 0.8279467680608366,
+          "structure_mean": 0.5782747603833867
+        }
+      },
+      "runs": 2,
+      "pass_rate": 0.5,
+      "gfp_pass_rate": 0.5,
+      "seeds_all_pass": []
+    }
+  },
+  "runs": {
+    "plain_interleave": {
+      "20260926": [
+        {
+          "path": "artifacts/laya_jev_multitask_v1/round/no_cpt_joint",
+          "gfp_rmse": 0.6992716309721377,
+          "gfp_mae": 0.4920576993207402,
+          "gfp_sd": 0.3689379197462331,
+          "gfp_spearman": 0.45885818531616307,
+          "promoter_acc": 0.8811787072243346,
+          "structure_acc": 0.5548455804046858,
+          "structure_macro_f1": 0.49591403013810487,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260927": [
+        {
+          "path": "artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260927_no_cpt_joint",
+          "gfp_rmse": 0.6910070832983357,
+          "gfp_mae": 0.5278672495468733,
+          "gfp_sd": 0.42120613158313486,
+          "gfp_spearman": 0.43132768156641454,
+          "promoter_acc": 0.8925855513307985,
+          "structure_acc": 0.56975505857295,
+          "structure_macro_f1": 0.46122333498495705,
+          "gfp_pass": false,
+          "pass": false
+        }
+      ],
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_multitask_seed_confirm/run/round/seed_20260928_no_cpt_joint",
+          "gfp_rmse": 0.8344876663353924,
+          "gfp_mae": 0.6241122733102806,
+          "gfp_sd": 0.012651948133979253,
+          "gfp_spearman": 0.19292034819599513,
+          "promoter_acc": 0.8859315589353612,
+          "structure_acc": 0.5654952076677316,
+          "structure_macro_f1": 0.43030498027613956,
+          "gfp_pass": false,
+          "pass": false
+        }
+      ]
+    },
+    "task_block_gfp_last": {
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run/round/seed_20260928_no_cpt_joint_task_block_gfp_last",
+          "gfp_rmse": 0.5953103876969367,
+          "gfp_mae": 0.35780786987330454,
+          "gfp_sd": 0.5422336366468875,
+          "gfp_spearman": 0.5588471546414044,
+          "promoter_acc": 0.8669201520912547,
+          "structure_acc": 0.5420660276890309,
+          "structure_macro_f1": 0.45106101640230556,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_replicate/round/seed_20260928_no_cpt_joint_task_block_gfp_last_rep1",
+          "gfp_rmse": 0.53174137259566,
+          "gfp_mae": 0.31499350729515907,
+          "gfp_sd": 0.6199548789628266,
+          "gfp_spearman": 0.5810954090929837,
+          "promoter_acc": 0.8783269961977186,
+          "structure_acc": 0.5420660276890309,
+          "structure_macro_f1": 0.4390835731012644,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_replicate/round/seed_20260928_no_cpt_joint_task_block_gfp_last_rep2",
+          "gfp_rmse": 0.5890214893375081,
+          "gfp_mae": 0.4392618819934884,
+          "gfp_sd": 0.6313951998729567,
+          "gfp_spearman": 0.5593115523212057,
+          "promoter_acc": 0.8754752851711026,
+          "structure_acc": 0.5537806176783813,
+          "structure_macro_f1": 0.4339488978965406,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_blockeval/round/seed_20260928_no_cpt_joint_task_block_gfp_last_blockeval",
+          "gfp_rmse": 0.5260458568541401,
+          "gfp_mae": 0.3536672436249907,
+          "gfp_sd": 0.646778655388229,
+          "gfp_spearman": 0.5898542855088498,
+          "promoter_acc": 0.8811787072243346,
+          "structure_acc": 0.597444089456869,
+          "structure_macro_f1": 0.4717800353357521,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260927": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_followup/round/seed_20260927_no_cpt_joint_task_block_gfp_last",
+          "gfp_rmse": 0.5791198814724855,
+          "gfp_mae": 0.3142112498042116,
+          "gfp_sd": 0.5485202792035552,
+          "gfp_spearman": 0.605928724029529,
+          "promoter_acc": 0.8878326996197718,
+          "structure_acc": 0.5729499467518637,
+          "structure_macro_f1": 0.4393626609407893,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260927_no_cpt_joint_task_block_gfp_last_blockeval_rep2",
+          "gfp_rmse": 0.6595509689548767,
+          "gfp_mae": 0.5349916364642792,
+          "gfp_sd": 0.578198965618562,
+          "gfp_spearman": 0.563692790367922,
+          "promoter_acc": 0.8716730038022814,
+          "structure_acc": 0.5750798722044729,
+          "structure_macro_f1": 0.43770809553488627,
+          "gfp_pass": false,
+          "pass": false
+        }
+      ],
+      "20260926": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260926_no_cpt_joint_task_block_gfp_last_blockeval_rep1",
+          "gfp_rmse": 0.6156877104152311,
+          "gfp_mae": 0.4297271925964881,
+          "gfp_sd": 0.54695554265694,
+          "gfp_spearman": 0.4974121252044405,
+          "promoter_acc": 0.8716730038022814,
+          "structure_acc": 0.5303514376996805,
+          "structure_macro_f1": 0.4448193302127117,
+          "gfp_pass": true,
+          "pass": false
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_last_xseed/round/seed_20260926_no_cpt_joint_task_block_gfp_last_blockeval_rep2",
+          "gfp_rmse": 0.7020263230407068,
+          "gfp_mae": 0.5002743722847619,
+          "gfp_sd": 0.43453524721077497,
+          "gfp_spearman": 0.4427893956774732,
+          "promoter_acc": 0.8422053231939164,
+          "structure_acc": 0.5516506922257721,
+          "structure_macro_f1": 0.43101877017608425,
+          "gfp_pass": true,
+          "pass": false
+        }
+      ]
+    },
+    "cls_warmup128_updates": {
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_rep1",
+          "gfp_rmse": 0.6714653585357584,
+          "gfp_mae": 0.45077840216771725,
+          "gfp_sd": 0.4335799120542023,
+          "gfp_spearman": 0.4756721107626783,
+          "promoter_acc": 0.8754752851711026,
+          "structure_acc": 0.582534611288605,
+          "structure_macro_f1": 0.49260733830596537,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_rep2",
+          "gfp_rmse": 0.5995456504335098,
+          "gfp_mae": 0.35685126828898517,
+          "gfp_sd": 0.5788865452492925,
+          "gfp_spearman": 0.5000244258603167,
+          "promoter_acc": 0.8849809885931559,
+          "structure_acc": 0.56975505857295,
+          "structure_macro_f1": 0.4579452234495616,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260926": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_rep1",
+          "gfp_rmse": 0.5447979146597401,
+          "gfp_mae": 0.3179126044643549,
+          "gfp_sd": 0.6522483336921536,
+          "gfp_spearman": 0.5740573726017657,
+          "promoter_acc": 0.8830798479087453,
+          "structure_acc": 0.5740149094781682,
+          "structure_macro_f1": 0.4533705051349261,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_rep2",
+          "gfp_rmse": 0.6070619032621288,
+          "gfp_mae": 0.4327522183586428,
+          "gfp_sd": 0.6683226118862584,
+          "gfp_spearman": 0.5379936708080052,
+          "promoter_acc": 0.8849809885931559,
+          "structure_acc": 0.5740149094781682,
+          "structure_macro_f1": 0.46018420620612405,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260927": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_rep1",
+          "gfp_rmse": 0.7319186717518774,
+          "gfp_mae": 0.5404086372334902,
+          "gfp_sd": 0.33383738584175393,
+          "gfp_spearman": 0.40550923554165236,
+          "promoter_acc": 0.8916349809885932,
+          "structure_acc": 0.5835995740149095,
+          "structure_macro_f1": 0.452517340937166,
+          "gfp_pass": false,
+          "pass": false
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup_xseed/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_rep2",
+          "gfp_rmse": 0.7529487499063835,
+          "gfp_mae": 0.5438882963540742,
+          "gfp_sd": 0.3159313220261754,
+          "gfp_spearman": 0.38898334965674564,
+          "promoter_acc": 0.8830798479087453,
+          "structure_acc": 0.5782747603833865,
+          "structure_macro_f1": 0.4500909368781935,
+          "gfp_pass": false,
+          "pass": false
+        }
+      ]
+    },
+    "cls_warmup256_updates": {
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup128_rep1",
+          "gfp_rmse": 0.6396270212947892,
+          "gfp_mae": 0.4212455727981853,
+          "gfp_sd": 0.4905674141380947,
+          "gfp_spearman": 0.5036494427987166,
+          "promoter_acc": 0.8859315589353612,
+          "structure_acc": 0.5750798722044729,
+          "structure_macro_f1": 0.4722599817233459,
+          "gfp_pass": true,
+          "pass": true
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_cls_warmup/round/seed_20260928_no_cpt_joint_interleave_cls_warmup128_rep2",
+          "gfp_rmse": 0.5713840671032576,
+          "gfp_mae": 0.36059873206336873,
+          "gfp_sd": 0.5837916556989744,
+          "gfp_spearman": 0.5431787305829375,
+          "promoter_acc": 0.8840304182509505,
+          "structure_acc": 0.5835995740149095,
+          "structure_macro_f1": 0.4673614295808289,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ]
+    },
+    "hybrid_warmup_final_blocks": {
+      "20260926": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260926_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+          "gfp_rmse": 0.5376693172299506,
+          "gfp_mae": 0.33503118364924683,
+          "gfp_sd": 0.6314462381098799,
+          "gfp_spearman": 0.5677262822042214,
+          "promoter_acc": 0.8716730038022814,
+          "structure_acc": 0.5601703940362087,
+          "structure_macro_f1": 0.42685042647232496,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260927": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260927_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+          "gfp_rmse": 0.7962192968423859,
+          "gfp_mae": 0.6000642806148995,
+          "gfp_sd": 0.21284623339673972,
+          "gfp_spearman": 0.28879804215035426,
+          "promoter_acc": 0.8726235741444867,
+          "structure_acc": 0.5452609158679447,
+          "structure_macro_f1": 0.4294530761205637,
+          "gfp_pass": false,
+          "pass": false
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260927_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep2",
+          "gfp_rmse": 0.5583896224350373,
+          "gfp_mae": 0.35935948968062004,
+          "gfp_sd": 0.6185937925324548,
+          "gfp_spearman": 0.5412949864767953,
+          "promoter_acc": 0.8174904942965779,
+          "structure_acc": 0.5410010649627263,
+          "structure_macro_f1": 0.43846921619067275,
+          "gfp_pass": true,
+          "pass": false
+        }
+      ],
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_hybrid/round/seed_20260928_no_cpt_joint_hybrid_warmup64_final_block_gfp_last_rep1",
+          "gfp_rmse": 0.5794340872812311,
+          "gfp_mae": 0.39656821434726697,
+          "gfp_sd": 0.6041554922256726,
+          "gfp_spearman": 0.498239592321954,
+          "promoter_acc": 0.8830798479087453,
+          "structure_acc": 0.5654952076677316,
+          "structure_macro_f1": 0.4597034832873718,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ]
+    },
+    "round_robin_k8": {
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep1",
+          "gfp_rmse": 0.8225362127020195,
+          "gfp_mae": 0.6462344740752152,
+          "gfp_sd": 0.04500450712845539,
+          "gfp_spearman": 0.2805544139794032,
+          "promoter_acc": 0.8384030418250951,
+          "structure_acc": 0.564430244941427,
+          "structure_macro_f1": 0.42850517551204603,
+          "gfp_pass": false,
+          "pass": false
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k8_gfp_last_rep2",
+          "gfp_rmse": 0.8241845694410752,
+          "gfp_mae": 0.6479650376091791,
+          "gfp_sd": 0.038891395823823595,
+          "gfp_spearman": 0.3084462958604519,
+          "promoter_acc": 0.8773764258555133,
+          "structure_acc": 0.5452609158679447,
+          "structure_macro_f1": 0.4116155775889074,
+          "gfp_pass": false,
+          "pass": false
+        }
+      ]
+    },
+    "round_robin_k32": {
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep1",
+          "gfp_rmse": 0.720794412969452,
+          "gfp_mae": 0.5830087107864473,
+          "gfp_sd": 0.38150745322567664,
+          "gfp_spearman": 0.4223123165278965,
+          "promoter_acc": 0.7861216730038023,
+          "structure_acc": 0.5867944621938233,
+          "structure_macro_f1": 0.4483159457154073,
+          "gfp_pass": false,
+          "pass": false
+        },
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_round_robin/round/seed_20260928_no_cpt_joint_round_robin_k32_gfp_last_rep2",
+          "gfp_rmse": 0.7532945201565812,
+          "gfp_mae": 0.5038914489646704,
+          "gfp_sd": 0.257502663092915,
+          "gfp_spearman": 0.4133424112657147,
+          "promoter_acc": 0.8697718631178707,
+          "structure_acc": 0.56975505857295,
+          "structure_macro_f1": 0.45142035616326526,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "pending": []
+}

@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-09-29T02:07:22.490832+00:00",
+  "hashes": {
+    "training_data_manifest": "50afda4467dc761c80b57133e60e3c9291ea5a2312ccac7772ca8fa34f2be9c4",
+    "initial_model": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "cpt_model": "6c46e8ec12d4abae19a6141b7eb65fa217f1349097eaf2f9776258da32bec298",
+    "frozen_trainer": "ebf180701090ebfee5563b54326f8c3f4fa166fcdfb2497ecc0670f4490e1fc1",
+    "diagnostic_runner": "40581c8fc7c10cffae99b9f96d826f96d610b1572b08ae71ffde92d3f1745089",
+    "plan": "1d72df793cd74d664b8b96b4aa54ac0652defae87cef50811f08c7775aaa8437",
+    "tracker": "12facb243633ed69603a495724a4eff4588d7fe1dac6dabc5b0dc904733b6dfc"
+  },
+  "jobs": [
+    {
+      "seed": 20260927,
+      "arm": "no_cpt",
+      "variant": "task_block_gfp_last_blockeval",
+      "rep": 2
+    },
+    {
+      "seed": 20260926,
+      "arm": "no_cpt",
+      "variant": "task_block_gfp_last_blockeval",
+      "rep": 1
+    },
+    {
+      "seed": 20260926,
+      "arm": "no_cpt",
+      "variant": "task_block_gfp_last_blockeval",
+      "rep": 2
+    }
+  ],
+  "source_round": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_multitask_v1",
+  "test_inference": false
+}
