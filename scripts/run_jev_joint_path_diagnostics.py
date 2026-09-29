@@ -34,6 +34,8 @@ VARIANTS = (
     "interleave_cls_warmup64",
     "interleave_cls_warmup128",
     "hybrid_warmup64_final_block_gfp_last",
+    "interleave_cls_warmup64_ep4",
+    "interleave_cls_warmup64_fluo2p0",
 )
 ORDER_LAST = ("promoter", "structural_class", "fluorescence")
 ORDER_FIRST = ("fluorescence", "promoter", "structural_class")
@@ -77,6 +79,12 @@ MATRICES = {
         {"seed": 20260927, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval", "rep": 2},
         {"seed": 20260926, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval", "rep": 1},
         {"seed": 20260926, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval", "rep": 2},
+    ),
+    "gfp_dose": (
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64_ep4", "rep": 1},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64_ep4", "rep": 2},
+        {"seed": 20260927, "arm": "no_cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 2},
     ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
@@ -238,7 +246,23 @@ def add_block_eval(module, output, single_task_blocks=True):
     module.train_step = train_step
 
 
+def epochs_of(variant):
+    return 4 if variant.endswith("_ep4") else 3
+
+
+def scale_fluorescence_loss(module, scale):
+    original_losses = module.losses
+
+    def weighted_losses(logits, rows, score_spec):
+        values = original_losses(logits, rows, score_spec)
+        factor = values.new_tensor([scale if row["task"] == "fluorescence" else 1.0 for row in rows])
+        return values * factor
+
+    module.losses = weighted_losses
+
+
 def apply_variant(module, variant):
+    module.EPOCHS = epochs_of(variant)
     if variant == "task_block_gfp_last":
         patch_task_block(module, ("promoter", "structural_class", "fluorescence"))
     elif variant == "task_block_gfp_first":
@@ -262,6 +286,10 @@ def apply_variant(module, variant):
     elif variant == "hybrid_warmup64_final_block_gfp_last":
         patch_cls_warmup(module, 64)
         patch_final_epoch_blocks(module, ("promoter", "structural_class", "fluorescence"))
+    elif variant in {"interleave_cls_warmup64_ep4", "interleave_cls_warmup64_fluo2p0"}:
+        patch_cls_warmup(module, 64)
+        if variant.endswith("fluo2p0"):
+            scale_fluorescence_loss(module, 2.0)
     elif variant.startswith("interleave_cls_warmup"):
         patch_cls_warmup(module, int(variant.removeprefix("interleave_cls_warmup")))
     elif variant == "task_block_gfp_last_blockeval":
@@ -332,7 +360,7 @@ def run_one(root, phase, job):
         raise RuntimeError(f"{name} failed; inspect {root / phase / (name + '.log')}")
     output = root / phase / name
     status = load_json(output / "status.json")
-    expected = 3 if phase == "smoke" else 1152
+    expected = 3 if phase == "smoke" else 384 * epochs_of(job["variant"])
     assert status["status"] == "complete" and status["updates"] == expected
     assert status["checkpoint_reload_exact"] and not status["test_inference"]
     trace = [json.loads(line) for line in (output / "training_trace.jsonl").read_text(encoding="utf-8").splitlines()]

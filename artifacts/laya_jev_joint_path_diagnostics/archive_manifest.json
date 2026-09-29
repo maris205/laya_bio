@@ -5,7 +5,7 @@
     {
       "source_relative": "EXPERIMENT_PLAN.md",
       "archive_relative": "EXPERIMENT_PLAN.md",
-      "sha256": "1d72df793cd74d664b8b96b4aa54ac0652defae87cef50811f08c7775aaa8437"
+      "sha256": "49ff23bd5cfa87dedfb5191933d4a36c7f92656f22eaca8016d6d19194c8e066"
     },
     {
       "source_relative": "EXPERIMENT_TRACKER.md",
@@ -15,12 +15,12 @@
     {
       "source_relative": "analysis/gfp_calibration.json",
       "archive_relative": "analysis/gfp_calibration.json",
-      "sha256": "1d8c2bdbcdca2e8ce1d0380b54598ff0c504b531bc49ddfb5d94ef7863f50a54"
+      "sha256": "9bf04d54824729bad8f69beddf3a3378498670e11021fc86e399c370f1c9506a"
     },
     {
       "source_relative": "analysis/recipe_comparison.json",
       "archive_relative": "analysis/recipe_comparison.json",
-      "sha256": "f71a07fd18c31ef4f8bcbbf1e210bdf54eb940e26793faee94f111f0a85f3ba3"
+      "sha256": "32d3267792002841f17f25f4da5932b2c92331b0feb1e37d2cf9a7b21945a0fa"
     },
     {
       "source_relative": "analysis/summary.json",
@@ -1397,6 +1397,411 @@
       "source_relative": "run_followup/status.json",
       "archive_relative": "run_followup/status.json",
       "sha256": "5bbca1edf17e321fa2a1ccc4bd4afcc8fb4ad4a7b0c906be42a9577c7d79657e"
+    },
+    {
+      "source_relative": "run_gfp_dose/EXPERIMENT_PLAN.md",
+      "archive_relative": "run_gfp_dose/EXPERIMENT_PLAN.md",
+      "sha256": "49ff23bd5cfa87dedfb5191933d4a36c7f92656f22eaca8016d6d19194c8e066"
+    },
+    {
+      "source_relative": "run_gfp_dose/EXPERIMENT_TRACKER.md",
+      "archive_relative": "run_gfp_dose/EXPERIMENT_TRACKER.md",
+      "sha256": "12facb243633ed69603a495724a4eff4588d7fe1dac6dabc5b0dc904733b6dfc"
+    },
+    {
+      "source_relative": "run_gfp_dose/manifest.json",
+      "archive_relative": "run_gfp_dose/manifest.json",
+      "sha256": "b46c624bafb5f1624c5fb9894f50ab5ff5b5c61d231a7784b882ce2343d40fa1"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/block_eval.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/block_eval.jsonl",
+      "sha256": "ab01a3828ae176f42b8d95b613bd0970564221e4886de40cb6324d7b86211cbe"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "7b5db88e0ff567656724b32f024bf95423ec44ba3eb68fe065f537b2a0a40778",
+      "compressed_sha256": "3fba6e343d3a8ae6034c47d44f0f49bc64660614471cb07aaf9eba98cbe4148e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "123b231027574d4bb4623d00b947e367bb7a4da92c4234ef25c2f0b2702bc0de",
+      "compressed_sha256": "ebbc5e3042792b96b7249b93059c322f971ea15312a45591dc17fd37c9d6b443"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "b3810c3960fbad446e97acce7d47e53bc8a80cfcb0a1c9612de5b15d24319db1",
+      "compressed_sha256": "6b08ed7fe8760264a5a4ba7a93993e415d4ca52533517f38df290f25a0caddd3"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "d3c9811233ebc5e9ed1f551516f09d7fbd835a6c4d4575c084a6a8bb4b10909b",
+      "compressed_sha256": "579f3c580c16ed7b44d5f541467d4a966748661c54420d8a17a8957a4dcb0a69"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch4_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_epoch4_predictions.jsonl.gz",
+      "source_sha256": "db2c3a4dcb478d68785f159f212f17a8b3d10e35204ba0b0799ff2c0548faef0",
+      "compressed_sha256": "69e3e3d461e3705d51a30bf8aa57733d23854ac09a8002b24bc8619c81d49700"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "fe42fd338e578b7056135a6511470f9d14a8cd6f7882060ddb218ffd604d2a6d",
+      "compressed_sha256": "40c596b9844ef88992f962cf9c467284f1ba7dd73b782f8af030a65c33673e9c"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/inference_benchmark.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/inference_benchmark.json",
+      "sha256": "412ad43af096b5599900a779cdd3b6f329da4a1c49b3210ea523c1d3da868249"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/learning_curve.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/learning_curve.jsonl",
+      "sha256": "873b06f55412b641cfaea80b1ba77a3dfe60cfbc7520b9f6ab344d3bb9239248"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/reversed_choice_metrics.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/reversed_choice_metrics.json",
+      "sha256": "13475b511311daacc6cf9b1ce92d8f3c52a17d6d404bc7332b7917ad2d4e5ee2"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/run_config.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/run_config.json",
+      "sha256": "6eae9b742e9a756d89a0f8d41cca2bd49350c63e5065118120b7f7c23b3f1e23"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/status.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/status.json",
+      "sha256": "4e32ba743a8ba82f2ab577016955ff5729502f94b8e81b8254238003a84c07ce"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "94bdcecc6b209785f4250a540e7c8e35cdf6a25c95b6eabe9d5dbd800ebc2125",
+      "compressed_sha256": "9598aebf4cc81e684d1c7d95c7d372f28253ef21eb3d6b0c91c687316a8e0dac"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/train_epoch4_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/train_epoch4_predictions.jsonl.gz",
+      "source_sha256": "4b9a5a6eacfe3ad06102f1da9f795f99344fd3d32a4b2309993295745495f6fb",
+      "compressed_sha256": "586e944264775676e1d745040a14b07950845fada6985007ddbd6014b73b5cf8"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/training_trace.jsonl",
+      "sha256": "edcf9a665cbe54f7a4bebdfabf1aa4a1a26564f9b9bf33a9141874c22cc62e6f"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1.log",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1.log",
+      "sha256": "c84aae6376e5d6c7db88c42a62e7662fb61c2ba1141496811ce31c8a1f2fcc97"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/block_eval.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/block_eval.jsonl",
+      "sha256": "a699a12897276a3d92c169e30b11eb8c5e7426f25dee3ce7f847164e5b79c085"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "7b5db88e0ff567656724b32f024bf95423ec44ba3eb68fe065f537b2a0a40778",
+      "compressed_sha256": "3fba6e343d3a8ae6034c47d44f0f49bc64660614471cb07aaf9eba98cbe4148e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "bd46cfa351ec2e56f6d766464dd8eed5cd2586ade86d7d06d158bb62d35315c5",
+      "compressed_sha256": "036221fcf1ad2f07ae1d14719f27b054c87673a5afad1d0c5e1d5e12f7474ff1"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "8fb6cb684f69db45167d7143f8f3939e16347a9b3fb2e54010c92c881d5d5b37",
+      "compressed_sha256": "a0c41475d31b2273969fc522c3148f663d89cd254654ebf2f5ae7b7e189ded7d"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "0541db1514c14daf988e26b45a4962923cf6d78947207b64563864e2f599c852",
+      "compressed_sha256": "a44568705b4dd1a992eb85253ae683b7cc79d335551e5fe339866e7073f62550"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch4_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_epoch4_predictions.jsonl.gz",
+      "source_sha256": "b49767ef781ce9d1564788e0471d27f21b4b8fea557a962c2dbff9bcd172dad2",
+      "compressed_sha256": "fe1a3eb1137f69b535fffc5070d8d261e9434f35b33b7973267a4fbbaf0ca989"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "3d2051830f2588e019e47069b6f1bad420ed48bd2b912d621456baf24065822e",
+      "compressed_sha256": "93eb27270c93ca34a44d8491e9d37adf337fa3119fae188034a5f328d2efce03"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/inference_benchmark.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/inference_benchmark.json",
+      "sha256": "5407e2832dbe286f368dab88f9b43bb0768fc4ffacb3de5410fae7cd2b2808ca"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/learning_curve.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/learning_curve.jsonl",
+      "sha256": "26097dbe3c54b511240f66a2d501231cebf00ddd47f9a7acc569c71f79a372c1"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/reversed_choice_metrics.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/reversed_choice_metrics.json",
+      "sha256": "b931bd05d57edf2dbf4b78445a3e7f32a249b58b3c61fac8c89db290a039871d"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/run_config.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/run_config.json",
+      "sha256": "6eae9b742e9a756d89a0f8d41cca2bd49350c63e5065118120b7f7c23b3f1e23"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/status.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/status.json",
+      "sha256": "d230916d485e567388255d478f4ff633e95ef961acd7b09796363eb5670cbf89"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "94bdcecc6b209785f4250a540e7c8e35cdf6a25c95b6eabe9d5dbd800ebc2125",
+      "compressed_sha256": "9598aebf4cc81e684d1c7d95c7d372f28253ef21eb3d6b0c91c687316a8e0dac"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/train_epoch4_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/train_epoch4_predictions.jsonl.gz",
+      "source_sha256": "6e8cdaf295d396bf8ad917c918add5333dc8e40b2eb590dc4cebf09e648fc624",
+      "compressed_sha256": "c7e0551d6d2bb63eb2cb0f1532fff933ee1298bc1b5b85d780628f3a52fb0cea"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/training_trace.jsonl",
+      "sha256": "e2521f2ecb3d5f36c973e5c3799b2ab504a3e2428bb21c00b272b536cece3c1e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2.log",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2.log",
+      "sha256": "4fe64e3d9934da3f253d89c30a21b9d4a744398adb21fdb00a915af2738fcb2e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "sha256": "1625b4ccc0fb01de7ce9f8b2deaa0c9ba0bb67d4ae691c58980903dae0aaca2d"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "7b5db88e0ff567656724b32f024bf95423ec44ba3eb68fe065f537b2a0a40778",
+      "compressed_sha256": "3fba6e343d3a8ae6034c47d44f0f49bc64660614471cb07aaf9eba98cbe4148e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "d3ad2dc3d6b4468332b8673ddfff98e9f5013ac15f96d93c1b104083ddf84fc2",
+      "compressed_sha256": "73b26f94359b0072b77457782e1dd609ca5f32e885de80b9811c52f88c7c0a50"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "25048848f1c0108f2d6a4ad40a7d84d39ccb43767743072b5f7eb8c18f454e0a",
+      "compressed_sha256": "e3937b2e804801a564fd81be5a1fc0b3a84b411c33ee9fe310bba87198568ba5"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "cacba5c78c6193a0cf7dedf7d2750655b2b38a5a0b2a0a7c098e035e0c49822f",
+      "compressed_sha256": "cb5b323679cac5f9d51b54b778f4eb626cc6fceee46bfdecadccc5e46ef35d8b"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "dd4aceabecca98ce1eed989dfe51f3ca8846af4590fbbbb15bd3d4a4a56e8146",
+      "compressed_sha256": "ed173e4cb4fdc89dba42b4a8f0bc427d6cad9326beda1f10c34d819c3cc8df38"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "sha256": "737cca716e72a0f5e2b1130388b2553281840645644d19cfededa932e3596957"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "sha256": "d803d4d662ffb8ed4dbde8149ce2e24810036f1a664aba97fe21331f2dd62294"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "sha256": "0971ab58ae8995570229a14db0425c3778e44037b4f3417ee6d5e0fa60384c04"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "8af2784da7e958c4990d7e906f5bb085436e663fb43d4c988f42659f86e2f3c1"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "d58e4073d9097a73fb1964d5455d9a4c2fa350d35fe62f4eaf065f54d62cab01"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "94bdcecc6b209785f4250a540e7c8e35cdf6a25c95b6eabe9d5dbd800ebc2125",
+      "compressed_sha256": "9598aebf4cc81e684d1c7d95c7d372f28253ef21eb3d6b0c91c687316a8e0dac"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "26a2ba4315083129032c2a560dfc79a042932fac84d76b59620dd9c558fc5872",
+      "compressed_sha256": "733c77da541fa947734f37b25805481ce5d48792e8992fee4aafe8bda9aae518"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "2d46d5811a5da990a397b74f4d61ef4e8d1ce6ba32d13873cbcf0dcd01809779"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "7ded66eace89969e8feb8efffe8ceff0d6a50a01e04d22135c5c2926a39fb98e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/block_eval.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/block_eval.jsonl",
+      "sha256": "78db0583aa2cd6bb2029fcd300b9d69b8cb25b4ace4c41aee04b2dea3a344d0a"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "7b5db88e0ff567656724b32f024bf95423ec44ba3eb68fe065f537b2a0a40778",
+      "compressed_sha256": "3fba6e343d3a8ae6034c47d44f0f49bc64660614471cb07aaf9eba98cbe4148e"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "fb0bab361f997403ed9953b2da76f93936db1133b6f39e05199d7ea822971782",
+      "compressed_sha256": "d7df3d73fcae4530f49214464896d4d60759f2d1f25e194a66b97e4cb5534b7a"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "5b64054853efdce4e3f0a08f2853218c569efe479c4c4333bc6defd8c0a2ff01",
+      "compressed_sha256": "aa90a4dab2e26c480a35d9d7fa978dc0e9d65931348ee8ce7c0ce25b4cd8f3c5"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "e4c53bc5aa6452e5c1cbaa5c78a2a509fae20b2e581c0faa53b9316874b45e65",
+      "compressed_sha256": "a1658e5ccab1acd4ff4251abf47ce248dac4aa460c058173c1cc109444f1426f"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "07ef03fe61ab3dc185cd2e95fefa6491c6afd820ba89a7344205a012447915c8",
+      "compressed_sha256": "092bfa4e0c72629965bf1ac86f6e9fc782c31fe0cea717180287dd364ebe21aa"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/inference_benchmark.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/inference_benchmark.json",
+      "sha256": "96952925e8869edca846d859e145c46d9e99093143a88b310658bc2cf4fccf5a"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/learning_curve.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/learning_curve.jsonl",
+      "sha256": "0cc0ab43b1f6f9adb40a3a091a54e7d2fc2142297f576f4c82b1440fca975db6"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/reversed_choice_metrics.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/reversed_choice_metrics.json",
+      "sha256": "ec8e1efeb444211cfbc1bca755bea27c5dcf9bd84e72454699d1f6cb95f57ac6"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/run_config.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/run_config.json",
+      "sha256": "8af2784da7e958c4990d7e906f5bb085436e663fb43d4c988f42659f86e2f3c1"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/status.json",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/status.json",
+      "sha256": "9736a46c897e9e48233b3a1e5186606026fbad245ea04b9ddd587f3ba033d5c6"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "94bdcecc6b209785f4250a540e7c8e35cdf6a25c95b6eabe9d5dbd800ebc2125",
+      "compressed_sha256": "9598aebf4cc81e684d1c7d95c7d372f28253ef21eb3d6b0c91c687316a8e0dac"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/train_epoch3_predictions.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "2a410d3410af35a267a974680a477748c52d7beffb4f1dc58667e7826899aa03",
+      "compressed_sha256": "65891ce29fe1b89b9e103c3e3d825a33d3aef50ccf82bfa650d22b6cc49dd584"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/training_trace.jsonl",
+      "sha256": "3f46f9e6c0c6a7d8aff7d480b4166893abe8cbc7946036f3f1d477f6bf411c43"
+    },
+    {
+      "source_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2.log",
+      "archive_relative": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2.log",
+      "sha256": "a058f797a6c87e7e09fba6b37aaed16c351b4b8ab6f6dd28e44e585e13a0845c"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/run_config.json",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/run_config.json",
+      "sha256": "93c7c5792687d1933dc058382ce5796ab45f36f4e4e16b54b7bffbcd1e6cf167"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/status.json",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/status.json",
+      "sha256": "b8a7c4acf6ed1b63f7181c777d4c76f701513f5319d52b96aa6f1627116212e6"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/training_trace.jsonl",
+      "sha256": "ab8ef27367196e14e108a094175486fd0fb418600f6d6ec8ea8fc13b3186b798"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2.log",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2.log",
+      "sha256": "888552b994bb8c4c60988d1bb8742697098cf9dfcc9a9f5749f900f418dff4d4"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/run_config.json",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/run_config.json",
+      "sha256": "c526587be07b061615759360eeebba17118f4deea3eb1cfa51e2040f44874924"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/status.json",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/status.json",
+      "sha256": "4d25c1c496c76b0764e29af188cd0f69457201c6dce0c7c313ed5f9390ad9ff3"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/training_trace.jsonl",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/training_trace.jsonl",
+      "sha256": "0923d7aa5961754553783caeb05e71ecd4b9814115a7bccb80adda0436db719b"
+    },
+    {
+      "source_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2.log",
+      "archive_relative": "run_gfp_dose/smoke/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2.log",
+      "sha256": "990a870edca6a18242a23d904973a60b3583ebff91488ef1ee63bc6c07a293ca"
+    },
+    {
+      "source_relative": "run_gfp_dose/status.json",
+      "archive_relative": "run_gfp_dose/status.json",
+      "sha256": "87a5396cde55758cdd64c8740b3995d241b5af388824b49fe55f927c8f51d2c5"
+    },
+    {
+      "source_relative": "run_gfp_dose.controller.log",
+      "archive_relative": "run_gfp_dose.controller.log",
+      "sha256": "690175c5b77ac8ecaa7c1cc5a74b4c2b0c056bb950ac14e35e6be3b49adac7cd"
     },
     {
       "source_relative": "run_gfp_last_xseed/EXPERIMENT_PLAN.md",
@@ -3696,6 +4101,22 @@
     },
     {
       "path": "run_followup/round/seed_20260928_no_cpt_joint_task_block_gfp_first/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2/model.safetensors",
       "bytes": 1692513140
     },
     {

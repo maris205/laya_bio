@@ -1,0 +1,6 @@
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2", "phase": "smoke", "elapsed_seconds": 27.10112844221294}
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2", "phase": "smoke", "elapsed_seconds": 24.94700473919511}
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1", "phase": "round", "elapsed_seconds": 2962.905413571745}
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1", "phase": "round", "elapsed_seconds": 2260.874737318605}
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2", "phase": "round", "elapsed_seconds": 3030.7491366155446}
+{"completed": "seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2", "phase": "round", "elapsed_seconds": 2285.8145772255957}

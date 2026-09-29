@@ -32,6 +32,10 @@ def runs():
         yield "cls_warmup256_updates", int(path.name.split("_")[1]), path
     for path in sorted((JP / "run_hybrid/round").glob("seed_*_rep*")):
         yield "hybrid_warmup_final_blocks", int(path.name.split("_")[1]), path
+    for path in sorted((JP / "run_gfp_dose/round").glob("seed_*_interleave_cls_warmup64_ep4_rep*")):
+        yield "cls_warmup128_updates_4epochs", int(path.name.split("_")[1]), path
+    for path in sorted((JP / "run_gfp_dose/round").glob("seed_*_interleave_cls_warmup64_fluo2p0_rep*")):
+        yield "cls_warmup128_updates_gfp_loss2x", int(path.name.split("_")[1]), path
     for k in (8, 32):
         for path in sorted((JP / "run_round_robin/round").glob(f"seed_*_round_robin_k{k}_gfp_last_rep*")):
             yield f"round_robin_k{k}", int(path.name.split("_")[1]), path
@@ -39,7 +43,8 @@ def runs():
 
 def final_dev(path):
     rows = [json.loads(line) for line in (path / "learning_curve.jsonl").read_text().splitlines()]
-    metrics = [row for row in rows if row["split"] == "dev" and row["epoch"] == 3][0]["metrics"]
+    last = max(row["epoch"] for row in rows if row["split"] == "dev")
+    metrics = [row for row in rows if row["split"] == "dev" and row["epoch"] == last][0]["metrics"]
     gfp = metrics["fluorescence"]
     return {
         "gfp_rmse": gfp["rmse"], "gfp_mae": gfp["mae"], "gfp_sd": gfp["prediction_std"], "gfp_spearman": gfp["spearman"],
@@ -65,7 +70,7 @@ def main():
         if status["status"] != "complete":
             pending.append(str(path))
             continue
-        assert status["updates"] == 1152 and status["checkpoint_reload_exact"] and not status["test_inference"], path
+        assert status["updates"] in (1152, 1536) and status["checkpoint_reload_exact"] and not status["test_inference"], path
         m = final_dev(path)
         table.setdefault(recipe, {}).setdefault(str(seed), []).append({"path": str(path.relative_to(PROJECT)), **m, **verdict(m)})
     summary = {}

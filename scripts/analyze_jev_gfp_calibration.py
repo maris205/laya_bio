@@ -52,7 +52,8 @@ def main():
     for recipe, seed, path in runs():
         if not path.is_dir() or json.loads((path / "status.json").read_text())["status"] != "complete":
             continue
-        train, dev = gfp_rows(path / "train_epoch3_predictions.jsonl"), gfp_rows(path / "dev_epoch3_predictions.jsonl")
+        last = max(int(f.name.split("epoch")[1].split("_")[0]) for f in path.glob("dev_epoch*_predictions.jsonl"))
+        train, dev = gfp_rows(path / f"train_epoch{last}_predictions.jsonl"), gfp_rows(path / f"dev_epoch{last}_predictions.jsonl")
         assert len(train) == 1024 and len(dev) == 5362, path
         cls = final_dev(path)
         record = {"path": str(path.relative_to(PROJECT)), "seed": seed}

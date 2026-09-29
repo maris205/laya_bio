@@ -109,6 +109,46 @@
         "mae_mean": 0.39918919028279487
       }
     },
+    "cls_warmup128_updates_4epochs": {
+      "raw": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.32996979731700604
+      },
+      "shift": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.33742841679775615
+      },
+      "affine": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.31928095231550524
+      }
+    },
+    "cls_warmup128_updates_gfp_loss2x": {
+      "raw": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.39142668953083837
+      },
+      "shift": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.3945844597501208
+      },
+      "affine": {
+        "gfp_pass": 2,
+        "pass": 2,
+        "n": 2,
+        "mae_mean": 0.38056021788590566
+      }
+    },
     "round_robin_k8": {
       "raw": {
         "gfp_pass": 0,
@@ -1007,6 +1047,158 @@
           "sd": 0.6041554922256726,
           "spearman": 0.498239592321954,
           "bias": 0.02231521325738173,
+          "gfp_pass": true,
+          "pass": true
+        }
+      }
+    ],
+    "cls_warmup128_updates_4epochs": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep1",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6047137312400755,
+          "mae": 0.395601473865085,
+          "sd": 0.48286549450099653,
+          "spearman": 0.5388082521341049,
+          "bias": 0.02715308212556814,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.2739644791477274,
+          "b": -0.9050415762592587,
+          "rmse": 0.5957814032558696,
+          "mae": 0.3723127179603358,
+          "sd": 0.6151534882003719,
+          "spearman": 0.5388082521341049,
+          "bias": -0.0011553877398208141,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.02809766620757692,
+          "rmse": 0.6041045432046215,
+          "mae": 0.406986103975392,
+          "sd": 0.48286549450099653,
+          "spearman": 0.5388082521341049,
+          "bias": -0.0009445840820087807,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_ep4_rep2",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.4698809394274643,
+          "mae": 0.26433812076892715,
+          "sd": 0.7084082918668246,
+          "spearman": 0.600835449354113,
+          "bias": 0.008746148159382038,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0115784750791588,
+          "b": -0.05118168059365091,
+          "rmse": 0.4702015317071496,
+          "mae": 0.26624918667067465,
+          "sd": 0.716610579620074,
+          "spearman": 0.600835449354113,
+          "bias": -0.0055955596493850145,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.014279665826566035,
+          "rmse": 0.46983212102556754,
+          "mae": 0.26787072962012026,
+          "sd": 0.7084082918668246,
+          "spearman": 0.600835449354113,
+          "bias": -0.005533517667183996,
+          "gfp_pass": true,
+          "pass": true
+        }
+      }
+    ],
+    "cls_warmup128_updates_gfp_loss2x": [
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.54813549055854,
+          "mae": 0.32706148889573855,
+          "sd": 0.6275408829967892,
+          "spearman": 0.5736260116692804,
+          "bias": 0.003902221031701801,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.0378960840310743,
+          "b": -0.12485803924139027,
+          "rmse": 0.5484929048233542,
+          "mae": 0.3224284120392299,
+          "sd": 0.6513222250317701,
+          "spearman": 0.5736260116692804,
+          "bias": -0.0005629960130480603,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.004451055046998942,
+          "rmse": 0.5481218750420818,
+          "mae": 0.32859954592650376,
+          "sd": 0.6275408829967892,
+          "spearman": 0.5736260116692804,
+          "bias": -0.0005488340152971412,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_dose/round/seed_20260927_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep2",
+        "seed": 20260927,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.6656949633092656,
+          "mae": 0.45579189016593824,
+          "sd": 0.42221400108300106,
+          "spearman": 0.46902750292798817,
+          "bias": 0.016099439308097686,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.1484848647596029,
+          "b": -0.4837867317449045,
+          "rmse": 0.6598338022357827,
+          "mae": 0.43869202373258137,
+          "sd": 0.48490638993342133,
+          "spearman": 0.46902750292798817,
+          "bias": 0.0058483265038061505,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.011029870837870881,
+          "rmse": 0.6655195660187337,
+          "mae": 0.4605693735737379,
+          "sd": 0.42221400108300106,
+          "spearman": 0.46902750292798817,
+          "bias": 0.0050695684702268045,
           "gfp_pass": true,
           "pass": true
         }
