@@ -186,6 +186,14 @@
     },
     "cls_warmup128_updates_gfp_loss2x": {
       "per_seed": {
+        "20260926": {
+          "n": 1,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.32120948758230533,
+          "promoter_mean": 0.8868821292775665,
+          "structure_mean": 0.577209797657082
+        },
         "20260927": {
           "n": 2,
           "pass": 2,
@@ -193,13 +201,23 @@
           "gfp_mae_mean": 0.39142668953083837,
           "promoter_mean": 0.8868821292775666,
           "structure_mean": 0.566027689030884
+        },
+        "20260928": {
+          "n": 1,
+          "pass": 1,
+          "gfp_pass": 1,
+          "gfp_mae_mean": 0.48968706810048446,
+          "promoter_mean": 0.8697718631178707,
+          "structure_mean": 0.5740149094781682
         }
       },
-      "runs": 2,
+      "runs": 4,
       "pass_rate": 1.0,
       "gfp_pass_rate": 1.0,
       "seeds_all_pass": [
-        "20260927"
+        "20260926",
+        "20260927",
+        "20260928"
       ]
     },
     "round_robin_k8": {
@@ -599,6 +617,34 @@
           "promoter_acc": 0.8887832699619772,
           "structure_acc": 0.5633652822151225,
           "structure_macro_f1": 0.4401921990136309,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260926": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_loss2x_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1",
+          "gfp_rmse": 0.5287149813449021,
+          "gfp_mae": 0.32120948758230533,
+          "gfp_sd": 0.657948725881016,
+          "gfp_spearman": 0.5629934631254634,
+          "promoter_acc": 0.8868821292775665,
+          "structure_acc": 0.577209797657082,
+          "structure_macro_f1": 0.46135475655264047,
+          "gfp_pass": true,
+          "pass": true
+        }
+      ],
+      "20260928": [
+        {
+          "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_loss2x_xseed/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1",
+          "gfp_rmse": 0.7295706914680691,
+          "gfp_mae": 0.48968706810048446,
+          "gfp_sd": 0.3207545103717447,
+          "gfp_spearman": 0.43602032303225136,
+          "promoter_acc": 0.8697718631178707,
+          "structure_acc": 0.5740149094781682,
+          "structure_macro_f1": 0.4721562142332568,
           "gfp_pass": true,
           "pass": true
         }

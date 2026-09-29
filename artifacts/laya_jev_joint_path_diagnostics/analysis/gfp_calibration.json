@@ -131,22 +131,22 @@
     },
     "cls_warmup128_updates_gfp_loss2x": {
       "raw": {
-        "gfp_pass": 2,
-        "pass": 2,
-        "n": 2,
-        "mae_mean": 0.39142668953083837
+        "gfp_pass": 4,
+        "pass": 4,
+        "n": 4,
+        "mae_mean": 0.39843748368611664
       },
       "shift": {
-        "gfp_pass": 2,
-        "pass": 2,
-        "n": 2,
-        "mae_mean": 0.3945844597501208
+        "gfp_pass": 3,
+        "pass": 3,
+        "n": 4,
+        "mae_mean": 0.40647649036523914
       },
       "affine": {
-        "gfp_pass": 2,
-        "pass": 2,
-        "n": 2,
-        "mae_mean": 0.38056021788590566
+        "gfp_pass": 4,
+        "pass": 4,
+        "n": 4,
+        "mae_mean": 0.3918931233050041
       }
     },
     "round_robin_k8": {
@@ -1201,6 +1201,80 @@
           "bias": 0.0050695684702268045,
           "gfp_pass": true,
           "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_loss2x_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1",
+        "seed": 20260926,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.5287149813449021,
+          "mae": 0.3212094875823053,
+          "sd": 0.657948725881016,
+          "spearman": 0.5629934631254634,
+          "bias": -0.038541697832618585,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 0.9834020725557584,
+          "b": 0.07916317638697734,
+          "rmse": 0.5273477131022494,
+          "mae": 0.31352252852496293,
+          "sd": 0.6470281406668117,
+          "spearman": 0.5629934631254634,
+          "bias": -0.011404325789605086,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": 0.026947844873233873,
+          "rmse": 0.5274357652389181,
+          "mae": 0.31051220825993686,
+          "sd": 0.657948725881016,
+          "spearman": 0.5629934631254634,
+          "bias": -0.011593852959384709,
+          "gfp_pass": true,
+          "pass": true
+        }
+      },
+      {
+        "path": "artifacts/laya_jev_joint_path_diagnostics/run_gfp_loss2x_xseed/round/seed_20260928_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1",
+        "seed": 20260928,
+        "raw": {
+          "a": 1.0,
+          "b": 0.0,
+          "rmse": 0.7295706914680691,
+          "mae": 0.48968706810048446,
+          "sd": 0.3207545103717447,
+          "spearman": 0.43602032303225136,
+          "bias": 0.08007475783206072,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "affine": {
+          "a": 1.3880077276600093,
+          "b": -1.3435845267286677,
+          "rmse": 0.7171561143209805,
+          "mae": 0.49292952892324216,
+          "sd": 0.4452097390777842,
+          "spearman": 0.43602032303225136,
+          "bias": -0.0012847778721088666,
+          "gfp_pass": true,
+          "pass": true
+        },
+        "shift": {
+          "a": 1.0,
+          "b": -0.08104934091960247,
+          "rmse": 0.7251636896725648,
+          "mae": 0.5262248337007781,
+          "sd": 0.3207545103717447,
+          "spearman": 0.43602032303225136,
+          "bias": -0.0009745830875417496,
+          "gfp_pass": false,
+          "pass": false
         }
       }
     ],

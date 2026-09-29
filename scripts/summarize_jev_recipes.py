@@ -34,8 +34,9 @@ def runs():
         yield "hybrid_warmup_final_blocks", int(path.name.split("_")[1]), path
     for path in sorted((JP / "run_gfp_dose/round").glob("seed_*_interleave_cls_warmup64_ep4_rep*")):
         yield "cls_warmup128_updates_4epochs", int(path.name.split("_")[1]), path
-    for path in sorted((JP / "run_gfp_dose/round").glob("seed_*_interleave_cls_warmup64_fluo2p0_rep*")):
-        yield "cls_warmup128_updates_gfp_loss2x", int(path.name.split("_")[1]), path
+    for root in ("run_gfp_dose", "run_gfp_loss2x_xseed"):
+        for path in sorted((JP / root / "round").glob("seed_*_interleave_cls_warmup64_fluo2p0_rep*")):
+            yield "cls_warmup128_updates_gfp_loss2x", int(path.name.split("_")[1]), path
     for k in (8, 32):
         for path in sorted((JP / "run_round_robin/round").glob(f"seed_*_round_robin_k{k}_gfp_last_rep*")):
             yield f"round_robin_k{k}", int(path.name.split("_")[1]), path

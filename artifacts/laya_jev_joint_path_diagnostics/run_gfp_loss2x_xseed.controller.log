@@ -1,0 +1,4 @@
+{"completed": "seed_20260926_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1", "phase": "smoke", "elapsed_seconds": 25.350654708221555}
+{"completed": "seed_20260928_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1", "phase": "smoke", "elapsed_seconds": 24.835033308714628}
+{"completed": "seed_20260926_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1", "phase": "round", "elapsed_seconds": 2237.919988634065}
+{"completed": "seed_20260928_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1", "phase": "round", "elapsed_seconds": 2307.0036757029593}
