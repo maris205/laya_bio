@@ -1,8 +1,8 @@
 {
   "summary": {
-    "n_tasks": 46,
+    "n_tasks": 59,
     "tasks_with_train_test_leak": 0,
-    "n_cross_task_duplicate_sequences": 731024,
+    "n_cross_task_duplicate_sequences": 815681,
     "top_cross_task_pairs": [
       {
         "tasks": [
@@ -20,13 +20,7 @@
       },
       {
         "tasks": [
-          "gue_prom_prom_300_all",
-          "gue_prom_prom_300_notata"
-        ],
-        "n_shared": 52968
-      },
-      {
-        "tasks": [
+          "dna_core",
           "gue_prom_prom_core_all",
           "gue_prom_prom_core_notata"
         ],
@@ -34,17 +28,54 @@
       },
       {
         "tasks": [
-          "gue_prom_prom_300_all",
-          "gue_prom_prom_300_tata"
+          "dna_splice",
+          "gue_splice_reconstructed"
         ],
-        "n_shared": 6036
+        "n_shared": 44390
       },
       {
         "tasks": [
+          "dna_tf",
+          "gue_tf_0"
+        ],
+        "n_shared": 34123
+      },
+      {
+        "tasks": [
+          "gue_prom_prom_300_all",
+          "gue_prom_prom_300_notata"
+        ],
+        "n_shared": 34115
+      },
+      {
+        "tasks": [
+          "gue_prom_prom_300_all",
+          "gue_prom_prom_300_notata",
+          "lg_promoter_detection"
+        ],
+        "n_shared": 18853
+      },
+      {
+        "tasks": [
+          "gl_dna_protein_rand",
+          "gl_dna_protein_rand_v2"
+        ],
+        "n_shared": 6140
+      },
+      {
+        "tasks": [
+          "dna_core",
           "gue_prom_prom_core_all",
           "gue_prom_prom_core_tata"
         ],
         "n_shared": 6030
+      },
+      {
+        "tasks": [
+          "gue_prom_prom_300_all",
+          "gue_prom_prom_300_tata"
+        ],
+        "n_shared": 3876
       },
       {
         "tasks": [
@@ -58,6 +89,14 @@
           "gue_H4ac"
         ],
         "n_shared": 3122
+      },
+      {
+        "tasks": [
+          "gue_prom_prom_300_all",
+          "gue_prom_prom_300_tata",
+          "lg_promoter_detection"
+        ],
+        "n_shared": 2160
       },
       {
         "tasks": [
@@ -96,78 +135,15 @@
           "gue_H4ac"
         ],
         "n_shared": 1193
-      },
-      {
-        "tasks": [
-          "gue_H3K14ac",
-          "gue_H3K36me3",
-          "gue_H3K4me1",
-          "gue_H3K4me2",
-          "gue_H3K4me3",
-          "gue_H3K9ac",
-          "gue_H4ac"
-        ],
-        "n_shared": 1170
-      },
-      {
-        "tasks": [
-          "gue_H3K14ac",
-          "gue_H3K36me3",
-          "gue_H3K4me1",
-          "gue_H3K4me2",
-          "gue_H3K4me3",
-          "gue_H3K79me3",
-          "gue_H3K9ac",
-          "gue_H4",
-          "gue_H4ac"
-        ],
-        "n_shared": 1149
-      },
-      {
-        "tasks": [
-          "gue_H3K14ac",
-          "gue_H3K36me3",
-          "gue_H3K4me1",
-          "gue_H3K4me2",
-          "gue_H3K4me3",
-          "gue_H3K79me3",
-          "gue_H4ac"
-        ],
-        "n_shared": 1116
-      },
-      {
-        "tasks": [
-          "gue_H3",
-          "gue_H3K14ac",
-          "gue_H3K36me3",
-          "gue_H3K4me1",
-          "gue_H3K4me2",
-          "gue_H3K4me3",
-          "gue_H3K79me3",
-          "gue_H3K9ac",
-          "gue_H4",
-          "gue_H4ac"
-        ],
-        "n_shared": 988
-      },
-      {
-        "tasks": [
-          "gue_H3",
-          "gue_H3K14ac",
-          "gue_H3K36me3",
-          "gue_H3K4me1",
-          "gue_H3K4me2",
-          "gue_H3K4me3",
-          "gue_H3K9ac",
-          "gue_H4ac"
-        ],
-        "n_shared": 639
       }
     ],
     "per_task_flags": {
       "deeploc_multi": [],
       "deepstarr_dev": [],
       "deepstarr_hk": [],
+      "dna_core": [],
+      "dna_splice": [],
+      "dna_tf": [],
       "gb_demo_coding_vs_intergenomic_seqs": [],
       "gb_demo_human_or_worm": [],
       "gb_drosophila_enhancers_stark": [],
@@ -176,6 +152,14 @@
       "gb_human_ensembl_regulatory": [],
       "gb_human_nontata_promoters": [],
       "gb_human_ocr_ensembl": [],
+      "gl_dna_protein_pair": [],
+      "gl_dna_protein_rand": [],
+      "gl_dna_protein_rand_v2": [],
+      "gl_dna_sim_150": [],
+      "gl_dna_sim_50": [],
+      "gl_dna_sim_simple_150": [],
+      "gl_protein_sim_150": [],
+      "gl_protein_sim_450": [],
       "gue_H3": [],
       "gue_H3K14ac": [],
       "gue_H3K36me3": [],
@@ -206,10 +190,12 @@
       "gue_virus_covid": [],
       "lg_fold_class": [],
       "lg_npp": [],
+      "lg_promoter_detection": [],
       "lg_signal_peptide": [],
       "lg_subcellular_loc": [],
       "protein_homology_remote": [],
       "protein_homology_std": [],
+      "tape_fluorescence": [],
       "tape_stability": []
     }
   },
@@ -335,6 +321,129 @@
         "median": 249,
         "p95": 249,
         "max": 249
+      }
+    },
+    "dna_core": {
+      "primitive": "choice",
+      "modality": [
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 58926,
+      "split_sizes": {
+        "train": 47602,
+        "dev": 5414,
+        "test": 5910
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 70,
+        "median": 70,
+        "p95": 70,
+        "max": 70
+      },
+      "len_dev": {
+        "min": 70,
+        "median": 70,
+        "p95": 70,
+        "max": 70
+      },
+      "len_test": {
+        "min": 70,
+        "median": 70,
+        "p95": 70,
+        "max": 70
+      }
+    },
+    "dna_splice": {
+      "primitive": "choice",
+      "modality": [
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 44393,
+      "split_sizes": {
+        "train": 35848,
+        "dev": 4000,
+        "test": 4545
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 400,
+        "median": 400,
+        "p95": 400,
+        "max": 400
+      },
+      "len_dev": {
+        "min": 400,
+        "median": 400,
+        "p95": 400,
+        "max": 400
+      },
+      "len_test": {
+        "min": 400,
+        "median": 400,
+        "p95": 400,
+        "max": 400
+      }
+    },
+    "dna_tf": {
+      "primitive": "choice",
+      "modality": [
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 34369,
+      "split_sizes": {
+        "train": 27819,
+        "dev": 3113,
+        "test": 3437
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 101,
+        "median": 101,
+        "p95": 101,
+        "max": 101
+      },
+      "len_dev": {
+        "min": 101,
+        "median": 101,
+        "p95": 101,
+        "max": 101
+      },
+      "len_test": {
+        "min": 101,
+        "median": 101,
+        "p95": 101,
+        "max": 101
       }
     },
     "gb_demo_coding_vs_intergenomic_seqs": {
@@ -663,6 +772,342 @@
         "median": 315,
         "p95": 527,
         "max": 593
+      }
+    },
+    "gl_dna_protein_pair": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 4000,
+      "split_sizes": {
+        "train": 3119,
+        "dev": 433,
+        "test": 448
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 96,
+        "median": 933,
+        "p95": 1170,
+        "max": 1797
+      },
+      "len_dev": {
+        "min": 171,
+        "median": 927,
+        "p95": 1133,
+        "max": 1797
+      },
+      "len_test": {
+        "min": 153,
+        "median": 930,
+        "p95": 1146,
+        "max": 1632
+      }
+    },
+    "gl_dna_protein_rand": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 16000,
+      "split_sizes": {
+        "train": 12877,
+        "dev": 1548,
+        "test": 1575
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 71,
+        "median": 993,
+        "p95": 3744,
+        "max": 65535
+      },
+      "len_dev": {
+        "min": 111,
+        "median": 988,
+        "p95": 3855,
+        "max": 65535
+      },
+      "len_test": {
+        "min": 90,
+        "median": 990,
+        "p95": 3074,
+        "max": 65535
+      }
+    },
+    "gl_dna_protein_rand_v2": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 16000,
+      "split_sizes": {
+        "train": 12866,
+        "dev": 1541,
+        "test": 1593
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 34,
+        "median": 987,
+        "p95": 3213,
+        "max": 47496
+      },
+      "len_dev": {
+        "min": 111,
+        "median": 993,
+        "p95": 3102,
+        "max": 19464
+      },
+      "len_test": {
+        "min": 90,
+        "median": 978,
+        "p95": 3205,
+        "max": 20670
+      }
+    },
+    "gl_dna_sim_150": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 20000,
+      "split_sizes": {
+        "train": 15980,
+        "dev": 1985,
+        "test": 2035
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 71,
+        "median": 150,
+        "p95": 161,
+        "max": 177
+      },
+      "len_dev": {
+        "min": 23,
+        "median": 150,
+        "p95": 162,
+        "max": 171
+      },
+      "len_test": {
+        "min": 104,
+        "median": 150,
+        "p95": 162,
+        "max": 165
+      }
+    },
+    "gl_dna_sim_50": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 20000,
+      "split_sizes": {
+        "train": 16117,
+        "dev": 1996,
+        "test": 1887
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 23,
+        "median": 51,
+        "p95": 55,
+        "max": 61
+      },
+      "len_dev": {
+        "min": 51,
+        "median": 51,
+        "p95": 55,
+        "max": 57
+      },
+      "len_test": {
+        "min": 34,
+        "median": 51,
+        "p95": 55,
+        "max": 57
+      }
+    },
+    "gl_dna_sim_simple_150": {
+      "primitive": "noul",
+      "modality": [
+        "dna",
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 18000,
+      "split_sizes": {
+        "train": 14402,
+        "dev": 1774,
+        "test": 1824
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 150,
+        "median": 150,
+        "p95": 161,
+        "max": 165
+      },
+      "len_dev": {
+        "min": 150,
+        "median": 150,
+        "p95": 161,
+        "max": 165
+      },
+      "len_test": {
+        "min": 150,
+        "median": 150,
+        "p95": 162,
+        "max": 165
+      }
+    },
+    "gl_protein_sim_150": {
+      "primitive": "noul",
+      "modality": [
+        "protein",
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 18000,
+      "split_sizes": {
+        "train": 14468,
+        "dev": 1742,
+        "test": 1790
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 21,
+        "median": 50,
+        "p95": 54,
+        "max": 164
+      },
+      "len_dev": {
+        "min": 24,
+        "median": 50,
+        "p95": 54,
+        "max": 158
+      },
+      "len_test": {
+        "min": 33,
+        "median": 50,
+        "p95": 54,
+        "max": 140
+      }
+    },
+    "gl_protein_sim_450": {
+      "primitive": "noul",
+      "modality": [
+        "protein",
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 18000,
+      "split_sizes": {
+        "train": 14301,
+        "dev": 1878,
+        "test": 1821
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 21,
+        "median": 150,
+        "p95": 161,
+        "max": 182
+      },
+      "len_dev": {
+        "min": 30,
+        "median": 150,
+        "p95": 161,
+        "max": 182
+      },
+      "len_test": {
+        "min": 31,
+        "median": 150,
+        "p95": 162,
+        "max": 172
       }
     },
     "gue_H3": {
@@ -1895,6 +2340,47 @@
         "max": 2569
       }
     },
+    "lg_promoter_detection": {
+      "primitive": "choice",
+      "modality": [
+        "dna"
+      ],
+      "n_classes": null,
+      "n_records": 21038,
+      "split_sizes": {
+        "train": 16782,
+        "dev": 2109,
+        "test": 2147
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 300,
+        "median": 300,
+        "p95": 300,
+        "max": 300
+      },
+      "len_dev": {
+        "min": 300,
+        "median": 300,
+        "p95": 300,
+        "max": 300
+      },
+      "len_test": {
+        "min": 300,
+        "median": 300,
+        "p95": 300,
+        "max": 300
+      }
+    },
     "lg_signal_peptide": {
       "primitive": "choice",
       "modality": [
@@ -2057,6 +2543,47 @@
         "median": 153,
         "p95": 241,
         "max": 250
+      }
+    },
+    "tape_fluorescence": {
+      "primitive": "score",
+      "modality": [
+        "protein"
+      ],
+      "n_classes": null,
+      "n_records": 54025,
+      "split_sizes": {
+        "train": 21446,
+        "dev": 5362,
+        "test": 27217
+      },
+      "split_overlap": {
+        "group_train&test": 0,
+        "seq_train&test": 0,
+        "group_train&dev": 0,
+        "seq_train&dev": 0,
+        "group_dev&test": 0,
+        "seq_dev&test": 0
+      },
+      "label_conflicts": 0,
+      "invalid_answers": 0,
+      "len_train": {
+        "min": 235,
+        "median": 237,
+        "p95": 237,
+        "max": 237
+      },
+      "len_dev": {
+        "min": 235,
+        "median": 237,
+        "p95": 237,
+        "max": 237
+      },
+      "len_test": {
+        "min": 235,
+        "median": 237,
+        "p95": 237,
+        "max": 237
       }
     },
     "tape_stability": {

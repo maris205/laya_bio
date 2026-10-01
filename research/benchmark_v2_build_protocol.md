@@ -25,33 +25,39 @@
   2. 同一序列跨划分出现时，整组归入**最高优先级**划分（test>dev>train），低划分副本删除。
   3. 同一序列映射到**冲突标签**（同组不同 answer）时，整组**隔离删除**，不按多数投票"修正"（符合任务目录 C01 的冲突组处理原则）。
 
-## 3. 本轮产物（slice 1：有原生/干净划分的来源）
+## 3. 当前产物（slice 1 + slice 2）
 
 | 统计 | 值 |
 |---|---|
-| 任务数 | **46** |
-| 接口分布 | choice 33 · noul 9 · score 3 · multi_noul 1 |
-| 模态分布 | DNA 38 · 蛋白 8（RNA 待补，见 §4） |
-| train 总行数 | 2,174,790 |
-| test 总行数 | 350,727 |
-| 隔离冲突组 | 1,984（virus_covid 1,754、prom_core 系列 143、tape_stability 63 等） |
+| 任务数 | **58** |
+| 接口分布 | choice 36 · noul 17 · score 4 · multi_noul 1 |
+| 模态分布 | DNA 41 · 蛋白 9 · DNA+蛋白 3 · DNA+DNA 3 · 蛋白+蛋白 2（RNA 待补，见 §4） |
+| train 总行数 | 2,411,635 |
+| dev 总行数 | 264,286 |
+| test 总行数 | 404,809 |
+| 隔离冲突组 | 1,984（virus_covid 1,754、prom_core 系列 143、tape_stability 63、dna_core 8 等） |
 | **准入结果** | 任务内 train/test/dev 泄漏 **0**；标签冲突（隔离后残留）0；非法 answer 0 |
 
-任务族：GUE 28（DNA Choice：10 组蛋白标记 + mouse×5 + prom×6 + splice + tf×5 + virus）、Genomic Benchmarks 8（DNA，7 二分类 Noul + regulatory 3 类 Choice）、TAPE stability 1（蛋白 Score，5 级）、DeepSTARR 2（DNA Score：Dev/Hk）、DeepLoc 2.0 1（蛋白 multi_Noul，11 定位）、本地快照 6（fold_class/signal_peptide/subcellular_loc/npp 为 Choice，protein_homology_std/remote 为 Noul 双蛋白）。
+任务族：GUE 28（DNA Choice：10 组蛋白标记 + mouse×5 + prom×6 + splice + tf×5 + virus）、Genomic Benchmarks 8（DNA，7 二分类 Noul + regulatory 3 类 Choice）、gene_lan_transfer 8（双序列 Noul：DNA-蛋白配对 ×3、DNA-DNA 相似 ×3、蛋白-蛋白相似 ×2）、本地快照 6（fold_class/signal_peptide/subcellular_loc/npp 为 Choice，protein_homology_std/remote 为 Noul 双蛋白）、dnagpt DNA 池 3（splice/tf/core，旧-test 隔离）、TAPE 2（fluorescence/stability，蛋白 Score）、DeepSTARR 2（DNA Score：Dev/Hk）、DeepLoc 2.0 1（蛋白 multi_Noul，11 定位）。
+
+### slice 2 新增（12 任务）与隔离要点
+
+- **dnagpt DNA 池（dna_splice/dna_tf/dna_core，C02/C03/E01）**：上游池只有未划分 train 且**含论文旧盲测成员**。处理：test = 旧 `lg_*` test（论文盲测，逐字保留）；train/dev = 池序列**剔除全部旧-test 成员**后按序列哈希分桶（dev 10%）；池 int 标签与 lg test 文本标签不一致者（dna_core 8 条）判为标注冲突**整组隔离**，非多数投票。**不对池随机重切伪造盲测**。
+- **标签映射经 pool∩lg-test 全量重叠验证**：tf 3437/3437、core 5910/5918 一致；splice 在旧约定（0→Non-Splice,1→Acceptor,2→Donor）下 4545/4545 一致，而任务目录所载"新映射"(0→Acceptor) 为 0/4545。**采用与数据经验一致的旧约定**以保证 train/test 标签自洽；acceptor/donor 的生物学语义是否被交换仍按目录警示留待独立核实（不影响基准内部一致性）。
+- **gene_lan_transfer 8 配置（C08/E03/E04）**：双序列 Noul，按**端点并查集连通分量**整组划分（80/10/10），避免同一端点跨 train/test。定位为构造相似性诊断（rand/rand_v2 可由 frame-0 标准密码表翻译判别），**非独立盲测**；跨配置端点复用仍在（rand∩rand_v2 共享 12,526 序列），leave-one-task-out 时须升级为全局隔离。
+- **TAPE fluorescence（C09）**：转 Score（5 级，train 分位 anchors），与主实验同源。
 
 ## 4. 待补（needs_work，未纳入本轮）
 
 | 来源 | 目录 ID | 接口 | 受阻/未做的具体点 |
 |---|---|---|---|
-| dnagpt dna_promoter_300 / core / splice / tf | C01/E01/C02/C03 | Noul/Choice | 仅有名为 train 的未划分池，且含旧本地 test 成员；需实体分组 + 旧 test 隔离后才能准入，不能随机重切当盲测 |
-| gene_lan_transfer（8 配置） | C08/E03/E04 | Noul 双序列 | 同上池问题 + 端点跨配置交叉；双序列按连接组件分组 |
-| ProteinGym v1 | E05 | Score（217 assay） | 数据已在库；官方 train/test 需外部 `DMS_subsplits.csv`（HF 仓库不含）；且 217 assay 需亲本/家族隔离 |
-| remote_homology | E12 | Choice | fold 级候选集 1,195 类，需限定每题候选子集后才可用 |
-| TAPE fluorescence | C09 | Score | 已在主实验使用，尚未转成统一 v2 格式 |
-| RNAcompete | E08 | Score | clone 含 probe_intensity/kmer_zscore，需组装成 RNA+RBP 的 Score 样本 |
+| ProteinGym v1 | E05 | Score（217 assay） | 217 assay 突变数据已在库；官方 per-mutant train/test 划分需 `DMS_subsplits.csv`（在 ProteinGym release/Zenodo，raw GitHub 404）；naive 随机会违反 MSA-contiguous/modulo 同源隔离协议，故不自行切分 |
+| remote_homology | E12 | Choice | fold 级 1,195 类，动态候选接口需每题限定候选子集（真 fold + decoy）；class_label 7 类与 lg_fold_class 近重复，不单独计 |
+| RNAcompete | E08 | Score | 本 clone 仅 14-RBP 测试子集（probe_zscore 矩阵 + probe_metadata 24 万探针），非完整 ~200 RBP；需补全 RBP 覆盖并组装 RNA+RBP 的 Score 样本 |
 | DeepGOZero | C12 | multi_Noul | KAUST 数据 URL 404，需另找镜像或自建 |
 | PEER / FLIP | E11 | Noul/Score | FLIP 621MB LFS、raw 不通；PEER 需跑下载管线 |
 | DeepSEA | E07 | multi_Noul | 919 特征大文件，按需获取 |
+| dnagpt dna_promoter_300 | C01 | Noul | lg_promoter_detection 已有原生 train/val/test（slice1 路径可转）；上游池未单独纳入，避免与 lg 版本重复计任务 |
 
 ## 5. 主张边界
 

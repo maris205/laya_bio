@@ -300,8 +300,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 15,
-    "dup_dropped": 57
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_prom_prom_300_notata": {
     "primitive": "choice",
@@ -320,7 +320,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 34
+    "dup_dropped": 0
   },
   "gue_prom_prom_300_tata": {
     "primitive": "choice",
@@ -338,8 +338,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 15,
-    "dup_dropped": 15
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_prom_prom_core_all": {
     "primitive": "choice",
@@ -357,8 +357,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 64,
-    "dup_dropped": 84
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_prom_prom_core_notata": {
     "primitive": "choice",
@@ -376,8 +376,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 49,
-    "dup_dropped": 48
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_prom_prom_core_tata": {
     "primitive": "choice",
@@ -395,8 +395,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 15,
-    "dup_dropped": 24
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_splice_reconstructed": {
     "primitive": "choice",
@@ -414,8 +414,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 1,
-    "dup_dropped": 442
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gue_tf_0": {
     "primitive": "choice",
@@ -434,7 +434,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 1
+    "dup_dropped": 0
   },
   "gue_tf_1": {
     "primitive": "choice",
@@ -453,7 +453,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 1
+    "dup_dropped": 0
   },
   "gue_tf_2": {
     "primitive": "choice",
@@ -472,7 +472,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 20
+    "dup_dropped": 0
   },
   "gue_tf_3": {
     "primitive": "choice",
@@ -491,7 +491,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 3
+    "dup_dropped": 0
   },
   "gue_tf_4": {
     "primitive": "choice",
@@ -510,7 +510,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 512
+    "dup_dropped": 0
   },
   "gue_virus_covid": {
     "primitive": "choice",
@@ -528,8 +528,8 @@
       "origin": "GUE/DNABERT-2"
     },
     "status": "ready",
-    "quarantined_groups": 1754,
-    "dup_dropped": 1944
+    "quarantined_groups": 0,
+    "dup_dropped": 0
   },
   "gb_demo_coding_vs_intergenomic_seqs": {
     "primitive": "noul",
@@ -548,7 +548,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 34
+    "dup_dropped": 0
   },
   "gb_demo_human_or_worm": {
     "primitive": "noul",
@@ -567,7 +567,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 1885
+    "dup_dropped": 0
   },
   "gb_drosophila_enhancers_stark": {
     "primitive": "noul",
@@ -681,7 +681,7 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
-    "dup_dropped": 3
+    "dup_dropped": 0
   },
   "tape_stability": {
     "primitive": "score",
@@ -705,7 +705,7 @@
       "origin": "TAPE/stability"
     },
     "status": "ready",
-    "quarantined_groups": 63,
+    "quarantined_groups": 0,
     "dup_dropped": 0
   },
   "deepstarr_dev": {
@@ -730,7 +730,7 @@
       "origin": null
     },
     "status": "ready",
-    "quarantined_groups": 4,
+    "quarantined_groups": 0,
     "dup_dropped": 0
   },
   "deepstarr_hk": {
@@ -755,7 +755,7 @@
       "origin": null
     },
     "status": "ready",
-    "quarantined_groups": 4,
+    "quarantined_groups": 0,
     "dup_dropped": 0
   },
   "deeploc_multi": {
@@ -909,6 +909,282 @@
     },
     "status": "ready",
     "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "dna_splice": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 3,
+    "train": 35848,
+    "dev": 4000,
+    "test": 4545,
+    "quarantined_conflicts": 0,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "dna_splice_site_prediction",
+      "origin": null
+    },
+    "status": "ready",
+    "note": "test=old lg blind test; train/dev=pool minus old-test members",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "dna_tf": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 27819,
+    "dev": 3113,
+    "test": 3437,
+    "quarantined_conflicts": 0,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "dna_transcription_factor_prediction",
+      "origin": null
+    },
+    "status": "ready",
+    "note": "test=old lg blind test; train/dev=pool minus old-test members",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "dna_core": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 47602,
+    "dev": 5414,
+    "test": 5910,
+    "quarantined_conflicts": 8,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "dna_core_promoter",
+      "origin": null
+    },
+    "status": "ready",
+    "note": "test=old lg blind test; train/dev=pool minus old-test members",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_protein_pair": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 3119,
+    "dev": 433,
+    "test": 448,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_protein_pair"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_protein_rand": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 12877,
+    "dev": 1548,
+    "test": 1575,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_protein_pair_rand"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_protein_rand_v2": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 12866,
+    "dev": 1541,
+    "test": 1593,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_protein_pair_rand_v2"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_sim_150": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 15980,
+    "dev": 1985,
+    "test": 2035,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_sim_pair_150bp"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_sim_50": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 16117,
+    "dev": 1996,
+    "test": 1887,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_sim_pair_50bp"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_dna_sim_simple_150": {
+    "primitive": "noul",
+    "modality": [
+      "dna",
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 14402,
+    "dev": 1774,
+    "test": 1824,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "dna_sim_pair_simple_150bp"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_protein_sim_150": {
+    "primitive": "noul",
+    "modality": [
+      "protein",
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 14468,
+    "dev": 1742,
+    "test": 1790,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "protein_sim_pair_150bp"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gl_protein_sim_450": {
+    "primitive": "noul",
+    "modality": [
+      "protein",
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 14301,
+    "dev": 1878,
+    "test": 1821,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "gene_lan_transfer",
+      "origin": "protein_sim_pair_450bp"
+    },
+    "status": "ready",
+    "note": "constructed-similarity diagnostic; grouped split by endpoint connected-components; cross-config endpoint reuse remains",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "tape_fluorescence": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      3.126131296157837,
+      3.4837143421173096,
+      3.606713056564331,
+      3.6968348026275635
+    ],
+    "train": 21446,
+    "dev": 5362,
+    "test": 27217,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "tape_fluorescence",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "lg_promoter_detection": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 16782,
+    "dev": 2109,
+    "test": 2147,
+    "skipped_extract_fail": 0,
+    "provenance": {
+      "revision": null,
+      "license": "Apache-2.0",
+      "source": "llama-gene:dna_eva",
+      "origin": "llama-gene snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 2,
     "dup_dropped": 0
   }
 }
