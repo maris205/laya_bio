@@ -97,7 +97,10 @@ def to_row(rec, task_anchors):
 
 
 @torch.no_grad()
-def run_task(model, rep, task_dir, maxn, score_spec_holder, pad):
+def run_task(model, rep, task_dir, maxn, score_spec_holder, pad, seed=20261001):
+    # Read the full test split (fall back to dev), then sample RANDOMLY with a
+    # fixed seed. Taking the first N is biased: several source test files are
+    # class-ordered, which degenerates AUROC/accuracy on the capped subset.
     recs = []
     for split in ("test", "dev"):
         f = task_dir / f"{split}.jsonl"
@@ -106,10 +109,14 @@ def run_task(model, rep, task_dir, maxn, score_spec_holder, pad):
         for line in f.read_text().splitlines():
             if line.strip():
                 r = json.loads(line); r["_split"] = split; recs.append(r)
-                if len(recs) >= maxn:
-                    break
-        if len(recs) >= maxn:
-            break
+        if recs:
+            break  # use test if present, else dev; do not mix
+    if not recs:
+        return None
+    rng = np.random.default_rng(seed)
+    if len(recs) > maxn:
+        idx = rng.choice(len(recs), size=maxn, replace=False)
+        recs = [recs[i] for i in sorted(idx)]
     if not recs:
         return None
     # per-task anchors from the first record carrying them

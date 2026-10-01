@@ -1,41 +1,52 @@
 {
-  "score": {
-    "n": 197,
-    "mean_spearman": 0.00039207457673476597,
-    "median_spearman": 0.00318031803180318,
-    "frac_spearman_gt_0.2": 0.14213197969543148,
-    "median_norm_rmse": 1.0766142946312192
-  },
-  "choice": {
-    "n": 37,
-    "mean_accuracy": 0.5387514063554767
-  },
-  "noul": {
-    "n": 7,
-    "mean_accuracy": 0.7514285714285714,
-    "mean_auroc": 0.3866292660121552
+  "sampling": "random, seed 20261001, max 200/task",
+  "aggregate": {
+    "choice": {
+      "n": 37,
+      "mean_accuracy": 0.48945723407447467
+    },
+    "noul": {
+      "n_auroc": 7,
+      "mean_auroc": 0.506964295821508
+    },
+    "score": {
+      "n": 197,
+      "mean_spearman": 0.0075895520004751705,
+      "median_spearman": 0.009874746868671716,
+      "frac_gt_0.2": 0.08629441624365482
+    }
   },
   "by_family": {
     "DeepSTARR": {
-      "spearman": -0.09427280551978005
-    },
-    "dnagpt_pools": {
-      "acc": 0.39999999999999997
-    },
-    "GenomicBenchmarks": {
-      "acc": 0.67625
+      "spearman": -0.0021982545058180196,
+      "nrmse": 1.011945043445964
     },
     "GUE": {
-      "acc": 0.5767857142857142
+      "acc": 0.4963604565537555
     },
-    "local_snapshots": {
-      "acc": 0.48676040703052725
+    "GenomicBenchmarks": {
+      "acc": 0.4964955357142857,
+      "auroc": 0.506964295821508
     },
     "ProteinGym": {
-      "spearman": -0.001243451206852716
+      "spearman": 0.005184115756768834,
+      "nrmse": 1.1279962629252505
     },
     "TAPE": {
-      "spearman": 0.2528851927894417
+      "spearman": 0.24950195602442993,
+      "nrmse": 2.146929812255048
+    },
+    "dnagpt_pools": {
+      "acc": 0.44166666666666665
+    },
+    "local_snapshots": {
+      "acc": 0.4993649754500818
     }
+  },
+  "skip_totals": {
+    "multi_noul": 1,
+    "double_sequence": 10,
+    "over_budget": 24,
+    "modality_rna": 14
   }
 }

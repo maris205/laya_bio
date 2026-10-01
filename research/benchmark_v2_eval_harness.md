@@ -36,12 +36,15 @@ checkpoint 只在 3 个任务上训练过（启动子/7类结构/GFP荧光）；
 | ProteinGym | score | spearman | **-0.001** (n=193) | 未见蛋白，≈无信号 |
 | DeepSTARR | score | spearman | -0.094 (n=2) | 未见 |
 
-聚合（scale-free）：score mean spearman **0.000**（median 0.003，frac>0.2 仅 14%）；choice mean acc **0.539**；noul mean acc 0.751 但 **mean AUROC 0.387**（<0.5）。
+**采样修复与修正聚合**：首轮 harness 取 test 文件**前 N 行**，而多个 GB test 文件按类别排序，导致子集退化（如 nontata_promoters acc 假低到 0.09、AUROC 无定义，mean AUROC 0.387 实际只由 1 个任务贡献）。改为**带种子随机采样**（seed 20261001）后重跑，修正聚合（n≤200，scale-free）：
+
+- **noul mean AUROC = 0.507**（≈随机）——**之前的 0.387 是采样假象，非极性 bug**；harness 正类概率取位正确。
+- choice mean acc **0.489**；score mean spearman **0.008**（median 0.010，frac>0.2 仅 9%）。
 
 **判读**：
-1. harness 机械正确——训练过的族（TAPE fluorescence spearman 0.25、fold_class 58%）出信号，未见族≈随机，说明 checkpoint 读取与解码路径无误。
-2. 共享 typed-decision 接口**能机械处理**任意新问题/新候选（无任务头），但**生物学知识不零样本迁移**到未见任务——这是预期的，也界定 benchmark v2 的用法：要出成绩须在其 train 上训练（下一步）。
-3. **noul AUROC<0.5 需排查**：可能是零样本失败，也可能是 noul 候选文本极性（"false:/true:" 约定）或正类概率取位的符号问题；样本仅 7（多数 noul 是双序列被跳过），暂不下结论。
+1. harness 机械正确——训练过的族（TAPE fluorescence spearman **0.253**、fold_class ~57%）显著出信号，其余未见族（ProteinGym 0.005、DeepSTARR -0.002、GUE 0.496、GB 0.496、dnagpt 0.442、local 非 fold 任务）全部 ≈ 随机，说明 checkpoint 读取与解码路径无误、且生物学知识不零样本迁移。
+2. 共享 typed-decision 接口**能机械处理**任意新问题/新候选（无任务头），但**未见任务零样本表现 ≈ 随机**——这是预期结果，界定 benchmark v2 的正式用法：要出成绩须在其 train 上训练（下一步）。
+3. noul 极性问题已排除（见上）。评测子集必须随机采样，`eval_benchmark_v2.py` 已内置 seeded 随机采样。
 
 ## 4. 指标口径注意
 
@@ -51,6 +54,6 @@ checkpoint 只在 3 个任务上训练过（启动子/7类结构/GFP荧光）；
 ## 5. 下一步
 
 1. 在 benchmark v2 train 上训练（联合或分族），再评 test——这才是基准的正式用法与成绩来源。
-2. 排查 noul AUROC 符号/极性。
+2. ~~排查 noul AUROC 符号/极性~~ **已解决**：AUROC<0.5 是取 class-ordered 前 N 行的采样假象，改随机采样后 AUROC=0.507≈随机，无极性问题。
 3. 架构扩展以覆盖被跳过的 49 任务：双序列编码（gene_lan/protein_homology）、multi-label sigmoid 头（DeepLoc）、RNA tokenizer（RNAcompete）、长序列预算。
 4. score 增加标量回归对照；choice 增加候选重排鲁棒性（reverse）评测。
