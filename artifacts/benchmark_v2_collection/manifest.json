@@ -1,0 +1,914 @@
+{
+  "gue_H3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 11971,
+    "dev": 1497,
+    "test": 1497,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K14ac": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 26438,
+    "dev": 3305,
+    "test": 3305,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K36me3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 27904,
+    "dev": 3488,
+    "test": 3488,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K4me1": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 25341,
+    "dev": 3168,
+    "test": 3168,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K4me2": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 24545,
+    "dev": 3069,
+    "test": 3069,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K4me3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 29439,
+    "dev": 3680,
+    "test": 3680,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K79me3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 23069,
+    "dev": 2884,
+    "test": 2884,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H3K9ac": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 22224,
+    "dev": 2779,
+    "test": 2779,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H4": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 11679,
+    "dev": 1461,
+    "test": 1461,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_H4ac": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 27275,
+    "dev": 3410,
+    "test": 3410,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_mouse_0": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 6478,
+    "dev": 810,
+    "test": 810,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_mouse_1": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 53952,
+    "dev": 6745,
+    "test": 6745,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_mouse_2": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 2620,
+    "dev": 328,
+    "test": 328,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_mouse_3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 1904,
+    "dev": 239,
+    "test": 239,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_mouse_4": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 15064,
+    "dev": 1883,
+    "test": 1883,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gue_prom_prom_300_all": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 47274,
+    "dev": 5950,
+    "test": 5942,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 15,
+    "dup_dropped": 57
+  },
+  "gue_prom_prom_300_notata": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 42421,
+    "dev": 5322,
+    "test": 5323,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 34
+  },
+  "gue_prom_prom_300_tata": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 4864,
+    "dev": 617,
+    "test": 619,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 15,
+    "dup_dropped": 15
+  },
+  "gue_prom_prom_core_all": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 47180,
+    "dev": 5934,
+    "test": 5954,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 64,
+    "dup_dropped": 84
+  },
+  "gue_prom_prom_core_notata": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 42324,
+    "dev": 5317,
+    "test": 5327,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 49,
+    "dup_dropped": 48
+  },
+  "gue_prom_prom_core_tata": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 4856,
+    "dev": 617,
+    "test": 627,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 15,
+    "dup_dropped": 24
+  },
+  "gue_splice_reconstructed": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 3,
+    "train": 36083,
+    "dev": 4724,
+    "test": 4811,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 1,
+    "dup_dropped": 442
+  },
+  "gue_tf_0": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 32377,
+    "dev": 1001,
+    "test": 1000,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 1
+  },
+  "gue_tf_1": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 30671,
+    "dev": 1000,
+    "test": 1001,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 1
+  },
+  "gue_tf_2": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 18980,
+    "dev": 1020,
+    "test": 1000,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 20
+  },
+  "gue_tf_3": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 27291,
+    "dev": 1002,
+    "test": 1001,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 3
+  },
+  "gue_tf_4": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 18488,
+    "dev": 1512,
+    "test": 1000,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 512
+  },
+  "gue_virus_covid": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 9,
+    "train": 68357,
+    "dev": 9588,
+    "test": 9774,
+    "provenance": {
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "source": "dnagpt/GUE",
+      "origin": "GUE/DNABERT-2"
+    },
+    "status": "ready",
+    "quarantined_groups": 1754,
+    "dup_dropped": 1944
+  },
+  "gb_demo_coding_vs_intergenomic_seqs": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 67587,
+    "dev": 7379,
+    "test": 25034,
+    "provenance": {
+      "revision": "85458172cab6cffad46cb172e64ca94780506ed6",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_demo_coding_vs_intergenomic_seqs",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 34
+  },
+  "gb_demo_human_or_worm": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 65781,
+    "dev": 7334,
+    "test": 26885,
+    "provenance": {
+      "revision": "a4f7f76b18a38f43ff3a7d5e8299408c3c121df2",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_demo_human_or_worm",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 1885
+  },
+  "gb_drosophila_enhancers_stark": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 4674,
+    "dev": 510,
+    "test": 1730,
+    "provenance": {
+      "revision": "b5fdfb2d398ebf80491832760a4c1b88ed551b42",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_drosophila_enhancers_stark",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gb_dummy_mouse_enhancers_ensembl": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 880,
+    "dev": 88,
+    "test": 242,
+    "provenance": {
+      "revision": "d4d48371e76b0c46717592c32c183c04b19ad16b",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_dummy_mouse_enhancers_ensembl",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gb_human_enhancers_cohn": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 18775,
+    "dev": 2068,
+    "test": 6948,
+    "provenance": {
+      "revision": "49ef8d0d80087ece7441096afcef0123b0781ce0",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_human_enhancers_cohn",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gb_human_ensembl_regulatory": {
+    "primitive": "choice",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 3,
+    "train": 208208,
+    "dev": 23140,
+    "test": 57713,
+    "provenance": {
+      "revision": "8c014854d2aa093c37e2f161a241a35ece583fac",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_human_ensembl_regulatory",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gb_human_nontata_promoters": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 24465,
+    "dev": 2632,
+    "test": 9034,
+    "provenance": {
+      "revision": "e0003669df0a180c8570ebe091ed91f20fa080ec",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_human_nontata_promoters",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "gb_human_ocr_ensembl": {
+    "primitive": "noul",
+    "modality": [
+      "dna"
+    ],
+    "n_classes": 2,
+    "train": 125701,
+    "dev": 14100,
+    "test": 34955,
+    "provenance": {
+      "revision": "3c07e4be6425be11073baa2daacf6c143c64e4ff",
+      "license": "?",
+      "source": "katarinagresova/Genomic_Benchmarks_human_ocr_ensembl",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 3
+  },
+  "tape_stability": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.25999999046325684,
+      0.0,
+      0.25,
+      0.6000000238418579
+    ],
+    "train": 53509,
+    "dev": 2512,
+    "test": 12825,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "tape_fluorescence",
+      "origin": "TAPE/stability"
+    },
+    "status": "ready",
+    "quarantined_groups": 63,
+    "dup_dropped": 0
+  },
+  "deepstarr_dev": {
+    "primitive": "score",
+    "modality": [
+      "dna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.797791887049961,
+      -0.318824926146453,
+      0.166361963717504,
+      0.755962240314677
+    ],
+    "train": 402288,
+    "dev": 40570,
+    "test": 41186,
+    "provenance": {
+      "revision": "8cddef6def36ff4644a8dfe4a5137c2c7c29725e",
+      "license": "?",
+      "source": "GenerTeam/DeepSTARR-enhancer-activity",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 4,
+    "dup_dropped": 0
+  },
+  "deepstarr_hk": {
+    "primitive": "score",
+    "modality": [
+      "dna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.703686321715308,
+      -0.298402181419873,
+      0.0744294007817597,
+      0.534860631768886
+    ],
+    "train": 402288,
+    "dev": 40570,
+    "test": 41186,
+    "provenance": {
+      "revision": "8cddef6def36ff4644a8dfe4a5137c2c7c29725e",
+      "license": "?",
+      "source": "GenerTeam/DeepSTARR-enhancer-activity",
+      "origin": null
+    },
+    "status": "ready",
+    "quarantined_groups": 4,
+    "dup_dropped": 0
+  },
+  "deeploc_multi": {
+    "primitive": "multi_noul",
+    "modality": [
+      "protein"
+    ],
+    "n_labels": 11,
+    "labels": [
+      "Membrane",
+      "Cytoplasm",
+      "Nucleus",
+      "Extracellular",
+      "Cell membrane",
+      "Mitochondrion",
+      "Plastid",
+      "Endoplasmic reticulum",
+      "Lysosome/Vacuole",
+      "Golgi apparatus",
+      "Peroxisome"
+    ],
+    "train": 16878,
+    "dev": 5462,
+    "test": 5963,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "deeploc2",
+      "origin": null
+    },
+    "status": "ready",
+    "note": "split is constructed from Partition column (p0=test, p1-3=train, p4=dev)",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "lg_fold_class": {
+    "primitive": "choice",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 7,
+    "train": 15593,
+    "dev": 1881,
+    "test": 1994,
+    "skipped_extract_fail": 0,
+    "provenance": {
+      "revision": null,
+      "license": "Apache-2.0",
+      "source": "llama-gene:prot_eva",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "lg_signal_peptide": {
+    "primitive": "choice",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 6530,
+    "dev": 902,
+    "test": 872,
+    "skipped_extract_fail": 0,
+    "provenance": {
+      "revision": null,
+      "license": "Apache-2.0",
+      "source": "llama-gene:prot_eva",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "lg_subcellular_loc": {
+    "primitive": "choice",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 6,
+    "train": 10654,
+    "dev": 1201,
+    "test": 1138,
+    "skipped_extract_fail": 0,
+    "provenance": {
+      "revision": null,
+      "license": "Apache-2.0",
+      "source": "llama-gene:prot_eva",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "lg_npp": {
+    "primitive": "choice",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 2718,
+    "dev": 313,
+    "test": 333,
+    "skipped_extract_fail": 0,
+    "provenance": {
+      "revision": null,
+      "license": "Apache-2.0",
+      "source": "llama-gene:prot_eva",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "protein_homology_std": {
+    "primitive": "noul",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 4738,
+    "dev": 280,
+    "test": 362,
+    "skipped_extract_fail": 10788,
+    "provenance": {
+      "revision": null,
+      "license": "CC-BY-4.0",
+      "source": "dnagpt/biopaws:protein_pair_short",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "protein_homology_remote": {
+    "primitive": "noul",
+    "modality": [
+      "protein"
+    ],
+    "n_classes": 2,
+    "train": 12454,
+    "dev": 208,
+    "test": 202,
+    "skipped_extract_fail": 12783,
+    "provenance": {
+      "revision": null,
+      "license": "CC-BY-4.0",
+      "source": "dnagpt/biopaws:protein_pair_remote",
+      "origin": "llama-gene/biopaws snapshot"
+    },
+    "status": "ready",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  }
+}

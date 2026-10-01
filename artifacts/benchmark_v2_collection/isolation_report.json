@@ -1,0 +1,738 @@
+{
+  "deeploc_multi": {
+    "primitive": "multi_noul",
+    "before": {
+      "train": 16878,
+      "dev": 5462,
+      "test": 5963
+    },
+    "after": {
+      "train": 16878,
+      "dev": 5462,
+      "test": 5963
+    },
+    "n_groups": 28303,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "deepstarr_dev": {
+    "primitive": "score",
+    "before": {
+      "train": 402296,
+      "dev": 40570,
+      "test": 41186
+    },
+    "after": {
+      "train": 402288,
+      "dev": 40570,
+      "test": 41186
+    },
+    "n_groups": 484048,
+    "quarantined_groups": 4,
+    "dropped_from_lower_splits": 0
+  },
+  "deepstarr_hk": {
+    "primitive": "score",
+    "before": {
+      "train": 402296,
+      "dev": 40570,
+      "test": 41186
+    },
+    "after": {
+      "train": 402288,
+      "dev": 40570,
+      "test": 41186
+    },
+    "n_groups": 484048,
+    "quarantined_groups": 4,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_demo_coding_vs_intergenomic_seqs": {
+    "primitive": "noul",
+    "before": {
+      "train": 67614,
+      "dev": 7386,
+      "test": 25000
+    },
+    "after": {
+      "train": 67587,
+      "dev": 7379,
+      "test": 25034
+    },
+    "n_groups": 99919,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 34
+  },
+  "gb_demo_human_or_worm": {
+    "primitive": "noul",
+    "before": {
+      "train": 67665,
+      "dev": 7335,
+      "test": 25000
+    },
+    "after": {
+      "train": 65781,
+      "dev": 7334,
+      "test": 26885
+    },
+    "n_groups": 97471,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 1885
+  },
+  "gb_drosophila_enhancers_stark": {
+    "primitive": "noul",
+    "before": {
+      "train": 4674,
+      "dev": 510,
+      "test": 1730
+    },
+    "after": {
+      "train": 4674,
+      "dev": 510,
+      "test": 1730
+    },
+    "n_groups": 6914,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_dummy_mouse_enhancers_ensembl": {
+    "primitive": "noul",
+    "before": {
+      "train": 880,
+      "dev": 88,
+      "test": 242
+    },
+    "after": {
+      "train": 880,
+      "dev": 88,
+      "test": 242
+    },
+    "n_groups": 1210,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_human_enhancers_cohn": {
+    "primitive": "noul",
+    "before": {
+      "train": 18775,
+      "dev": 2068,
+      "test": 6948
+    },
+    "after": {
+      "train": 18775,
+      "dev": 2068,
+      "test": 6948
+    },
+    "n_groups": 27791,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_human_ensembl_regulatory": {
+    "primitive": "choice",
+    "before": {
+      "train": 208208,
+      "dev": 23140,
+      "test": 57713
+    },
+    "after": {
+      "train": 208208,
+      "dev": 23140,
+      "test": 57713
+    },
+    "n_groups": 289053,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_human_nontata_promoters": {
+    "primitive": "noul",
+    "before": {
+      "train": 24465,
+      "dev": 2632,
+      "test": 9034
+    },
+    "after": {
+      "train": 24465,
+      "dev": 2632,
+      "test": 9034
+    },
+    "n_groups": 36131,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gb_human_ocr_ensembl": {
+    "primitive": "noul",
+    "before": {
+      "train": 125704,
+      "dev": 14100,
+      "test": 34952
+    },
+    "after": {
+      "train": 125701,
+      "dev": 14100,
+      "test": 34955
+    },
+    "n_groups": 174749,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 3
+  },
+  "gue_H3": {
+    "primitive": "choice",
+    "before": {
+      "train": 11971,
+      "dev": 1497,
+      "test": 1497
+    },
+    "after": {
+      "train": 11971,
+      "dev": 1497,
+      "test": 1497
+    },
+    "n_groups": 14965,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K14ac": {
+    "primitive": "choice",
+    "before": {
+      "train": 26438,
+      "dev": 3305,
+      "test": 3305
+    },
+    "after": {
+      "train": 26438,
+      "dev": 3305,
+      "test": 3305
+    },
+    "n_groups": 33048,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K36me3": {
+    "primitive": "choice",
+    "before": {
+      "train": 27904,
+      "dev": 3488,
+      "test": 3488
+    },
+    "after": {
+      "train": 27904,
+      "dev": 3488,
+      "test": 3488
+    },
+    "n_groups": 34880,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K4me1": {
+    "primitive": "choice",
+    "before": {
+      "train": 25341,
+      "dev": 3168,
+      "test": 3168
+    },
+    "after": {
+      "train": 25341,
+      "dev": 3168,
+      "test": 3168
+    },
+    "n_groups": 31677,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K4me2": {
+    "primitive": "choice",
+    "before": {
+      "train": 24545,
+      "dev": 3069,
+      "test": 3069
+    },
+    "after": {
+      "train": 24545,
+      "dev": 3069,
+      "test": 3069
+    },
+    "n_groups": 30683,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K4me3": {
+    "primitive": "choice",
+    "before": {
+      "train": 29439,
+      "dev": 3680,
+      "test": 3680
+    },
+    "after": {
+      "train": 29439,
+      "dev": 3680,
+      "test": 3680
+    },
+    "n_groups": 36799,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K79me3": {
+    "primitive": "choice",
+    "before": {
+      "train": 23069,
+      "dev": 2884,
+      "test": 2884
+    },
+    "after": {
+      "train": 23069,
+      "dev": 2884,
+      "test": 2884
+    },
+    "n_groups": 28837,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H3K9ac": {
+    "primitive": "choice",
+    "before": {
+      "train": 22224,
+      "dev": 2779,
+      "test": 2779
+    },
+    "after": {
+      "train": 22224,
+      "dev": 2779,
+      "test": 2779
+    },
+    "n_groups": 27782,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H4": {
+    "primitive": "choice",
+    "before": {
+      "train": 11679,
+      "dev": 1461,
+      "test": 1461
+    },
+    "after": {
+      "train": 11679,
+      "dev": 1461,
+      "test": 1461
+    },
+    "n_groups": 14601,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_H4ac": {
+    "primitive": "choice",
+    "before": {
+      "train": 27275,
+      "dev": 3410,
+      "test": 3410
+    },
+    "after": {
+      "train": 27275,
+      "dev": 3410,
+      "test": 3410
+    },
+    "n_groups": 34095,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_mouse_0": {
+    "primitive": "choice",
+    "before": {
+      "train": 6478,
+      "dev": 810,
+      "test": 810
+    },
+    "after": {
+      "train": 6478,
+      "dev": 810,
+      "test": 810
+    },
+    "n_groups": 8098,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_mouse_1": {
+    "primitive": "choice",
+    "before": {
+      "train": 53952,
+      "dev": 6745,
+      "test": 6745
+    },
+    "after": {
+      "train": 53952,
+      "dev": 6745,
+      "test": 6745
+    },
+    "n_groups": 67442,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_mouse_2": {
+    "primitive": "choice",
+    "before": {
+      "train": 2620,
+      "dev": 328,
+      "test": 328
+    },
+    "after": {
+      "train": 2620,
+      "dev": 328,
+      "test": 328
+    },
+    "n_groups": 3276,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_mouse_3": {
+    "primitive": "choice",
+    "before": {
+      "train": 1904,
+      "dev": 239,
+      "test": 239
+    },
+    "after": {
+      "train": 1904,
+      "dev": 239,
+      "test": 239
+    },
+    "n_groups": 2382,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_mouse_4": {
+    "primitive": "choice",
+    "before": {
+      "train": 15064,
+      "dev": 1883,
+      "test": 1883
+    },
+    "after": {
+      "train": 15064,
+      "dev": 1883,
+      "test": 1883
+    },
+    "n_groups": 18830,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "gue_prom_prom_300_all": {
+    "primitive": "choice",
+    "before": {
+      "train": 47356,
+      "dev": 5920,
+      "test": 5920
+    },
+    "after": {
+      "train": 47274,
+      "dev": 5950,
+      "test": 5942
+    },
+    "n_groups": 59019,
+    "quarantined_groups": 15,
+    "dropped_from_lower_splits": 57
+  },
+  "gue_prom_prom_300_notata": {
+    "primitive": "choice",
+    "before": {
+      "train": 42452,
+      "dev": 5307,
+      "test": 5307
+    },
+    "after": {
+      "train": 42421,
+      "dev": 5322,
+      "test": 5323
+    },
+    "n_groups": 52968,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 34
+  },
+  "gue_prom_prom_300_tata": {
+    "primitive": "choice",
+    "before": {
+      "train": 4904,
+      "dev": 613,
+      "test": 613
+    },
+    "after": {
+      "train": 4864,
+      "dev": 617,
+      "test": 619
+    },
+    "n_groups": 6051,
+    "quarantined_groups": 15,
+    "dropped_from_lower_splits": 15
+  },
+  "gue_prom_prom_core_all": {
+    "primitive": "choice",
+    "before": {
+      "train": 47356,
+      "dev": 5920,
+      "test": 5920
+    },
+    "after": {
+      "train": 47180,
+      "dev": 5934,
+      "test": 5954
+    },
+    "n_groups": 58934,
+    "quarantined_groups": 64,
+    "dropped_from_lower_splits": 84
+  },
+  "gue_prom_prom_core_notata": {
+    "primitive": "choice",
+    "before": {
+      "train": 42452,
+      "dev": 5307,
+      "test": 5307
+    },
+    "after": {
+      "train": 42324,
+      "dev": 5317,
+      "test": 5327
+    },
+    "n_groups": 52889,
+    "quarantined_groups": 49,
+    "dropped_from_lower_splits": 48
+  },
+  "gue_prom_prom_core_tata": {
+    "primitive": "choice",
+    "before": {
+      "train": 4904,
+      "dev": 613,
+      "test": 613
+    },
+    "after": {
+      "train": 4856,
+      "dev": 617,
+      "test": 627
+    },
+    "n_groups": 6045,
+    "quarantined_groups": 15,
+    "dropped_from_lower_splits": 24
+  },
+  "gue_splice_reconstructed": {
+    "primitive": "choice",
+    "before": {
+      "train": 36496,
+      "dev": 4562,
+      "test": 4562
+    },
+    "after": {
+      "train": 36083,
+      "dev": 4724,
+      "test": 4811
+    },
+    "n_groups": 44394,
+    "quarantined_groups": 1,
+    "dropped_from_lower_splits": 442
+  },
+  "gue_tf_0": {
+    "primitive": "choice",
+    "before": {
+      "train": 32378,
+      "dev": 1000,
+      "test": 1000
+    },
+    "after": {
+      "train": 32377,
+      "dev": 1001,
+      "test": 1000
+    },
+    "n_groups": 34369,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 1
+  },
+  "gue_tf_1": {
+    "primitive": "choice",
+    "before": {
+      "train": 30672,
+      "dev": 1000,
+      "test": 1000
+    },
+    "after": {
+      "train": 30671,
+      "dev": 1000,
+      "test": 1001
+    },
+    "n_groups": 32671,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 1
+  },
+  "gue_tf_2": {
+    "primitive": "choice",
+    "before": {
+      "train": 19000,
+      "dev": 1000,
+      "test": 1000
+    },
+    "after": {
+      "train": 18980,
+      "dev": 1020,
+      "test": 1000
+    },
+    "n_groups": 20795,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 20
+  },
+  "gue_tf_3": {
+    "primitive": "choice",
+    "before": {
+      "train": 27294,
+      "dev": 1000,
+      "test": 1000
+    },
+    "after": {
+      "train": 27291,
+      "dev": 1002,
+      "test": 1001
+    },
+    "n_groups": 29271,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 3
+  },
+  "gue_tf_4": {
+    "primitive": "choice",
+    "before": {
+      "train": 19000,
+      "dev": 1000,
+      "test": 1000
+    },
+    "after": {
+      "train": 18488,
+      "dev": 1512,
+      "test": 1000
+    },
+    "n_groups": 16850,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 512
+  },
+  "gue_virus_covid": {
+    "primitive": "choice",
+    "before": {
+      "train": 73335,
+      "dev": 9166,
+      "test": 9168
+    },
+    "after": {
+      "train": 68357,
+      "dev": 9588,
+      "test": 9774
+    },
+    "n_groups": 84547,
+    "quarantined_groups": 1754,
+    "dropped_from_lower_splits": 1944
+  },
+  "lg_fold_class": {
+    "primitive": "choice",
+    "before": {
+      "train": 15593,
+      "dev": 1881,
+      "test": 1994
+    },
+    "after": {
+      "train": 15593,
+      "dev": 1881,
+      "test": 1994
+    },
+    "n_groups": 19468,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "lg_npp": {
+    "primitive": "choice",
+    "before": {
+      "train": 2718,
+      "dev": 313,
+      "test": 333
+    },
+    "after": {
+      "train": 2718,
+      "dev": 313,
+      "test": 333
+    },
+    "n_groups": 3364,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "lg_signal_peptide": {
+    "primitive": "choice",
+    "before": {
+      "train": 6530,
+      "dev": 902,
+      "test": 872
+    },
+    "after": {
+      "train": 6530,
+      "dev": 902,
+      "test": 872
+    },
+    "n_groups": 4152,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "lg_subcellular_loc": {
+    "primitive": "choice",
+    "before": {
+      "train": 10654,
+      "dev": 1201,
+      "test": 1138
+    },
+    "after": {
+      "train": 10654,
+      "dev": 1201,
+      "test": 1138
+    },
+    "n_groups": 11869,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "protein_homology_remote": {
+    "primitive": "noul",
+    "before": {
+      "train": 12454,
+      "dev": 208,
+      "test": 202
+    },
+    "after": {
+      "train": 12454,
+      "dev": 208,
+      "test": 202
+    },
+    "n_groups": 12860,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "protein_homology_std": {
+    "primitive": "noul",
+    "before": {
+      "train": 4738,
+      "dev": 280,
+      "test": 362
+    },
+    "after": {
+      "train": 4738,
+      "dev": 280,
+      "test": 362
+    },
+    "n_groups": 5380,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "tape_stability": {
+    "primitive": "score",
+    "before": {
+      "train": 53614,
+      "dev": 2512,
+      "test": 12851
+    },
+    "after": {
+      "train": 53509,
+      "dev": 2512,
+      "test": 12825
+    },
+    "n_groups": 68908,
+    "quarantined_groups": 63,
+    "dropped_from_lower_splits": 0
+  }
+}
