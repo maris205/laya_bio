@@ -2,6 +2,8 @@
 
 更新：2026-09-24。**这是来源核查与后续实验设计，不是 24 项已完成实验。** 目录含 12 个优先任务及 12 个扩展任务视图；同源数据、重复来源和同一任务的不同构造不能累计成独立证据。已有论文结果仍只有启动子与七类蛋白结构分类。
 
+> 2026-10-01 补充：为 MVP2 benchmark v2 已收集一批公开数据集（GUE 28 任务、Genomic Benchmarks 8 子集、ProteinGym 217 assay、DeepSTARR、remote_homology、TAPE stability、RNAcompete），来源/版本/哈希见 [benchmark_v2_dataset_collection.md](benchmark_v2_dataset_collection.md) 与 `artifacts/benchmark_v2_collection/download_receipt.json`。C12 DeepGOZero、E11 PEER/FLIP、E07 DeepSEA 因下载受阻待补。
+
 ## 三类接口怎么对应生物问题
 
 依据 [Jev 官方介绍](https://typesafe.ai/blog/introducing-system-one-models-and-jev)、[Score 文档](https://docs.typesafe.ai/primitives/score)及 [Noul 文档](https://docs.typesafe.ai/primitives/noul)：

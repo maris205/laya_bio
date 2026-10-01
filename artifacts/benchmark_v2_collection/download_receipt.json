@@ -1,0 +1,2440 @@
+{
+  "session": "2026-10-01T00:00:00Z",
+  "description": "MVP2 Benchmark v2 dataset collection",
+  "target_count": "~100 biology decision tasks",
+  "datasets": [
+    {
+      "repo_id": "GenerTeam/DeepSTARR-enhancer-activity",
+      "subdir": "deepstarr_enhancer_activity",
+      "revision": "8cddef6def36ff4644a8dfe4a5137c2c7c29725e",
+      "license": "?",
+      "num_files": 17,
+      "total_bytes": 60374526,
+      "total_mb": 57.6,
+      "download_time": "2026-10-01T08:59:56.032171+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 100,
+          "sha256": "4384bdfd8dd4c5b34f940ad440e3b31a84fbfcdf11383e6fed0ce3a70b210edf"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "3c56b7ae493b0d0118ec1f51f26b8fac0b2b31f243ac2a49e50758954331d008"
+        },
+        {
+          "path": ".cache/huggingface/download/test.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/test.parquet.metadata",
+          "bytes": 125,
+          "sha256": "621fc736a4702d9d82c3e0e560584295e3158923ac9ddafecffd6795dcd20223"
+        },
+        {
+          "path": ".cache/huggingface/download/train.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/train.parquet.metadata",
+          "bytes": 125,
+          "sha256": "9d12741e0c8d65bbde32fad6211c4f0407240e67e99c96971cb8905a694a7ba0"
+        },
+        {
+          "path": ".cache/huggingface/download/valid.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/valid.parquet.metadata",
+          "bytes": 125,
+          "sha256": "1e6ff4ebde2305e4e2439cf2ffd6c55ca6e79e3150ba5f926202e4bd3d7d805e"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2461,
+          "sha256": "e7a120ab07b1bc5b486be249e9fc6c83d59448d0093e1dfebe95d1566d9cafc0"
+        },
+        {
+          "path": "README.md",
+          "bytes": 378,
+          "sha256": "3e4adf2453c44030aa7c10e80b55e4d6fcbc581fc24b8227799c0744f9351a26"
+        },
+        {
+          "path": "test.parquet",
+          "bytes": 5284549,
+          "sha256": "e1c7d7d8bc2c571e0c35be5b5515a1acbe3f47260066b34322130a8d9a092e65"
+        },
+        {
+          "path": "train.parquet",
+          "bytes": 49855241,
+          "sha256": "bd8977f2a4b83b7a656fc5bb389813bb999419a6ebe037fbec80e9f0fb6943a9"
+        },
+        {
+          "path": "valid.parquet",
+          "bytes": 5231129,
+          "sha256": "ae1cc8c138b1ee65ee6c1046e986e7530a62b51661b173d5b34dd89351429e4c"
+        }
+      ]
+    },
+    {
+      "repo_id": "dnagpt/GUE",
+      "subdir": "gue",
+      "revision": "e0bc5eec01b46aca338e34ed4ab8ba97e096fe3e",
+      "license": "?",
+      "num_files": 263,
+      "total_bytes": 325011435,
+      "total_mb": 310.0,
+      "download_time": "2026-10-01T09:03:07.666365+00:00",
+      "files": [
+        {
+          "path": ".DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.DS_Store.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.DS_Store.metadata",
+          "bytes": 100,
+          "sha256": "b1bfcbf66767ec3ba385bf61b891710f5d705f588c600e89b6afc6d4b3c47796"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "20cb804c3fa176654e61026f930dcd7a994354b25e76b1c2b1c7b162b8028875"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/.DS_Store.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/.DS_Store.metadata",
+          "bytes": 101,
+          "sha256": "162778afda927a7e553c1598e8723713b582ffb5a59d90eb4d4ceca16afb55e4"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "e3cfe1ab21a64c728a3ba9d60f04c4f096ad0859d334bdcb95c270a8d3b0e5c9"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "4e5e0a10291ba17e68c2826ff18866fb22b80094eae09cb7ba2d8d4ad1d1bb88"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "75835137dbe3558f4ec028cc43dd1e403fd28efced7adc35cdfee8714d1ab8da"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "45eef376ef12098111e021fcfd89e8741ff6d952cc154bd678c3e059cecae40b"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "8a005cf5972462e9637012d5cc0fa0fa03e8b4058df569303da0b5a1c33d2328"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K14ac/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "0150370da0d21680dd7866b375288ce6108a69557cc9744181f0045790bc4a79"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "7b9083631685dc75531923d0ba6ce0dd737160d4b2a8554baf2cef6696665e22"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "16e9868694a4c6c3dc8f8bc951f1675462e769b6eb16da34c952a8fc79d3e7ec"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K36me3/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "23c1bedf894dd58a20e0c12dadab0562b0943ce0953f10e35c83882395829f1a"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "70408833355ded16c47a50d420da985416f2034787e3524885c13055747bcd09"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "44ef75f34816ea3a3aa0c00d799c2203ce9ddfdba187f8ad979fe444adcd160d"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me1/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "2321d3c57377096f9bf61e4d0d8dbbaf4021cfd55b88d9544ef95fe6e72d489c"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "2b328d6601ef7a291da510adb0f642b71ada64cd4ef70bbc1999de0ba8f0d993"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "7ae19758db2ef5d0b59152206b29632fa1c88bea36a445feb9b5905fac60a3b1"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me2/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "7bde7a7dd0b8cc5cd5e30242657c9d9576a92d8ade84f453e29c7aa246475dc4"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "298708acfe86fc35635ac72da8f954e42460f213c308e6c34b23710548588df4"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "1395dcd497aab0ce2ecda885e0197002ec334655b4c2336793f62d2681f83aed"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K4me3/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "d50fdf86903afa177992dd2e7e0331251cee9a3ce75dd7cea20f403516f9eb70"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "a0eeb7c5be14e899e0fae97550023441ef0b84cf5fb81d69b24ec0875d4ca3dd"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "5cb3d8cecf413a065dbcab56d5843a81ba791fbfaf0c5490ca28ab9631b00d4f"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K79me3/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "ecfcbe0e0ab7973d18f7862c61f2e303269e8109da9912f003c371c09bbfd6ec"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "d6fd4525e923a79e27284de66b06e6603784ed3a5c53f3cb24e049550c9dfe36"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "12c31f6e13d848b4ba5f07e2b2b55ed0631c5bfa5d6bfeaa3a6b6d68d2383326"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H3K9ac/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "591075ca7b64530a2694108deda97e400902cca6b234be3d9a4e9224c70f3ab5"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "d5768059c6ca984c5f9da539b53f75d048a89fca225a2b7e001ab804ba4fafb1"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "c66170365aa43358b81874f1d64a9f48bb75d70b2124fb77c65246f757446604"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "1dcbfc7b4b83ca5a80a0249025c129e50efc957f9e5e74f80bfe345536573d94"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "4585f1fde18d807e2683a17fa5e74cc67e07f693244e2c1f2e766a8a8e9582cc"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "366fcb86c65fb55ff6f1a73bc9c5ac0f5dba5e3678e6a0a37fd82fa14223aadd"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/H4ac/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "6c3da3fd6bf14cc547546eb63d7eac30d9fd5e516b90fb9290dc02b7b067b943"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "c76c8485204fbd8337fb6eb19de2b3de8a4d4de890b504eeb14a589268fed8aa"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "82f9c498615171f75d0971c0e4f2c9dc51e75f75291b59e9f939aee276f0f968"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/0/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "1955bab94966baf77e34214dbda24947e6231bd9cd20462a037a2953970230cd"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "5f28c1500d891dd30cd319d9e6ce77f0a260d21ceb074c53ac202196487b2a73"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "ddff5c3e5c5f0e1fbb7975b960478b9296b735d3432d7809f75e253a692197c7"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/1/train.csv.metadata",
+          "bytes": 99,
+          "sha256": "9a65c3c2d02b36a1c3903d50275bb8d9be768052efcdf677b14dab92a9854804"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "0c47075b0edd1877125200419548b8b7bea8d8dcc24ec55d6b020202e251f29b"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "67f2341b5cc83c84f696e261dab139525d352dc2b083f0879a99503ef55ea1a3"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/2/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "f8a6170e3b370f16ae797e33d838db748d4f301f94a5e3efea054dfc31829c38"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "94b46b4062048434866d28f328e709a3005789dc11e002acf9f277442fd173a4"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "8c99ce63004205795f0f30650dfc8e75f7802d7cb79f21b0e5c6202945f19f6f"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/3/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "23603363425d7d766a3f3f9754d77e36dbcb703fa8e78e98e6a22143def3962d"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "3d7e010ae6cfda197f3cbdcf4787d1df25e0d2fcd84b24a011da61205a3a4776"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "bd5d1c027e1e41b6bcb58a30b930f72c5a93088d460f690efdb321e625b362fd"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/mouse/4/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "f2652cd0ddcb2f0b6d189aa33ca7b6a650b48d01e58b15135527512c38343970"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "29303c4792a8d7e0e3e374c5bedeb19a19777404a46075b4a6052b91b598c6c5"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "94e9649602dcaa3eaa4f7a6db7e990e5dfb250e65f847b20b8e8ec6d418e772a"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_all/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "dab38d2096e7d7bf53654976bd386a8e7ba3b1c3a4d592c5ca8db4ea79262dd6"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "5f4ec9aa20035b3076bee9172c018594544149997157291f703f2428d2dd9a38"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "ee678d802dbfd6780cbe048f2990bca13295f24746b9514689cd151eac649306"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_notata/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "c68b04b8cd62f45fa9f43bf0e1077450b59ac3320c4c7b334eb0c0b58bcf1dc0"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "b0cf03d28d6c33a243caa2b9970021568da704fd5fd6fcb3b0d1a0c91227203e"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "4004b04c93bf30314edca2acd061d9542254bdd4ebeb72388dad58bf4f16004d"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_300_tata/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "704a4dbca5bf14f89c3673028d4b890496712d924034e0fadc352b49a68cb2cd"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/dev.csv.metadata",
+          "bytes": 100,
+          "sha256": "176b5065202001ad6a085a299df6b33c8a48da1c3627ccedd869c872e2d04fb1"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/test.csv.metadata",
+          "bytes": 100,
+          "sha256": "1005a335cfff8b5388642deab86e858ffcb3bd8fdce6989cfb21b51569afaf21"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_all/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "eb9844c0eca1066e462dbaffb0f095f12779abe336b92ee534909e6092b98373"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "c8112dbaf2c64fb45cbd58f13242321105e48092bf8e787ac8ab27808aeb3303"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "17bcbd5a18fad4c1ec029e6a406c9bc403b05fe8b3dde6398c29880c79782e91"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_notata/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "42db3379db03e2cb3e5ce7cfbfca221afdefd31cb825e927706ac588f6549359"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "2806986d7a73729ff1db3273a130544ff54253bbaf14ba2af1c66776d9836d99"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "f7efb3100ec1a86f6af62a5475ef3fd9eead5b812002cb9dc5b981c78e6de1fe"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/prom/prom_core_tata/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "b7c3d1705c73ebe70414423470ddd94de5b77ce750430749a7eb93bd2112c5e9"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "277f6eeaf3be54a38f8322b9cfebe3f65cab7f082ea1ba3947408e96ec7944da"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/test.csv.metadata",
+          "bytes": 100,
+          "sha256": "afa6ce7607c95fa55d5ff9ee80ef18ed1610ef6bc5d7a30fc6530142af04bbb4"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/splice/reconstructed/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "6265f851613065e284bbe6e33bda5cd37520c953f18ed41af529c514732165f3"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "9f4e49f9eb0e6a41752706477f1f343ad5cdcb819ba7f65850b5e874be0cb152"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/test.csv.metadata",
+          "bytes": 100,
+          "sha256": "4e7aa7d6e9c9130e8ea5b27be0b05ef614c4ea1f8170cca6672b3202e1a0b6d8"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/0/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "9ccae95de912f3fccb610de07e64b50fe8bebaaa0b8a8a707fc0e26bb42105ba"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "17d4e78054db9f36a4b56c791419af3424bb64a0b0a44d6b72b83be0e84d863f"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "931de1996cb29deb4dca03a33045470f4c907ea952781996b9ff5b3de97a3c57"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/1/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "b51f8af930eaa00cbe31c6549ae3bb20c5a9e38247f7169525b3019a66a70c99"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "254bba4e0add5f9a43d4f78eefabd358d23f6e22608cd785bd6eb5071c98962e"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "b3ce9826c411ae57fe88339624105280ca8af9d2c65b7ef5525f7ea62b758a4e"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/2/train.csv.metadata",
+          "bytes": 100,
+          "sha256": "28fc0b0cbd950ac991f42bb72268244cd8b256ae4071b054e916d89edc10b696"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "cc24f54f7dfb322d192428d615701fe5748eda36a5e8394ffa2f864c3aae90f7"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/test.csv.metadata",
+          "bytes": 100,
+          "sha256": "1ff27c87ff62e12d32807145166ffbd45156af31f2005e653895d9174625aeeb"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/3/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "5c5a058495692264143de8c419a293ec08ac2212198d8839833bd1b91cfc5145"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "a51e2bc26e7fc97d82a8b7175b6ab7bdf5b5463e86c207d773434cfc51eb8873"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "3dcb1b56f037f1933e1db857c859fd3e6da11303138627d523a5131fb4e45793"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/tf/4/train.csv.metadata",
+          "bytes": 101,
+          "sha256": "9ef91f7b5ecfe1c26b71d3b309f75a24e86282662d3da183eae7457832d37469"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/dev.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/dev.csv.metadata",
+          "bytes": 101,
+          "sha256": "a9ce38af34b4c40dad1e94323955292d8882d125d5ad698c1b1078c1d5575956"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/test.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/test.csv.metadata",
+          "bytes": 101,
+          "sha256": "adcda53def2503b87fddd93053f902d80986f6b32d012c701ba50e16038cf0ea"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/virus/covid/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "de22e9fb3590eec2da211c53366d7af037a7df03d6280160a4faef6f3ae51eb9"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 3147,
+          "sha256": "ecf0b5ba480f061bd9cb021cf76d802acf9f99cafb87712cc61b9ce76ff87c08"
+        },
+        {
+          "path": "H3/.DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": "H3/dev.csv",
+          "bytes": 754504,
+          "sha256": "9a1d8e477b04103a59a98ca65c90c517183cca59e028cf358f8ac57bb49e2270"
+        },
+        {
+          "path": "H3/test.csv",
+          "bytes": 754504,
+          "sha256": "e5fa7206565f3adcf480b25c8e1545fa4cf812f39b141d0dddface495b1ddf4b"
+        },
+        {
+          "path": "H3/train.csv",
+          "bytes": 6033000,
+          "sha256": "29d3296d932ed1d0783578f023e4d4c2d0c95759f3b0781fd2a9ab8edf84182b"
+        },
+        {
+          "path": "H3K14ac/dev.csv",
+          "bytes": 1665526,
+          "sha256": "2c63d281d60152bdceaa290ca47a45a54c3233fb37ed9db709ea7be935fd2bb5"
+        },
+        {
+          "path": "H3K14ac/test.csv",
+          "bytes": 1665736,
+          "sha256": "481fe7df3a4ebd2fd0e4c94bcb1d8101cedc08d043617b1ae0a9ab43e700e18c"
+        },
+        {
+          "path": "H3K14ac/train.csv",
+          "bytes": 13324527,
+          "sha256": "d26ef772df694bb9eb49b078aaaa67e310b65fceb963197e22ef7b4bfc644d90"
+        },
+        {
+          "path": "H3K36me3/dev.csv",
+          "bytes": 1757968,
+          "sha256": "bd95ded07a1dc6a7b9bcb4e946ed845ed5181918301b3509a307eed5dfadb868"
+        },
+        {
+          "path": "H3K36me3/test.csv",
+          "bytes": 1757968,
+          "sha256": "ff0afb0db1e45ac845d4b26c388530104ca4d2f1f4284ba78c1e9a160ffc87bf"
+        },
+        {
+          "path": "H3K36me3/train.csv",
+          "bytes": 14063391,
+          "sha256": "645b973dfe3dbf73ca3acd274ca4490708366bcc2e4d37dfbebc0d85e954aaeb"
+        },
+        {
+          "path": "H3K4me1/dev.csv",
+          "bytes": 1596688,
+          "sha256": "2dfe59b40e1c766e9201eb15b3bbdec74f10aba42ceeec536bc120946dc39508"
+        },
+        {
+          "path": "H3K4me1/test.csv",
+          "bytes": 1596478,
+          "sha256": "05d08f4ab676671f243d1bd25c22ed05a5131c6d81fa89bdcd5c3f165bdcca6c"
+        },
+        {
+          "path": "H3K4me1/train.csv",
+          "bytes": 12771690,
+          "sha256": "5725edec75e4a9a80dd4cce0321ec52023fd023e9496f5243a82dc02e14e2ed5"
+        },
+        {
+          "path": "H3K4me2/dev.csv",
+          "bytes": 1546792,
+          "sha256": "ca704119a7e528eb574098e9d62bd59c938f3c6173c52a63f9b16fe016021b17"
+        },
+        {
+          "path": "H3K4me2/test.csv",
+          "bytes": 1546792,
+          "sha256": "e6809dfc61cf5e8d500a8c7f237a391f1d1e2bec1375a46d6c0dcb946414f571"
+        },
+        {
+          "path": "H3K4me2/train.csv",
+          "bytes": 12370296,
+          "sha256": "757c2fc17d77e79a3cbd8ce6728afc49cfedd1ddaae3cded6293b84f92ff5dd7"
+        },
+        {
+          "path": "H3K4me3/dev.csv",
+          "bytes": 1854736,
+          "sha256": "b209493b09826a5dd16cefa07156b8b8cdc120246ca610a153dae97b8dd8d119"
+        },
+        {
+          "path": "H3K4me3/test.csv",
+          "bytes": 1854736,
+          "sha256": "c457b1314a3e137f4ef185f0aea34fc9ef5736d7ec49537f3fdd2391754f4c68"
+        },
+        {
+          "path": "H3K4me3/train.csv",
+          "bytes": 14836821,
+          "sha256": "bcab49c1c27dd09bc0e68dd375ac56eb48c4602c2c8fa523b585b3fcfa25f993"
+        },
+        {
+          "path": "H3K79me3/dev.csv",
+          "bytes": 1453552,
+          "sha256": "bc3bcf0147b9f00159d44387649bc6f38ad8926639643df7cecc060ada50732b"
+        },
+        {
+          "path": "H3K79me3/test.csv",
+          "bytes": 1453552,
+          "sha256": "b9ee1239cf89c236bdb0777f521fb4e76b66123af7fe1abd4e09a9b06f9b5b89"
+        },
+        {
+          "path": "H3K79me3/train.csv",
+          "bytes": 11626551,
+          "sha256": "fb49382024220e3b1fb70302f88afa71d8efc92d9480afe01543624ea1ab27ec"
+        },
+        {
+          "path": "H3K9ac/dev.csv",
+          "bytes": 1400632,
+          "sha256": "b6121d483459d2e7797aefcd913991ec3e2ffd84abbd0735760f29c23ae67bdb"
+        },
+        {
+          "path": "H3K9ac/test.csv",
+          "bytes": 1400632,
+          "sha256": "fc5fbe3cb08c81c30c51b616e60bc14721d6a180fc0c08dc73f3b5b4387510b5"
+        },
+        {
+          "path": "H3K9ac/train.csv",
+          "bytes": 11200702,
+          "sha256": "9b31ec75f951a38d521c554f4f3c4c95fe899bd7c862d007b7394fff210a6424"
+        },
+        {
+          "path": "H4/dev.csv",
+          "bytes": 736360,
+          "sha256": "506812e376a4260b3adc0bb5cdbc08693d6948b18026536e78c31a2e04af865c"
+        },
+        {
+          "path": "H4/test.csv",
+          "bytes": 736360,
+          "sha256": "cd011ed4d9b65f404bd55022bd1dda935e44c7c43fc5bc6407ae598b22108267"
+        },
+        {
+          "path": "H4/train.csv",
+          "bytes": 5885991,
+          "sha256": "6daa0fd1e86d99eccec529442793e1c39fd14aa5c306c6c15ebc3fcaa7feb91a"
+        },
+        {
+          "path": "H4ac/dev.csv",
+          "bytes": 1718605,
+          "sha256": "4e8fa824c32417b2d63a2e186f4a80f7fd8cc2c8edeebfc6a0ab4646556d154d"
+        },
+        {
+          "path": "H4ac/test.csv",
+          "bytes": 1718656,
+          "sha256": "94a034b4cb7fcd6cf4c28abbd6c69650c6fd3b3ab68da8819fb9066f11d1518e"
+        },
+        {
+          "path": "H4ac/train.csv",
+          "bytes": 13746406,
+          "sha256": "d792b43ecbb4b77b7bb4abe9afb64c71b0a204cc454f2b52c8e593e19bca3f5d"
+        },
+        {
+          "path": "mouse/0/dev.csv",
+          "bytes": 85066,
+          "sha256": "9dc8af2dd5c8c73f52369e9938ccce8b55357761878dd060ba0424df7bfb68e9"
+        },
+        {
+          "path": "mouse/0/test.csv",
+          "bytes": 85066,
+          "sha256": "3e2776df8591fd261fc34d6326b5219e4464b6eeaf45c93cee114825c523e364"
+        },
+        {
+          "path": "mouse/0/train.csv",
+          "bytes": 680206,
+          "sha256": "af189e0538d90725b5c9c7850f0a91389c73209da238932bcf24cdda51c1a1ac"
+        },
+        {
+          "path": "mouse/1/dev.csv",
+          "bytes": 708241,
+          "sha256": "15df05bdab79109c3be6e663891131cbb740d6c2a1bf8e29ac8be7c3adf86d73"
+        },
+        {
+          "path": "mouse/1/test.csv",
+          "bytes": 708241,
+          "sha256": "390e8741654752b6531e25ecc28def1d76a7395d34c4cc8fca52bc1357257e2a"
+        },
+        {
+          "path": "mouse/1/train.csv",
+          "bytes": 5664976,
+          "sha256": "147734e744f87e15e3692b2b5e7b369f409ba61f345e1410b4f2232be743899d"
+        },
+        {
+          "path": "mouse/2/dev.csv",
+          "bytes": 34456,
+          "sha256": "e75093cd48efe602ae5731ef65d11dba41249de689b9f17d29782d522c7f60f1"
+        },
+        {
+          "path": "mouse/2/test.csv",
+          "bytes": 34456,
+          "sha256": "6dcf8ec28c8dfbc3cbb5a307a9bb0f23152640f14995eaa0ff6ca3a8947f8219"
+        },
+        {
+          "path": "mouse/2/train.csv",
+          "bytes": 275116,
+          "sha256": "19fba17ff1f9edead047d8e64bf0cf3a549963bb6e3b5ddb57ab4680bf6fed93"
+        },
+        {
+          "path": "mouse/3/dev.csv",
+          "bytes": 25111,
+          "sha256": "40559edc1e494b9d80beaa20411f46e39862730423dbdf25347498d9650e4048"
+        },
+        {
+          "path": "mouse/3/test.csv",
+          "bytes": 25111,
+          "sha256": "86b1c18367557c864b1f20b1db6b27a780e18292fedced976d4a9bea65088b85"
+        },
+        {
+          "path": "mouse/3/train.csv",
+          "bytes": 199936,
+          "sha256": "6bc922b57f57c96cbe3830206fce96604eab698f2aa4f208f44e23e9d825604f"
+        },
+        {
+          "path": "mouse/4/dev.csv",
+          "bytes": 197731,
+          "sha256": "7639b76469c8d4f66ab4fce2356035e7462e3535de787ebeb16daa8cf4f4b335"
+        },
+        {
+          "path": "mouse/4/test.csv",
+          "bytes": 197731,
+          "sha256": "554db17853c686fdabe85fd610196a22d602a0dd74b308ad88029f139b9f483f"
+        },
+        {
+          "path": "mouse/4/train.csv",
+          "bytes": 1581736,
+          "sha256": "2fa3b03e546c9fbda1eeac01281815b80936bee43306dce9c2f20b6e23a0fefa"
+        },
+        {
+          "path": "prom/prom_300_all/dev.csv",
+          "bytes": 1799696,
+          "sha256": "d55d950af5d3a7882f9706cd25309a3f513ce7c60bf39d0cc423c8bffd5a5a3c"
+        },
+        {
+          "path": "prom/prom_300_all/test.csv",
+          "bytes": 1799696,
+          "sha256": "c77b312eb3f2c149ee5e54f0c781b585c4e65b742f0e7d9324818f2b56e71e67"
+        },
+        {
+          "path": "prom/prom_300_all/train.csv",
+          "bytes": 14396240,
+          "sha256": "4bcf0670a38b64ab7e87571b7dcec695084852708e65b797744849d0c6b4ed08"
+        },
+        {
+          "path": "prom/prom_300_notata/dev.csv",
+          "bytes": 1613344,
+          "sha256": "ed509583bb90f914a455f28ce05cd31d735deee552e03ce986acfd2847acd4f0"
+        },
+        {
+          "path": "prom/prom_300_notata/test.csv",
+          "bytes": 1613344,
+          "sha256": "9a9d0f99df1b52b303ec2a17260ea58f3c251f8e991f6e0a43c8eb68d292db03"
+        },
+        {
+          "path": "prom/prom_300_notata/train.csv",
+          "bytes": 12905424,
+          "sha256": "e4b79a272cb5052cc0b5a3cbc64bc494090f278de55cf2716111cb2611b66e4e"
+        },
+        {
+          "path": "prom/prom_300_tata/dev.csv",
+          "bytes": 186368,
+          "sha256": "1d2e8f6a630999e3c69dbdd77ffbeab73f3ba9e4c62a90d25879a0f6f94c3e91"
+        },
+        {
+          "path": "prom/prom_300_tata/test.csv",
+          "bytes": 186368,
+          "sha256": "20957b76b54d03083b2a08a0b49be2c67e643bd81c8385f385bc057e2c872f6d"
+        },
+        {
+          "path": "prom/prom_300_tata/train.csv",
+          "bytes": 1490832,
+          "sha256": "02b111f0c78a9dda4d3e9a122a9552b341b8c1a005a1d865619ed32de38022bb"
+        },
+        {
+          "path": "prom/prom_core_all/dev.csv",
+          "bytes": 438096,
+          "sha256": "1218d0828cf5bb6de3a4f281a6b5814746f1fa5572e8478bbe5eb49930367c90"
+        },
+        {
+          "path": "prom/prom_core_all/test.csv",
+          "bytes": 438096,
+          "sha256": "c8948bbae0f45411ab19f340d79288f2fe564465ae21336524a63e5912ae43b4"
+        },
+        {
+          "path": "prom/prom_core_all/train.csv",
+          "bytes": 3504360,
+          "sha256": "74bfa02bdf23995915b13500112ee92c241a688c4a04b16a9c7ee9aba4c26fd6"
+        },
+        {
+          "path": "prom/prom_core_notata/dev.csv",
+          "bytes": 392734,
+          "sha256": "e1cdaebfad793be6d1c471156cf624ad4d1ed7b85fe6666456629e0bafabc394"
+        },
+        {
+          "path": "prom/prom_core_notata/test.csv",
+          "bytes": 392734,
+          "sha256": "c0bd6e427440c6452e6609679adb7bfe803dac83803a1c32990cb520f173d50e"
+        },
+        {
+          "path": "prom/prom_core_notata/train.csv",
+          "bytes": 3141464,
+          "sha256": "9c1d494d5b2bee344ff10a3990e3880c530a360f0192ea2e4830b80330aecf9d"
+        },
+        {
+          "path": "prom/prom_core_tata/dev.csv",
+          "bytes": 45378,
+          "sha256": "2802849649cd36d2c3a79fbae9b5974019d36d345f894a3bd0eec04ff09a598c"
+        },
+        {
+          "path": "prom/prom_core_tata/test.csv",
+          "bytes": 45378,
+          "sha256": "7fd1ddc64cce21a511fa97082139f90491647f3348f90610615d0df7295b0e67"
+        },
+        {
+          "path": "prom/prom_core_tata/train.csv",
+          "bytes": 362912,
+          "sha256": "199b6cd02bf506d534dbf02d4e929d9a085589b17a0a6860a060ed037add1f25"
+        },
+        {
+          "path": "splice/reconstructed/dev.csv",
+          "bytes": 1843064,
+          "sha256": "17e90e45dad0ba2abfe4ee160a32d0fa0405131bd7af1a3d7414e9a005739e34"
+        },
+        {
+          "path": "splice/reconstructed/test.csv",
+          "bytes": 1843064,
+          "sha256": "0814a48712ea5871d1a4793d146d9765e5ee7301bcb5d063dbd3f44b675d7e31"
+        },
+        {
+          "path": "splice/reconstructed/train.csv",
+          "bytes": 14744400,
+          "sha256": "9d5c8f7c1a844dcedb08f4d9d3ecb27c3bdca59393ee702c79e8c57277c6e39d"
+        },
+        {
+          "path": "tf/0/dev.csv",
+          "bytes": 105016,
+          "sha256": "00d417cf660556434dd129cd13be2d86123c79385e14683933b19170b6c3dd30"
+        },
+        {
+          "path": "tf/0/test.csv",
+          "bytes": 105016,
+          "sha256": "3945b6c6a93c21b550b742af8aa9587dd228fa0f4e5a90ea598a5ddb7afb6f69"
+        },
+        {
+          "path": "tf/0/train.csv",
+          "bytes": 3399706,
+          "sha256": "b321f8be18bb7a3d02286794c109254f07f55dd8e98be8fdd0cd3339c4321585"
+        },
+        {
+          "path": "tf/1/dev.csv",
+          "bytes": 105016,
+          "sha256": "4e84254cc7fa0a61806bf81153330cd1e5aa58ca2ac204294f8a3eda53012b50"
+        },
+        {
+          "path": "tf/1/test.csv",
+          "bytes": 105016,
+          "sha256": "9b42bd711381a91d69431ea1e030fe2cb1300898cc7531995b9c957f4c7019d6"
+        },
+        {
+          "path": "tf/1/train.csv",
+          "bytes": 3220576,
+          "sha256": "f98591e9afbb464768b95440f38e0e7e7db5e6648c94b43d3db6d3d67e44415d"
+        },
+        {
+          "path": "tf/2/dev.csv",
+          "bytes": 105016,
+          "sha256": "f28e9b5a8072e0a4fb8e3abf46a76323e49cd7a68818159a706498b1fe6f1bb3"
+        },
+        {
+          "path": "tf/2/test.csv",
+          "bytes": 105016,
+          "sha256": "7e9deadb9f32be49c27bf4ba335ee93dd12ca7eb8de26749aaf3686e0d5212cc"
+        },
+        {
+          "path": "tf/2/train.csv",
+          "bytes": 1995016,
+          "sha256": "dd055a47dc78d6627d9e2376014052ad2ec892e4566b7851ee47534d09df39ca"
+        },
+        {
+          "path": "tf/3/dev.csv",
+          "bytes": 105016,
+          "sha256": "619e77d370975617708a86879b0b432983f944621c8e5a2c220e897c1c70773d"
+        },
+        {
+          "path": "tf/3/test.csv",
+          "bytes": 105016,
+          "sha256": "5adc4eafceb7ca90674d0e61030c602e3d5b9ffd6052bf7f9c73a0c5b6032693"
+        },
+        {
+          "path": "tf/3/train.csv",
+          "bytes": 2865886,
+          "sha256": "aae3fbc3dcd7ea79e40ecbf9c9f1f4ec91182f6e24d0288b1a938d0c6aaebda5"
+        },
+        {
+          "path": "tf/4/dev.csv",
+          "bytes": 105016,
+          "sha256": "37aec78935240c0fc3a60d21039bf7022317655a846bd71a0bf6230215d0c214"
+        },
+        {
+          "path": "tf/4/test.csv",
+          "bytes": 105016,
+          "sha256": "1a4d26b553be29969a6cee82999cf737c9a1f7fee4979978d702480057f3d1af"
+        },
+        {
+          "path": "tf/4/train.csv",
+          "bytes": 1995016,
+          "sha256": "16f385202d6efde5b18b8fb1463d6ca5ec50359eef27420c81396c826dcd71ed"
+        },
+        {
+          "path": "virus/covid/dev.csv",
+          "bytes": 9193514,
+          "sha256": "da3eb93d6f2f7c01dd295e393ffdcf077cfd79d17a0c2936688e345384581db6"
+        },
+        {
+          "path": "virus/covid/test.csv",
+          "bytes": 9195520,
+          "sha256": "c573ec473bd0e897cd10926324ff1f4501bca3e32373d565ab533a54905c03fe"
+        },
+        {
+          "path": "virus/covid/train.csv",
+          "bytes": 73555021,
+          "sha256": "b5d4b52aa736dd0f5c9373ba2e997a3c30aebd3bb7748afc33b2c8d799a02c14"
+        }
+      ]
+    },
+    {
+      "repo_id": "OATML-Markslab/ProteinGym_v1",
+      "subdir": "proteingym_v1",
+      "revision": "1ea2aa10a328cc085b64328e790c54755fe32b10",
+      "license": "?",
+      "num_files": 32,
+      "total_bytes": 142457549,
+      "total_mb": 135.9,
+      "download_time": "2026-10-01T09:03:29.117159+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "b4aac482dc30eb59cbdad5a7f4cdff1090f6e619a0158843f347b68e89a27ea2"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_indels/train-00000-of-00001.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_indels/train-00000-of-00001.parquet.metadata",
+          "bytes": 125,
+          "sha256": "cc9d7d6ba31796834c7e1a0bb3c70e142e0b75b492c04b209f0d78d9c51de695"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00000-of-00005.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00000-of-00005.parquet.metadata",
+          "bytes": 125,
+          "sha256": "980c6f8ac2caa4a30caed5d86eabe7332bf27fdca70df67746c1763a880a1dd5"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00001-of-00005.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00001-of-00005.parquet.metadata",
+          "bytes": 124,
+          "sha256": "ab660ecf1b5af31a196482d7a43386ee2d6f4980dab3f4ea035ed6988f4cab72"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00002-of-00005.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00002-of-00005.parquet.metadata",
+          "bytes": 125,
+          "sha256": "cf11059ec23d2c71650e1ff6f65f0ff05f7cfb4f1a1f4d3c16099f6891f2be46"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00003-of-00005.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00003-of-00005.parquet.metadata",
+          "bytes": 125,
+          "sha256": "3d23fea534becf37043ff37d45db4276ee80a5ce569adc7586652d5a87aa6a63"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00004-of-00005.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/DMS_substitutions/train-00004-of-00005.parquet.metadata",
+          "bytes": 125,
+          "sha256": "d9fa65d91fcd4d3a05efd0b463014db8a5ba1987094ab7ef743b7b0b01cdebbd"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "ff604c703d53274be0bffd825df056a31b0a60db341f4d213b62604ff6af6379"
+        },
+        {
+          "path": ".cache/huggingface/download/clinical_indels/train-00000-of-00001.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/clinical_indels/train-00000-of-00001.parquet.metadata",
+          "bytes": 125,
+          "sha256": "56470bd77eabcc083123dd629edb83025bfb2402c8681b2b9f1628105dd88b23"
+        },
+        {
+          "path": ".cache/huggingface/download/clinical_substitutions/train-00000-of-00001.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/clinical_substitutions/train-00000-of-00001.parquet.metadata",
+          "bytes": 125,
+          "sha256": "edea5194f118bdfc7965208adccdb068e95add500852e0d30fceb03e202d9d0a"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2479,
+          "sha256": "af0221818a43f74eee89153c09ca496428c28f9aa2c15c68f279fb1334546844"
+        },
+        {
+          "path": "DMS_indels/train-00000-of-00001.parquet",
+          "bytes": 19475009,
+          "sha256": "acae7c5d0ec4f157ec12bae8ab4dd877e71f91b7c9845014d1e1f97ac1ba3fce"
+        },
+        {
+          "path": "DMS_substitutions/train-00000-of-00005.parquet",
+          "bytes": 16127122,
+          "sha256": "878ebe8029ead3ad76e0a5d082a67d32fa504128354c306983c79035576c9ba1"
+        },
+        {
+          "path": "DMS_substitutions/train-00001-of-00005.parquet",
+          "bytes": 24129923,
+          "sha256": "62e6ffb6f99400361c2a056ed3e88d8dfe7adcc4aa96f745cb5f89e73a4e19dc"
+        },
+        {
+          "path": "DMS_substitutions/train-00002-of-00005.parquet",
+          "bytes": 22074654,
+          "sha256": "a6ab95532f613aeab7db71f6264646c77d12f37dcda131dd5dd0b8b18abca4f2"
+        },
+        {
+          "path": "DMS_substitutions/train-00003-of-00005.parquet",
+          "bytes": 25405784,
+          "sha256": "cec079f4dc3f40efc1e7b87b5157f03ebd34a6b4193fc59532c7aa4f27c75e65"
+        },
+        {
+          "path": "DMS_substitutions/train-00004-of-00005.parquet",
+          "bytes": 22805360,
+          "sha256": "aba5c14a7a9b2abdf90ced45ea5aa9140e5726237ef47825294d08e7b7bc2cef"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4072,
+          "sha256": "9336b9643d0e9f3449c9ebeab68ce708b9c908f55e020716900d9cc046cd6568"
+        },
+        {
+          "path": "clinical_indels/train-00000-of-00001.parquet",
+          "bytes": 3328065,
+          "sha256": "8050a3a0769fb70bde219f1536e32fe2c9b27cd5a69fae6dcee550af5b248f19"
+        },
+        {
+          "path": "clinical_substitutions/train-00000-of-00001.parquet",
+          "bytes": 9103688,
+          "sha256": "f6d8b5fa5bf844e41ebcb4a955add0cdac4bf93963128dc3147a1262864c8be3"
+        }
+      ]
+    },
+    {
+      "repo_id": "proteinea/remote_homology",
+      "subdir": "remote_homology",
+      "revision": "41156f4e81a7f1dd8e66d0d1143b6b28a6544e2c",
+      "license": "?",
+      "num_files": 20,
+      "total_bytes": 58498162,
+      "total_mb": 55.8,
+      "download_time": "2026-10-01T09:03:48.145720+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "4e48ef03f99fcacdcba95aa658fdaeb0f3c46d47e46381726503f1f6522d3352"
+        },
+        {
+          "path": ".cache/huggingface/download/test_family_holdout.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/test_family_holdout.csv.metadata",
+          "bytes": 101,
+          "sha256": "53fa39ba7fac5f730fe590f92caabc5c0a62d96518b912edf82c1497e6fd46d9"
+        },
+        {
+          "path": ".cache/huggingface/download/test_fold_holdout.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/test_fold_holdout.csv.metadata",
+          "bytes": 101,
+          "sha256": "bb724df5563ae0ea3fd4a7ff8413bf7d69f36b98f33628723f3550227f470d8b"
+        },
+        {
+          "path": ".cache/huggingface/download/test_superfamily_holdout.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/test_superfamily_holdout.csv.metadata",
+          "bytes": 100,
+          "sha256": "d6106aeac919902414b02a0aa09adf41cf35837f172416f69cfefab458327820"
+        },
+        {
+          "path": ".cache/huggingface/download/train.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/train.csv.metadata",
+          "bytes": 125,
+          "sha256": "b5cde92d70118fa7c193c4539307999fc95a39a243f12205f5ed4305498cdbde"
+        },
+        {
+          "path": ".cache/huggingface/download/valid.csv.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/valid.csv.metadata",
+          "bytes": 101,
+          "sha256": "530362e6ea8ed94217595868cd342110226dbfe17f21590624e64883cd3fab5b"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2311,
+          "sha256": "6cdeec4000a3fbe781beef73e353fbd9fa5c885e7f3e27084a43dfd86b4fc2bf"
+        },
+        {
+          "path": "test_family_holdout.csv",
+          "bytes": 4464834,
+          "sha256": "c76bc49bbf5b86a1bef630dffe399ed5c6a312f0668758f6f9614581ab41fe4e"
+        },
+        {
+          "path": "test_fold_holdout.csv",
+          "bytes": 2331536,
+          "sha256": "7fb13c8bb9a63dfbb6433ef73023bd9ce47b431535f0b31a84e601c3af26fbe8"
+        },
+        {
+          "path": "test_superfamily_holdout.csv",
+          "bytes": 4664433,
+          "sha256": "fedf703f69927281de9056c0cc17585d65cc739c7c437c5b2b7d4d95964bebc8"
+        },
+        {
+          "path": "train.csv",
+          "bytes": 44452264,
+          "sha256": "308c210fd56fe7c7bc34422530a87d9d9f26e1bd1894b5d5bbee1dfe3bfd7d43"
+        },
+        {
+          "path": "valid.csv",
+          "bytes": 2581963,
+          "sha256": "a3ca3d325423c2d4db05dfc4e544f6e01af2f3e1ad01877928b2aaab7b4a4539"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_human_enhancers_cohn",
+      "subdir": "genomic_benchmarks/human_enhancers_cohn",
+      "revision": "49ef8d0d80087ece7441096afcef0123b0781ce0",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 6651672,
+      "total_mb": 6.3,
+      "download_time": "2026-10-01T09:04:03.666296+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "808b34caffc428e35b7ee82f7d3d496c2eec2a80466427aee615fa0bde880f94"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "04c8e930b7561f2fa029284fe2738d4395a7045b2ffa5138fe9d968c393f7f2a"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-b9d4d53093c06044.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-b9d4d53093c06044.parquet.metadata",
+          "bytes": 125,
+          "sha256": "77d07131cf7d30999d521d4dcd17e076d9918fa92b9c697a692d093403c9ee1d"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-308a8a054210be5f.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-308a8a054210be5f.parquet.metadata",
+          "bytes": 125,
+          "sha256": "7b2a49e0e9478711fde3bd9dbaff575c44a69e386b17a24f9a5a99f94f1fb590"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 477,
+          "sha256": "db32a2be256c75822db38c6f9de87bf7047c05fb7db53b00ae66d615ecc58b8e"
+        },
+        {
+          "path": "data/test-00000-of-00001-b9d4d53093c06044.parquet",
+          "bytes": 1662449,
+          "sha256": "0f1c92ae2047c4352b03374ab1945059f81b0c26c2c7e5888fda3e4dae90d002"
+        },
+        {
+          "path": "data/train-00000-of-00001-308a8a054210be5f.parquet",
+          "bytes": 4985837,
+          "sha256": "cb77822867ab7a607c84e2d0ffa04c71b5b3f9667035b8547ef7a548fe75df36"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_demo_coding_vs_intergenomic_seqs",
+      "subdir": "genomic_benchmarks/demo_coding_vs_intergenomic_seqs",
+      "revision": "85458172cab6cffad46cb172e64ca94780506ed6",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 9830166,
+      "total_mb": 9.4,
+      "download_time": "2026-10-01T09:04:18.060951+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "67248628e28235a8fe8656079fda14083a49a1ed5a7947d578a5b073ee809382"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "e1ce00117c2d13ffb46de56ba3148710f147fc0cc390def0b076e4d09e08aa49"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-6fccc31405110e30.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-6fccc31405110e30.parquet.metadata",
+          "bytes": 125,
+          "sha256": "2ed1dcb568d7b77f5042ce7bd9b81d8187895fe7c966dd16053196fb4a9d629c"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-f67d678b4bed3eaa.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-f67d678b4bed3eaa.parquet.metadata",
+          "bytes": 125,
+          "sha256": "93406f1abe129266bf3ed0dc12214e0f52ad598cd20709cd65fa2d3327895698"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 614,
+          "sha256": "7adbbc323511569e343fec5a477614d1e3413b4bbbfbb335ea64ab5e9a989163"
+        },
+        {
+          "path": "data/test-00000-of-00001-6fccc31405110e30.parquet",
+          "bytes": 2456511,
+          "sha256": "dfe13715a0227204cbae1ff6a167b2138337b749ca4f748da7c5a838a0049afe"
+        },
+        {
+          "path": "data/train-00000-of-00001-f67d678b4bed3eaa.parquet",
+          "bytes": 7370132,
+          "sha256": "dae922332436bf74c6ffdd139e21f77fef44d10ff3f14b6db86a1b0033e7a2bb"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_human_nontata_promoters",
+      "subdir": "genomic_benchmarks/human_nontata_promoters",
+      "revision": "e0003669df0a180c8570ebe091ed91f20fa080ec",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 4421173,
+      "total_mb": 4.2,
+      "download_time": "2026-10-01T09:04:27.920798+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 98,
+          "sha256": "a000ad63129437a2d6f43da3ab39c3c97fa3c73415fef1900540f3498858c691"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 100,
+          "sha256": "f40817e1764f34560fc0903006206440abd32ad431cde96213cb52634a3716c4"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-d7614d9116c62f44.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-d7614d9116c62f44.parquet.metadata",
+          "bytes": 124,
+          "sha256": "18fb98bc598f86567682e1bd00910f5632edbbee967010901de9abc80117ea1f"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-aeb55728756a44ae.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-aeb55728756a44ae.parquet.metadata",
+          "bytes": 125,
+          "sha256": "6c375cd0aa806cbd9d9074f31c608a0793627cb2f47985dca11e29067858685b"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 472,
+          "sha256": "e38dad18c4dea1fa0560143b732286ab8b64dec372858f7becaf11ab51ac3093"
+        },
+        {
+          "path": "data/test-00000-of-00001-d7614d9116c62f44.parquet",
+          "bytes": 1106146,
+          "sha256": "baac2b635666547c56c6482d6c7dd53def995cdcc4acca367f980c82d15c9f39"
+        },
+        {
+          "path": "data/train-00000-of-00001-aeb55728756a44ae.parquet",
+          "bytes": 3311651,
+          "sha256": "75e934078d6b880464c6a60f2e5ffd5b894204a11f32aac8c9607adcae625afa"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_drosophila_enhancers_stark",
+      "subdir": "genomic_benchmarks/drosophila_enhancers_stark",
+      "revision": "b5fdfb2d398ebf80491832760a4c1b88ed551b42",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 6958910,
+      "total_mb": 6.6,
+      "download_time": "2026-10-01T09:04:52.850254+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "6039e7fef2fa61dfebf77069ee390bbf5a23637bc9a1b62f5d6affc2ce870aac"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 100,
+          "sha256": "5614eb6457d2b1bebcc33462684502673e1d40df189056007b5e4d53e577d4b4"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-4f8143ca7162a96d.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-4f8143ca7162a96d.parquet.metadata",
+          "bytes": 125,
+          "sha256": "2506d84e88c21d6573642a4012d33ac02a5599857d2981b8d5bc47b334d2c0a9"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-83f95ffa4729e152.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-83f95ffa4729e152.parquet.metadata",
+          "bytes": 125,
+          "sha256": "53f664e9be8c3cab2ab3f0c01d6502ecbcdb75b4026eecd6729bba8adf437a12"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 482,
+          "sha256": "4240b3b11bc9398d874cecdcab91b757958d56d91b448fa49c16fded8ac8fbcf"
+        },
+        {
+          "path": "data/test-00000-of-00001-4f8143ca7162a96d.parquet",
+          "bytes": 1743725,
+          "sha256": "0347a404f97083a0685db2d90ea88faf43405f8ca01ba1930d77332807eb4329"
+        },
+        {
+          "path": "data/train-00000-of-00001-83f95ffa4729e152.parquet",
+          "bytes": 5211795,
+          "sha256": "eddf0c76e93a8c3c98c955b679f67d347a9040896e8fa6bb3f7f31b7195ef9ba"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_demo_human_or_worm",
+      "subdir": "genomic_benchmarks/demo_human_or_worm",
+      "revision": "a4f7f76b18a38f43ff3a7d5e8299408c3c121df2",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 9527292,
+      "total_mb": 9.1,
+      "download_time": "2026-10-01T09:05:06.174182+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "d639570182da10a34354dd0677faec0fdcd2d89381b61d60ad755b32d527b920"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 100,
+          "sha256": "1967189c18b9abb1cc4f977e7440cf3c5543ad8d6e41a93deb80d5c9456197c3"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-1033586105338bbd.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-1033586105338bbd.parquet.metadata",
+          "bytes": 124,
+          "sha256": "a179b8e3d33cdf4acb01447ce9ccd6f413f4f4b7577344b69c5fa8f685be148d"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-0d5a5f4de37ce201.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-0d5a5f4de37ce201.parquet.metadata",
+          "bytes": 125,
+          "sha256": "50a3da4f5fdf6239dd31e1b94e7c5493a33d9886fe42422f6d1ae19d1b2530c5"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 600,
+          "sha256": "de714a0c5a243956a62f24cba95083a78f66de73e5eeabf322a15b5079f2c98b"
+        },
+        {
+          "path": "data/test-00000-of-00001-1033586105338bbd.parquet",
+          "bytes": 2380379,
+          "sha256": "ee721cdae8e55d1d4d01a3856f1e2fc799b3bc6baa6ecd227700ea2b25c3d930"
+        },
+        {
+          "path": "data/train-00000-of-00001-0d5a5f4de37ce201.parquet",
+          "bytes": 7143406,
+          "sha256": "c3ed5948545c16d5f08471182e0b7e289fecb095907901ba6ffa0a9ac610aecc"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_dummy_mouse_enhancers_ensembl",
+      "subdir": "genomic_benchmarks/dummy_mouse_enhancers_ensembl",
+      "revision": "d4d48371e76b0c46717592c32c183c04b19ad16b",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 1358879,
+      "total_mb": 1.3,
+      "download_time": "2026-10-01T09:05:19.242058+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 100,
+          "sha256": "470134b60fe95603f81705961eb9a62c11ef2af8448bd0c2c42b02e2c2358053"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "0bbe97f6e366cba965dd14b2c4e95eda3107bd2cdf84d749dabe7a706c623f44"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-95377d6c2a06946a.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-95377d6c2a06946a.parquet.metadata",
+          "bytes": 124,
+          "sha256": "cfbb71aa88aa177b5725f93a63a937512867db829a2d6f7572a14f6718fc326f"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-6fb305ea320220c6.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-6fb305ea320220c6.parquet.metadata",
+          "bytes": 125,
+          "sha256": "ed3baf47fd7b2c261c233a8af055c00cc241a4852d7a62022363cba5e627e639"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 479,
+          "sha256": "be92ab6904693af35cfea437f5230e3adc2e5ccdf9bf0edb9d229b4f37b38016"
+        },
+        {
+          "path": "data/test-00000-of-00001-95377d6c2a06946a.parquet",
+          "bytes": 294310,
+          "sha256": "fccd3b7b77706817fc604baa5c2f72e01a0c74911aadc9074f3720e081458905"
+        },
+        {
+          "path": "data/train-00000-of-00001-6fb305ea320220c6.parquet",
+          "bytes": 1061183,
+          "sha256": "c49f2d5a128fbc4d84a561a586d7f8f8984e631d7f12e2ff48129c6b176e6055"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_human_ocr_ensembl",
+      "subdir": "genomic_benchmarks/human_ocr_ensembl",
+      "revision": "3c07e4be6425be11073baa2daacf6c143c64e4ff",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 27882774,
+      "total_mb": 26.6,
+      "download_time": "2026-10-01T09:05:43.596950+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "fa430b2c7ca05fa23adb61cb569bcd41f052fe759542dc9f0da11c02da506faf"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 100,
+          "sha256": "39789e781695ae16d0e20cc337345b2e8ab4d6dfc962fb34caeb409da2202d7e"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-dcaf3e2a1561c12e.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001-dcaf3e2a1561c12e.parquet.metadata",
+          "bytes": 125,
+          "sha256": "13a87238eff945f9a073cf208787932aeb466e777c58bcb3c350a10bd8d73a66"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-3ce5711c171d3e15.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001-3ce5711c171d3e15.parquet.metadata",
+          "bytes": 125,
+          "sha256": "1ce1493bac07114bf8c2138ac2b66efd33ce804da0f03a08f67e6a2833899fbe"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 477,
+          "sha256": "90c10004e46d03f1549f7427fb03abb51f9f4419c31e6370b5c5c446fe8bb745"
+        },
+        {
+          "path": "data/test-00000-of-00001-dcaf3e2a1561c12e.parquet",
+          "bytes": 5583796,
+          "sha256": "7eebddf1e5a2390e82f4f1354b972adbc3ae40e35e2394cb7f95d2052640f0b9"
+        },
+        {
+          "path": "data/train-00000-of-00001-3ce5711c171d3e15.parquet",
+          "bytes": 22295593,
+          "sha256": "27aa4fdeab853a5a514aa7f8fd963eb602abf58a54c2bbf076e58bb60475bed6"
+        }
+      ]
+    },
+    {
+      "repo_id": "katarinagresova/Genomic_Benchmarks_human_ensembl_regulatory",
+      "subdir": "genomic_benchmarks/human_ensembl_regulatory",
+      "revision": "8c014854d2aa093c37e2f161a241a35ece583fac",
+      "license": "?",
+      "num_files": 14,
+      "total_bytes": 60158835,
+      "total_mb": 57.4,
+      "download_time": "2026-10-01T09:06:41.953684+00:00",
+      "files": [
+        {
+          "path": ".cache/huggingface/.gitignore",
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        {
+          "path": ".cache/huggingface/CACHEDIR.TAG",
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/.gitattributes.metadata",
+          "bytes": 101,
+          "sha256": "4f9142d5ba7ff9fa30d62a3ac60c5344f0aac902d85f0443fac292e0c5a5b4c0"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/README.md.metadata",
+          "bytes": 101,
+          "sha256": "7c7cfae65132ecfc135accfecd20a537ed3add06c431b527cc254bd139f58e42"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/test-00000-of-00001.parquet.metadata",
+          "bytes": 125,
+          "sha256": "ef640814c6507d93c04cde22dff843d2ad23082bf337c530318aff12e1ac99a1"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001.parquet.lock",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": ".cache/huggingface/download/data/train-00000-of-00001.parquet.metadata",
+          "bytes": 125,
+          "sha256": "6e6db47425cd10e3cd787e5d007800cabdbe4e3a6cca3e1cb5e10f98672f243b"
+        },
+        {
+          "path": ".gitattributes",
+          "bytes": 2265,
+          "sha256": "79deb409a995d414d9b2e89b5e16a5f46fcaa7596c63242dd0bd72311a422458"
+        },
+        {
+          "path": "README.md",
+          "bytes": 611,
+          "sha256": "01a79887b8cfbf79fb7477a39ea27e5c4d48013341999bd04c74e6717ab807bd"
+        },
+        {
+          "path": "data/test-00000-of-00001.parquet",
+          "bytes": 12016515,
+          "sha256": "8971bc7ca134ffee3353ec1fa941ba4bf8bbeabc897e86394c4d367971acdc7c"
+        },
+        {
+          "path": "data/train-00000-of-00001.parquet",
+          "bytes": 48138800,
+          "sha256": "6a3c08af8c57fcb6d0ecca50441a5baecb9ac5840666e65f8120af34edeee22a"
+        }
+      ]
+    }
+  ],
+  "total_downloaded": 0,
+  "download_complete_time": "2026-10-01T16:46:05.582468",
+  "last_updated": "2026-10-01T09:19:10.933892+00:00",
+  "github_clones": [
+    {
+      "name": "PEER_Benchmark",
+      "type": "github_clone",
+      "catalog_id": "E11",
+      "task": "protein-protein interaction (Noul)",
+      "commit": "b40eec914273f204c50acca690df2a892e36c4a5",
+      "size_mb": 2.4,
+      "data_status": "code-only; 数据由代码自动下载(FLIP等) — 待补",
+      "local_path": "github/PEER_Benchmark"
+    },
+    {
+      "name": "RNAcompete",
+      "type": "github_clone",
+      "catalog_id": "E08",
+      "task": "RNA-RBP binding preference (Score)",
+      "commit": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "size_mb": 176.2,
+      "data_status": "含真实数据(probe_intensity/kmer_zscore/feature.tsv)",
+      "local_path": "github/RNAcompete"
+    },
+    {
+      "name": "deepgozero",
+      "type": "github_clone",
+      "catalog_id": "C12",
+      "task": "protein GO molecular function (multi-Noul)",
+      "commit": "4507529ebb182749bdcc1bbfc2677d2357912af8",
+      "size_mb": 32.2,
+      "data_status": "code-only; KAUST data URL 404 — 数据待补",
+      "local_path": "github/deepgozero"
+    }
+  ],
+  "additional_sources": [
+    {
+      "name": "TAPE_stability",
+      "type": "s3_tarball",
+      "catalog_id": "C10",
+      "task": "protein stability (Score)",
+      "url": "https://s3.amazonaws.com/songlabdata/proteindata/data_raw_pytorch/stability.tar.gz",
+      "sha256": "4287f9feae50327f2492a56b2063c597ad42ea2e612703bc7263e22801e335f6",
+      "splits": {
+        "train": 53614,
+        "valid": 2512,
+        "test": 12851
+      },
+      "local_path": "../../05_task_extension_sources/tape/stability",
+      "data_status": "含真实数据"
+    }
+  ],
+  "pending_sources": [
+    {
+      "catalog_id": "C12",
+      "name": "DeepGOZero",
+      "reason": "KAUST data URL 返回404，需另找镜像/直接构建"
+    },
+    {
+      "catalog_id": "E11",
+      "name": "PEER/FLIP",
+      "reason": "FLIP为621MB LFS仓库，raw链接不通；PEER数据需运行其下载管线"
+    },
+    {
+      "catalog_id": "E07",
+      "name": "DeepSEA",
+      "reason": "919特征大文件，未在本轮下载；按需获取"
+    }
+  ]
+}
