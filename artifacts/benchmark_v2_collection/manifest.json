@@ -1184,7 +1184,6244 @@
       "origin": "llama-gene snapshot"
     },
     "status": "ready",
-    "quarantined_groups": 2,
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A140D2T1_ZIKV_Sourisseau_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0206018112,
+      0.036805071200000004,
+      0.06941469000000007,
+      0.20440957200000007
+    ],
+    "dms_id": "A0A140D2T1_ZIKV_Sourisseau_2019",
+    "train": 5738,
+    "dev": 1919,
+    "test": 1919,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A140D2T1_ZIKV_Sourisseau_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A247D711_LISMN_Stadelmann_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.3063375,
+      -0.22345867799999997,
+      0.1858024780000002,
+      0.4670199120000001
+    ],
+    "dms_id": "A0A247D711_LISMN_Stadelmann_2021",
+    "train": 969,
+    "dev": 342,
+    "test": 342,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A247D711_LISMN_Stadelmann_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A1I9GEU1_NEIME_Kennouche_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1154,
+      -0.1569999999999999,
+      0.4484,
+      1.0968000000000002
+    ],
+    "dms_id": "A0A1I9GEU1_NEIME_Kennouche_2019",
+    "train": 550,
+    "dev": 184,
+    "test": 188,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A1I9GEU1_NEIME_Kennouche_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A2Z5U3Z0_9INFA_Doud_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.27147484,
+      -2.69218432,
+      -1.896711559999999,
+      -0.9315017799999998
+    ],
+    "dms_id": "A0A2Z5U3Z0_9INFA_Doud_2016",
+    "train": 6422,
+    "dev": 2147,
+    "test": 2146,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A2Z5U3Z0_9INFA_Doud_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A192B1T2_9HIV1_Haddox_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.78167958,
+      -3.6169229999999994,
+      -2.1000822599999998,
+      -0.608944804
+    ],
+    "dms_id": "A0A192B1T2_9HIV1_Haddox_2018",
+    "train": 7524,
+    "dev": 2527,
+    "test": 2526,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A192B1T2_9HIV1_Haddox_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A0A2Z5U3Z0_9INFA_Wu_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.021157279800000005,
+      0.06001077600000002,
+      0.15739815400000007,
+      0.4770011800000001
+    ],
+    "dms_id": "A0A2Z5U3Z0_9INFA_Wu_2014",
+    "train": 1429,
+    "dev": 460,
+    "test": 461,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A0A2Z5U3Z0_9INFA_Wu_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A4D664_9INFA_Soh_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.06625914200000001,
+      0.12745894400000002,
+      0.26605893800000024,
+      0.5663235320000001
+    ],
+    "dms_id": "A4D664_9INFA_Soh_2019",
+    "train": 8645,
+    "dev": 2888,
+    "test": 2888,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A4D664_9INFA_Soh_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A4GRB6_PSEAI_Chen_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.39925664,
+      -3.15459916,
+      -1.0902407799999996,
+      0.04387690160000002
+    ],
+    "dms_id": "A4GRB6_PSEAI_Chen_2020",
+    "train": 2984,
+    "dev": 1000,
+    "test": 1020,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A4GRB6_PSEAI_Chen_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_AACC1_PSEAI_Dandage_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8142678399999997,
+      -0.0005559527599998644,
+      1.0829107400000004,
+      2.5518867000000003
+    ],
+    "dms_id": "AACC1_PSEAI_Dandage_2018",
+    "train": 1122,
+    "dev": 305,
+    "test": 374,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "AACC1_PSEAI_Dandage_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_A4_HUMAN_Seuma_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.35446834,
+      -2.4147189799999995,
+      -1.1888459799999993,
+      -0.085437764
+    ],
+    "dms_id": "A4_HUMAN_Seuma_2022",
+    "train": 455,
+    "dev": 170,
+    "test": 171,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "A4_HUMAN_Seuma_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ACE2_HUMAN_Chan_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1738088,
+      -0.3769771,
+      -0.051273703999999566,
+      0.24106199
+    ],
+    "dms_id": "ACE2_HUMAN_Chan_2020",
+    "train": 1311,
+    "dev": 456,
+    "test": 456,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ACE2_HUMAN_Chan_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_AICDA_HUMAN_Gajula_2014_3cycles": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.020690403,
+      0.06604070400000002,
+      0.277706626,
+      1.0475940600000002
+    ],
+    "dms_id": "AICDA_HUMAN_Gajula_2014_3cycles",
+    "train": 114,
+    "dev": 38,
+    "test": 57,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "AICDA_HUMAN_Gajula_2014_3cycles"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_AMFR_HUMAN_Tsuboyama_2023_4G3O": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.7977794,
+      -1.007673,
+      -0.4631147399999999,
+      0.004978353
+    ],
+    "dms_id": "AMFR_HUMAN_Tsuboyama_2023_4G3O",
+    "train": 471,
+    "dev": 164,
+    "test": 185,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "AMFR_HUMAN_Tsuboyama_2023_4G3O"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ARGR_ECOLI_Tsuboyama_2023_1AOY": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.88608022,
+      -0.8494667679999999,
+      -0.24633318599999968,
+      0.02078016820000013
+    ],
+    "dms_id": "ARGR_ECOLI_Tsuboyama_2023_1AOY",
+    "train": 767,
+    "dev": 263,
+    "test": 257,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ARGR_ECOLI_Tsuboyama_2023_1AOY"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ADRB2_HUMAN_Jones_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      1.3507748,
+      1.7392402,
+      2.1181605000000006,
+      2.5389857
+    ],
+    "dms_id": "ADRB2_HUMAN_Jones_2020",
+    "train": 4656,
+    "dev": 1575,
+    "test": 1569,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ADRB2_HUMAN_Jones_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ANCSZ_Hobbs_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.2483305,
+      -0.07874723200000001,
+      -0.021885429399999965,
+      0.0255670788
+    ],
+    "dms_id": "ANCSZ_Hobbs_2022",
+    "train": 2773,
+    "dev": 1018,
+    "test": 879,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ANCSZ_Hobbs_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_AMIE_PSEAE_Wrenbeck_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.6058199999999999,
+      -0.27177999999999997,
+      -0.06011999999999989,
+      0.048480000000000016
+    ],
+    "dms_id": "AMIE_PSEAE_Wrenbeck_2017",
+    "train": 3767,
+    "dev": 1233,
+    "test": 1227,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "AMIE_PSEAE_Wrenbeck_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BBC1_YEAST_Tsuboyama_2023_1TG0": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.9348170599999999,
+      -0.9223002099999996,
+      -0.353766058,
+      0.15692871400000002
+    ],
+    "dms_id": "BBC1_YEAST_Tsuboyama_2023_1TG0",
+    "train": 652,
+    "dev": 225,
+    "test": 207,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BBC1_YEAST_Tsuboyama_2023_1TG0"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BCHB_CHLTE_Tsuboyama_2023_2KRU": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.9822428399999996,
+      -0.8097760599999999,
+      -0.30701748399999995,
+      0.068173282
+    ],
+    "dms_id": "BCHB_CHLTE_Tsuboyama_2023_2KRU",
+    "train": 517,
+    "dev": 200,
+    "test": 173,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BCHB_CHLTE_Tsuboyama_2023_2KRU"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_B2L11_HUMAN_Dutta_2010_binding-Mcl-1": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      4330452.600000001,
+      6420558.800000004,
+      16015770.4,
+      30966230.0
+    ],
+    "dms_id": "B2L11_HUMAN_Dutta_2010_binding-Mcl-1",
+    "train": 102,
+    "dev": 34,
+    "test": 34,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "B2L11_HUMAN_Dutta_2010_binding-Mcl-1"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BLAT_ECOLX_Firnberg_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0151,
+      0.22440000000000007,
+      0.6602200000000001,
+      1.0056800000000001
+    ],
+    "dms_id": "BLAT_ECOLX_Firnberg_2014",
+    "train": 2875,
+    "dev": 966,
+    "test": 942,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BLAT_ECOLX_Firnberg_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BLAT_ECOLX_Deng_2012": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.2184102,
+      -3.392217,
+      -2.2954267999999995,
+      -1.0975590000000002
+    ],
+    "dms_id": "BLAT_ECOLX_Deng_2012",
+    "train": 2983,
+    "dev": 1007,
+    "test": 1006,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BLAT_ECOLX_Deng_2012"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BLAT_ECOLX_Jacquier_2013": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.321928,
+      -1.0,
+      -0.3238095319999978,
+      0.0
+    ],
+    "dms_id": "BLAT_ECOLX_Jacquier_2013",
+    "train": 573,
+    "dev": 203,
+    "test": 213,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BLAT_ECOLX_Jacquier_2013"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BLAT_ECOLX_Stiffler_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.57107432,
+      -1.7216131399999999,
+      -0.33423005599999983,
+      -0.05037664360000003
+    ],
+    "dms_id": "BLAT_ECOLX_Stiffler_2015",
+    "train": 2983,
+    "dev": 1007,
+    "test": 1006,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BLAT_ECOLX_Stiffler_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BRCA2_HUMAN_Erwood_2022_HEK293T": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.8903016340000001,
+      0.972878706,
+      1.00331664,
+      1.02726022
+    ],
+    "dms_id": "BRCA2_HUMAN_Erwood_2022_HEK293T",
+    "train": 163,
+    "dev": 54,
+    "test": 48,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BRCA2_HUMAN_Erwood_2022_HEK293T"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_BRCA1_HUMAN_Findlay_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.5578809,
+      -0.44902226,
+      -0.1261231,
+      0.07946948
+    ],
+    "dms_id": "BRCA1_HUMAN_Findlay_2018",
+    "train": 1096,
+    "dev": 356,
+    "test": 385,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "BRCA1_HUMAN_Findlay_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_C6KNH7_9INFA_Lee_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.5434926,
+      -2.0255535,
+      -1.3987147,
+      -0.6174805
+    ],
+    "dms_id": "C6KNH7_9INFA_Lee_2018",
+    "train": 6441,
+    "dev": 2147,
+    "test": 2166,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "C6KNH7_9INFA_Lee_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CALM1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.39278519200000006,
+      0.7533852700000001,
+      0.9264047360000001,
+      1.02171388
+    ],
+    "dms_id": "CALM1_HUMAN_Weile_2017",
+    "train": 1062,
+    "dev": 380,
+    "test": 371,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CALM1_HUMAN_Weile_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CAPSD_AAV2S_Sinai_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6750121599999999,
+      -0.3994883439999998,
+      0.4640584040000007,
+      1.540940060000001
+    ],
+    "dms_id": "CAPSD_AAV2S_Sinai_2021",
+    "train": 304,
+    "dev": 114,
+    "test": 114,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CAPSD_AAV2S_Sinai_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CAR11_HUMAN_Meitlis_2020_gof": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.796919642,
+      -0.554706524,
+      -0.28753067199999993,
+      0.07600209400000012
+    ],
+    "dms_id": "CAR11_HUMAN_Meitlis_2020_gof",
+    "train": 1334,
+    "dev": 509,
+    "test": 531,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CAR11_HUMAN_Meitlis_2020_gof"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CAR11_HUMAN_Meitlis_2020_lof": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.2830852,
+      -0.7506804,
+      -0.3649775699999996,
+      -0.019288415
+    ],
+    "dms_id": "CAR11_HUMAN_Meitlis_2020_lof",
+    "train": 1351,
+    "dev": 508,
+    "test": 536,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CAR11_HUMAN_Meitlis_2020_lof"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CAS9_STRP1_Spencer_2017_positive": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.6260121799999999,
+      -0.38194016799999997,
+      -0.169874694,
+      0.09745173440000003
+    ],
+    "dms_id": "CAS9_STRP1_Spencer_2017_positive",
+    "train": 4858,
+    "dev": 1631,
+    "test": 1628,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CAS9_STRP1_Spencer_2017_positive"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CASP3_HUMAN_Roychowdhury_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8103583719999998,
+      -0.19648670799999998,
+      0.25607300400000005,
+      0.4925060500000001
+    ],
+    "dms_id": "CASP3_HUMAN_Roychowdhury_2020",
+    "train": 942,
+    "dev": 312,
+    "test": 313,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CASP3_HUMAN_Roychowdhury_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CASP7_HUMAN_Roychowdhury_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.3193997999999998,
+      -0.76679666,
+      -0.19260739999999998,
+      0.3630730720000004
+    ],
+    "dms_id": "CASP7_HUMAN_Roychowdhury_2020",
+    "train": 999,
+    "dev": 341,
+    "test": 340,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CASP7_HUMAN_Roychowdhury_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CATR_CHLRE_Tsuboyama_2023_2AMI": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.9905618399999999,
+      -0.35305140399999996,
+      -0.07247445759999994,
+      0.24189598000000015
+    ],
+    "dms_id": "CATR_CHLRE_Tsuboyama_2023_2AMI",
+    "train": 780,
+    "dev": 277,
+    "test": 283,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CATR_CHLRE_Tsuboyama_2023_2AMI"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CBPA2_HUMAN_Tsuboyama_2023_1O6X": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6677191399999998,
+      -0.6684205639999999,
+      -0.254915052,
+      0.010823471800000012
+    ],
+    "dms_id": "CBPA2_HUMAN_Tsuboyama_2023_1O6X",
+    "train": 790,
+    "dev": 285,
+    "test": 282,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CBPA2_HUMAN_Tsuboyama_2023_1O6X"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CBS_HUMAN_Sun_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0,
+      0.14957852600000004,
+      0.6322249000000003,
+      0.997697228
+    ],
+    "dms_id": "CBS_HUMAN_Sun_2020",
+    "train": 4635,
+    "dev": 1302,
+    "test": 1280,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CBS_HUMAN_Sun_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CBX4_HUMAN_Tsuboyama_2023_2K28": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.4159513400000001,
+      -0.64932724,
+      -0.2278639659999999,
+      0.049092941000000015
+    ],
+    "dms_id": "CBX4_HUMAN_Tsuboyama_2023_2K28",
+    "train": 559,
+    "dev": 171,
+    "test": 187,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CBX4_HUMAN_Tsuboyama_2023_2K28"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CCDB_ECOLI_Adkar_2012": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -46.0,
+      -24.0,
+      -14.0,
+      -7.0
+    ],
+    "dms_id": "CCDB_ECOLI_Adkar_2012",
+    "train": 716,
+    "dev": 247,
+    "test": 213,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CCDB_ECOLI_Adkar_2012"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CCDB_ECOLI_Tripathi_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.0,
+      -2.0,
+      -2.0,
+      -2.0
+    ],
+    "dms_id": "CCDB_ECOLI_Tripathi_2016",
+    "train": 964,
+    "dev": 357,
+    "test": 342,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CCDB_ECOLI_Tripathi_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CCR5_HUMAN_Gill_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.39,
+      -0.1,
+      0.07,
+      0.24200000000000044
+    ],
+    "dms_id": "CCR5_HUMAN_Gill_2023",
+    "train": 3667,
+    "dev": 1235,
+    "test": 1235,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CCR5_HUMAN_Gill_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CD19_HUMAN_Klesmith_2019_FMC_singles": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.173316,
+      -2.9032269,
+      -1.4007266,
+      0.27522633600000046
+    ],
+    "dms_id": "CD19_HUMAN_Klesmith_2019_FMC_singles",
+    "train": 2155,
+    "dev": 767,
+    "test": 839,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CD19_HUMAN_Klesmith_2019_FMC_singles"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CP2C9_HUMAN_Amorosi_2021_abundance": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.396111708,
+      0.64554656,
+      0.8404400800000001,
+      0.9672411120000001
+    ],
+    "dms_id": "CP2C9_HUMAN_Amorosi_2021_abundance",
+    "train": 3757,
+    "dev": 1345,
+    "test": 1268,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CP2C9_HUMAN_Amorosi_2021_abundance"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CP2C9_HUMAN_Amorosi_2021_activity": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.1167903,
+      0.34698883,
+      0.6510801000000002,
+      0.9005425
+    ],
+    "dms_id": "CP2C9_HUMAN_Amorosi_2021_activity",
+    "train": 3716,
+    "dev": 1252,
+    "test": 1174,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CP2C9_HUMAN_Amorosi_2021_activity"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CSN4_MOUSE_Tsuboyama_2023_1UFM": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.27584432,
+      -1.13830732,
+      -0.33465327199999995,
+      0.05371766600000003
+    ],
+    "dms_id": "CSN4_MOUSE_Tsuboyama_2023_1UFM",
+    "train": 798,
+    "dev": 285,
+    "test": 270,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CSN4_MOUSE_Tsuboyama_2023_1UFM"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_CUE1_YEAST_Tsuboyama_2023_2MYX": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.30905088,
+      -1.65384556,
+      -0.9974896799999999,
+      -0.30462882799999996
+    ],
+    "dms_id": "CUE1_YEAST_Tsuboyama_2023_2MYX",
+    "train": 542,
+    "dev": 205,
+    "test": 208,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "CUE1_YEAST_Tsuboyama_2023_2MYX"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DLG4_RAT_McLaughlin_2012": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.24896,
+      -0.055291,
+      0.006052300000000021,
+      0.052637
+    ],
+    "dms_id": "DLG4_RAT_McLaughlin_2012",
+    "train": 931,
+    "dev": 323,
+    "test": 322,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DLG4_RAT_McLaughlin_2012"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DLG4_HUMAN_Faure_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8293617,
+      -0.39318994,
+      -0.16785756,
+      -0.032458715
+    ],
+    "dms_id": "DLG4_HUMAN_Faure_2021",
+    "train": 741,
+    "dev": 272,
+    "test": 267,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DLG4_HUMAN_Faure_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DN7A_SACS2_Tsuboyama_2023_1JIC": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.38777982,
+      -0.7077831199999998,
+      -0.26655186799999997,
+      0.01254840530000002
+    ],
+    "dms_id": "DN7A_SACS2_Tsuboyama_2023_1JIC",
+    "train": 598,
+    "dev": 201,
+    "test": 209,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DN7A_SACS2_Tsuboyama_2023_1JIC"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DNJA1_HUMAN_Tsuboyama_2023_2LO1": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.8791871199999999,
+      -0.703672376,
+      -0.33512257599999995,
+      -0.06958456599999997
+    ],
+    "dms_id": "DNJA1_HUMAN_Tsuboyama_2023_2LO1",
+    "train": 733,
+    "dev": 240,
+    "test": 243,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DNJA1_HUMAN_Tsuboyama_2023_2LO1"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_D7PM05_CLYGR_Somermeyer_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      11070.871600000006,
+      25264.5578,
+      28383.6524,
+      30544.6472
+    ],
+    "dms_id": "D7PM05_CLYGR_Somermeyer_2022",
+    "train": 715,
+    "dev": 221,
+    "test": 233,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "D7PM05_CLYGR_Somermeyer_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DOCK1_MOUSE_Tsuboyama_2023_2M0Y": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6588058,
+      -0.9910418,
+      -0.33645876999999996,
+      0.16119969
+    ],
+    "dms_id": "DOCK1_MOUSE_Tsuboyama_2023_2M0Y",
+    "train": 716,
+    "dev": 233,
+    "test": 264,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DOCK1_MOUSE_Tsuboyama_2023_2M0Y"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DYR_ECOLI_Nguyen_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.93,
+      0.98,
+      1.01,
+      1.03
+    ],
+    "dms_id": "DYR_ECOLI_Nguyen_2023",
+    "train": 1743,
+    "dev": 567,
+    "test": 606,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DYR_ECOLI_Nguyen_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ENVZ_ECOLI_Ghose_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      2.4946826,
+      3.6865842,
+      3.8219023,
+      3.897107
+    ],
+    "dms_id": "ENVZ_ECOLI_Ghose_2023",
+    "train": 666,
+    "dev": 228,
+    "test": 227,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ENVZ_ECOLI_Ghose_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_DYR_ECOLI_Thompson_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.6495462000000001,
+      -0.18030940000000004,
+      -0.015569999999999896,
+      0.1275142
+    ],
+    "dms_id": "DYR_ECOLI_Thompson_2019",
+    "train": 1427,
+    "dev": 489,
+    "test": 447,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "DYR_ECOLI_Thompson_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ENV_HV1B9_DuenasDecamp_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.03,
+      -1.0,
+      -0.92,
+      -0.55
+    ],
+    "dms_id": "ENV_HV1B9_DuenasDecamp_2016",
+    "train": 224,
+    "dev": 76,
+    "test": 75,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ENV_HV1B9_DuenasDecamp_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_EPHB2_HUMAN_Tsuboyama_2023_1F0M": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.17750986,
+      -0.7385937559999998,
+      -0.2157091939999999,
+      0.0811144940000001
+    ],
+    "dms_id": "EPHB2_HUMAN_Tsuboyama_2023_1F0M",
+    "train": 727,
+    "dev": 247,
+    "test": 265,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "EPHB2_HUMAN_Tsuboyama_2023_1F0M"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ERBB2_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.56263628,
+      -1.0066779399999999,
+      -0.27129535199999966,
+      0.08116732400000011
+    ],
+    "dms_id": "ERBB2_HUMAN_Elazar_2016",
+    "train": 169,
+    "dev": 74,
+    "test": 83,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ERBB2_HUMAN_Elazar_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ESTA_BACSU_Nutschel_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      43.49,
+      45.18,
+      46.5,
+      47.87
+    ],
+    "dms_id": "ESTA_BACSU_Nutschel_2020",
+    "train": 1196,
+    "dev": 516,
+    "test": 460,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ESTA_BACSU_Nutschel_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_FECA_ECOLI_Tsuboyama_2023_2D1U": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.57547734,
+      -1.0156916599999999,
+      -0.41632235599999967,
+      0.08559561040000001
+    ],
+    "dms_id": "FECA_ECOLI_Tsuboyama_2023_2D1U",
+    "train": 703,
+    "dev": 258,
+    "test": 258,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "FECA_ECOLI_Tsuboyama_2023_2D1U"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_F7YBW8_MESOW_Ding_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.731199332,
+      0.88962386,
+      0.946841194,
+      0.9656087
+    ],
+    "dms_id": "F7YBW8_MESOW_Ding_2023",
+    "train": 47,
+    "dev": 8,
+    "test": 25,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "F7YBW8_MESOW_Ding_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ENV_HV1BR_Haddox_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.004232709040000002,
+      0.011972126400000003,
+      0.02669627940000002,
+      0.058468471
+    ],
+    "dms_id": "ENV_HV1BR_Haddox_2016",
+    "train": 7695,
+    "dev": 2584,
+    "test": 2584,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ENV_HV1BR_Haddox_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_FKBP3_HUMAN_Tsuboyama_2023_2KFV": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.08049892,
+      -0.32338466399999993,
+      -0.013158019399999972,
+      0.2046775680000001
+    ],
+    "dms_id": "FKBP3_HUMAN_Tsuboyama_2023_2KFV",
+    "train": 735,
+    "dev": 236,
+    "test": 266,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "FKBP3_HUMAN_Tsuboyama_2023_2KFV"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GAL4_YEAST_Kitzman_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -11.74,
+      -4.97,
+      -2.513999999999999,
+      0.10800000000000068
+    ],
+    "dms_id": "GAL4_YEAST_Kitzman_2015",
+    "train": 712,
+    "dev": 240,
+    "test": 243,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GAL4_YEAST_Kitzman_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_F7YBW8_MESOW_Aakre_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.890139,
+      0.979132,
+      0.996487,
+      1.080144
+    ],
+    "dms_id": "F7YBW8_MESOW_Aakre_2015",
+    "train": 21,
+    "dev": 5,
+    "test": 11,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "F7YBW8_MESOW_Aakre_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GLPA_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.3483198,
+      -1.5063238799999994,
+      -0.642362066,
+      0.0593329960000002
+    ],
+    "dms_id": "GLPA_HUMAN_Elazar_2016",
+    "train": 143,
+    "dev": 53,
+    "test": 49,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GLPA_HUMAN_Elazar_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GCN4_YEAST_Staller_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      1.16739916,
+      1.3062921200000002,
+      1.4937855,
+      1.62430644
+    ],
+    "dms_id": "GCN4_YEAST_Staller_2018",
+    "train": 18,
+    "dev": 8,
+    "test": 7,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GCN4_YEAST_Staller_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GDIA_HUMAN_Silverstein_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.4976939,
+      0.7823911,
+      0.8955638,
+      0.95489115
+    ],
+    "dms_id": "GDIA_HUMAN_Silverstein_2021",
+    "train": 701,
+    "dev": 234,
+    "test": 219,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GDIA_HUMAN_Silverstein_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HCP_LAMBD_Tsuboyama_2023_2L6Q": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.68054258,
+      -0.6431685999999999,
+      -0.19605052999999983,
+      0.07839020000000005
+    ],
+    "dms_id": "HCP_LAMBD_Tsuboyama_2023_2L6Q",
+    "train": 625,
+    "dev": 208,
+    "test": 207,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HCP_LAMBD_Tsuboyama_2023_2L6Q"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HECD1_HUMAN_Tsuboyama_2023_3DKM": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.2108859,
+      -1.1452023599999999,
+      -0.5000328479999995,
+      -0.09178898799999918
+    ],
+    "dms_id": "HECD1_HUMAN_Tsuboyama_2023_3DKM",
+    "train": 697,
+    "dev": 276,
+    "test": 271,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HECD1_HUMAN_Tsuboyama_2023_3DKM"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HEM3_HUMAN_Loggerenberg_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0,
+      0.36357912000000003,
+      0.734106292,
+      1.01382564
+    ],
+    "dms_id": "HEM3_HUMAN_Loggerenberg_2023",
+    "train": 3259,
+    "dev": 1215,
+    "test": 1215,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HEM3_HUMAN_Loggerenberg_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GFP_AEQVI_Sarkisyan_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      3.5440391,
+      3.63661486,
+      3.68565884,
+      3.72835232
+    ],
+    "dms_id": "GFP_AEQVI_Sarkisyan_2016",
+    "train": 674,
+    "dev": 197,
+    "test": 213,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GFP_AEQVI_Sarkisyan_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HMDH_HUMAN_Jiang_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.1373,
+      0.258,
+      0.4183800000000001,
+      0.61394
+    ],
+    "dms_id": "HMDH_HUMAN_Jiang_2019",
+    "train": 10089,
+    "dev": 3382,
+    "test": 3382,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HMDH_HUMAN_Jiang_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HSP82_YEAST_Cote-Hammarlof_2020_growth-H2O2": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.0155341152,
+      -0.0040116477999999995,
+      -0.0014458579,
+      0.00021445750000000045
+    ],
+    "dms_id": "HSP82_YEAST_Cote-Hammarlof_2020_growth-H2O2",
+    "train": 1340,
+    "dev": 456,
+    "test": 456,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HSP82_YEAST_Cote-Hammarlof_2020_growth-H2O2"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HSP82_YEAST_Mishra_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.21330581599999998,
+      -0.053928249,
+      -0.014477896799999975,
+      0.0178630468
+    ],
+    "dms_id": "HSP82_YEAST_Mishra_2016",
+    "train": 2589,
+    "dev": 867,
+    "test": 867,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HSP82_YEAST_Mishra_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HXK4_HUMAN_Gersing_2022_activity": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0351225732,
+      0.45342984000000003,
+      0.854738628,
+      1.28442422
+    ],
+    "dms_id": "HXK4_HUMAN_Gersing_2022_activity",
+    "train": 5148,
+    "dev": 1726,
+    "test": 1696,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HXK4_HUMAN_Gersing_2022_activity"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HSP82_YEAST_Flynn_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.342066582,
+      -0.116353658,
+      -0.01813151419999998,
+      0.07254532520000001
+    ],
+    "dms_id": "HSP82_YEAST_Flynn_2019",
+    "train": 8002,
+    "dev": 2628,
+    "test": 2664,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HSP82_YEAST_Flynn_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HXK4_HUMAN_Gersing_2023_abundance": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.339975326,
+      0.64806604,
+      0.82001612,
+      0.9553005
+    ],
+    "dms_id": "HXK4_HUMAN_Gersing_2023_abundance",
+    "train": 4989,
+    "dev": 1716,
+    "test": 1691,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HXK4_HUMAN_Gersing_2023_abundance"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_IF1_ECOLI_Kelsic_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.609,
+      0.8449,
+      0.925,
+      0.9655
+    ],
+    "dms_id": "IF1_ECOLI_Kelsic_2016",
+    "train": 798,
+    "dev": 285,
+    "test": 284,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "IF1_ECOLI_Kelsic_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_GRB2_HUMAN_Faure_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.000999676,
+      -0.467727954,
+      -0.14869677999999992,
+      -0.00213082157999998
+    ],
+    "dms_id": "GRB2_HUMAN_Faure_2021",
+    "train": 619,
+    "dev": 207,
+    "test": 208,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "GRB2_HUMAN_Faure_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_I6TAH8_I68A0_Doud_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.0100617400000003,
+      -2.51760904,
+      -2.00391154,
+      -1.19000484
+    ],
+    "dms_id": "I6TAH8_I68A0_Doud_2015",
+    "train": 5662,
+    "dev": 1900,
+    "test": 1900,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "I6TAH8_I68A0_Doud_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ILF3_HUMAN_Tsuboyama_2023_2L33": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.9370613699999997,
+      -0.19779215999999997,
+      -0.04108053219999996,
+      0.07574020320000015
+    ],
+    "dms_id": "ILF3_HUMAN_Tsuboyama_2023_2L33",
+    "train": 785,
+    "dev": 265,
+    "test": 279,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ILF3_HUMAN_Tsuboyama_2023_2L33"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ISDH_STAAW_Tsuboyama_2023_2LHR": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.19212254,
+      -0.6108338520000001,
+      -0.285582976,
+      -0.035196485599999904
+    ],
+    "dms_id": "ISDH_STAAW_Tsuboyama_2023_2LHR",
+    "train": 568,
+    "dev": 184,
+    "test": 188,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ISDH_STAAW_Tsuboyama_2023_2LHR"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KCNE1_HUMAN_Muhammad_2023_expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.759731256,
+      0.9342431800000001,
+      1.0379549600000002,
+      1.18885188
+    ],
+    "dms_id": "KCNE1_HUMAN_Muhammad_2023_expression",
+    "train": 1373,
+    "dev": 479,
+    "test": 487,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KCNE1_HUMAN_Muhammad_2023_expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KCNE1_HUMAN_Muhammad_2023_function": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.18071054,
+      0.5282343,
+      0.9067193000000001,
+      1.0753273
+    ],
+    "dms_id": "KCNE1_HUMAN_Muhammad_2023_function",
+    "train": 1361,
+    "dev": 472,
+    "test": 482,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KCNE1_HUMAN_Muhammad_2023_function"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KCNH2_HUMAN_Kozek_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      3.90092084,
+      23.328221600000003,
+      53.2270814,
+      77.917716
+    ],
+    "dms_id": "KCNH2_HUMAN_Kozek_2020",
+    "train": 110,
+    "dev": 35,
+    "test": 55,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KCNH2_HUMAN_Kozek_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_surface": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.39640646,
+      -0.25621998399999985,
+      0.29527504000000004,
+      0.8693865440000003
+    ],
+    "dms_id": "KCNJ2_MOUSE_Coyote-Maestas_2022_surface",
+    "train": 4109,
+    "dev": 1382,
+    "test": 1426,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KCNJ2_MOUSE_Coyote-Maestas_2022_surface"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_function": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.4463259,
+      -0.07691388,
+      0.19880350000000002,
+      0.48804432
+    ],
+    "dms_id": "KCNJ2_MOUSE_Coyote-Maestas_2022_function",
+    "train": 4146,
+    "dev": 1393,
+    "test": 1424,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KCNJ2_MOUSE_Coyote-Maestas_2022_function"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_KKA2_KLEPN_Melnikov_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.10994000000000001,
+      0.41896000000000005,
+      1.16771,
+      1.85308
+    ],
+    "dms_id": "KKA2_KLEPN_Melnikov_2014",
+    "train": 2974,
+    "dev": 999,
+    "test": 987,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "KKA2_KLEPN_Melnikov_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_LGK_LIPST_Klesmith_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1298,
+      -0.78508,
+      -0.4813799999999998,
+      -0.20298
+    ],
+    "dms_id": "LGK_LIPST_Klesmith_2015",
+    "train": 4755,
+    "dev": 1622,
+    "test": 1513,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "LGK_LIPST_Klesmith_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_LYAM1_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.645765,
+      -2.3575554,
+      -1.2733014999999999,
+      0.21704769
+    ],
+    "dms_id": "LYAM1_HUMAN_Elazar_2016",
+    "train": 206,
+    "dev": 77,
+    "test": 76,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "LYAM1_HUMAN_Elazar_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MAFG_MOUSE_Tsuboyama_2023_1K1V": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8573707599999999,
+      -0.29782629,
+      -0.062949302,
+      0.10894476600000001
+    ],
+    "dms_id": "MAFG_MOUSE_Tsuboyama_2023_1K1V",
+    "train": 447,
+    "dev": 149,
+    "test": 166,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MAFG_MOUSE_Tsuboyama_2023_1K1V"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MBD11_ARATH_Tsuboyama_2023_6ACV": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.18017314,
+      -1.16146532,
+      -0.4710630419999993,
+      0.04825359200000011
+    ],
+    "dms_id": "MBD11_ARATH_Tsuboyama_2023_6ACV",
+    "train": 655,
+    "dev": 237,
+    "test": 263,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MBD11_ARATH_Tsuboyama_2023_6ACV"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MET_HUMAN_Estevam_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -6.1895798,
+      -2.986874019999998,
+      -0.4377935119999999,
+      0.13169267200000032
+    ],
+    "dms_id": "MET_HUMAN_Estevam_2023",
+    "train": 3213,
+    "dev": 1090,
+    "test": 1090,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MET_HUMAN_Estevam_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MLAC_ECOLI_MacRae_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.4597536259999999,
+      -0.17598561,
+      -0.0476902388,
+      0.019248506600000017
+    ],
+    "dms_id": "MLAC_ECOLI_MacRae_2023",
+    "train": 2392,
+    "dev": 798,
+    "test": 817,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MLAC_ECOLI_MacRae_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MK01_HUMAN_Brenan_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -9.0893132,
+      -8.4485006,
+      -7.90273806,
+      -7.3632810399999995
+    ],
+    "dms_id": "MK01_HUMAN_Brenan_2016",
+    "train": 4077,
+    "dev": 1366,
+    "test": 1366,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MK01_HUMAN_Brenan_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MTH3_HAEAE_RockahShmuel_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0,
+      0.26,
+      0.58,
+      0.81
+    ],
+    "dms_id": "MTH3_HAEAE_RockahShmuel_2015",
+    "train": 1071,
+    "dev": 355,
+    "test": 351,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MTH3_HAEAE_RockahShmuel_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MSH2_HUMAN_Jia_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      1.46,
+      2.57,
+      3.35,
+      4.21
+    ],
+    "dms_id": "MSH2_HUMAN_Jia_2020",
+    "train": 10048,
+    "dev": 3389,
+    "test": 3312,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MSH2_HUMAN_Jia_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MTHR_HUMAN_Weile_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.54452,
+      0.7476,
+      0.8439,
+      0.9169
+    ],
+    "dms_id": "MTHR_HUMAN_Weile_2021",
+    "train": 7467,
+    "dev": 2489,
+    "test": 2508,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MTHR_HUMAN_Weile_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_MYO3_YEAST_Tsuboyama_2023_2BTT": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.1436227199999998,
+      -1.33783792,
+      -0.8004557459999997,
+      -0.1896148819999996
+    ],
+    "dms_id": "MYO3_YEAST_Tsuboyama_2023_2BTT",
+    "train": 545,
+    "dev": 191,
+    "test": 211,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "MYO3_YEAST_Tsuboyama_2023_2BTT"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NKX31_HUMAN_Tsuboyama_2023_2L9R": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.87955093,
+      -0.33113188,
+      -0.0816510499999999,
+      0.08429281
+    ],
+    "dms_id": "NKX31_HUMAN_Tsuboyama_2023_2L9R",
+    "train": 676,
+    "dev": 228,
+    "test": 245,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NKX31_HUMAN_Tsuboyama_2023_2L9R"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NPC1_HUMAN_Erwood_2022_HEK293T": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.077272212,
+      0.36784099000000003,
+      0.8056945600000002,
+      0.93420726
+    ],
+    "dms_id": "NPC1_HUMAN_Erwood_2022_HEK293T",
+    "train": 383,
+    "dev": 124,
+    "test": 130,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NPC1_HUMAN_Erwood_2022_HEK293T"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NRAM_I33A0_Jiang_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.879687136,
+      -0.8249721400000001,
+      -0.7195974359999999,
+      -0.39137601000000005
+    ],
+    "dms_id": "NRAM_I33A0_Jiang_2016",
+    "train": 183,
+    "dev": 59,
+    "test": 56,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NRAM_I33A0_Jiang_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NPC1_HUMAN_Erwood_2022_RPE1": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0359489452,
+      0.30938269000000007,
+      0.5071678020000002,
+      0.8417913800000001
+    ],
+    "dms_id": "NPC1_HUMAN_Erwood_2022_RPE1",
+    "train": 28,
+    "dev": 17,
+    "test": 18,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NPC1_HUMAN_Erwood_2022_RPE1"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NCAP_I34A1_Doud_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.7772775199999997,
+      -3.1399373600000002,
+      -2.51356546,
+      -1.6940371199999997
+    ],
+    "dms_id": "NCAP_I34A1_Doud_2015",
+    "train": 5662,
+    "dev": 1900,
+    "test": 1900,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NCAP_I34A1_Doud_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NUD15_HUMAN_Suiter_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.07627098560000001,
+      0.54749588,
+      0.760111146,
+      0.8913878000000001
+    ],
+    "dms_id": "NUD15_HUMAN_Suiter_2020",
+    "train": 1688,
+    "dev": 587,
+    "test": 569,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NUD15_HUMAN_Suiter_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OBSCN_HUMAN_Tsuboyama_2023_1V1C": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.2937777,
+      -1.0860621,
+      -0.53148568,
+      -0.06894631200000007
+    ],
+    "dms_id": "OBSCN_HUMAN_Tsuboyama_2023_1V1C",
+    "train": 724,
+    "dev": 247,
+    "test": 242,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OBSCN_HUMAN_Tsuboyama_2023_1V1C"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NUSG_MYCTU_Tsuboyama_2023_2MI6": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.0651653999999997,
+      -0.9940543199999997,
+      -0.353213618,
+      0.018890899600000108
+    ],
+    "dms_id": "NUSG_MYCTU_Tsuboyama_2023_2MI6",
+    "train": 605,
+    "dev": 206,
+    "test": 208,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NUSG_MYCTU_Tsuboyama_2023_2MI6"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_NUSA_ECOLI_Tsuboyama_2023_1WCL": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.5803671,
+      -0.9097145719999998,
+      -0.3600880279999997,
+      -0.02419190279999985
+    ],
+    "dms_id": "NUSA_ECOLI_Tsuboyama_2023_1WCL",
+    "train": 774,
+    "dev": 266,
+    "test": 266,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "NUSA_ECOLI_Tsuboyama_2023_1WCL"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OPSD_HUMAN_Wan_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.17803885,
+      0.27964717,
+      2.2559147,
+      3.2420382
+    ],
+    "dms_id": "OPSD_HUMAN_Wan_2019",
+    "train": 106,
+    "dev": 32,
+    "test": 27,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OPSD_HUMAN_Wan_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_ODP2_GEOSE_Tsuboyama_2023_1W4G": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.4538914200000002,
+      -0.842876204,
+      -0.4502593379999999,
+      -0.1788462000000001
+    ],
+    "dms_id": "ODP2_GEOSE_Tsuboyama_2023_1W4G",
+    "train": 360,
+    "dev": 142,
+    "test": 167,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "ODP2_GEOSE_Tsuboyama_2023_1W4G"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OTC_HUMAN_Lo_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.005,
+      0.20780000000000023,
+      0.5316000000000002,
+      0.854
+    ],
+    "dms_id": "OTC_HUMAN_Lo_2023",
+    "train": 947,
+    "dev": 294,
+    "test": 329,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OTC_HUMAN_Lo_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OTU7A_HUMAN_Tsuboyama_2023_2L2D": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.4274343,
+      -0.7695146,
+      -0.25590539999999984,
+      0.12943414
+    ],
+    "dms_id": "OTU7A_HUMAN_Tsuboyama_2023_2L2D",
+    "train": 366,
+    "dev": 120,
+    "test": 149,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OTU7A_HUMAN_Tsuboyama_2023_2L2D"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OXDA_RHOTO_Vanella_2023_activity": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.15861298,
+      -0.118902232,
+      -0.07568330599999999,
+      -0.017677565999999954
+    ],
+    "dms_id": "OXDA_RHOTO_Vanella_2023_activity",
+    "train": 3880,
+    "dev": 1283,
+    "test": 1233,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OXDA_RHOTO_Vanella_2023_activity"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_OXDA_RHOTO_Vanella_2023_expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.18098537399999998,
+      -0.0877035096,
+      -0.01267512659999992,
+      0.058179724599999996
+    ],
+    "dms_id": "OXDA_RHOTO_Vanella_2023_expression",
+    "train": 4075,
+    "dev": 1356,
+    "test": 1338,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "OXDA_RHOTO_Vanella_2023_expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_Null_Nutlin": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.9195232679999998,
+      -0.20966718199999962,
+      0.3158569720000008,
+      0.9197872520000001
+    ],
+    "dms_id": "P53_HUMAN_Giacomelli_2018_Null_Nutlin",
+    "train": 4465,
+    "dev": 1501,
+    "test": 1501,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "P53_HUMAN_Giacomelli_2018_Null_Nutlin"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_Null_Etoposide": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1567429999999996,
+      0.16021141600000013,
+      0.5529300440000003,
+      0.8980933480000002
+    ],
+    "dms_id": "P53_HUMAN_Giacomelli_2018_Null_Etoposide",
+    "train": 4465,
+    "dev": 1501,
+    "test": 1501,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "P53_HUMAN_Giacomelli_2018_Null_Etoposide"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_P53_HUMAN_Kotler_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.093582936,
+      0.8028507799999999,
+      1.7813682400000002,
+      2.2913639199999998
+    ],
+    "dms_id": "P53_HUMAN_Kotler_2018",
+    "train": 664,
+    "dev": 229,
+    "test": 155,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "P53_HUMAN_Kotler_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_WT_Nutlin": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1773623199999999,
+      -0.36439559199999993,
+      0.2597865200000005,
+      1.02889944
+    ],
+    "dms_id": "P53_HUMAN_Giacomelli_2018_WT_Nutlin",
+    "train": 4465,
+    "dev": 1501,
+    "test": 1501,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "P53_HUMAN_Giacomelli_2018_WT_Nutlin"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_P84126_THETH_Chan_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.05919684,
+      -0.90550418,
+      -0.5488839799999996,
+      0.22815110600000013
+    ],
+    "dms_id": "P84126_THETH_Chan_2017",
+    "train": 912,
+    "dev": 304,
+    "test": 303,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "P84126_THETH_Chan_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PA_I34A1_Wu_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.096132435,
+      0.19995002,
+      0.37742355000000005,
+      0.6909077
+    ],
+    "dms_id": "PA_I34A1_Wu_2015",
+    "train": 1126,
+    "dev": 383,
+    "test": 311,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PA_I34A1_Wu_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PAI1_HUMAN_Huttinger_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.27902268,
+      -0.33504998799999974,
+      0.26549143,
+      0.772708068
+    ],
+    "dms_id": "PAI1_HUMAN_Huttinger_2021",
+    "train": 3197,
+    "dev": 1093,
+    "test": 1055,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PAI1_HUMAN_Huttinger_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PIN1_HUMAN_Tsuboyama_2023_1I6C": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.4375496199999998,
+      -0.69827228,
+      -0.20873037599999977,
+      -0.019144402199999997
+    ],
+    "dms_id": "PIN1_HUMAN_Tsuboyama_2023_1I6C",
+    "train": 394,
+    "dev": 146,
+    "test": 146,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PIN1_HUMAN_Tsuboyama_2023_1I6C"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PITX2_HUMAN_Tsuboyama_2023_2L7M": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6619376,
+      -0.62412935,
+      -0.1989441199999997,
+      0.16538487
+    ],
+    "dms_id": "PITX2_HUMAN_Tsuboyama_2023_2L7M",
+    "train": 526,
+    "dev": 206,
+    "test": 206,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PITX2_HUMAN_Tsuboyama_2023_2L7M"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PKN1_HUMAN_Tsuboyama_2023_1URF": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.81197517,
+      -0.24994068999999997,
+      0.011936488600000118,
+      0.19177839000000002
+    ],
+    "dms_id": "PKN1_HUMAN_Tsuboyama_2023_1URF",
+    "train": 773,
+    "dev": 257,
+    "test": 271,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PKN1_HUMAN_Tsuboyama_2023_1URF"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PABP_YEAST_Melamed_2013": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.35343343800000004,
+      0.773391376,
+      0.917598794,
+      1.0024694200000002
+    ],
+    "dms_id": "PABP_YEAST_Melamed_2013",
+    "train": 708,
+    "dev": 240,
+    "test": 239,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PABP_YEAST_Melamed_2013"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_POLG_CXB3N_Mattenberger_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.40867528,
+      -2.9702621199999997,
+      -2.4761921399999998,
+      -1.6290029799999997
+    ],
+    "dms_id": "POLG_CXB3N_Mattenberger_2021",
+    "train": 9429,
+    "dev": 3133,
+    "test": 3149,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "POLG_CXB3N_Mattenberger_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_POLG_HCVJF_Qi_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.0,
+      -1.0,
+      -0.8645549,
+      -0.33765742
+    ],
+    "dms_id": "POLG_HCVJF_Qi_2014",
+    "train": 966,
+    "dev": 323,
+    "test": 341,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "POLG_HCVJF_Qi_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_POLG_DEN26_Suphatrakul_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -6.976216679999999,
+      -6.336288079999999,
+      -4.342760819999999,
+      -1.25639802
+    ],
+    "dms_id": "POLG_DEN26_Suphatrakul_2023",
+    "train": 10217,
+    "dev": 3273,
+    "test": 3407,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "POLG_DEN26_Suphatrakul_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_POLG_PESV_Tsuboyama_2023_2MXD": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.17140388,
+      -1.0556457399999999,
+      -0.4884540819999999,
+      -0.1710349679999999
+    ],
+    "dms_id": "POLG_PESV_Tsuboyama_2023_2MXD",
+    "train": 584,
+    "dev": 206,
+    "test": 205,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "POLG_PESV_Tsuboyama_2023_2MXD"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PPARG_HUMAN_Majithia_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.2496,
+      -1.568,
+      -0.32679999999999926,
+      0.5496000000000004
+    ],
+    "dms_id": "PPARG_HUMAN_Majithia_2016",
+    "train": 5738,
+    "dev": 1919,
+    "test": 1919,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PPARG_HUMAN_Majithia_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PR40A_HUMAN_Tsuboyama_2023_1UZC": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.38236738,
+      -0.44008755400000005,
+      -0.09885515199999997,
+      0.08183409799999998
+    ],
+    "dms_id": "PR40A_HUMAN_Tsuboyama_2023_1UZC",
+    "train": 684,
+    "dev": 232,
+    "test": 247,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PR40A_HUMAN_Tsuboyama_2023_1UZC"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PPM1D_HUMAN_Miller_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.3101999999999999,
+      -0.11439999999999986,
+      0.05,
+      0.207
+    ],
+    "dms_id": "PPM1D_HUMAN_Miller_2022",
+    "train": 4760,
+    "dev": 1547,
+    "test": 1582,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PPM1D_HUMAN_Miller_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PSAE_PICP2_Tsuboyama_2023_1PSE": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.438168458,
+      -0.1106993452,
+      0.08269409100000004,
+      0.239579476
+    ],
+    "dms_id": "PSAE_PICP2_Tsuboyama_2023_1PSE",
+    "train": 708,
+    "dev": 251,
+    "test": 260,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PSAE_PICP2_Tsuboyama_2023_1PSE"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PRKN_HUMAN_Clausen_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.1579640660000001,
+      0.739183324,
+      0.9073961280000001,
+      0.99030006
+    ],
+    "dms_id": "PRKN_HUMAN_Clausen_2023",
+    "train": 5254,
+    "dev": 1755,
+    "test": 1747,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PRKN_HUMAN_Clausen_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PTEN_HUMAN_Matreyek_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.42582913000000006,
+      0.6884176200000001,
+      0.8621939080000001,
+      0.994193588
+    ],
+    "dms_id": "PTEN_HUMAN_Matreyek_2021",
+    "train": 3078,
+    "dev": 871,
+    "test": 1134,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PTEN_HUMAN_Matreyek_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PTEN_HUMAN_Mighell_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.28200282,
+      -0.43361133799999996,
+      -0.07888269799999999,
+      0.20623028200000004
+    ],
+    "dms_id": "PTEN_HUMAN_Mighell_2018",
+    "train": 4277,
+    "dev": 1539,
+    "test": 1444,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PTEN_HUMAN_Mighell_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q53Z42_HUMAN_McShan_2019_binding-TAPBPR": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.9239999999999998,
+      -0.20799999999999955,
+      0.275,
+      0.885
+    ],
+    "dms_id": "Q53Z42_HUMAN_McShan_2019_binding-TAPBPR",
+    "train": 2032,
+    "dev": 684,
+    "test": 628,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q53Z42_HUMAN_McShan_2019_binding-TAPBPR"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q2N0S5_9HIV1_Haddox_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -4.8311642599999995,
+      -3.3421462799999997,
+      -1.5985560199999995,
+      -0.32118069199999993
+    ],
+    "dms_id": "Q2N0S5_9HIV1_Haddox_2018",
+    "train": 7638,
+    "dev": 2546,
+    "test": 2545,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q2N0S5_9HIV1_Haddox_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q53Z42_HUMAN_McShan_2019_expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.995,
+      -1.51,
+      -0.24,
+      0.69
+    ],
+    "dms_id": "Q53Z42_HUMAN_McShan_2019_expression",
+    "train": 2032,
+    "dev": 684,
+    "test": 628,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q53Z42_HUMAN_McShan_2019_expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q59976_STRSQ_Romero_2015": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.584,
+      -0.8,
+      -0.483,
+      -0.268
+    ],
+    "dms_id": "Q59976_STRSQ_Romero_2015",
+    "train": 1811,
+    "dev": 590,
+    "test": 598,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q59976_STRSQ_Romero_2015"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q837P4_ENTFA_Meier_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.7063865999999996,
+      -1.0995711999999993,
+      -0.373681856,
+      -0.14645852999999973
+    ],
+    "dms_id": "Q837P4_ENTFA_Meier_2023",
+    "train": 400,
+    "dev": 149,
+    "test": 148,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q837P4_ENTFA_Meier_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q837P5_ENTFA_Meier_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.7405035,
+      -1.1782478,
+      -0.6525168399999997,
+      -0.29369843
+    ],
+    "dms_id": "Q837P5_ENTFA_Meier_2023",
+    "train": 436,
+    "dev": 148,
+    "test": 163,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q837P5_ENTFA_Meier_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_R1AB_SARS2_Flynn_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.033026576,
+      0.711726972,
+      0.961906852,
+      0.9969110640000001
+    ],
+    "dms_id": "R1AB_SARS2_Flynn_2022",
+    "train": 3429,
+    "dev": 1158,
+    "test": 1138,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "R1AB_SARS2_Flynn_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RAD_ANTMA_Tsuboyama_2023_2CJJ": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.0108157,
+      -0.36610928,
+      -0.006900301999999999,
+      0.26430616
+    ],
+    "dms_id": "RAD_ANTMA_Tsuboyama_2023_2CJJ",
+    "train": 456,
+    "dev": 162,
+    "test": 156,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RAD_ANTMA_Tsuboyama_2023_2CJJ"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RAF1_HUMAN_Zinkus-Boltz_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.32616695999999995,
+      -0.070530586,
+      -0.03394599559999996,
+      0.0256504
+    ],
+    "dms_id": "RAF1_HUMAN_Zinkus-Boltz_2019",
+    "train": 175,
+    "dev": 58,
+    "test": 64,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RAF1_HUMAN_Zinkus-Boltz_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q6WV12_9MAXI_Somermeyer_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      13750.5782,
+      15365.3176,
+      16274.7946,
+      17185.3312
+    ],
+    "dms_id": "Q6WV12_9MAXI_Somermeyer_2022",
+    "train": 697,
+    "dev": 233,
+    "test": 211,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q6WV12_9MAXI_Somermeyer_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RASH_HUMAN_Bandaru_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.2890889,
+      -0.090101734,
+      0.014403394000000066,
+      0.118569255
+    ],
+    "dms_id": "RASH_HUMAN_Bandaru_2017",
+    "train": 1881,
+    "dev": 627,
+    "test": 626,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RASH_HUMAN_Bandaru_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_PHOT_CHLRE_Chen_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.93441222,
+      1.1438807,
+      1.22906124,
+      1.30429838
+    ],
+    "dms_id": "PHOT_CHLRE_Chen_2023",
+    "train": 1258,
+    "dev": 425,
+    "test": 439,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "PHOT_CHLRE_Chen_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_Q8WTC7_9CNID_Somermeyer_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      6485.1946,
+      8577.2994,
+      9157.738800000001,
+      9556.9596
+    ],
+    "dms_id": "Q8WTC7_9CNID_Somermeyer_2022",
+    "train": 743,
+    "dev": 214,
+    "test": 244,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "Q8WTC7_9CNID_Somermeyer_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RBP1_HUMAN_Tsuboyama_2023_2KWH": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.737804198,
+      -0.3357041,
+      -0.04103867199999999,
+      0.18387537000000004
+    ],
+    "dms_id": "RBP1_HUMAN_Tsuboyama_2023_2KWH",
+    "train": 560,
+    "dev": 208,
+    "test": 207,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RBP1_HUMAN_Tsuboyama_2023_2KWH"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RASK_HUMAN_Weng_2022_abundance": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.79060612,
+      -0.5062585239999999,
+      -0.2730517519999999,
+      -0.07929109399999999
+    ],
+    "dms_id": "RASK_HUMAN_Weng_2022_abundance",
+    "train": 1670,
+    "dev": 701,
+    "test": 695,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RASK_HUMAN_Weng_2022_abundance"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RCD1_ARATH_Tsuboyama_2023_5OAO": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.9533965,
+      -0.52080315,
+      -0.14601468999999972,
+      0.15968695
+    ],
+    "dms_id": "RCD1_ARATH_Tsuboyama_2023_5OAO",
+    "train": 556,
+    "dev": 209,
+    "test": 223,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RCD1_ARATH_Tsuboyama_2023_5OAO"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RCRO_LAMBD_Tsuboyama_2023_1ORC": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.9447361,
+      -0.87609303,
+      -0.35693523,
+      -0.0011028644
+    ],
+    "dms_id": "RCRO_LAMBD_Tsuboyama_2023_1ORC",
+    "train": 701,
+    "dev": 247,
+    "test": 247,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RCRO_LAMBD_Tsuboyama_2023_1ORC"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RD23A_HUMAN_Tsuboyama_2023_1IFY": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6622451199999995,
+      -0.84802888,
+      -0.4072090839999999,
+      -0.030695711599999814
+    ],
+    "dms_id": "RD23A_HUMAN_Tsuboyama_2023_1IFY",
+    "train": 470,
+    "dev": 163,
+    "test": 165,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RD23A_HUMAN_Tsuboyama_2023_1IFY"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_REV_HV1H2_Fernandes_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.195801008,
+      -0.071360726,
+      -0.010647293399999964,
+      0.050209103600000034
+    ],
+    "dms_id": "REV_HV1H2_Fernandes_2016",
+    "train": 1273,
+    "dev": 437,
+    "test": 437,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "REV_HV1H2_Fernandes_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RASK_HUMAN_Weng_2022_binding-DARPin_K55": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.25397497999999996,
+      -0.09098047199999999,
+      -0.03301854519999996,
+      0.015467656200000056
+    ],
+    "dms_id": "RASK_HUMAN_Weng_2022_binding-DARPin_K55",
+    "train": 1692,
+    "dev": 699,
+    "test": 693,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RASK_HUMAN_Weng_2022_binding-DARPin_K55"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RFAH_ECOLI_Tsuboyama_2023_2LCL": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.81444152,
+      -0.5044384279999999,
+      -0.13981745999999928,
+      0.288760956
+    ],
+    "dms_id": "RFAH_ECOLI_Tsuboyama_2023_2LCL",
+    "train": 584,
+    "dev": 190,
+    "test": 195,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RFAH_ECOLI_Tsuboyama_2023_2LCL"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RDRP_I33A0_Li_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.9521270400000001,
+      -1.70839844,
+      -1.3733205199999998,
+      -0.824623928
+    ],
+    "dms_id": "RDRP_I33A0_Li_2023",
+    "train": 7087,
+    "dev": 2458,
+    "test": 2458,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RDRP_I33A0_Li_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RL20_AQUAE_Tsuboyama_2023_1GYZ": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.467124806,
+      -0.13205147599999997,
+      -0.022868193599999986,
+      0.07404627600000005
+    ],
+    "dms_id": "RL20_AQUAE_Tsuboyama_2023_1GYZ",
+    "train": 665,
+    "dev": 228,
+    "test": 228,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RL20_AQUAE_Tsuboyama_2023_1GYZ"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RL40A_YEAST_Mavor_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.44034876,
+      -0.15724659400000002,
+      -0.04540384599999992,
+      0.0007248413999999952
+    ],
+    "dms_id": "RL40A_YEAST_Mavor_2016",
+    "train": 759,
+    "dev": 248,
+    "test": 246,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RL40A_YEAST_Mavor_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RL40A_YEAST_Roscoe_2013": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.6765865,
+      -0.20897599,
+      -0.05574993999999994,
+      0.0030271981
+    ],
+    "dms_id": "RL40A_YEAST_Roscoe_2013",
+    "train": 716,
+    "dev": 258,
+    "test": 221,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RL40A_YEAST_Roscoe_2013"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RL40A_YEAST_Roscoe_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.14092926000000003,
+      0.87112906,
+      0.966147264,
+      1.0061854
+    ],
+    "dms_id": "RL40A_YEAST_Roscoe_2014",
+    "train": 845,
+    "dev": 270,
+    "test": 265,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RL40A_YEAST_Roscoe_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RNC_ECOLI_Weeks_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.401489328,
+      -0.05904057119999999,
+      -0.010936274599999997,
+      0.02470337
+    ],
+    "dms_id": "RNC_ECOLI_Weeks_2023",
+    "train": 2564,
+    "dev": 852,
+    "test": 861,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RNC_ECOLI_Weeks_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RPC1_BP434_Tsuboyama_2023_1R69": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.2195141200000004,
+      -1.10552336,
+      -0.35048370399999984,
+      0.0923947739999999
+    ],
+    "dms_id": "RPC1_BP434_Tsuboyama_2023_1R69",
+    "train": 659,
+    "dev": 225,
+    "test": 240,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RPC1_BP434_Tsuboyama_2023_1R69"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RPC1_LAMBD_Li_2019_high-expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -10.6208116,
+      -5.807415799999999,
+      -5.46571516,
+      -5.11519272
+    ],
+    "dms_id": "RPC1_LAMBD_Li_2019_high-expression",
+    "train": 212,
+    "dev": 68,
+    "test": 71,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RPC1_LAMBD_Li_2019_high-expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RS15_GEOSE_Tsuboyama_2023_1A32": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.86911803,
+      -0.25069928,
+      0.02483547300000025,
+      0.2353665
+    ],
+    "dms_id": "RS15_GEOSE_Tsuboyama_2023_1A32",
+    "train": 701,
+    "dev": 247,
+    "test": 247,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RS15_GEOSE_Tsuboyama_2023_1A32"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_RPC1_LAMBD_Li_2019_low-expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -10.821015099999999,
+      -9.7520386,
+      -8.3182366,
+      -7.774653799999999
+    ],
+    "dms_id": "RPC1_LAMBD_Li_2019_low-expression",
+    "train": 212,
+    "dev": 68,
+    "test": 71,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "RPC1_LAMBD_Li_2019_low-expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_S22A1_HUMAN_Yee_2023_abundance": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.6342274,
+      -0.56862104,
+      -0.05475790999999969,
+      0.3583974
+    ],
+    "dms_id": "S22A1_HUMAN_Yee_2023_abundance",
+    "train": 5781,
+    "dev": 1993,
+    "test": 2029,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "S22A1_HUMAN_Yee_2023_abundance"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_S22A1_HUMAN_Yee_2023_activity": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1678125799999999,
+      -0.285347572,
+      0.16616610600000012,
+      0.5272364620000002
+    ],
+    "dms_id": "S22A1_HUMAN_Yee_2023_activity",
+    "train": 5948,
+    "dev": 2083,
+    "test": 2063,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "S22A1_HUMAN_Yee_2023_activity"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SAV1_MOUSE_Tsuboyama_2023_2YSB": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.7039829,
+      -0.8529261819999999,
+      -0.22626764999999974,
+      -0.0037293319999999407
+    ],
+    "dms_id": "SAV1_MOUSE_Tsuboyama_2023_2YSB",
+    "train": 384,
+    "dev": 160,
+    "test": 135,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SAV1_MOUSE_Tsuboyama_2023_2YSB"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SBI_STAAM_Tsuboyama_2023_2JVG": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.364639,
+      -0.86900103,
+      -0.45195191999999995,
+      -0.11642528
+    ],
+    "dms_id": "SBI_STAAM_Tsuboyama_2023_2JVG",
+    "train": 596,
+    "dev": 203,
+    "test": 226,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SBI_STAAM_Tsuboyama_2023_2JVG"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SCIN_STAAR_Tsuboyama_2023_2QFF": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.4512713399999997,
+      -0.7167899759999999,
+      -0.3169153619999999,
+      -0.0014275154399997572
+    ],
+    "dms_id": "SCIN_STAAR_Tsuboyama_2023_2QFF",
+    "train": 725,
+    "dev": 262,
+    "test": 225,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SCIN_STAAR_Tsuboyama_2023_2QFF"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SCN5A_HUMAN_Glazer_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -150.74,
+      -110.52,
+      -82.69999999999999,
+      -63.62
+    ],
+    "dms_id": "SCN5A_HUMAN_Glazer_2019",
+    "train": 110,
+    "dev": 57,
+    "test": 57,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SCN5A_HUMAN_Glazer_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SDA_BACSU_Tsuboyama_2023_1PV0": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.3031214999999998,
+      -0.5082234239999999,
+      -0.2153817499999999,
+      0.025075351400000005
+    ],
+    "dms_id": "SDA_BACSU_Tsuboyama_2023_1PV0",
+    "train": 492,
+    "dev": 171,
+    "test": 171,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SDA_BACSU_Tsuboyama_2023_1PV0"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SC6A4_HUMAN_Young_2021": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.5482429,
+      -0.58427626,
+      0.1014503400000006,
+      0.5481345
+    ],
+    "dms_id": "SC6A4_HUMAN_Young_2021",
+    "train": 6916,
+    "dev": 2332,
+    "test": 2328,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SC6A4_HUMAN_Young_2021"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SERC_HUMAN_Xie_2023": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.7006124020000001,
+      0.898168822,
+      0.9604452,
+      1.00157812
+    ],
+    "dms_id": "SERC_HUMAN_Xie_2023",
+    "train": 1152,
+    "dev": 383,
+    "test": 379,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SERC_HUMAN_Xie_2023"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SOX30_HUMAN_Tsuboyama_2023_7JJK": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.05903982,
+      -0.49951704199999997,
+      -0.19514689199999996,
+      0.10807213520000016
+    ],
+    "dms_id": "SOX30_HUMAN_Tsuboyama_2023_7JJK",
+    "train": 585,
+    "dev": 224,
+    "test": 201,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SOX30_HUMAN_Tsuboyama_2023_7JJK"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPA_STAAU_Tsuboyama_2023_1LP1": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.3689919,
+      -0.7692139,
+      -0.3199849699999999,
+      -0.016634502
+    ],
+    "dms_id": "SPA_STAAU_Tsuboyama_2023_1LP1",
+    "train": 621,
+    "dev": 209,
+    "test": 205,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPA_STAAU_Tsuboyama_2023_1LP1"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SHOC2_HUMAN_Kwon_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8920210199999999,
+      -0.485338232,
+      -0.18835378199999997,
+      0.13756395800000007
+    ],
+    "dms_id": "SHOC2_HUMAN_Kwon_2022",
+    "train": 6567,
+    "dev": 2203,
+    "test": 2202,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SHOC2_HUMAN_Kwon_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPG2_STRSG_Tsuboyama_2023_5UBS": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.5114922199999998,
+      -0.79226012,
+      -0.3326400779999998,
+      0.03042631960000008
+    ],
+    "dms_id": "SPG2_STRSG_Tsuboyama_2023_5UBS",
+    "train": 597,
+    "dev": 209,
+    "test": 223,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPG2_STRSG_Tsuboyama_2023_5UBS"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPIKE_SARS2_Starr_2020_binding": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.33,
+      -0.7619999999999993,
+      -0.2,
+      -0.04
+    ],
+    "dms_id": "SPIKE_SARS2_Starr_2020_binding",
+    "train": 2268,
+    "dev": 755,
+    "test": 779,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPIKE_SARS2_Starr_2020_binding"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPIKE_SARS2_Starr_2020_expression": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.284,
+      -1.09,
+      -0.36,
+      -0.09
+    ],
+    "dms_id": "SPIKE_SARS2_Starr_2020_expression",
+    "train": 2264,
+    "dev": 755,
+    "test": 779,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPIKE_SARS2_Starr_2020_expression"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPTN1_CHICK_Tsuboyama_2023_1TUD": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.65164726,
+      -1.5519197599999996,
+      -0.8160151419999997,
+      -0.16827956399999985
+    ],
+    "dms_id": "SPTN1_CHICK_Tsuboyama_2023_1TUD",
+    "train": 625,
+    "dev": 216,
+    "test": 210,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPTN1_CHICK_Tsuboyama_2023_1TUD"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SQSTM_MOUSE_Tsuboyama_2023_2RRU": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.67914384,
+      -1.15844576,
+      -0.7386862199999998,
+      -0.12265139999999979
+    ],
+    "dms_id": "SQSTM_MOUSE_Tsuboyama_2023_2RRU",
+    "train": 423,
+    "dev": 142,
+    "test": 142,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SQSTM_MOUSE_Tsuboyama_2023_2RRU"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SR43C_ARATH_Tsuboyama_2023_2N88": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.02544286,
+      -0.934454864,
+      -0.38136982399999997,
+      -0.008679323399999966
+    ],
+    "dms_id": "SR43C_ARATH_Tsuboyama_2023_2N88",
+    "train": 522,
+    "dev": 180,
+    "test": 187,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SR43C_ARATH_Tsuboyama_2023_2N88"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SRBS1_HUMAN_Tsuboyama_2023_2O2W": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.0415184,
+      -1.1737515,
+      -0.5824324499999998,
+      -0.19459347
+    ],
+    "dms_id": "SRBS1_HUMAN_Tsuboyama_2023_2O2W",
+    "train": 696,
+    "dev": 256,
+    "test": 259,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SRBS1_HUMAN_Tsuboyama_2023_2O2W"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPG1_STRSG_Wu_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.00582923958,
+      0.012442265000000003,
+      0.06197451400000002,
+      0.379125752
+    ],
+    "dms_id": "SPG1_STRSG_Wu_2016",
+    "train": 38,
+    "dev": 19,
+    "test": 19,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPG1_STRSG_Wu_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SRC_HUMAN_Ahler_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.49584972,
+      -0.887384972,
+      -0.29928589599999994,
+      0.22695105200000043
+    ],
+    "dms_id": "SRC_HUMAN_Ahler_2019",
+    "train": 2014,
+    "dev": 627,
+    "test": 731,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SRC_HUMAN_Ahler_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.558654168,
+      -0.27708246,
+      0.051499068200000137,
+      0.36052927
+    ],
+    "dms_id": "SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM",
+    "train": 2160,
+    "dev": 703,
+    "test": 774,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SRC_HUMAN_Nguyen_2022": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.02849736,
+      -0.72740988,
+      -0.378174908,
+      -0.041493893999999865
+    ],
+    "dms_id": "SRC_HUMAN_Nguyen_2022",
+    "train": 2010,
+    "dev": 627,
+    "test": 729,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SRC_HUMAN_Nguyen_2022"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SUMO1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.0124965426,
+      0.20192707000000001,
+      0.4962713400000001,
+      0.74225392
+    ],
+    "dms_id": "SUMO1_HUMAN_Weile_2017",
+    "train": 1023,
+    "dev": 305,
+    "test": 372,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SUMO1_HUMAN_Weile_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TADBP_HUMAN_Bolognesi_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.061565976,
+      -0.013192277199999991,
+      0.016221058000000024,
+      0.067673674
+    ],
+    "dms_id": "TADBP_HUMAN_Bolognesi_2019",
+    "train": 710,
+    "dev": 231,
+    "test": 255,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TADBP_HUMAN_Bolognesi_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SYUA_HUMAN_Newberry_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.07150087,
+      -0.02864127,
+      -0.005124603999999998,
+      0.01462203
+    ],
+    "dms_id": "SYUA_HUMAN_Newberry_2020",
+    "train": 1476,
+    "dev": 511,
+    "test": 510,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SYUA_HUMAN_Newberry_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TCRG1_MOUSE_Tsuboyama_2023_1E0L": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.8430252,
+      -0.9178756840000001,
+      -0.59277212,
+      -0.25643959200000005
+    ],
+    "dms_id": "TCRG1_MOUSE_Tsuboyama_2023_1E0L",
+    "train": 365,
+    "dev": 128,
+    "test": 128,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TCRG1_MOUSE_Tsuboyama_2023_1E0L"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TAT_HV1BR_Fernandes_2016": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.20647027,
+      -0.06456937,
+      -0.009511332999999959,
+      0.03234225
+    ],
+    "dms_id": "TAT_HV1BR_Fernandes_2016",
+    "train": 931,
+    "dev": 323,
+    "test": 323,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TAT_HV1BR_Fernandes_2016"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_THO1_YEAST_Tsuboyama_2023_2WQG": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.5203013,
+      -0.84457284,
+      -0.35261524,
+      0.016296482
+    ],
+    "dms_id": "THO1_YEAST_Tsuboyama_2023_2WQG",
+    "train": 401,
+    "dev": 112,
+    "test": 143,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "THO1_YEAST_Tsuboyama_2023_2WQG"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TNKS2_HUMAN_Tsuboyama_2023_5JRT": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.8949281199999999,
+      -1.1090690399999998,
+      -0.4723724899999997,
+      -0.079639005
+    ],
+    "dms_id": "TNKS2_HUMAN_Tsuboyama_2023_5JRT",
+    "train": 662,
+    "dev": 228,
+    "test": 228,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TNKS2_HUMAN_Tsuboyama_2023_5JRT"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TPK1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.066505938,
+      0.13125203200000005,
+      0.4753186760000001,
+      0.9359262440000001
+    ],
+    "dms_id": "TPK1_HUMAN_Weile_2017",
+    "train": 1749,
+    "dev": 704,
+    "test": 728,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TPK1_HUMAN_Weile_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TPOR_HUMAN_Bridgford_2020": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.62015246,
+      -0.5055851439999999,
+      -0.34241653199999994,
+      0.07856668560000021
+    ],
+    "dms_id": "TPOR_HUMAN_Bridgford_2020",
+    "train": 329,
+    "dev": 114,
+    "test": 119,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TPOR_HUMAN_Bridgford_2020"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TPMT_HUMAN_Matreyek_2018": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.4582413,
+      0.7143851,
+      0.8844886,
+      1.0376548
+    ],
+    "dms_id": "TPMT_HUMAN_Matreyek_2018",
+    "train": 2166,
+    "dev": 728,
+    "test": 754,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TPMT_HUMAN_Matreyek_2018"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TRPC_SACS2_Chan_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.0539223800000002,
+      -0.916364732,
+      -0.6171364299999996,
+      0.1266588620000001
+    ],
+    "dms_id": "TRPC_SACS2_Chan_2017",
+    "train": 912,
+    "dev": 304,
+    "test": 303,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TRPC_SACS2_Chan_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_UBC9_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.005822573199999997,
+      0.24007757400000013,
+      0.6136897600000001,
+      0.9154536080000002
+    ],
+    "dms_id": "UBC9_HUMAN_Weile_2017",
+    "train": 1598,
+    "dev": 513,
+    "test": 452,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "UBC9_HUMAN_Weile_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_TRPC_THEMA_Chan_2017": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.1710105,
+      -1.05825966,
+      -0.9026077679999996,
+      -0.26198546799999967
+    ],
+    "dms_id": "TRPC_THEMA_Chan_2017",
+    "train": 912,
+    "dev": 304,
+    "test": 303,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "TRPC_THEMA_Chan_2017"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_UBE4B_HUMAN_Tsuboyama_2023_3L1X": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.71852108,
+      -0.972790048,
+      -0.49302793599999994,
+      -0.11429227159999994
+    ],
+    "dms_id": "UBE4B_HUMAN_Tsuboyama_2023_3L1X",
+    "train": 673,
+    "dev": 196,
+    "test": 249,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "UBE4B_HUMAN_Tsuboyama_2023_3L1X"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_UBE4B_MOUSE_Starita_2013": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.81625624,
+      -0.8575040599999999,
+      -0.3156118,
+      0.13446459000000002
+    ],
+    "dms_id": "UBE4B_MOUSE_Starita_2013",
+    "train": 488,
+    "dev": 183,
+    "test": 228,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "UBE4B_MOUSE_Starita_2013"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_UBR5_HUMAN_Tsuboyama_2023_1I2T": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.41240504,
+      -0.397431724,
+      -0.07124299199999999,
+      0.140664402
+    ],
+    "dms_id": "UBR5_HUMAN_Tsuboyama_2023_1I2T",
+    "train": 643,
+    "dev": 226,
+    "test": 225,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "UBR5_HUMAN_Tsuboyama_2023_1I2T"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_VG08_BPP22_Tsuboyama_2023_2GP8": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.0306961000000001,
+      -0.5674258019999999,
+      -0.2754480319999999,
+      0.028778721200000097
+    ],
+    "dms_id": "VG08_BPP22_Tsuboyama_2023_2GP8",
+    "train": 432,
+    "dev": 146,
+    "test": 145,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "VG08_BPP22_Tsuboyama_2023_2GP8"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_VILI_CHICK_Tsuboyama_2023_1YU5": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.66832258,
+      -1.0033049,
+      -0.3264653319999997,
+      -0.028216983600000013
+    ],
+    "dms_id": "VILI_CHICK_Tsuboyama_2023_1YU5",
+    "train": 714,
+    "dev": 247,
+    "test": 241,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "VILI_CHICK_Tsuboyama_2023_1YU5"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_VKOR1_HUMAN_Chiasson_2020_activity": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.15334588,
+      0.7269614,
+      0.9438326000000005,
+      1.083115
+    ],
+    "dms_id": "VKOR1_HUMAN_Chiasson_2020_activity",
+    "train": 461,
+    "dev": 127,
+    "test": 109,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "VKOR1_HUMAN_Chiasson_2020_activity"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_VKOR1_HUMAN_Chiasson_2020_abundance": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.31994606800000003,
+      0.6371285560000001,
+      0.8641379520000001,
+      0.983904542
+    ],
+    "dms_id": "VKOR1_HUMAN_Chiasson_2020_abundance",
+    "train": 1648,
+    "dev": 534,
+    "test": 513,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "VKOR1_HUMAN_Chiasson_2020_abundance"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_VRPI_BPT7_Tsuboyama_2023_2WNM": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.8259359800000001,
+      -0.856135094,
+      -0.19965904199999904,
+      0.07032745700000001
+    ],
+    "dms_id": "VRPI_BPT7_Tsuboyama_2023_2WNM",
+    "train": 624,
+    "dev": 209,
+    "test": 214,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "VRPI_BPT7_Tsuboyama_2023_2WNM"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_YAIA_ECOLI_Tsuboyama_2023_2KVT": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -2.34581554,
+      -1.20562346,
+      -0.5850428199999999,
+      -0.18958648199999964
+    ],
+    "dms_id": "YAIA_ECOLI_Tsuboyama_2023_2KVT",
+    "train": 534,
+    "dev": 197,
+    "test": 197,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "YAIA_ECOLI_Tsuboyama_2023_2KVT"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_YNZC_BACSU_Tsuboyama_2023_2JVD": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -1.3841907799999995,
+      -0.5691713119999999,
+      -0.28326396,
+      -0.039392534399999346
+    ],
+    "dms_id": "YNZC_BACSU_Tsuboyama_2023_2JVD",
+    "train": 420,
+    "dev": 145,
+    "test": 149,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "YNZC_BACSU_Tsuboyama_2023_2JVD"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_HIS7_YEAST_Pokusaeva_2019": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.932469968,
+      0.9870018,
+      1.01108218,
+      1.03244502
+    ],
+    "dms_id": "HIS7_YEAST_Pokusaeva_2019",
+    "train": 90,
+    "dev": 41,
+    "test": 37,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "HIS7_YEAST_Pokusaeva_2019"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_YAP1_HUMAN_Araya_2012": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      0.189756234,
+      0.4675149920000001,
+      0.760484692,
+      1.0907268600000002
+    ],
+    "dms_id": "YAP1_HUMAN_Araya_2012",
+    "train": 193,
+    "dev": 82,
+    "test": 87,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "YAP1_HUMAN_Araya_2012"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "pg_SPG1_STRSG_Olson_2014": {
+    "primitive": "score",
+    "modality": [
+      "protein"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -3.87208496,
+      -0.9095443599999999,
+      0.37915143800000084,
+      0.8228111400000001
+    ],
+    "dms_id": "SPG1_STRSG_Olson_2014",
+    "train": 627,
+    "dev": 209,
+    "test": 209,
+    "provenance": {
+      "revision": null,
+      "license": "?",
+      "source": "proteingym_dms_folds",
+      "origin": "SPG1_STRSG_Olson_2014"
+    },
+    "status": "ready",
+    "split_protocol": "fold_contiguous_5: f0=test f1=dev f2-4=train",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00025": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7540397562189924,
+      -0.1822052084403796,
+      0.20680866974156376,
+      0.8469275240742269
+    ],
+    "rbp": "HybID00025",
+    "train": 19694,
+    "dev": 2403,
+    "test": 2394,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00025"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00027": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7557533048884171,
+      -0.25659847737069624,
+      0.25872335767180665,
+      1.002748882599275
+    ],
+    "rbp": "HybID00027",
+    "train": 19650,
+    "dev": 2397,
+    "test": 2392,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00027"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00032": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.706167316886943,
+      -0.26166172567881985,
+      0.354083940686542,
+      1.2927859801480253
+    ],
+    "rbp": "HybID00032",
+    "train": 19690,
+    "dev": 2404,
+    "test": 2394,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00032"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00034": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.683528382240352,
+      -0.3107817552480773,
+      0.2480205180850292,
+      1.191295488429551
+    ],
+    "rbp": "HybID00034",
+    "train": 19630,
+    "dev": 2392,
+    "test": 2375,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00034"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00052": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7357021834021714,
+      -0.2709276679495792,
+      0.27109973312991925,
+      1.2349954893935786
+    ],
+    "rbp": "HybID00052",
+    "train": 19695,
+    "dev": 2403,
+    "test": 2394,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00052"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00065": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7347797827550322,
+      -0.29504876075857084,
+      0.24296329127691818,
+      1.0974864799887318
+    ],
+    "rbp": "HybID00065",
+    "train": 19657,
+    "dev": 2404,
+    "test": 2391,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00065"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00073": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7640549364710723,
+      -0.2735693766388856,
+      0.22443693207172793,
+      1.023990670784116
+    ],
+    "rbp": "HybID00073",
+    "train": 19696,
+    "dev": 2402,
+    "test": 2394,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00073"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00077": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7723376678163459,
+      -0.2945509194276933,
+      0.1925512119587393,
+      0.883324609170732
+    ],
+    "rbp": "HybID00077",
+    "train": 19685,
+    "dev": 2401,
+    "test": 2392,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00077"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00080": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7950056152890859,
+      -0.1877713502980767,
+      0.18096080326540376,
+      0.9065069269465993
+    ],
+    "rbp": "HybID00080",
+    "train": 19691,
+    "dev": 2402,
+    "test": 2393,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00080"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00082": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7735763105171518,
+      -0.2827365546620131,
+      0.20076041837319508,
+      0.9655881063092367
+    ],
+    "rbp": "HybID00082",
+    "train": 19667,
+    "dev": 2402,
+    "test": 2392,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00082"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00083": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7608445950162124,
+      -0.24466484848810363,
+      0.18878104364179651,
+      0.9419736233074809
+    ],
+    "rbp": "HybID00083",
+    "train": 19667,
+    "dev": 2402,
+    "test": 2392,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00083"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00085": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.6595107376748885,
+      -0.23521680296824093,
+      0.3669267431629669,
+      1.3625308813283532
+    ],
+    "rbp": "HybID00085",
+    "train": 19698,
+    "dev": 2404,
+    "test": 2393,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00085"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00088": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.8162903478756401,
+      -0.2115951715470303,
+      0.1720510206746795,
+      0.9433737689405151
+    ],
+    "rbp": "HybID00088",
+    "train": 19670,
+    "dev": 2397,
+    "test": 2391,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00088"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
+    "dup_dropped": 0
+  },
+  "rnac_HybID00097": {
+    "primitive": "score",
+    "modality": [
+      "rna"
+    ],
+    "n_levels": 5,
+    "anchors": [
+      -0.7610030220000762,
+      -0.26813851994043914,
+      0.18406963213497057,
+      0.9761847563474643
+    ],
+    "rbp": "HybID00097",
+    "train": 19659,
+    "dev": 2397,
+    "test": 2389,
+    "provenance": {
+      "revision": "2a0d8f80c2a13ee19512b671e7ccf08d2ba72ca4",
+      "license": "?",
+      "source": "RNA-RBP binding preference (Score)",
+      "origin": "HybID00097"
+    },
+    "status": "ready",
+    "note": "probe subsample 25000 of 241357; split by probe-hash",
+    "quarantined_groups": 0,
     "dup_dropped": 0
   }
 }

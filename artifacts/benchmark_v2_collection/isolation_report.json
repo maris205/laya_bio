@@ -834,7 +834,7 @@
   "lg_promoter_detection": {
     "primitive": "choice",
     "before": {
-      "train": 16786,
+      "train": 16782,
       "dev": 2109,
       "test": 2147
     },
@@ -843,8 +843,8 @@
       "dev": 2109,
       "test": 2147
     },
-    "n_groups": 21018,
-    "quarantined_groups": 2,
+    "n_groups": 21016,
+    "quarantined_groups": 0,
     "dropped_from_lower_splits": 0
   },
   "lg_signal_peptide": {
@@ -879,6 +879,3478 @@
     "quarantined_groups": 0,
     "dropped_from_lower_splits": 0
   },
+  "pg_A0A140D2T1_ZIKV_Sourisseau_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 5738,
+      "dev": 1919,
+      "test": 1919
+    },
+    "after": {
+      "train": 5738,
+      "dev": 1919,
+      "test": 1919
+    },
+    "n_groups": 9576,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A0A192B1T2_9HIV1_Haddox_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 7524,
+      "dev": 2527,
+      "test": 2526
+    },
+    "after": {
+      "train": 7524,
+      "dev": 2527,
+      "test": 2526
+    },
+    "n_groups": 12577,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A0A1I9GEU1_NEIME_Kennouche_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 550,
+      "dev": 184,
+      "test": 188
+    },
+    "after": {
+      "train": 550,
+      "dev": 184,
+      "test": 188
+    },
+    "n_groups": 922,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A0A247D711_LISMN_Stadelmann_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 969,
+      "dev": 342,
+      "test": 342
+    },
+    "after": {
+      "train": 969,
+      "dev": 342,
+      "test": 342
+    },
+    "n_groups": 1653,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A0A2Z5U3Z0_9INFA_Doud_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 6422,
+      "dev": 2147,
+      "test": 2146
+    },
+    "after": {
+      "train": 6422,
+      "dev": 2147,
+      "test": 2146
+    },
+    "n_groups": 10715,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A0A2Z5U3Z0_9INFA_Wu_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 1429,
+      "dev": 460,
+      "test": 461
+    },
+    "after": {
+      "train": 1429,
+      "dev": 460,
+      "test": 461
+    },
+    "n_groups": 2350,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A4D664_9INFA_Soh_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 8645,
+      "dev": 2888,
+      "test": 2888
+    },
+    "after": {
+      "train": 8645,
+      "dev": 2888,
+      "test": 2888
+    },
+    "n_groups": 14421,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A4GRB6_PSEAI_Chen_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 2984,
+      "dev": 1000,
+      "test": 1020
+    },
+    "after": {
+      "train": 2984,
+      "dev": 1000,
+      "test": 1020
+    },
+    "n_groups": 5004,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_A4_HUMAN_Seuma_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 455,
+      "dev": 170,
+      "test": 171
+    },
+    "after": {
+      "train": 455,
+      "dev": 170,
+      "test": 171
+    },
+    "n_groups": 796,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_AACC1_PSEAI_Dandage_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 1122,
+      "dev": 305,
+      "test": 374
+    },
+    "after": {
+      "train": 1122,
+      "dev": 305,
+      "test": 374
+    },
+    "n_groups": 1801,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ACE2_HUMAN_Chan_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 1311,
+      "dev": 456,
+      "test": 456
+    },
+    "after": {
+      "train": 1311,
+      "dev": 456,
+      "test": 456
+    },
+    "n_groups": 2223,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ADRB2_HUMAN_Jones_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 4656,
+      "dev": 1575,
+      "test": 1569
+    },
+    "after": {
+      "train": 4656,
+      "dev": 1575,
+      "test": 1569
+    },
+    "n_groups": 7800,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_AICDA_HUMAN_Gajula_2014_3cycles": {
+    "primitive": "score",
+    "before": {
+      "train": 114,
+      "dev": 38,
+      "test": 57
+    },
+    "after": {
+      "train": 114,
+      "dev": 38,
+      "test": 57
+    },
+    "n_groups": 209,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_AMFR_HUMAN_Tsuboyama_2023_4G3O": {
+    "primitive": "score",
+    "before": {
+      "train": 471,
+      "dev": 164,
+      "test": 185
+    },
+    "after": {
+      "train": 471,
+      "dev": 164,
+      "test": 185
+    },
+    "n_groups": 820,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_AMIE_PSEAE_Wrenbeck_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 3767,
+      "dev": 1233,
+      "test": 1227
+    },
+    "after": {
+      "train": 3767,
+      "dev": 1233,
+      "test": 1227
+    },
+    "n_groups": 6227,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ANCSZ_Hobbs_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 2773,
+      "dev": 1018,
+      "test": 879
+    },
+    "after": {
+      "train": 2773,
+      "dev": 1018,
+      "test": 879
+    },
+    "n_groups": 4670,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ARGR_ECOLI_Tsuboyama_2023_1AOY": {
+    "primitive": "score",
+    "before": {
+      "train": 767,
+      "dev": 263,
+      "test": 257
+    },
+    "after": {
+      "train": 767,
+      "dev": 263,
+      "test": 257
+    },
+    "n_groups": 1287,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_B2L11_HUMAN_Dutta_2010_binding-Mcl-1": {
+    "primitive": "score",
+    "before": {
+      "train": 102,
+      "dev": 34,
+      "test": 34
+    },
+    "after": {
+      "train": 102,
+      "dev": 34,
+      "test": 34
+    },
+    "n_groups": 170,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BBC1_YEAST_Tsuboyama_2023_1TG0": {
+    "primitive": "score",
+    "before": {
+      "train": 652,
+      "dev": 225,
+      "test": 207
+    },
+    "after": {
+      "train": 652,
+      "dev": 225,
+      "test": 207
+    },
+    "n_groups": 1084,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BCHB_CHLTE_Tsuboyama_2023_2KRU": {
+    "primitive": "score",
+    "before": {
+      "train": 517,
+      "dev": 200,
+      "test": 173
+    },
+    "after": {
+      "train": 517,
+      "dev": 200,
+      "test": 173
+    },
+    "n_groups": 890,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BLAT_ECOLX_Deng_2012": {
+    "primitive": "score",
+    "before": {
+      "train": 2983,
+      "dev": 1007,
+      "test": 1006
+    },
+    "after": {
+      "train": 2983,
+      "dev": 1007,
+      "test": 1006
+    },
+    "n_groups": 4996,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BLAT_ECOLX_Firnberg_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 2875,
+      "dev": 966,
+      "test": 942
+    },
+    "after": {
+      "train": 2875,
+      "dev": 966,
+      "test": 942
+    },
+    "n_groups": 4783,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BLAT_ECOLX_Jacquier_2013": {
+    "primitive": "score",
+    "before": {
+      "train": 573,
+      "dev": 203,
+      "test": 213
+    },
+    "after": {
+      "train": 573,
+      "dev": 203,
+      "test": 213
+    },
+    "n_groups": 989,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BLAT_ECOLX_Stiffler_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 2983,
+      "dev": 1007,
+      "test": 1006
+    },
+    "after": {
+      "train": 2983,
+      "dev": 1007,
+      "test": 1006
+    },
+    "n_groups": 4996,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BRCA1_HUMAN_Findlay_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 1096,
+      "dev": 356,
+      "test": 385
+    },
+    "after": {
+      "train": 1096,
+      "dev": 356,
+      "test": 385
+    },
+    "n_groups": 1837,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_BRCA2_HUMAN_Erwood_2022_HEK293T": {
+    "primitive": "score",
+    "before": {
+      "train": 163,
+      "dev": 54,
+      "test": 48
+    },
+    "after": {
+      "train": 163,
+      "dev": 54,
+      "test": 48
+    },
+    "n_groups": 265,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_C6KNH7_9INFA_Lee_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 6441,
+      "dev": 2147,
+      "test": 2166
+    },
+    "after": {
+      "train": 6441,
+      "dev": 2147,
+      "test": 2166
+    },
+    "n_groups": 10754,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CALM1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 1062,
+      "dev": 380,
+      "test": 371
+    },
+    "after": {
+      "train": 1062,
+      "dev": 380,
+      "test": 371
+    },
+    "n_groups": 1813,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CAPSD_AAV2S_Sinai_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 304,
+      "dev": 114,
+      "test": 114
+    },
+    "after": {
+      "train": 304,
+      "dev": 114,
+      "test": 114
+    },
+    "n_groups": 532,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CAR11_HUMAN_Meitlis_2020_gof": {
+    "primitive": "score",
+    "before": {
+      "train": 1334,
+      "dev": 509,
+      "test": 531
+    },
+    "after": {
+      "train": 1334,
+      "dev": 509,
+      "test": 531
+    },
+    "n_groups": 2374,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CAR11_HUMAN_Meitlis_2020_lof": {
+    "primitive": "score",
+    "before": {
+      "train": 1351,
+      "dev": 508,
+      "test": 536
+    },
+    "after": {
+      "train": 1351,
+      "dev": 508,
+      "test": 536
+    },
+    "n_groups": 2395,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CAS9_STRP1_Spencer_2017_positive": {
+    "primitive": "score",
+    "before": {
+      "train": 4858,
+      "dev": 1631,
+      "test": 1628
+    },
+    "after": {
+      "train": 4858,
+      "dev": 1631,
+      "test": 1628
+    },
+    "n_groups": 8117,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CASP3_HUMAN_Roychowdhury_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 942,
+      "dev": 312,
+      "test": 313
+    },
+    "after": {
+      "train": 942,
+      "dev": 312,
+      "test": 313
+    },
+    "n_groups": 1567,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CASP7_HUMAN_Roychowdhury_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 999,
+      "dev": 341,
+      "test": 340
+    },
+    "after": {
+      "train": 999,
+      "dev": 341,
+      "test": 340
+    },
+    "n_groups": 1680,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CATR_CHLRE_Tsuboyama_2023_2AMI": {
+    "primitive": "score",
+    "before": {
+      "train": 780,
+      "dev": 277,
+      "test": 283
+    },
+    "after": {
+      "train": 780,
+      "dev": 277,
+      "test": 283
+    },
+    "n_groups": 1340,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CBPA2_HUMAN_Tsuboyama_2023_1O6X": {
+    "primitive": "score",
+    "before": {
+      "train": 790,
+      "dev": 285,
+      "test": 282
+    },
+    "after": {
+      "train": 790,
+      "dev": 285,
+      "test": 282
+    },
+    "n_groups": 1357,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CBS_HUMAN_Sun_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 4635,
+      "dev": 1302,
+      "test": 1280
+    },
+    "after": {
+      "train": 4635,
+      "dev": 1302,
+      "test": 1280
+    },
+    "n_groups": 7217,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CBX4_HUMAN_Tsuboyama_2023_2K28": {
+    "primitive": "score",
+    "before": {
+      "train": 559,
+      "dev": 171,
+      "test": 187
+    },
+    "after": {
+      "train": 559,
+      "dev": 171,
+      "test": 187
+    },
+    "n_groups": 917,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CCDB_ECOLI_Adkar_2012": {
+    "primitive": "score",
+    "before": {
+      "train": 716,
+      "dev": 247,
+      "test": 213
+    },
+    "after": {
+      "train": 716,
+      "dev": 247,
+      "test": 213
+    },
+    "n_groups": 1176,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CCDB_ECOLI_Tripathi_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 964,
+      "dev": 357,
+      "test": 342
+    },
+    "after": {
+      "train": 964,
+      "dev": 357,
+      "test": 342
+    },
+    "n_groups": 1663,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CCR5_HUMAN_Gill_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 3667,
+      "dev": 1235,
+      "test": 1235
+    },
+    "after": {
+      "train": 3667,
+      "dev": 1235,
+      "test": 1235
+    },
+    "n_groups": 6137,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CD19_HUMAN_Klesmith_2019_FMC_singles": {
+    "primitive": "score",
+    "before": {
+      "train": 2155,
+      "dev": 767,
+      "test": 839
+    },
+    "after": {
+      "train": 2155,
+      "dev": 767,
+      "test": 839
+    },
+    "n_groups": 3761,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CP2C9_HUMAN_Amorosi_2021_abundance": {
+    "primitive": "score",
+    "before": {
+      "train": 3757,
+      "dev": 1345,
+      "test": 1268
+    },
+    "after": {
+      "train": 3757,
+      "dev": 1345,
+      "test": 1268
+    },
+    "n_groups": 6370,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CP2C9_HUMAN_Amorosi_2021_activity": {
+    "primitive": "score",
+    "before": {
+      "train": 3716,
+      "dev": 1252,
+      "test": 1174
+    },
+    "after": {
+      "train": 3716,
+      "dev": 1252,
+      "test": 1174
+    },
+    "n_groups": 6142,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CSN4_MOUSE_Tsuboyama_2023_1UFM": {
+    "primitive": "score",
+    "before": {
+      "train": 798,
+      "dev": 285,
+      "test": 270
+    },
+    "after": {
+      "train": 798,
+      "dev": 285,
+      "test": 270
+    },
+    "n_groups": 1353,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_CUE1_YEAST_Tsuboyama_2023_2MYX": {
+    "primitive": "score",
+    "before": {
+      "train": 542,
+      "dev": 205,
+      "test": 208
+    },
+    "after": {
+      "train": 542,
+      "dev": 205,
+      "test": 208
+    },
+    "n_groups": 955,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_D7PM05_CLYGR_Somermeyer_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 715,
+      "dev": 221,
+      "test": 233
+    },
+    "after": {
+      "train": 715,
+      "dev": 221,
+      "test": 233
+    },
+    "n_groups": 1169,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DLG4_HUMAN_Faure_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 741,
+      "dev": 272,
+      "test": 267
+    },
+    "after": {
+      "train": 741,
+      "dev": 272,
+      "test": 267
+    },
+    "n_groups": 1280,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DLG4_RAT_McLaughlin_2012": {
+    "primitive": "score",
+    "before": {
+      "train": 931,
+      "dev": 323,
+      "test": 322
+    },
+    "after": {
+      "train": 931,
+      "dev": 323,
+      "test": 322
+    },
+    "n_groups": 1576,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DN7A_SACS2_Tsuboyama_2023_1JIC": {
+    "primitive": "score",
+    "before": {
+      "train": 598,
+      "dev": 201,
+      "test": 209
+    },
+    "after": {
+      "train": 598,
+      "dev": 201,
+      "test": 209
+    },
+    "n_groups": 1008,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DNJA1_HUMAN_Tsuboyama_2023_2LO1": {
+    "primitive": "score",
+    "before": {
+      "train": 733,
+      "dev": 240,
+      "test": 243
+    },
+    "after": {
+      "train": 733,
+      "dev": 240,
+      "test": 243
+    },
+    "n_groups": 1216,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DOCK1_MOUSE_Tsuboyama_2023_2M0Y": {
+    "primitive": "score",
+    "before": {
+      "train": 716,
+      "dev": 233,
+      "test": 264
+    },
+    "after": {
+      "train": 716,
+      "dev": 233,
+      "test": 264
+    },
+    "n_groups": 1213,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DYR_ECOLI_Nguyen_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 1743,
+      "dev": 567,
+      "test": 606
+    },
+    "after": {
+      "train": 1743,
+      "dev": 567,
+      "test": 606
+    },
+    "n_groups": 2916,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_DYR_ECOLI_Thompson_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 1427,
+      "dev": 489,
+      "test": 447
+    },
+    "after": {
+      "train": 1427,
+      "dev": 489,
+      "test": 447
+    },
+    "n_groups": 2363,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ENVZ_ECOLI_Ghose_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 666,
+      "dev": 228,
+      "test": 227
+    },
+    "after": {
+      "train": 666,
+      "dev": 228,
+      "test": 227
+    },
+    "n_groups": 1121,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ENV_HV1B9_DuenasDecamp_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 224,
+      "dev": 76,
+      "test": 75
+    },
+    "after": {
+      "train": 224,
+      "dev": 76,
+      "test": 75
+    },
+    "n_groups": 375,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ENV_HV1BR_Haddox_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 7695,
+      "dev": 2584,
+      "test": 2584
+    },
+    "after": {
+      "train": 7695,
+      "dev": 2584,
+      "test": 2584
+    },
+    "n_groups": 12863,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_EPHB2_HUMAN_Tsuboyama_2023_1F0M": {
+    "primitive": "score",
+    "before": {
+      "train": 727,
+      "dev": 247,
+      "test": 265
+    },
+    "after": {
+      "train": 727,
+      "dev": 247,
+      "test": 265
+    },
+    "n_groups": 1239,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ERBB2_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 169,
+      "dev": 74,
+      "test": 83
+    },
+    "after": {
+      "train": 169,
+      "dev": 74,
+      "test": 83
+    },
+    "n_groups": 326,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ESTA_BACSU_Nutschel_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 1196,
+      "dev": 516,
+      "test": 460
+    },
+    "after": {
+      "train": 1196,
+      "dev": 516,
+      "test": 460
+    },
+    "n_groups": 2172,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_F7YBW8_MESOW_Aakre_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 21,
+      "dev": 5,
+      "test": 11
+    },
+    "after": {
+      "train": 21,
+      "dev": 5,
+      "test": 11
+    },
+    "n_groups": 37,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_F7YBW8_MESOW_Ding_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 47,
+      "dev": 8,
+      "test": 25
+    },
+    "after": {
+      "train": 47,
+      "dev": 8,
+      "test": 25
+    },
+    "n_groups": 80,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_FECA_ECOLI_Tsuboyama_2023_2D1U": {
+    "primitive": "score",
+    "before": {
+      "train": 703,
+      "dev": 258,
+      "test": 258
+    },
+    "after": {
+      "train": 703,
+      "dev": 258,
+      "test": 258
+    },
+    "n_groups": 1219,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_FKBP3_HUMAN_Tsuboyama_2023_2KFV": {
+    "primitive": "score",
+    "before": {
+      "train": 735,
+      "dev": 236,
+      "test": 266
+    },
+    "after": {
+      "train": 735,
+      "dev": 236,
+      "test": 266
+    },
+    "n_groups": 1237,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GAL4_YEAST_Kitzman_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 712,
+      "dev": 240,
+      "test": 243
+    },
+    "after": {
+      "train": 712,
+      "dev": 240,
+      "test": 243
+    },
+    "n_groups": 1195,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GCN4_YEAST_Staller_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 18,
+      "dev": 8,
+      "test": 7
+    },
+    "after": {
+      "train": 18,
+      "dev": 8,
+      "test": 7
+    },
+    "n_groups": 33,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GDIA_HUMAN_Silverstein_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 701,
+      "dev": 234,
+      "test": 219
+    },
+    "after": {
+      "train": 701,
+      "dev": 234,
+      "test": 219
+    },
+    "n_groups": 1154,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GFP_AEQVI_Sarkisyan_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 674,
+      "dev": 197,
+      "test": 213
+    },
+    "after": {
+      "train": 674,
+      "dev": 197,
+      "test": 213
+    },
+    "n_groups": 1084,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GLPA_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 143,
+      "dev": 53,
+      "test": 49
+    },
+    "after": {
+      "train": 143,
+      "dev": 53,
+      "test": 49
+    },
+    "n_groups": 245,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_GRB2_HUMAN_Faure_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 619,
+      "dev": 207,
+      "test": 208
+    },
+    "after": {
+      "train": 619,
+      "dev": 207,
+      "test": 208
+    },
+    "n_groups": 1034,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HCP_LAMBD_Tsuboyama_2023_2L6Q": {
+    "primitive": "score",
+    "before": {
+      "train": 625,
+      "dev": 208,
+      "test": 207
+    },
+    "after": {
+      "train": 625,
+      "dev": 208,
+      "test": 207
+    },
+    "n_groups": 1040,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HECD1_HUMAN_Tsuboyama_2023_3DKM": {
+    "primitive": "score",
+    "before": {
+      "train": 697,
+      "dev": 276,
+      "test": 271
+    },
+    "after": {
+      "train": 697,
+      "dev": 276,
+      "test": 271
+    },
+    "n_groups": 1244,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HEM3_HUMAN_Loggerenberg_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 3259,
+      "dev": 1215,
+      "test": 1215
+    },
+    "after": {
+      "train": 3259,
+      "dev": 1215,
+      "test": 1215
+    },
+    "n_groups": 5689,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HIS7_YEAST_Pokusaeva_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 90,
+      "dev": 41,
+      "test": 37
+    },
+    "after": {
+      "train": 90,
+      "dev": 41,
+      "test": 37
+    },
+    "n_groups": 168,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HMDH_HUMAN_Jiang_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 10089,
+      "dev": 3382,
+      "test": 3382
+    },
+    "after": {
+      "train": 10089,
+      "dev": 3382,
+      "test": 3382
+    },
+    "n_groups": 16853,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HSP82_YEAST_Cote-Hammarlof_2020_growth-H2O2": {
+    "primitive": "score",
+    "before": {
+      "train": 1340,
+      "dev": 456,
+      "test": 456
+    },
+    "after": {
+      "train": 1340,
+      "dev": 456,
+      "test": 456
+    },
+    "n_groups": 2252,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HSP82_YEAST_Flynn_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 8002,
+      "dev": 2628,
+      "test": 2664
+    },
+    "after": {
+      "train": 8002,
+      "dev": 2628,
+      "test": 2664
+    },
+    "n_groups": 13294,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HSP82_YEAST_Mishra_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 2589,
+      "dev": 867,
+      "test": 867
+    },
+    "after": {
+      "train": 2589,
+      "dev": 867,
+      "test": 867
+    },
+    "n_groups": 4323,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HXK4_HUMAN_Gersing_2022_activity": {
+    "primitive": "score",
+    "before": {
+      "train": 5148,
+      "dev": 1726,
+      "test": 1696
+    },
+    "after": {
+      "train": 5148,
+      "dev": 1726,
+      "test": 1696
+    },
+    "n_groups": 8570,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_HXK4_HUMAN_Gersing_2023_abundance": {
+    "primitive": "score",
+    "before": {
+      "train": 4989,
+      "dev": 1716,
+      "test": 1691
+    },
+    "after": {
+      "train": 4989,
+      "dev": 1716,
+      "test": 1691
+    },
+    "n_groups": 8396,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_I6TAH8_I68A0_Doud_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 5662,
+      "dev": 1900,
+      "test": 1900
+    },
+    "after": {
+      "train": 5662,
+      "dev": 1900,
+      "test": 1900
+    },
+    "n_groups": 9462,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_IF1_ECOLI_Kelsic_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 798,
+      "dev": 285,
+      "test": 284
+    },
+    "after": {
+      "train": 798,
+      "dev": 285,
+      "test": 284
+    },
+    "n_groups": 1367,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ILF3_HUMAN_Tsuboyama_2023_2L33": {
+    "primitive": "score",
+    "before": {
+      "train": 785,
+      "dev": 265,
+      "test": 279
+    },
+    "after": {
+      "train": 785,
+      "dev": 265,
+      "test": 279
+    },
+    "n_groups": 1329,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ISDH_STAAW_Tsuboyama_2023_2LHR": {
+    "primitive": "score",
+    "before": {
+      "train": 568,
+      "dev": 184,
+      "test": 188
+    },
+    "after": {
+      "train": 568,
+      "dev": 184,
+      "test": 188
+    },
+    "n_groups": 940,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KCNE1_HUMAN_Muhammad_2023_expression": {
+    "primitive": "score",
+    "before": {
+      "train": 1373,
+      "dev": 479,
+      "test": 487
+    },
+    "after": {
+      "train": 1373,
+      "dev": 479,
+      "test": 487
+    },
+    "n_groups": 2339,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KCNE1_HUMAN_Muhammad_2023_function": {
+    "primitive": "score",
+    "before": {
+      "train": 1361,
+      "dev": 472,
+      "test": 482
+    },
+    "after": {
+      "train": 1361,
+      "dev": 472,
+      "test": 482
+    },
+    "n_groups": 2315,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KCNH2_HUMAN_Kozek_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 110,
+      "dev": 35,
+      "test": 55
+    },
+    "after": {
+      "train": 110,
+      "dev": 35,
+      "test": 55
+    },
+    "n_groups": 200,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_function": {
+    "primitive": "score",
+    "before": {
+      "train": 4146,
+      "dev": 1393,
+      "test": 1424
+    },
+    "after": {
+      "train": 4146,
+      "dev": 1393,
+      "test": 1424
+    },
+    "n_groups": 6963,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_surface": {
+    "primitive": "score",
+    "before": {
+      "train": 4109,
+      "dev": 1382,
+      "test": 1426
+    },
+    "after": {
+      "train": 4109,
+      "dev": 1382,
+      "test": 1426
+    },
+    "n_groups": 6917,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_KKA2_KLEPN_Melnikov_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 2974,
+      "dev": 999,
+      "test": 987
+    },
+    "after": {
+      "train": 2974,
+      "dev": 999,
+      "test": 987
+    },
+    "n_groups": 4960,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_LGK_LIPST_Klesmith_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 4755,
+      "dev": 1622,
+      "test": 1513
+    },
+    "after": {
+      "train": 4755,
+      "dev": 1622,
+      "test": 1513
+    },
+    "n_groups": 7890,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_LYAM1_HUMAN_Elazar_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 206,
+      "dev": 77,
+      "test": 76
+    },
+    "after": {
+      "train": 206,
+      "dev": 77,
+      "test": 76
+    },
+    "n_groups": 359,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MAFG_MOUSE_Tsuboyama_2023_1K1V": {
+    "primitive": "score",
+    "before": {
+      "train": 447,
+      "dev": 149,
+      "test": 166
+    },
+    "after": {
+      "train": 447,
+      "dev": 149,
+      "test": 166
+    },
+    "n_groups": 762,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MBD11_ARATH_Tsuboyama_2023_6ACV": {
+    "primitive": "score",
+    "before": {
+      "train": 655,
+      "dev": 237,
+      "test": 263
+    },
+    "after": {
+      "train": 655,
+      "dev": 237,
+      "test": 263
+    },
+    "n_groups": 1155,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MET_HUMAN_Estevam_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 3213,
+      "dev": 1090,
+      "test": 1090
+    },
+    "after": {
+      "train": 3213,
+      "dev": 1090,
+      "test": 1090
+    },
+    "n_groups": 5393,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MK01_HUMAN_Brenan_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 4077,
+      "dev": 1366,
+      "test": 1366
+    },
+    "after": {
+      "train": 4077,
+      "dev": 1366,
+      "test": 1366
+    },
+    "n_groups": 6809,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MLAC_ECOLI_MacRae_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 2392,
+      "dev": 798,
+      "test": 817
+    },
+    "after": {
+      "train": 2392,
+      "dev": 798,
+      "test": 817
+    },
+    "n_groups": 4007,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MSH2_HUMAN_Jia_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 10048,
+      "dev": 3389,
+      "test": 3312
+    },
+    "after": {
+      "train": 10048,
+      "dev": 3389,
+      "test": 3312
+    },
+    "n_groups": 16749,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MTH3_HAEAE_RockahShmuel_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 1071,
+      "dev": 355,
+      "test": 351
+    },
+    "after": {
+      "train": 1071,
+      "dev": 355,
+      "test": 351
+    },
+    "n_groups": 1777,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MTHR_HUMAN_Weile_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 7467,
+      "dev": 2489,
+      "test": 2508
+    },
+    "after": {
+      "train": 7467,
+      "dev": 2489,
+      "test": 2508
+    },
+    "n_groups": 12464,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_MYO3_YEAST_Tsuboyama_2023_2BTT": {
+    "primitive": "score",
+    "before": {
+      "train": 545,
+      "dev": 191,
+      "test": 211
+    },
+    "after": {
+      "train": 545,
+      "dev": 191,
+      "test": 211
+    },
+    "n_groups": 947,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NCAP_I34A1_Doud_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 5662,
+      "dev": 1900,
+      "test": 1900
+    },
+    "after": {
+      "train": 5662,
+      "dev": 1900,
+      "test": 1900
+    },
+    "n_groups": 9462,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NKX31_HUMAN_Tsuboyama_2023_2L9R": {
+    "primitive": "score",
+    "before": {
+      "train": 676,
+      "dev": 228,
+      "test": 245
+    },
+    "after": {
+      "train": 676,
+      "dev": 228,
+      "test": 245
+    },
+    "n_groups": 1149,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NPC1_HUMAN_Erwood_2022_HEK293T": {
+    "primitive": "score",
+    "before": {
+      "train": 383,
+      "dev": 124,
+      "test": 130
+    },
+    "after": {
+      "train": 383,
+      "dev": 124,
+      "test": 130
+    },
+    "n_groups": 637,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NPC1_HUMAN_Erwood_2022_RPE1": {
+    "primitive": "score",
+    "before": {
+      "train": 28,
+      "dev": 17,
+      "test": 18
+    },
+    "after": {
+      "train": 28,
+      "dev": 17,
+      "test": 18
+    },
+    "n_groups": 63,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NRAM_I33A0_Jiang_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 183,
+      "dev": 59,
+      "test": 56
+    },
+    "after": {
+      "train": 183,
+      "dev": 59,
+      "test": 56
+    },
+    "n_groups": 298,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NUD15_HUMAN_Suiter_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 1688,
+      "dev": 587,
+      "test": 569
+    },
+    "after": {
+      "train": 1688,
+      "dev": 587,
+      "test": 569
+    },
+    "n_groups": 2844,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NUSA_ECOLI_Tsuboyama_2023_1WCL": {
+    "primitive": "score",
+    "before": {
+      "train": 774,
+      "dev": 266,
+      "test": 266
+    },
+    "after": {
+      "train": 774,
+      "dev": 266,
+      "test": 266
+    },
+    "n_groups": 1306,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_NUSG_MYCTU_Tsuboyama_2023_2MI6": {
+    "primitive": "score",
+    "before": {
+      "train": 605,
+      "dev": 206,
+      "test": 208
+    },
+    "after": {
+      "train": 605,
+      "dev": 206,
+      "test": 208
+    },
+    "n_groups": 1019,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OBSCN_HUMAN_Tsuboyama_2023_1V1C": {
+    "primitive": "score",
+    "before": {
+      "train": 724,
+      "dev": 247,
+      "test": 242
+    },
+    "after": {
+      "train": 724,
+      "dev": 247,
+      "test": 242
+    },
+    "n_groups": 1213,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_ODP2_GEOSE_Tsuboyama_2023_1W4G": {
+    "primitive": "score",
+    "before": {
+      "train": 360,
+      "dev": 142,
+      "test": 167
+    },
+    "after": {
+      "train": 360,
+      "dev": 142,
+      "test": 167
+    },
+    "n_groups": 669,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OPSD_HUMAN_Wan_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 106,
+      "dev": 32,
+      "test": 27
+    },
+    "after": {
+      "train": 106,
+      "dev": 32,
+      "test": 27
+    },
+    "n_groups": 165,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OTC_HUMAN_Lo_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 947,
+      "dev": 294,
+      "test": 329
+    },
+    "after": {
+      "train": 947,
+      "dev": 294,
+      "test": 329
+    },
+    "n_groups": 1570,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OTU7A_HUMAN_Tsuboyama_2023_2L2D": {
+    "primitive": "score",
+    "before": {
+      "train": 366,
+      "dev": 120,
+      "test": 149
+    },
+    "after": {
+      "train": 366,
+      "dev": 120,
+      "test": 149
+    },
+    "n_groups": 635,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OXDA_RHOTO_Vanella_2023_activity": {
+    "primitive": "score",
+    "before": {
+      "train": 3880,
+      "dev": 1283,
+      "test": 1233
+    },
+    "after": {
+      "train": 3880,
+      "dev": 1283,
+      "test": 1233
+    },
+    "n_groups": 6396,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_OXDA_RHOTO_Vanella_2023_expression": {
+    "primitive": "score",
+    "before": {
+      "train": 4075,
+      "dev": 1356,
+      "test": 1338
+    },
+    "after": {
+      "train": 4075,
+      "dev": 1356,
+      "test": 1338
+    },
+    "n_groups": 6769,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_Null_Etoposide": {
+    "primitive": "score",
+    "before": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "after": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "n_groups": 7467,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_Null_Nutlin": {
+    "primitive": "score",
+    "before": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "after": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "n_groups": 7467,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_P53_HUMAN_Giacomelli_2018_WT_Nutlin": {
+    "primitive": "score",
+    "before": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "after": {
+      "train": 4465,
+      "dev": 1501,
+      "test": 1501
+    },
+    "n_groups": 7467,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_P53_HUMAN_Kotler_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 664,
+      "dev": 229,
+      "test": 155
+    },
+    "after": {
+      "train": 664,
+      "dev": 229,
+      "test": 155
+    },
+    "n_groups": 1048,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_P84126_THETH_Chan_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "after": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "n_groups": 1519,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PABP_YEAST_Melamed_2013": {
+    "primitive": "score",
+    "before": {
+      "train": 708,
+      "dev": 240,
+      "test": 239
+    },
+    "after": {
+      "train": 708,
+      "dev": 240,
+      "test": 239
+    },
+    "n_groups": 1187,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PAI1_HUMAN_Huttinger_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 3197,
+      "dev": 1093,
+      "test": 1055
+    },
+    "after": {
+      "train": 3197,
+      "dev": 1093,
+      "test": 1055
+    },
+    "n_groups": 5345,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PA_I34A1_Wu_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 1126,
+      "dev": 383,
+      "test": 311
+    },
+    "after": {
+      "train": 1126,
+      "dev": 383,
+      "test": 311
+    },
+    "n_groups": 1820,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PHOT_CHLRE_Chen_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 1258,
+      "dev": 425,
+      "test": 439
+    },
+    "after": {
+      "train": 1258,
+      "dev": 425,
+      "test": 439
+    },
+    "n_groups": 2122,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PIN1_HUMAN_Tsuboyama_2023_1I6C": {
+    "primitive": "score",
+    "before": {
+      "train": 394,
+      "dev": 146,
+      "test": 146
+    },
+    "after": {
+      "train": 394,
+      "dev": 146,
+      "test": 146
+    },
+    "n_groups": 686,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PITX2_HUMAN_Tsuboyama_2023_2L7M": {
+    "primitive": "score",
+    "before": {
+      "train": 526,
+      "dev": 206,
+      "test": 206
+    },
+    "after": {
+      "train": 526,
+      "dev": 206,
+      "test": 206
+    },
+    "n_groups": 938,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PKN1_HUMAN_Tsuboyama_2023_1URF": {
+    "primitive": "score",
+    "before": {
+      "train": 773,
+      "dev": 257,
+      "test": 271
+    },
+    "after": {
+      "train": 773,
+      "dev": 257,
+      "test": 271
+    },
+    "n_groups": 1301,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_POLG_CXB3N_Mattenberger_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 9429,
+      "dev": 3133,
+      "test": 3149
+    },
+    "after": {
+      "train": 9429,
+      "dev": 3133,
+      "test": 3149
+    },
+    "n_groups": 15711,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_POLG_DEN26_Suphatrakul_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 10217,
+      "dev": 3273,
+      "test": 3407
+    },
+    "after": {
+      "train": 10217,
+      "dev": 3273,
+      "test": 3407
+    },
+    "n_groups": 16897,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_POLG_HCVJF_Qi_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 966,
+      "dev": 323,
+      "test": 341
+    },
+    "after": {
+      "train": 966,
+      "dev": 323,
+      "test": 341
+    },
+    "n_groups": 1630,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_POLG_PESV_Tsuboyama_2023_2MXD": {
+    "primitive": "score",
+    "before": {
+      "train": 584,
+      "dev": 206,
+      "test": 205
+    },
+    "after": {
+      "train": 584,
+      "dev": 206,
+      "test": 205
+    },
+    "n_groups": 995,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PPARG_HUMAN_Majithia_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 5738,
+      "dev": 1919,
+      "test": 1919
+    },
+    "after": {
+      "train": 5738,
+      "dev": 1919,
+      "test": 1919
+    },
+    "n_groups": 9576,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PPM1D_HUMAN_Miller_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 4760,
+      "dev": 1547,
+      "test": 1582
+    },
+    "after": {
+      "train": 4760,
+      "dev": 1547,
+      "test": 1582
+    },
+    "n_groups": 7889,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PR40A_HUMAN_Tsuboyama_2023_1UZC": {
+    "primitive": "score",
+    "before": {
+      "train": 684,
+      "dev": 232,
+      "test": 247
+    },
+    "after": {
+      "train": 684,
+      "dev": 232,
+      "test": 247
+    },
+    "n_groups": 1163,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PRKN_HUMAN_Clausen_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 5254,
+      "dev": 1755,
+      "test": 1747
+    },
+    "after": {
+      "train": 5254,
+      "dev": 1755,
+      "test": 1747
+    },
+    "n_groups": 8756,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PSAE_PICP2_Tsuboyama_2023_1PSE": {
+    "primitive": "score",
+    "before": {
+      "train": 708,
+      "dev": 251,
+      "test": 260
+    },
+    "after": {
+      "train": 708,
+      "dev": 251,
+      "test": 260
+    },
+    "n_groups": 1219,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PTEN_HUMAN_Matreyek_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 3078,
+      "dev": 871,
+      "test": 1134
+    },
+    "after": {
+      "train": 3078,
+      "dev": 871,
+      "test": 1134
+    },
+    "n_groups": 5083,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_PTEN_HUMAN_Mighell_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 4277,
+      "dev": 1539,
+      "test": 1444
+    },
+    "after": {
+      "train": 4277,
+      "dev": 1539,
+      "test": 1444
+    },
+    "n_groups": 7260,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q2N0S5_9HIV1_Haddox_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 7638,
+      "dev": 2546,
+      "test": 2545
+    },
+    "after": {
+      "train": 7638,
+      "dev": 2546,
+      "test": 2545
+    },
+    "n_groups": 12729,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q53Z42_HUMAN_McShan_2019_binding-TAPBPR": {
+    "primitive": "score",
+    "before": {
+      "train": 2032,
+      "dev": 684,
+      "test": 628
+    },
+    "after": {
+      "train": 2032,
+      "dev": 684,
+      "test": 628
+    },
+    "n_groups": 3344,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q53Z42_HUMAN_McShan_2019_expression": {
+    "primitive": "score",
+    "before": {
+      "train": 2032,
+      "dev": 684,
+      "test": 628
+    },
+    "after": {
+      "train": 2032,
+      "dev": 684,
+      "test": 628
+    },
+    "n_groups": 3344,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q59976_STRSQ_Romero_2015": {
+    "primitive": "score",
+    "before": {
+      "train": 1811,
+      "dev": 590,
+      "test": 598
+    },
+    "after": {
+      "train": 1811,
+      "dev": 590,
+      "test": 598
+    },
+    "n_groups": 2999,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q6WV12_9MAXI_Somermeyer_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 697,
+      "dev": 233,
+      "test": 211
+    },
+    "after": {
+      "train": 697,
+      "dev": 233,
+      "test": 211
+    },
+    "n_groups": 1141,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q837P4_ENTFA_Meier_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 400,
+      "dev": 149,
+      "test": 148
+    },
+    "after": {
+      "train": 400,
+      "dev": 149,
+      "test": 148
+    },
+    "n_groups": 697,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q837P5_ENTFA_Meier_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 436,
+      "dev": 148,
+      "test": 163
+    },
+    "after": {
+      "train": 436,
+      "dev": 148,
+      "test": 163
+    },
+    "n_groups": 747,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_Q8WTC7_9CNID_Somermeyer_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 743,
+      "dev": 214,
+      "test": 244
+    },
+    "after": {
+      "train": 743,
+      "dev": 214,
+      "test": 244
+    },
+    "n_groups": 1201,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_R1AB_SARS2_Flynn_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 3429,
+      "dev": 1158,
+      "test": 1138
+    },
+    "after": {
+      "train": 3429,
+      "dev": 1158,
+      "test": 1138
+    },
+    "n_groups": 5725,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RAD_ANTMA_Tsuboyama_2023_2CJJ": {
+    "primitive": "score",
+    "before": {
+      "train": 456,
+      "dev": 162,
+      "test": 156
+    },
+    "after": {
+      "train": 456,
+      "dev": 162,
+      "test": 156
+    },
+    "n_groups": 774,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RAF1_HUMAN_Zinkus-Boltz_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 175,
+      "dev": 58,
+      "test": 64
+    },
+    "after": {
+      "train": 175,
+      "dev": 58,
+      "test": 64
+    },
+    "n_groups": 297,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RASH_HUMAN_Bandaru_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 1881,
+      "dev": 627,
+      "test": 626
+    },
+    "after": {
+      "train": 1881,
+      "dev": 627,
+      "test": 626
+    },
+    "n_groups": 3134,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RASK_HUMAN_Weng_2022_abundance": {
+    "primitive": "score",
+    "before": {
+      "train": 1670,
+      "dev": 701,
+      "test": 695
+    },
+    "after": {
+      "train": 1670,
+      "dev": 701,
+      "test": 695
+    },
+    "n_groups": 3066,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RASK_HUMAN_Weng_2022_binding-DARPin_K55": {
+    "primitive": "score",
+    "before": {
+      "train": 1692,
+      "dev": 699,
+      "test": 693
+    },
+    "after": {
+      "train": 1692,
+      "dev": 699,
+      "test": 693
+    },
+    "n_groups": 3084,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RBP1_HUMAN_Tsuboyama_2023_2KWH": {
+    "primitive": "score",
+    "before": {
+      "train": 560,
+      "dev": 208,
+      "test": 207
+    },
+    "after": {
+      "train": 560,
+      "dev": 208,
+      "test": 207
+    },
+    "n_groups": 975,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RCD1_ARATH_Tsuboyama_2023_5OAO": {
+    "primitive": "score",
+    "before": {
+      "train": 556,
+      "dev": 209,
+      "test": 223
+    },
+    "after": {
+      "train": 556,
+      "dev": 209,
+      "test": 223
+    },
+    "n_groups": 988,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RCRO_LAMBD_Tsuboyama_2023_1ORC": {
+    "primitive": "score",
+    "before": {
+      "train": 701,
+      "dev": 247,
+      "test": 247
+    },
+    "after": {
+      "train": 701,
+      "dev": 247,
+      "test": 247
+    },
+    "n_groups": 1195,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RD23A_HUMAN_Tsuboyama_2023_1IFY": {
+    "primitive": "score",
+    "before": {
+      "train": 470,
+      "dev": 163,
+      "test": 165
+    },
+    "after": {
+      "train": 470,
+      "dev": 163,
+      "test": 165
+    },
+    "n_groups": 798,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RDRP_I33A0_Li_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 7087,
+      "dev": 2458,
+      "test": 2458
+    },
+    "after": {
+      "train": 7087,
+      "dev": 2458,
+      "test": 2458
+    },
+    "n_groups": 12003,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_REV_HV1H2_Fernandes_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 1273,
+      "dev": 437,
+      "test": 437
+    },
+    "after": {
+      "train": 1273,
+      "dev": 437,
+      "test": 437
+    },
+    "n_groups": 2147,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RFAH_ECOLI_Tsuboyama_2023_2LCL": {
+    "primitive": "score",
+    "before": {
+      "train": 584,
+      "dev": 190,
+      "test": 195
+    },
+    "after": {
+      "train": 584,
+      "dev": 190,
+      "test": 195
+    },
+    "n_groups": 969,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RL20_AQUAE_Tsuboyama_2023_1GYZ": {
+    "primitive": "score",
+    "before": {
+      "train": 665,
+      "dev": 228,
+      "test": 228
+    },
+    "after": {
+      "train": 665,
+      "dev": 228,
+      "test": 228
+    },
+    "n_groups": 1121,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RL40A_YEAST_Mavor_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 759,
+      "dev": 248,
+      "test": 246
+    },
+    "after": {
+      "train": 759,
+      "dev": 248,
+      "test": 246
+    },
+    "n_groups": 1253,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RL40A_YEAST_Roscoe_2013": {
+    "primitive": "score",
+    "before": {
+      "train": 716,
+      "dev": 258,
+      "test": 221
+    },
+    "after": {
+      "train": 716,
+      "dev": 258,
+      "test": 221
+    },
+    "n_groups": 1195,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RL40A_YEAST_Roscoe_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 845,
+      "dev": 270,
+      "test": 265
+    },
+    "after": {
+      "train": 845,
+      "dev": 270,
+      "test": 265
+    },
+    "n_groups": 1380,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RNC_ECOLI_Weeks_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 2564,
+      "dev": 852,
+      "test": 861
+    },
+    "after": {
+      "train": 2564,
+      "dev": 852,
+      "test": 861
+    },
+    "n_groups": 4277,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RPC1_BP434_Tsuboyama_2023_1R69": {
+    "primitive": "score",
+    "before": {
+      "train": 659,
+      "dev": 225,
+      "test": 240
+    },
+    "after": {
+      "train": 659,
+      "dev": 225,
+      "test": 240
+    },
+    "n_groups": 1124,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RPC1_LAMBD_Li_2019_high-expression": {
+    "primitive": "score",
+    "before": {
+      "train": 212,
+      "dev": 68,
+      "test": 71
+    },
+    "after": {
+      "train": 212,
+      "dev": 68,
+      "test": 71
+    },
+    "n_groups": 351,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RPC1_LAMBD_Li_2019_low-expression": {
+    "primitive": "score",
+    "before": {
+      "train": 212,
+      "dev": 68,
+      "test": 71
+    },
+    "after": {
+      "train": 212,
+      "dev": 68,
+      "test": 71
+    },
+    "n_groups": 351,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_RS15_GEOSE_Tsuboyama_2023_1A32": {
+    "primitive": "score",
+    "before": {
+      "train": 701,
+      "dev": 247,
+      "test": 247
+    },
+    "after": {
+      "train": 701,
+      "dev": 247,
+      "test": 247
+    },
+    "n_groups": 1195,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_S22A1_HUMAN_Yee_2023_abundance": {
+    "primitive": "score",
+    "before": {
+      "train": 5781,
+      "dev": 1993,
+      "test": 2029
+    },
+    "after": {
+      "train": 5781,
+      "dev": 1993,
+      "test": 2029
+    },
+    "n_groups": 9803,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_S22A1_HUMAN_Yee_2023_activity": {
+    "primitive": "score",
+    "before": {
+      "train": 5948,
+      "dev": 2083,
+      "test": 2063
+    },
+    "after": {
+      "train": 5948,
+      "dev": 2083,
+      "test": 2063
+    },
+    "n_groups": 10094,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SAV1_MOUSE_Tsuboyama_2023_2YSB": {
+    "primitive": "score",
+    "before": {
+      "train": 384,
+      "dev": 160,
+      "test": 135
+    },
+    "after": {
+      "train": 384,
+      "dev": 160,
+      "test": 135
+    },
+    "n_groups": 679,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SBI_STAAM_Tsuboyama_2023_2JVG": {
+    "primitive": "score",
+    "before": {
+      "train": 596,
+      "dev": 203,
+      "test": 226
+    },
+    "after": {
+      "train": 596,
+      "dev": 203,
+      "test": 226
+    },
+    "n_groups": 1025,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SC6A4_HUMAN_Young_2021": {
+    "primitive": "score",
+    "before": {
+      "train": 6916,
+      "dev": 2332,
+      "test": 2328
+    },
+    "after": {
+      "train": 6916,
+      "dev": 2332,
+      "test": 2328
+    },
+    "n_groups": 11576,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SCIN_STAAR_Tsuboyama_2023_2QFF": {
+    "primitive": "score",
+    "before": {
+      "train": 725,
+      "dev": 262,
+      "test": 225
+    },
+    "after": {
+      "train": 725,
+      "dev": 262,
+      "test": 225
+    },
+    "n_groups": 1212,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SCN5A_HUMAN_Glazer_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 110,
+      "dev": 57,
+      "test": 57
+    },
+    "after": {
+      "train": 110,
+      "dev": 57,
+      "test": 57
+    },
+    "n_groups": 224,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SDA_BACSU_Tsuboyama_2023_1PV0": {
+    "primitive": "score",
+    "before": {
+      "train": 492,
+      "dev": 171,
+      "test": 171
+    },
+    "after": {
+      "train": 492,
+      "dev": 171,
+      "test": 171
+    },
+    "n_groups": 834,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SERC_HUMAN_Xie_2023": {
+    "primitive": "score",
+    "before": {
+      "train": 1152,
+      "dev": 383,
+      "test": 379
+    },
+    "after": {
+      "train": 1152,
+      "dev": 383,
+      "test": 379
+    },
+    "n_groups": 1914,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SHOC2_HUMAN_Kwon_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 6567,
+      "dev": 2203,
+      "test": 2202
+    },
+    "after": {
+      "train": 6567,
+      "dev": 2203,
+      "test": 2202
+    },
+    "n_groups": 10972,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SOX30_HUMAN_Tsuboyama_2023_7JJK": {
+    "primitive": "score",
+    "before": {
+      "train": 585,
+      "dev": 224,
+      "test": 201
+    },
+    "after": {
+      "train": 585,
+      "dev": 224,
+      "test": 201
+    },
+    "n_groups": 1010,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPA_STAAU_Tsuboyama_2023_1LP1": {
+    "primitive": "score",
+    "before": {
+      "train": 621,
+      "dev": 209,
+      "test": 205
+    },
+    "after": {
+      "train": 621,
+      "dev": 209,
+      "test": 205
+    },
+    "n_groups": 1035,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPG1_STRSG_Olson_2014": {
+    "primitive": "score",
+    "before": {
+      "train": 627,
+      "dev": 209,
+      "test": 209
+    },
+    "after": {
+      "train": 627,
+      "dev": 209,
+      "test": 209
+    },
+    "n_groups": 1045,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPG1_STRSG_Wu_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 38,
+      "dev": 19,
+      "test": 19
+    },
+    "after": {
+      "train": 38,
+      "dev": 19,
+      "test": 19
+    },
+    "n_groups": 76,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPG2_STRSG_Tsuboyama_2023_5UBS": {
+    "primitive": "score",
+    "before": {
+      "train": 597,
+      "dev": 209,
+      "test": 223
+    },
+    "after": {
+      "train": 597,
+      "dev": 209,
+      "test": 223
+    },
+    "n_groups": 1029,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPIKE_SARS2_Starr_2020_binding": {
+    "primitive": "score",
+    "before": {
+      "train": 2268,
+      "dev": 755,
+      "test": 779
+    },
+    "after": {
+      "train": 2268,
+      "dev": 755,
+      "test": 779
+    },
+    "n_groups": 3802,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPIKE_SARS2_Starr_2020_expression": {
+    "primitive": "score",
+    "before": {
+      "train": 2264,
+      "dev": 755,
+      "test": 779
+    },
+    "after": {
+      "train": 2264,
+      "dev": 755,
+      "test": 779
+    },
+    "n_groups": 3798,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SPTN1_CHICK_Tsuboyama_2023_1TUD": {
+    "primitive": "score",
+    "before": {
+      "train": 625,
+      "dev": 216,
+      "test": 210
+    },
+    "after": {
+      "train": 625,
+      "dev": 216,
+      "test": 210
+    },
+    "n_groups": 1051,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SQSTM_MOUSE_Tsuboyama_2023_2RRU": {
+    "primitive": "score",
+    "before": {
+      "train": 423,
+      "dev": 142,
+      "test": 142
+    },
+    "after": {
+      "train": 423,
+      "dev": 142,
+      "test": 142
+    },
+    "n_groups": 707,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SR43C_ARATH_Tsuboyama_2023_2N88": {
+    "primitive": "score",
+    "before": {
+      "train": 522,
+      "dev": 180,
+      "test": 187
+    },
+    "after": {
+      "train": 522,
+      "dev": 180,
+      "test": 187
+    },
+    "n_groups": 889,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SRBS1_HUMAN_Tsuboyama_2023_2O2W": {
+    "primitive": "score",
+    "before": {
+      "train": 696,
+      "dev": 256,
+      "test": 259
+    },
+    "after": {
+      "train": 696,
+      "dev": 256,
+      "test": 259
+    },
+    "n_groups": 1211,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SRC_HUMAN_Ahler_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 2014,
+      "dev": 627,
+      "test": 731
+    },
+    "after": {
+      "train": 2014,
+      "dev": 627,
+      "test": 731
+    },
+    "n_groups": 3372,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM": {
+    "primitive": "score",
+    "before": {
+      "train": 2160,
+      "dev": 703,
+      "test": 774
+    },
+    "after": {
+      "train": 2160,
+      "dev": 703,
+      "test": 774
+    },
+    "n_groups": 3637,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SRC_HUMAN_Nguyen_2022": {
+    "primitive": "score",
+    "before": {
+      "train": 2010,
+      "dev": 627,
+      "test": 729
+    },
+    "after": {
+      "train": 2010,
+      "dev": 627,
+      "test": 729
+    },
+    "n_groups": 3366,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SUMO1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 1023,
+      "dev": 305,
+      "test": 372
+    },
+    "after": {
+      "train": 1023,
+      "dev": 305,
+      "test": 372
+    },
+    "n_groups": 1700,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_SYUA_HUMAN_Newberry_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 1476,
+      "dev": 511,
+      "test": 510
+    },
+    "after": {
+      "train": 1476,
+      "dev": 511,
+      "test": 510
+    },
+    "n_groups": 2497,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TADBP_HUMAN_Bolognesi_2019": {
+    "primitive": "score",
+    "before": {
+      "train": 710,
+      "dev": 231,
+      "test": 255
+    },
+    "after": {
+      "train": 710,
+      "dev": 231,
+      "test": 255
+    },
+    "n_groups": 1196,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TAT_HV1BR_Fernandes_2016": {
+    "primitive": "score",
+    "before": {
+      "train": 931,
+      "dev": 323,
+      "test": 323
+    },
+    "after": {
+      "train": 931,
+      "dev": 323,
+      "test": 323
+    },
+    "n_groups": 1577,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TCRG1_MOUSE_Tsuboyama_2023_1E0L": {
+    "primitive": "score",
+    "before": {
+      "train": 365,
+      "dev": 128,
+      "test": 128
+    },
+    "after": {
+      "train": 365,
+      "dev": 128,
+      "test": 128
+    },
+    "n_groups": 621,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_THO1_YEAST_Tsuboyama_2023_2WQG": {
+    "primitive": "score",
+    "before": {
+      "train": 401,
+      "dev": 112,
+      "test": 143
+    },
+    "after": {
+      "train": 401,
+      "dev": 112,
+      "test": 143
+    },
+    "n_groups": 656,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TNKS2_HUMAN_Tsuboyama_2023_5JRT": {
+    "primitive": "score",
+    "before": {
+      "train": 662,
+      "dev": 228,
+      "test": 228
+    },
+    "after": {
+      "train": 662,
+      "dev": 228,
+      "test": 228
+    },
+    "n_groups": 1118,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TPK1_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 1749,
+      "dev": 704,
+      "test": 728
+    },
+    "after": {
+      "train": 1749,
+      "dev": 704,
+      "test": 728
+    },
+    "n_groups": 3181,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TPMT_HUMAN_Matreyek_2018": {
+    "primitive": "score",
+    "before": {
+      "train": 2166,
+      "dev": 728,
+      "test": 754
+    },
+    "after": {
+      "train": 2166,
+      "dev": 728,
+      "test": 754
+    },
+    "n_groups": 3648,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TPOR_HUMAN_Bridgford_2020": {
+    "primitive": "score",
+    "before": {
+      "train": 329,
+      "dev": 114,
+      "test": 119
+    },
+    "after": {
+      "train": 329,
+      "dev": 114,
+      "test": 119
+    },
+    "n_groups": 562,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TRPC_SACS2_Chan_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "after": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "n_groups": 1519,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_TRPC_THEMA_Chan_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "after": {
+      "train": 912,
+      "dev": 304,
+      "test": 303
+    },
+    "n_groups": 1519,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_UBC9_HUMAN_Weile_2017": {
+    "primitive": "score",
+    "before": {
+      "train": 1598,
+      "dev": 513,
+      "test": 452
+    },
+    "after": {
+      "train": 1598,
+      "dev": 513,
+      "test": 452
+    },
+    "n_groups": 2563,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_UBE4B_HUMAN_Tsuboyama_2023_3L1X": {
+    "primitive": "score",
+    "before": {
+      "train": 673,
+      "dev": 196,
+      "test": 249
+    },
+    "after": {
+      "train": 673,
+      "dev": 196,
+      "test": 249
+    },
+    "n_groups": 1118,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_UBE4B_MOUSE_Starita_2013": {
+    "primitive": "score",
+    "before": {
+      "train": 488,
+      "dev": 183,
+      "test": 228
+    },
+    "after": {
+      "train": 488,
+      "dev": 183,
+      "test": 228
+    },
+    "n_groups": 899,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_UBR5_HUMAN_Tsuboyama_2023_1I2T": {
+    "primitive": "score",
+    "before": {
+      "train": 643,
+      "dev": 226,
+      "test": 225
+    },
+    "after": {
+      "train": 643,
+      "dev": 226,
+      "test": 225
+    },
+    "n_groups": 1094,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_VG08_BPP22_Tsuboyama_2023_2GP8": {
+    "primitive": "score",
+    "before": {
+      "train": 432,
+      "dev": 146,
+      "test": 145
+    },
+    "after": {
+      "train": 432,
+      "dev": 146,
+      "test": 145
+    },
+    "n_groups": 723,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_VILI_CHICK_Tsuboyama_2023_1YU5": {
+    "primitive": "score",
+    "before": {
+      "train": 714,
+      "dev": 247,
+      "test": 241
+    },
+    "after": {
+      "train": 714,
+      "dev": 247,
+      "test": 241
+    },
+    "n_groups": 1202,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_VKOR1_HUMAN_Chiasson_2020_abundance": {
+    "primitive": "score",
+    "before": {
+      "train": 1648,
+      "dev": 534,
+      "test": 513
+    },
+    "after": {
+      "train": 1648,
+      "dev": 534,
+      "test": 513
+    },
+    "n_groups": 2695,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_VKOR1_HUMAN_Chiasson_2020_activity": {
+    "primitive": "score",
+    "before": {
+      "train": 461,
+      "dev": 127,
+      "test": 109
+    },
+    "after": {
+      "train": 461,
+      "dev": 127,
+      "test": 109
+    },
+    "n_groups": 697,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_VRPI_BPT7_Tsuboyama_2023_2WNM": {
+    "primitive": "score",
+    "before": {
+      "train": 624,
+      "dev": 209,
+      "test": 214
+    },
+    "after": {
+      "train": 624,
+      "dev": 209,
+      "test": 214
+    },
+    "n_groups": 1047,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_YAIA_ECOLI_Tsuboyama_2023_2KVT": {
+    "primitive": "score",
+    "before": {
+      "train": 534,
+      "dev": 197,
+      "test": 197
+    },
+    "after": {
+      "train": 534,
+      "dev": 197,
+      "test": 197
+    },
+    "n_groups": 928,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_YAP1_HUMAN_Araya_2012": {
+    "primitive": "score",
+    "before": {
+      "train": 193,
+      "dev": 82,
+      "test": 87
+    },
+    "after": {
+      "train": 193,
+      "dev": 82,
+      "test": 87
+    },
+    "n_groups": 362,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "pg_YNZC_BACSU_Tsuboyama_2023_2JVD": {
+    "primitive": "score",
+    "before": {
+      "train": 420,
+      "dev": 145,
+      "test": 149
+    },
+    "after": {
+      "train": 420,
+      "dev": 145,
+      "test": 149
+    },
+    "n_groups": 714,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
   "protein_homology_remote": {
     "primitive": "noul",
     "before": {
@@ -908,6 +4380,230 @@
       "test": 362
     },
     "n_groups": 5380,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00025": {
+    "primitive": "score",
+    "before": {
+      "train": 19694,
+      "dev": 2403,
+      "test": 2394
+    },
+    "after": {
+      "train": 19694,
+      "dev": 2403,
+      "test": 2394
+    },
+    "n_groups": 24491,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00027": {
+    "primitive": "score",
+    "before": {
+      "train": 19650,
+      "dev": 2397,
+      "test": 2392
+    },
+    "after": {
+      "train": 19650,
+      "dev": 2397,
+      "test": 2392
+    },
+    "n_groups": 24439,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00032": {
+    "primitive": "score",
+    "before": {
+      "train": 19690,
+      "dev": 2404,
+      "test": 2394
+    },
+    "after": {
+      "train": 19690,
+      "dev": 2404,
+      "test": 2394
+    },
+    "n_groups": 24488,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00034": {
+    "primitive": "score",
+    "before": {
+      "train": 19630,
+      "dev": 2392,
+      "test": 2375
+    },
+    "after": {
+      "train": 19630,
+      "dev": 2392,
+      "test": 2375
+    },
+    "n_groups": 24397,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00052": {
+    "primitive": "score",
+    "before": {
+      "train": 19695,
+      "dev": 2403,
+      "test": 2394
+    },
+    "after": {
+      "train": 19695,
+      "dev": 2403,
+      "test": 2394
+    },
+    "n_groups": 24492,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00065": {
+    "primitive": "score",
+    "before": {
+      "train": 19657,
+      "dev": 2404,
+      "test": 2391
+    },
+    "after": {
+      "train": 19657,
+      "dev": 2404,
+      "test": 2391
+    },
+    "n_groups": 24452,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00073": {
+    "primitive": "score",
+    "before": {
+      "train": 19696,
+      "dev": 2402,
+      "test": 2394
+    },
+    "after": {
+      "train": 19696,
+      "dev": 2402,
+      "test": 2394
+    },
+    "n_groups": 24491,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00077": {
+    "primitive": "score",
+    "before": {
+      "train": 19685,
+      "dev": 2401,
+      "test": 2392
+    },
+    "after": {
+      "train": 19685,
+      "dev": 2401,
+      "test": 2392
+    },
+    "n_groups": 24478,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00080": {
+    "primitive": "score",
+    "before": {
+      "train": 19691,
+      "dev": 2402,
+      "test": 2393
+    },
+    "after": {
+      "train": 19691,
+      "dev": 2402,
+      "test": 2393
+    },
+    "n_groups": 24486,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00082": {
+    "primitive": "score",
+    "before": {
+      "train": 19667,
+      "dev": 2402,
+      "test": 2392
+    },
+    "after": {
+      "train": 19667,
+      "dev": 2402,
+      "test": 2392
+    },
+    "n_groups": 24461,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00083": {
+    "primitive": "score",
+    "before": {
+      "train": 19667,
+      "dev": 2402,
+      "test": 2392
+    },
+    "after": {
+      "train": 19667,
+      "dev": 2402,
+      "test": 2392
+    },
+    "n_groups": 24461,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00085": {
+    "primitive": "score",
+    "before": {
+      "train": 19698,
+      "dev": 2404,
+      "test": 2393
+    },
+    "after": {
+      "train": 19698,
+      "dev": 2404,
+      "test": 2393
+    },
+    "n_groups": 24495,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00088": {
+    "primitive": "score",
+    "before": {
+      "train": 19670,
+      "dev": 2397,
+      "test": 2391
+    },
+    "after": {
+      "train": 19670,
+      "dev": 2397,
+      "test": 2391
+    },
+    "n_groups": 24458,
+    "quarantined_groups": 0,
+    "dropped_from_lower_splits": 0
+  },
+  "rnac_HybID00097": {
+    "primitive": "score",
+    "before": {
+      "train": 19659,
+      "dev": 2397,
+      "test": 2389
+    },
+    "after": {
+      "train": 19659,
+      "dev": 2397,
+      "test": 2389
+    },
+    "n_groups": 24445,
     "quarantined_groups": 0,
     "dropped_from_lower_splits": 0
   },
