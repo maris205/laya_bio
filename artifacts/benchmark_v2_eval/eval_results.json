@@ -1,0 +1,2631 @@
+{
+  "checkpoint": "/root/autodl-tmp/jev_gene/artifacts/laya_jev_joint_path_diagnostics/run_gfp_loss2x_xseed/round/seed_20260926_no_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/model.safetensors",
+  "max_per_task": 100,
+  "results": {
+    "deeploc_multi": {
+      "skip_reasons": {
+        "multi_noul": 100
+      },
+      "note": "no supported rows"
+    },
+    "deepstarr_dev": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.6353332758099068,
+      "mae": 1.4573771302023628,
+      "prediction_std": 0.17553844559120402,
+      "spearman": -0.12607936441489764,
+      "gold_std": 0.697896707304042
+    },
+    "deepstarr_hk": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.7403658359234282,
+      "mae": 1.2119705586536873,
+      "prediction_std": 0.1339480207161908,
+      "spearman": -0.06246624662466246,
+      "gold_std": 1.4356518713590078
+    },
+    "dna_core": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.47,
+      "nll": 2.008684696923433,
+      "macro_f1": 0.3197278911564626
+    },
+    "dna_splice": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.35,
+      "nll": 1.6987984573010604,
+      "macro_f1": 0.25526819923371646
+    },
+    "dna_tf": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.38,
+      "nll": 1.4100888458066116,
+      "macro_f1": 0.37900641025641024
+    },
+    "gb_demo_coding_vs_intergenomic_seqs": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "noul",
+      "accuracy": 0.68,
+      "nll": 1.0347209508625166,
+      "macro_f1": 0.40476190476190477,
+      "auroc": 0.3866292660121552
+    },
+    "gb_demo_human_or_worm": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "noul",
+      "accuracy": 1.0,
+      "nll": 0.17220716189419502,
+      "macro_f1": 1.0
+    },
+    "gb_drosophila_enhancers_stark": {
+      "skip_reasons": {
+        "over_budget": 97
+      },
+      "n": 3,
+      "primitive": "noul",
+      "accuracy": 1.0,
+      "nll": 0.07131678511607908,
+      "macro_f1": 1.0
+    },
+    "gb_dummy_mouse_enhancers_ensembl": {
+      "skip_reasons": {
+        "over_budget": 67
+      },
+      "n": 33,
+      "primitive": "noul",
+      "accuracy": 1.0,
+      "nll": 0.14120967143714652,
+      "macro_f1": 1.0
+    },
+    "gb_human_enhancers_cohn": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "noul",
+      "accuracy": 0.94,
+      "nll": 0.2088112672241505,
+      "macro_f1": 0.4845360824742268
+    },
+    "gb_human_ensembl_regulatory": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.15,
+      "nll": 1.5477586670280805,
+      "macro_f1": 0.08695652173913043
+    },
+    "gb_human_nontata_promoters": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "noul",
+      "accuracy": 0.09,
+      "nll": 2.3561223040508943,
+      "macro_f1": 0.08256880733944953
+    },
+    "gb_human_ocr_ensembl": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "noul",
+      "accuracy": 0.55,
+      "nll": 0.9212035370118455,
+      "macro_f1": 0.3548387096774194
+    },
+    "gl_dna_protein_pair": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_dna_protein_rand": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_dna_protein_rand_v2": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_dna_sim_150": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_dna_sim_50": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_dna_sim_simple_150": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_protein_sim_150": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gl_protein_sim_450": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "gue_H3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.37,
+      "nll": 0.9123589654821005,
+      "macro_f1": 0.36993699369936994
+    },
+    "gue_H3K14ac": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.47,
+      "nll": 0.8140456081326815,
+      "macro_f1": 0.4635084522724972
+    },
+    "gue_H3K36me3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.45,
+      "nll": 0.7711562094643913,
+      "macro_f1": 0.44729172947442464
+    },
+    "gue_H3K4me1": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.49,
+      "nll": 0.7944152279695434,
+      "macro_f1": 0.46647138822052514
+    },
+    "gue_H3K4me2": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.46,
+      "nll": 0.8391096471908522,
+      "macro_f1": 0.4521103896103896
+    },
+    "gue_H3K4me3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.47,
+      "nll": 0.8151829778302218,
+      "macro_f1": 0.4501504305425874
+    },
+    "gue_H3K79me3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.53,
+      "nll": 0.7654450478402474,
+      "macro_f1": 0.5276856597326902
+    },
+    "gue_H3K9ac": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.31,
+      "nll": 0.9227272398438806,
+      "macro_f1": 0.30827067669172936
+    },
+    "gue_H4": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.49,
+      "nll": 0.7607180267432594,
+      "macro_f1": 0.4708994708994709
+    },
+    "gue_H4ac": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.45,
+      "nll": 0.8442825875705016,
+      "macro_f1": 0.44950455409868884
+    },
+    "gue_mouse_0": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.48,
+      "nll": 0.7885489310106366,
+      "macro_f1": 0.380952380952381
+    },
+    "gue_mouse_1": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.51,
+      "nll": 0.9406524438032274,
+      "macro_f1": 0.35517831293591257
+    },
+    "gue_mouse_2": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.52,
+      "nll": 0.8475971337274804,
+      "macro_f1": 0.34210526315789475
+    },
+    "gue_mouse_3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.53,
+      "nll": 0.8510192688528108,
+      "macro_f1": 0.3647790241924585
+    },
+    "gue_mouse_4": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.47,
+      "nll": 0.9259129867082807,
+      "macro_f1": 0.33542319749216304
+    },
+    "gue_prom_prom_300_all": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.61,
+      "nll": 0.8000090773913229,
+      "macro_f1": 0.5741893219783819
+    },
+    "gue_prom_prom_300_notata": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.89,
+      "nll": 0.2955396382479006,
+      "macro_f1": 0.8765570643025474
+    },
+    "gue_prom_prom_300_tata": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.56,
+      "nll": 0.8953208635616504,
+      "macro_f1": 0.5452666391070691
+    },
+    "gue_prom_prom_core_all": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.63,
+      "nll": 0.6998806315030905,
+      "macro_f1": 0.3865030674846626
+    },
+    "gue_prom_prom_core_notata": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.73,
+      "nll": 0.5400997528115977,
+      "macro_f1": 0.42196531791907516
+    },
+    "gue_prom_prom_core_tata": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.52,
+      "nll": 0.8608004378129068,
+      "macro_f1": 0.34210526315789475
+    },
+    "gue_splice_reconstructed": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.19,
+      "nll": 1.3974512328763264,
+      "macro_f1": 0.1916221033868093
+    },
+    "gue_tf_0": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.99,
+      "nll": 0.28508484244177235,
+      "macro_f1": 0.49748743718592964
+    },
+    "gue_tf_1": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.99,
+      "nll": 0.16978287334596134,
+      "macro_f1": 0.49748743718592964
+    },
+    "gue_tf_2": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 1.0,
+      "nll": 0.21695317151853946,
+      "macro_f1": 1.0
+    },
+    "gue_tf_3": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.99,
+      "nll": 0.2889945326564033,
+      "macro_f1": 0.49748743718592964
+    },
+    "gue_tf_4": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.97,
+      "nll": 0.24248969906678083,
+      "macro_f1": 0.49238578680203043
+    },
+    "gue_virus_covid": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.08,
+      "nll": 3.084757559050437,
+      "macro_f1": 0.05079131394920869
+    },
+    "lg_fold_class": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.55,
+      "nll": 1.1359777179309436,
+      "macro_f1": 0.40898983486584567
+    },
+    "lg_npp": {
+      "skip_reasons": {
+        "over_budget": 6
+      },
+      "n": 94,
+      "primitive": "choice",
+      "accuracy": 0.5851063829787234,
+      "nll": 1.296368269790021,
+      "macro_f1": 0.4303030303030303
+    },
+    "lg_promoter_detection": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.82,
+      "nll": 0.45432964489349104,
+      "macro_f1": 0.8193496587715777
+    },
+    "lg_signal_peptide": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "choice",
+      "accuracy": 0.37,
+      "nll": 1.061344225567312,
+      "macro_f1": 0.3204616546219394
+    },
+    "lg_subcellular_loc": {
+      "skip_reasons": {
+        "over_budget": 8
+      },
+      "n": 92,
+      "primitive": "choice",
+      "accuracy": 0.10869565217391304,
+      "nll": 2.2016643365847535,
+      "macro_f1": 0.058068783068783075
+    },
+    "pg_A0A140D2T1_ZIKV_Sourisseau_2019": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_A0A192B1T2_9HIV1_Haddox_2018": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_A0A1I9GEU1_NEIME_Kennouche_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.8129956335186534,
+      "mae": 1.237150243035093,
+      "prediction_std": 0.03505139638823921,
+      "spearman": 0.0911131113111311,
+      "gold_std": 1.7262660552765325
+    },
+    "pg_A0A247D711_LISMN_Stadelmann_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.3521660473569217,
+      "mae": 0.7509877938280097,
+      "prediction_std": 0.0450344707953262,
+      "spearman": -0.12435643564356434,
+      "gold_std": 1.2529340500534605
+    },
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.2812284903053606,
+      "mae": 1.116594432340223,
+      "prediction_std": 0.028109472797007443,
+      "spearman": 0.13946594659465947,
+      "gold_std": 0.7788051746226059
+    },
+    "pg_A0A2Z5U3Z0_9INFA_Wu_2014": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6200117093364301,
+      "mae": 0.31356252105018056,
+      "prediction_std": 0.005829525053213561,
+      "spearman": 0.13415995676218512,
+      "gold_std": 0.6146181807919631
+    },
+    "pg_A4D664_9INFA_Soh_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.29866670019602876,
+      "mae": 0.24906256586207995,
+      "prediction_std": 0.005489027442023949,
+      "spearman": 0.16031203120312026,
+      "gold_std": 0.29303713720079316
+    },
+    "pg_A4GRB6_PSEAI_Chen_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5587469035257675,
+      "mae": 1.3933163899630359,
+      "prediction_std": 0.03988119305003142,
+      "spearman": 0.16458445844584457,
+      "gold_std": 1.5337342541329833
+    },
+    "pg_A4_HUMAN_Seuma_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4176638692905605,
+      "mae": 1.2594377640502108,
+      "prediction_std": 0.032746798166287804,
+      "spearman": 0.16678067806780675,
+      "gold_std": 0.8551033705388792
+    },
+    "pg_AACC1_PSEAI_Dandage_2018": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.0649641457360355,
+      "mae": 1.7178083233034114,
+      "prediction_std": 0.08554075732379526,
+      "spearman": 0.14468090213357088,
+      "gold_std": 2.0357075739272013
+    },
+    "pg_ACE2_HUMAN_Chan_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4055432134065728,
+      "mae": 1.2298657801804815,
+      "prediction_std": 0.009036546926042012,
+      "spearman": 0.02226222622262226,
+      "gold_std": 1.1648190646745835
+    },
+    "pg_ADRB2_HUMAN_Jones_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9286048527950902,
+      "mae": 0.6939518652829568,
+      "prediction_std": 0.02306394171711929,
+      "spearman": -0.015577557755775576,
+      "gold_std": 0.8850935019173088
+    },
+    "pg_AICDA_HUMAN_Gajula_2014_3cycles": {
+      "skip_reasons": {},
+      "n": 95,
+      "primitive": "score",
+      "rmse": 2.2533179160957544,
+      "mae": 0.8000258723966754,
+      "prediction_std": 0.014841031120728043,
+      "spearman": 0.0733620720385714,
+      "gold_std": 2.2516860800635765
+    },
+    "pg_AMFR_HUMAN_Tsuboyama_2023_4G3O": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0488250094473075,
+      "mae": 0.9579167841656675,
+      "prediction_std": 0.042612283143604344,
+      "spearman": -0.08735673567356733,
+      "gold_std": 0.848576566733148
+    },
+    "pg_AMIE_PSEAE_Wrenbeck_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4829221439209559,
+      "mae": 0.41193644010303543,
+      "prediction_std": 0.010746703657278043,
+      "spearman": -0.06597699356250533,
+      "gold_std": 0.4806227487531151
+    },
+    "pg_ANCSZ_Hobbs_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.22059299470276442,
+      "mae": 0.12961211964347208,
+      "prediction_std": 0.0015886188561097996,
+      "spearman": 0.09786978697869786,
+      "gold_std": 0.1994455670790495
+    },
+    "pg_ARGR_ECOLI_Tsuboyama_2023_1AOY": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0441827279855151,
+      "mae": 0.8733237810476387,
+      "prediction_std": 0.0822893105667806,
+      "spearman": -0.4112451245124512,
+      "gold_std": 0.9107566661013378
+    },
+    "pg_B2L11_HUMAN_Dutta_2010_binding-Mcl-1": {
+      "skip_reasons": {},
+      "n": 68,
+      "primitive": "score",
+      "rmse": 16665353.881026208,
+      "mae": 12610909.382321382,
+      "prediction_std": 98803.52219620715,
+      "spearman": -0.3824101996411802,
+      "gold_std": 16599675.679343935
+    },
+    "pg_BBC1_YEAST_Tsuboyama_2023_1TG0": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.1503986243225859,
+      "mae": 0.9019007290058504,
+      "prediction_std": 0.04822208010780166,
+      "spearman": -0.29027302730273025,
+      "gold_std": 1.08164779510171
+    },
+    "pg_BCHB_CHLTE_Tsuboyama_2023_2KRU": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8929954834845931,
+      "mae": 0.7606143998091767,
+      "prediction_std": 0.06967015589988772,
+      "spearman": 0.013789378937893787,
+      "gold_std": 0.8003858161000997
+    },
+    "pg_BLAT_ECOLX_Deng_2012": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.1636060950612142,
+      "mae": 0.9975892892659168,
+      "prediction_std": 0.029532315273553433,
+      "spearman": 0.003925605760243008,
+      "gold_std": 1.1609469315506529
+    },
+    "pg_BLAT_ECOLX_Firnberg_2014": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4032590338892108,
+      "mae": 0.34012189741180365,
+      "prediction_std": 0.01330585075401095,
+      "spearman": 0.08405292691832811,
+      "gold_std": 0.3925795579127879
+    },
+    "pg_BLAT_ECOLX_Jacquier_2013": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5627520901104819,
+      "mae": 1.224312835131745,
+      "prediction_std": 0.07039071166037184,
+      "spearman": 0.028433828308832454,
+      "gold_std": 1.5530082571139394
+    },
+    "pg_BLAT_ECOLX_Stiffler_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8802688904235872,
+      "mae": 0.7908155727364894,
+      "prediction_std": 0.029800212089260106,
+      "spearman": 0.049000900090009,
+      "gold_std": 0.8580099255537942
+    },
+    "pg_BRCA1_HUMAN_Findlay_2018": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_BRCA2_HUMAN_Erwood_2022_HEK293T": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_C6KNH7_9INFA_Lee_2018": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9119959644666175,
+      "mae": 0.7994282673209001,
+      "prediction_std": 0.011955310948013815,
+      "spearman": -0.23395139513951393,
+      "gold_std": 0.7770100822770587
+    },
+    "pg_CALM1_HUMAN_Weile_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3421546752002646,
+      "mae": 0.26188192433006047,
+      "prediction_std": 0.01845923294445951,
+      "spearman": 0.09836183618361836,
+      "gold_std": 0.34244508113686634
+    },
+    "pg_CAPSD_AAV2S_Sinai_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.6511652977687876,
+      "mae": 2.153337494478749,
+      "prediction_std": 0.017974826345710525,
+      "spearman": -0.28967296729672964,
+      "gold_std": 1.6875778242389619
+    },
+    "pg_CAR11_HUMAN_Meitlis_2020_gof": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_CAR11_HUMAN_Meitlis_2020_lof": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_CAS9_STRP1_Spencer_2017_positive": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_CASP3_HUMAN_Roychowdhury_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6935750351849974,
+      "mae": 0.5679006369589061,
+      "prediction_std": 0.032966424686161365,
+      "spearman": -0.0696069606960696,
+      "gold_std": 0.664198351427851
+    },
+    "pg_CASP7_HUMAN_Roychowdhury_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7216751198372462,
+      "mae": 0.6216075677122938,
+      "prediction_std": 0.025387320832883996,
+      "spearman": -0.0354995499549955,
+      "gold_std": 0.7173898512450085
+    },
+    "pg_CATR_CHLRE_Tsuboyama_2023_2AMI": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5977931393548145,
+      "mae": 0.470355614451038,
+      "prediction_std": 0.038678751310276836,
+      "spearman": 0.15962796279627958,
+      "gold_std": 0.553667057511041
+    },
+    "pg_CBPA2_HUMAN_Tsuboyama_2023_1O6X": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7874386311132937,
+      "mae": 0.5396519291448378,
+      "prediction_std": 0.03325652832723569,
+      "spearman": -0.07780378037803778,
+      "gold_std": 0.7625770885913735
+    },
+    "pg_CBS_HUMAN_Sun_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5253393647082147,
+      "mae": 0.46487503706369604,
+      "prediction_std": 0.012636741415725846,
+      "spearman": -0.1344341519149338,
+      "gold_std": 0.5217019979572791
+    },
+    "pg_CBX4_HUMAN_Tsuboyama_2023_2K28": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0751557299048249,
+      "mae": 0.85406975241715,
+      "prediction_std": 0.03879896884921914,
+      "spearman": 0.4161776177617761,
+      "gold_std": 1.0679166035896863
+    },
+    "pg_CCDB_ECOLI_Adkar_2012": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 36.74868187304612,
+      "mae": 30.345771816615017,
+      "prediction_std": 0.5757455427614356,
+      "spearman": 0.4597157434834891,
+      "gold_std": 23.76762503911571
+    },
+    "pg_CCDB_ECOLI_Tripathi_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.6286878728077925,
+      "mae": 1.7100000283122063,
+      "prediction_std": 8.381966087317108e-08,
+      "spearman": 0.07246958100707761,
+      "gold_std": 1.9964718881066172
+    },
+    "pg_CCR5_HUMAN_Gill_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.41544369612592025,
+      "mae": 0.3052616892433415,
+      "prediction_std": 0.005161852290257881,
+      "spearman": -0.19647625763018156,
+      "gold_std": 0.41366139534648383
+    },
+    "pg_CD19_HUMAN_Klesmith_2019_FMC_singles": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.137963301861886,
+      "mae": 1.3862560313938446,
+      "prediction_std": 0.04046270194418487,
+      "spearman": 0.07659733196706578,
+      "gold_std": 2.129180758610233
+    },
+    "pg_CP2C9_HUMAN_Amorosi_2021_abundance": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.35012480288514275,
+      "mae": 0.2746110888123192,
+      "prediction_std": 0.00569161082162193,
+      "spearman": 0.18670267026702667,
+      "gold_std": 0.3500848684100998
+    },
+    "pg_CP2C9_HUMAN_Amorosi_2021_activity": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.32934492441357816,
+      "mae": 0.3085467445949255,
+      "prediction_std": 0.008969334759601513,
+      "spearman": 0.04818481848184818,
+      "gold_std": 0.2066117410918634
+    },
+    "pg_CSN4_MOUSE_Tsuboyama_2023_1UFM": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6411868008419768,
+      "mae": 0.5475128443847341,
+      "prediction_std": 0.08313526321841781,
+      "spearman": 0.15445544554455443,
+      "gold_std": 0.6481794463303381
+    },
+    "pg_CUE1_YEAST_Tsuboyama_2023_2MYX": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.068041182454357,
+      "mae": 1.005057110314753,
+      "prediction_std": 0.06792346384117469,
+      "spearman": 0.29922592259225916,
+      "gold_std": 0.8079530315547093
+    },
+    "pg_D7PM05_CLYGR_Somermeyer_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 12236.35890406348,
+      "mae": 7908.572412646568,
+      "prediction_std": 202.13267971394347,
+      "spearman": 0.0049462756074456,
+      "gold_std": 11223.240834158029
+    },
+    "pg_DLG4_HUMAN_Faure_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3945198681814665,
+      "mae": 0.3302175043995892,
+      "prediction_std": 0.005163699918255273,
+      "spearman": 0.2583738373837383,
+      "gold_std": 0.3909782870272284
+    },
+    "pg_DLG4_RAT_McLaughlin_2012": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.19538556406125326,
+      "mae": 0.17220624022297837,
+      "prediction_std": 0.002115813996068672,
+      "spearman": 0.08144014401440143,
+      "gold_std": 0.15058295345798867
+    },
+    "pg_DN7A_SACS2_Tsuboyama_2023_1JIC": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.321038221503488,
+      "mae": 0.9023625760044056,
+      "prediction_std": 0.034730913508333315,
+      "spearman": 0.07776777677767775,
+      "gold_std": 1.127711779479219
+    },
+    "pg_DNJA1_HUMAN_Tsuboyama_2023_2LO1": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5704501720496877,
+      "mae": 1.0752957794699567,
+      "prediction_std": 0.054138135156904514,
+      "spearman": -0.08010801080108011,
+      "gold_std": 1.3649615840512503
+    },
+    "pg_DOCK1_MOUSE_Tsuboyama_2023_2M0Y": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9556305114394792,
+      "mae": 0.8250464136538147,
+      "prediction_std": 0.060374528541168274,
+      "spearman": 0.3392859285928593,
+      "gold_std": 0.9397227496112174
+    },
+    "pg_DYR_ECOLI_Nguyen_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3638506078508377,
+      "mae": 0.21080364541163046,
+      "prediction_std": 0.0009707342323834723,
+      "spearman": 0.0051289616354597565,
+      "gold_std": 0.30726827040877486
+    },
+    "pg_DYR_ECOLI_Thompson_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.312992732953244,
+      "mae": 1.0906326002662379,
+      "prediction_std": 0.006045138840355207,
+      "spearman": 0.13639363936393636,
+      "gold_std": 0.925221065152982
+    },
+    "pg_ENVZ_ECOLI_Ghose_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0322988156239865,
+      "mae": 0.7871309458870489,
+      "prediction_std": 0.029122246856724515,
+      "spearman": -0.3801128187353102,
+      "gold_std": 1.01956206790796
+    },
+    "pg_ENV_HV1B9_DuenasDecamp_2016": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_ENV_HV1BR_Haddox_2016": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_EPHB2_HUMAN_Tsuboyama_2023_1F0M": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6992067853819047,
+      "mae": 0.48995987849167494,
+      "prediction_std": 0.07117916591550201,
+      "spearman": -0.005256525652565256,
+      "gold_std": 0.6802381159349141
+    },
+    "pg_ERBB2_HUMAN_Elazar_2016": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_ESTA_BACSU_Nutschel_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.560196564824145,
+      "mae": 2.0495866606105118,
+      "prediction_std": 0.03714119397740651,
+      "spearman": -0.3927919927314701,
+      "gold_std": 2.4737220438036283
+    },
+    "pg_F7YBW8_MESOW_Aakre_2015": {
+      "skip_reasons": {},
+      "n": 16,
+      "primitive": "score",
+      "rmse": 0.5174549901849477,
+      "mae": 0.3400935501685143,
+      "prediction_std": 0.005200501890919092,
+      "spearman": -0.10882352941176471,
+      "gold_std": 0.4299596608444751
+    },
+    "pg_F7YBW8_MESOW_Ding_2023": {
+      "skip_reasons": {},
+      "n": 33,
+      "primitive": "score",
+      "rmse": 0.19124255475420077,
+      "mae": 0.17697468969170727,
+      "prediction_std": 0.003964701485197168,
+      "spearman": -0.1450534759358289,
+      "gold_std": 0.17713941418314025
+    },
+    "pg_FECA_ECOLI_Tsuboyama_2023_2D1U": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9227852930999196,
+      "mae": 0.7711051545080677,
+      "prediction_std": 0.04546631233282491,
+      "spearman": 0.14807080708070805,
+      "gold_std": 0.8890641856250436
+    },
+    "pg_FKBP3_HUMAN_Tsuboyama_2023_2KFV": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.84979372601562,
+      "mae": 0.7243120625347877,
+      "prediction_std": 0.04800020088597414,
+      "spearman": -0.1245244524452445,
+      "gold_std": 0.840905665190926
+    },
+    "pg_GAL4_YEAST_Kitzman_2015": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_GCN4_YEAST_Staller_2018": {
+      "skip_reasons": {},
+      "n": 15,
+      "primitive": "score",
+      "rmse": 0.4092175495895489,
+      "mae": 0.21988718303496022,
+      "prediction_std": 0.0035215490839304426,
+      "spearman": 0.2285714285714285,
+      "gold_std": 0.3994301003043102
+    },
+    "pg_GDIA_HUMAN_Silverstein_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3821395708378825,
+      "mae": 0.27313839505484533,
+      "prediction_std": 0.00355759206812061,
+      "spearman": -0.02227797081064825,
+      "gold_std": 0.33472991361404547
+    },
+    "pg_GFP_AEQVI_Sarkisyan_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6679888293361335,
+      "mae": 0.301073635846051,
+      "prediction_std": 0.013963085779343189,
+      "spearman": 0.246012601260126,
+      "gold_std": 0.6181176092536013
+    },
+    "pg_GLPA_HUMAN_Elazar_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5375166858942884,
+      "mae": 1.2335257099754786,
+      "prediction_std": 0.02996591894401012,
+      "spearman": -0.018505850585058506,
+      "gold_std": 1.3425292924205565
+    },
+    "pg_GRB2_HUMAN_Faure_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4997606725502095,
+      "mae": 0.4040364136104415,
+      "prediction_std": 0.01430278228089899,
+      "spearman": 0.3641404140414041,
+      "gold_std": 0.4641965790742137
+    },
+    "pg_HCP_LAMBD_Tsuboyama_2023_2L6Q": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9051896098490809,
+      "mae": 0.6867379447335941,
+      "prediction_std": 0.051734824385278357,
+      "spearman": -0.2903570357035703,
+      "gold_std": 0.8910529497165242
+    },
+    "pg_HECD1_HUMAN_Tsuboyama_2023_3DKM": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9540283464578966,
+      "mae": 0.7515116982651603,
+      "prediction_std": 0.03793366987715287,
+      "spearman": 0.21100510051005097,
+      "gold_std": 0.9590060059234115
+    },
+    "pg_HEM3_HUMAN_Loggerenberg_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4227710355012766,
+      "mae": 0.3262162753151297,
+      "prediction_std": 0.013243329193006826,
+      "spearman": 0.4621342289657162,
+      "gold_std": 0.42303348864041174
+    },
+    "pg_HIS7_YEAST_Pokusaeva_2019": {
+      "skip_reasons": {},
+      "n": 78,
+      "primitive": "score",
+      "rmse": 0.22652209716877614,
+      "mae": 0.09490172289836511,
+      "prediction_std": 0.0007618090095165269,
+      "spearman": -0.06377167136660807,
+      "gold_std": 0.2136599146961568
+    },
+    "pg_HMDH_HUMAN_Jiang_2019": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_HSP82_YEAST_Cote-Hammarlof_2020_growth-H2O2": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.013431053194664798,
+      "mae": 0.007093344299643175,
+      "prediction_std": 9.365120204965073e-05,
+      "spearman": -0.18571857185718568,
+      "gold_std": 0.013394026552904703
+    },
+    "pg_HSP82_YEAST_Flynn_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3883068867378784,
+      "mae": 0.2706046400140968,
+      "prediction_std": 0.0032178223712018635,
+      "spearman": 0.011545154515451543,
+      "gold_std": 0.3283073549109406
+    },
+    "pg_HSP82_YEAST_Mishra_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2763910786580249,
+      "mae": 0.1417031940402564,
+      "prediction_std": 0.0039327965688199275,
+      "spearman": -0.18777077707770773,
+      "gold_std": 0.2721384378840896
+    },
+    "pg_HXK4_HUMAN_Gersing_2022_activity": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5577268140901386,
+      "mae": 0.44477088860822983,
+      "prediction_std": 0.012631354770120399,
+      "spearman": -0.012865286528652863,
+      "gold_std": 0.545169942585877
+    },
+    "pg_HXK4_HUMAN_Gersing_2023_abundance": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.37681212408158477,
+      "mae": 0.2830253139505929,
+      "prediction_std": 0.006329753531844678,
+      "spearman": 0.1763216321632163,
+      "gold_std": 0.37608658073053214
+    },
+    "pg_I6TAH8_I68A0_Doud_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.856276158990457,
+      "mae": 1.463209065967164,
+      "prediction_std": 0.04410575111348338,
+      "spearman": -0.17140114011401136,
+      "gold_std": 1.8222756570505074
+    },
+    "pg_IF1_ECOLI_Kelsic_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3839601510486163,
+      "mae": 0.25269401183940815,
+      "prediction_std": 0.00644805267004743,
+      "spearman": 0.12039220629984922,
+      "gold_std": 0.35487205624080287
+    },
+    "pg_ILF3_HUMAN_Tsuboyama_2023_2L33": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4942876218780937,
+      "mae": 0.3547796222915015,
+      "prediction_std": 0.01953464991295945,
+      "spearman": -0.0983138313831383,
+      "gold_std": 0.41035968872261785
+    },
+    "pg_ISDH_STAAW_Tsuboyama_2023_2LHR": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8247387013627008,
+      "mae": 0.7049573063199415,
+      "prediction_std": 0.03057512970396614,
+      "spearman": 0.1421062106210621,
+      "gold_std": 0.8299521862132679
+    },
+    "pg_KCNE1_HUMAN_Muhammad_2023_expression": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.21651282735682806,
+      "mae": 0.16326594376764367,
+      "prediction_std": 0.005249326616210719,
+      "spearman": 0.00318031803180318,
+      "gold_std": 0.21604284338467694
+    },
+    "pg_KCNE1_HUMAN_Muhammad_2023_function": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2792717807337252,
+      "mae": 0.2497258006073913,
+      "prediction_std": 0.011825826439865208,
+      "spearman": -0.06696669666966697,
+      "gold_std": 0.13485000295318478
+    },
+    "pg_KCNH2_HUMAN_Kozek_2020": {
+      "skip_reasons": {
+        "over_budget": 90
+      },
+      "note": "no supported rows"
+    },
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_function": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6050000258386119,
+      "mae": 0.44049262511512716,
+      "prediction_std": 0.013839524933866153,
+      "spearman": -0.03771977197719772,
+      "gold_std": 0.6027720989848966
+    },
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_surface": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.1402829886893773,
+      "mae": 0.8380481701408331,
+      "prediction_std": 0.02668260227634291,
+      "spearman": -0.10706270627062706,
+      "gold_std": 1.0930408670083243
+    },
+    "pg_KKA2_KLEPN_Melnikov_2014": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.1326288822636965,
+      "mae": 0.9204148096441257,
+      "prediction_std": 0.023967389635081555,
+      "spearman": 0.21736535903445492,
+      "gold_std": 0.8046775710183552
+    },
+    "pg_LGK_LIPST_Klesmith_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.521201730004747,
+      "mae": 0.48612356530528944,
+      "prediction_std": 0.015435006890060119,
+      "spearman": 0.054114223141749844,
+      "gold_std": 0.25463075913761873
+    },
+    "pg_LYAM1_HUMAN_Elazar_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.190708398605157,
+      "mae": 1.8755850374859913,
+      "prediction_std": 0.03923263306203388,
+      "spearman": -0.008604860486048603,
+      "gold_std": 1.9093401449458243
+    },
+    "pg_MAFG_MOUSE_Tsuboyama_2023_1K1V": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9664066818931651,
+      "mae": 0.80360329514531,
+      "prediction_std": 0.02276642121481766,
+      "spearman": -0.29592559255925593,
+      "gold_std": 0.7771025311018492
+    },
+    "pg_MBD11_ARATH_Tsuboyama_2023_6ACV": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8884686964776554,
+      "mae": 0.710419029819341,
+      "prediction_std": 0.07312541729287055,
+      "spearman": 0.2974737473747374,
+      "gold_std": 0.8369665755134638
+    },
+    "pg_MET_HUMAN_Estevam_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.937325263452509,
+      "mae": 2.312024534702627,
+      "prediction_std": 0.03149445393386263,
+      "spearman": -0.004788478847884788,
+      "gold_std": 2.8660720423486183
+    },
+    "pg_MK01_HUMAN_Brenan_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.2181623664262196,
+      "mae": 0.9250322317636673,
+      "prediction_std": 0.0128169848094342,
+      "spearman": -0.056261626162616256,
+      "gold_std": 1.1344705881173136
+    },
+    "pg_MLAC_ECOLI_MacRae_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2179316218477318,
+      "mae": 0.16039304513481895,
+      "prediction_std": 0.0069399159972386715,
+      "spearman": -0.07655565556555656,
+      "gold_std": 0.2162652945079252
+    },
+    "pg_MSH2_HUMAN_Jia_2020": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_MTH3_HAEAE_RockahShmuel_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.42314566093638173,
+      "mae": 0.3908206037644297,
+      "prediction_std": 0.014263905215931258,
+      "spearman": 0.27521974049153275,
+      "gold_std": 0.3350760510690073
+    },
+    "pg_MTHR_HUMAN_Weile_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.36589576800619505,
+      "mae": 0.2894288684727324,
+      "prediction_std": 0.006323738023543269,
+      "spearman": 0.13237323732373235,
+      "gold_std": 0.2702739742483541
+    },
+    "pg_MYO3_YEAST_Tsuboyama_2023_2BTT": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.245499128172757,
+      "mae": 1.048017834108494,
+      "prediction_std": 0.03467481906491012,
+      "spearman": -0.19194719471947194,
+      "gold_std": 1.2390488991836854
+    },
+    "pg_NCAP_I34A1_Doud_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.6967746659782008,
+      "mae": 1.4864386075036,
+      "prediction_std": 0.05411067984690192,
+      "spearman": 0.2466006600660066,
+      "gold_std": 1.694339931959638
+    },
+    "pg_NKX31_HUMAN_Tsuboyama_2023_2L9R": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3187733438573937,
+      "mae": 0.27087949973742625,
+      "prediction_std": 0.02948873789716865,
+      "spearman": 0.4389318931893189,
+      "gold_std": 0.263149011390603
+    },
+    "pg_NPC1_HUMAN_Erwood_2022_HEK293T": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_NPC1_HUMAN_Erwood_2022_RPE1": {
+      "skip_reasons": {
+        "over_budget": 35
+      },
+      "note": "no supported rows"
+    },
+    "pg_NRAM_I33A0_Jiang_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5670174600055519,
+      "mae": 0.49024516758177983,
+      "prediction_std": 0.0025939215437063195,
+      "spearman": -0.22755475547554754,
+      "gold_std": 0.5572211099476984
+    },
+    "pg_NUD15_HUMAN_Suiter_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.31480381483931175,
+      "mae": 0.27146934677145945,
+      "prediction_std": 0.014424562121696741,
+      "spearman": -0.054509450945094504,
+      "gold_std": 0.282505058072279
+    },
+    "pg_NUSA_ECOLI_Tsuboyama_2023_1WCL": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6983715798040542,
+      "mae": 0.6178951287803945,
+      "prediction_std": 0.06604226202181512,
+      "spearman": -0.09772577257725772,
+      "gold_std": 0.48697640678049287
+    },
+    "pg_NUSG_MYCTU_Tsuboyama_2023_2MI6": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.186045200070455,
+      "mae": 0.9962770201668347,
+      "prediction_std": 0.06649101827119483,
+      "spearman": -0.10472247224722471,
+      "gold_std": 1.1737188065111912
+    },
+    "pg_OBSCN_HUMAN_Tsuboyama_2023_1V1C": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6370571734502222,
+      "mae": 0.5214200800370891,
+      "prediction_std": 0.06344974765115577,
+      "spearman": 0.04853285328532853,
+      "gold_std": 0.6149045385904982
+    },
+    "pg_ODP2_GEOSE_Tsuboyama_2023_1W4G": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.846549512967383,
+      "mae": 0.6749848163884767,
+      "prediction_std": 0.024559196514279017,
+      "spearman": 0.11279927992799278,
+      "gold_std": 0.8136700532174508
+    },
+    "pg_OPSD_HUMAN_Wan_2019": {
+      "skip_reasons": {},
+      "n": 59,
+      "primitive": "score",
+      "rmse": 1.6885923020317548,
+      "mae": 1.5447468306855572,
+      "prediction_std": 0.03615090718723838,
+      "spearman": -0.03325540619520748,
+      "gold_std": 1.5089103334116754
+    },
+    "pg_OTC_HUMAN_Lo_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.36026044070126045,
+      "mae": 0.3045991367772445,
+      "prediction_std": 0.009516652457839886,
+      "spearman": -0.09408051275943065,
+      "gold_std": 0.35893333642892516
+    },
+    "pg_OTU7A_HUMAN_Tsuboyama_2023_2L2D": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5400852292905652,
+      "mae": 0.40391627880695885,
+      "prediction_std": 0.03223638424281823,
+      "spearman": -0.10779477947794777,
+      "gold_std": 0.5278712082992332
+    },
+    "pg_OXDA_RHOTO_Vanella_2023_activity": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.08863392172907425,
+      "mae": 0.07998112809303437,
+      "prediction_std": 0.0013570809758344207,
+      "spearman": 0.07644764476447645,
+      "gold_std": 0.06999866820099028
+    },
+    "pg_OXDA_RHOTO_Vanella_2023_expression": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.19495311898299406,
+      "mae": 0.15639705756123962,
+      "prediction_std": 0.002890141006031221,
+      "spearman": -0.1645004500450045,
+      "gold_std": 0.17642233554861886
+    },
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Etoposide": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9176041528907832,
+      "mae": 0.5622832577516146,
+      "prediction_std": 0.02951846026652913,
+      "spearman": 0.30904983213410064,
+      "gold_std": 0.8007468251233941
+    },
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Nutlin": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.48902759761714765,
+      "mae": 0.3755770650741668,
+      "prediction_std": 0.024885792095962735,
+      "spearman": 0.09761205404200561,
+      "gold_std": 0.4390213538614859
+    },
+    "pg_P53_HUMAN_Giacomelli_2018_WT_Nutlin": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3424341728007531,
+      "mae": 0.2863463811450699,
+      "prediction_std": 0.032084313613841314,
+      "spearman": -0.07518842110857833,
+      "gold_std": 0.27400779305065126
+    },
+    "pg_P53_HUMAN_Kotler_2018": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.2165933270314466,
+      "mae": 1.026461110394374,
+      "prediction_std": 0.01354296352214899,
+      "spearman": 0.011389138913891388,
+      "gold_std": 1.182267163149481
+    },
+    "pg_P84126_THETH_Chan_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6077735317834794,
+      "mae": 0.556900256663031,
+      "prediction_std": 0.00874541813064035,
+      "spearman": 0.09720972097209721,
+      "gold_std": 0.6068449350779483
+    },
+    "pg_PABP_YEAST_Melamed_2013": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6497468382371645,
+      "mae": 0.577325503015367,
+      "prediction_std": 0.0016112829751146816,
+      "spearman": 0.2143054305430543,
+      "gold_std": 0.33874370699474343
+    },
+    "pg_PAI1_HUMAN_Huttinger_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8555546993893185,
+      "mae": 0.6657302305718035,
+      "prediction_std": 0.020299040314564403,
+      "spearman": 0.0067447554130919424,
+      "gold_std": 0.8534733976469122
+    },
+    "pg_PA_I34A1_Wu_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8253113168109336,
+      "mae": 0.43535876376764837,
+      "prediction_std": 0.00476216050333272,
+      "spearman": 0.2717071707170717,
+      "gold_std": 0.8126798674819555
+    },
+    "pg_PHOT_CHLRE_Chen_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.530980966392251,
+      "mae": 0.3615541008633762,
+      "prediction_std": 0.005072895792182998,
+      "spearman": 0.17060906090609057,
+      "gold_std": 0.45159755725710915
+    },
+    "pg_PIN1_HUMAN_Tsuboyama_2023_1I6C": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.738448135118174,
+      "mae": 0.6379017984063509,
+      "prediction_std": 0.024036114041658497,
+      "spearman": -0.013189318931893188,
+      "gold_std": 0.7360952879833502
+    },
+    "pg_PITX2_HUMAN_Tsuboyama_2023_2L7M": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.19100028802204,
+      "mae": 1.0045631614434611,
+      "prediction_std": 0.03317798971460346,
+      "spearman": -0.029018901890189013,
+      "gold_std": 1.190536205074338
+    },
+    "pg_PKN1_HUMAN_Tsuboyama_2023_1URF": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6319056375553022,
+      "mae": 0.5153315716202723,
+      "prediction_std": 0.01629179820522494,
+      "spearman": -0.06762676267626762,
+      "gold_std": 0.530924401910861
+    },
+    "pg_POLG_CXB3N_Mattenberger_2021": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_POLG_DEN26_Suphatrakul_2023": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_POLG_HCVJF_Qi_2014": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_POLG_PESV_Tsuboyama_2023_2MXD": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.096621567891103,
+      "mae": 1.0205897621388262,
+      "prediction_std": 0.0671711919853521,
+      "spearman": -0.3259285928592859,
+      "gold_std": 0.5081223051019054
+    },
+    "pg_PPARG_HUMAN_Majithia_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.3391515078894014,
+      "mae": 2.225978352190286,
+      "prediction_std": 0.046575060157669844,
+      "spearman": 0.09825441496975557,
+      "gold_std": 0.7204725030145147
+    },
+    "pg_PPM1D_HUMAN_Miller_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2630140448802582,
+      "mae": 0.19161082253570855,
+      "prediction_std": 0.0037062002020519518,
+      "spearman": -0.07618544701737429,
+      "gold_std": 0.2298060229759003
+    },
+    "pg_PR40A_HUMAN_Tsuboyama_2023_1UZC": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7033100532634283,
+      "mae": 0.5787979169061255,
+      "prediction_std": 0.05055279855437964,
+      "spearman": -0.33892589258925887,
+      "gold_std": 0.6289659414916895
+    },
+    "pg_PRKN_HUMAN_Clausen_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.38025346314463027,
+      "mae": 0.299001872272189,
+      "prediction_std": 0.010097448269363117,
+      "spearman": -0.622034203420342,
+      "gold_std": 0.3706264887883499
+    },
+    "pg_PSAE_PICP2_Tsuboyama_2023_1PSE": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8992234463447861,
+      "mae": 0.6342500100787867,
+      "prediction_std": 0.01233855732178225,
+      "spearman": 0.24187218721872183,
+      "gold_std": 0.7255596321925724
+    },
+    "pg_PTEN_HUMAN_Matreyek_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2796486945287738,
+      "mae": 0.23195757609768802,
+      "prediction_std": 0.005385732464697208,
+      "spearman": -0.2305137429165578,
+      "gold_std": 0.2228977134401998
+    },
+    "pg_PTEN_HUMAN_Mighell_2018": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.328592610060615,
+      "mae": 1.081585823009689,
+      "prediction_std": 0.014258979676254755,
+      "spearman": 0.041452145214521445,
+      "gold_std": 1.3207563809403056
+    },
+    "pg_Q2N0S5_9HIV1_Haddox_2018": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_Q53Z42_HUMAN_McShan_2019_binding-TAPBPR": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.1330242390103848,
+      "mae": 0.8943052028790861,
+      "prediction_std": 0.020171799851180422,
+      "spearman": 0.4099468335254365,
+      "gold_std": 0.9822670207229804
+    },
+    "pg_Q53Z42_HUMAN_McShan_2019_expression": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.4297642005602214,
+      "mae": 1.9715992399627342,
+      "prediction_std": 0.03342029334854915,
+      "spearman": 0.4031083575064681,
+      "gold_std": 1.6213045333927862
+    },
+    "pg_Q59976_STRSQ_Romero_2015": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.674184469539954,
+      "mae": 0.5481937375893196,
+      "prediction_std": 0.014755217789163406,
+      "spearman": 0.012217405002949955,
+      "gold_std": 0.6177644220089079
+    },
+    "pg_Q6WV12_9MAXI_Somermeyer_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 4644.5912710902785,
+      "mae": 2650.545217441214,
+      "prediction_std": 65.23352897781909,
+      "spearman": 0.22984698469846981,
+      "gold_std": 4301.464842529355
+    },
+    "pg_Q837P4_ENTFA_Meier_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4225509657295745,
+      "mae": 1.184401035897072,
+      "prediction_std": 0.01625772919258463,
+      "spearman": -0.03517551755175517,
+      "gold_std": 1.2297477262778855
+    },
+    "pg_Q837P5_ENTFA_Meier_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8132666971618571,
+      "mae": 0.6496081908402082,
+      "prediction_std": 0.01365269387981482,
+      "spearman": -0.11522352235223522,
+      "gold_std": 0.8065960391846394
+    },
+    "pg_Q8WTC7_9CNID_Somermeyer_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1755.7603128614173,
+      "mae": 1164.7503421578615,
+      "prediction_std": 60.702693830620845,
+      "spearman": 0.08993699369936993,
+      "gold_std": 1759.239971507195
+    },
+    "pg_R1AB_SARS2_Flynn_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4018877962546495,
+      "mae": 0.3336626531345004,
+      "prediction_std": 0.016809814452299003,
+      "spearman": -0.238043804380438,
+      "gold_std": 0.3769981414380837
+    },
+    "pg_RAD_ANTMA_Tsuboyama_2023_2CJJ": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7131501060813259,
+      "mae": 0.5820963071810854,
+      "prediction_std": 0.026128966102210133,
+      "spearman": -0.176033603360336,
+      "gold_std": 0.638678422989469
+    },
+    "pg_RAF1_HUMAN_Zinkus-Boltz_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.21636700338563486,
+      "mae": 0.1386394943491357,
+      "prediction_std": 0.004670002525714521,
+      "spearman": 0.07992267809044662,
+      "gold_std": 0.21786511529605065
+    },
+    "pg_RASH_HUMAN_Bandaru_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.31042080703236347,
+      "mae": 0.23466069260347633,
+      "prediction_std": 0.0031798298439192968,
+      "spearman": -0.19698769876987698,
+      "gold_std": 0.2589931566838467
+    },
+    "pg_RASK_HUMAN_Weng_2022_abundance": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.20017049326505562,
+      "mae": 0.16967310557115955,
+      "prediction_std": 0.010734144797245293,
+      "spearman": -0.2468166816681668,
+      "gold_std": 0.17535515181762137
+    },
+    "pg_RASK_HUMAN_Weng_2022_binding-DARPin_K55": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5334016693205358,
+      "mae": 0.375276653363992,
+      "prediction_std": 0.004438353819667079,
+      "spearman": 0.1346054605460546,
+      "gold_std": 0.40700234204725844
+    },
+    "pg_RBP1_HUMAN_Tsuboyama_2023_2KWH": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5772591508368646,
+      "mae": 0.4642557819756943,
+      "prediction_std": 0.0161048723046484,
+      "spearman": -0.5362016201620162,
+      "gold_std": 0.5480818738749562
+    },
+    "pg_RCD1_ARATH_Tsuboyama_2023_5OAO": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5637704436533231,
+      "mae": 0.4642296883750126,
+      "prediction_std": 0.022500502258709816,
+      "spearman": -0.06237023702370237,
+      "gold_std": 0.4528323707779846
+    },
+    "pg_RCRO_LAMBD_Tsuboyama_2023_1ORC": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4574968010569997,
+      "mae": 1.0832255932056978,
+      "prediction_std": 0.07240559945292567,
+      "spearman": -0.34975097509750974,
+      "gold_std": 1.252588859555867
+    },
+    "pg_RD23A_HUMAN_Tsuboyama_2023_1IFY": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0450823741031947,
+      "mae": 0.8872558716619511,
+      "prediction_std": 0.03111794517664263,
+      "spearman": 0.22988298829882983,
+      "gold_std": 1.0343357949251757
+    },
+    "pg_RDRP_I33A0_Li_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.656863971015073,
+      "mae": 0.5862250905110908,
+      "prediction_std": 0.020002673359852265,
+      "spearman": 0.03745574557455745,
+      "gold_std": 0.5518910871176242
+    },
+    "pg_REV_HV1H2_Fernandes_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.23352566113177498,
+      "mae": 0.1630741256356388,
+      "prediction_std": 0.0030895237412188947,
+      "spearman": -0.05410141014101409,
+      "gold_std": 0.20251682321412343
+    },
+    "pg_RFAH_ECOLI_Tsuboyama_2023_2LCL": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.580731474697971,
+      "mae": 0.4849506637608738,
+      "prediction_std": 0.023276785492106742,
+      "spearman": 0.18558655865586554,
+      "gold_std": 0.521725582494167
+    },
+    "pg_RL20_AQUAE_Tsuboyama_2023_1GYZ": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6374651321062889,
+      "mae": 0.3945974219868182,
+      "prediction_std": 0.011682201014631499,
+      "spearman": 0.3185598559855985,
+      "gold_std": 0.5922381775972007
+    },
+    "pg_RL40A_YEAST_Mavor_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.2321123959959941,
+      "mae": 0.17152789568316837,
+      "prediction_std": 0.007020173249749658,
+      "spearman": -0.28315241159012616,
+      "gold_std": 0.19259449763476003
+    },
+    "pg_RL40A_YEAST_Roscoe_2013": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.48722108355852656,
+      "mae": 0.3722715466911836,
+      "prediction_std": 0.007295119921245678,
+      "spearman": -0.27127512751275124,
+      "gold_std": 0.3471661733344596
+    },
+    "pg_RL40A_YEAST_Roscoe_2014": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.543759123517284,
+      "mae": 0.3819642144694753,
+      "prediction_std": 0.01310830861377206,
+      "spearman": 0.06255025502550254,
+      "gold_std": 0.5255082217275953
+    },
+    "pg_RNC_ECOLI_Weeks_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.0854896131054743,
+      "mae": 0.8403539115324341,
+      "prediction_std": 0.004115849913807176,
+      "spearman": -0.06562256225622562,
+      "gold_std": 0.7965134127943513
+    },
+    "pg_RPC1_BP434_Tsuboyama_2023_1R69": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.969839427584311,
+      "mae": 0.7775372221912262,
+      "prediction_std": 0.06255208195178673,
+      "spearman": 0.009120912091209118,
+      "gold_std": 0.957996584663113
+    },
+    "pg_RPC1_LAMBD_Li_2019_high-expression": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 2.2140270578413133,
+      "mae": 1.412907225940525,
+      "prediction_std": 0.04103084255933854,
+      "spearman": 0.11295529552955294,
+      "gold_std": 2.165633568463415
+    },
+    "pg_RPC1_LAMBD_Li_2019_low-expression": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4574847752174915,
+      "mae": 1.1925345306885058,
+      "prediction_std": 0.02793916405654304,
+      "spearman": 0.15756375637563755,
+      "gold_std": 1.46031654004333
+    },
+    "pg_RS15_GEOSE_Tsuboyama_2023_1A32": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8026136921204037,
+      "mae": 0.6327320439034527,
+      "prediction_std": 0.025011380045875907,
+      "spearman": 0.10528652865286527,
+      "gold_std": 0.6863514756870628
+    },
+    "pg_S22A1_HUMAN_Yee_2023_abundance": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.271776314936051,
+      "mae": 0.9351615384324464,
+      "prediction_std": 0.017438743588360527,
+      "spearman": 0.278043804380438,
+      "gold_std": 1.267662083211608
+    },
+    "pg_S22A1_HUMAN_Yee_2023_activity": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7566923398277215,
+      "mae": 0.599137580275283,
+      "prediction_std": 0.014399178577524768,
+      "spearman": 0.16434443444344432,
+      "gold_std": 0.7574843034866959
+    },
+    "pg_SAV1_MOUSE_Tsuboyama_2023_2YSB": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.849713633447409,
+      "mae": 0.7697204833027268,
+      "prediction_std": 0.030139247383275333,
+      "spearman": -0.007344734473447344,
+      "gold_std": 0.7064548372374837
+    },
+    "pg_SBI_STAAM_Tsuboyama_2023_2JVG": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5874189255796598,
+      "mae": 0.5193459527117171,
+      "prediction_std": 0.03329517147496091,
+      "spearman": 0.19446744674467445,
+      "gold_std": 0.5083706367258356
+    },
+    "pg_SC6A4_HUMAN_Young_2021": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.029627728734653,
+      "mae": 0.91729357690883,
+      "prediction_std": 0.02729316262806984,
+      "spearman": -0.23258325832583254,
+      "gold_std": 0.6113775262686933
+    },
+    "pg_SCIN_STAAR_Tsuboyama_2023_2QFF": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5513766557807201,
+      "mae": 0.4303803547541349,
+      "prediction_std": 0.03140712703834843,
+      "spearman": -0.2621662166216621,
+      "gold_std": 0.5418987242299109
+    },
+    "pg_SCN5A_HUMAN_Glazer_2019": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_SDA_BACSU_Tsuboyama_2023_1PV0": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7850201525382909,
+      "mae": 0.6489191509603062,
+      "prediction_std": 0.024138309562908994,
+      "spearman": -0.28124812481248124,
+      "gold_std": 0.7669819550007823
+    },
+    "pg_SERC_HUMAN_Xie_2023": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.23512667082332733,
+      "mae": 0.12663864854724044,
+      "prediction_std": 0.00467145942196947,
+      "spearman": -0.02334233423342334,
+      "gold_std": 0.23410415519022787
+    },
+    "pg_SHOC2_HUMAN_Kwon_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4125471987541364,
+      "mae": 0.33233446961227664,
+      "prediction_std": 0.007739056641482888,
+      "spearman": -0.060522052205220514,
+      "gold_std": 0.3781401206554834
+    },
+    "pg_SOX30_HUMAN_Tsuboyama_2023_7JJK": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9327579293273026,
+      "mae": 0.6982361032653865,
+      "prediction_std": 0.029251255439147333,
+      "spearman": -0.022694269426942693,
+      "gold_std": 0.910204742749756
+    },
+    "pg_SPA_STAAU_Tsuboyama_2023_1LP1": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9493818168507538,
+      "mae": 0.8226195793406655,
+      "prediction_std": 0.021449002414781246,
+      "spearman": -0.16441644164416439,
+      "gold_std": 0.5634641915630788
+    },
+    "pg_SPG1_STRSG_Olson_2014": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5695950694924643,
+      "mae": 1.3493153653367935,
+      "prediction_std": 0.02791126395621707,
+      "spearman": -0.36011509185608187,
+      "gold_std": 1.5062642736425216
+    },
+    "pg_SPG1_STRSG_Wu_2016": {
+      "skip_reasons": {},
+      "n": 38,
+      "primitive": "score",
+      "rmse": 1.4419414794323475,
+      "mae": 1.000475590059493,
+      "prediction_std": 0.003107983377623074,
+      "spearman": 0.49250465039938723,
+      "gold_std": 1.1080573853164453
+    },
+    "pg_SPG2_STRSG_Tsuboyama_2023_5UBS": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4626111870067662,
+      "mae": 1.149851915496915,
+      "prediction_std": 0.04055703214485816,
+      "spearman": -0.06911491149114911,
+      "gold_std": 1.243880872209415
+    },
+    "pg_SPIKE_SARS2_Starr_2020_binding": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_SPIKE_SARS2_Starr_2020_expression": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_SPTN1_CHICK_Tsuboyama_2023_1TUD": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.4748178188103869,
+      "mae": 1.2370846198373253,
+      "prediction_std": 0.08193777586315792,
+      "spearman": 0.07108310831083108,
+      "gold_std": 1.3849750391336393
+    },
+    "pg_SQSTM_MOUSE_Tsuboyama_2023_2RRU": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.866886946746302,
+      "mae": 0.7406060287171417,
+      "prediction_std": 0.0348946511471685,
+      "spearman": 0.017905790579057907,
+      "gold_std": 0.7956486032000736
+    },
+    "pg_SR43C_ARATH_Tsuboyama_2023_2N88": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.9048040136347851,
+      "mae": 0.7546013550273254,
+      "prediction_std": 0.04477949220648699,
+      "spearman": -0.11899189918991897,
+      "gold_std": 0.8865079276019866
+    },
+    "pg_SRBS1_HUMAN_Tsuboyama_2023_2O2W": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.302095314463234,
+      "mae": 1.0665443626095807,
+      "prediction_std": 0.042622942144394306,
+      "spearman": 0.10408640864086406,
+      "gold_std": 1.3046823055802714
+    },
+    "pg_SRC_HUMAN_Ahler_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.5774289898871656,
+      "mae": 1.2371041433525456,
+      "prediction_std": 0.010150105053812126,
+      "spearman": -0.18147014701470146,
+      "gold_std": 1.4705878051498817
+    },
+    "pg_SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.2679100396498417,
+      "mae": 0.8775589025769329,
+      "prediction_std": 0.005486769379293747,
+      "spearman": -0.444044404440444,
+      "gold_std": 1.2409002768075132
+    },
+    "pg_SRC_HUMAN_Nguyen_2022": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7204457636834819,
+      "mae": 0.6132808062895125,
+      "prediction_std": 0.007239991147247693,
+      "spearman": -0.4455805580558055,
+      "gold_std": 0.6917970283638928
+    },
+    "pg_SUMO1_HUMAN_Weile_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3035867247190572,
+      "mae": 0.26091258089751734,
+      "prediction_std": 0.015148988825540444,
+      "spearman": 0.15153915391539152,
+      "gold_std": 0.2369747242014884
+    },
+    "pg_SYUA_HUMAN_Newberry_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.3666208990288115,
+      "mae": 0.2889237245917114,
+      "prediction_std": 0.0008439329906403192,
+      "spearman": -0.1335973597359736,
+      "gold_std": 0.2332701494709766
+    },
+    "pg_TADBP_HUMAN_Bolognesi_2019": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.04280097693222451,
+      "mae": 0.03448676592843993,
+      "prediction_std": 0.0005371390250858601,
+      "spearman": -0.07650765076507651,
+      "gold_std": 0.03649013767495063
+    },
+    "pg_TAT_HV1BR_Fernandes_2016": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.15927202276459146,
+      "mae": 0.12952416982000065,
+      "prediction_std": 0.005074553360712638,
+      "spearman": 0.04906090609060905,
+      "gold_std": 0.1589752406858486
+    },
+    "pg_TCRG1_MOUSE_Tsuboyama_2023_1E0L": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8726257550036026,
+      "mae": 0.830108992322767,
+      "prediction_std": 0.02723404409094105,
+      "spearman": -0.044776477647764774,
+      "gold_std": 0.29564923499907925
+    },
+    "pg_THO1_YEAST_Tsuboyama_2023_2WQG": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.8232064789838662,
+      "mae": 0.7418574918679081,
+      "prediction_std": 0.07744009079900067,
+      "spearman": -0.09354935493549353,
+      "gold_std": 0.6227818506666544
+    },
+    "pg_TNKS2_HUMAN_Tsuboyama_2023_5JRT": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.125229650921424,
+      "mae": 0.9357151412343678,
+      "prediction_std": 0.06859817086064765,
+      "spearman": 0.24508850885088504,
+      "gold_std": 0.9937013871910984
+    },
+    "pg_TPK1_HUMAN_Weile_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5204080134422825,
+      "mae": 0.4615181681378629,
+      "prediction_std": 0.017052370257837082,
+      "spearman": -0.07408340834083407,
+      "gold_std": 0.4877431114687658
+    },
+    "pg_TPMT_HUMAN_Matreyek_2018": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.22521062070305958,
+      "mae": 0.18778805215943353,
+      "prediction_std": 0.015180938056383044,
+      "spearman": 0.11305130513051304,
+      "gold_std": 0.20005148751994192
+    },
+    "pg_TPOR_HUMAN_Bridgford_2020": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.40537722396384196,
+      "mae": 0.36071618344653467,
+      "prediction_std": 0.004861008709143205,
+      "spearman": 0.026846684668466847,
+      "gold_std": 0.2955099643404292
+    },
+    "pg_TRPC_SACS2_Chan_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7055869278143688,
+      "mae": 0.5944601079628123,
+      "prediction_std": 0.0135954149224887,
+      "spearman": -0.2676627662766276,
+      "gold_std": 0.6168818128221223
+    },
+    "pg_TRPC_THEMA_Chan_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5242668347840693,
+      "mae": 0.34651493364225844,
+      "prediction_std": 0.010129603352249055,
+      "spearman": -0.041104110411041096,
+      "gold_std": 0.5232563170356112
+    },
+    "pg_UBC9_HUMAN_Weile_2017": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5373932669299301,
+      "mae": 0.4136892681249613,
+      "prediction_std": 0.01925714956229663,
+      "spearman": 0.061194119411941195,
+      "gold_std": 0.5064390582222814
+    },
+    "pg_UBE4B_HUMAN_Tsuboyama_2023_3L1X": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.3535527016638036,
+      "mae": 1.2511192955610533,
+      "prediction_std": 0.03724809845715102,
+      "spearman": -0.1098109810981098,
+      "gold_std": 1.2790645592291399
+    },
+    "pg_UBE4B_MOUSE_Starita_2013": {
+      "skip_reasons": {
+        "over_budget": 100
+      },
+      "note": "no supported rows"
+    },
+    "pg_UBR5_HUMAN_Tsuboyama_2023_1I2T": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7961427109123472,
+      "mae": 0.7103200416390892,
+      "prediction_std": 0.03229370225055807,
+      "spearman": 0.03395139513951395,
+      "gold_std": 0.6881330417268028
+    },
+    "pg_VG08_BPP22_Tsuboyama_2023_2GP8": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.48415874499061656,
+      "mae": 0.47265215342640815,
+      "prediction_std": 0.035926470519580166,
+      "spearman": -0.08651665166516652,
+      "gold_std": 0.09437123602649787
+    },
+    "pg_VILI_CHICK_Tsuboyama_2023_1YU5": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7653189668294055,
+      "mae": 0.7169902968187059,
+      "prediction_std": 0.04252530934108868,
+      "spearman": -0.25058505850585056,
+      "gold_std": 0.7218493992019864
+    },
+    "pg_VKOR1_HUMAN_Chiasson_2020_abundance": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.21725633289560253,
+      "mae": 0.17600132072038047,
+      "prediction_std": 0.016938886841767437,
+      "spearman": 0.04481248124812481,
+      "gold_std": 0.18460189597055993
+    },
+    "pg_VKOR1_HUMAN_Chiasson_2020_activity": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.4341281472787763,
+      "mae": 0.32799615544515026,
+      "prediction_std": 0.0169968983880712,
+      "spearman": -0.018956236839018276,
+      "gold_std": 0.4322866367579586
+    },
+    "pg_VRPI_BPT7_Tsuboyama_2023_2WNM": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.199859596224869,
+      "mae": 1.03892537877997,
+      "prediction_std": 0.034938914046086206,
+      "spearman": 0.19840384038403838,
+      "gold_std": 1.204608175027029
+    },
+    "pg_YAIA_ECOLI_Tsuboyama_2023_2KVT": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.2650334098297091,
+      "mae": 0.9723227249989044,
+      "prediction_std": 0.06182425472661587,
+      "spearman": 0.08793279327932792,
+      "gold_std": 1.2598134968259977
+    },
+    "pg_YAP1_HUMAN_Araya_2012": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.7522112225256643,
+      "mae": 0.5814059643297286,
+      "prediction_std": 0.0059868526157286946,
+      "spearman": -0.054701470147014694,
+      "gold_std": 0.6806604544967703
+    },
+    "pg_YNZC_BACSU_Tsuboyama_2023_2JVD": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.6013305322488597,
+      "mae": 0.5127977448948481,
+      "prediction_std": 0.02040005348666078,
+      "spearman": -0.20792079207920794,
+      "gold_std": 0.4188828317646287
+    },
+    "protein_homology_remote": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "protein_homology_std": {
+      "skip_reasons": {
+        "double_sequence": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00025": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00027": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00032": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00034": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00052": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00065": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00073": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00077": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00080": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00082": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00083": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00085": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00088": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "rnac_HybID00097": {
+      "skip_reasons": {
+        "modality_rna": 100
+      },
+      "note": "no supported rows"
+    },
+    "tape_fluorescence": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 1.684821631502506,
+      "mae": 1.4034281845462901,
+      "prediction_std": 0.11420594539855851,
+      "spearman": 0.41018962895441613,
+      "gold_std": 1.0098228085753902
+    },
+    "tape_stability": {
+      "skip_reasons": {},
+      "n": 100,
+      "primitive": "score",
+      "rmse": 0.5341986428626151,
+      "mae": 0.45104186474443625,
+      "prediction_std": 0.02337539287767477,
+      "spearman": 0.09558075662446731,
+      "gold_std": 0.3208135124533014
+    }
+  }
+}

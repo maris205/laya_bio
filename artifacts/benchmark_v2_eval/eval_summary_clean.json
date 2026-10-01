@@ -1,0 +1,41 @@
+{
+  "score": {
+    "n": 197,
+    "mean_spearman": 0.00039207457673476597,
+    "median_spearman": 0.00318031803180318,
+    "frac_spearman_gt_0.2": 0.14213197969543148,
+    "median_norm_rmse": 1.0766142946312192
+  },
+  "choice": {
+    "n": 37,
+    "mean_accuracy": 0.5387514063554767
+  },
+  "noul": {
+    "n": 7,
+    "mean_accuracy": 0.7514285714285714,
+    "mean_auroc": 0.3866292660121552
+  },
+  "by_family": {
+    "DeepSTARR": {
+      "spearman": -0.09427280551978005
+    },
+    "dnagpt_pools": {
+      "acc": 0.39999999999999997
+    },
+    "GenomicBenchmarks": {
+      "acc": 0.67625
+    },
+    "GUE": {
+      "acc": 0.5767857142857142
+    },
+    "local_snapshots": {
+      "acc": 0.48676040703052725
+    },
+    "ProteinGym": {
+      "spearman": -0.001243451206852716
+    },
+    "TAPE": {
+      "spearman": 0.2528851927894417
+    }
+  }
+}
