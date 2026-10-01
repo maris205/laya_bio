@@ -1,0 +1,202 @@
+#!/usr/bin/env python3
+"""Train a shared Laya-JEV decision model on benchmark v2 (task-agnostic).
+
+Generalizes the MVP1 frozen trainer to an arbitrary set of single-sequence
+DNA/protein noul/choice/score tasks. Reuses the identical model path
+(SharedDecision / build / render / pack / Representation) and optimizer/LR,
+with a balanced random interleave over the selected tasks and per-task Score
+anchors derived from each task's own train split.
+
+Outputs a checkpoint consumable by eval_benchmark_v2.py.
+"""
+from __future__ import annotations
+import argparse, json, math, random, hashlib, sys, time
+from pathlib import Path
+from collections import defaultdict, Counter
+import numpy as np
+
+JEV = Path("/root/autodl-tmp/jev_gene")
+FROZEN = JEV / "artifacts/laya_jev_multitask_v1/round/frozen_code"
+MODEL = JEV / "artifacts/laya_model"
+CPT = JEV / "artifacts/laya_biocpt_v2"
+OUT = JEV / "data/06_benchmark_v2_unified"
+sys.path.insert(0, str(FROZEN))
+
+import torch
+from torch.nn import functional as F
+from safetensors.torch import save_file
+from laya_jev_multitask_data import Representation, interpolate, TYPE_IDS
+import laya_jev_multitask_train as t
+from transformers import AutoTokenizer
+
+MAXLEN = 512
+SEED = 20261001
+BATCH = 64
+LR_ENC, LR_HEAD = 2e-5, 1e-4
+
+
+def derive_anchors(cuts):
+    c = list(cuts)
+    if len(c) >= 2:
+        step = (c[-1] - c[0]) / (len(c) - 1)
+        return [c[0] - step/2, (c[0]+c[1])/2, (c[1]+c[2])/2, (c[2]+c[3])/2, c[-1] + step/2]
+    return [c[0]]*5 if c else [0.0]*5
+
+
+def load_task_rows(rep, task_id, maxn):
+    """benchmark v2 train.jsonl -> prepared MVP1 rows + per-task score spec."""
+    f = OUT / task_id / "train.jsonl"
+    recs = [json.loads(l) for l in f.read_text().splitlines() if l.strip()]
+    if not recs:
+        return [], None
+    prim = recs[0]["primitive"]
+    rng = np.random.default_rng(hash(task_id) & 0xffffffff)
+    if len(recs) > maxn:
+        recs = [recs[i] for i in sorted(rng.choice(len(recs), size=maxn, replace=False))]
+    spec = None
+    rows = []
+    # for balanced single-label tasks, class-balance the cap; for score keep order
+    if prim in ("noul", "choice"):
+        byclass = defaultdict(list)
+        for r in recs: byclass[str(r.get("answer"))].append(r)
+        k = max(1, maxn // max(1, len(byclass)))
+        recs = [r for b in byclass.values() for r in b[:k]]
+    anchors = recs[0].get("anchors") if prim == "score" else None
+    if prim == "score" and anchors:
+        a5 = derive_anchors(anchors); spec = {"anchors": a5, "values": []}
+    for r in recs:
+        seqs = r["sequences"]
+        if len(seqs) != 1 or seqs[0]["modality"] not in ("dna", "protein"):
+            continue
+        m = seqs[0]["modality"]; s = seqs[0]["sequence"]
+        if prim == "noul":
+            choices = ["false: " + r["candidates"][0], "true: " + r["candidates"][1]]
+            label = 1 if r["answer"] == "yes" else 0
+        elif prim == "choice":
+            choices = list(r["candidates"])
+            if r["answer"] not in choices: continue
+            label = choices.index(r["answer"])
+        elif prim == "score":
+            choices = [f"value = {a:.6g}" for a in a5]
+            label = int(r["gold_level"])
+            val = float(r["gold_value"])
+            spec["values"].append(val)
+        else:
+            continue
+        row = {"id": r.get("group","") + f":{len(rows)}", "task": task_id, "primitive": prim,
+               "modality": m, "question": r["question"], "sequence": s, "choices": choices, "label": label}
+        if prim == "score":
+            row["value"] = val
+            row["anchors"] = a5
+            row["target_probs"] = interpolate(val, a5)
+        row = rep.prepare(row)
+        if row["length"] > MAXLEN:
+            continue
+        rows.append(row)
+    if spec is not None and spec["values"]:
+        v = np.array(spec["values"]); spec["train_mean"] = float(v.mean()); spec["train_std"] = float(v.std() or 1)
+    return rows, spec
+
+
+def lr_factor(step, total):
+    warmup = max(1, int(.05*total))
+    if step <= warmup: return step/warmup
+    return .1 + .9*.5*(1+math.cos(math.pi*(step-warmup)/(total-warmup)))
+
+
+def make_optimizer(model):
+    groups = defaultdict(list)
+    for name, p in model.named_parameters():
+        rate = LR_ENC if name.startswith("encoder.") else LR_HEAD
+        decay = 0. if p.ndim < 2 or "norm" in name.lower() or "embeddings" in name or "type_emb" in name else .01
+        groups[(rate, decay)].append(p)
+    return torch.optim.AdamW([{"params": ps, "lr": rt, "base_lr": rt, "weight_decay": dc} for (rt, dc), ps in groups.items()])
+
+
+def losses(logits, rows, spec):
+    labels = torch.tensor([r["presented_label"] for r in rows], device=logits.device)
+    if rows[0]["primitive"] != "score":
+        return F.cross_entropy(logits, labels, reduction="none").sum()
+    targets = torch.tensor([r["target_probs"] for r in rows], device=logits.device)
+    ce = -(targets * F.log_softmax(logits, dim=-1)).sum(-1)
+    anchors = torch.tensor(spec["anchors"], device=logits.device)
+    pred = logits.softmax(-1) @ anchors
+    true = torch.tensor([r["value"] for r in rows], device=logits.device)
+    std = spec.get("train_std", float(true.std())) or 1.0
+    return (.5*ce + .5*((pred-true)/std).square()).sum()
+
+
+def schedule(bytask, rng):
+    # balanced: each task contributes equal-size batches; interleave batch order randomly
+    task_batches = min(len(v)//BATCH for v in bytask.values())
+    assert task_batches >= 1, "each selected task needs >= BATCH rows after capping"
+    for epoch in range(1, EPOCHS+1):
+        for tk in bytask: rng.shuffle(bytask[tk])
+        steps = []
+        for b in range(task_batches):
+            tasks = list(bytask); rng.shuffle(tasks)
+            for tk in tasks:
+                steps.append((epoch, tk, bytask[tk][b*BATCH:(b+1)*BATCH]))
+        yield from steps
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--tasks", nargs="+", required=True)
+    ap.add_argument("--max-per-task", type=int, default=256)
+    ap.add_argument("--epochs", type=int, default=3)
+    ap.add_argument("--name", default="bv2_pilot")
+    ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
+    ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
+    a = ap.parse_args()
+    global EPOCHS; EPOCHS = a.epochs
+    torch.set_num_threads(8)
+    random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
+    out = a.out / a.name; out.mkdir(parents=True, exist_ok=True)
+    rep = Representation(CPT/"data")
+    pad = AutoTokenizer.from_pretrained(CPT/"data/representation/base_tokenizer").pad_token_id
+    model = t.build(MODEL, CPT, "no_cpt")
+    if a.save_init:
+        save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"init.safetensors"))
+        print(f"[init checkpoint saved] {out/'init.safetensors'}", flush=True)
+    bytask = {}; specs = {}; prep_fail = Counter()
+    for tk in a.tasks:
+        rows, spec = load_task_rows(rep, tk, a.max_per_task)
+        if len(rows) < BATCH:
+            prep_fail[tk] = len(rows); continue
+        bytask[tk] = rows; specs[tk] = spec
+    print("trained tasks:", {k: len(v) for k, v in bytask.items()}, "skipped:", dict(prep_fail), flush=True)
+    if not bytask: print("no tasks to train"); return 1
+    rng = random.Random(SEED+41)
+    total = EPOCHS * min(len(v)//BATCH for v in bytask.values()) * len(bytask)
+    opt = make_optimizer(model)
+    step = 0; trace = []
+    t0 = time.monotonic()
+    for epoch, tk, rr in schedule(bytask, rng):
+        step += 1
+        for g in opt.param_groups: g["lr"] = g["base_lr"]*lr_factor(step, total)
+        model.train(); opt.zero_grad(set_to_none=True)
+        rendered = [t.render(r, epoch, True) for r in rr]
+        with torch.autocast("cuda", dtype=torch.bfloat16):
+            logits = model(**t.pack(rendered, pad))
+            loss = losses(logits, rendered, specs[tk] or {"anchors":[0]*5,"train_std":1})
+        (loss/len(rr)).backward()
+        grad = float(torch.nn.utils.clip_grad_norm_(model.parameters(), 1., error_if_nonfinite=False))
+        opt.step()
+        rec = {"step": step, "epoch": epoch, "task": tk, "loss": float(loss)/len(rr), "grad": grad}
+        trace.append(rec)
+        if step % 20 == 0 or step == 1:
+            print(json.dumps({**rec, "sec": round(time.monotonic()-t0,1)}), flush=True)
+    save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"model.safetensors"))
+    (out/"train_trace.jsonl").write_text("\n".join(json.dumps(r) for r in trace)+"\n")
+    config = {"tasks": list(bytask), "max_per_task": a.max_per_task, "epochs": EPOCHS, "batch": BATCH,
+              "seed": SEED, "total_updates": step, "encoder_lr": LR_ENC, "head_lr": LR_HEAD,
+              "score_specs": {k: (v["anchors"] if v else None) for k, v in specs.items()},
+              "elapsed_sec": round(time.monotonic()-t0,1), "test_inference": False}
+    (out/"run_config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2)+"\n")
+    print(f"[DONE] saved {out/'model.safetensors'} steps={step} elapsed={config['elapsed_sec']}s", flush=True)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

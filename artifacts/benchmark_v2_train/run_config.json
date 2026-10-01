@@ -1,0 +1,71 @@
+{
+  "tasks": [
+    "gue_H3K4me3",
+    "gue_prom_prom_core_all",
+    "gb_human_enhancers_cohn",
+    "gb_human_ensembl_regulatory",
+    "dna_splice",
+    "dna_tf",
+    "lg_fold_class",
+    "lg_signal_peptide",
+    "tape_fluorescence",
+    "tape_stability",
+    "deepstarr_dev",
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016",
+    "pg_DYR_ECOLI_Thompson_2019"
+  ],
+  "max_per_task": 1536,
+  "epochs": 6,
+  "batch": 64,
+  "seed": 20261001,
+  "total_updates": 1170,
+  "encoder_lr": 2e-05,
+  "head_lr": 0.0001,
+  "score_specs": {
+    "gue_H3K4me3": null,
+    "gue_prom_prom_core_all": null,
+    "gb_human_enhancers_cohn": null,
+    "gb_human_ensembl_regulatory": null,
+    "dna_splice": null,
+    "dna_tf": null,
+    "lg_fold_class": null,
+    "lg_signal_peptide": null,
+    "tape_fluorescence": [
+      3.0310140450795493,
+      3.3049228191375732,
+      3.5452136993408203,
+      3.6517739295959473,
+      3.791952053705851
+    ],
+    "tape_stability": [
+      -0.403333326180776,
+      -0.12999999523162842,
+      0.125,
+      0.42500001192092896,
+      0.7433333595593771
+    ],
+    "deepstarr_dev": [
+      -1.0567509082774007,
+      -0.558308406598207,
+      -0.07623148121447451,
+      0.4611621020160905,
+      1.0149212615421166
+    ],
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016": [
+      -3.66147035,
+      -2.9818295800000003,
+      -2.2944479399999995,
+      -1.4141066699999993,
+      -0.5415062699999997
+    ],
+    "pg_DYR_ECOLI_Thompson_2019": [
+      -0.7790562666666667,
+      -0.41492780000000007,
+      -0.09793969999999996,
+      0.05597210000000005,
+      0.25702426666666667
+    ]
+  },
+  "elapsed_sec": 907.7,
+  "test_inference": false
+}
