@@ -5,7 +5,7 @@
     {
       "source_relative": "EXPERIMENT_PLAN.md",
       "archive_relative": "EXPERIMENT_PLAN.md",
-      "sha256": "fae5a5c246000c8f19c6b2dea56ba98c4da822b5e5ea87df3019faefbb958b92"
+      "sha256": "b12aa87238c2cf8a6e9627b5507c70dd0e9bf716f0656150d8926c9f27b12f75"
     },
     {
       "source_relative": "EXPERIMENT_TRACKER.md",
@@ -3150,6 +3150,337 @@
       "sha256": "c8da724dbb59163e31e7fd620224a93e144aeba77f285888f9a37f68c1387e73"
     },
     {
+      "source_relative": "run_recipe_cpt/EXPERIMENT_PLAN.md",
+      "archive_relative": "run_recipe_cpt/EXPERIMENT_PLAN.md",
+      "sha256": "b12aa87238c2cf8a6e9627b5507c70dd0e9bf716f0656150d8926c9f27b12f75"
+    },
+    {
+      "source_relative": "run_recipe_cpt/EXPERIMENT_TRACKER.md",
+      "archive_relative": "run_recipe_cpt/EXPERIMENT_TRACKER.md",
+      "sha256": "12facb243633ed69603a495724a4eff4588d7fe1dac6dabc5b0dc904733b6dfc"
+    },
+    {
+      "source_relative": "run_recipe_cpt/manifest.json",
+      "archive_relative": "run_recipe_cpt/manifest.json",
+      "sha256": "aa9257b239d325933a50e0ea71951ae4f18dd7f0f154f15536cd3957e42d975e"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "sha256": "a16dd34619dd0150a3109d7acc2d4e2aadc4272e96f7be7d171b5a9f26de97e6"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "8d12a4d026682f7f8151d88f7b5c07177ea989a36eb8bce0233af839cc8a275d",
+      "compressed_sha256": "81769da87a7623b8e45b5854613fefb292caca037ae43c28f8d703e2b62e47e7"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "ad65662ab83023bc5224cfd7f38e1b787861a9359e457a77a401ca2d507e295d",
+      "compressed_sha256": "da4c74eb8b272d296101d0114ab04dc485fe193456283bede38ea093b043438d"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "70484152f258a83a0589601b6d02d71571b63f41e354bce6bad836d7198bdd2b",
+      "compressed_sha256": "f64ec57ca7fe4db6131382f8a92af374d37371e69e13eb60964399ba681088e0"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "069892539b10a0f2dca85167910191f42acd661e2769d374852f07fc8c47a9ec",
+      "compressed_sha256": "aedaa82cd11355d5b314a36eeefac8eea7febb014b32836144f07b6f0edc653d"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "e66ba182bd89f6db9d6e610c532640f9b5d052f15d3158bd6271e2c112d14fb5",
+      "compressed_sha256": "04f8820cc67d464ad09f80afbf834157d556f1463f373ac81deef2a296019c97"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "sha256": "a0ac8433a44fead16d67315f209505c6435a8a05b9d4909746ee9c0ab06078f8"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "sha256": "c91863e385fd3411892bad80f84b30a8423239078303c9739ac00e078cb9cc1c"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "sha256": "418992833a9b8e0cb0179cf5ca98965422768eae80a25e48d49e59a2355b1c2f"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "f676802b3493f87fec3127bc5c837defd00894f4a94194a40e170e0e4f96e15a"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "8cee9e3c9c0730d258c96c9c385218ba70066e64e3f104e77537448ce9fb2738"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "0c5232a9ab47bfac6eae4e9744b061078593e0dd6628ff265cfcd399af8c62cb",
+      "compressed_sha256": "868b9762636dcae00a6f5bb9b6836ba41925fced50beda70cc8709c0cb399ce8"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "941f22b47acbbb1336a6bf584ae8a0558f87b49103041a24c2e7a269e910839d",
+      "compressed_sha256": "6b7b23a3c2ad811fd9b41688faa0c6c3a2f7aa0c7ce61bd9207110bf5ee9effd"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "b4909afd600e90aba197dea6269ad112d26a4f1f1b4e73dedd5ae17fd243b544"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "d5e54723558b5c30b37f3839feb50b74c9750790b3a4ee63bb5ce71627cc7346"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "sha256": "08f78473175854ea5e8485565bec6e5d23ca89e5c730dd732b5dd7325091ad03"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "8d12a4d026682f7f8151d88f7b5c07177ea989a36eb8bce0233af839cc8a275d",
+      "compressed_sha256": "81769da87a7623b8e45b5854613fefb292caca037ae43c28f8d703e2b62e47e7"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "f61611f1e74b3bd15a70dfd508d691cd8271af732c6c6f22411102ba84b36325",
+      "compressed_sha256": "a25f3464f523c6a0caa2f1c5515ce93de6f840dcaaf11bb1c421b2e3adc6b76f"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "f5e614a45e74fbf83296835a2eb4099cbacaa7f91d085b07074363421064c5f6",
+      "compressed_sha256": "4a46b6633a68c45f1c0cb01dc44264087fa0eafc0ce23494ad2bd18675430c91"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "596f1d503bba1f02b5c7f4656641d66b845163b663f0fb080efc0649a3312a61",
+      "compressed_sha256": "8a7681eb5bbee6ee925af03cd3c3867c7312a24769f90c96515a480fcbed0b34"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "1cd534f737b0ff763670f95e541c1b72e04cd01d22070d32923bda3e74845b08",
+      "compressed_sha256": "c14d0fb157b705f819d3f09425cc751470426f9e08019df4d5f0616a0fa8cc78"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "sha256": "16822c54f53b1013b687690c803de973fe1005ebacb0011e3dddc2c04deaf8c9"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "sha256": "d17d2633a9892014c4524549e8efd946efb57c97be1a1a2426fb0c995867984a"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "sha256": "273c062d038b020da99b7111d19ebca484b9f5dc31c2d68f9426b50f6c4443b9"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "a1f833fdfc1e01e179bdf3aa8cd046ec05b219a170e29d9d5eab229a5a1416a8"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "565979c2432618787fbcbf57a72e303700c28b7e90abdfa89dfd39d7c73cacef"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "0c5232a9ab47bfac6eae4e9744b061078593e0dd6628ff265cfcd399af8c62cb",
+      "compressed_sha256": "868b9762636dcae00a6f5bb9b6836ba41925fced50beda70cc8709c0cb399ce8"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "ac3ac0dce1a969149a0aed4f855f678808125189c57a1a9f46652187c4bedfe7",
+      "compressed_sha256": "735ed5af0e6e1d8c4855d55580f36bb6124f2722e26adad0f8612c901936e8c0"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "b3ef2f7023bc37cbcdc8d7e52f6251385b886c90b0bb87e85a2570e48ff84ddf"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "9544126d54de1bc0c4e3925a467b79edf0d176312eec36886ce69a61a9c87cbc"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/block_eval.jsonl",
+      "sha256": "b3d6609d7f60116f00862993871cc52b0e68ed5973c1d542c7be52bb31994732"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch0_predictions.jsonl.gz",
+      "source_sha256": "8d12a4d026682f7f8151d88f7b5c07177ea989a36eb8bce0233af839cc8a275d",
+      "compressed_sha256": "81769da87a7623b8e45b5854613fefb292caca037ae43c28f8d703e2b62e47e7"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch1_predictions.jsonl.gz",
+      "source_sha256": "36350eb647aed811758ec6d5fec58fc3c9a413bb573bf7bc05733d0b6319cdb0",
+      "compressed_sha256": "976d7688930a69066db31eb4e8320818e6a61401596209898fd15e5bcf6d831d"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch2_predictions.jsonl.gz",
+      "source_sha256": "c38c8e6da56da1f25a173656816cc875c912cf08f645254794894cf8d7ec4f40",
+      "compressed_sha256": "359717cba81da01cf0574fd230adb83679fc5e149c3c3e4acc493b70a4ac9520"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_epoch3_predictions.jsonl.gz",
+      "source_sha256": "896f7e6e40e51bb49a8e9c46f63bc5a1356fa267f2ebb5419ee19bc0f29eb6a9",
+      "compressed_sha256": "8b3b1ddb38ed0d778d8aee5b5a0230573a086aebabde01590c777d0a5294ad66"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/dev_reversed_choice_predictions.jsonl.gz",
+      "source_sha256": "b4ccdc28fcd31dafb2cf76f40c2b4c2e01dfac5719db88a6aed25e19ecc19fec",
+      "compressed_sha256": "cb8a4c4b23dfb12a8158780a1b1aac56b116914f29e44b80fd14915f56c6216b"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/inference_benchmark.json",
+      "sha256": "15dd8e94a52f7fccb8435b8ed4a72789c55ee5373406be49235a0398c34a9496"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/learning_curve.jsonl",
+      "sha256": "647d1c41be517cc90e5d3158a7fc755e10f7a0679f8129bc62893e393793f562"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/reversed_choice_metrics.json",
+      "sha256": "07cb132af9b5a6db9443f8390b926a4f88c38f3acd5a8058ef5d87815f9c5b83"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "6a5fc5388bdb50e630fd2a4d431de3bdf00954d452990ba23ee4b0df4dd1988e"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "77630cb6f3a5db8e71f9caf64c394ec5e698973a9dd666eacba5f86de62518db"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch0_predictions.jsonl.gz",
+      "source_sha256": "0c5232a9ab47bfac6eae4e9744b061078593e0dd6628ff265cfcd399af8c62cb",
+      "compressed_sha256": "868b9762636dcae00a6f5bb9b6836ba41925fced50beda70cc8709c0cb399ce8"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/train_epoch3_predictions.jsonl.gz",
+      "source_sha256": "7edbd80dde266ff8a3f47077bc97cab7aa9eef617b241c874cb6437c569c535f",
+      "compressed_sha256": "dff52c3b5d5589c1b890fbbad6c02ab1226145a247001fced3d45ff08fb84235"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "28e42efacd3b1b9f1cb557afe0386aec505a41e65d850fcbeaf7e22612f77617"
+    },
+    {
+      "source_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "67a64771ee7aef5c6d339a9c22a9f15fec266f6c6d1ab96187fae33274fb2221"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "d5550a008a6a096e31d2edce5c2c3eda1931b7d655a4303fb08f359b3637352e"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "42410832b585e990e3439b027507e03f3c3024b09782757b9f1b5bfb016d2799"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "331771281ff77b7974fc59547c69b2d6aaadc6796beb39deaa8d736b31248330"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "81396c4db7eaaa09589c803aa4cbe2ee61344ab90e9900539ead01492e6c3a6d"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "d69c27c7dcbdd8f656d9263bfa28cf31c771473f030ebe2f4057c7ffc7552f80"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "dce1f6e752963fb37b9b24add4993202482c806fdbbcf4662b33206095167982"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "5a4cf085b6a0b2096d7f5dafff80e35793fd37e7f6e65f222a1d3e49587e9179"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "970f6308860c03be3ac488f5f158579395a629e6873abe85e5f090a97b54776a"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/run_config.json",
+      "sha256": "d3be3bd68638e997af2fcdec2245a9907d392542271d14e726a995ac4285f663"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/status.json",
+      "sha256": "c89fa49dc97d62012e5fe7f272ceb057b66bc99393069fd3d0c5d483be7fcd8c"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/training_trace.jsonl",
+      "sha256": "4f467b6c3afa28d4909335d068bc38fb5c8853373cc86cc454941653d0b9fefc"
+    },
+    {
+      "source_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "archive_relative": "run_recipe_cpt/smoke/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1.log",
+      "sha256": "e1312ce40ad1fdd1e7721713c1877148d42f57f3c9b7804f0055d18c6ceec6e3"
+    },
+    {
+      "source_relative": "run_recipe_cpt/status.json",
+      "archive_relative": "run_recipe_cpt/status.json",
+      "sha256": "13dd04be5f190b4fdd2673b6aa17c087e3312fcd6cb10ae9e8c886590b74fd23"
+    },
+    {
+      "source_relative": "run_recipe_cpt.controller.log",
+      "archive_relative": "run_recipe_cpt.controller.log",
+      "sha256": "f634e1e73b3bb2e9bbaa5bbac55283516c79570ae5803e0ae3467d3103114725"
+    },
+    {
       "source_relative": "run_replicate/EXPERIMENT_PLAN.md",
       "archive_relative": "run_replicate/EXPERIMENT_PLAN.md",
       "sha256": "3f2941a4d1bf173fa6a170f3907e71b406bb43998e6d567cb022335e75cfcdc4"
@@ -4399,6 +4730,30 @@
     {
       "path": "run_lr_swap/round/seed_20260928_no_cpt_joint_task_block_gfp_last_lr_of_first_rep2/model.safetensors",
       "bytes": 1692513140
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260926_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/resume.pt",
+      "bytes": 3385160866
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260927_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/resume.pt",
+      "bytes": 3385160802
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/model.safetensors",
+      "bytes": 1692513140
+    },
+    {
+      "path": "run_recipe_cpt/round/seed_20260928_cpt_joint_interleave_cls_warmup64_fluo2p0_rep1/resume.pt",
+      "bytes": 3385160866
     },
     {
       "path": "run_replicate/round/seed_20260928_no_cpt_joint_task_block_gfp_first_rep1/model.safetensors",

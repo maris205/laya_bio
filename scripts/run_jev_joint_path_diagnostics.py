@@ -90,6 +90,11 @@ MATRICES = {
         {"seed": 20260926, "arm": "no_cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
         {"seed": 20260928, "arm": "no_cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
     ),
+    "recipe_cpt": (
+        {"seed": 20260926, "arm": "cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
+        {"seed": 20260927, "arm": "cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
+        {"seed": 20260928, "arm": "cpt", "variant": "interleave_cls_warmup64_fluo2p0", "rep": 1},
+    ),
     "blockeval": (
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_first_blockeval"},
         {"seed": 20260928, "arm": "no_cpt", "variant": "task_block_gfp_last_blockeval"},
