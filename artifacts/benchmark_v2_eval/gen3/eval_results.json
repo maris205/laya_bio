@@ -1,0 +1,271 @@
+{
+  "model": "Qwen3-0.6B(frozen)",
+  "seq_char_cap": 120,
+  "max_per_task": 100,
+  "results": {
+    "deepstarr_dev": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.24,
+      "macro_f1": 0.1179992421371732
+    },
+    "deepstarr_hk": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.2,
+      "macro_f1": 0.06666666666666668
+    },
+    "dna_core": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.5,
+      "macro_f1": 0.3333333333333333
+    },
+    "dna_splice": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.15,
+      "macro_f1": 0.08695652173913043
+    },
+    "dna_tf": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.55,
+      "macro_f1": 0.3548387096774194
+    },
+    "gb_demo_coding_vs_intergenomic_seqs": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.49,
+      "macro_f1": 0.32885906040268453,
+      "auroc": 0.4375750300120048
+    },
+    "gb_demo_human_or_worm": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.56,
+      "macro_f1": 0.358974358974359,
+      "auroc": 0.44906655844155846
+    },
+    "gb_dummy_mouse_enhancers_ensembl": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.51,
+      "macro_f1": 0.33774834437086093,
+      "auroc": 0.43697478991596644
+    },
+    "gb_human_enhancers_cohn": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.52,
+      "macro_f1": 0.34210526315789475,
+      "auroc": 0.4727564102564103
+    },
+    "gb_human_ensembl_regulatory": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.32,
+      "macro_f1": 0.16161616161616163
+    },
+    "gb_human_nontata_promoters": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.54,
+      "macro_f1": 0.35064935064935066,
+      "auroc": 0.5060386473429952
+    },
+    "gb_human_ocr_ensembl": {
+      "primitive": "noul",
+      "n": 100,
+      "accuracy": 0.51,
+      "macro_f1": 0.33774834437086093,
+      "auroc": 0.49759903961584634
+    },
+    "gue_H3K36me3": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.58,
+      "macro_f1": 0.36708860759493667
+    },
+    "gue_H3K4me3": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.42,
+      "macro_f1": 0.29577464788732394
+    },
+    "gue_mouse_1": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.52,
+      "macro_f1": 0.34210526315789475
+    },
+    "gue_prom_prom_300_all": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.53,
+      "macro_f1": 0.3464052287581699
+    },
+    "gue_prom_prom_300_notata": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.41,
+      "macro_f1": 0.2907801418439716
+    },
+    "gue_prom_prom_core_all": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.5,
+      "macro_f1": 0.3333333333333333
+    },
+    "gue_prom_prom_core_notata": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.44,
+      "macro_f1": 0.3055555555555556
+    },
+    "gue_splice_reconstructed": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.25,
+      "macro_f1": 0.13333333333333333
+    },
+    "gue_tf_0": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.5,
+      "macro_f1": 0.3333333333333333
+    },
+    "gue_tf_1": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.49,
+      "macro_f1": 0.32885906040268453
+    },
+    "gue_tf_3": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.49,
+      "macro_f1": 0.32885906040268453
+    },
+    "gue_virus_covid": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.1,
+      "macro_f1": 0.020202020202020204
+    },
+    "lg_fold_class": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.32,
+      "macro_f1": 0.07814407814407816
+    },
+    "lg_npp": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.25,
+      "macro_f1": 0.2
+    },
+    "lg_promoter_detection": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.51,
+      "macro_f1": 0.33774834437086093
+    },
+    "lg_signal_peptide": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.9,
+      "macro_f1": 0.4736842105263158
+    },
+    "lg_subcellular_loc": {
+      "primitive": "choice",
+      "n": 100,
+      "accuracy": 0.18,
+      "macro_f1": 0.09198546623344861
+    },
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.25,
+      "macro_f1": 0.08
+    },
+    "pg_A4D664_9INFA_Soh_2019": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.11,
+      "macro_f1": 0.03963963963963964
+    },
+    "pg_C6KNH7_9INFA_Lee_2018": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.18,
+      "macro_f1": 0.061016949152542375
+    },
+    "pg_HSP82_YEAST_Flynn_2019": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.1,
+      "macro_f1": 0.03636363636363636
+    },
+    "pg_I6TAH8_I68A0_Doud_2015": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.21,
+      "macro_f1": 0.06942148760330578
+    },
+    "pg_MTHR_HUMAN_Weile_2021": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.13,
+      "macro_f1": 0.046017699115044254
+    },
+    "pg_PPARG_HUMAN_Majithia_2016": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.0,
+      "macro_f1": 0.0
+    },
+    "pg_RDRP_I33A0_Li_2023": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.16,
+      "macro_f1": 0.05517241379310346
+    },
+    "pg_S22A1_HUMAN_Yee_2023_abundance": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.12,
+      "macro_f1": 0.04285714285714285
+    },
+    "pg_S22A1_HUMAN_Yee_2023_activity": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.19,
+      "macro_f1": 0.0638655462184874
+    },
+    "pg_SC6A4_HUMAN_Young_2021": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.15,
+      "macro_f1": 0.09344790547798067
+    },
+    "pg_SHOC2_HUMAN_Kwon_2022": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.34,
+      "macro_f1": 0.10149253731343284
+    },
+    "tape_fluorescence": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.53,
+      "macro_f1": 0.20447738150378258
+    },
+    "tape_stability": {
+      "primitive": "score",
+      "n": 100,
+      "accuracy": 0.07,
+      "macro_f1": 0.03271028037383178
+    }
+  }
+}
