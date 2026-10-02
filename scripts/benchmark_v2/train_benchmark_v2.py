@@ -35,6 +35,52 @@ BATCH = 64
 LR_ENC, LR_HEAD = 2e-5, 1e-4
 
 
+PREFIX_FAMILY = [("pg_","ProteinGym"),("rnac_","RNAcompete"),("gue_","GUE"),("gb_","GenomicBenchmarks"),
+                 ("gl_","gene_lan"),("dna_","dnagpt_pools"),("deepstarr","DeepSTARR"),("tape_","TAPE"),
+                 ("lg_","local_snapshots"),("protein_homology","local_snapshots"),("deeploc","DeepLoc")]
+
+def family_of(tid):
+    for pre,f in PREFIX_FAMILY:
+        if tid.startswith(pre): return f
+    return "other"
+
+def discover_supported():
+    """single-sequence dna/protein noul/choice/score task dirs under OUT."""
+    out=[]
+    for d in sorted(OUT.iterdir()):
+        if not d.is_dir(): continue
+        tf=d/"train.jsonl"
+        if not tf.exists(): continue
+        try: first=json.loads(open(tf).readline())
+        except Exception: continue
+        if first["primitive"] not in ("noul","choice","score"): continue
+        seqs=first.get("sequences",[])
+        if len(seqs)!=1 or seqs[0]["modality"] not in ("dna","protein"): continue
+        out.append(d.name)
+    return out
+
+def schedule_family(bytask, epochs, batch, bpf, rng):
+    """Each family gets `bpf` batches per epoch (equal family budget) so no
+    single family (e.g. ProteinGym's 217 assays) floods the diverse families.
+    Within a family, batches are pooled across its tasks and cycled."""
+    pool = {}  # family -> list[(task, rows)]
+    for fam in {family_of(t) for t in bytask}:
+        slices = []
+        for tk in [x for x in bytask if family_of(x) == fam]:
+            rows = bytask[tk]
+            for s in range(0, len(rows) - batch + 1, batch):
+                slices.append((tk, rows[s:s+batch]))
+        pool[fam] = slices
+    for epoch in range(1, epochs + 1):
+        for fam, slices in pool.items():
+            if not slices:
+                continue
+            order = list(range(len(slices)))
+            rng.shuffle(order)
+            for i in range(bpf):
+                tk, rr = slices[order[i % len(order)]]
+                yield epoch, tk, rr
+
 def derive_anchors(cuts):
     c = list(cuts)
     if len(c) >= 2:
@@ -89,7 +135,10 @@ def load_task_rows(rep, task_id, maxn):
             row["value"] = val
             row["anchors"] = a5
             row["target_probs"] = interpolate(val, a5)
-        row = rep.prepare(row)
+        try:
+            row = rep.prepare(row)
+        except Exception:
+            continue  # sequence has chars the DNA/protein BPE cannot encode (N/X/*/lowercase)
         if row["length"] > MAXLEN:
             continue
         rows.append(row)
@@ -142,14 +191,31 @@ def schedule(bytask, rng):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tasks", nargs="+", required=True)
+    ap.add_argument("--tasks", nargs="*", default=None)
+    ap.add_argument("--all", action="store_true", help="auto-discover all supported single-seq dna/protein tasks")
     ap.add_argument("--max-per-task", type=int, default=256)
     ap.add_argument("--epochs", type=int, default=3)
+    ap.add_argument("--family-balance", action="store_true", help="equal batches-per-epoch per family instead of per task")
+    ap.add_argument("--batches-per-family", type=int, default=8)
+    ap.add_argument("--min-valid", type=int, default=64, help="drop tasks with fewer prepared valid rows")
+    ap.add_argument("--cap-family", nargs="*", default=[], help="FAMILY=N limit tasks in FAMILY to top-N by size")
     ap.add_argument("--name", default="bv2_pilot")
     ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
     global EPOCHS; EPOCHS = a.epochs
+    tasks = list(a.tasks or [])
+    if a.all: tasks = discover_supported()
+    caps = {}
+    for spec in a.cap_family:
+        f, _, n = spec.partition("="); caps[f] = int(n)
+    # cap family task count (top-N by train.jsonl line count) to bound prep cost
+    for f, n in caps.items():
+        fam_tasks = [x for x in tasks if family_of(x) == f]
+        if len(fam_tasks) <= n: continue
+        fam_tasks.sort(key=lambda x: sum(1 for _ in open(OUT/x/"train.jsonl")), reverse=True)
+        keep = set(fam_tasks[:n])
+        tasks = [x for x in tasks if family_of(x) != f or x in keep]
     torch.set_num_threads(8)
     random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
     out = a.out / a.name; out.mkdir(parents=True, exist_ok=True)
@@ -160,19 +226,22 @@ def main():
         save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"init.safetensors"))
         print(f"[init checkpoint saved] {out/'init.safetensors'}", flush=True)
     bytask = {}; specs = {}; prep_fail = Counter()
-    for tk in a.tasks:
+    for tk in tasks:
         rows, spec = load_task_rows(rep, tk, a.max_per_task)
-        if len(rows) < BATCH:
+        if len(rows) < max(BATCH, a.min_valid):
             prep_fail[tk] = len(rows); continue
         bytask[tk] = rows; specs[tk] = spec
-    print("trained tasks:", {k: len(v) for k, v in bytask.items()}, "skipped:", dict(prep_fail), flush=True)
+    nfam = len({family_of(x) for x in bytask})
+    total = EPOCHS * a.batches_per_family * nfam if a.family_balance else EPOCHS * min(len(v)//BATCH for v in bytask.values()) * len(bytask)
+    print(f"trained tasks={len(bytask)} families={nfam} balance={'family' if a.family_balance else 'task'} updates≈{total} | gated_out={len(prep_fail)}", flush=True)
+    if bytask: print("  per-family task counts:", dict(Counter(family_of(x) for x in bytask)), flush=True)
     if not bytask: print("no tasks to train"); return 1
     rng = random.Random(SEED+41)
-    total = EPOCHS * min(len(v)//BATCH for v in bytask.values()) * len(bytask)
     opt = make_optimizer(model)
     step = 0; trace = []
     t0 = time.monotonic()
-    for epoch, tk, rr in schedule(bytask, rng):
+    sched = schedule_family(bytask, EPOCHS, BATCH, a.batches_per_family, rng) if a.family_balance else schedule(bytask, rng)
+    for epoch, tk, rr in sched:
         step += 1
         for g in opt.param_groups: g["lr"] = g["base_lr"]*lr_factor(step, total)
         model.train(); opt.zero_grad(set_to_none=True)
@@ -191,6 +260,9 @@ def main():
     (out/"train_trace.jsonl").write_text("\n".join(json.dumps(r) for r in trace)+"\n")
     config = {"tasks": list(bytask), "max_per_task": a.max_per_task, "epochs": EPOCHS, "batch": BATCH,
               "seed": SEED, "total_updates": step, "encoder_lr": LR_ENC, "head_lr": LR_HEAD,
+              "family_balance": a.family_balance, "batches_per_family": a.batches_per_family,
+              "min_valid": a.min_valid, "cap_family": caps, "gated_out": dict(prep_fail),
+              "per_family_tasks": dict(Counter(family_of(x) for x in bytask)),
               "score_specs": {k: (v["anchors"] if v else None) for k, v in specs.items()},
               "elapsed_sec": round(time.monotonic()-t0,1), "test_inference": False}
     (out/"run_config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2)+"\n")

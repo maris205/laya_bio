@@ -1,0 +1,59 @@
+{
+  "n_paired": 96,
+  "improved": 32,
+  "flat": 52,
+  "regressed": 12,
+  "mean_delta": 0.03394432630149197,
+  "median_delta": 0.0,
+  "by_family": {
+    "DeepSTARR": {
+      "n": 2,
+      "metric": "spear",
+      "mean_init": -0.032123884627838675,
+      "mean_trained": 0.0714938576823746,
+      "mean_delta": 0.10361774231021326
+    },
+    "GUE": {
+      "n": 28,
+      "metric": "acc",
+      "mean_init": 0.49886597938144334,
+      "mean_trained": 0.49156111929307805,
+      "mean_delta": -0.007304860088365244
+    },
+    "GenomicBenchmarks": {
+      "n": 7,
+      "metric": "auroc",
+      "mean_init": 0.48433892975598497,
+      "mean_trained": 0.6021949306152458,
+      "mean_delta": 0.11785600085926072
+    },
+    "ProteinGym": {
+      "n": 49,
+      "metric": "spear",
+      "mean_init": -0.03968571238150409,
+      "mean_trained": -0.0029136292544176745,
+      "mean_delta": 0.03677208312708641
+    },
+    "TAPE": {
+      "n": 2,
+      "metric": "spear",
+      "mean_init": -0.09039873119741147,
+      "mean_trained": 0.06115437006725286,
+      "mean_delta": 0.15155310126466434
+    },
+    "dnagpt_pools": {
+      "n": 3,
+      "metric": "acc",
+      "mean_init": 0.43333333333333335,
+      "mean_trained": 0.5266666666666667,
+      "mean_delta": 0.09333333333333334
+    },
+    "local_snapshots": {
+      "n": 5,
+      "metric": "acc",
+      "mean_init": 0.47913202400436444,
+      "mean_trained": 0.4883371522094926,
+      "mean_delta": 0.009205128205128199
+    }
+  }
+}

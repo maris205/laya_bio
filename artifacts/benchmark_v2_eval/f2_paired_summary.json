@@ -1,0 +1,131 @@
+{
+  "n": 43,
+  "improved": 18,
+  "flat": 19,
+  "regressed": 6,
+  "mean_delta": 0.05253043131854878,
+  "median_delta": 0.010300000000000087,
+  "by_family": {
+    "DeepSTARR": {
+      "n": 2,
+      "metric": "spear",
+      "mean_init": -0.032123884627838675,
+      "mean_trained": 0.048421870150795424,
+      "mean_delta": 0.0805457547786341
+    },
+    "GUE": {
+      "n": 12,
+      "metric": "acc",
+      "mean_init": 0.47777061855670094,
+      "mean_trained": 0.45695017182130576,
+      "mean_delta": -0.020820446735395196
+    },
+    "GenomicBenchmarks": {
+      "n": 7,
+      "metric": "auroc",
+      "mean_init": 0.48433892975598497,
+      "mean_trained": 0.5194147732991483,
+      "mean_delta": 0.0350758435431633
+    },
+    "ProteinGym": {
+      "n": 12,
+      "metric": "spear",
+      "mean_init": -0.024389331390767516,
+      "mean_trained": 0.04558471515586653,
+      "mean_delta": 0.06997404654663404
+    },
+    "TAPE": {
+      "n": 2,
+      "metric": "spear",
+      "mean_init": -0.09039873119741147,
+      "mean_trained": 0.23692658225809451,
+      "mean_delta": 0.327325313455506
+    },
+    "dnagpt_pools": {
+      "n": 3,
+      "metric": "acc",
+      "mean_init": 0.43333333333333335,
+      "mean_trained": 0.5266666666666667,
+      "mean_delta": 0.09333333333333334
+    },
+    "local_snapshots": {
+      "n": 5,
+      "metric": "acc",
+      "mean_init": 0.47913202400436444,
+      "mean_trained": 0.5446704855428259,
+      "mean_delta": 0.06553846153846152
+    }
+  },
+  "top_improved": [
+    {
+      "task": "tape_stability",
+      "metric": "spear",
+      "init": -0.21793241894955392,
+      "trained": 0.32426316277607287,
+      "delta": 0.5421955817256268
+    },
+    {
+      "task": "pg_MTHR_HUMAN_Weile_2021",
+      "metric": "spear",
+      "init": -0.16570776697504622,
+      "trained": 0.17682639678365836,
+      "delta": 0.3425341637587046
+    },
+    {
+      "task": "dna_splice",
+      "metric": "acc",
+      "init": 0.28,
+      "trained": 0.56,
+      "delta": 0.28
+    },
+    {
+      "task": "gb_human_nontata_promoters",
+      "metric": "auroc",
+      "init": 0.47800925925925924,
+      "trained": 0.7228260869565217,
+      "delta": 0.24481682769726248
+    },
+    {
+      "task": "pg_I6TAH8_I68A0_Doud_2015",
+      "metric": "spear",
+      "init": 0.06140253506337658,
+      "trained": 0.22884787033177065,
+      "delta": 0.16744533526839406
+    },
+    {
+      "task": "pg_SHOC2_HUMAN_Kwon_2022",
+      "metric": "spear",
+      "init": -0.10586964674116855,
+      "trained": 0.04231153246948758,
+      "delta": 0.14818117921065613
+    },
+    {
+      "task": "gb_demo_human_or_worm",
+      "metric": "auroc",
+      "init": 0.4790970746026926,
+      "trained": 0.6250632655127036,
+      "delta": 0.14596619091001106
+    },
+    {
+      "task": "pg_PPARG_HUMAN_Majithia_2016",
+      "metric": "spear",
+      "init": -0.10880325569031332,
+      "trained": 0.01801038261490337,
+      "delta": 0.1268136383052167
+    },
+    {
+      "task": "lg_fold_class",
+      "metric": "acc",
+      "init": 0.045,
+      "trained": 0.165,
+      "delta": 0.12000000000000001
+    },
+    {
+      "task": "tape_fluorescence",
+      "metric": "spear",
+      "init": 0.03713495655473097,
+      "trained": 0.14959000174011616,
+      "delta": 0.11245504518538518
+    }
+  ]
+}

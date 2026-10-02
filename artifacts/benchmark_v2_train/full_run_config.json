@@ -1,0 +1,554 @@
+{
+  "tasks": [
+    "deepstarr_dev",
+    "deepstarr_hk",
+    "dna_core",
+    "dna_splice",
+    "dna_tf",
+    "gb_demo_coding_vs_intergenomic_seqs",
+    "gb_demo_human_or_worm",
+    "gb_dummy_mouse_enhancers_ensembl",
+    "gb_human_enhancers_cohn",
+    "gb_human_ensembl_regulatory",
+    "gb_human_nontata_promoters",
+    "gb_human_ocr_ensembl",
+    "gue_H3",
+    "gue_H3K14ac",
+    "gue_H3K36me3",
+    "gue_H3K4me1",
+    "gue_H3K4me2",
+    "gue_H3K4me3",
+    "gue_H3K79me3",
+    "gue_H3K9ac",
+    "gue_H4",
+    "gue_H4ac",
+    "gue_mouse_0",
+    "gue_mouse_1",
+    "gue_mouse_2",
+    "gue_mouse_3",
+    "gue_mouse_4",
+    "gue_prom_prom_300_all",
+    "gue_prom_prom_300_notata",
+    "gue_prom_prom_300_tata",
+    "gue_prom_prom_core_all",
+    "gue_prom_prom_core_notata",
+    "gue_prom_prom_core_tata",
+    "gue_splice_reconstructed",
+    "gue_tf_0",
+    "gue_tf_1",
+    "gue_tf_2",
+    "gue_tf_3",
+    "gue_tf_4",
+    "gue_virus_covid",
+    "lg_fold_class",
+    "lg_npp",
+    "lg_promoter_detection",
+    "lg_signal_peptide",
+    "lg_subcellular_loc",
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016",
+    "pg_A4D664_9INFA_Soh_2019",
+    "pg_A4GRB6_PSEAI_Chen_2020",
+    "pg_ADRB2_HUMAN_Jones_2020",
+    "pg_AMIE_PSEAE_Wrenbeck_2017",
+    "pg_ANCSZ_Hobbs_2022",
+    "pg_BLAT_ECOLX_Deng_2012",
+    "pg_BLAT_ECOLX_Firnberg_2014",
+    "pg_BLAT_ECOLX_Stiffler_2015",
+    "pg_C6KNH7_9INFA_Lee_2018",
+    "pg_CBS_HUMAN_Sun_2020",
+    "pg_CCR5_HUMAN_Gill_2023",
+    "pg_CP2C9_HUMAN_Amorosi_2021_abundance",
+    "pg_CP2C9_HUMAN_Amorosi_2021_activity",
+    "pg_HEM3_HUMAN_Loggerenberg_2023",
+    "pg_HSP82_YEAST_Flynn_2019",
+    "pg_HSP82_YEAST_Mishra_2016",
+    "pg_HXK4_HUMAN_Gersing_2022_activity",
+    "pg_HXK4_HUMAN_Gersing_2023_abundance",
+    "pg_I6TAH8_I68A0_Doud_2015",
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_function",
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_surface",
+    "pg_KKA2_KLEPN_Melnikov_2014",
+    "pg_LGK_LIPST_Klesmith_2015",
+    "pg_MET_HUMAN_Estevam_2023",
+    "pg_MK01_HUMAN_Brenan_2016",
+    "pg_MLAC_ECOLI_MacRae_2023",
+    "pg_MTHR_HUMAN_Weile_2021",
+    "pg_NCAP_I34A1_Doud_2015",
+    "pg_OXDA_RHOTO_Vanella_2023_activity",
+    "pg_OXDA_RHOTO_Vanella_2023_expression",
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Etoposide",
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Nutlin",
+    "pg_P53_HUMAN_Giacomelli_2018_WT_Nutlin",
+    "pg_PAI1_HUMAN_Huttinger_2021",
+    "pg_PPARG_HUMAN_Majithia_2016",
+    "pg_PPM1D_HUMAN_Miller_2022",
+    "pg_PRKN_HUMAN_Clausen_2023",
+    "pg_PTEN_HUMAN_Matreyek_2021",
+    "pg_PTEN_HUMAN_Mighell_2018",
+    "pg_R1AB_SARS2_Flynn_2022",
+    "pg_RDRP_I33A0_Li_2023",
+    "pg_RNC_ECOLI_Weeks_2023",
+    "pg_S22A1_HUMAN_Yee_2023_abundance",
+    "pg_S22A1_HUMAN_Yee_2023_activity",
+    "pg_SC6A4_HUMAN_Young_2021",
+    "pg_SHOC2_HUMAN_Kwon_2022",
+    "pg_SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM",
+    "pg_TPMT_HUMAN_Matreyek_2018",
+    "tape_fluorescence",
+    "tape_stability"
+  ],
+  "max_per_task": 768,
+  "epochs": 4,
+  "batch": 64,
+  "seed": 20261001,
+  "total_updates": 280,
+  "encoder_lr": 2e-05,
+  "head_lr": 0.0001,
+  "family_balance": true,
+  "batches_per_family": 10,
+  "min_valid": 128,
+  "cap_family": {
+    "ProteinGym": 60
+  },
+  "gated_out": {
+    "gb_drosophila_enhancers_stark": 53,
+    "pg_A0A140D2T1_ZIKV_Sourisseau_2019": 0,
+    "pg_A0A192B1T2_9HIV1_Haddox_2018": 0,
+    "pg_CAS9_STRP1_Spencer_2017_positive": 0,
+    "pg_ENV_HV1BR_Haddox_2016": 0,
+    "pg_HMDH_HUMAN_Jiang_2019": 0,
+    "pg_MSH2_HUMAN_Jia_2020": 0,
+    "pg_POLG_CXB3N_Mattenberger_2021": 0,
+    "pg_POLG_DEN26_Suphatrakul_2023": 0,
+    "pg_Q2N0S5_9HIV1_Haddox_2018": 0,
+    "pg_SPIKE_SARS2_Starr_2020_binding": 0,
+    "pg_SPIKE_SARS2_Starr_2020_expression": 0
+  },
+  "per_family_tasks": {
+    "DeepSTARR": 2,
+    "dnagpt_pools": 3,
+    "GenomicBenchmarks": 7,
+    "GUE": 28,
+    "local_snapshots": 5,
+    "ProteinGym": 49,
+    "TAPE": 2
+  },
+  "score_specs": {
+    "deepstarr_dev": [
+      -1.0567509082774007,
+      -0.558308406598207,
+      -0.07623148121447451,
+      0.4611621020160905,
+      1.0149212615421166
+    ],
+    "deepstarr_hk": [
+      -0.9101108139626737,
+      -0.5010442515675905,
+      -0.11198639031905666,
+      0.30464501627532287,
+      0.7412851240162517
+    ],
+    "dna_core": null,
+    "dna_splice": null,
+    "dna_tf": null,
+    "gb_demo_coding_vs_intergenomic_seqs": null,
+    "gb_demo_human_or_worm": null,
+    "gb_dummy_mouse_enhancers_ensembl": null,
+    "gb_human_enhancers_cohn": null,
+    "gb_human_ensembl_regulatory": null,
+    "gb_human_nontata_promoters": null,
+    "gb_human_ocr_ensembl": null,
+    "gue_H3": null,
+    "gue_H3K14ac": null,
+    "gue_H3K36me3": null,
+    "gue_H3K4me1": null,
+    "gue_H3K4me2": null,
+    "gue_H3K4me3": null,
+    "gue_H3K79me3": null,
+    "gue_H3K9ac": null,
+    "gue_H4": null,
+    "gue_H4ac": null,
+    "gue_mouse_0": null,
+    "gue_mouse_1": null,
+    "gue_mouse_2": null,
+    "gue_mouse_3": null,
+    "gue_mouse_4": null,
+    "gue_prom_prom_300_all": null,
+    "gue_prom_prom_300_notata": null,
+    "gue_prom_prom_300_tata": null,
+    "gue_prom_prom_core_all": null,
+    "gue_prom_prom_core_notata": null,
+    "gue_prom_prom_core_tata": null,
+    "gue_splice_reconstructed": null,
+    "gue_tf_0": null,
+    "gue_tf_1": null,
+    "gue_tf_2": null,
+    "gue_tf_3": null,
+    "gue_tf_4": null,
+    "gue_virus_covid": null,
+    "lg_fold_class": null,
+    "lg_npp": null,
+    "lg_promoter_detection": null,
+    "lg_signal_peptide": null,
+    "lg_subcellular_loc": null,
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016": [
+      -3.66147035,
+      -2.9818295800000003,
+      -2.2944479399999995,
+      -1.4141066699999993,
+      -0.5415062699999997
+    ],
+    "pg_A4D664_9INFA_Soh_2019": [
+      -0.017084923000000002,
+      0.096859043,
+      0.19675894100000013,
+      0.41619123500000016,
+      0.6496675970000001
+    ],
+    "pg_A4GRB6_PSEAI_Chen_2020": [
+      -5.139778896933334,
+      -3.7769279,
+      -2.1224199699999997,
+      -0.5231819391999998,
+      0.7843991585333333
+    ],
+    "pg_ADRB2_HUMAN_Jones_2020": [
+      1.15273965,
+      1.5450075,
+      1.9287003500000002,
+      2.3285731000000003,
+      2.73702085
+    ],
+    "pg_AMIE_PSEAE_Wrenbeck_2017": [
+      -0.7148699999999999,
+      -0.43879999999999997,
+      -0.16594999999999993,
+      -0.005819999999999936,
+      0.15753
+    ],
+    "pg_ANCSZ_Hobbs_2022": [
+      -0.2939800964666667,
+      -0.163538866,
+      -0.05031633069999999,
+      0.0018408247000000176,
+      0.07121667526666667
+    ],
+    "pg_BLAT_ECOLX_Deng_2012": [
+      -4.738552066666667,
+      -3.8053136,
+      -2.8438219,
+      -1.6964929,
+      -0.5774171333333336
+    ],
+    "pg_BLAT_ECOLX_Firnberg_2014": [
+      -0.1499966666666667,
+      0.11975000000000004,
+      0.4423100000000001,
+      0.8329500000000001,
+      1.1707766666666668
+    ],
+    "pg_BLAT_ECOLX_Stiffler_2015": [
+      -2.9911905994000003,
+      -2.14634373,
+      -1.0279215979999998,
+      -0.19230334979999994,
+      0.36973963579999997
+    ],
+    "pg_C6KNH7_9INFA_Lee_2018": [
+      -2.8644946166666667,
+      -2.2845230499999998,
+      -1.7121341,
+      -1.0080976,
+      -0.2964784833333333
+    ],
+    "pg_CBS_HUMAN_Sun_2020": [
+      -0.16628287133333333,
+      0.07478926300000002,
+      0.3909017130000002,
+      0.8149610640000002,
+      1.1639800993333334
+    ],
+    "pg_CCR5_HUMAN_Gill_2023": [
+      -0.4953333333333334,
+      -0.245,
+      -0.015,
+      0.15600000000000022,
+      0.3473333333333338
+    ],
+    "pg_CP2C9_HUMAN_Amorosi_2021_abundance": [
+      0.30092347399999997,
+      0.520829134,
+      0.7429933200000001,
+      0.9038405960000001,
+      1.062429346
+    ],
+    "pg_CP2C9_HUMAN_Amorosi_2021_activity": [
+      -0.01383506666666666,
+      0.23188956500000002,
+      0.4990344650000001,
+      0.7758113000000001,
+      1.0311678666666666
+    ],
+    "pg_HEM3_HUMAN_Loggerenberg_2023": [
+      -0.16897094000000001,
+      0.18178956000000002,
+      0.5488427060000001,
+      0.8739659660000001,
+      1.1827965800000002
+    ],
+    "pg_HSP82_YEAST_Flynn_2019": [
+      -0.41116856653333334,
+      -0.22921012000000002,
+      -0.06724258609999999,
+      0.027206905500000017,
+      0.14164730973333334
+    ],
+    "pg_HSP82_YEAST_Mishra_2016": [
+      -0.2518339598,
+      -0.13361703249999998,
+      -0.034203072899999985,
+      0.001692575000000013,
+      0.0563911906
+    ],
+    "pg_HXK4_HUMAN_Gersing_2022_activity": [
+      -0.17309436793333333,
+      0.24427620660000002,
+      0.654084234,
+      1.069581424,
+      1.4926411611333332
+    ],
+    "pg_HXK4_HUMAN_Gersing_2023_abundance": [
+      0.23742113033333334,
+      0.494020683,
+      0.73404108,
+      0.88765831,
+      1.0578546956666666
+    ],
+    "pg_I6TAH8_I68A0_Doud_2015": [
+      -3.313404556666667,
+      -2.76383539,
+      -2.26076029,
+      -1.59695819,
+      -0.8866620233333333
+    ],
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_function": [
+      -0.60205427,
+      -0.26161989,
+      0.06094481000000001,
+      0.34342391,
+      0.6437726899999999
+    ],
+    "pg_KCNJ2_MOUSE_Coyote-Maestas_2022_surface": [
+      -1.7740386273333333,
+      -0.8263132219999999,
+      0.0195275280000001,
+      0.5823307920000002,
+      1.2470187113333338
+    ],
+    "pg_KKA2_KLEPN_Melnikov_2014": [
+      -0.18058333333333335,
+      0.26445,
+      0.793335,
+      1.510395,
+      2.1436033333333335
+    ],
+    "pg_LGK_LIPST_Klesmith_2015": [
+      -1.2842699999999998,
+      -0.95744,
+      -0.63323,
+      -0.34217999999999993,
+      -0.04851
+    ],
+    "pg_MET_HUMAN_Estevam_2023": [
+      -7.243125212,
+      -4.588226909999999,
+      -1.7123337659999989,
+      -0.1530504199999998,
+      1.1852380840000003
+    ],
+    "pg_MK01_HUMAN_Brenan_2016": [
+      -9.376985226666665,
+      -8.7689069,
+      -8.17561933,
+      -7.63300955,
+      -7.075609013333333
+    ],
+    "pg_MLAC_ECOLI_MacRae_2023": [
+      -0.5395873147666665,
+      -0.31786961799999996,
+      -0.1118379244,
+      -0.014220866099999991,
+      0.09908219536666667
+    ],
+    "pg_MTHR_HUMAN_Weile_2021": [
+      0.48245666666666664,
+      0.6460600000000001,
+      0.79575,
+      0.8804000000000001,
+      0.9789633333333334
+    ],
+    "pg_NCAP_I34A1_Doud_2015": [
+      -4.124484253333333,
+      -3.4586074399999998,
+      -2.82675141,
+      -2.10380129,
+      -1.3468303866666664
+    ],
+    "pg_OXDA_RHOTO_Vanella_2023_activity": [
+      -0.18210221566666665,
+      -0.13875760599999998,
+      -0.097292769,
+      -0.04668043599999997,
+      0.00581166966666672
+    ],
+    "pg_OXDA_RHOTO_Vanella_2023_expression": [
+      -0.22084622376666663,
+      -0.1343444418,
+      -0.050189318099999956,
+      0.02275229900000004,
+      0.09804057436666666
+    ],
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Etoposide": [
+      -1.4992157246666662,
+      -0.49826579199999976,
+      0.3565707300000002,
+      0.7255116960000003,
+      1.2405660726666667
+    ],
+    "pg_P53_HUMAN_Giacomelli_2018_Null_Nutlin": [
+      -1.2260750213333331,
+      -0.5645952249999997,
+      0.053094895000000586,
+      0.6178221120000005,
+      1.2263390053333334
+    ],
+    "pg_P53_HUMAN_Giacomelli_2018_WT_Nutlin": [
+      -1.5450726133333332,
+      -0.7708789559999999,
+      -0.05230453599999971,
+      0.6443429800000002,
+      1.3966097333333334
+    ],
+    "pg_PAI1_HUMAN_Huttinger_2021": [
+      -1.6209778046666665,
+      -0.8070363339999999,
+      -0.034779278999999885,
+      0.519099749,
+      1.1146631926666666
+    ],
+    "pg_PPARG_HUMAN_Majithia_2016": [
+      -3.8828,
+      -2.4088000000000003,
+      -0.9473999999999997,
+      0.11140000000000058,
+      1.1828000000000005
+    ],
+    "pg_PPM1D_HUMAN_Miller_2022": [
+      -0.3963999999999999,
+      -0.21229999999999988,
+      -0.03219999999999993,
+      0.1285,
+      0.29319999999999996
+    ],
+    "pg_PRKN_HUMAN_Clausen_2023": [
+      0.019241400333333436,
+      0.44857369500000005,
+      0.823289726,
+      0.9488480940000001,
+      1.1290227256666667
+    ],
+    "pg_PTEN_HUMAN_Matreyek_2021": [
+      0.3311017203333334,
+      0.5571233750000001,
+      0.7753057640000001,
+      0.928193748,
+      1.0889209976666667
+    ],
+    "pg_PTEN_HUMAN_Mighell_2018": [
+      -1.5300416703333333,
+      -0.857807079,
+      -0.256247018,
+      0.06367379200000003,
+      0.45426913233333344
+    ],
+    "pg_R1AB_SARS2_Flynn_2022": [
+      -0.12762083866666668,
+      0.372376774,
+      0.836816912,
+      0.979408958,
+      1.1575584786666668
+    ],
+    "pg_RDRP_I33A0_Li_2023": [
+      -2.1400442253333334,
+      -1.8302627400000002,
+      -1.54085948,
+      -1.098972224,
+      -0.6367067426666666
+    ],
+    "pg_RNC_ECOLI_Weeks_2023": [
+      -0.4725214443333333,
+      -0.2302649496,
+      -0.034988422899999996,
+      0.006883547700000001,
+      0.09573548633333333
+    ],
+    "pg_S22A1_HUMAN_Yee_2023_abundance": [
+      -1.9663315333333335,
+      -1.1014242200000002,
+      -0.3116894749999999,
+      0.15181974500000014,
+      0.6905015333333333
+    ],
+    "pg_S22A1_HUMAN_Yee_2023_activity": [
+      -1.4503207536666665,
+      -0.726580076,
+      -0.05959073299999994,
+      0.34670128400000016,
+      0.8097446356666669
+    ],
+    "pg_SC6A4_HUMAN_Young_2021": [
+      -1.8976391333333333,
+      -1.06625958,
+      -0.2414129599999997,
+      0.3247924200000003,
+      0.8975307333333333
+    ],
+    "pg_SHOC2_HUMAN_Kwon_2022": [
+      -1.0636185163333334,
+      -0.688679626,
+      -0.336846007,
+      -0.02539491199999995,
+      0.3091614543333334
+    ],
+    "pg_SRC_HUMAN_Chakraborty_2023_binding-DAS_25uM": [
+      -0.7118514076666667,
+      -0.417868314,
+      -0.11279169589999992,
+      0.2060141691000001,
+      0.5137265096666667
+    ],
+    "pg_TPMT_HUMAN_Matreyek_2018": [
+      0.36167238333333335,
+      0.5863132,
+      0.79943685,
+      0.9610717,
+      1.1342237166666669
+    ],
+    "tape_fluorescence": [
+      3.0310140450795493,
+      3.3049228191375732,
+      3.5452136993408203,
+      3.6517739295959473,
+      3.791952053705851
+    ],
+    "tape_stability": [
+      -0.403333326180776,
+      -0.12999999523162842,
+      0.125,
+      0.42500001192092896,
+      0.7433333595593771
+    ]
+  },
+  "elapsed_sec": 235.7,
+  "test_inference": false
+}

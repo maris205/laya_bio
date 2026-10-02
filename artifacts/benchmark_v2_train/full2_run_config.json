@@ -1,0 +1,224 @@
+{
+  "tasks": [
+    "deepstarr_dev",
+    "deepstarr_hk",
+    "dna_core",
+    "dna_splice",
+    "dna_tf",
+    "gb_demo_coding_vs_intergenomic_seqs",
+    "gb_demo_human_or_worm",
+    "gb_dummy_mouse_enhancers_ensembl",
+    "gb_human_enhancers_cohn",
+    "gb_human_ensembl_regulatory",
+    "gb_human_nontata_promoters",
+    "gb_human_ocr_ensembl",
+    "gue_H3K36me3",
+    "gue_H3K4me3",
+    "gue_mouse_1",
+    "gue_prom_prom_300_all",
+    "gue_prom_prom_300_notata",
+    "gue_prom_prom_core_all",
+    "gue_prom_prom_core_notata",
+    "gue_splice_reconstructed",
+    "gue_tf_0",
+    "gue_tf_1",
+    "gue_tf_3",
+    "gue_virus_covid",
+    "lg_fold_class",
+    "lg_npp",
+    "lg_promoter_detection",
+    "lg_signal_peptide",
+    "lg_subcellular_loc",
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016",
+    "pg_A4D664_9INFA_Soh_2019",
+    "pg_C6KNH7_9INFA_Lee_2018",
+    "pg_HSP82_YEAST_Flynn_2019",
+    "pg_I6TAH8_I68A0_Doud_2015",
+    "pg_MTHR_HUMAN_Weile_2021",
+    "pg_PPARG_HUMAN_Majithia_2016",
+    "pg_RDRP_I33A0_Li_2023",
+    "pg_S22A1_HUMAN_Yee_2023_abundance",
+    "pg_S22A1_HUMAN_Yee_2023_activity",
+    "pg_SC6A4_HUMAN_Young_2021",
+    "pg_SHOC2_HUMAN_Kwon_2022",
+    "tape_fluorescence",
+    "tape_stability"
+  ],
+  "max_per_task": 768,
+  "epochs": 12,
+  "batch": 64,
+  "seed": 20261001,
+  "total_updates": 2520,
+  "encoder_lr": 2e-05,
+  "head_lr": 0.0001,
+  "family_balance": true,
+  "batches_per_family": 30,
+  "min_valid": 128,
+  "cap_family": {
+    "ProteinGym": 20,
+    "GUE": 12
+  },
+  "gated_out": {
+    "gb_drosophila_enhancers_stark": 53,
+    "pg_A0A140D2T1_ZIKV_Sourisseau_2019": 0,
+    "pg_A0A192B1T2_9HIV1_Haddox_2018": 0,
+    "pg_ENV_HV1BR_Haddox_2016": 0,
+    "pg_HMDH_HUMAN_Jiang_2019": 0,
+    "pg_MSH2_HUMAN_Jia_2020": 0,
+    "pg_POLG_CXB3N_Mattenberger_2021": 0,
+    "pg_POLG_DEN26_Suphatrakul_2023": 0,
+    "pg_Q2N0S5_9HIV1_Haddox_2018": 0
+  },
+  "per_family_tasks": {
+    "DeepSTARR": 2,
+    "dnagpt_pools": 3,
+    "GenomicBenchmarks": 7,
+    "GUE": 12,
+    "local_snapshots": 5,
+    "ProteinGym": 12,
+    "TAPE": 2
+  },
+  "score_specs": {
+    "deepstarr_dev": [
+      -1.0567509082774007,
+      -0.558308406598207,
+      -0.07623148121447451,
+      0.4611621020160905,
+      1.0149212615421166
+    ],
+    "deepstarr_hk": [
+      -0.9101108139626737,
+      -0.5010442515675905,
+      -0.11198639031905666,
+      0.30464501627532287,
+      0.7412851240162517
+    ],
+    "dna_core": null,
+    "dna_splice": null,
+    "dna_tf": null,
+    "gb_demo_coding_vs_intergenomic_seqs": null,
+    "gb_demo_human_or_worm": null,
+    "gb_dummy_mouse_enhancers_ensembl": null,
+    "gb_human_enhancers_cohn": null,
+    "gb_human_ensembl_regulatory": null,
+    "gb_human_nontata_promoters": null,
+    "gb_human_ocr_ensembl": null,
+    "gue_H3K36me3": null,
+    "gue_H3K4me3": null,
+    "gue_mouse_1": null,
+    "gue_prom_prom_300_all": null,
+    "gue_prom_prom_300_notata": null,
+    "gue_prom_prom_core_all": null,
+    "gue_prom_prom_core_notata": null,
+    "gue_splice_reconstructed": null,
+    "gue_tf_0": null,
+    "gue_tf_1": null,
+    "gue_tf_3": null,
+    "gue_virus_covid": null,
+    "lg_fold_class": null,
+    "lg_npp": null,
+    "lg_promoter_detection": null,
+    "lg_signal_peptide": null,
+    "lg_subcellular_loc": null,
+    "pg_A0A2Z5U3Z0_9INFA_Doud_2016": [
+      -3.66147035,
+      -2.9818295800000003,
+      -2.2944479399999995,
+      -1.4141066699999993,
+      -0.5415062699999997
+    ],
+    "pg_A4D664_9INFA_Soh_2019": [
+      -0.017084923000000002,
+      0.096859043,
+      0.19675894100000013,
+      0.41619123500000016,
+      0.6496675970000001
+    ],
+    "pg_C6KNH7_9INFA_Lee_2018": [
+      -2.8644946166666667,
+      -2.2845230499999998,
+      -1.7121341,
+      -1.0080976,
+      -0.2964784833333333
+    ],
+    "pg_HSP82_YEAST_Flynn_2019": [
+      -0.41116856653333334,
+      -0.22921012000000002,
+      -0.06724258609999999,
+      0.027206905500000017,
+      0.14164730973333334
+    ],
+    "pg_I6TAH8_I68A0_Doud_2015": [
+      -3.313404556666667,
+      -2.76383539,
+      -2.26076029,
+      -1.59695819,
+      -0.8866620233333333
+    ],
+    "pg_MTHR_HUMAN_Weile_2021": [
+      0.48245666666666664,
+      0.6460600000000001,
+      0.79575,
+      0.8804000000000001,
+      0.9789633333333334
+    ],
+    "pg_PPARG_HUMAN_Majithia_2016": [
+      -3.8828,
+      -2.4088000000000003,
+      -0.9473999999999997,
+      0.11140000000000058,
+      1.1828000000000005
+    ],
+    "pg_RDRP_I33A0_Li_2023": [
+      -2.1400442253333334,
+      -1.8302627400000002,
+      -1.54085948,
+      -1.098972224,
+      -0.6367067426666666
+    ],
+    "pg_S22A1_HUMAN_Yee_2023_abundance": [
+      -1.9663315333333335,
+      -1.1014242200000002,
+      -0.3116894749999999,
+      0.15181974500000014,
+      0.6905015333333333
+    ],
+    "pg_S22A1_HUMAN_Yee_2023_activity": [
+      -1.4503207536666665,
+      -0.726580076,
+      -0.05959073299999994,
+      0.34670128400000016,
+      0.8097446356666669
+    ],
+    "pg_SC6A4_HUMAN_Young_2021": [
+      -1.8976391333333333,
+      -1.06625958,
+      -0.2414129599999997,
+      0.3247924200000003,
+      0.8975307333333333
+    ],
+    "pg_SHOC2_HUMAN_Kwon_2022": [
+      -1.0636185163333334,
+      -0.688679626,
+      -0.336846007,
+      -0.02539491199999995,
+      0.3091614543333334
+    ],
+    "tape_fluorescence": [
+      3.0310140450795493,
+      3.3049228191375732,
+      3.5452136993408203,
+      3.6517739295959473,
+      3.791952053705851
+    ],
+    "tape_stability": [
+      -0.403333326180776,
+      -0.12999999523162842,
+      0.125,
+      0.42500001192092896,
+      0.7433333595593771
+    ]
+  },
+  "elapsed_sec": 2148.6,
+  "test_inference": false
+}
