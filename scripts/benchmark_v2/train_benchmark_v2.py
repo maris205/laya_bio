@@ -193,11 +193,11 @@ def schedule(bytask, rng):
 
 @torch.no_grad()
 def dev_eval(model, devrows, specs, pad, micro=32):
-    """Mean per-task dev metric -> single scalar in [0,1] for early stopping.
-    choice/noul: accuracy; score: (spearman+1)/2. Each task weighted equally."""
+    """Return {task_id: metric} where metric in [0,1]: choice/noul=accuracy,
+    score=(spearman+1)/2. Caller aggregates globally or per family."""
     from scipy.stats import spearmanr
     model.eval()
-    per_task = []
+    per_task = {}
     for tk, rows in devrows.items():
         if not rows: continue
         prim = rows[0]["primitive"]
@@ -217,12 +217,12 @@ def dev_eval(model, devrows, specs, pad, micro=32):
                     if a5: estv.append(float(np.dot(canon, a5))); goldv.append(row.get("value", row["label"]))
         if prim == "score" and len(goldv) > 2:
             rho = spearmanr(np.array(goldv), np.array(estv)).statistic
-            per_task.append((float(rho)+1)/2 if np.isfinite(rho) else 0.5)
+            per_task[tk] = (float(rho)+1)/2 if np.isfinite(rho) else 0.5
         else:
             yv = np.array(ys); pv = np.array(preds)
-            per_task.append(float((pv == yv).mean()) if len(yv) else 0.0)
+            per_task[tk] = float((pv == yv).mean()) if len(yv) else 0.0
     model.train()
-    return float(np.mean(per_task)) if per_task else 0.0
+    return per_task
 
 
 def main():
@@ -240,6 +240,7 @@ def main():
     ap.add_argument("--head-lr-scale", type=float, default=1.0, help="scale head/scorer LR (encoder LR unchanged)")
     ap.add_argument("--dev-eval-every", type=int, default=0, help=">0: eval dev every N updates for early stopping")
     ap.add_argument("--dev-max", type=int, default=64, help="dev samples per task for the early-stop metric")
+    ap.add_argument("--per-family-early-stop", action="store_true", help="also save a best-dev checkpoint per family")
     ap.add_argument("--name", default="bv2_pilot")
     ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
@@ -291,6 +292,7 @@ def main():
             if abs(g["base_lr"] - LR_HEAD) < 1e-12:
                 g["base_lr"] = LR_HEAD * a.head_lr_scale
     step = 0; trace = []; best_dev = -1.0; best_step = 0; dev_curve = []
+    fam_best = {}; fam_best_step = {}
     t0 = time.monotonic()
     sched = schedule_family(bytask, EPOCHS, BATCH, a.batches_per_family, rng) if a.family_balance else schedule(bytask, rng)
     for epoch, tk, rr in sched:
@@ -309,13 +311,25 @@ def main():
         if step % 20 == 0 or step == 1:
             print(json.dumps({**rec, "sec": round(time.monotonic()-t0,1)}), flush=True)
         if a.dev_eval_every > 0 and step % a.dev_eval_every == 0:
-            ds = dev_eval(model, devrows, specs, pad)
-            dev_curve.append({"step": step, "dev_score": ds})
+            per_task = dev_eval(model, devrows, specs, pad)
+            ds = float(np.mean(list(per_task.values()))) if per_task else 0.0
+            # per-family dev score
+            fam_scores = defaultdict(list)
+            for tk, mv in per_task.items(): fam_scores[family_of(tk)].append(mv)
+            fam_scores = {f: float(np.mean(v)) for f, v in fam_scores.items()}
+            dev_curve.append({"step": step, "dev_score": ds, "per_family": fam_scores})
             improved = ds > best_dev
             if improved:
                 best_dev = ds; best_step = step
                 save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"best.safetensors"))
-            print(json.dumps({"dev_eval": step, "dev_score": round(ds,4), "best": round(best_dev,4), "best_step": best_step, "improved": improved}), flush=True)
+            # per-family best-dev checkpoints
+            if a.per_family_early_stop:
+                for f, sc in fam_scores.items():
+                    if sc > fam_best.get(f, -1.0):
+                        fam_best[f] = sc; fam_best_step[f] = step
+                        save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/f"best_{f}.safetensors"))
+            print(json.dumps({"dev_eval": step, "dev_score": round(ds,4), "best": round(best_dev,4), "best_step": best_step,
+                              "fam_best": {f: round(s,3) for f,s in fam_best.items()} if a.per_family_early_stop else None}), flush=True)
     # final checkpoint always saved; if early-stop found a better dev point, it is in best.safetensors
     save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"model.safetensors"))
     if a.dev_eval_every > 0 and best_step > 0 and (out/"best.safetensors").exists():
@@ -333,6 +347,7 @@ def main():
               "min_valid": a.min_valid, "cap_family": caps, "gated_out": dict(prep_fail),
               "warmup_frac": a.warmup_frac, "clip": a.clip, "head_lr_scale": a.head_lr_scale,
               "dev_eval_every": a.dev_eval_every, "best_dev_score": best_dev, "best_step": best_step,
+              "per_family_early_stop": a.per_family_early_stop, "fam_best_dev": fam_best, "fam_best_step": fam_best_step,
               "per_family_tasks": dict(Counter(family_of(x) for x in bytask)),
               "score_specs": {k: (v["anchors"] if v else None) for k, v in specs.items()},
               "elapsed_sec": round(time.monotonic()-t0,1), "test_inference": False}

@@ -1,0 +1,49 @@
+{
+  "all": {
+    "global": 0.36304540949643843,
+    "per_family": 0.4261893283548794,
+    "delta": 0.06314391885844095
+  },
+  "wins": {
+    "per_family": 21,
+    "tie": 9,
+    "global": 7
+  },
+  "by_family": {
+    "DeepSTARR": {
+      "metric": "spear",
+      "global": 0.053193833198401555,
+      "per_family": 0.08077488401046229
+    },
+    "dnagpt_pools": {
+      "metric": "acc",
+      "global": 0.43500000000000005,
+      "per_family": 0.54
+    },
+    "GenomicBenchmarks": {
+      "metric": "auroc",
+      "global": 0.4868972079512516,
+      "per_family": 0.5688645188382764
+    },
+    "GUE": {
+      "metric": "acc",
+      "global": 0.4378994845360826,
+      "per_family": 0.49066151202749136
+    },
+    "local_snapshots": {
+      "metric": "acc",
+      "global": 0.44234097108565196,
+      "per_family": 0.5486704855428259
+    },
+    "ProteinGym": {
+      "metric": "spear",
+      "global": 0.09443148391735516,
+      "per_family": 0.09443148391735516
+    },
+    "TAPE": {
+      "metric": "spear",
+      "global": 0.09372936595669124,
+      "per_family": 0.1665456193862994
+    }
+  }
+}
