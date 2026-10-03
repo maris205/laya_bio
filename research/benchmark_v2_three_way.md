@@ -1,6 +1,29 @@
 # Benchmark v2 三方主对照：#1 共享打分器 vs #2 任务头 vs #3 生成式候选似然
 
-日期：2026-10-03。#1 `train_benchmark_v2.py`（SharedDecision，trained）、#2 `train_taskheads.py`（编码器+每任务头，trained）、#3 `eval_generative.py`（frozen Qwen3-0.6B 全候选似然）。结果 `artifacts/benchmark_v2_eval/{f2_init,f2_trained,gen3}/`、`bv2_taskheads/`、`three_way_summary.json`。
+日期：2026-10-03（§0 刷新于 2026-10-04）。#1 `train_benchmark_v2.py`（SharedDecision，trained）、#2 `train_taskheads.py`（编码器+每任务头，trained）、#3 `eval_generative.py`（frozen Qwen3-0.6B 全候选似然）。结果 `artifacts/benchmark_v2_eval/{f2_init,f2_trained,gen3,pf_*}/`、`bv2_taskheads{,_pf}/`、`three_way{,_pf}_summary.json`。
+
+## 0. 刷新版权威结果（#1/#2 双方都用按族早停，matched）
+
+承接 `benchmark_v2_per_family_earlystop.md`：给 #1 和 #2 **都**加上按族早停（每族用各自 best-dev checkpoint），在同一 37 任务集（bv2_pf 的 cap PG=12/GUE=12）、同预算（5600 updates、warmup 0.15、clip 0.5、max 2048/任务）、同评测子集下重跑。这是给 #1 最强公平配置后的主对照，**取代下文 §1-3 的单 checkpoint 数字**。
+
+按 primitive（#3 frozen 无早停；score 口径不同不参与）：
+
+| primitive | metric | n | #1 共享+按族 | #2 头+按族 | #3 冻结 |
+|---|---|---|---|---|---|
+| choice | accuracy | 21 | **0.512** | 0.500 | 0.424 |
+| noul | AUROC | 7 | 0.577 | **0.620** | 0.522 |
+| score | spearman | 9 | **0.107** | −0.007 | n/a(异口径) |
+
+逐任务 #1 vs #2：**#1 胜 15 / 平 14 / #2 胜 8**。
+
+按族×primitive（#1 / #2）：GUE choice 0.491/0.481、GB choice 0.510/0.405、GB noul 0.577/0.620、dnagpt choice 0.540/0.527、local choice 0.549/0.548、TAPE score 0.167/0.024、ProteinGym score 0.094/−0.029、DeepSTARR score 0.081/0.019。
+
+**判读（刷新）**：
+1. **#1 共享 typed-decision scorer 总体 ≥ #2 任务头**：赢 choice（0.512>0.500）与 score（0.107≫−0.007），逐任务 15 胜 8 负。考虑到 #1 **无任何任务专用参数、用动态候选文本**，而 #2 每任务一个固定头，这强化了核心主张。
+2. **#2 仅在 noul AUROC 占优**（0.620>0.577）：专用二分类头在二元 AUROC 上更强；#1 的 noul 受候选文本极性/校准限制（已知弱点，可针对性修）。
+3. **两个训练臂都稳赢 frozen #3**（choice 0.51/0.50 vs 0.42；noul 0.58/0.62 vs 0.52）：专门训练确有价值。
+4. **score 是 #1 机制的清晰胜场**：锚点等级期望值（#1 0.107）远好于 #2 的标量回归头（−0.007，甚至低于 init），印证 typed-decision 对连续目标的机制优势。
+5. 绝对值仍温和（choice ~0.51、score spearman ~0.11），受预算/数据/512 窗口/单共享 checkpoint 限制；这是"首个 matched 三方"的量级标定，非上限。
 
 ## 对照设置与可比性
 
