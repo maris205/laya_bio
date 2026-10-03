@@ -1,0 +1,326 @@
+{
+  "checkpoint": "artifacts/benchmark_v2_train/bv2_big1/model.safetensors",
+  "max_per_task": 200,
+  "results": {
+    "deepstarr_dev": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 1.046279972576297,
+      "mae": 0.7953112963441324,
+      "prediction_std": 0.00010325216283105404,
+      "spearman": -0.03028154111939074,
+      "gold_std": 1.041551618916834
+    },
+    "deepstarr_hk": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 1.101422104023259,
+      "mae": 0.8007575045046761,
+      "prediction_std": 9.183545225634726e-05,
+      "spearman": 0.036284887198281435,
+      "gold_std": 1.099400730184093
+    },
+    "dna_core": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.535,
+      "nll": 0.6931062675810286,
+      "macro_f1": 0.48008385744234805
+    },
+    "dna_splice": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.24,
+      "nll": 1.0986302145617193,
+      "macro_f1": 0.18661854361886812
+    },
+    "dna_tf": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.495,
+      "nll": 0.6931325854668955,
+      "macro_f1": 0.4173805197427245
+    },
+    "gb_demo_coding_vs_intergenomic_seqs": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.495,
+      "nll": 0.6931545304092777,
+      "macro_f1": 0.37713915697943334,
+      "auroc": 0.4860486048604862
+    },
+    "gb_demo_human_or_worm": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.5,
+      "nll": 0.6931374483127744,
+      "macro_f1": 0.4574652777777778,
+      "auroc": 0.5141208624354692
+    },
+    "gb_dummy_mouse_enhancers_ensembl": {
+      "skip_reasons": {
+        "over_budget": 136
+      },
+      "n": 64,
+      "primitive": "noul",
+      "accuracy": 0.46875,
+      "nll": 0.6931548602465079,
+      "macro_f1": 0.41125541125541126,
+      "auroc": 0.48876953125
+    },
+    "gb_human_enhancers_cohn": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.38,
+      "nll": 0.69323266852851,
+      "macro_f1": 0.32307020417076104,
+      "auroc": 0.35034999999999994
+    },
+    "gb_human_ensembl_regulatory": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.345,
+      "nll": 1.0985619102394686,
+      "macro_f1": 0.2781107781107781
+    },
+    "gb_human_nontata_promoters": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.555,
+      "nll": 0.6930959649665411,
+      "macro_f1": 0.5312705727452272,
+      "auroc": 0.5805656199677939
+    },
+    "gb_human_ocr_ensembl": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.485,
+      "nll": 0.6931594275272821,
+      "macro_f1": 0.41542041488123954,
+      "auroc": 0.47925000000000006
+    },
+    "gue_H3K36me3": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.5,
+      "nll": 0.6931203781186224,
+      "macro_f1": 0.43889574682976096
+    },
+    "gue_H3K4me3": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.47,
+      "nll": 0.6931863074477751,
+      "macro_f1": 0.4249131944444444
+    },
+    "gue_mouse_1": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.505,
+      "nll": 0.6931180302613749,
+      "macro_f1": 0.4020114161456918
+    },
+    "gue_prom_prom_300_all": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.515,
+      "nll": 0.6931325592524732,
+      "macro_f1": 0.4450642180840413
+    },
+    "gue_prom_prom_300_notata": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.56,
+      "nll": 0.6931350012549637,
+      "macro_f1": 0.47619047619047616
+    },
+    "gue_prom_prom_core_all": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.54,
+      "nll": 0.6931328590445992,
+      "macro_f1": 0.5008680555555556
+    },
+    "gue_prom_prom_core_notata": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.45,
+      "nll": 0.6932797187380735,
+      "macro_f1": 0.4373401534526854
+    },
+    "gue_splice_reconstructed": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.2,
+      "nll": 1.0986399608585355,
+      "macro_f1": 0.16706816959676185
+    },
+    "gue_tf_0": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.495,
+      "nll": 0.6931399516883708,
+      "macro_f1": 0.43116217510067306
+    },
+    "gue_tf_1": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.495,
+      "nll": 0.6931301622439829,
+      "macro_f1": 0.42677147478645816
+    },
+    "gue_tf_3": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.475,
+      "nll": 0.6931618883349878,
+      "macro_f1": 0.3657696837908852
+    },
+    "gue_virus_covid": {
+      "skip_reasons": {
+        "encode_fail:AssertionError": 6
+      },
+      "n": 194,
+      "primitive": "choice",
+      "accuracy": 0.12371134020618557,
+      "nll": 2.1972168647521912,
+      "macro_f1": 0.07237225214206651
+    },
+    "lg_fold_class": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.135,
+      "nll": 1.9459731834311176,
+      "macro_f1": 0.07270747608775777
+    },
+    "lg_npp": {
+      "skip_reasons": {
+        "over_budget": 12
+      },
+      "n": 188,
+      "primitive": "choice",
+      "accuracy": 0.3723404255319149,
+      "nll": 0.6930901359970049,
+      "macro_f1": 0.3536130536130536
+    },
+    "lg_promoter_detection": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.46,
+      "nll": 0.6931472222832017,
+      "macro_f1": 0.4375000000000001
+    },
+    "lg_signal_peptide": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.7,
+      "nll": 0.6932719000897637,
+      "macro_f1": 0.5222169135212614
+    },
+    "lg_subcellular_loc": {
+      "skip_reasons": {
+        "over_budget": 5
+      },
+      "n": 195,
+      "primitive": "choice",
+      "accuracy": 0.2358974358974359,
+      "nll": 1.791756262818675,
+      "macro_f1": 0.09520933977455716
+    },
+    "pg_A4D664_9INFA_Soh_2019": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.5354936923237271,
+      "mae": 0.34895001228367484,
+      "prediction_std": 2.0621335502989504e-05,
+      "spearman": 0.05606585372294939,
+      "gold_std": 0.48805753757811593
+    },
+    "pg_HSP82_YEAST_Flynn_2019": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.5296417319645871,
+      "mae": 0.39680674634281954,
+      "prediction_std": 3.610033508637936e-05,
+      "spearman": 0.0832391968288862,
+      "gold_std": 0.47896664173087444
+    },
+    "pg_MTHR_HUMAN_Weile_2021": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.3087969003856665,
+      "mae": 0.23503468458538626,
+      "prediction_std": 2.699998776751757e-05,
+      "spearman": -0.01111221136479912,
+      "gold_std": 0.273191019606703
+    },
+    "pg_RDRP_I33A0_Li_2023": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.6316173603530493,
+      "mae": 0.5071832713239067,
+      "prediction_std": 4.870385695270119e-05,
+      "spearman": -0.027795207487008068,
+      "gold_std": 0.6257844257542206
+    },
+    "pg_SC6A4_HUMAN_Young_2021": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 1.3251751831434024,
+      "mae": 1.1181081580795433,
+      "prediction_std": 0.00011720197419963519,
+      "spearman": 0.11051367001299434,
+      "gold_std": 1.25522918527199
+    },
+    "tape_fluorescence": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 1.6667412401624522,
+      "mae": 1.4224387777654448,
+      "prediction_std": 4.744881996995765e-05,
+      "spearman": -0.0028715096125556854,
+      "gold_std": 0.9688414373679617
+    },
+    "tape_stability": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.9319822250055027,
+      "mae": 0.8526279546362026,
+      "prediction_std": 4.230955359569977e-05,
+      "spearman": -0.03714012317348171,
+      "gold_std": 0.3916231735755974
+    }
+  }
+}
