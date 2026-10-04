@@ -19,16 +19,14 @@ VLM = JEV / "models/Qwen2.5-VL-3B-Instruct"
 OUTDIR = JEV / "data/07_multimodal"
 
 @torch.no_grad()
-def score_candidates(model, proc, img, question, candidates, dev):
-    msgs = [{"role": "user", "content": [{"type": "image", "image": img},
-                                         {"type": "text", "text": question + "\nAnswer with exactly one option."}]}]
-    prompt = proc.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
-    base = proc(text=[prompt], images=[img], return_tensors="pt").to(dev)
+def _cand_lp(model, proc, prompt, img, candidates, dev):
+    """length-normalized logprob of each candidate given a prompt (img may be None)."""
+    kw = {"images": [img]} if img is not None else {}
+    base = proc(text=[prompt], return_tensors="pt", **kw).to(dev)
     base_len = base["input_ids"].shape[1]
     lps = []
     for c in candidates:
-        full_txt = prompt + " " + c
-        inp = proc(text=[full_txt], images=[img], return_tensors="pt").to(dev)
+        inp = proc(text=[prompt + " " + c], return_tensors="pt", **kw).to(dev)
         ids = inp["input_ids"]
         n_c = ids.shape[1] - base_len
         if n_c <= 0:
@@ -40,10 +38,29 @@ def score_candidates(model, proc, img, question, candidates, dev):
         lps.append(float(tok_lp[-n_c:].sum().item()) / n_c)
     return np.array(lps)
 
+def score_candidates(model, proc, img, question, candidates, dev):
+    msgs = [{"role": "user", "content": [{"type": "image", "image": img},
+                                         {"type": "text", "text": question + "\nAnswer with exactly one option."}]}]
+    prompt = proc.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
+    return _cand_lp(model, proc, prompt, img, candidates, dev)
+
+def score_candidates_contrastive(model, proc, img, question, candidates, dev):
+    """image net contribution: logprob(cand | image+question) - logprob(cand | question only).
+    Removes the text-prior dominance that collapses plain candidate-likelihood."""
+    q = question + "\nAnswer with exactly one option."
+    msgs_img = [{"role": "user", "content": [{"type": "image", "image": img}, {"type": "text", "text": q}]}]
+    msgs_txt = [{"role": "user", "content": [{"type": "text", "text": q}]}]
+    p_img = proc.apply_chat_template(msgs_img, tokenize=False, add_generation_prompt=True)
+    p_txt = proc.apply_chat_template(msgs_txt, tokenize=False, add_generation_prompt=True)
+    lp_img = _cand_lp(model, proc, p_img, img, candidates, dev)
+    lp_txt = _cand_lp(model, proc, p_txt, None, candidates, dev)
+    return lp_img - lp_txt
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--manifest", type=Path, default=OUTDIR / "fold_image_tasks.jsonl")
     ap.add_argument("--max", type=int, default=200)
+    ap.add_argument("--contrastive", action="store_true", help="score = logprob(cand|img+q) - logprob(cand|q)")
     ap.add_argument("--out", type=Path, default=JEV / "artifacts/benchmark_v2_eval/vlm_fold")
     a = ap.parse_args()
     dev = "cuda" if torch.cuda.is_available() else "cpu"
@@ -54,7 +71,7 @@ def main():
     ys, preds = [], []
     for i, it in enumerate(items):
         img = it["images"][0]["path"]; cands = it["candidates"]; ans = it["answer"]
-        lps = score_candidates(model, proc, img, it["question"], cands, dev)
+        lps = (score_candidates_contrastive if a.contrastive else score_candidates)(model, proc, img, it["question"], cands, dev)
         k = int(lps.argmax()); preds.append(k)
         ys.append(cands.index(ans) if ans in cands else -1)
         if (i + 1) % 25 == 0:
@@ -66,7 +83,7 @@ def main():
         tp = ((p == c) & (y == c)).sum(); fp = ((p == c) & (y != c)).sum(); fn = ((p != c) & (y == c)).sum()
         pr = tp/(tp+fp) if tp+fp else 0; rc = tp/(tp+fn) if tp+fn else 0
         f1s.append(2*pr*rc/(pr+rc) if pr+rc else 0)
-    res = {"model": "Qwen2.5-VL-3B-Instruct(frozen)", "task": "fold_image (route A synthetic render)",
+    res = {"model": "Qwen2.5-VL-3B-Instruct(frozen)", "decoding": "contrastive" if a.contrastive else "plain", "task": "fold_image (route A synthetic render)",
            "n": len(y), "accuracy": acc, "macro_f1": float(np.mean(f1s)),
            "label_dist": dict(Counter(items[i]["answer"] for i in range(len(items)))),
            "pred_dist": {cands_name: int((p == j).sum()) for j, cands_name in enumerate(items[0]["candidates"])}}

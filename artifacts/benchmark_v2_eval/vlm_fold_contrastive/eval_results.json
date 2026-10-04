@@ -1,0 +1,26 @@
+{
+  "model": "Qwen2.5-VL-3B-Instruct(frozen)",
+  "decoding": "contrastive",
+  "task": "fold_image (route A synthetic render)",
+  "n": 200,
+  "accuracy": 0.14,
+  "macro_f1": 0.05215295420493778,
+  "label_dist": {
+    "All Alpha": 33,
+    "Alpha and Beta": 65,
+    "Alpha plus Beta": 39,
+    "All Beta": 43,
+    "Small Proteins and Peptides": 8,
+    "Multi-domain Proteins": 11,
+    "Mixed Structures": 1
+  },
+  "pred_dist": {
+    "All Alpha": 0,
+    "All Beta": 8,
+    "Alpha and Beta": 107,
+    "Alpha plus Beta": 1,
+    "Multi-domain Proteins": 0,
+    "Mixed Structures": 84,
+    "Small Proteins and Peptides": 0
+  }
+}
