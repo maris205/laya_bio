@@ -1,0 +1,111 @@
+{
+  "ckpt": "/root/autodl-tmp/jev_gene/artifacts/benchmark_v2_train/bv2_pf/model.safetensors",
+  "tasks": [
+    "gb_demo_coding_vs_intergenomic_seqs",
+    "gb_demo_human_or_worm",
+    "gb_drosophila_enhancers_stark",
+    "gb_dummy_mouse_enhancers_ensembl",
+    "gb_human_enhancers_cohn",
+    "gb_human_nontata_promoters",
+    "gb_human_ocr_ensembl"
+  ],
+  "best": "raw_no_yes",
+  "table": {
+    "current_false_no": {
+      "neg": "false: no",
+      "pos": "true: yes",
+      "n_tasks": 6,
+      "mean_auroc": 0.4788438753145013,
+      "mean_acc": 0.5125000000000001,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.383938393839384,
+        "gb_demo_human_or_worm": 0.4565239396700071,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5478515625,
+        "gb_human_enhancers_cohn": 0.5107,
+        "gb_human_nontata_promoters": 0.49989935587761675,
+        "gb_human_ocr_ensembl": 0.47415
+      }
+    },
+    "raw_no_yes": {
+      "neg": "no",
+      "pos": "yes",
+      "n_tasks": 7,
+      "mean_auroc": 0.545402890782238,
+      "mean_acc": 0.5234798534798534,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.4035403540354036,
+        "gb_demo_human_or_worm": 0.4626480412997267,
+        "gb_drosophila_enhancers_stark": 0.775,
+        "gb_dummy_mouse_enhancers_ensembl": 0.7017045454545454,
+        "gb_human_enhancers_cohn": 0.46065,
+        "gb_human_nontata_promoters": 0.5120772946859904,
+        "gb_human_ocr_ensembl": 0.5022
+      }
+    },
+    "plain_false_true": {
+      "neg": "false",
+      "pos": "true",
+      "n_tasks": 7,
+      "mean_auroc": 0.5109603434953277,
+      "mean_acc": 0.5011233211233211,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.4141914191419142,
+        "gb_demo_human_or_worm": 0.440530418058508,
+        "gb_drosophila_enhancers_stark": 0.675,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5951704545454546,
+        "gb_human_enhancers_cohn": 0.4878,
+        "gb_human_nontata_promoters": 0.4578301127214171,
+        "gb_human_ocr_ensembl": 0.5062
+      }
+    },
+    "descriptive": {
+      "neg": "false: this is not a positive-class sequence",
+      "pos": "true: this is a positive-class sequence",
+      "n_tasks": 6,
+      "mean_auroc": 0.4927530766507641,
+      "mean_acc": 0.49867724867724866,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.32008200820082006,
+        "gb_demo_human_or_worm": 0.40722745217127243,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5423387096774194,
+        "gb_human_enhancers_cohn": 0.5028,
+        "gb_human_nontata_promoters": 0.6594202898550725,
+        "gb_human_ocr_ensembl": 0.5246500000000001
+      }
+    },
+    "proposition": {
+      "neg": "no, it does not",
+      "pos": "yes, it does",
+      "n_tasks": 6,
+      "mean_auroc": 0.4341159523720283,
+      "mean_acc": 0.5033333333333333,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.3886388638863887,
+        "gb_demo_human_or_worm": 0.4357728515031886,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.34619140625,
+        "gb_human_enhancers_cohn": 0.4311,
+        "gb_human_nontata_promoters": 0.49884259259259256,
+        "gb_human_ocr_ensembl": 0.50415
+      }
+    },
+    "neg_pos_words": {
+      "neg": "negative",
+      "pos": "positive",
+      "n_tasks": 7,
+      "mean_auroc": 0.5350309890263026,
+      "mean_acc": 0.5098046398046397,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.3362336233623362,
+        "gb_demo_human_or_worm": 0.4534365826500658,
+        "gb_drosophila_enhancers_stark": 0.75,
+        "gb_dummy_mouse_enhancers_ensembl": 0.7258522727272727,
+        "gb_human_enhancers_cohn": 0.44995,
+        "gb_human_nontata_promoters": 0.5381944444444444,
+        "gb_human_ocr_ensembl": 0.49155
+      }
+    }
+  }
+}

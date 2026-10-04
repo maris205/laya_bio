@@ -58,9 +58,9 @@ def to_row(rec, task_anchors):
         return None, "multi_noul"
     q = rec["question"]
     if prim == "noul":
-        cand = ["false: " + rec["candidates"][0], "true: " + rec["candidates"][1]]
+        # raw candidates (["no","yes"]); "false:/true:" prefix hurt noul AUROC (noul_ablation)
+        choices = list(rec["candidates"])
         label = 1 if rec["answer"] == "yes" else 0
-        choices = cand
     elif prim == "choice":
         choices = list(rec["candidates"])
         if rec["answer"] not in choices:

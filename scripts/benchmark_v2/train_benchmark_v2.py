@@ -118,7 +118,9 @@ def load_task_rows(rep, task_id, maxn, split="train"):
             continue
         m = seqs[0]["modality"]; s = seqs[0]["sequence"]
         if prim == "noul":
-            choices = ["false: " + r["candidates"][0], "true: " + r["candidates"][1]]
+            # use the benchmark's raw candidates (["no","yes"]); the "false:/true:"
+            # prefix was redundant and hurt noul discrimination (see noul_ablation).
+            choices = list(r["candidates"])
             label = 1 if r["answer"] == "yes" else 0
         elif prim == "choice":
             choices = list(r["candidates"])
