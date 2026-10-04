@@ -1,0 +1,25 @@
+{
+  "by_primitive": {
+    "choice": {
+      "metric": "acc",
+      "shared_old": 0.5124424081925727,
+      "shared_new": 0.501340297245101,
+      "taskhead": 0.4997619047619048,
+      "gen3": 0.42428571428571427
+    },
+    "noul": {
+      "metric": "auroc",
+      "shared_old": 0.577273735815173,
+      "shared_new": 0.5454120690040141,
+      "taskhead": 0.620384344186195,
+      "gen3": 0.5216666666666666
+    },
+    "score": {
+      "metric": "spear",
+      "shared_old": 0.10742204737558882,
+      "shared_new": 0.014666388722592731,
+      "taskhead": -0.006647059935994683,
+      "gen3": null
+    }
+  }
+}
