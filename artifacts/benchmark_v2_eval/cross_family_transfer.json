@@ -1,0 +1,63 @@
+{
+  "n": 8,
+  "mean_transfer_delta": 0.0375365955509257,
+  "positive": 5,
+  "per_task": [
+    {
+      "task": "gb_demo_coding_vs_intergenomic_seqs",
+      "metric": "auroc",
+      "frozen": 0.3458845884588459,
+      "trained": 0.16816681668166814,
+      "delta": -0.17771777177717776
+    },
+    {
+      "task": "gb_demo_human_or_worm",
+      "metric": "auroc",
+      "frozen": 0.48228565644295984,
+      "trained": 0.6252151027431927,
+      "delta": 0.14292944630023285
+    },
+    {
+      "task": "gb_drosophila_enhancers_stark",
+      "metric": "auroc",
+      "frozen": 0.35,
+      "trained": 0.6,
+      "delta": 0.25
+    },
+    {
+      "task": "gb_dummy_mouse_enhancers_ensembl",
+      "metric": "auroc",
+      "frozen": 0.659564393939394,
+      "trained": 0.47632575757575757,
+      "delta": -0.18323863636363646
+    },
+    {
+      "task": "gb_human_enhancers_cohn",
+      "metric": "auroc",
+      "frozen": 0.6062000000000001,
+      "trained": 0.65995,
+      "delta": 0.053749999999999964
+    },
+    {
+      "task": "gb_human_ensembl_regulatory",
+      "metric": "acc",
+      "frozen": 0.29,
+      "trained": 0.285,
+      "delta": -0.0050000000000000044
+    },
+    {
+      "task": "gb_human_nontata_promoters",
+      "metric": "auroc",
+      "frozen": 0.5603864734299517,
+      "trained": 0.7431561996779388,
+      "delta": 0.18276972624798704
+    },
+    {
+      "task": "gb_human_ocr_ensembl",
+      "metric": "auroc",
+      "frozen": 0.52725,
+      "trained": 0.5640499999999999,
+      "delta": 0.036799999999999944
+    }
+  ]
+}

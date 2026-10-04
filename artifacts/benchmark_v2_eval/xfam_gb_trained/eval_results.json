@@ -1,0 +1,81 @@
+{
+  "checkpoint": "artifacts/benchmark_v2_train/bv2_xfam/model.safetensors",
+  "max_per_task": 200,
+  "results": {
+    "gb_demo_coding_vs_intergenomic_seqs": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.47,
+      "nll": 0.763883097407759,
+      "macro_f1": 0.3197278911564626,
+      "auroc": 0.16816681668166814
+    },
+    "gb_demo_human_or_worm": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.445,
+      "nll": 0.7933641549035325,
+      "macro_f1": 0.3079584775086505,
+      "auroc": 0.6252151027431927
+    },
+    "gb_drosophila_enhancers_stark": {
+      "skip_reasons": {
+        "over_budget": 191
+      },
+      "n": 9,
+      "primitive": "noul",
+      "accuracy": 0.6666666666666666,
+      "nll": 0.6549413027085916,
+      "macro_f1": 0.5846153846153846,
+      "auroc": 0.6
+    },
+    "gb_dummy_mouse_enhancers_ensembl": {
+      "skip_reasons": {
+        "over_budget": 135
+      },
+      "n": 65,
+      "primitive": "noul",
+      "accuracy": 0.49230769230769234,
+      "nll": 0.7174198689977551,
+      "macro_f1": 0.32989690721649484,
+      "auroc": 0.47632575757575757
+    },
+    "gb_human_enhancers_cohn": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.605,
+      "nll": 0.6715620847949206,
+      "macro_f1": 0.5858562029828839,
+      "auroc": 0.65995
+    },
+    "gb_human_ensembl_regulatory": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "choice",
+      "accuracy": 0.285,
+      "nll": 1.3268170256931526,
+      "macro_f1": 0.14785992217898833
+    },
+    "gb_human_nontata_promoters": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.625,
+      "nll": 0.6642968486598072,
+      "macro_f1": 0.6068255091609658,
+      "auroc": 0.7431561996779388
+    },
+    "gb_human_ocr_ensembl": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "noul",
+      "accuracy": 0.55,
+      "nll": 0.6944973020804709,
+      "macro_f1": 0.4986631016042781,
+      "auroc": 0.5640499999999999
+    }
+  }
+}

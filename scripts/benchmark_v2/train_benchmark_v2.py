@@ -237,6 +237,7 @@ def main():
     ap.add_argument("--batches-per-family", type=int, default=8)
     ap.add_argument("--min-valid", type=int, default=64, help="drop tasks with fewer prepared valid rows")
     ap.add_argument("--cap-family", nargs="*", default=[], help="FAMILY=N limit tasks in FAMILY to top-N by size")
+    ap.add_argument("--exclude-family", nargs="*", default=[], help="hold out entire families from training (cross-family zero-shot test)")
     ap.add_argument("--warmup-frac", type=float, default=0.05)
     ap.add_argument("--clip", type=float, default=1.0)
     ap.add_argument("--head-lr-scale", type=float, default=1.0, help="scale head/scorer LR (encoder LR unchanged)")
@@ -261,6 +262,12 @@ def main():
         fam_tasks.sort(key=lambda x: sum(1 for _ in open(OUT/x/"train.jsonl")), reverse=True)
         keep = set(fam_tasks[:n])
         tasks = [x for x in tasks if family_of(x) != f or x in keep]
+    # hold out entire families for cross-family zero-shot testing
+    excluded = set(a.exclude_family or [])
+    if excluded:
+        held = [x for x in tasks if family_of(x) in excluded]
+        tasks = [x for x in tasks if family_of(x) not in excluded]
+        print(f"[holdout] families {sorted(excluded)}: {len(held)} tasks held out from training", flush=True)
     torch.set_num_threads(8)
     random.seed(SEED); np.random.seed(SEED); torch.manual_seed(SEED); torch.cuda.manual_seed_all(SEED)
     out = a.out / a.name; out.mkdir(parents=True, exist_ok=True)
