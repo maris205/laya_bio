@@ -1,0 +1,111 @@
+{
+  "enc_ckpt": "/root/autodl-tmp/jev_gene/artifacts/benchmark_v2_train/bv2_taskheads_pf/model.safetensors",
+  "steps": 200,
+  "ns": [
+    32,
+    128,
+    512
+  ],
+  "results": {
+    "gue_H3": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.555,
+      "head_fewshot": {
+        "32": 0.51,
+        "128": 0.51
+      }
+    },
+    "gue_H3K14ac": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.445,
+      "head_fewshot": {
+        "32": 0.543,
+        "128": 0.543
+      }
+    },
+    "gue_H3K4me1": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.43,
+      "head_fewshot": {
+        "32": 0.532,
+        "128": 0.532
+      }
+    },
+    "gue_H3K4me2": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.45,
+      "head_fewshot": {
+        "32": 0.541,
+        "128": 0.541
+      }
+    },
+    "gue_H3K79me3": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.49,
+      "head_fewshot": {
+        "32": 0.492,
+        "128": 0.492
+      }
+    },
+    "gue_H3K9ac": {
+      "primitive": "choice",
+      "metric": "accuracy",
+      "zero_shot_1": 0.485,
+      "head_fewshot": {
+        "32": 0.451,
+        "128": 0.451
+      }
+    },
+    "pg_ACE2_HUMAN_Chan_2020": {
+      "primitive": "score",
+      "metric": "spearman",
+      "zero_shot_1": -0.1755919768206714,
+      "head_fewshot": {
+        "32": 0.029,
+        "128": -0.005,
+        "512": 0.04
+      }
+    },
+    "pg_B2L11_HUMAN_Dutta_2010_binding-Mcl-1": {
+      "primitive": "score",
+      "metric": "spearman",
+      "zero_shot_1": 0.13262335255545965,
+      "head_fewshot": {
+        "32": -0.054
+      }
+    },
+    "pg_CATR_CHLRE_Tsuboyama_2023_2AMI": {
+      "primitive": "score",
+      "metric": "spearman",
+      "zero_shot_1": 0.06585704476394434,
+      "head_fewshot": {
+        "32": -0.086,
+        "128": -0.039,
+        "512": 0.135
+      }
+    },
+    "pg_CSN4_MOUSE_Tsuboyama_2023_1UFM": {
+      "primitive": "score",
+      "metric": "spearman",
+      "zero_shot_1": -0.03369336322019924,
+      "head_fewshot": {
+        "32": 0.171,
+        "128": 0.101,
+        "512": -0.088
+      }
+    },
+    "pg_F7YBW8_MESOW_Ding_2023": {
+      "primitive": "score",
+      "metric": "spearman",
+      "zero_shot_1": -0.11160286639121852,
+      "head_fewshot": {
+        "32": 0.416
+      }
+    }
+  }
+}
