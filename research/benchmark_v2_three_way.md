@@ -4,6 +4,8 @@
 
 ## 0. 刷新版权威结果（#1/#2 双方都用按族早停，matched）
 
+> **⚠️ 已被取代（2026-10-04）**：本节是**单次 run**（bv2_pf/bv2_taskheads_pf）的数字，后续 seed 平均（3 seed）证明单次 run 方差达 ±0.05–0.1，本节"#1 ≥ #2"结论**不成立**。权威结果见 [`benchmark_v2_seed_avg_main_result.md`](benchmark_v2_seed_avg_main_result.md)：seed 平均后 **#2 任务头 noul 明显胜 #1（0.629 vs 0.478）、choice/score 持平、且更稳定**。本节保留仅作单次抽样记录。
+
 承接 `benchmark_v2_per_family_earlystop.md`：给 #1 和 #2 **都**加上按族早停（每族用各自 best-dev checkpoint），在同一 37 任务集（bv2_pf 的 cap PG=12/GUE=12）、同预算（5600 updates、warmup 0.15、clip 0.5、max 2048/任务）、同评测子集下重跑。这是给 #1 最强公平配置后的主对照，**取代下文 §1-3 的单 checkpoint 数字**。
 
 按 primitive（#3 frozen 无早停；score 口径不同不参与）：
