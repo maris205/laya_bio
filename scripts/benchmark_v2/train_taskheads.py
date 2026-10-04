@@ -217,9 +217,11 @@ def main():
     ap.add_argument("--dev-eval-every", type=int, default=0)
     ap.add_argument("--dev-max", type=int, default=96)
     ap.add_argument("--per-family-early-stop", action="store_true")
+    ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_taskheads")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
+    global SEED; SEED = a.seed
     if a.tasks:
         tasks = list(a.tasks)
     else:

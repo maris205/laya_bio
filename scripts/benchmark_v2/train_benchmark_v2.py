@@ -243,11 +243,12 @@ def main():
     ap.add_argument("--dev-eval-every", type=int, default=0, help=">0: eval dev every N updates for early stopping")
     ap.add_argument("--dev-max", type=int, default=64, help="dev samples per task for the early-stop metric")
     ap.add_argument("--per-family-early-stop", action="store_true", help="also save a best-dev checkpoint per family")
+    ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_pilot")
     ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
-    global EPOCHS; EPOCHS = a.epochs
+    global EPOCHS, SEED; EPOCHS = a.epochs; SEED = a.seed
     tasks = list(a.tasks or [])
     if a.all: tasks = discover_supported()
     caps = {}
