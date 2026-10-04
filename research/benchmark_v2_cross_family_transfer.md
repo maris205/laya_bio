@@ -38,3 +38,28 @@
 - 只留出一个族（GB）、单次 run（未 seed 平均，方差未知）；noul 偏多。应补：留出多个族、多 seed、并留出 score 族（TAPE/DeepSTARR）测 score 跨族迁移。
 - in-domain 对照来自不同配置的 full2，非严格 matched；严格版应在 xfam 同配置下加训 GB 作 in-domain 臂。
 - 若要把"通用决策函数"作为正面主张，需更大预算/更多族/seed 平均确认 +0.038 是否稳健、能否随规模增长。
+
+## 强化：3-seed 平均 + score 族 held-out（2026-10-04）
+
+回应"单次 run 可能是噪声"。driver `xfam_driver.sh`：GB-holdout 补 seed 20261002/20261003（共 3 seed），并加 TAPE-holdout（score 族，seed 20261001）。结果 `cross_family_seedavg.json`。
+
+### GB（noul/choice）跨族迁移 3-seed
+| seed | mean Δ | 正迁移 |
+|---|---|---|
+| s1 (20261001) | +0.038 | 5/8 |
+| s2 (20261002) | −0.006 | 3/8 |
+| s3 (20261003) | +0.077 | 3/8 |
+| **3-seed** | **+0.036 ± 0.034** | — |
+
+单次 +0.038 **站得住**（≈ seed 平均 +0.036），非乐观抽样；但 std 0.034 与 mean 同量级、s2 甚至微负 → **效应真实但弱、seed/任务方差大**。逐任务 seed 平均：human_or_worm +0.133(std0.03 稳)、drosophila +0.308(std0.26 不稳)、nontata +0.093；demo_coding −0.117、dummy_mouse −0.193(稳定负)。
+
+### TAPE（score 族）跨族迁移（单 seed，训练含 DeepSTARR/ProteinGym 两个 score 族但不见 TAPE）
+| 任务 | frozen spearman | trained | Δ |
+|---|---|---|---|
+| tape_fluorescence | +0.037 | −0.008 | −0.046（负）|
+| tape_stability | −0.218 | −0.018 | +0.200（frozen 本就强负，仅拉回 0）|
+
+**score 无干净正跨族迁移**：fluorescence 轻微负迁移，stability 的"+0.200"主要是从很差的 frozen 基线回到 0，非真正学到。
+
+### 强化后底线
+跨族零样本迁移：**noul/choice 弱正（3-seed 确认 +0.036≈in-domain）、score 不成立**。温和支持 #1"通用决策函数"仅对分类型决策，效应小且不改变"#1 已见任务不优于 #2、性能不占优"的总体结论。TAPE 仅单 seed，score 跨族结论待多 seed 确认。
