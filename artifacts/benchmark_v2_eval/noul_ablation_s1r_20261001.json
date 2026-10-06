@@ -1,0 +1,111 @@
+{
+  "ckpt": "artifacts/benchmark_v2_train/s1r_20261001/best_GenomicBenchmarks.safetensors",
+  "tasks": [
+    "gb_demo_coding_vs_intergenomic_seqs",
+    "gb_demo_human_or_worm",
+    "gb_drosophila_enhancers_stark",
+    "gb_dummy_mouse_enhancers_ensembl",
+    "gb_human_enhancers_cohn",
+    "gb_human_nontata_promoters",
+    "gb_human_ocr_ensembl"
+  ],
+  "best": "current_false_no",
+  "table": {
+    "current_false_no": {
+      "neg": "false: no",
+      "pos": "true: yes",
+      "n_tasks": 6,
+      "mean_auroc": 0.5715216745663206,
+      "mean_acc": 0.47750000000000004,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.17996799679967995,
+        "gb_demo_human_or_worm": 0.6271889867395485,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.68798828125,
+        "gb_human_enhancers_cohn": 0.6811499999999999,
+        "gb_human_nontata_promoters": 0.7241847826086956,
+        "gb_human_ocr_ensembl": 0.5286500000000001
+      }
+    },
+    "raw_no_yes": {
+      "neg": "no",
+      "pos": "yes",
+      "n_tasks": 7,
+      "mean_auroc": 0.47729020635199376,
+      "mean_acc": 0.5039804639804639,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.28432843284328435,
+        "gb_demo_human_or_worm": 0.40297600971758274,
+        "gb_drosophila_enhancers_stark": 0.35,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5426136363636364,
+        "gb_human_enhancers_cohn": 0.6108,
+        "gb_human_nontata_promoters": 0.6114633655394526,
+        "gb_human_ocr_ensembl": 0.53885
+      }
+    },
+    "plain_false_true": {
+      "neg": "false",
+      "pos": "true",
+      "n_tasks": 7,
+      "mean_auroc": 0.5662376854097301,
+      "mean_acc": 0.5061233211233211,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.2678767876787679,
+        "gb_demo_human_or_worm": 0.6353375847757871,
+        "gb_drosophila_enhancers_stark": 0.75,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5478219696969696,
+        "gb_human_enhancers_cohn": 0.62275,
+        "gb_human_nontata_promoters": 0.6214774557165861,
+        "gb_human_ocr_ensembl": 0.5184
+      }
+    },
+    "descriptive": {
+      "neg": "false: this is not a positive-class sequence",
+      "pos": "true: this is a positive-class sequence",
+      "n_tasks": 6,
+      "mean_auroc": 0.5265585188485634,
+      "mean_acc": 0.5128439153439154,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.20032003200320034,
+        "gb_demo_human_or_worm": 0.5347707257819618,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5413306451612904,
+        "gb_human_enhancers_cohn": 0.6149,
+        "gb_human_nontata_promoters": 0.7468297101449275,
+        "gb_human_ocr_ensembl": 0.5212
+      }
+    },
+    "proposition": {
+      "neg": "no, it does not",
+      "pos": "yes, it does",
+      "n_tasks": 6,
+      "mean_auroc": 0.5167901382391277,
+      "mean_acc": 0.5033333333333333,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.3218821882188219,
+        "gb_demo_human_or_worm": 0.4144144144144144,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.64794921875,
+        "gb_human_enhancers_cohn": 0.6104,
+        "gb_human_nontata_promoters": 0.5773450080515298,
+        "gb_human_ocr_ensembl": 0.52875
+      }
+    },
+    "neg_pos_words": {
+      "neg": "negative",
+      "pos": "positive",
+      "n_tasks": 7,
+      "mean_auroc": 0.5132656937951641,
+      "mean_acc": 0.5196947496947497,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.36383638363836385,
+        "gb_demo_human_or_worm": 0.5023787832776597,
+        "gb_drosophila_enhancers_stark": 0.8,
+        "gb_dummy_mouse_enhancers_ensembl": 0.3243371212121212,
+        "gb_human_enhancers_cohn": 0.45940000000000003,
+        "gb_human_nontata_promoters": 0.6105575684380031,
+        "gb_human_ocr_ensembl": 0.53235
+      }
+    }
+  }
+}

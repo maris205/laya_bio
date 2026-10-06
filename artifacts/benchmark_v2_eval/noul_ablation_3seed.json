@@ -1,0 +1,73 @@
+{
+  "checkpoints": {
+    "20261001": "s1r_20261001/best_GenomicBenchmarks.safetensors",
+    "20261002": "s1r_20261002/best_GenomicBenchmarks.safetensors",
+    "20261003": "s1r_20261003/best_GenomicBenchmarks.safetensors"
+  },
+  "trained_phrasing": "raw_no_yes",
+  "per_phrasing": {
+    "current_false_no": {
+      "per_seed": [
+        0.5715216745663206,
+        0.5679027011974654,
+        0.5207302949808578
+      ],
+      "mean": 0.5533848902482146,
+      "std": 0.02313750470725375,
+      "beats_taskhead": false
+    },
+    "raw_no_yes": {
+      "per_seed": [
+        0.47729020635199376,
+        0.5360443676888534,
+        0.5101341864527319
+      ],
+      "mean": 0.5078229201645263,
+      "std": 0.02404189860071622,
+      "beats_taskhead": false
+    },
+    "plain_false_true": {
+      "per_seed": [
+        0.5662376854097301,
+        0.5227452153426075,
+        0.5413565326189645
+      ],
+      "mean": 0.5434464777904341,
+      "std": 0.017817119880416493,
+      "beats_taskhead": false
+    },
+    "descriptive": {
+      "per_seed": [
+        0.5265585188485634,
+        0.5058009644649436,
+        0.4310703884671557
+      ],
+      "mean": 0.48780995726022086,
+      "std": 0.041006121625227855,
+      "beats_taskhead": false
+    },
+    "proposition": {
+      "per_seed": [
+        0.5167901382391277,
+        0.5126983147956479,
+        0.5491144549153111
+      ],
+      "mean": 0.5262009693166956,
+      "std": 0.016288167924020266,
+      "beats_taskhead": false
+    },
+    "neg_pos_words": {
+      "per_seed": [
+        0.5132656937951641,
+        0.46776626194169185,
+        0.47224092560648623
+      ],
+      "mean": 0.484424293781114,
+      "std": 0.02047560206369345,
+      "beats_taskhead": false
+    }
+  },
+  "taskhead_noul_reference": 0.629,
+  "best_phrasing": "current_false_no",
+  "conclusion": "No phrasing reaches task-head 0.629; best=false:/true: 0.553+-0.023 wins on all 3 seeds over trained raw no/yes (0.508), reversing the single-checkpoint bv2_pf finding (+0.066 for raw) - phrasing effect direction is checkpoint-dependent; C3 noul conclusion reinforced."
+}

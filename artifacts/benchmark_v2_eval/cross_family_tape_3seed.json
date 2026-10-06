@@ -1,0 +1,45 @@
+{
+  "holdout": "TAPE",
+  "trained_on": "6 families incl DeepSTARR+ProteinGym (score)",
+  "per_task": {
+    "tape_fluorescence": {
+      "per_seed": {
+        "s1": {
+          "frozen": 0.03713495655473097,
+          "trained": -0.00842455814499496
+        },
+        "s2": {
+          "frozen": 0.03713495655473097,
+          "trained": 0.026047980358295184
+        },
+        "s3": {
+          "frozen": 0.03713495655473097,
+          "trained": -0.07458097775166465
+        }
+      },
+      "mean_delta": -0.05612080840085245,
+      "std_delta": 0.04175485996507954,
+      "mean_trained_abs": -0.018985851846121476
+    },
+    "tape_stability": {
+      "per_seed": {
+        "s1": {
+          "frozen": -0.21793241894955392,
+          "trained": -0.01762423668114379
+        },
+        "s2": {
+          "frozen": -0.21793241894955392,
+          "trained": 0.019553116794475956
+        },
+        "s3": {
+          "frozen": -0.21793241894955392,
+          "trained": -0.17938671739974688
+        }
+      },
+      "mean_delta": 0.15877980652074905,
+      "std_delta": 0.08636248761850797,
+      "mean_trained_abs": -0.0591526124288049
+    }
+  },
+  "conclusion": "3-seed: fluorescence delta -0.056+-0.042 (negative on all seeds); stability delta +0.159+-0.086 but trained absolute ~-0.06 (gain is regression from pathological frozen -0.218 to ~0). No genuine cross-family score transfer; C4 score conclusion confirmed at 3 seeds."
+}

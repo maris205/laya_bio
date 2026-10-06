@@ -1,0 +1,26 @@
+{
+  "checkpoint": "artifacts/benchmark_v2_train/bv2_xfam_tape_s20261002/model.safetensors",
+  "max_per_task": 200,
+  "results": {
+    "tape_fluorescence": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 1.6623360921154327,
+      "mae": 1.419053867533504,
+      "prediction_std": 0.0003610573638804959,
+      "spearman": 0.026047980358295184,
+      "gold_std": 0.9688414373679617
+    },
+    "tape_stability": {
+      "skip_reasons": {},
+      "n": 200,
+      "primitive": "score",
+      "rmse": 0.933160544103146,
+      "mae": 0.8538552753067213,
+      "prediction_std": 0.0006280265545266961,
+      "spearman": 0.019553116794475956,
+      "gold_std": 0.3916231735755974
+    }
+  }
+}

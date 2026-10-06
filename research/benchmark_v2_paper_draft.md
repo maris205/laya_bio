@@ -2,7 +2,7 @@
 
 **匿名作者占位**（投稿前不填作者信息）
 
-**结果版工作稿，2026-10-06。** 依据 16 份实验文档（`research/benchmark_v2_*.md`）与已落盘 JSON 结果撰写；venue 未绑定（ICLR 9 页 / NeurIPS D&B 均可适配）。两处强化实验进行中，结果以 **[待强化A]**（noul 措辞×3 seed 稳定 checkpoint 消融）与 **[待强化B]**（跨族 score 臂 seeds 2/3）标注，完成后回填。英文 LaTeX 版在本稿冻结后翻译。
+**结果版工作稿，2026-10-06（强化实验已回填）。** 依据 16 份实验文档（`research/benchmark_v2_*.md`）与已落盘 JSON 结果撰写；venue 未绑定（ICLR 9 页 / NeurIPS D&B 均可适配）。两项强化实验已完成并入正文：noul 措辞×3 稳定 checkpoint 消融（`noul_ablation_3seed.json`）、跨族 score 臂 3-seed（`cross_family_tape_3seed.json`）。英文 LaTeX 版在本稿冻结后翻译。
 
 ## 摘要
 
@@ -117,11 +117,21 @@ choice：accuracy（主）+macro-F1；noul：AUROC（主，排序指标不受阈
 
 **(a) 同族零样本**（held-out GUE 16 + ProteinGym 20，训练不含）：trained ≈ frozen base（GUE acc 0.496 vs 0.515，Δ−0.018；逐任务 11 胜/9 平/13 负=wash）。联合训练 37 任务**没有**学到强迁移的通用决策函数。
 
-**(b) 跨族零样本**（训练整族留出 GenomicBenchmarks，评其 8 任务；3 seeds）：mean Δ=**+0.036±0.034**（s1 +0.038/s2 −0.006/s3 +0.077），≈ in-domain 直接训练 GB 的 +0.035——弱正、量级与 in-domain 相当，暗示收益来自通用决策改进而非族特定拟合；但 std 与 mean 同量级、逐任务 −0.19～+0.31 不一致。score 族（TAPE-holdout，训练含 DeepSTARR/ProteinGym 两个 score 族）：seed1 fluorescence −0.046（负）、stability +0.200（仅从 frozen −0.218 回到 ~0）→ **无干净正迁移**；[待强化B：seeds 20261002/20261003 重训+评测中，完成后报 3-seed mean±std]。
+**(b) 跨族零样本**（训练整族留出 GenomicBenchmarks，评其 8 任务；3 seeds）：mean Δ=**+0.036±0.034**（s1 +0.038/s2 −0.006/s3 +0.077），≈ in-domain 直接训练 GB 的 +0.035——弱正、量级与 in-domain 相当，暗示收益来自通用决策改进而非族特定拟合；但 std 与 mean 同量级、逐任务 −0.19～+0.31 不一致。score 族（TAPE-holdout，训练含 DeepSTARR/ProteinGym 两个 score 族，**3 seeds**）：fluorescence Δ=**−0.056±0.042**（三 seed 一致负）；stability Δ=+0.159±0.086 但 trained 绝对值 mean 仍为 **−0.059**——表面增益全部来自 frozen 病态基线（−0.218）向 ~0 回归，**score 无真实跨族迁移**（3-seed 坐实）。
 
 **(c) 适配成本**（冻结 #2 训过 37 任务的 encoder，为 held-out 任务新建头，N 条标注线性拟合；11 任务=6 GUE+5 PG）：#2 新头 **N=32 即追平或超过 #1 零样本（7/11 任务）**；#1 零样本仍 stronger 的仅 3/11（且 #2 到 N=512 未追上）；1 任务需 N=512。GUE 族：#1 零样本 0.476 vs #2@32 = 0.511；PG 族：−0.024 vs 0.095。32 条标注的成本极低——**"零适配成本"卖点未转化为有意义的性能/成本优势**。
 
-**[待强化A] noul 措辞×稳定 checkpoint**：受控消融（同一 checkpoint、唯一变量=候选文本）在单 checkpoint（bv2_pf）上显示原始 `no/yes` 比冗余 `false: no/true: yes` +0.066 AUROC（0.479→0.545），六种措辞排序 raw>neg/pos>false/true>descriptive>old>proposition。该消融正在 3 个 seed 平均稳定 checkpoint（s1r_2026100×best_GenomicBenchmarks）上重复，以回答：措辞效应是否跨 seed 复现、任何措辞能否把 #1 noul 推过 #2 的 0.629。[完成后回填表格与结论；若最优措辞仍 <0.629，C3 的 noul 结论加固；若反超，主表加措辞脚注并重写 §5.1 判读 (ii)]
+**(d) noul 措辞×稳定 checkpoint（强化完成）**：受控消融（同一 checkpoint、唯一变量=候选文本）在 3 个重训 seed-avg 稳定 checkpoint（s1r_2026100×`best_GenomicBenchmarks`，raw no/yes 训练）上重复，6 措辞×3 seed：
+
+| 措辞 | mean±std（3 ckpt） | vs #2=0.629 |
+|---|---|---|
+| **false: no / true: yes（旧前缀式）** | **0.553±0.023** | 未达 |
+| false / true | 0.543±0.018 | 未达 |
+| no / yes（训练措辞） | 0.508±0.024 | 未达 |
+| proposition（"yes, it does"） | 0.526±0.016 | 未达 |
+| descriptive / neg-pos | 0.488 / 0.484 | 未达 |
+
+三个发现：**(i) 无措辞反超 #2**——最优 0.553 仍低 0.076，C3 的 noul 结论不是措辞 artifact，反而加固；**(ii) 措辞效应方向依赖训练 run**——旧 checkpoint（bv2_pf，旧措辞训练）上 raw 胜 +0.066，新 checkpoint（raw 训练）上旧措辞胜 +0.045（3/3 seed 一致）：单 checkpoint 的"干净受控证据"不跨训练 run 迁移，**推理级消融同样需要多 checkpoint 确认**（方差主张在消融层面的延伸）；**(iii)** s1 重训的 raw 评测 0.477 与原 seed-avg 报告 0.478 几乎一致，重训复现性良好。
 
 ### 5.3 训练动力学
 
@@ -133,17 +143,17 @@ choice：accuracy（主）+macro-F1；noul：AUROC（主，排序指标不受阈
 
 ### 5.4 受控机制消融
 
-**noul 措辞**（同 checkpoint 推理级，干净受控）：+0.066 AUROC（§5.2 待强化A 的 seed 平均版进行中）。含义：共享打分器对候选**文本表面形式**敏感——这既是弱点（须调措辞）也是动态候选接口的独特自由度（固定头无此维度）。
+**noul 措辞**（同 checkpoint 推理级，干净受控；3-seed 版见 §5.2(d)）：单 checkpoint（bv2_pf）上 raw no/yes 比冗余式 +0.066 AUROC，但 3 个 seed 平均稳定 checkpoint 上方向**反转**（冗余 `false: no/true: yes` 反而 +0.045、3/3 seed 一致），最优措辞 0.553±0.023 仍不达 #2 的 0.629。含义：共享打分器对候选**文本表面形式**敏感——既是弱点（须调措辞、措辞收益方向依赖训练 run）也是动态候选接口的独特自由度（固定头无此维度）；同时说明**推理级消融也必须多 checkpoint 确认**，单 run 的"干净受控证据"不跨训练 run 迁移。
 
 **冻结 VLM 对比解码**（多模态试点，详见附录/另文）：frozen Qwen2.5-VL 对合成蛋白性质图的 plain 候选似然**全坍缩**到单一候选（acc 0.040<随机 0.143，1/7 类）——文本先验淹没图像；对比解码 `logprob(候选|图+问)−logprob(候选|仅问)` 打破坍缩（4/7 类、acc 0.140、3.5×），证明图像确实参与打分，但 0.140≈随机：合成渲染+frozen VLM 无真实信号。**对比解码应成为 frozen-VLM 候选似然评测的默认口径**（可复用方法论修复）；路线 A 本身否定，真实图像（HPA）与微调 VLM 留作独立工作。
 
 ## 6. 讨论与局限
 
-**共享打分器何时有价值？** 本文证据边界内：已见任务不占优、零样本≈base、跨族弱正、适配成本被 ~32 标注追平。其**成立的优势**是接口性质本身：无任务参数、候选任意动态、新任务零适配即可推理（#2 架构上做不到）、措辞可作为推理期自由度（+0.066）。若部署场景是候选集极大/开放、任务频繁新增、真零标注冷启动，或配合按族早停+措辞调优（noul 理论可达 ~0.61–0.64，[待强化A] 验证是否反超），结论可能不同——这些是假设与未来工作，不是本文结果。
+**共享打分器何时有价值？** 本文证据边界内：已见任务不占优、零样本≈base、跨族弱正、适配成本被 ~32 标注追平。其**成立的优势**是接口性质本身：无任务参数、候选任意动态、新任务零适配即可推理（#2 架构上做不到）、措辞可作为推理期自由度（但 3-seed 消融坐实：最优措辞 0.553±0.023 仍 < #2 的 0.629，措辞调优**不能**反超任务头，见 §5.2(d)）。若部署场景是候选集极大/开放、任务频繁新增、真零标注冷启动，结论可能不同——这些是假设与未来工作，不是本文结果。
 
 **绝对值与专用锚点。** joint-37 的 choice ~0.49、score ~0.01–0.02 远低于专用训练水平：同一 Laya 架构在 3 任务专用配方下 promoter 87–89%、fold 56–58%、GFP MAE 0.32–0.49（先前工作）。本文的 joint regime 是刻意的压力测试（一个 checkpoint 扛 37 异质任务、每任务 ≤2048 样本、~70 updates/任务），量级标定"共享决策接口在多任务小预算下的现状"，不代表架构上限。
 
-**Threats to validity。** (i) 头对头为 37 任务切片（cap PG/GUE=12），非全 290——基准是基础设施贡献，对照是 matched 切片，两者口径分开声明；(ii) 3 seeds，SEM 跨任务、run-std 跨 seed，noul n=7/score n=9 任务样本小；(iii) #3 非 matched（frozen、异 backbone、截断、score 异口径）；(iv) 跨族 score 臂 seed1 单跑 [待强化B 补 2 seeds]；(v) dev 选点噪声（96→256 已缓解，未消除）；(vi) GPU 非确定性不可消除，只能 seed 平均吸收；(vii) 512-token 预算排除长序列任务样本（报排除率，不静默截断）。
+**Threats to validity。** (i) 头对头为 37 任务切片（cap PG/GUE=12），非全 290——基准是基础设施贡献，对照是 matched 切片，两者口径分开声明；(ii) 3 seeds，SEM 跨任务、run-std 跨 seed，noul n=7/score n=9 任务样本小；(iii) #3 非 matched（frozen、异 backbone、截断、score 异口径）；(iv) 跨族 score 臂已补至 3 seeds（§5.2b），但 n=2 任务样本极小，stability 的表面 Δ=+0.159 依赖 frozen 病态基线口径（trained 绝对值为负），解释须带口径声明；(v) dev 选点噪声（96→256 已缓解，未消除）；(vi) GPU 非确定性不可消除，只能 seed 平均吸收；(vii) 512-token 预算排除长序列任务样本（报排除率，不静默截断）。
 
 **数据与许可。** 全部来源的 license/修订号/SHA-256 入 receipt；RNAcompete 为 14-RBP 测试子集（非完整 ~200 RBP）；DeepGOZero/PEER/DeepSEA 因上游不可达未纳入（catalog 中保持 needs_work，不虚报覆盖）；lg_* 快照的 splice 标签约定存疑处已显式记录（§3.3）。
 
@@ -160,7 +170,7 @@ BioDecisionBench 把 12 族 290 个生物序列决策任务统一到四类型化
 - A. 基准全统计表（族×primitive×模态×splits×隔离统计）+ 准入检查器输出摘要
 - B. 按族×primitive 全数字（pf/pf2/seed1-3 各列）+ 逐任务 seed-mean 表
 - C. 训练动力学扩展：预算缩放/稳定化 dev 曲线、按族 best-step 分布、loss/grad 轨迹
-- D. noul 措辞消融全表（6 措辞×3 seed）[待强化A] + 跨族 score 3-seed [待强化B]
+- D. noul 措辞消融全表（6 措辞×3 seed，`noul_ablation_3seed.json`）+ 跨族 score 3-seed 全表（`cross_family_tape_3seed.json`）——均已回填正文
 - E. 多模态试点：渲染示例图、plain vs contrastive、路线 B 设计草案
 - F. 复现说明：环境/包版本、每 run 的 config+trace 落盘路径、checkpoint 与评测子集 seed
 

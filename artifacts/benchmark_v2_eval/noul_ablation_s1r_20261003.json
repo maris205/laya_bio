@@ -1,0 +1,111 @@
+{
+  "ckpt": "artifacts/benchmark_v2_train/s1r_20261003/best_GenomicBenchmarks.safetensors",
+  "tasks": [
+    "gb_demo_coding_vs_intergenomic_seqs",
+    "gb_demo_human_or_worm",
+    "gb_drosophila_enhancers_stark",
+    "gb_dummy_mouse_enhancers_ensembl",
+    "gb_human_enhancers_cohn",
+    "gb_human_nontata_promoters",
+    "gb_human_ocr_ensembl"
+  ],
+  "best": "proposition",
+  "table": {
+    "current_false_no": {
+      "neg": "false: no",
+      "pos": "true: yes",
+      "n_tasks": 6,
+      "mean_auroc": 0.5207302949808578,
+      "mean_acc": 0.49260416666666673,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.8029802980298031,
+        "gb_demo_human_or_worm": 0.49488814657353974,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.515625,
+        "gb_human_enhancers_cohn": 0.5278999999999999,
+        "gb_human_nontata_promoters": 0.31848832528180354,
+        "gb_human_ocr_ensembl": 0.4645
+      }
+    },
+    "raw_no_yes": {
+      "neg": "no",
+      "pos": "yes",
+      "n_tasks": 7,
+      "mean_auroc": 0.5101341864527319,
+      "mean_acc": 0.5026129426129426,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.6566156615661566,
+        "gb_demo_human_or_worm": 0.4805648344974187,
+        "gb_drosophila_enhancers_stark": 0.35,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5440340909090908,
+        "gb_human_enhancers_cohn": 0.58365,
+        "gb_human_nontata_promoters": 0.4179247181964573,
+        "gb_human_ocr_ensembl": 0.5381499999999999
+      }
+    },
+    "plain_false_true": {
+      "neg": "false",
+      "pos": "true",
+      "n_tasks": 7,
+      "mean_auroc": 0.5413565326189645,
+      "mean_acc": 0.49898656898656896,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.6508150815081508,
+        "gb_demo_human_or_worm": 0.5501568984715052,
+        "gb_drosophila_enhancers_stark": 0.55,
+        "gb_dummy_mouse_enhancers_ensembl": 0.5194128787878788,
+        "gb_human_enhancers_cohn": 0.53055,
+        "gb_human_nontata_promoters": 0.5095108695652174,
+        "gb_human_ocr_ensembl": 0.47905
+      }
+    },
+    "descriptive": {
+      "neg": "false: this is not a positive-class sequence",
+      "pos": "true: this is a positive-class sequence",
+      "n_tasks": 6,
+      "mean_auroc": 0.4310703884671557,
+      "mean_acc": 0.46925925925925926,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.5114511451145115,
+        "gb_demo_human_or_worm": 0.350237878327766,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.529233870967742,
+        "gb_human_enhancers_cohn": 0.37870000000000004,
+        "gb_human_nontata_promoters": 0.36709943639291465,
+        "gb_human_ocr_ensembl": 0.4497
+      }
+    },
+    "proposition": {
+      "neg": "no, it does not",
+      "pos": "yes, it does",
+      "n_tasks": 6,
+      "mean_auroc": 0.5491144549153111,
+      "mean_acc": 0.50625,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.6621162116211622,
+        "gb_demo_human_or_worm": 0.4860309747950197,
+        "gb_drosophila_enhancers_stark": null,
+        "gb_dummy_mouse_enhancers_ensembl": 0.55078125,
+        "gb_human_enhancers_cohn": 0.5666,
+        "gb_human_nontata_promoters": 0.5091082930756844,
+        "gb_human_ocr_ensembl": 0.52005
+      }
+    },
+    "neg_pos_words": {
+      "neg": "negative",
+      "pos": "positive",
+      "n_tasks": 7,
+      "mean_auroc": 0.47224092560648623,
+      "mean_acc": 0.47075091575091577,
+      "per_task_auroc": {
+        "gb_demo_coding_vs_intergenomic_seqs": 0.30413041304130406,
+        "gb_demo_human_or_worm": 0.5165502581232919,
+        "gb_drosophila_enhancers_stark": 0.375,
+        "gb_dummy_mouse_enhancers_ensembl": 0.4730113636363636,
+        "gb_human_enhancers_cohn": 0.48005000000000003,
+        "gb_human_nontata_promoters": 0.6631944444444444,
+        "gb_human_ocr_ensembl": 0.49375
+      }
+    }
+  }
+}

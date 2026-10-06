@@ -63,3 +63,14 @@
 
 ### 强化后底线
 跨族零样本迁移：**noul/choice 弱正（3-seed 确认 +0.036≈in-domain）、score 不成立**。温和支持 #1"通用决策函数"仅对分类型决策，效应小且不改变"#1 已见任务不优于 #2、性能不占优"的总体结论。TAPE 仅单 seed，score 跨族结论待多 seed 确认。
+
+## 再强化：TAPE（score 族）跨族 3-seed（2026-10-06，论文补强）
+
+`reinforce_driver.sh` Phase B：TAPE-holdout 补 seeds 20261002/20261003（与 seed1 完全同配置），汇总 `cross_family_tape_3seed.json`。
+
+| 任务 | s1 Δ | s2 Δ | s3 Δ | 3-seed mean Δ | trained 绝对值 mean |
+|---|---|---|---|---|---|
+| tape_fluorescence | −0.046 | −0.011 | −0.112 | **−0.056±0.042** | −0.019 |
+| tape_stability | +0.200 | +0.237 | +0.039 | **+0.159±0.086** | −0.059 |
+
+**结论（确认单 seed 判断）**：fluorescence 三 seed 一致负迁移；stability 的"+0.159"全部来自 frozen 病态基线（−0.218）向 ~0 回归——trained 绝对值 mean 仍为 **−0.059**（负）。**score 无真实跨族零样本迁移**在 3 seeds 上坐实；C4 的 score 分支从"单 seed 待确认"升级为 supported。跨族迁移最终结论：分类弱正（+0.036±0.034）、score 无。
