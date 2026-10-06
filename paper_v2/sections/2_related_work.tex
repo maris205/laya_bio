@@ -1,0 +1,53 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Biological sequence benchmarks and foundation models.}
+DNA benchmarks cover histone marks, promoters, splice sites and regulatory annotations
+(GUE/DNABERT-2, 28 tasks \citep{zhou2024dnabert}; Genomic Benchmarks \citep{gresova2022genomic};
+DeepSEA \citep{zhou2015deepsea}; DeepSTARR \citep{dealmeida2022deepstarr}); protein
+benchmarks cover fluorescence, stability, homology and mutation-fitness assays
+(TAPE \citep{rao2019tape}; ProteinGym's 217 DMS assays \citep{notin2023proteingym};
+FLIP \citep{dallago2021flip}); localization and function benchmarks
+are multi-label (DeepLoc 2.0 \citep{thumuluri2022deeploc}; DeepGOZero
+\citep{kulmanov2022deepgozero}); RNA benchmarks cover RBP binding preference
+(RNAcompete \citep{ray2013rnacompete}). Foundation models --- ESM-style protein LMs
+\citep{lin2023esm2}, protein language tooling \citep{xu2023protst,xu2023biotranslator}, and
+multimodal DNA agents \citep{almeida2025chatnt} --- are trained and ranked per family. These
+resources are family-siloed: incompatible record formats, split protocols and metric
+conventions make cross-family, cross-interface measurement impossible, and most are
+single-sequence, single-task-type. BioDecisionBench is not another leaderboard substrate: it
+converts these sources into one typed-decision record format with leakage auditing as a
+first-class citizen (\cref{sec:admission}) and serves as the evaluation base for the
+architecture comparison.
+
+\paragraph{Typed and candidate-scoring decision interfaces.}
+The Jev line of systems \citep{almeida2026jev} exposes structured Noul/Choice/Score
+probabilistic judgements behind a service interface (weights not public). Open variants
+include GLiClass, a ModernBERT uni-encoder with dynamic label sets
+\citep{gliclass2025}; NanoJev, a small shared-scorer reimplementation
+\citep{nanojev2026}; and SemIf, which reads option logits from a frozen LLM
+\citep{semif2025}. Constrained decoding is the generative counterpart
+\citep{scholak2021picard}. Each of these validates the interface's feasibility; none
+compares \emph{shared scorer vs.\ per-task heads} under matched compute, same data, and
+multiple seeds. We report the honest, counter-intuitive outcome of exactly that comparison.
+
+\paragraph{Evaluation methodology and variance.}
+Repeated runs and variance reporting are standard advice in ML evaluation
+\citep{bouthillier2021variance,miller2024errorbars}; LLM-evaluation work documents
+sensitivity to phrasing, prompt format and option order \citep{miller2024errorbars}. In
+biology, prior work measured candidate-order sensitivity in the same decision setting:
+reordering candidates changes ${\approx}9\%$ of predictions \citep{wang2026biopaws}. This paper adds a concrete \emph{conclusion-reversal}
+case for architecture comparison: two runs of one configuration give score Spearman 0.107
+vs 0.015 for the shared scorer, flipping the winner; three-seed averaging overturns the
+single-run ``shared $\ge$ heads'' verdict (\cref{sec:mainresults}). To our knowledge this is
+the first fully documented instance of run variance reversing a decision-architecture
+conclusion, and we operationalize the remedy: $\ge3$ seeds, per-task seed means, SEM and
+run-std reported separately, and dev early stopping with $\ge256$ dev samples.
+
+\paragraph{Probing and adaptation cost.}
+Linear probing and few-shot head fitting are standard tools for characterizing
+representations. We operationalize the ``zero-adaptation interface'' claim as a
+\emph{catch-up cost}: freeze the encoder, fit a new head for a held-out task with
+$N\in\{32,128,512\}$ labels, and report the smallest $N$ at which the head reaches the
+shared scorer's zero-shot level (\cref{sec:value}). This turns ``interface flexibility''
+from a qualitative claim into a comparable number.

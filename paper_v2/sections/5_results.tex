@@ -1,0 +1,154 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Main comparison: seed-averaged three-way}
+\label{sec:mainresults}
+
+The matched slice has 37 tasks (21 choice, 7 noul, 9 score; ProteinGym and GUE capped at
+12 each), 2{,}520 updates, 3 seeds, per-family early stopping. \Cref{tab:main} and the
+right panel of \cref{fig:hero} give the result.
+
+\input{figures/TABLE_2_main.tex}
+
+\paragraph{Reading.} (i) \arch{2} $\ge$ \arch{1}: noul is significantly better (AUROC
+$0.629\pm0.050$ vs $0.478\pm0.051$, disjoint SEMs), choice and score are at parity
+($0.489$ vs $0.486$; $0.018$ vs $0.013$), and \arch{2} is more stable across seeds (noul
+run-std 0.030 vs 0.087; also 0.030 vs 0.040 on choice, 0.054 vs 0.064 on score). Per-task
+seed-mean wins: \arch{1} 4 / ties 23 / \arch{2} 10. (ii) Both trained arms beat the frozen
+\arch{3} on choice ($0.49$/$0.49$ vs $0.42$) and on noul for \arch{2} ($0.629$ vs $0.522$)
+--- but \arch{1} \emph{loses} to the frozen small LM on noul ($0.478$ vs $0.522$): a trained
+shared scorer ranks binary candidates worse than an untrained model reading their
+likelihoods. (iii) Absolute levels are modest (choice ${\approx}0.49$, near majority-class
+baselines): this is the joint-37, 2{,}520-update, 512-window stress regime, calibrated
+against specialized-training anchors in \cref{sec:discussion}.
+
+\paragraph{The variance case.}
+A single earlier run (before the seed protocol existed) reported \arch{1} score Spearman
+0.107 vs \arch{2} $-0.007$ and a ``\arch{1} $\ge$ \arch{2}'' overall verdict. A rerun of the
+identical configuration and seed fell to 0.015 --- on \emph{score} tasks, which do not touch
+the only code difference between the runs (noul candidate phrasing), so the gap is pure run
+variance; per-family early-stop steps drifted (GUE 200$\to$5000, GB 1200$\to$200). With
+3-seed averaging, both arms converge to ${\approx}0.01$--$0.02$ and the ``\arch{1} clearly
+wins score'' claim evaporates. This is the concrete failure mode \cref{sec:seedavg}
+protocolizes against.
+
+\subsection{Three operational tests of \arch{1}'s claimed value}
+\label{sec:value}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.90\textwidth]{fig2_transfer.pdf}
+\caption{\textbf{Three operational tests of the shared scorer's claimed advantages.}
+(a) Zero-shot transfer to same-family held-out tasks is a wash (GUE $-0.018$,
+ProtGym $+0.088$); cross-family transfer on GenomicBenchmarks is weakly positive
+($+0.036$, SEM over 3 seeds), comparable to the in-domain reference ($+0.034$;
+full2 configuration, not strictly matched).
+(b) Cross-family \emph{score} transfer (TAPE, 3 seeds) does not hold: fluorescence
+degrades ($\Delta=-0.056\pm0.042$); stability's apparent gain
+($+0.159\pm0.086$) is regression of a pathological frozen baseline ($-0.218$)
+toward zero --- trained absolute Spearman stays negative ($-0.059$).
+(c) Adaptation cost: a fresh \#2 linear head catches \#1's zero-shot on 7/11
+held-out tasks with only $N{=}32$ labels ($\times$: $N{=}128$, $+$: $N{=}512$).}
+\label{fig:transfer}
+\end{figure*}
+
+\paragraph{(a) Same-family zero-shot.}
+Held-out tasks from families already in training (16 GUE + 20 ProteinGym tasks unseen by
+the 37-task joint model): \arch{1}-trained $\approx$ \arch{1}-frozen base (GUE accuracy
+0.496 vs 0.515, $\Delta=-0.018$; per-task 11 wins / 9 ties / 13 losses --- a wash). Joint
+training on 37 tasks did not learn a strongly transferable decision function. \arch{2}
+cannot participate at all: it has no head for unseen label sets --- the qualitative
+difference stands, the quantitative one does not.
+
+\paragraph{(b) Cross-family zero-shot.}
+Holding out the entire GenomicBenchmarks family (training on the other six families) and
+evaluating its 8 tasks gives mean $\Delta=+0.036\pm0.034$ over 3 seeds (per-seed
+$+0.038$/$-0.006$/$+0.077$) --- the same magnitude as directly training on GB in-domain
+($+0.034$), hinting the gain is a generic decision improvement rather than family-specific
+fitting, but the std matches the mean and per-task effects range $-0.19$ to $+0.31$.
+For the \emph{score} interface, holding out TAPE (while training on the DeepSTARR and
+ProteinGym score families) over 3 seeds shows no clean transfer: fluorescence degrades
+($\Delta=-0.056\pm0.042$, negative in all three seeds), and stability's apparent
+$+0.159\pm0.086$ is entirely regression of a pathological frozen baseline ($-0.218$) toward
+zero --- the trained absolute Spearman remains negative ($-0.059$). Cross-family transfer
+exists, weakly, for classification only.
+
+\paragraph{(c) Adaptation cost.}
+Freezing \arch{2}'s trained encoder and fitting a fresh linear head for each of 11 held-out
+tasks (6 GUE + 5 ProteinGym) with $N$ labels: the new head catches or beats \arch{1}'s
+zero-shot on \textbf{7/11 tasks at $N=32$} (\cref{tab:adapt}); \arch{1} stays ahead on 3/11
+even when \arch{2} is given $N=512$; one task needs $N=512$. Family means: GUE 0.476
+(zero-shot) vs 0.511 (head@32); ProteinGym $-0.024$ vs 0.095. Thirty-two labels is a trivial
+cost --- the ``zero-adaptation'' selling point does not convert into a meaningful
+performance-or-cost advantage.
+
+
+\paragraph{(d) Noul phrasing on stable checkpoints.}
+Candidate text is an inference-time degree of freedom that \arch{1} has and \arch{2} cannot
+have. A controlled ablation (same checkpoint, only the rendered candidate text varies; six
+phrasings) on the earlier single checkpoint had suggested raw ``no/yes'' beats the redundant
+``false: no / true: yes'' by $+0.066$ AUROC. Re-running on three retrained seed-averaged
+stable checkpoints (\cref{fig:ablation}a) \emph{reverses} the direction: the redundant
+prefix form wins on all three seeds ($0.553\pm0.023$ vs the trained phrasing's
+$0.508\pm0.024$), and \textbf{no phrasing reaches \arch{2}} (best 0.553 vs 0.629). Two
+conclusions: the noul deficit of \arch{1} is not a phrasing artifact (the main result is
+reinforced), and even inference-level ``clean controlled'' evidence is checkpoint-dependent
+--- ablations need multi-checkpoint confirmation too.
+
+\subsection{Training dynamics}
+\label{sec:dynamics}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.90\textwidth]{fig3_dynamics.pdf}
+\caption{\textbf{Training dynamics under joint multi-task fitting.}
+(a) Naive budget scaling destabilizes: 5{,}600 updates score \emph{below} init
+(0.421) while 2{,}520 reaches 0.485; stabilization (warmup 0.15, grad clip 0.5,
+dev early stop) recovers 0.481 at 5{,}600 --- a plateau, not overfitting
+(inset: stabilized dev curve; star = selected checkpoint).
+(b) Family-optimal dev peaks on the \emph{same} trajectory span steps 200--5{,}200
+(26$\times$), while the global best sits at 2{,}200.
+(c) Per-family early stopping (zero inference-time cost) dominates at family level
+(all $\Delta\ge0$, mean $+0.063$); per task: 21 win / 9 tie / 7 loss vs the global
+checkpoint.}
+\label{fig:dynamics}
+\end{figure*}
+
+\paragraph{Budget scaling is negative.}
+On the same 43-task set, doubling updates 2{,}520$\to$5{,}600 (and per-task data
+768$\to$2048) drops classification accuracy 0.485$\to$0.421 --- \emph{below} the untrained
+init (0.463) --- and TAPE Spearman 0.237 $\to$ $-0.020$. Diagnosis: training loss plateaus at
+${\sim}1.06$ after ${\sim}900$ steps, gradient median stays ${\approx}0.25$ for 4{,}700
+further steps with early spikes (max 547), and fold classification never leaves chance
+(train loss $\approx\ln 7$ throughout). This is joint-optimization instability landing in
+bad basins, not overfitting: the training loss never approaches zero.
+
+\paragraph{Stabilization repairs, and confirms a plateau.}
+Warmup 0.05$\to$0.15, clip 1.0$\to$0.5, and dev early stopping (every 200 steps,
+best-dev promotion) recover the 5{,}600-update budget to 0.481 --- statistically the small
+budget's 0.485 (gain vs init $+0.049\approx+0.050$). Beyond ${\approx}2{,}500$ updates,
+compute is not the bottleneck; the ceiling is capacity/interference of joint multi-task
+training (\cref{fig:dynamics}a).
+
+\paragraph{Per-family early stopping is free.}
+On one training trajectory, family-optimal dev peaks span steps 200 (GUE) to 5{,}200
+(local snapshots) --- a $26\times$ spread --- while the global best sits at 2{,}200.
+Selecting each family's own best-dev checkpoint dominates the single global checkpoint at
+family level (all $\Delta\ge0$; mean $+0.063$; per task 21/9/7 wins/ties/losses;
+\cref{fig:dynamics}b,c), at zero inference-time cost. Part of the plateau was a
+checkpoint-selection compromise, not pure capacity.
+
+\subsection{Controlled mechanism ablations}
+\label{sec:ablations}
+
+
+Beyond the phrasing ablation of \cref{sec:value}d (candidate surface form is a real but
+run-dependent degree of freedom, and no phrasing closes the noul gap), one more probe
+concerns frozen candidate-likelihood scoring: on a multimodal route-A pilot (synthetic
+property maps, frozen Qwen2.5-VL \citep{bai2025qwen25vl}), plain candidate likelihood
+collapses to one class (accuracy 0.040 $<$ chance), while \emph{contrastive decoding}
+$\log p(\text{cand}\mid\text{img},q)-\log p(\text{cand}\mid q)$
+\citep[cf.][]{leng2024vcd,li2023contrastive} restores multi-class predictions but stays at
+chance (\cref{fig:ablation}b). The reusable lesson: frozen-VLM candidate-likelihood
+evaluation should default to contrastive decoding; the route itself is rejected
+(\cref{app:vlm}).

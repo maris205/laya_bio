@@ -1,0 +1,94 @@
+\section{Introduction}
+\label{sec:intro}
+
+A single biological sequence model should ideally answer qualitatively different questions
+through one interface: ``is this DNA segment a promoter?'' (a yes/no judgement), ``which
+superfamily does this protein belong to?'' (a choice among labels), ``how fit is this
+sequence variant?'' (an ordinal score), and ``where is this protein localized?'' (a
+multi-label assignment). \emph{Typed-decision} interfaces serve exactly this purpose: the
+question and the candidate answers are rendered as text, encoded together with the sequence,
+and a single \emph{shared decision scorer} outputs a probability per candidate --- no
+task-specific output heads, no free-text generation. This design is being adopted in
+practice, by commercial systems \citep{almeida2026jev} and by open reimplementations
+\citep{gliclass2025,nanojev2026,semif2025}, on the promise of one small model, dynamic
+candidate sets, and zero-adaptation-cost new tasks. Yet two basic questions have never been
+answered under controlled conditions. \textbf{Q1:} does a shared typed-decision scorer match
+or beat conventional per-task output heads at matched compute? \textbf{Q2:} does the
+``dynamic candidates / zero adaptation'' selling point translate into a measurable
+performance or cost advantage?
+
+Answering these questions runs into three obstacles. First, biological sequence evaluation
+is fragmented: GUE \citep{zhou2024dnabert}, Genomic Benchmarks
+\citep{gresova2022genomic}, TAPE \citep{rao2019tape}, ProteinGym \citep{notin2023proteingym}
+and friends each define their own task formats, splits and metrics, so decision architectures
+cannot be compared in one protocol. Second, leakage auditing is largely absent: several
+upstream ``train'' pools on public hubs \emph{contain the blind-test members of prior
+studies}, so a random re-split silently fabricates a new test set. Third --- the
+methodological spine of this paper --- \emph{evaluation variance in this regime has never
+been quantified}. In our small-budget multi-task setting, two runs of the same configuration
+and seed differ by $\pm0.05$--$0.1$ on task-macro metrics, enough to reverse the winner of
+an architecture comparison (\cref{sec:mainresults}). Any single-run architectural conclusion
+is therefore unreliable, including our own early one.
+
+\paragraph{Approach.}
+We build a benchmark first and a measurement protocol second, then compare architectures.
+BioDecisionBench converts ten source families (290 tasks; DNA, protein, RNA, and double
+sequences) into one typed-decision record format with a leak-proof admission protocol
+(\cref{sec:benchmark}). On a 37-task matched slice we train the two comparable arms --- a
+shared typed-decision scorer (\arch{1}) and per-task heads on the same encoder (\arch{2})
+--- with family-balanced interleaving, stabilized optimization, per-family dev early
+stopping, and three seeds; the frozen Qwen3-0.6B full-candidate likelihood (\arch{3}) serves
+as an off-the-shelf reference (\cref{sec:framework}). \Cref{sec:results} reports the
+seed-averaged comparison and three operational tests of \arch{1}'s claimed value, plus
+training-dynamics and mechanism ablations.
+
+\paragraph{Contributions.}
+\begin{itemize}
+\item \textbf{BioDecisionBench} (\cref{sec:benchmark}): a 290-task, three-modality,
+four-primitive biological decision benchmark with a leak-proof admission protocol --- exact
+cross-split sequence isolation, conflict-group quarantine (1{,}984 groups, not
+majority-voted), verbatim preservation of legacy blind tests, and label mappings validated
+on full pool$\cap$test overlaps. Post-isolation within-task leakage is zero.
+\item \textbf{A seed-averaged evaluation protocol with a documented failure of single runs}
+(\cref{sec:seedavg,sec:mainresults}): same-configuration reruns differ by up to
+$7\times$ on score Spearman (0.107 vs 0.015) and reverse the comparison outcome; we make
+$\ge3$ seeds, per-task seed means, SEM + run-std reporting, and dev early stopping the
+minimum bar for this class of comparison.
+\item \textbf{The first matched-compute three-way comparison of decision architectures on
+biology} (\cref{sec:mainresults,sec:value}): per-task heads $\ge$ shared scorer (Noul
+significantly better, Choice/Score at parity, and more stable across seeds); both trained
+arms beat the frozen candidate-likelihood baseline. The shared scorer's advantage is
+\emph{qualitative} --- it can serve arbitrary new tasks with zero adaptation, but its
+zero-shot quality equals the untrained base, cross-family transfer is weak and
+classification-only, and ${\approx}32$ labels let a fresh head catch its zero-shot level.
+\item \textbf{Training-dynamics and mechanism diagnostics} (\cref{sec:dynamics,sec:ablations}):
+naive budget scaling destabilizes joint training below the untrained baseline; stabilization
+recovers but confirms a plateau; per-family checkpoint selection is a zero-inference-cost
+improvement (family-optimal steps span $26\times$); two reusable controlled ablations
+(noul candidate phrasing across three stable checkpoints; contrastive decoding for frozen
+VLM candidate likelihood).
+\end{itemize}
+
+\paragraph{Results preview.}
+Seed-averaged, per-task heads reach Noul AUROC 0.629 against the shared scorer's 0.478
+(SEMs disjoint) --- while a single earlier run had suggested the opposite ordering. The
+shared scorer's zero-shot interface, its headline feature, is caught by a fresh 32-label
+linear head on 7 of 11 held-out tasks.
+
+\Cref{fig:hero} summarizes the benchmark and the headline comparison.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.90\textwidth]{fig1_hero.pdf}
+\caption{\textbf{BioDecisionBench and its headline comparison.}
+\emph{Left:} 290 leak-audited tasks over 10 source families and 4 decision
+primitives; the admission protocol leaves zero within-task train/test sequence
+overlap (1{,}984 conflicting-label groups quarantined rather than majority-voted).
+\emph{Right:} seed-averaged (3 seeds), matched-compute comparison per primitive
+(mean$\pm$SEM over tasks). Per-task heads (\#2) beat the shared typed-decision
+scorer (\#1) on noul (disjoint SEMs) and tie on choice/score; both trained arms
+exceed the frozen candidate-likelihood baseline (\#3, not compute-matched).
+\emph{Inset:} the methodological warning --- two single runs of the same
+configuration give score Spearman 0.107 vs 0.015 for \#1; the 3-seed mean is 0.013.}
+\label{fig:hero}
+\end{figure*}

@@ -1,0 +1,65 @@
+\section{Evaluation Framework}
+\label{sec:framework}
+
+\subsection{The three compared architectures}
+\label{sec:archs}
+
+\begin{table}[t]
+\centering
+\caption{Compared decision architectures. \arch{1} and \arch{2} are matched-compute
+(same data, updates, optimizer, seeds; the only variable is the decision mechanism).
+\arch{3} is \emph{not} matched (frozen, different backbone, 120-character sequence
+truncation, different score protocol) and is labeled as such wherever it appears.}
+\label{tab:archs}
+\small
+\begin{tabular}{p{0.20\textwidth}p{0.26\textwidth}p{0.26\textwidth}p{0.19\textwidth}}
+\toprule
+ & \arch{1} shared typed-decision scorer & \arch{2} encoder + per-task heads & \arch{3} frozen candidate likelihood \\
+\midrule
+backbone & Laya ModernBERT-large \citep{warner2025modernbert,laya2026}, 423M, biology-expanded BPE (52{,}412) & same as \arch{1} & Qwen3-0.6B \citep{yang2025qwen3}, 596M causal LM \\
+decision & 2-layer typed transformer + shared scalar scorer over candidate markers; choice pools over a candidate-set attention; score emits a 5-level distribution + expectation & one Linear head per task: choice/noul = fixed-class softmax; score = scalar regression (MSE) & length-normalized logprob per candidate, $\argmax$ \\
+task parameters & none (candidates are input text) & one $|\mathcal{Y}_t|$-way head per task & none (frozen) \\
+new task & inference with zero adaptation & requires a new head + labeled training & inference with zero adaptation \\
+training & matched budget & matched budget & none \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\arch{1} implements the typed-decision ideal: candidates are dynamic text, the scorer
+weights are shared across all tasks, and a new task needs no parameters. \arch{2} is the
+conventional alternative on the same encoder. \arch{3} answers ``what does an off-the-shelf
+small LM get, for free?'' and is reported for reference only.
+
+\subsection{Training protocol}
+\label{sec:trainproto}
+
+Joint training interleaves families: each family contributes an equal number of batches
+per epoch (rotating within family), so ProteinGym's 217 assays cannot flood the diverse
+small families. AdamW with encoder lr $2{\times}10^{-5}$, head/scorer lr
+$1{\times}10^{-4}$; warmup fraction 0.15 and gradient clipping 0.5 --- values set by the
+instability diagnosis of \cref{sec:dynamics}, not cherry-picked post hoc; cosine decay to
+10\%; batch 64 with gradient accumulation; 512-token full inputs (over-budget examples are
+excluded and the exclusion rate reported). Checkpoint selection: \textbf{per-family dev
+early stopping} ($\ge256$ dev samples per family; each family keeps its own best-dev
+checkpoint from the same trajectory --- zero inference-time cost), motivated by the
+$26\times$ spread of family-optimal steps (\cref{sec:dynamics}).
+
+\subsection{Seed-averaging protocol}
+\label{sec:seedavg}
+
+Motivating case (\cref{sec:mainresults}): two runs of the same configuration and seed give
+score Spearman 0.107 vs 0.015 for \arch{1}, reversing the comparison. Protocol:
+$\ge3$ seeds (20261001/02/03); average per task across seeds \emph{first}, then aggregate
+across tasks; report mean$\pm$SEM (across tasks) and run-std (across seeds) separately;
+early-stop dev sets $\ge256$ to shrink selection noise; any single-run number is labeled as
+such. GPU nondeterminism (identical-seed trajectories diverge after ${\sim}137$ steps) is
+the physical source and cannot be removed by fixing seeds --- only absorbed by averaging.
+
+\subsection{Metric conventions}
+\label{sec:metrics}
+
+choice: accuracy (primary) + macro-F1. noul: AUROC (primary --- ranking-based, immune to
+threshold and calibration) + MCC + accuracy. score: Spearman (primary, scale-free) + RMSE
+normalized by train std; \textbf{raw RMSE is never averaged across assays}. multi\_noul:
+per-label sigmoid protocol (prepared in the benchmark; not consumed by the encoder path in
+this paper) \citep[calibration protocol follows][]{guo2017calibration}.

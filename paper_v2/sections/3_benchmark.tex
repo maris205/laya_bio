@@ -1,0 +1,109 @@
+\section{BioDecisionBench: Design and Construction}
+\label{sec:benchmark}
+
+\subsection{Unified interface and record format}
+\label{sec:schema}
+
+Every example is one JSON line carrying
+\texttt{task\_id}, \texttt{primitive}, \texttt{modality}, \texttt{sequences}
+(each \texttt{\{role, modality, sequence\}}), \texttt{question}, \texttt{split},
+\texttt{group}, and \texttt{provenance}, plus interface fields determined by the decision primitive
+$\prim\in\{\text{noul},\text{choice},\text{score},\text{multi\_noul}\}$
+(\cref{tab:primitives}). Sequences keep role boundaries for double-sequence tasks
+(\texttt{query\_1}/\texttt{query\_2}: DNA+protein, DNA+DNA, protein+protein) rather than
+being concatenated. \texttt{provenance} records source repository, revision/commit and
+license; download receipts include per-file SHA-256.
+
+\begin{table}[t]
+\centering
+\caption{The four decision primitives, their extra fields, supervision and metrics.}
+\label{tab:primitives}
+\small
+\footnotesize
+\begin{tabular}{p{0.10\textwidth}p{0.40\textwidth}p{0.36\textwidth}}
+\toprule
+Primitive & Extra fields & Supervision / evaluation \\
+\midrule
+choice & candidates (mutually exclusive labels), answer
+       & CE; accuracy, macro-F1, NLL, candidate-validity rate \\
+noul & candidates = \{no, yes\}, answer
+     & binary CE; AUROC, MCC, accuracy, calibration \\
+score & score\_levels (5), anchors (5 values from 4 interior train quantile
+        cuts), gold\_value, gold\_level
+      & soft-target CE + expected-value MSE; Spearman (primary), train-std-normalized
+        RMSE \\
+multi\_noul & candidates (all labels), per-label 0/1 vector, answer = positive set
+            & masked binary; micro/macro-F1, per-label calibration \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Sources, scale, and modalities}
+\label{sec:scale}
+
+\Cref{tab:benchmark} lists the composition. ProteinGym contributes 217 mutation-fitness
+assays using the official contiguous-5 per-mutant folds (fold 0 = test, fold 1 = dev,
+folds 2--4 = train; multi-mutant rows excluded); GUE 28 DNA choice tasks; RNAcompete 14
+RNA score tasks (14-RBP subset, probes subsampled to 25k with a fixed seed); Genomic
+Benchmarks 8; gene\_lan\_transfer 8 double-sequence noul tasks with endpoint
+union-find component grouping; dnagpt DNA pools 3 (+1 promoter); TAPE 2; DeepSTARR 2
+(dual outputs split into two tasks); DeepLoc 2.0 as one multi-noul task; and 7 local
+snapshots from earlier public releases \citep{wang2024llamagene,wang2026biopaws}. Interface
+distribution: choice 37 / noul 17 / score 235 / multi\_noul 1; modality: DNA 42 / protein
+226 / RNA 14 / double-sequence 8; rows: 3{,}119{,}067 train / 440{,}305 dev /
+581{,}242 test.
+
+\emph{Counting convention.} The 290 figure counts evaluation units, not question types:
+ProteinGym's 217 assays share one question type. We report both numbers wherever the
+benchmark scale is quoted and never claim ``290 independent questions''.
+
+\input{figures/TABLE_1_benchmark.tex}
+
+\subsection{Leak-proof admission protocol}
+\label{sec:admission}
+
+\begin{enumerate}
+\item \textbf{Native splits first.} Sources with official train/dev(/test) splits are used
+verbatim (GUE, Genomic Benchmarks, TAPE, DeepSTARR, ProteinGym folds, local snapshots).
+\item \textbf{Legacy blind tests isolated from upstream pools.} The dnagpt pools (splice,
+TF, core) ship as unsplit ``train'' data \emph{containing the blind-test members of prior
+studies} \citep{wang2026biopaws}. Handling: test = legacy blind test, kept verbatim;
+train/dev = the pool with \emph{all} legacy-test members removed, bucketed by sequence
+hash; rows whose pool integer label conflicts with the blind-test text label (8 in core)
+are quarantined as a group. Label mappings are not guessed but validated on full
+pool$\cap$test overlaps (TF 3437/3437; core 5910/5918; splice agrees 4545/4545 under the
+legacy convention 0$\to$Non-Splice/1$\to$Acceptor/2$\to$Donor, while the literature's newer
+builder uses a different convention --- we adopt the data-consistent one and flag the
+acceptor/donor semantics for independent verification).
+\item \textbf{Exact cross-split sequence isolation.} A sequence appearing in several splits
+is assigned wholly to the highest-priority split (test $>$ dev $>$ train); lower-split
+copies are dropped. Same-sequence conflicting labels quarantine the whole group (1{,}984
+groups; virus\_covid contributes 1{,}754) rather than majority-voting. We do
+\emph{not} merge reverse complements: RC equivalence flips labels for strand-sensitive
+tasks (splice donor/acceptor, promoter direction); label-aware RC grouping is left as
+future work.
+\item \textbf{Double-sequence tasks grouped by endpoints.} gene\_lan pairs are split by
+union-find connected components over endpoints, so no endpoint appears in both train and
+test. A construction-diagnosable subset (the two ``random'' pairing tasks are separable by
+a frame-0 codon-table translation) is declared in the task notes and the paper, and is not
+claimed as an independent blind test.
+\item \textbf{Score anchor discipline.} The 5-level anchors are derived from training data
+only (4 interior quantile cuts $\to$ 5 representative values); test values never feed back.
+Raw RMSE is never averaged across assays (native scales differ by orders of magnitude);
+Spearman is the primary metric.
+\item \textbf{Admission checker.} Per task we verify split overlap, label conflicts,
+answer $\in$ candidates, and length distributions; globally we count cross-task duplicate
+sequences (925{,}985 sequence keys occur in $>$1 task --- not within-task leakage under a
+multi-task model, but they must be escalated to global isolation under leave-one-task-out).
+Final admission result: \textbf{0 within-task leaks, 0 flagged tasks}.
+\end{enumerate}
+
+\subsection{Scope boundaries}
+\label{sec:boundaries}
+
+Under the current encoder path (single sequence, DNA/protein, 512-token budget), 241/290
+tasks are consumable by the compared architectures; the remaining 49 (14 RNA, 10
+double-sequence, 1 multi-noul, 24 over-budget) are in the benchmark, covered by the
+corresponding modality/interface evaluation paths or reported with exclusion rates ---
+never silently truncated. The benchmark's value is the protocol and the data; it is not
+bound to any single evaluated architecture.

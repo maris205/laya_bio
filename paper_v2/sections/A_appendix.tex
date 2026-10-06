@@ -1,0 +1,74 @@
+\section{Full per-family results}
+\label{app:full}
+
+\Cref{tab:appendix} reports per-family, per-seed means for the two trained arms.
+\input{figures/TABLE_4_appendix.tex}
+
+\section{Adaptation cost and ablation tables}
+
+\input{figures/TABLE_3_adapt.tex}
+
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{fig4_ablation.pdf}
+\caption{\textbf{Controlled mechanism ablations.}
+(a) Noul candidate phrasing on three seed-averaged stable checkpoints (same
+weights; only candidate text varies). No phrasing reaches the per-task-head
+reference (0.629, dashed); the best (``false: no / true: yes'', $0.553\pm0.023$)
+beats the \emph{trained} phrasing (hatched) on all three seeds --- reversing the
+single-checkpoint finding, i.e., inference-level ablations are also
+checkpoint-dependent.
+(b) Frozen VLM on synthetic property maps (multimodal route-A pilot): plain
+candidate likelihood collapses to one class (acc 0.040, 1/7 classes used);
+contrastive decoding removes the collapse (0.140, 4/7) but remains at chance ---
+decoding fixed, signal absent.}
+\label{fig:ablation}
+\end{figure*}
+
+\label{app:ablations}
+
+\input{figures/TABLE_5_phrasing.tex}
+\input{figures/TABLE_6_tape.tex}
+
+\section{Multimodal route-A pilot}
+\label{app:vlm}
+
+Protein sequences without resolved structures were rendered as synthetic
+amino-acid property heatmaps (7 normalized physicochemical tracks $\times$ position,
+matplotlib viridis) and presented to a frozen Qwen2.5-VL-3B \citep{bai2025qwen25vl}
+alongside the fold-class question. Plain full-candidate likelihood collapsed to a single
+candidate on all 200 images (accuracy 0.040; macro-F1 0.011; 1/7 classes predicted) ---
+candidate text priors dominate and the image does not change the ranking. Contrastive
+decoding, $\log p(\text{cand}\mid\text{img},q)-\log p(\text{cand}\mid q)$, restores
+multi-class behavior (4/7 classes, accuracy 0.140) but sits at chance
+($1/7=0.143$), far below the majority baseline (0.325) and the text-only frozen LM
+(0.320). Image sanity checks rule out rendering failure (per-image statistics and
+cross-image correlations normal). Conclusion: route A (synthetic renders) with a frozen
+VLM is a dead end; the reusable finding is that \emph{frozen-VLM candidate-likelihood
+evaluation should default to contrastive decoding}. Real-image localization (HPA) and
+fine-tuned VLM arms are a separate work.
+
+\section{Data, licensing, and disclosures}
+
+\paragraph{Data and licensing.}
+All sources are public datasets with license, revision and SHA-256 recorded in download
+receipts; no human-subject data. RNAcompete is the 14-RBP test subset (not the full
+${\sim}$200); DeepGOZero/PEER/DeepSEA remain in the catalog as needs-upstream-work and are
+not claimed as coverage. The splice label-convention doubt (\cref{sec:admission}) is
+explicitly recorded for independent verification.
+
+\paragraph{LLM-use disclosure.}
+[To be finalized per venue checklist: writing assistance disclosure.]
+\section{Reproducibility}
+\label{app:repro}
+
+Every figure and table regenerates from on-disk JSONs via one script per artifact
+(\texttt{paper\_v2/figures/gen\_*.py}); no metric is hardcoded in the plotting or table
+code. Each run persists \texttt{run\_config.json} (flags, seeds, caps),
+\texttt{train\_trace.jsonl} (per-step loss/grad) and \texttt{dev\_curve.jsonl} (per-family
+dev scores); evaluation subsets are drawn with a fixed sampling seed (20261001) rather than
+first-$N$ --- a bug we found and fixed: class-ordered test files plus first-$N$ sampling
+produced a spurious noul AUROC of 0.387 that looked like a polarity bug but was a sampling
+artifact. Hardware: single H20/A800-class GPU per run; nondeterminism is absorbed by the
+seed protocol of \cref{sec:seedavg}.

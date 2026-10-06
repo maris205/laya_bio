@@ -1,0 +1,14 @@
+% Table 6: TAPE cross-family score arm, 3 seeds (gen_tables.py)
+\begin{table}[t]
+\centering
+\caption{Cross-family score transfer (TAPE held out; DeepSTARR and ProteinGym score families in training). Spearman per seed; ``abs'' = trained absolute value. Stability's positive $\Delta$ reflects a pathological frozen baseline ($-0.218$) regressing toward zero, not genuine transfer.}
+\label{tab:tape}
+\small
+\begin{tabular}{llccccc}
+\toprule
+Task & & frozen & tr.\ s1 & tr.\ s2 & tr.\ s3 & $\Delta$ mean$\pm$std \\ \midrule
+tape\_fluorescence & abs & 0.037 & -0.008 & 0.026 & -0.075 & -0.056$\pm$0.042 \\
+tape\_stability & abs & -0.218 & -0.018 & 0.020 & -0.179 & +0.159$\pm$0.086 \\
+\bottomrule
+\end{tabular}
+\end{table}

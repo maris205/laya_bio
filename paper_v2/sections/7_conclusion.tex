@@ -1,0 +1,18 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We introduced BioDecisionBench --- 290 biological sequence decision tasks from 10 source
+families, three modalities and four typed decision primitives, under one record format and
+a leak-proof admission protocol (zero within-task leakage after isolation; conflict groups
+quarantined, legacy blind tests preserved verbatim) --- together with reproducible
+build/evaluation/training code. On its 37-task matched slice, the first seed-averaged
+three-way architecture comparison gives a bounded, honest answer: the shared typed-decision
+scorer does not beat per-task heads (significantly worse noul, parity elsewhere, less
+stable), its zero-shot and cross-family transfer are weak, and its zero-adaptation claim is
+matched by a 32-label fresh head. Its real value is the interface: dynamic candidates, no
+task parameters, immediate new-task inference. Methodologically, we documented a complete
+conclusion-reversal case from run variance ($\pm0.05$--$0.1$) and propose seed averaging,
+run-std reporting and stabilized selection as the minimum bar for architecture comparisons
+in this regime. Future work: per-family training over all 290 tasks, per-task early
+stopping, a matched generative arm (fine-tuned small LM), real-image multimodal evaluation,
+and re-testing transfer at larger budgets and backbones.

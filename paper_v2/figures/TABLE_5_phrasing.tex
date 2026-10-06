@@ -1,0 +1,18 @@
+% Table 5: noul phrasing x 3 stable checkpoints (gen_tables.py)
+\begin{table}[t]
+\centering
+\caption{Noul AUROC on GB tasks for six candidate phrasings, evaluated on three seed-averaged stable checkpoints (same weights per column; only rendered candidate text varies). No phrasing reaches the per-task-head reference (0.629). The trained phrasing is marked \dag.}
+\label{tab:phrasing}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Phrasing & s1 & s2 & s3 & mean$\pm$std \\ \midrule
+false: no / true: yes & 0.572 & 0.568 & 0.521 & 0.553$\pm$0.023 \\
+false / true & 0.566 & 0.523 & 0.541 & 0.543$\pm$0.018 \\
+proposition (``yes, it does'') & 0.517 & 0.513 & 0.549 & 0.526$\pm$0.016 \\
+no / yes (trained)$^\dagger$ & 0.477 & 0.536 & 0.510 & 0.508$\pm$0.024 \\
+descriptive & 0.527 & 0.506 & 0.431 & 0.488$\pm$0.041 \\
+neg / pos words & 0.513 & 0.468 & 0.472 & 0.484$\pm$0.020 \\
+\bottomrule
+\end{tabular}
+\end{table}

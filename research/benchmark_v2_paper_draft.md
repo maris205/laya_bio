@@ -16,14 +16,14 @@
 
 本文的贡献：
 
-1. **BioDecisionBench**（§3）：290 任务、12 族、三模态、四类型化接口的统一记录格式基准；防泄漏准入协议（精确序列跨划分隔离、冲突组整组隔离、旧盲测逐字保留、标签映射经全量重叠验证）；隔离后任务内泄漏 0。
+1. **BioDecisionBench**（§3）：290 任务、10 族、三模态、四类型化接口的统一记录格式基准；防泄漏准入协议（精确序列跨划分隔离、冲突组整组隔离、旧盲测逐字保留、标签映射经全量重叠验证）；隔离后任务内泄漏 0。
 2. **seed 平均评测协议与方差量化**（§4.3, §5.1）：给出单次 run 翻车的具体案例与可操作协议（≥3 seeds、每任务先 seed 内平均、报 SEM 与 run-std、按族 dev 早停且 dev≥256）。
 3. **首个三方匹配对照**（§5.1–5.2）：共享打分器 vs 每任务头 vs 冻结 LM 候选似然。结论诚实：每任务头 ≥ 共享打分器（noul 显著、choice/score 持平、更稳定）；共享打分器的零样本/跨族/适配成本三个操作化检验均未显示定量优势——其价值是接口灵活性本身。
 4. **训练动力学与机制诊断**（§5.3–5.4）：naive 预算放大失稳（低于 init）→ 稳定化修复但确认平台；按族早停零推理成本、全族不劣于全局单 checkpoint（族峰值 step 跨 26 倍）；noul 候选措辞受控消融（同 checkpoint +0.066 AUROC）与冻结 VLM 对比解码（消除候选坍缩）两个可复用机制修复。
 
 **结果预览**：seed 平均主对照中每任务头 noul AUROC 0.629 vs 共享打分器 0.478（SEM 0.05 不重叠）；而单次 run 曾给出共享打分器领先的相反结论。适配成本检验中，每任务头新建一个头只需 ~32 条标注即追平共享打分器的零样本水平。
 
-**Figure 1（hero）**：左联=基准全景（12 族×4 接口×3 模态任务数矩阵 + 统一记录 schema + 准入流水线示意）；右联=seed 平均三方条形图（按 primitive，SEM 误差棒），内嵌"单次 run 方差"小图（同配置两次 run 的 score 0.107 vs 0.015 vs seed 平均 0.013）。
+**Figure 1（hero）**：左联=基准全景（10 族×4 接口×3 模态任务数矩阵 + 统一记录 schema + 准入流水线示意）；右联=seed 平均三方条形图（按 primitive，SEM 误差棒），内嵌"单次 run 方差"小图（同配置两次 run 的 score 0.107 vs 0.015 vs seed 平均 0.013）。
 
 ## 2. 相关工作
 
@@ -52,9 +52,9 @@
 
 ### 3.2 来源、规模与模态
 
-12 族 290 任务：**GUE** 28（DNA choice：10 组蛋白标记+mouse×5+prom×6+splice+tf×5+virus）；**Genomic Benchmarks** 8（DNA：7 noul+regulatory 3 类 choice）；**ProteinGym** 217（蛋白 score，官方 fold_contiguous_5 per-mutant 划分：fold0=test/fold1=dev/fold2-4=train，−100 多突变体剔除）；**RNAcompete** 14（RNA score，14-RBP 子集，探针 25k 固定子采样）；**gene_lan_transfer** 8（双序列 noul：DNA-蛋白配对×3、DNA-DNA×3、蛋白-蛋白×2，端点并查集连通分量分组划分）；**dnagpt DNA 池** 3+1（splice/tf/core+promoter）；**TAPE** 2（荧光/稳定性 score）；**DeepSTARR** 2（DNA score 双输出拆两任务）；**DeepLoc 2.0** 1（蛋白 multi_noul 11 定位）；**本地快照** 7（fold/signal/subcell/npp choice + protein_homology std/remote 双蛋白 noul）。
+10 族 290 任务（按训练调度器的 task-id 前缀映射；上游数据源可细分至 12 个）：**GUE** 28（DNA choice：10 组蛋白标记+mouse×5+prom×6+splice+tf×5+virus）；**Genomic Benchmarks** 8（DNA：7 noul+regulatory 3 类 choice）；**ProteinGym** 217（蛋白 score，官方 fold_contiguous_5 per-mutant 划分：fold0=test/fold1=dev/fold2-4=train，−100 多突变体剔除）；**RNAcompete** 14（RNA score，14-RBP 子集，探针 25k 固定子采样）；**gene_lan_transfer** 8（双序列 noul：DNA-蛋白配对×3、DNA-DNA×3、蛋白-蛋白×2，端点并查集连通分量分组划分）；**dnagpt DNA 池** 3+1（splice/tf/core+promoter）；**TAPE** 2（荧光/稳定性 score）；**DeepSTARR** 2（DNA score 双输出拆两任务）；**DeepLoc 2.0** 1（蛋白 multi_noul 11 定位）；**本地快照** 7（fold/signal/subcell/npp choice + protein_homology std/remote 双蛋白 noul）。
 
-接口分布 choice 37 / noul 17 / score 235 / multi_noul 1；模态 DNA 42 / 蛋白 226 / RNA 14 / 双序列 8。行数 train 3,119,067 / dev 440,305 / test 581,242。**任务计数口径**：290 按评测单元计；题型多样性按 12 族计（ProteinGym 217 assay 同属"突变适应度"一题型）——正文与表格均双口径报告，不以 290 宣称 290 种独立问题。
+接口分布 choice 37 / noul 17 / score 235 / multi_noul 1；模态 DNA 42 / 蛋白 226 / RNA 14 / 双序列 8。行数 train 3,119,067 / dev 440,305 / test 581,242。**任务计数口径**：290 按评测单元计；题型多样性按 10 族计（ProteinGym 217 assay 同属"突变适应度"一题型）——正文与表格均双口径报告，不以 290 宣称 290 种独立问题。
 
 ### 3.3 防泄漏准入协议
 
@@ -161,7 +161,7 @@ choice：accuracy（主）+macro-F1；noul：AUROC（主，排序指标不受阈
 
 ## 7. 结论
 
-BioDecisionBench 把 12 族 290 个生物序列决策任务统一到四类型化接口与一套防泄漏准入协议下（隔离后任务内泄漏 0），并配套可复现的构建/评测/训练代码。在其上的首个 seed 平均、匹配算力三方对照给出诚实答案：共享类型化决策打分器**不优于**每任务头（noul 显著劣、choice/score 持平、跨 seed 更不稳），其零样本与跨族迁移弱，"零适配成本"被 ~32 条标注的新头追平；它的真实价值是接口灵活性（动态候选、无任务参数、任意新任务可推理）与推理期自由度（措辞、按族 checkpoint 选择）。方法论上，本文以一个具体的结论翻转案例确立：该 regime 下单次 run 不可信（±0.05–0.1），seed 平均+run-std 报告+稳定选点是此类架构对照的最低要求。未来工作：全 290 任务分族训练、按任务早停、matched 生成式臂（微调 Qwen）、真实生物图像多模态（另文）、更大预算/数据下重测共享接口的迁移。
+BioDecisionBench 把 10 族 290 个生物序列决策任务统一到四类型化接口与一套防泄漏准入协议下（隔离后任务内泄漏 0），并配套可复现的构建/评测/训练代码。在其上的首个 seed 平均、匹配算力三方对照给出诚实答案：共享类型化决策打分器**不优于**每任务头（noul 显著劣、choice/score 持平、跨 seed 更不稳），其零样本与跨族迁移弱，"零适配成本"被 ~32 条标注的新头追平；它的真实价值是接口灵活性（动态候选、无任务参数、任意新任务可推理）与推理期自由度（措辞、按族 checkpoint 选择）。方法论上，本文以一个具体的结论翻转案例确立：该 regime 下单次 run 不可信（±0.05–0.1），seed 平均+run-std 报告+稳定选点是此类架构对照的最低要求。未来工作：全 290 任务分族训练、按任务早停、matched 生成式臂（微调 Qwen）、真实生物图像多模态（另文）、更大预算/数据下重测共享接口的迁移。
 
 ---
 

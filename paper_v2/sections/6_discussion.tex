@@ -1,0 +1,34 @@
+\section{Discussion and Limitations}
+\label{sec:discussion}
+
+\paragraph{When would a shared typed-decision scorer win?}
+Within our evidence: not on seen tasks, not zero-shot (at base level), weakly on
+cross-family classification only, and its zero-adaptation edge is erased by ${\approx}32$
+labels. What survives unambiguously is the interface itself: no task parameters, arbitrary
+dynamic candidates, immediate inference on new tasks (\arch{2} architecturally cannot), and
+inference-time degrees of freedom (phrasing, per-family checkpoints) --- though the 3-seed
+ablation shows phrasing tuning does not close the noul gap ($0.553<0.629$). Deployment
+regimes with very large or open candidate sets, frequent task arrivals, or true
+zero-label cold starts may shift the balance; those are hypotheses, not our results.
+
+\paragraph{Absolute levels vs.\ specialized anchors.}
+Joint-37 choice ${\approx}0.49$ and score ${\approx}0.01$--$0.02$ sit far below
+specialized training: the same architecture family reaches 87--89\% on promoters, 56--58\%
+on fold class and GFP MAE 0.32--0.49 under per-task recipes \citep{wang2024llamagene}. The
+joint regime is a deliberate stress test (one checkpoint serving 37 heterogeneous tasks,
+$\le2048$ samples each, ${\approx}70$ updates per task); it calibrates ``where shared
+decision interfaces currently stand under multi-task small budgets'' and is not an
+architecture ceiling.
+
+\paragraph{Threats to validity.}
+(i) The head-to-head uses a 37-task slice (PG/GUE capped at 12), not all 290: the benchmark
+is the infrastructure contribution and the comparison is a matched slice --- we state the
+two scopes separately everywhere. (ii) 3 seeds; SEM is across tasks, run-std across seeds;
+noul ($n{=}7$) and score ($n{=}9$) have few tasks. (iii) \arch{3} is not matched (frozen,
+different backbone, truncation, different score protocol). (iv) The cross-family score arm
+now has 3 seeds, but with $n{=}2$ tasks the stability $\Delta=+0.159$ depends on the
+pathological frozen baseline and must be read with that caveat (\cref{sec:value}). (v) dev
+selection noise is mitigated (96$\to$256 samples) but not eliminated. (vi) GPU
+nondeterminism is irreducible; only seed averaging absorbs it. (vii) the 512-token budget
+excludes long-sequence examples (exclusion rates reported, never silent truncation).
+
