@@ -1,0 +1,76 @@
+% ============================================================
+% BioDecisionBench — LaTeX includes for all generated figures
+% (regenerate with: python3 gen_fig1_hero.py gen_fig2_transfer.py
+%  gen_fig3_dynamics.py gen_fig4_ablation.py gen_tables.py)
+% Tables: \input{figures/TABLE_1_benchmark.tex} etc.
+% ============================================================
+
+% === Fig 1: hero — benchmark panorama + seed-averaged three-way ===
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/fig1_hero.pdf}
+\caption{\textbf{BioDecisionBench and its headline comparison.}
+\emph{Left:} 290 leak-audited tasks over 10 source families and 4 decision
+primitives; the admission protocol leaves zero within-task train/test sequence
+overlap (1{,}984 conflicting-label groups quarantined rather than majority-voted).
+\emph{Right:} seed-averaged (3 seeds), matched-compute comparison per primitive
+(mean$\pm$SEM over tasks). Per-task heads (\#2) beat the shared typed-decision
+scorer (\#1) on noul (disjoint SEMs) and tie on choice/score; both trained arms
+exceed the frozen candidate-likelihood baseline (\#3, not compute-matched).
+\emph{Inset:} the methodological warning --- two single runs of the same
+configuration give score Spearman 0.107 vs 0.015 for \#1; the 3-seed mean is 0.013.}
+\label{fig:hero}
+\end{figure*}
+
+% === Fig 2: three operational checks on #1's claimed value ===
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/fig2_transfer.pdf}
+\caption{\textbf{Three operational tests of the shared scorer's claimed advantages.}
+(a) Zero-shot transfer to same-family held-out tasks is a wash (GUE $-0.018$,
+ProtGym $+0.088$); cross-family transfer on GenomicBenchmarks is weakly positive
+($+0.036$, SEM over 3 seeds), comparable to the in-domain reference ($+0.034$;
+full2 configuration, not strictly matched).
+(b) Cross-family \emph{score} transfer (TAPE, 3 seeds) does not hold: fluorescence
+degrades ($\Delta=-0.056\pm0.042$); stability's apparent gain
+($+0.159\pm0.086$) is regression of a pathological frozen baseline ($-0.218$)
+toward zero --- trained absolute Spearman stays negative ($-0.059$).
+(c) Adaptation cost: a fresh \#2 linear head catches \#1's zero-shot on 7/11
+held-out tasks with only $N{=}32$ labels ($\times$: $N{=}128$, $+$: $N{=}512$).}
+\label{fig:transfer}
+\end{figure*}
+
+% === Fig 3: training dynamics ===
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/fig3_dynamics.pdf}
+\caption{\textbf{Training dynamics under joint multi-task fitting.}
+(a) Naive budget scaling destabilizes: 5{,}600 updates score \emph{below} init
+(0.421) while 2{,}520 reaches 0.485; stabilization (warmup 0.15, grad clip 0.5,
+dev early stop) recovers 0.481 at 5{,}600 --- a plateau, not overfitting
+(inset: stabilized dev curve; star = selected checkpoint).
+(b) Family-optimal dev peaks on the \emph{same} trajectory span steps 200--5{,}200
+(26$\times$), while the global best sits at 2{,}200.
+(c) Per-family early stopping (zero inference-time cost) dominates at family level
+(all $\Delta\ge0$, mean $+0.063$); per task: 21 win / 9 tie / 7 loss vs the global
+checkpoint.}
+\label{fig:dynamics}
+\end{figure*}
+
+% === Fig 4: controlled mechanism ablations (panel b may move to appendix) ===
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/fig4_ablation.pdf}
+\caption{\textbf{Controlled mechanism ablations.}
+(a) Noul candidate phrasing on three seed-averaged stable checkpoints (same
+weights; only candidate text varies). No phrasing reaches the per-task-head
+reference (0.629, dashed); the best (``false: no / true: yes'', $0.553\pm0.023$)
+beats the \emph{trained} phrasing (hatched) on all three seeds --- reversing the
+single-checkpoint finding, i.e., inference-level ablations are also
+checkpoint-dependent.
+(b) Frozen VLM on synthetic property maps (multimodal route-A pilot): plain
+candidate likelihood collapses to one class (acc 0.040, 1/7 classes used);
+contrastive decoding removes the collapse (0.140, 4/7) but remains at chance ---
+decoding fixed, signal absent.}
+\label{fig:ablation}
+\end{figure*}
