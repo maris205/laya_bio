@@ -1,0 +1,16 @@
+% Table 7: family-specialized leaderboard (gen_leaderboard.py)
+\begin{table}[t]
+\centering
+\caption{Family-specialized baselines over the full supported benchmark (single training seed; stabilized protocol with dev early stopping). Each model trains on one family only and is evaluated on its test split; task-macro of accuracy (choice), AUROC (noul), Spearman (score). Compare the joint-37 numbers in \cref{tab:main}: specialization, not architecture, moves the numbers.}
+\label{tab:leaderboard}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Family & Tasks & \arch{1} spec. & \arch{2} spec. \\
+\midrule
+dnagpt-pools & 3 & 0.527 & 0.547 \\
+TAPE & 2 & 0.309 & 0.530 \\
+DeepSTARR & 2 & 0.077 & 0.217 \\
+\bottomrule
+\end{tabular}
+\end{table}

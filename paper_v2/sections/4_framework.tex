@@ -26,7 +26,11 @@ training & matched budget & matched budget & none \\
 \end{table}
 
 \arch{1} implements the typed-decision ideal: candidates are dynamic text, the scorer
-weights are shared across all tasks, and a new task needs no parameters. \arch{2} is the
+weights are shared across all tasks, and a new task needs no parameters. The encoder
+initialization is a reported protocol variable: the base tokenizer-expanded model
+(\texttt{no\_cpt}, the clean-transfer regime of the matched comparison) or the
+biology continued-pretrained checkpoint (\texttt{cpt}, used by the practical-recipe
+leaderboard in \cref{sec:leaderboard}). \arch{2} is the
 conventional alternative on the same encoder. \arch{3} answers ``what does an off-the-shelf
 small LM get, for free?'' and is reported for reference only.
 

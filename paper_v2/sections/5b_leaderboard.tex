@@ -1,0 +1,30 @@
+\subsection{Full-benchmark family-specialized baselines}
+\label{sec:leaderboard}
+
+The joint-37 comparison of \cref{sec:mainresults} is a deliberate stress test; it is not
+what the benchmark can support under a practical recipe. To calibrate the latter --- and to
+give the community a starting leaderboard --- we train each family \emph{separately} on the
+biology-CPT encoder init (\cref{sec:archs} footnote: the CPT arm) with the same stabilized
+protocol and per-family dev early stopping, for both decision architectures, and evaluate
+every supported task's test split (\cref{tab:leaderboard}, single training seed; the
+variance caveats of \cref{sec:seedavg} apply and are why the matched comparison above is
+seed-averaged).
+
+Three findings. \emph{First, specialization plus CPT recovers near-SOTA numbers}:
+TAPE fluorescence reaches Spearman 0.627 with task heads (0.568 with the shared scorer),
+against the published ceiling of 0.68; dna\_core reaches accuracy 0.625 (from 0.475 under
+joint no-CPT training). The low absolute scores of \cref{sec:mainresults} are therefore a
+property of the joint small-budget regime and the encoder init, not of the tasks being
+unlearnable. \emph{Second, the architecture ordering replicates on the score interface}:
+on TAPE stability, per-task heads reach 0.433 while the shared scorer's five-anchor
+distribution reaches 0.049 --- the same heads-over-shared-scorer ordering as the seed-averaged
+noul result, now on a different primitive and a different training regime, which argues
+against the main comparison being an artifact of joint training. \emph{Third, the benchmark
+is not saturated}: DeepSTARR (0.23/0.21 vs.\ published PCC 0.68/0.74; our 512-token window
+truncates its ${\sim}$2\,kb inputs), the legacy splice/TF blind tests (constant-prediction
+collapse in both arms), and several ProteinGym assays remain far below published bests
+(\cref{tab:priorbest}), so the benchmark discriminates and leaves measurable headroom.
+
+Per-family numbers for both arms, and the prior-best comparison with explicit
+metric-caliber notes, are in \cref{tab:leaderboard,tab:priorbest}; per-task results are
+released with the benchmark.

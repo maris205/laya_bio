@@ -1,0 +1,20 @@
+% Table 8: prior-best vs our family-specialized baselines (gen_prior_best.py)
+\begin{table}[t]
+\centering
+\caption{Published bests vs our family-specialized CPT baselines (\arch{2}, single seed). Metric calibers differ per family and are \emph{never} averaged across rows; the note column states comparability. Sources transcribed from the cited papers' tables (see \texttt{prior\_best.json}); unverified numbers are excluded.}
+\label{tab:priorbest}
+\footnotesize
+\begin{tabular}{p{0.14\textwidth}rp{0.13\textwidth}p{0.30\textwidth}}
+\toprule
+Family & Ours & Literature best (their metric) & Note \\
+\midrule
+GUE & -- & DNABERT-2 67.77 / NT-2.5B 66.93 & ours is accuracy: not directly comparable, caliber ref only \\
+GenomicBenchmarks & -- & HyenaDNA best on 7/8 (e.g. worm 96.6, regulatory 93.8) & comparable (acc) \\
+ProteinGym & -- & ProteinNPT 0.547 (supervised, fold-contiguous split) & comparable: same official split family \\
+TAPE & 0.530 (Sp) & fluor 0.68 / stab 0.73 (TAPE-era pretrain; ProtBERT-ft 0.678/0.734) & comparable \\
+DeepSTARR & 0.217 (Sp) & 0.68 / 0.74 (authors' CNN) & PCC vs our Spearman; 512-token window truncates ~2kb inputs \\
+dnagpt-pools & 0.547 (acc) & LLaMA-Gene category-level 0.83 (DNA class.) & category-level only; per-dataset numbers unverifiable locally \\
+local-snapshots & -- & self-prior: promoter 0.911, fold 0.600 (working ms Table 2) & same-lineage prior; internal record, not peer-reviewed \\
+\bottomrule
+\end{tabular}
+\end{table}
