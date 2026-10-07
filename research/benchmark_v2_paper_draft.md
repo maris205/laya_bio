@@ -1,6 +1,6 @@
 # BioDecisionBench：防泄漏的生物序列类型化决策基准与 seed 平均架构对照
 
-**匿名作者占位**（投稿前不填作者信息）
+**Liang Wang**（School of Artificial Intelligence and Automation, Huazhong University of Science and Technology, Wuhan 430070, China；通讯：wangliang.f@gmail.com）
 
 **结果版工作稿，2026-10-06（强化实验已回填）。** 依据 16 份实验文档（`research/benchmark_v2_*.md`）与已落盘 JSON 结果撰写；venue 未绑定（ICLR 9 页 / NeurIPS D&B 均可适配）。两项强化实验已完成并入正文：noul 措辞×3 稳定 checkpoint 消融（`noul_ablation_3seed.json`）、跨族 score 臂 3-seed（`cross_family_tape_3seed.json`）。英文 LaTeX 版在本稿冻结后翻译。
 
