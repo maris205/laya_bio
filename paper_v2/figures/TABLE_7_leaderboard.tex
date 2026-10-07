@@ -4,17 +4,18 @@
 \caption{Family-specialized baselines over the full supported benchmark (single training seed; stabilized protocol with dev early stopping). Each model trains on one family only and is evaluated on its test split; task-macro of accuracy (choice), AUROC (noul), Spearman (score). Compare the joint-37 numbers in \cref{tab:main}: specialization, not architecture, moves the numbers.}
 \label{tab:leaderboard}
 \small
-\begin{tabular}{lrrr}
+\begin{tabular}{llrrr}
 \toprule
-Family & Tasks & \arch{1} spec. & \arch{2} spec. \\
+Family & Primitive & Tasks & \arch{1} spec. & \arch{2} spec. \\
 \midrule
-dnagpt-pools & 3 & 0.527 & 0.547 \\
-TAPE & 2 & 0.309 & 0.530 \\
-DeepSTARR & 2 & 0.077 & 0.217 \\
-local-snapshots & 5 & 0.525 & 0.684 \\
-GenomicBenchmarks & 8 & 0.633 & 0.690 \\
-GUE & 28 & 0.492 & 0.497 \\
-ProteinGym & 185 & -- & 0.012 \\
+dnagpt-pools & acc & 3 & 0.527 & 0.547 \\
+TAPE & Spearman & 2 & 0.309 & 0.530 \\
+DeepSTARR & Spearman & 2 & 0.077 & 0.217 \\
+local-snapshots & acc & 5 & 0.525 & 0.684 \\
+GenomicBenchmarks & acc & 1 & 0.575 & 0.515 \\
+GenomicBenchmarks & AUROC & 7 & 0.641 & 0.715 \\
+GUE & acc & 28 & 0.492 & 0.497 \\
+ProteinGym & Spearman & 185 & -- & 0.012 \\
 \bottomrule
 \end{tabular}
 \end{table}
