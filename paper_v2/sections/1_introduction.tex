@@ -2,13 +2,14 @@
 \label{sec:intro}
 
 A single biological sequence model should ideally answer qualitatively different questions
-through one interface: ``is this DNA segment a promoter?'' (a yes/no judgement), ``which
-superfamily does this protein belong to?'' (a choice among labels), ``how fit is this
-sequence variant?'' (an ordinal score), and ``where is this protein localized?'' (a
-multi-label assignment). \emph{Typed-decision} interfaces serve exactly this purpose: the
-question and the candidate answers are rendered as text, encoded together with the sequence,
-and a single \emph{shared decision scorer} outputs a probability per candidate --- no
-task-specific output heads, no free-text generation. This design is being adopted in
+through one interface, and the interface can be as simple as text: present the sequence
+\texttt{GTATTCTCCCCTAACAAGAC...} with the question \emph{``Is this DNA sequence a
+promoter?''} and the candidates \{yes, no\}, and a model returns $P(\text{yes})$; swap only
+the question and candidate set --- \{All Alpha, All Beta, Alpha and Beta, ...\} for fold
+class, five value-anchored ordinal levels for mutation fitness, per-label yes/no for
+subcellular localization --- and the same model, with no task-specific output heads and no
+free-text generation, answers all of them. \emph{Typed-decision} interfaces implement
+exactly this design. They are being adopted in
 practice, by commercial systems \citep{almeida2026jev} and by open reimplementations
 \citep{gliclass2025,nanojev2026,semif2025}, on the promise of one small model, dynamic
 candidate sets, and zero-adaptation-cost new tasks. Yet two basic questions have never been

@@ -1,26 +1,24 @@
 \begin{abstract}
-Can one model answer ``is this promoter active?'' (a yes/no judgement), ``which fold does
-this protein adopt?'' (a choice among labels), and ``how fit is this mutant?'' (an ordinal
-score) through a single decision interface? Typed-decision interfaces --- which encode the
-question and the candidate answers as text and let one \emph{shared scorer} rank candidates,
-with no per-task output heads --- are being adopted for exactly this setting, but have never
-been compared against conventional task heads under matched compute. We release
-\textbf{BioDecisionBench}: 290 biological sequence decision tasks spanning DNA, protein and
-RNA, unified under four typed decision primitives --- Noul (yes/no judgement), Choice
-(mutually exclusive labels), Score (ordinal value), and multi-Noul (multi-label) --- with a
-leak-proof admission protocol that keeps legacy blind-test sets verbatim, quarantines
-1{,}984 conflicting-label groups instead of majority-voting them, and verifies zero
-within-task train/test sequence overlap. On this benchmark we run, to our knowledge, the
-first seed-averaged three-way comparison of decision architectures: a shared typed-decision
-scorer, per-task heads on the same encoder, and a frozen small language model scored by
-full-candidate likelihood. Averaged over three seeds, per-task heads match or beat the
-shared scorer --- Noul AUROC $0.629\pm0.050$ vs.\ $0.478\pm0.051$ (disjoint SEMs), Choice and
-Score at parity --- while the shared scorer is markedly less stable (run-std 0.087 vs
-0.030). The shared scorer's claimed advantages survive only qualitatively: its zero-shot
-transfer is at the level of the untrained base, its cross-family transfer is weak
-($+0.036\pm0.034$, classification only), and a fresh task head catches its zero-shot
-performance with ${\approx}32$ labels. Single-run differences of $\pm0.05$--$0.1$ reverse
-architectural conclusions in this regime; we document a complete case in which a
-single-run verdict is reversed by seed averaging, and propose $\ge3$-seed averaging with
-run-std reporting as the minimum bar for such comparisons.
+Through one interface, a model answers ``Is this DNA sequence a promoter?'' over candidates
+\{yes, no\}, ``Which fold does this protein adopt?'' over fold labels, and ``How fit is
+this variant?'' over five ordinal score levels: sequence, question and candidates are all
+encoded as text, and a single \emph{shared scorer} returns one probability per candidate
+--- no task-specific heads, no free-text generation. Such typed-decision interfaces are
+being adopted, but have never been compared against conventional task heads under matched
+compute. We release \textbf{BioDecisionBench}: 290 leak-proof biological sequence decision
+tasks spanning DNA, protein and RNA, unified under four typed decision primitives
+(Noul/Choice/Score/multi-Noul), with an admission protocol that preserves legacy blind
+tests verbatim, quarantines 1{,}984 conflicting-label groups rather than majority-voting
+them, and verifies zero within-task train/test sequence overlap. On this benchmark we run
+the first seed-averaged three-way comparison of decision architectures, to our knowledge:
+a shared typed-decision scorer, per-task heads on the same encoder, and a frozen small
+language model scored by full-candidate likelihood. Averaged over three seeds, per-task
+heads match or beat the shared scorer (Noul AUROC $0.629\pm0.050$ vs.\ $0.478\pm0.051$,
+disjoint SEMs; Choice and Score at parity), and the shared scorer is markedly less stable
+(run-std 0.087 vs.\ 0.030). Its claimed advantages survive only qualitatively: zero-shot
+transfer sits at untrained-base level, cross-family transfer is weak ($+0.036\pm0.034$,
+classification only), and a fresh task head catches its zero-shot performance with
+${\approx}32$ labels. Single-run differences of $\pm0.05$--$0.1$ reverse architectural
+conclusions; we document a complete reversal case and propose seed averaging with run-std
+reporting as the minimum bar for such comparisons.
 \end{abstract}
