@@ -141,6 +141,30 @@ choice：accuracy（主）+macro-F1；noul：AUROC（主，排序指标不受阈
 
 **按族早停（零推理成本改进）**：同一训练轨迹，族峰值 best step 跨 **26 倍**（GUE 200 → local_snapshots 5200），全局单 checkpoint（step 2200）对 GUE 偏晚、对 local/DeepSTARR 偏早。改为每族各自 best-dev checkpoint 后**全族 ≥ 全局**：local +0.106、dnagpt +0.105、GB +0.082、TAPE +0.073、GUE +0.053、DeepSTARR +0.028、PG +0.000（其 best step 恰近全局）；逐任务 21 胜/9 平/7 负。平台部分来自"异质任务共享单一 checkpoint 选择"的折中，而非纯容量上限。
 
+### 5.5 全基准专项基线（CPT 臂，排行榜）
+
+joint-37 是压力测试，不是基准上限。实用配方口径：每族单独训练、生物 CPT 编码器初始化、
+同稳定化协议+按族早停、双臂（#1/#2）、单 seed（方差 caveat 同 §4.3）。已出三族：
+
+| 族/任务 | #1 | #2 | 文献天花板 |
+|---|---|---|---|
+| TAPE fluorescence | 0.568 | **0.627** | 0.68 |
+| TAPE stability | 0.049 | **0.433** | 0.73 |
+| dna_core | 0.475 | **0.625** | — |
+| dna_splice / dna_tf | 0.560 / 0.545 | 0.560 / 0.455 | 双臂坍缩如实报 |
+| DeepSTARR dev/hk | 0.069 / 0.086 | 0.230 / 0.205 | PCC 0.68/0.74（512 窗口截断 ~2kb） |
+
+三个发现：(i) 专项+CPT 恢复近 SOTA（荧光达文献线 92%）——§5.1 的低绝对值是 joint
+小预算+no_cpt 基座的性质，不是任务不可学；(ii) **score 接口复现"头>共享打分器"**
+（stability 0.433 vs 0.049），与 noul 结论同构，排除 joint 偏袒解释；(iii) 基准未饱和：
+DeepSTARR、旧盲测 splice/tf、部分 PG assay 距文献远，有区分度与余量。
+local_snapshots 已出（#2）：npp **0.860**、signal_peptide **0.855**、promoter **0.785**
+（锚点 0.88–0.91 为单任务专用配方；此处 5 任务联合+单 seed）、fold 0.505（锚点 0.56–0.58）、
+subcellular 0.415（10 类，弱，如实报）。GB 已出（#2）：noul AUROC coding **0.897** / worm **0.839** / nontata-promoter **0.834** /
+dummy_mouse 0.783 / cohn 0.669 / ocr 0.557 / drosophila 0.426；regulatory(choice) 0.515。
+GUE/PG 待出数。表：附录 TABLE_7/8。
+摘要已加实用配方句：0.627 荧光（文献线 92%）/0.860 npp/0.785 promoter。
+
 ### 5.4 受控机制消融
 
 **noul 措辞**（同 checkpoint 推理级，干净受控；3-seed 版见 §5.2(d)）：单 checkpoint（bv2_pf）上 raw no/yes 比冗余式 +0.066 AUROC，但 3 个 seed 平均稳定 checkpoint 上方向**反转**（冗余 `false: no/true: yes` 反而 +0.045、3/3 seed 一致），最优措辞 0.553±0.023 仍不达 #2 的 0.629。含义：共享打分器对候选**文本表面形式**敏感——既是弱点（须调措辞、措辞收益方向依赖训练 run）也是动态候选接口的独特自由度（固定头无此维度）；同时说明**推理级消融也必须多 checkpoint 确认**，单 run 的"干净受控证据"不跨训练 run 迁移。

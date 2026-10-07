@@ -29,15 +29,15 @@ for fam in FAMS:
     for arm, res in (("1", r1), ("2", r2)):
         if res is None:
             out[arm] = None; continue
-        vals = [r[PRIM_METRIC[r["primitive"]]] for r in res.values()
-                if r["primitive"] in PRIM_METRIC and r.get("n", 0) > 0
-                and PRIM_METRIC[r["primitive"]] in r]
+        vals = [r[PRIM_METRIC[r.get("primitive", "")]] for r in res.values()
+                if r.get("primitive") in PRIM_METRIC and r.get("n", 0) > 0
+                and PRIM_METRIC[r.get("primitive", "")] in r]
         out[arm] = mean(vals) if vals else None
         out["n"] = max(out["n"], len(vals))
         for tid, r in res.items():
-            if r["primitive"] in PRIM_METRIC and PRIM_METRIC[r["primitive"]] in r:
-                per_task.append([fam, arm, tid, r["primitive"], out["n"] and r.get("n"),
-                                 round(r[PRIM_METRIC[r["primitive"]]], 4)])
+            if r.get("primitive") in PRIM_METRIC and PRIM_METRIC[r.get("primitive", "")] in r:
+                per_task.append([fam, arm, tid, r.get("primitive"), r.get("n"),
+                                 round(r[PRIM_METRIC[r.get("primitive", "")]], 4)])
     rows.append(out)
 
 with open(FIG_DIR / "leaderboard_per_task.csv", "w", newline="") as f:
