@@ -247,6 +247,7 @@ def main():
     ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_pilot")
     ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
+    ap.add_argument("--arm", default="no_cpt", choices=["no_cpt", "cpt"], help="encoder init: base tokenizer-expanded model (no_cpt) or biology-CPT checkpoint (cpt)")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
     global EPOCHS, SEED; EPOCHS = a.epochs; SEED = a.seed
@@ -273,7 +274,7 @@ def main():
     out = a.out / a.name; out.mkdir(parents=True, exist_ok=True)
     rep = Representation(CPT/"data")
     pad = AutoTokenizer.from_pretrained(CPT/"data/representation/base_tokenizer").pad_token_id
-    model = t.build(MODEL, CPT, "no_cpt")
+    model = t.build(MODEL, CPT, a.arm)
     if a.save_init:
         save_file({k: v.detach().cpu().contiguous() for k, v in model.state_dict().items()}, str(out/"init.safetensors"))
         print(f"[init checkpoint saved] {out/'init.safetensors'}", flush=True)

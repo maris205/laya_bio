@@ -219,6 +219,7 @@ def main():
     ap.add_argument("--per-family-early-stop", action="store_true")
     ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_taskheads")
+    ap.add_argument("--arm", default="no_cpt", choices=["no_cpt", "cpt"], help="encoder init: base (no_cpt) or biology-CPT checkpoint (cpt)")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
     global SEED; SEED = a.seed
@@ -231,7 +232,7 @@ def main():
     out = a.out / a.name; out.mkdir(parents=True, exist_ok=True)
     rep = Representation(CPT / "data")
     pad = AutoTokenizer.from_pretrained(CPT / "data/representation/base_tokenizer").pad_token_id
-    mlm, _, _ = bio.build(MODEL, CPT / "data", None)
+    mlm, _, _ = bio.build(MODEL, CPT / "data", (CPT / "round/cpt/model.safetensors") if a.arm == "cpt" else None)
     encoder = mlm.model
     hidden = encoder.config.hidden_size
     # lm_head (MLM decoder) is unused by #2; TaskHeadModel only wraps encoder + heads.

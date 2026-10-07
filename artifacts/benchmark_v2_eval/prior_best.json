@@ -1,0 +1,886 @@
+{
+  "_meta": {
+    "purpose": "Literature prior-best / ceiling reference for BioDecisionBench (benchmark_v2) prior-best comparison table",
+    "generated": "2026-10-07",
+    "verified_semantics": "verified=true means the number was transcribed directly from the named table/figure/section of the cited source during this collection run. self-prior entries are our own numbers: verified=true = read from a local document that states the result (working manuscript / internal leaderboard), NOT peer-reviewed literature.",
+    "corrections": [
+      "Task brief cited DNABERT-2 as arXiv:2306.15794; in arXiv that ID is HyenaDNA (Nguyen et al.). DNABERT-2 (GUE benchmark) is arXiv:2306.15006 (ICLR 2024). Both were used; HyenaDNA:2306.15794 is the source of the 8-subset GenomicBenchmarks accuracy table.",
+      "Task brief cited TAPE as arXiv:1903.00089; that ID resolves to a different paper here. TAPE is arXiv:1906.08230 'Evaluating Protein Transfer Learning with TAPE' (verified title match).",
+      "Genomic Benchmarks brief cited bioRxiv 10.1101/2022.06.08.495248; the open-access journal version is BMC Genomic Data 24:25 (2023), PMC10150520, which is the table-bearing source used here.",
+      "GUE metric in the DNABERT-2 paper is MCC (F1 only for Covid Variant Classification), not accuracy/F1 as assumed in the brief - see per-family notes.",
+      "DeepSTARR original paper reports Pearson correlation (PCC), not Spearman - see family notes."
+    ],
+    "not_obtained": [
+      "ProteinGym current-leaderboard values for IPTM (and any post-v1.2 model): ProteinGym leaderboard export zero_shot_substitutions_scores.zip is 1.91 GB and only ~230 MB was retrievable in 5 min from marks.hms.harvard.edu; PosiTrain/IPTM paper not found via arXiv search, Europe PMC or OpenAlex in this environment.",
+      "DeepSTARR official Spearman on dev_test/hk_test splits (author-reported Spearman does not exist; only PCC). Secondary replication Spearman values are included, flagged.",
+      "RNAcompete per-RBP sequence->z-score regression prior-best (Spearman/MAE): no published leaderboard exists; only the original paper's motif-quality numbers (AUROC vs in vivo data) are citable.",
+      "Per-dataset (not per-category) accuracies for lg_* / dna_* / protein_homology_* tasks from our own earlier work: LLaMA-Gene Table 9 is category-level only; BioPAWS-1/BioPAWS-2/EMERGENCE per-task tables (bioRxiv 2026.01.03.697478) and the biopaws/ result .jsonl files are not present in this environment.",
+      "AUROC numbers for the Genomic Benchmarks CNN baseline: the GB paper reports accuracy and F1 only (string 'AUROC' absent from the paper text).",
+      "Genomic Benchmarks mouse_enhancers AUROC in Nat Commun benchmarking paper: dataset-name mapping to 'Enhancer' row not stated explicitly; recorded as unverified."
+    ]
+  },
+  "GUE": [
+    {
+      "task_subset": "GUE aggregate (28 datasets, mean of per-dataset scores)",
+      "metric": "MCC (F1 for CVC), avg %",
+      "model": "DNABERT-2 (with further pre-training on GUE train, ◆)",
+      "score": 67.77,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML)",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Paper's aggregate column 'Ave. Scores' over the 28 GUE datasets. Our harness scores GUE tasks as 28-way Choice/accuracy; MCC ≠ accuracy, so this is a caliber reference, not a directly comparable number."
+    },
+    {
+      "task_subset": "GUE aggregate (28 datasets)",
+      "metric": "MCC avg %",
+      "model": "Nucleotide Transformer 2.5B-multi",
+      "score": 66.93,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML)",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Best non-DNABERT-2 competitor in the aggregate (Table 3)."
+    },
+    {
+      "task_subset": "GUE aggregate (28 datasets)",
+      "metric": "MCC avg %",
+      "model": "DNABERT-2 (as released)",
+      "score": 66.8,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML)",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true
+    },
+    {
+      "task_subset": "GUE aggregate (28 datasets)",
+      "metric": "MCC avg %",
+      "model": "DNABERT (3-mer)",
+      "score": 61.62,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML)",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true
+    },
+    {
+      "task_subset": "Epigenetic Marks Prediction (yeast, 10 histone marks, avg)",
+      "metric": "MCC avg %",
+      "model": "DNABERT-2 ◆",
+      "score": 58.83,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Chromatin/histone-mark group. Best competitor: NT-2.5B-multi 58.06. DNABERT-2 (no ◆) 55.98. Per-dataset range (Table 6) DNABERT-2 31.13 (H3K4me2) - 80.71 (H4)."
+    },
+    {
+      "task_subset": "Epigenetic Marks Prediction (10 marks, avg)",
+      "metric": "MCC avg %",
+      "model": "Nucleotide Transformer 2.5B-multi",
+      "score": 58.06,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Best competitor in this group; HyenaDNA 1.6M avg over the 10 marks is not printed (Table 9 appendix lists per-mark values 23.15-73.69)."
+    },
+    {
+      "task_subset": "Transcription Factor Prediction - Mouse (5 datasets, avg)",
+      "metric": "MCC avg %",
+      "model": "DNABERT-2 ◆",
+      "score": 71.21,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "DNABERT-2 67.99; best competitor NT-2.5B-multi 67.01; CNN (HyenaDNA-style baseline) and HyenaDNA per-dataset values are in DNABERT-2 Table 9 (HyenaDNA 19.17-80.50, CNN 27.18-63.15)."
+    },
+    {
+      "task_subset": "Transcription Factor Prediction - Human (5 datasets, avg)",
+      "metric": "MCC avg %",
+      "model": "DNABERT-2",
+      "score": 70.1,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Best in group. NT-2.5B-multi 63.32, DNABERT(3-mer) 64.43. CAUTION: DNABERT-2's own appendix Table 9 lists much higher TF-H values for the same model (84.38/87.16/83.99/79.85/87.80, avg ~84.6) than Table 6 (71.99/76.06/66.52/58.54/77.43); the paper does not explain the difference (likely per-task tuned hyper-parameters vs unified recipe). Use Table 4/6 for the leaderboard number."
+    },
+    {
+      "task_subset": "Covid Variant Classification (9 classes)",
+      "metric": "F1 %",
+      "model": "Nucleotide Transformer 2.5B-multi",
+      "score": 73.04,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Best in group; DNABERT-2 71.02, DNABERT-2 ◆ 68.49 (the ◆ variant is worse here)."
+    },
+    {
+      "task_subset": "Promoter Detection - Human (3 datasets: all/notata/tata, avg)",
+      "metric": "MCC avg %",
+      "model": "Nucleotide Transformer 2.5B-multi",
+      "score": 88.14,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "DNABERT-2 84.21, DNABERT-2 ◆ 83.81, DNABERT(3-mer) 84.63. Per-dataset (Table 6/7): best 'notata' = DNABERT-2 ◆ 94.34 / DNABERT(3-mer) 93.61; best 'all' = NT-multi 91.01; 'tata' = NT-multi 79.43 (DNABERT-2 only 71.59)."
+    },
+    {
+      "task_subset": "Core Promoter Detection (3 datasets, avg)",
+      "metric": "MCC avg %",
+      "model": "DNABERT (3-mer)",
+      "score": 72.96,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "DNABERT-2 ◆ 71.07, DNABERT-2 70.52, NT-2.5B-multi 71.62. Group ceiling is held by the older k-mer model - a useful 'prior-best ≠ newest model' data point."
+    },
+    {
+      "task_subset": "Splice Site Detection (reconstructed, 3-class)",
+      "metric": "MCC %",
+      "model": "Nucleotide Transformer 2.5B-multi",
+      "score": 89.36,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 4",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "DNABERT-2 ◆ 85.93, DNABERT-2 84.99, HyenaDNA 72.67, CNN 76.79 (Table 9)."
+    },
+    {
+      "task_subset": "GUE+ Species Classification - Fungi (25 classes)",
+      "metric": "MCC %",
+      "model": "DNABERT-2",
+      "score": 93.04,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 5",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "NT-2.5B-multi 92.85; DNABERT(6-mer) 89.29."
+    },
+    {
+      "task_subset": "GUE+ Species Classification - Virus (20 classes)",
+      "metric": "MCC %",
+      "model": "DNABERT-2",
+      "score": 48.5,
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 5",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "NT-2.5B-multi 45.00, DNABERT(6-mer) 44.51. Hard task even at 10 kb context."
+    },
+    {
+      "task_subset": "GUE+ Enhancer-Promoter Interaction (6 cell types, per-dataset MCC)",
+      "metric": "MCC %",
+      "model": "DNABERT-2 (range over 6 datasets)",
+      "score": "73.70-92.90",
+      "source": "DNABERT-2 (Zhou et al., ICLR 2024), Table 3/4/5 (arXiv:2306.15006v2 HTML), Table 5",
+      "url_or_doc": "https://arxiv.org/html/2306.15006v2",
+      "verified": true,
+      "note": "Paper prints per-dataset values only (0:76.21 1:79.19 2:83.50 3:86.71 4:92.90 5:73.70); NT-2.5B-multi 61.91-86.48; DNABERT(6-mer) cannot fit (-). No group average is printed - do not invent one."
+    }
+  ],
+  "GenomicBenchmarks": [
+    {
+      "task_subset": "dummy_mouse_enhancers_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 69.0,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 70.4% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 69.0 / DNABERT 66.9 / GPT 80.1 / HyenaDNA 85.1"
+    },
+    {
+      "task_subset": "dummy_mouse_enhancers_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 85.1,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 69.0 / DNABERT 66.9 / GPT 80.1 / HyenaDNA 85.1"
+    },
+    {
+      "task_subset": "demo_coding_vs_intergenomic_seqs",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 87.6,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 86.8% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 87.6 / DNABERT 92.5 / GPT 88.8 / HyenaDNA 91.3"
+    },
+    {
+      "task_subset": "demo_coding_vs_intergenomic_seqs",
+      "metric": "accuracy % (top-1, test)",
+      "model": "DNABERT",
+      "score": 92.5,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 87.6 / DNABERT 92.5 / GPT 88.8 / HyenaDNA 91.3"
+    },
+    {
+      "task_subset": "demo_human_or_worm",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 93.0,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 92.8% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 93.0 / DNABERT 96.5 / GPT 95.6 / HyenaDNA 96.6"
+    },
+    {
+      "task_subset": "demo_human_or_worm",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 96.6,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 93.0 / DNABERT 96.5 / GPT 95.6 / HyenaDNA 96.6"
+    },
+    {
+      "task_subset": "human_enhancers_cohn",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 69.5,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 67.1% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 69.5 / DNABERT 74.0 / GPT 70.5 / HyenaDNA 74.2"
+    },
+    {
+      "task_subset": "human_enhancers_cohn",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 74.2,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 69.5 / DNABERT 74.0 / GPT 70.5 / HyenaDNA 74.2"
+    },
+    {
+      "task_subset": "human_enhancers_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 68.9,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 56.5% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 68.9 / DNABERT 85.7 / GPT 83.5 / HyenaDNA 89.2"
+    },
+    {
+      "task_subset": "human_enhancers_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 89.2,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 68.9 / DNABERT 85.7 / GPT 83.5 / HyenaDNA 89.2"
+    },
+    {
+      "task_subset": "human_ensembl_regulatory",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 93.3,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 93.3% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 93.3 / DNABERT 88.1 / GPT 91.5 / HyenaDNA 93.8"
+    },
+    {
+      "task_subset": "human_ensembl_regulatory",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 93.8,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 93.3 / DNABERT 88.1 / GPT 91.5 / HyenaDNA 93.8"
+    },
+    {
+      "task_subset": "human_nontata_promoters",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 84.6,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 83.7% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 84.6 / DNABERT 85.6 / GPT 87.7 / HyenaDNA 96.6"
+    },
+    {
+      "task_subset": "human_nontata_promoters",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 96.6,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 84.6 / DNABERT 85.6 / GPT 87.7 / HyenaDNA 96.6"
+    },
+    {
+      "task_subset": "human_ocr_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "CNN scratch baseline (GB paper)",
+      "score": 68.0,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": true,
+      "note": "GB paper Table 1 also gives macro F1 = 66.1% (PyTorch). HyenaDNA's Table 4.1 reproduces the identical CNN accuracy column for all 8 subsets (cross-check passed). Full row: CNN 68.0 / DNABERT 75.1 / GPT 73.0 / HyenaDNA 80.9"
+    },
+    {
+      "task_subset": "human_ocr_ensembl",
+      "metric": "accuracy % (top-1, test)",
+      "model": "HyenaDNA 1.6M",
+      "score": 80.9,
+      "source": "HyenaDNA (Nguyen et al., NeurIPS 2024), Table 4.1 GenomicBenchmarks top-1 accuracy (%)",
+      "url_or_doc": "https://arxiv.org/html/2306.15794v2",
+      "verified": true,
+      "note": "Best of the four models in HyenaDNA Table 4.1 for this subset. Row (CNN/DNABERT/GPT/HyenaDNA): CNN 68.0 / DNABERT 75.1 / GPT 73.0 / HyenaDNA 80.9"
+    },
+    {
+      "task_subset": "demo_human_or_worm",
+      "metric": "AUROC",
+      "model": "Caduceus-Ph (490M)",
+      "score": 0.9915,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. DNABERT-2 0.9799 / GROVER 0.9843 / NT-v2 0.9785 / HyenaDNA 0.9502"
+    },
+    {
+      "task_subset": "human_enhancers_cohn",
+      "metric": "AUROC",
+      "model": "DNABERT-2",
+      "score": 0.8223,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. GROVER 0.8161 / Caduceus-Ph 0.8210 / NT-v2 0.7894 / HyenaDNA 0.7754"
+    },
+    {
+      "task_subset": "human_enhancers_ensembl",
+      "metric": "AUROC",
+      "model": "Caduceus-Ph",
+      "score": 0.9431,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. GROVER 0.9382 / NT-v2 0.9389 / DNABERT-2 0.9369 / HyenaDNA 0.9356"
+    },
+    {
+      "task_subset": "demo_coding_vs_intergenomic_seqs",
+      "metric": "AUROC",
+      "model": "Caduceus-Ph",
+      "score": 0.9735,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. GROVER 0.9594 / DNABERT-2 0.9438 / HyenaDNA 0.9406 / NT-v2 0.9289"
+    },
+    {
+      "task_subset": "human_ocr_ensembl",
+      "metric": "AUROC",
+      "model": "Caduceus-Ph",
+      "score": 0.765,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. GROVER 0.7455 / DNABERT-2 0.7253 / NT-v2 0.7183 / HyenaDNA 0.7191"
+    },
+    {
+      "task_subset": "human_nontata_promoters",
+      "metric": "AUROC",
+      "model": "Caduceus-Ph",
+      "score": 0.9426,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": true,
+      "note": "Secondary-source AUROC (GB paper itself reports only accuracy/F1). Dataset-name mapping inferred from the paper's Methods ('downloaded a suite of datasets from the Genomic Benchmarks collection') plus row labels/sequence lengths - treat mapping as approximate. row labelled 'Promoter NonTATA 251 bps' (251 bp matches the GB dataset length); DNABERT-2 0.9297 / HyenaDNA 0.9280 / NT-v2 0.8905"
+    },
+    {
+      "task_subset": "dummy_mouse_enhancers_ensembl",
+      "metric": "AUROC",
+      "model": "(not identified in secondary source)",
+      "score": null,
+      "source": "Benchmarking DNA foundation models for genomic and genetic tasks, Nat Commun (2025), PMC12663285, Tables 1-2 (AUC)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12663285/fullTextXML",
+      "verified": false,
+      "note": "Missing: the Nat Commun Tables 1-2 rows do not name a mouse-enhancer dataset explicitly (an 'Enhancer' row, DNABERT-2 0.8717, may or may not be dummy_mouse_enhancers_ensembl); no unambiguous prior-best AUROC for this subset was obtained."
+    },
+    {
+      "task_subset": "human_ensembl_regulatory (3-class)",
+      "metric": "AUROC",
+      "model": "(none)",
+      "score": null,
+      "source": "Grešová et al., BMC Genomic Data 24:25 (2023), Table 1 (CNN baseline, PyTorch/TF accuracy & F1 %)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10150520/fullTextXML",
+      "verified": false,
+      "note": "Missing: 3-class subset; AUROC is not defined by the source papers (only accuracy/F1: CNN 93.3/93.3, HyenaDNA 93.8). Our harness scores gb_regulatory as 3-way Choice with macro AUROC - needs a re-derivation note rather than a literature number."
+    }
+  ],
+  "ProteinGym": [
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "TranceptEVE L (hybrid)",
+      "score": 0.456,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Table A5 rank 1 (bootstrap SE of the difference vs best = 0.000). Table 2 same value; also AUC 0.751, MCC 0.356, NDCG@10% 0.786, top-10% recall 0.230."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "GEMME (alignment-based)",
+      "score": 0.455,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Best non-hybrid/alignment ceiling; AUC 0.749 (Table 2)."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "EVE (ensemble)",
+      "score": 0.439,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Classic strong zero-shot baseline; AUC 0.741."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ESM-1v (ensemble)",
+      "score": 0.407,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "ESM-1v single 0.374 (Table A5). AUC 0.723, MCC 0.320."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ESM2 650M",
+      "score": 0.414,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Typical ESM2 range on ProteinGym substitutions: 8M 0.226, 35M 0.321, 150M 0.387, 650M 0.414, 3B 0.406, 15B 0.401 - i.e. ~0.23-0.41 with the plateau around 650M-15B at ~0.40-0.41."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ESM2 15B",
+      "score": 0.401,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "AUC 0.720, MCC 0.314 (Table 2)."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ESM-1b",
+      "score": 0.394,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Table A5 rank 22*."
+    },
+    {
+      "task_subset": "DMS substitutions, 217 assays (per-assay avg)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ESM2 8M",
+      "score": 0.226,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions)",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Low end of the ESM2 family range."
+    },
+    {
+      "task_subset": "DMS substitutions, supervised (official fold_contiguous_5 splits)",
+      "metric": "Spearman ρ (corrected avg)",
+      "model": "ProteinNPT (NPT)",
+      "score": 0.613,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions), Table 3",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Contig. 0.547 / Mod. 0.564 / Rand. 0.730 -> Avg. 0.613. Our benchmark uses the official fold_contiguous_5 split (fold0=test), so the comparable column is 'Contig.' = 0.547 for ProteinNPT, 0.481 for ESM-1v embeddings, 0.525 for MSAT, 0.441 TranceptEVE (supervised head on ESM-1v 0.367)."
+    },
+    {
+      "task_subset": "DMS substitutions (per-assay avg)",
+      "metric": "Spearman ρ",
+      "model": "IPTM (PosiTrain)",
+      "score": null,
+      "source": "ProteinGym current leaderboard / PosiTrain paper",
+      "url_or_doc": "https://proteingym.org",
+      "verified": false,
+      "note": "Missing: IPTM is not in the NeurIPS-2023 (v1.2) paper tables. The live leaderboard export (zero_shot_substitutions_scores.zip, 1.91 GB at marks.hms.harvard.edu/proteingym/ProteinGym_v1.3/) could not be downloaded within the session time budget (only ~230 MB in 5 min), and the PosiTrain/IPTM source paper was not found through arXiv search, Europe PMC or OpenAlex here. Do NOT cite an IPTM number without fetching it."
+    },
+    {
+      "task_subset": "DMS indels (Library vs Designed assays)",
+      "metric": "Spearman ρ",
+      "model": "TranceptEVE M (all) / ProGen2 M (library)",
+      "score": 0.424,
+      "source": "ProteinGym (Notin et al., NeurIPS 2023 D&B), Table 2 / Table A5 (corrected per-assay average Spearman, substitutions), Table 4",
+      "url_or_doc": "https://papers.nips.cc/paper_files/paper/2023/file/cac723e5ff29f65e3fcbb0739ae91bee-Paper-Datasets_and_Benchmarks.pdf",
+      "verified": true,
+      "note": "Table 4: TranceptEVE M All 0.424 (Library 0.426, Designed/Natural 0.587); ProGen2 M Library 0.472 but Designed 0.205; HMM All 0.389. Useful as an assay-type-sensitivity caveat: 'best model' flips between library and designed assays."
+    }
+  ],
+  "TAPE": [
+    {
+      "task_subset": "Fluorescence (GFP, NLL/fitness regression)",
+      "metric": "Spearman ρ",
+      "model": "Transformer (self-supervised pretrain)",
+      "score": 0.68,
+      "source": "TAPE (Rao et al. 2019/2021, arXiv:1906.08230), Table 2 (downstream supervised tasks; Spearman ρ for Fluorescence/Stability)",
+      "url_or_doc": "https://ar5iv.labs.arxiv.org/html/1906.08230",
+      "verified": true,
+      "note": "Table 2 best in the TAPE paper. Others: LSTM pretrain 0.67, UniRep mLSTM (supervised) 0.67, ResNet pretrain 0.21, no-pretrain 0.22/-0.28. Metric note from paper: 'We report accuracy, precision, or Spearman's ρ depending on the task; higher is always better, max 1.0'."
+    },
+    {
+      "task_subset": "Stability (protease, ΔΔG)",
+      "metric": "Spearman ρ",
+      "model": "Transformer (pretrain) / ResNet (pretrain) / UniRep mLSTM",
+      "score": 0.73,
+      "source": "TAPE (Rao et al. 2019/2021, arXiv:1906.08230), Table 2 (downstream supervised tasks; Spearman ρ for Fluorescence/Stability)",
+      "url_or_doc": "https://ar5iv.labs.arxiv.org/html/1906.08230",
+      "verified": true,
+      "note": "Table 2: three-way tie at 0.73 (Transformer pretrain, ResNet pretrain, UniRep supervised). LSTM pretrain 0.69, supervised LSTM baseline 0.64, one-hot baseline 0.19. Appendix stability table also pairs ρ 0.73 with accuracy 0.66-0.70."
+    },
+    {
+      "task_subset": "Secondary structure",
+      "metric": "accuracy",
+      "model": "Alignment (PSI-BLAST+LSTM baseline)",
+      "score": 0.8,
+      "source": "TAPE (Rao et al. 2019/2021, arXiv:1906.08230), Table 2 (downstream supervised tasks; Spearman ρ for Fluorescence/Stability)",
+      "url_or_doc": "https://ar5iv.labs.arxiv.org/html/1906.08230",
+      "verified": true,
+      "note": "For completeness of the TAPE ceiling row: alignment baseline beats all embed models (best model-based 0.75, LSTM pretrain)."
+    },
+    {
+      "task_subset": "Remote homology (CATH top-k)",
+      "metric": "accuracy",
+      "model": "Alignment baseline",
+      "score": 0.64,
+      "source": "TAPE (Rao et al. 2019/2021, arXiv:1906.08230), Table 2 (downstream supervised tasks; Spearman ρ for Fluorescence/Stability)",
+      "url_or_doc": "https://ar5iv.labs.arxiv.org/html/1906.08230",
+      "verified": true,
+      "note": "Best model-based 0.26 (LSTM pretrain), UniRep 0.23 - the classic 'alignment still wins' observation."
+    },
+    {
+      "task_subset": "Fluorescence (TAPE split, later work)",
+      "metric": "Spearman ρ",
+      "model": "ProtBERT fine-tune / LM-GVP",
+      "score": 0.678,
+      "source": "LM-GVP (Benevenuta et al., Sci Rep 2022), PMC9046255, Table 2 (TAPE protein-engineering tasks, Spearman)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9046255/fullTextXML",
+      "verified": true,
+      "note": "Table 2 (Sci Rep 2022): sequence-only ProtBERT fine-tune Fluorescence 0.678 ± 0.002, Protease stability 0.734 ± 0.009; LM-GVP (structure+sequence, 2-stage) 0.680 ± 0.003 / 0.730 ± 0.005. Confirms the TAPE Fluorescence ceiling stayed ~0.68-0.73 through 2022 in these sources; no higher published sequence-only number was located in this session."
+    },
+    {
+      "task_subset": "Stability (TAPE protease, later work)",
+      "metric": "Spearman ρ",
+      "model": "ProtBERT fine-tune",
+      "score": 0.734,
+      "source": "LM-GVP (Benevenuta et al., Sci Rep 2022), PMC9046255, Table 2 (TAPE protein-engineering tasks, Spearman)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9046255/fullTextXML",
+      "verified": true,
+      "note": "LM-GVP Table 2; structure-free ProtBERT fine-tune slightly above TAPE's 0.73."
+    }
+  ],
+  "DeepSTARR": [
+    {
+      "task_subset": "dev (developmental enhancers, held-out test chromosome)",
+      "metric": "PCC",
+      "model": "DeepSTARR (multi-task CNN)",
+      "score": 0.68,
+      "source": "DeepSTARR (de Almeida et al., bioRxiv 2021.10.05.463203 / Nat Genet 54:1289 (2022)), Fig 1B/D text",
+      "url_or_doc": "https://www.biorxiv.org/content/10.1101/2021.10.05.463203v1.full",
+      "verified": true,
+      "note": "BioRxiv full text: 'The predicted and observed enhancer-activity profiles were highly similar for both developmental (PCC=0.68) and housekeeping (PCC=0.74) enhancers (Fig 1B,D, S1)'. Nat Genet version DOI 10.1038/s41588-022-01048-5 (PMID 35551305) - the OA full text was not accessible here, so the numbers above come from the author preprint of the same work."
+    },
+    {
+      "task_subset": "hk (housekeeping enhancers, held-out test chromosome)",
+      "metric": "PCC",
+      "model": "DeepSTARR (multi-task CNN)",
+      "score": 0.74,
+      "source": "DeepSTARR (de Almeida et al., bioRxiv 2021.10.05.463203 / Nat Genet 54:1289 (2022)), Fig 1B/D text",
+      "url_or_doc": "https://www.biorxiv.org/content/10.1101/2021.10.05.463203v1.full",
+      "verified": true,
+      "note": "Same sentence as above."
+    },
+    {
+      "task_subset": "dev / hk (experimental replicate concordance = intrinsic ceiling)",
+      "metric": "PCC",
+      "model": "STARR-seq replicate agreement",
+      "score": 0.73,
+      "source": "DeepSTARR (de Almeida et al., bioRxiv 2021.10.05.463203 / Nat Genet 54:1289 (2022)), Fig 1B/D text",
+      "url_or_doc": "https://www.biorxiv.org/content/10.1101/2021.10.05.463203v1.full",
+      "verified": true,
+      "note": "'close to the concordance between experimental replicates (PCC=0.73 and 0.76, respectively; Fig S1C)' - i.e. the model is at ~93%/97% of the measurement-noise ceiling. Best available 'score-task ceiling' statement for this family."
+    },
+    {
+      "task_subset": "Dev task (249 bp, multi-task regression, 402,296 train seqs)",
+      "metric": "Spearman ρ",
+      "model": "DeepSTARR replication (GCD paper, Genome Biology 2023)",
+      "score": 0.65,
+      "source": "Correcting gradient-based interpretations of deep neural networks for genomics (Kolodziejczyk et al., Genome Biology 24:82 (2023), 'Additional analysis: DeepSTARR' section)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10169356/fullTextXML",
+      "verified": true,
+      "note": "'We recovered similar performance, i.e., Pearson's r of 0.68 and 0.75 and a Spearman rho of 0.65 and 0.57 for tasks Dev and HK, respectively. These values are close to the published values of the original DeepSTARR model.' - a third-party reimplementation, not the authors' Spearman."
+    },
+    {
+      "task_subset": "HK task",
+      "metric": "Spearman ρ",
+      "model": "DeepSTARR replication (GCD paper, Genome Biology 2023)",
+      "score": 0.57,
+      "source": "Correcting gradient-based interpretations of deep neural networks for genomics (Kolodziejczyk et al., Genome Biology 24:82 (2023), 'Additional analysis: DeepSTARR' section)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10169356/fullTextXML",
+      "verified": true,
+      "note": "Same passage; Pearson 0.75."
+    },
+    {
+      "task_subset": "dev_test / hk_test (official DeepSTARR splits)",
+      "metric": "Spearman ρ",
+      "model": "(author-reported value not found)",
+      "score": null,
+      "source": "DeepSTARR (de Almeida et al., bioRxiv 2021.10.05.463203 / Nat Genet 54:1289 (2022)), Fig 1B/D text / official repo README",
+      "url_or_doc": "https://github.com/bernardo-de-almeida/DeepSTARR",
+      "verified": false,
+      "note": "Missing: the original paper reports PCC only, and the official repo README contains no Spearman/PCC table. A pLM paper reporting Spearman on the official splits (e.g. Nucleotide Transformer Fig 2e - text says its model 'slightly surpassed (1%)' HK and was 'lower (4%)' on Dev vs DeepSTARR, but absolute values are only in the figure) would be needed to give a citable Spearman ceiling for our DeepSTARR Score tasks."
+    }
+  ],
+  "RNAcompete": [
+    {
+      "task_subset": "Whole assay (207 RBPs / 193 genes / 231 experiments)",
+      "metric": "assay scope (not a score)",
+      "model": "RNAcompete (PBM, 7-mer Z & E scores)",
+      "score": null,
+      "source": "RNAcompete (Ray et al., Nature 498:173 (2013), author manuscript PMC3929597)",
+      "url_or_doc": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3929597",
+      "verified": true,
+      "note": "Scope reference for our 14-RBP Score subset: '~240,000 short (30-41 nt) RNAs containing all 9-mers >=16x', pool split into two halves for internal cross-validation; per-7-mer Z (intensity) and E (rank) scores. Our family uses probe_metadata.tsv x probe_zscore.tsv per RBP, so 'score' is in units of array z-scores, not Kd."
+    },
+    {
+      "task_subset": "Motif vs in-vivo (CLIP/RNAcompete-validated targets)",
+      "metric": "AUROC",
+      "model": "RNAcompete motif for QKI",
+      "score": 0.93,
+      "source": "RNAcompete (Ray et al., Nature 498:173 (2013), author manuscript PMC3929597)",
+      "url_or_doc": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3929597",
+      "verified": true,
+      "note": "Verbatim: 'for QKI (quaking), the AUROC for the RNAcompete motif was 93% versus 83% for the literature motif' (Fig 1c, Supplementary Data 5). This is the closest published 'quality ceiling' for the family: motif-level classification AUROC up to ~0.93 against in vivo data."
+    },
+    {
+      "task_subset": "Motif vs in-vivo (CLIP)",
+      "metric": "AUROC",
+      "model": "RNAcompete motif for FUS",
+      "score": null,
+      "source": "RNAcompete (Ray et al., Nature 498:173 (2013), author manuscript PMC3929597)",
+      "url_or_doc": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3929597",
+      "verified": true,
+      "note": "Reported failure case: 'the RNAcompete motif for FUS produced an AUROC <0.5 when compared to in vivo crosslinking-based data for both FUS and its paralogue TAF15'. Only one such case in the paper - a useful calibration caveat (in vitro specificity need not transfer in vivo)."
+    },
+    {
+      "task_subset": "Within-assay reproducibility (two pool halves)",
+      "metric": "qualitative claim",
+      "model": "RNAcompete E-score self-consistency",
+      "score": null,
+      "source": "RNAcompete (Ray et al., Nature 498:173 (2013), author manuscript PMC3929597)",
+      "url_or_doc": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3929597",
+      "verified": true,
+      "note": "'In almost all cases, E scores for 7-mers from the two halves of the RNAcompete pool for a given protein are more similar to each other than to those of other assayed proteins' (Fig 1b). Missing: no numeric replicate correlation (r/ρ) is printed in the main text, so we cannot quote an intrinsic Spearman ceiling for per-probe z-score prediction - a gap for our Score-family ceiling discussion."
+    }
+  ],
+  "DeepLoc2.0": [
+    {
+      "task_subset": "SwissProt multi-label CV (10 localisations + 'other'; 28,303 seqs)",
+      "metric": "MicroF1",
+      "model": "DeepLoc 2.0 (ProtT5 embeddings)",
+      "score": 0.73,
+      "source": "DeepLoc 2.0 (Thumuluri et al., NAR 50(W1):W228 (2022)), Table 1 (SwissProt CV) / Table 2 (HPA independent)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9252801/fullTextXML",
+      "verified": true,
+      "note": "Table 1: 0.73 ± 0.01 (ProtT5) / 0.72 ± 0.01 (ESM1b) / DeepLoc 1.0β 0.58 / YLoc+ 0.56."
+    },
+    {
+      "task_subset": "SwissProt multi-label CV",
+      "metric": "MacroF1",
+      "model": "DeepLoc 2.0 (ProtT5)",
+      "score": 0.66,
+      "source": "DeepLoc 2.0 (Thumuluri et al., NAR 50(W1):W228 (2022)), Table 1 (SwissProt CV) / Table 2 (HPA independent)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9252801/fullTextXML",
+      "verified": true,
+      "note": "Table 1: MacroF1 0.66 ± 0.01 (ProtT5), 0.64 ± 0.01 (ESM1b), 0.47 DeepLoc 1.0, 0.42 YLoc+. Accuracy 0.55/0.53; Jaccard 0.69/0.68. Predicted-label count 1.26 vs actual 1.27."
+    },
+    {
+      "task_subset": "SwissProt multi-label CV",
+      "metric": "accuracy",
+      "model": "DeepLoc 2.0 (ProtT5)",
+      "score": 0.55,
+      "source": "DeepLoc 2.0 (Thumuluri et al., NAR 50(W1):W228 (2022)), Table 1 (SwissProt CV) / Table 2 (HPA independent)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9252801/fullTextXML",
+      "verified": true,
+      "note": "Table 1. Exact-match accuracy on multi-label targets is low by construction (0.55) - argue for micro/macro F1 as the headline metric for our multi-label DeepLoc task."
+    },
+    {
+      "task_subset": "HPA independent test (human, 1,717 seqs)",
+      "metric": "MicroF1",
+      "model": "DeepLoc 2.0 (ProtT5)",
+      "score": 0.6,
+      "source": "DeepLoc 2.0 (Thumuluri et al., NAR 50(W1):W228 (2022)), Table 1 (SwissProt CV) / Table 2 (HPA independent)",
+      "url_or_doc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9252801/fullTextXML",
+      "verified": true,
+      "note": "Table 2: MicroF1 0.60 (ProtT5) / 0.57 (ESM1b) / 0.56 (LAProtT5, single-label) / 0.52 YLoc+ / 0.52 DeepLoc 1.0β; MacroF1 0.46 / 0.44 / 0.43; accuracy 0.39 vs Fuel-mLoc 0.45 (single-label, not comparable). Distribution shift makes this ~0.13 below the CV number."
+    }
+  ],
+  "local_snapshots": [
+    {
+      "task_subset": "lg_promoter_detection (binary promoter, 300 bp)",
+      "metric": "accuracy",
+      "model": "Laya-Bio raw candidate scoring (self-prior)",
+      "score": 0.911,
+      "source": "Laya-Bio working manuscript (Sep 2026), Table 2 fixed-checkpoint test results",
+      "url_or_doc": "/root/autodl-tmp/laya_bio/paper/main.txt (Table 2; compiled paper/main.pdf)",
+      "verified": true,
+      "note": "mean ± sample SD over 3 seeds = 91.10 ± 0.35% (macro-F1 91.09 ± 0.35). BioBPE candidate 90.16, B1 fixed head 88.76, text-only control 49.84. Working manuscript (Sep 2026), tables generated from artifacts/laya_locked_test/results.json - NOT peer-reviewed literature."
+    },
+    {
+      "task_subset": "lg_fold_class (7-class coarse structure)",
+      "metric": "accuracy",
+      "model": "Laya-Bio raw candidate scoring (self-prior)",
+      "score": 0.5997,
+      "source": "Laya-Bio working manuscript (Sep 2026), Table 2 fixed-checkpoint test results",
+      "url_or_doc": "/root/autodl-tmp/laya_bio/paper/main.txt (Table 2; compiled paper/main.pdf)",
+      "verified": true,
+      "note": "59.97 ± 0.56% acc, macro-F1 50.63 ± 1.67 (BioBPE 59.05/50.28; B1 head 51.14/38.00; text-only 29.10/6.44). Random = 14.3%. Working manuscript, not peer-reviewed."
+    },
+    {
+      "task_subset": "protein_homology_std (dual-protein, standard)",
+      "metric": "accuracy",
+      "model": "esm2_3B + task head (internal, self-prior)",
+      "score": 0.998,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal BioPAWS-2 leaderboard 'ft' column; OmniGene-4-MM ft 1.000, joint9 0.998, qwen3.7-max zero-shot 0.813. NOT citable literature - a published source (BioPAWS / EMERGENCE per-task table) is still needed."
+    },
+    {
+      "task_subset": "protein_homology_remote (dual-protein, remote/diverged)",
+      "metric": "accuracy",
+      "model": "esm2_3B + task head (internal, self-prior)",
+      "score": 0.524,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal leaderboard; OmniGene-4-MM ft 0.494 (worse than its 0.653 zero-shot), qwen3.7-max zero-shot 0.457. Project README claims (~72% LLaMA-3.1-8B LoRA, ~75% Qwen-3) are unverifiable here - see note in _meta.not_obtained."
+    },
+    {
+      "task_subset": "lg_signal_peptide (Sec/Tat, 2-class)",
+      "metric": "accuracy",
+      "model": "esm2_3B + task head (internal, self-prior)",
+      "score": 1.0,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal leaderboard 'ft'. OmniGene-4-MM 0.945. Near-saturation: report as a ceiling-saturated task, not a discriminative one."
+    },
+    {
+      "task_subset": "lg_subcellular_loc (6-class prokaryotic)",
+      "metric": "macro-F1",
+      "model": "esm2_3B + task head (internal, self-prior)",
+      "score": 0.954,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal leaderboard 'ft' (metric labelled 'f1'); OmniGene-4-MM 0.834, joint 0.813, qwen3.7-max zero-shot 0.233."
+    },
+    {
+      "task_subset": "lg_npp (neuropeptide precursor, binary)",
+      "metric": "accuracy",
+      "model": "esm2_3B + task head (internal, self-prior)",
+      "score": 0.929,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal leaderboard 'ft'; OmniGene-4-MM-joint 0.849, joint9 0.867."
+    },
+    {
+      "task_subset": "lg_promoter_detection",
+      "metric": "accuracy",
+      "model": "OmniGene-4-MM joint SFT (internal, self-prior)",
+      "score": 0.897,
+      "source": "BioPAWS-2 internal leaderboard (not published)",
+      "url_or_doc": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md",
+      "verified": true,
+      "note": "Internal leaderboard (joint 0.897, joint9 0.865) - lower than the Laya-Bio candidate-scoring 0.911 above."
+    },
+    {
+      "task_subset": "LLaMA-Gene task category: classification (DNA)",
+      "metric": "accuracy",
+      "model": "LLaMA-Gene 7B/8B instruction-tuned (self-prior, published preprint)",
+      "score": 0.83,
+      "source": "LLaMA-Gene (Wang Liang, arXiv:2412.00471), Table 9 'Accuracy of different tasks'",
+      "url_or_doc": "https://arxiv.org/pdf/2412.00471v1",
+      "verified": true,
+      "note": "Table 9 aggregates 2-3 datasets per category and gives the paper's own SOTA column (0.84). Maps loosely onto our lg_promoter_detection / dna_core / dna_tf groups; the paper does NOT break accuracy down per dataset, so per-task self-prior cannot be quoted from it."
+    },
+    {
+      "task_subset": "LLaMA-Gene classification (protein)",
+      "metric": "accuracy",
+      "model": "LLaMA-Gene",
+      "score": 0.64,
+      "source": "LLaMA-Gene (Wang Liang, arXiv:2412.00471), Table 9 'Accuracy of different tasks'",
+      "url_or_doc": "https://arxiv.org/pdf/2412.00471v1",
+      "verified": true,
+      "note": "Table 9; SOTA column 0.72. Loosely maps to lg_fold_class/lg_subcellular_loc/lg_signal_peptide categories."
+    },
+    {
+      "task_subset": "LLaMA-Gene multiple sequence (protein+protein)",
+      "metric": "accuracy",
+      "model": "LLaMA-Gene",
+      "score": 0.63,
+      "source": "LLaMA-Gene (Wang Liang, arXiv:2412.00471), Table 9 'Accuracy of different tasks'",
+      "url_or_doc": "https://arxiv.org/pdf/2412.00471v1",
+      "verified": true,
+      "note": "Table 9; SOTA column 0.87. This is the published category-level analogue of protein_homology_std/remote (dual-protein judgement)."
+    },
+    {
+      "task_subset": "LLaMA-Gene multiple sequence (DNA+protein)",
+      "metric": "accuracy",
+      "model": "LLaMA-Gene",
+      "score": 0.71,
+      "source": "LLaMA-Gene (Wang Liang, arXiv:2412.00471), Table 9 'Accuracy of different tasks'",
+      "url_or_doc": "https://arxiv.org/pdf/2412.00471v1",
+      "verified": true,
+      "note": "Table 9; SOTA 0.91 - the gene_lan_transfer DNA-protein pairing analogue."
+    },
+    {
+      "task_subset": "LLaMA-Gene regression (DNA / protein)",
+      "metric": "accuracy",
+      "model": "LLaMA-Gene",
+      "score": 0.83,
+      "source": "LLaMA-Gene (Wang Liang, arXiv:2412.00471), Table 9 'Accuracy of different tasks'",
+      "url_or_doc": "https://arxiv.org/pdf/2412.00471v1",
+      "verified": true,
+      "note": "Table 9: regression DNA 0.83 (SOTA 0.87), protein 0.82 (SOTA 0.86). Metric is labelled 'Accuracy' in the paper even for regression tasks, so it is not a Spearman/MAE ceiling - flag before use."
+    },
+    {
+      "task_subset": "dna_splice / dna_tf / dna_core (dnagpt pool tasks)",
+      "metric": "accuracy",
+      "model": "(no published prior-best obtained)",
+      "score": null,
+      "source": "/root/autodl-tmp/jev_gene/data/03_sft_biopaws2/docs/leaderboard.md + project README",
+      "url_or_doc": "/root/CLAUDE.md",
+      "verified": false,
+      "note": "Missing: only our current-benchmark numbers exist locally (bv2 runs: dna_splice acc 0.28→0.535/0.56, dna_tf 0.655, prom_core 0.44→0.705; qwen3.7-max zero-shot lg_splice_site 0.220 / lg_tf_prediction 0.230), and the upstream DNAGPT (bioRxiv 2023.07.11.548628) / DNABERT per-dataset tables were not retrieved here. GUE-per-dataset MCC/F1 (same underlying datasets) is available above as the literature-side substitute."
+    },
+    {
+      "task_subset": "protein_homology_std/remote (BioPAWS/EMERGENCE published figures)",
+      "metric": "accuracy",
+      "model": "(not obtained)",
+      "score": null,
+      "source": "bioRxiv 2026.01.03.697478 / BioPAWS-1 paper",
+      "url_or_doc": "not present locally",
+      "verified": false,
+      "note": "Missing: README/CLAUDE.md claims (GPT-2 ~84%, LLaMA-3.1-8B LoRA ~72%, Qwen-3 ~100% std / ~75% remote) could not be traced to a table in this environment (no Papers/ dir, no biopaws/ result .jsonl). Do not quote these as prior-best without the paper."
+    }
+  ]
+}
