@@ -20,7 +20,12 @@ proposition tasks reach AUROC 0.897/0.839/0.834 on coding-vs-intergenic,
 human-or-worm and non-TATA promoters. Not every family improves: GUE's 28 tasks
 average 0.497 accuracy under specialization (best 0.570), and the virus\_covid task
 scores 0.115 --- its test split carries 1{,}754 quarantined conflicting-label groups
-and an adversarial class balance, which the leaderboard reports rather than hides. The low absolute scores of \cref{sec:mainresults} are therefore a
+and an adversarial class balance, which the leaderboard reports rather than hides.
+ProteinGym is the starkest headroom: 185 of 217 assays are evaluable within the
+512-token budget, and family-specialized training reaches only 0.012 macro Spearman
+(median 0.017, best 0.399) against MSA-augmented supervised ceilings near 0.55 ---
+single-sequence mutation-fitness prediction at this sample and update budget remains
+open, and the benchmark quantifies the gap. The low absolute scores of \cref{sec:mainresults} are therefore a
 property of the joint small-budget regime and the encoder init, not of the tasks being
 unlearnable. \emph{Second, the architecture ordering replicates on the score interface}:
 on TAPE stability, per-task heads reach 0.433 while the shared scorer's five-anchor

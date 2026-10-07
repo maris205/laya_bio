@@ -163,7 +163,9 @@ local_snapshots 已出（#2）：npp **0.860**、signal_peptide **0.855**、prom
 subcellular 0.415（10 类，弱，如实报）。GB 已出（#2）：noul AUROC coding **0.897** / worm **0.839** / nontata-promoter **0.834** /
 dummy_mouse 0.783 / cohn 0.669 / ocr 0.557 / drosophila 0.426；regulatory(choice) 0.515。
 GUE 已出（#2）：28 任务宏 acc **0.497**（最高 prom_core_notata 0.570）；virus_covid
-0.115（1,754 隔离冲突组+对抗类平衡，如实报并脚注）。PG 待出数。表：附录 TABLE_7/8。
+0.115（1,754 隔离冲突组+对抗类平衡，如实报并脚注）。PG 已出（#2）：185/217 assay 可评
+（512 窗口），宏 Spearman **0.012**（中位 0.017、最高 0.399、85 负）——专项+cpt 也推不动
+单序列突变适应度（MSA 口径天花板 ~0.55），作为基准最大余量如实报告。7/7 族全入表 TABLE_7/8。
 摘要已加实用配方句：0.627 荧光（文献线 92%）/0.860 npp/0.785 promoter。
 
 ### 5.4 受控机制消融
