@@ -22,8 +22,9 @@ average 0.497 accuracy under specialization (best 0.570), and the virus\_covid t
 scores 0.115 --- its test split carries 1{,}754 quarantined conflicting-label groups
 and an adversarial class balance, which the leaderboard reports rather than hides.
 ProteinGym is the starkest headroom: 185 of 217 assays are evaluable within the
-512-token budget, and family-specialized training reaches only 0.012 macro Spearman
-(median 0.017, best 0.399) against MSA-augmented supervised ceilings near 0.55 ---
+512-token budget, and family-specialized training reaches only 0.012 macro Spearman with task
+heads ($-0.022$ with the shared scorer; median 0.017, best 0.399) against
+MSA-augmented supervised ceilings near 0.55 ---
 single-sequence mutation-fitness prediction at this sample and update budget remains
 open, and the benchmark quantifies the gap. The low absolute scores of \cref{sec:mainresults} are therefore a
 property of the joint small-budget regime and the encoder init, not of the tasks being
