@@ -1,0 +1,46 @@
+{
+  "choice": {
+    "metric": "acc",
+    "n": 21,
+    "shared_mean": 0.48532181019568604,
+    "shared_sem": 0.030009903514498393,
+    "taskhead_mean": 0.49968253968253973,
+    "taskhead_sem": 0.031266339955379,
+    "gen3_mean": 0.42428571428571427,
+    "run_std": {
+      "shared": 0.04622120145061922,
+      "taskhead": 0.016638981257904698
+    }
+  },
+  "noul": {
+    "metric": "auroc",
+    "n": 7,
+    "shared_mean": 0.5194971070872354,
+    "shared_sem": 0.020467946246814972,
+    "taskhead_mean": 0.6507939719636845,
+    "taskhead_sem": 0.041538587253428856,
+    "gen3_mean": 0.5216666666666666,
+    "run_std": {
+      "shared": 0.0473025380508752,
+      "taskhead": 0.035162564205452405
+    }
+  },
+  "score": {
+    "metric": "spear",
+    "n": 9,
+    "shared_mean": -0.0013365074787596804,
+    "shared_sem": 0.010831513189985681,
+    "taskhead_mean": 0.05604626035833921,
+    "taskhead_sem": 0.03706374610234008,
+    "gen3_mean": null,
+    "run_std": {
+      "shared": 0.05402722349205978,
+      "taskhead": 0.04850336809025672
+    }
+  },
+  "per_task_wins_seedmean": {
+    "shared": 3,
+    "tie": 22,
+    "taskhead": 12
+  }
+}

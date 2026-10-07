@@ -1,0 +1,18 @@
+% Table 9: cpt-arm three-way comparison (gen_cpt_table.py)
+\begin{table}[t]
+\centering
+\caption{Seed-averaged three-way comparison on the biology-CPT encoder init (3 seeds, same protocol as \cref{tab:main}). The architecture ordering is invariant to the encoder init: per-task heads match or beat the shared scorer on every primitive under both inits; CPT lifts both arms on noul ($+0.041$/$+0.022$) without closing the gap.}
+\label{tab:main_cpt}
+\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcccc}
+\toprule
+Primitive & Metric & $n$ & \#1 shared (cpt) & \#2 heads (cpt) & \#3 frozen \\
+\midrule
+choice & acc & 21 & 0.485$\pm$0.030 & 0.500$\pm$0.031 & 0.424 \\
+noul & auroc & 7 & 0.519$\pm$0.020 & 0.651$\pm$0.042 & 0.522 \\
+score & spear & 9 & -0.001$\pm$0.011 & 0.056$\pm$0.037 & -- \\
+\addlinespace
+Per-task seed-mean wins (\#1 / tie / \#2) & & & \multicolumn{3}{r}{3 / 22 / 12} \\
+\bottomrule
+\end{tabular}
+\end{table}
