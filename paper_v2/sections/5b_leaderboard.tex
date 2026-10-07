@@ -17,7 +17,10 @@ joint no-CPT training); and the local-snapshot family reaches 0.860 on nuclear-p
 positioning, 0.855 on signal-peptide detection and 0.785 on promoter detection
 (single-task specialized recipes reach 0.88--0.91 on the latter); and Genomic-Benchmarks
 proposition tasks reach AUROC 0.897/0.839/0.834 on coding-vs-intergenic,
-human-or-worm and non-TATA promoters. The low absolute scores of \cref{sec:mainresults} are therefore a
+human-or-worm and non-TATA promoters. Not every family improves: GUE's 28 tasks
+average 0.497 accuracy under specialization (best 0.570), and the virus\_covid task
+scores 0.115 --- its test split carries 1{,}754 quarantined conflicting-label groups
+and an adversarial class balance, which the leaderboard reports rather than hides. The low absolute scores of \cref{sec:mainresults} are therefore a
 property of the joint small-budget regime and the encoder init, not of the tasks being
 unlearnable. \emph{Second, the architecture ordering replicates on the score interface}:
 on TAPE stability, per-task heads reach 0.433 while the shared scorer's five-anchor

@@ -162,7 +162,8 @@ local_snapshots 已出（#2）：npp **0.860**、signal_peptide **0.855**、prom
 （锚点 0.88–0.91 为单任务专用配方；此处 5 任务联合+单 seed）、fold 0.505（锚点 0.56–0.58）、
 subcellular 0.415（10 类，弱，如实报）。GB 已出（#2）：noul AUROC coding **0.897** / worm **0.839** / nontata-promoter **0.834** /
 dummy_mouse 0.783 / cohn 0.669 / ocr 0.557 / drosophila 0.426；regulatory(choice) 0.515。
-GUE/PG 待出数。表：附录 TABLE_7/8。
+GUE 已出（#2）：28 任务宏 acc **0.497**（最高 prom_core_notata 0.570）；virus_covid
+0.115（1,754 隔离冲突组+对抗类平衡，如实报并脚注）。PG 待出数。表：附录 TABLE_7/8。
 摘要已加实用配方句：0.627 荧光（文献线 92%）/0.860 npp/0.785 promoter。
 
 ### 5.4 受控机制消融
