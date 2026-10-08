@@ -8,13 +8,13 @@ matched compute. We release \textbf{BioDecisionBench}: 290 leak-proof biological
 tasks spanning DNA, protein and RNA under four typed primitives (Noul/Choice/Score/
 multi-Noul), with leak-proof admission (legacy blind tests preserved verbatim, 1{,}984
 conflicting-label groups quarantined, zero within-task train/test overlap). We run the first seed-averaged comparison of three architectures: shared scorer,
-per-task heads on the same encoder, frozen small LM by candidate likelihood. Over three seeds, per-task heads match or beat the shared
+per-task heads, frozen small LM. Over three seeds, per-task heads match or beat the shared
 scorer (Noul AUROC $0.629\pm0.050$ vs.\ $0.478\pm0.051$, disjoint SEMs; Choice and Score at
 parity) and the shared scorer is markedly less stable (run-std 0.087 vs.\ 0.030); its advantages survive only qualitatively (zero-shot at base level, weak
 cross-family transfer, caught by a 32-label head). Under a practical
-recipe (per-family training on the biology-CPT init) the same benchmark yields
-near-ceiling baselines --- 0.627 TAPE fluorescence (92\% of the published ceiling), 0.860
-nuclear-protein positioning, 0.785 promoter detection --- showing joint-regime scores measure
+recipe the same benchmark yields near-ceiling baselines --- single-task 0.671 TAPE
+fluorescence (99\% of the published ceiling) and 0.845 promoter detection; one unified
+model 0.860 nuclear-protein positioning --- showing joint-regime scores measure
 interference, not difficulty. Single-run differences of $\pm0.05$--$0.1$
 reverse conclusions; we document one reversal and propose $\ge3$-seed averaging with
 run-std as the minimum bar.

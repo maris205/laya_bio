@@ -38,6 +38,18 @@ truncates its ${\sim}$2\,kb inputs), the legacy splice/TF blind tests (constant-
 collapse in both arms), and several ProteinGym assays remain far below published bests
 (\cref{tab:priorbest}), so the benchmark discriminates and leaves measurable headroom.
 
-Per-family numbers for both arms, and the prior-best comparison with explicit
-metric-caliber notes, are in \cref{tab:leaderboard,tab:priorbest}; per-task results are
-released with the benchmark.
+\paragraph{The cost of unification.}
+One checkpoint trained on all 233 gated tasks (\cref{tab:leaderboard}, ``single'' columns)
+serves classification and proposition families nearly losslessly (Genomic-Benchmarks noul
+AUROC 0.698 vs 0.715 specialized) but sacrifices small regression families (TAPE 0.299 vs
+0.530); the heads-over-shared-scorer ordering holds here as well (0.698 vs 0.513), the
+fourth regime in which the main comparison replicates.
+
+\paragraph{Granularity gradient.}
+Five tasks fine-tuned individually (\cref{fig:gradient}) reach 0.845 promoter, 0.671
+fluorescence (99\% of the published ceiling) and 0.892 coding AUROC; per-task ordering
+across the four granularities shows within-family positive transfer (family-joint $\ge$
+single for npp/fold/coding) and cross-family interference (single $>$ all-241 $>$ 37-slice
+for promoter/fluorescence) --- the evidence base for family-balanced scheduling and
+per-family checkpoints (\cref{sec:trainproto}). Per-family, per-task and prior-best
+numbers: \cref{tab:leaderboard,tab:priorbest} and the released CSV.

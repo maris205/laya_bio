@@ -53,6 +53,19 @@ fine-tuned VLM arms are a separate work.
 
 \input{figures/TABLE_9_cpt_main.tex}
 
+\section{Granularity gradient}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\textwidth]{fig5_gradient.pdf}
+\caption{Granularity gradient (\arch{2} arm, CPT init, single seed): five representative
+tasks under four training granularities. Within-family joint training matches or beats
+single-task fine-tuning (positive transfer), while cross-family joint training degrades
+monotonically with scope (interference) --- except ProteinGym-scale score tasks, which stay
+near zero at every granularity.}
+\label{fig:gradient}
+\end{figure}
+
 \section{Leaderboard tables}
 
 \input{figures/TABLE_7_leaderboard.tex}

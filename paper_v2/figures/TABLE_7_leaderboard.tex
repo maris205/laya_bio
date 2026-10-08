@@ -1,21 +1,21 @@
 % Table 7: family-specialized leaderboard (gen_leaderboard.py)
 \begin{table}[t]
 \centering
-\caption{Family-specialized baselines over the full supported benchmark (single training seed; stabilized protocol with dev early stopping). Each model trains on one family only and is evaluated on its test split; task-macro of accuracy (choice), AUROC (noul), Spearman (score). Compare the joint-37 numbers in \cref{tab:main}: specialization, not architecture, moves the numbers.}
+\caption{Three training regimes over the full supported benchmark (single training seed; stabilized protocol; global best-dev early stop for the single-model columns, per-family early stop for the specialized columns): one unified model over all ${\sim}$243 gated tasks (single), vs one model per family (spec.). Task-macro of accuracy (choice), AUROC (noul), Spearman (score). The single-vs-spec.\ gap is the measured cost of unification; compare also the joint-37 slice in \cref{tab:main}.}
 \label{tab:leaderboard}
 \small
-\begin{tabular}{llrrr}
+\begin{tabular}{llrrrrr}
 \toprule
-Family & Primitive & Tasks & \arch{1} spec. & \arch{2} spec. \\
+Family & Primitive & Tasks & \arch{1} single & \arch{2} single & \arch{1} spec. & \arch{2} spec. \\
 \midrule
-dnagpt-pools & acc & 3 & 0.527 & 0.547 \\
-TAPE & Spearman & 2 & 0.309 & 0.530 \\
-DeepSTARR & Spearman & 2 & 0.077 & 0.217 \\
-local-snapshots & acc & 5 & 0.525 & 0.684 \\
-GenomicBenchmarks & acc & 1 & 0.575 & 0.515 \\
-GenomicBenchmarks & AUROC & 7 & 0.641 & 0.715 \\
-GUE & acc & 28 & 0.492 & 0.497 \\
-ProteinGym & Spearman & 193 & -0.022 & 0.012 \\
+dnagpt-pools & acc & 3 & 0.402 & 0.562 & 0.527 & 0.547 \\
+TAPE & Spearman & 2 & 0.067 & 0.299 & 0.309 & 0.530 \\
+DeepSTARR & Spearman & 2 & 0.072 & 0.176 & 0.077 & 0.217 \\
+local-snapshots & acc & 5 & 0.516 & 0.603 & 0.525 & 0.684 \\
+GenomicBenchmarks & acc & 1 & 0.390 & 0.485 & 0.575 & 0.515 \\
+GenomicBenchmarks & AUROC & 7 & 0.513 & 0.698 & 0.641 & 0.715 \\
+GUE & acc & 28 & 0.485 & 0.494 & 0.492 & 0.497 \\
+ProteinGym & Spearman & 193 & -0.007 & 0.008 & -0.022 & 0.012 \\
 \bottomrule
 \end{tabular}
 \end{table}
