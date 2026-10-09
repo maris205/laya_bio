@@ -33,9 +33,19 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
 ## 3. 设置
 
 - 基准与协议：引用 Paper 1 §3/§4（不重复，一段带过+差异声明）。
-- 本文差异：backbone、LoRA 配置（r16 α32 q/k/v/o+gate/up/down）、bf16+grad-ckpt、
-  MB=16/forward、512 全输入、渲染模板（question+sequence+candidate+[MARK]）。
-- 成本表必报：VRAM 峰值、秒/update、总 update、墙钟（规模论文义务）。
+- 本文差异：backbone 换因果 LM（Qwen3-0.6B / Qwen3-8B），LoRA r16 α32 dropout0.05，
+  targets=q/k/v/o/gate/up/down；bf16（8B 用 QLoRA NF4）；**手动 torch.utils.checkpoint
+  包整个 forward**（该 transformers+peft 组合下模型自带 gradient_checkpointing 实测无效：
+  无张量参数的 lambda 会被 torch 静默跳过；张量参数版 0.6B mb16 forward 峰值 1.65GB）；
+  梯度累积 mb×accum=16 行/update（0.6B mb8×2、8B mb2×8→实测 22GB）；512 全输入不截断；
+  渲染模板：`question\nSequence: ...\nAnswer: <candidate> [MARK]`（#1Q 取 [MARK] 隐状态
+  过共享标量头；#2Q 无候选，池化隐状态过每任务头）；score 臂 #1Q 五锚点候选 softmax+期望值。
+- 任务集：Paper 1 的 37 任务 matched 切片（s1_20261001 run_config 逐字复用）；
+  8B 预算 1680 updates（bpf20×12ep×7fam），0.6B 2520（bpf30）；dev 早停每 150 步、dev≥256。
+- 成本表必报（实测）：0.6B bf16 ~0.5s/update、15GB；8B QLoRA ~9s/update、22GB；
+  每跑墙钟 ~4.5h（8B）/ ~0.5h（0.6B）；总 GPU 时 ~30h。
+- 工程教训（附录可写）：argparse 后值赢导致 --model 被 COMMON 覆盖（"0.6B 跑"实跑 8B）；
+  scipy 不收 bf16；checkpoint lambda 必须带张量参数。
 
 ## 4. 结果
 
