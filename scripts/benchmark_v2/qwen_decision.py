@@ -20,6 +20,7 @@ from pathlib import Path
 import numpy as np
 import torch
 from torch.nn import functional as F
+from torch.utils.checkpoint import checkpoint as ckpt
 from safetensors.torch import save_file, load_file
 
 JEV = Path("/root/autodl-tmp/jev_gene")
@@ -269,7 +270,8 @@ def main():
                         for r in rows_b:
                             ts_, cands = render_shared(r, stats[tid]); allT += ts_
                         enc = pack(tok, allT); enc = {k: v.to(dev) for k, v in enc.items()}
-                        h = model(**enc, use_cache=False).last_hidden_state
+                        h = ckpt(lambda e=enc: model(**e, use_cache=False).last_hidden_state,
+                                 use_reentrant=False)
                         pos = (enc["input_ids"] == mark_id).float().argmax(dim=1)
                         lg = scorer(h.gather(1, pos[:, None, None].expand(-1, 1, h.shape[-1])).squeeze(1))
                         lg = lg.view(len(rows_b), len(cands))
@@ -286,7 +288,8 @@ def main():
                     else:
                         enc = pack(tok, [render_heads(r) for r in rows_b])
                         enc = {k: v.to(dev) for k, v in enc.items()}
-                        o = model(**enc, use_cache=False).last_hidden_state
+                        o = ckpt(lambda e=enc: model(**e, use_cache=False).last_hidden_state,
+                                 use_reentrant=False)
                         m = enc["attention_mask"].unsqueeze(-1)
                         pooled = (o * m).sum(1) / m.sum(1)
                         lg = heads[tid](pooled)

@@ -15,7 +15,7 @@ echo "download confirmed $(date)"
 echo "########## QWEN38 MAIN START $(date) ##########"
 # scale low point first (0.6B, 1 seed, both arms; ~1h total)
 for arch in heads shared; do
-  $QD --model models/Qwen3-0.6B --arch $arch --tasks $TASKS $COMMON --mb 4 --accum 4 \
+  $QD --model models/Qwen3-0.6B --arch $arch --tasks $TASKS $COMMON --mb 16 --accum 1 \
       --seed 20261001 --name q06_${arch}_s20261001 > q06_${arch}.log 2>&1 \
       || echo "!!! q06_${arch} failed"
   find artifacts/benchmark_v2_train/q06_${arch}_s20261001 -name "*.safetensors" -delete 2>/dev/null
@@ -24,7 +24,7 @@ echo "===== 0.6B low point done $(date) ====="
 for s in 20261001 20261002 20261003; do
   for arch in heads shared; do
     echo "===== [$(date +%H:%M)] 8B $arch seed $s ====="
-    $QD --arch $arch --tasks $TASKS $COMMON --qlora --mb 4 --accum 4 --batches-per-family 20 --seed $s --name q8_${arch}_s$s > q8_${arch}_s$s.log 2>&1 \
+    $QD --arch $arch --tasks $TASKS $COMMON --qlora --mb 8 --accum 2 --batches-per-family 20 --seed $s --name q8_${arch}_s$s > q8_${arch}_s$s.log 2>&1 \
       || { echo "!!! q8_${arch}_s$s failed"; continue; }
     find artifacts/benchmark_v2_train/q8_${arch}_s$s -name "*.safetensors" -delete 2>/dev/null
     echo "===== [$(date +%H:%M)] q8_${arch}_s$s done; disk $(df -h /root/autodl-tmp | tail -1 | awk '{print $4}') ====="
