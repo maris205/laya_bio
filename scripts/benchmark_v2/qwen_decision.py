@@ -178,7 +178,7 @@ def eval_tasks(model, tok, heads, scorer, tasks, arch, maxn=200):
                 logits.append(heads[tid](pooled))
             logits = torch.cat(logits)
             if prim == "score":
-                pred = logits.squeeze(-1)
+                pred = logits.squeeze(-1).float()
                 gold = torch.tensor([(r["gold"] - stats["mean"]) / stats["std"] for r in rows], device=dev)
                 from scipy.stats import spearmanr
                 rho = spearmanr(pred.cpu().numpy(), gold.cpu().numpy()).statistic
@@ -270,8 +270,9 @@ def main():
                         for r in rows_b:
                             ts_, cands = render_shared(r, stats[tid]); allT += ts_
                         enc = pack(tok, allT); enc = {k: v.to(dev) for k, v in enc.items()}
-                        h = ckpt(lambda e=enc: model(**e, use_cache=False).last_hidden_state,
-                                 use_reentrant=False)
+                        h = ckpt(lambda ids, mask: model(input_ids=ids, attention_mask=mask,
+                                 use_cache=False).last_hidden_state,
+                                 enc["input_ids"], enc["attention_mask"], use_reentrant=False)
                         pos = (enc["input_ids"] == mark_id).float().argmax(dim=1)
                         lg = scorer(h.gather(1, pos[:, None, None].expand(-1, 1, h.shape[-1])).squeeze(1))
                         lg = lg.view(len(rows_b), len(cands))
@@ -288,8 +289,9 @@ def main():
                     else:
                         enc = pack(tok, [render_heads(r) for r in rows_b])
                         enc = {k: v.to(dev) for k, v in enc.items()}
-                        o = ckpt(lambda e=enc: model(**e, use_cache=False).last_hidden_state,
-                                 use_reentrant=False)
+                        o = ckpt(lambda ids, mask: model(input_ids=ids, attention_mask=mask,
+                                 use_cache=False).last_hidden_state,
+                                 enc["input_ids"], enc["attention_mask"], use_reentrant=False)
                         m = enc["attention_mask"].unsqueeze(-1)
                         pooled = (o * m).sum(1) / m.sum(1)
                         lg = heads[tid](pooled)
@@ -315,7 +317,7 @@ def main():
                 if a.dev_eval_every and step % a.dev_eval_every == 0:
                     res = eval_tasks(model, tok, heads, scorer,
                                      {t: (devrows[t], stats[t]) for t in devrows}, a.arch)
-                    vals = [v.get("accuracy", v.get("spearman")) for v in res.values()
+                    vals = [float(v.get("accuracy", v.get("spearman"))) for v in res.values()
                             if v.get("accuracy", v.get("spearman")) is not None]
                     ds = float(np.mean(vals)) if vals else 0.0
                     print(json.dumps({"dev_eval": step, "dev_score": round(ds, 4)}), flush=True)
