@@ -1,13 +1,14 @@
 \begin{abstract}
-Through one interface, a model answers ``Is this DNA sequence a promoter?'' over candidates
-\{yes, no\}, ``Which fold does this protein adopt?'' over fold labels, and ``How fit is
-this variant?'' over five ordinal score levels; sequence, question and candidates are
-encoded as text and a single \emph{shared scorer} returns one probability per candidate ---
-no task-specific heads, no free-text generation. These interfaces are being adopted but never compared against task heads under
-matched compute. We release \textbf{BioDecisionBench}: 290 leak-proof biological sequence decision
-tasks spanning DNA, protein and RNA under four typed primitives (Noul/Choice/Score/
-multi-Noul), with leak-proof admission (legacy blind tests preserved verbatim, 1{,}984
-conflicting-label groups quarantined, zero within-task train/test overlap). We run the first seed-averaged comparison of three architectures: shared scorer,
+Given a sequence (\texttt{GTATTCTCCCCT...}) and the question ``Is this DNA a promoter?''
+over candidates \{yes, no\}, one interface returns $P(\text{yes})$; swap in fold labels for
+\texttt{MDFHIRKATNS...} or five ordinal score levels for a mutant of
+\texttt{MSSSSWLLLS...}, and the same model answers --- sequence, question and candidates
+encoded as text, scored by a single \emph{shared scorer} without task-specific heads or
+free-text generation. They are adopted but never compared against task heads under matched
+compute. We release \textbf{BioDecisionBench}: 290 leak-proof sequence decision
+tasks over DNA, protein and RNA under four typed primitives (Noul/Choice/Score/multi-Noul),
+with admission that preserves legacy blind tests verbatim, quarantines 1{,}984
+conflicting-label groups, and verifies zero train/test overlap. We run the first seed-averaged comparison of three architectures: shared scorer,
 per-task heads, frozen small LM. Over three seeds, per-task heads match or beat the shared
 scorer (Noul AUROC $0.629\pm0.050$ vs.\ $0.478\pm0.051$, disjoint SEMs; Choice and Score at
 parity) and the shared scorer is markedly less stable (run-std 0.087 vs.\ 0.030); its advantages survive only qualitatively (zero-shot at base level, weak
@@ -16,6 +17,6 @@ recipe the same benchmark yields near-ceiling baselines --- single-task 0.671 TA
 fluorescence (99\% of the published ceiling) and 0.845 promoter detection; one unified
 model 0.860 nuclear-protein positioning --- showing joint-regime scores measure
 interference, not difficulty. Single-run differences of $\pm0.05$--$0.1$
-reverse conclusions; we document one reversal and propose $\ge3$-seed averaging with
+reverse conclusions; we document one and propose $\ge3$-seed averaging with
 run-std as the minimum bar.
 \end{abstract}
