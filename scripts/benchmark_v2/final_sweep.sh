@@ -1,6 +1,8 @@
 #!/bin/bash
 # After q06_fixup + q8_retry drain, re-run anything still missing eval_results.json.
 set -u
+exec 9>/tmp/final_sweep.sh.lock
+flock -n 9 || { echo another-instance-running; exit 0; }
 cd /root/autodl-tmp/jev_gene
 QD="python3 -u scripts/benchmark_v2/qwen_decision.py"
 TASKS=$(python3 -c "
@@ -23,7 +25,7 @@ run_one q06_shared_s20261001 shared models/Qwen3-0.6B --batches-per-family 20 --
 for s in 20261001 20261002 20261003; do
   for arch in heads shared; do
     EXTRA="--mb 1 --accum 1"
-    run_one q8_${arch}_s$s $arch models/Qwen3-8B --batches-per-family 40 --qlora $EXTRA --seed $s
+    run_one q8_${arch}_s$s $arch models/Qwen3-8B --batches-per-family 20 --qlora $EXTRA --seed $s
   done
 done
 echo "########## FINAL SWEEP DONE $(date) ##########"

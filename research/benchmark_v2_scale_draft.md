@@ -58,12 +58,17 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
 ### 4.2 规模轴（heads 臂已有三点）
 - 423M enc no_cpt：choice 0.489 / noul 0.629 / score 0.018（3-seed）
 - 423M enc cpt：choice 0.500 / noul 0.651 / score 0.056（3-seed）
-- **Qwen3-0.6B LoRA heads：choice 0.547 / noul 0.681 / score −0.022；shared：0.497 / 0.498 / 0.038**
-  （1 seed，matched 2 行/update）→ noul/choice heads≥shared 在第三 backbone 复现；score 臂间差
-  噪声级（符号与 423M cpt 相反）
+- **Qwen3-0.6B LoRA（正式口径 1 行/update×1680，1 seed）**：heads 0.489 / 0.605 / −0.042；
+  shared 0.490 / 0.536 / −0.005。旧 2 行×3360 配置 heads 0.547/0.681/−0.022、shared 0.497/0.498/0.038
+  （数据量敏感性参照）。noul/choice heads≥shared 在第三 backbone 复现；score 臂间差噪声级。
+  **口径 caveat**：跨 backbone 规模轴内部 matched（0.6B vs 8B 同协议）；423M 行来自 Paper-1
+  协议（64 行/update×2520），仅作参照不参与 matched 对比。
 - 0.6B frozen 候选似然（Paper1 #3）：choice 0.424 / noul 0.522
 - Qwen3-8B QLoRA heads（暂态单 seed，旧 2 行/update 配置，将重跑）：choice 0.580 / noul 0.712 / score 0.005
-- Qwen3-8B QLoRA 正式：[待回填，3 seeds，1 行/update matched]
+- Qwen3-8B QLoRA 正式（1 行/update×1680 matched）：[全部重跑中——事故#3 污染产物已清除；
+  曾短暂读到的 s2=0.494/0.540/−0.007 作废不引用]。**数据受限信号：8B heads noul 0.540 < 0.6B heads 0.605**
+  ——同低数据口径下容量不再抬升，限制因子是每族 1680 行的数据量而非 backbone 容量；
+  与暂态高数据 s1（0.712）对照 = 数据量效应 > 容量效应（本队列内证据）。
 - 内存注记：non-reentrant checkpoint 的 backward 重算=整段带梯度 forward，峰值∝段内 token 数
   （8B ≈11MB/token）；shared 臂按 1800 token 预算把候选文本分块多段 forward 再拼 logits
   （PG score 5 候选×512 token 最坏case 10.6s/update 存活）
@@ -94,3 +99,15 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
 - [ ] Qwen3-8B 下载（12/16.4G）→ 0.6B 低点双臂 → 8B × 2 臂 × 3 seeds（~18-20h）
 - [ ] ladder @8B；措辞 @8B
 - [ ] （条件）Gemma-4-31B-QAT frozen 推理点（待 Kaggle 条款）
+
+- 口径事故#2：sed 批量改预算时漏掉插旗行（8B 行 --qlora 夹在中间），8B 首跑跑到 3360 updates
+  与 0.6B 的 1680 不 matched——发现即杀回重跑。教训：改 driver 预算后必须 grep 全文件逐行核对。
+
+## 口径事故#3（2026-10-11 00:40）：双 sweep 并行污染
+
+16:40 杀旧 sweep 时漏杀其 bash（只杀了 python 与一个 bash），旧实例以 bpf40 配置继续跑并
+与 16:40 新实例（bpf20）**同写 q8_* 目录**：s2 heads 的 eval 被旧进程以 3360-updates 配置
+覆写（20:38 读到的 0.540 版与 23:33 的 0.607 版即两次写入），s3 时间线亦不可信。
+处置：全杀、q8_* 全删、两队列脚本加 flock -n 单实例锁、00:43 干净重跑（bpf20/mb1/OOM 守卫/
+1200-token 分块）。q06 双臂处于单写者窗口（10:49–16:40 仅一个实例），保留。
+教训：**杀队列必须 bash+python 全杀并验证 pgrep 归零；同目录多写者 = 数据不可信，宁可全重跑。**

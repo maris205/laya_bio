@@ -262,6 +262,7 @@ def main():
                 tid = random.choice(pools[f])
                 opt.zero_grad()
                 loss_acc = 0.0
+                oom = False
                 for _acc in range(a.accum):
                     rows_b = [random.choice(train[tid]) for _ in range(a.mb)]
                     prim = rows_b[0]["prim"]
@@ -275,7 +276,7 @@ def main():
                         # recompute-memory budget (~1800 tokens at 8B QLoRA)
                         chunks, cur, cur_len = [], [], 0
                         for i, L in enumerate(lens):
-                            if cur and cur_len + L > 1800:
+                            if cur and cur_len + L > 1200:
                                 chunks.append(cur); cur, cur_len = [], 0
                             cur.append(i); cur_len += L
                         if cur: chunks.append(cur)
@@ -316,8 +317,19 @@ def main():
                         else:
                             loss = F.cross_entropy(lg.float(),
                                                    torch.tensor([r["y"] for r in rows_b], device=dev))
-                    (loss / a.accum).backward()
-                    loss_acc += loss.item()
+                    try:
+                        (loss / a.accum).backward()
+                        loss_acc += loss.item()
+                    except torch.cuda.OutOfMemoryError:
+                        oom = True
+                        opt.zero_grad(set_to_none=True)
+                        torch.cuda.empty_cache()
+                        break
+                if oom:
+                    step += 1
+                    trace.append({"step": step, "loss": None, "oom_skip": True,
+                                  "sec": round(time.monotonic() - t0, 1)})
+                    continue
                 torch.nn.utils.clip_grad_norm_(params, a.clip)
                 wf = max(1, int(a.warmup_frac * total))
                 lr_f = step / wf if step <= wf else .1 + .9 * .5 * (1 + math.cos(math.pi * (step - wf) / max(1, total - wf)))
