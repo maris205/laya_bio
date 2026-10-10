@@ -58,9 +58,15 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
 ### 4.2 规模轴（heads 臂已有三点）
 - 423M enc no_cpt：choice 0.489 / noul 0.629 / score 0.018（3-seed）
 - 423M enc cpt：choice 0.500 / noul 0.651 / score 0.056（3-seed）
-- **Qwen3-0.6B LoRA：choice 0.547 / noul 0.681 / score −0.022（1 seed，matched 2 行/update）**
+- **Qwen3-0.6B LoRA heads：choice 0.547 / noul 0.681 / score −0.022；shared：0.497 / 0.498 / 0.038**
+  （1 seed，matched 2 行/update）→ noul/choice heads≥shared 在第三 backbone 复现；score 臂间差
+  噪声级（符号与 423M cpt 相反）
 - 0.6B frozen 候选似然（Paper1 #3）：choice 0.424 / noul 0.522
-- Qwen3-8B QLoRA：[待回填，3 seeds]
+- Qwen3-8B QLoRA heads（暂态单 seed，旧 2 行/update 配置，将重跑）：choice 0.580 / noul 0.712 / score 0.005
+- Qwen3-8B QLoRA 正式：[待回填，3 seeds，1 行/update matched]
+- 内存注记：non-reentrant checkpoint 的 backward 重算=整段带梯度 forward，峰值∝段内 token 数
+  （8B ≈11MB/token）；shared 臂按 1800 token 预算把候选文本分块多段 forward 再拼 logits
+  （PG score 5 候选×512 token 最坏case 10.6s/update 存活）
 读法：因果 LM 即使 0.6B 也在 choice/noul 上超过 423M 编码器（+0.05/+0.05），score 反而更差
 （小因果模型的回归头弱）；规模轴在分类/命题上单调向上至 0.6B，8B 待验。
 ### 4.3 granularity ladder @8B [待回填]

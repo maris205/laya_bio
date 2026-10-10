@@ -18,11 +18,11 @@ run_one() {  # name arch model extra...
     || echo "!!! sweep $name failed"
   find artifacts/benchmark_v2_train/$name -name "*.safetensors" -delete 2>/dev/null
 }
-run_one q06_heads_s20261001 heads models/Qwen3-0.6B --batches-per-family 40 --mb 2 --accum 1
-run_one q06_shared_s20261001 shared models/Qwen3-0.6B --batches-per-family 40 --mb 1 --accum 2
+run_one q06_heads_s20261001 heads models/Qwen3-0.6B --batches-per-family 20 --mb 1 --accum 1
+run_one q06_shared_s20261001 shared models/Qwen3-0.6B --batches-per-family 20 --mb 1 --accum 1
 for s in 20261001 20261002 20261003; do
   for arch in heads shared; do
-    if [ "$arch" = "shared" ]; then EXTRA="--mb 1 --accum 2"; else EXTRA="--mb 2 --accum 1"; fi
+    EXTRA="--mb 1 --accum 1"
     run_one q8_${arch}_s$s $arch models/Qwen3-8B --batches-per-family 40 --qlora $EXTRA --seed $s
   done
 done

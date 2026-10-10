@@ -235,7 +235,7 @@ def main():
         if len(rows) < 64: continue
         train[tid] = rows
         stats[tid] = task_stats(rows)
-        devrows[tid] = load_task(UNI / tid, a.dev_max, "dev")
+        devrows[tid] = load_task(UNI / tid, a.dev_max, "dev", random.Random(20261001))
     fams = sorted({family_of(t) for t in train})
     total = a.epochs * a.batches_per_family * len(fams)
     if a.smoke: total = min(total, a.smoke)
@@ -269,13 +269,27 @@ def main():
                         allT, cands = [], None
                         for r in rows_b:
                             ts_, cands = render_shared(r, stats[tid]); allT += ts_
-                        enc = pack(tok, allT); enc = {k: v.to(dev) for k, v in enc.items()}
-                        h = ckpt(lambda ids, mask: model(input_ids=ids, attention_mask=mask,
-                                 use_cache=False).last_hidden_state,
-                                 enc["input_ids"], enc["attention_mask"], use_reentrant=False)
-                        pos = (enc["input_ids"] == mark_id).float().argmax(dim=1)
-                        lg = scorer(h.gather(1, pos[:, None, None].expand(-1, 1, h.shape[-1])).squeeze(1))
-                        lg = lg.view(len(rows_b), len(cands))
+                        enc = pack(tok, allT)
+                        lens = enc["attention_mask"].sum(1).tolist()
+                        # chunk texts so each checkpointed forward stays under the
+                        # recompute-memory budget (~1800 tokens at 8B QLoRA)
+                        chunks, cur, cur_len = [], [], 0
+                        for i, L in enumerate(lens):
+                            if cur and cur_len + L > 1800:
+                                chunks.append(cur); cur, cur_len = [], 0
+                            cur.append(i); cur_len += L
+                        if cur: chunks.append(cur)
+                        lgs = []
+                        for ch in chunks:
+                            e = {k: v[ch] for k, v in enc.items()}
+                            e = {k: v.to(dev) for k, v in e.items()}
+                            h = ckpt(lambda ids, mask: model(input_ids=ids, attention_mask=mask,
+                                     use_cache=False).last_hidden_state,
+                                     e["input_ids"], e["attention_mask"], use_reentrant=False)
+                            pos = (e["input_ids"] == mark_id).float().argmax(dim=1)
+                            lgs.append(scorer(h.gather(1, pos[:, None, None].expand(-1, 1,
+                                     h.shape[-1])).squeeze(1)))
+                        lg = torch.cat(lgs).view(len(rows_b), len(cands))
                         if prim == "score":
                             gold = torch.tensor([(r["gold"] - stats[tid]["mean"]) / stats[tid]["std"]
                                                  for r in rows_b], device=dev)
@@ -330,7 +344,7 @@ def main():
     (out / "run_config.json").write_text(json.dumps(vars(a) | {"tasks": list(train),
         "total_updates": step, "best_dev": best_dev}, indent=2) + "\n")
     res = eval_tasks(model, tok, heads, scorer,
-                     {t: (load_task(UNI / t, 200, "test"), stats[t]) for t in train}, a.arch)
+                     {t: (load_task(UNI / t, 200, "test", random.Random(20261001)), stats[t]) for t in train}, a.arch)
     (out / "eval_results.json").write_text(json.dumps({"name": a.name, "results": res},
                                                       ensure_ascii=False, indent=2) + "\n")
     print(f"[DONE] {a.name} {step} updates in {round(time.monotonic()-t0,1)}s", flush=True)
