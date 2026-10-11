@@ -52,10 +52,21 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
 
 ## 4. 结果
 
-### 4.1 主对照（37 切片，8B，3 seeds）[待回填]
+### 4.1 主对照（37 切片，8B QLoRA，3 seeds，matched 1 行/update×1680）——已回填
+heads 0.483±0.011 / 0.564±0.026 / −0.006±0.022；shared 0.492±0.003 / 0.509±0.012 / 0.009±0.011
+（choice/noul/score）。臂差：noul **+0.055（3/3 seed 同向：+0.099/+0.007/+0.059）**、choice −0.008、
+score −0.016（后两者持平噪声级）。
+**判决（按 PAPER_PLAN_2 决策规则）**：排序在第四 regime 复现 → 主结论=接口属性；但 noul 差距
+随容量从 +0.151(423M no_cpt)/+0.132(423M cpt) 收窄到 +0.069(0.6B)/+0.055(8B) → 容量部分调节。
+两句话都写：shared scorer 的 noul 劣势是接口属性（全 backbone 全 seed 同向），幅度随容量递减
+（更大容量/数据或继续收窄——外推未测，future work）。
 表：primitive × {#1Q, #2Q} mean±SEM + run-std + 逐任务胜负；并排 Paper1 423M 列。
 判读分支：若 #2Q ≥ #1Q 保持 → 接口属性结论；若 #1Q 追平/反超 → 容量假说成立。
-### 4.2 规模轴（heads 臂已有三点）
+### 4.2 规模轴（heads 臂）——已回填
+matched 低数据口径：noul 0.6B 0.605 → 8B 0.564（平坦/略降）；choice 0.489→0.483；score −0.042→−0.006。
+参照（高数据，不 matched）：423M cpt 0.651 / 423M no_cpt 0.629。
+**容量平坦（matched 低数据下 0.6B≈8B）= 数据受限 regime 的直接证据**；规模轴的收益要在数据量
+放开后才显现（本队列 1680 行/族 刻意低数据以 matched）。TABLE_10 已生成（四 backbone × 双臂）。
 - 423M enc no_cpt：choice 0.489 / noul 0.629 / score 0.018（3-seed）
 - 423M enc cpt：choice 0.500 / noul 0.651 / score 0.056（3-seed）
 - **Qwen3-0.6B LoRA（正式口径 1 行/update×1680，1 seed）**：heads 0.489 / 0.605 / −0.042；
@@ -65,8 +76,17 @@ Qwen3-0.6B（LoRA）→ Qwen3-8B（LoRA bf16）→（可选）Gemma-4-31B-QAT（
   协议（64 行/update×2520），仅作参照不参与 matched 对比。
 - 0.6B frozen 候选似然（Paper1 #3）：choice 0.424 / noul 0.522
 - Qwen3-8B QLoRA heads（暂态单 seed，旧 2 行/update 配置，将重跑）：choice 0.580 / noul 0.712 / score 0.005
-- Qwen3-8B QLoRA 正式（1 行/update×1680 matched）：[全部重跑中——事故#3 污染产物已清除；
-  曾短暂读到的 s2=0.494/0.540/−0.007 作废不引用]。**数据受限信号：8B heads noul 0.540 < 0.6B heads 0.605**
+- Qwen3-8B QLoRA 正式（1 行/update×1680 matched）：heads s1 = choice 0.476 / noul 0.596 /
+  score 0.019；shared s1 = 0.493 / 0.497 / −0.002。**noul heads−shared = +0.099 @8B：排序在
+  第四个 backbone regime 复现**（423M no_cpt +0.151 / 423M cpt +0.132 / 0.6B +0.069(matched 低数据)
+  / 8B s1 +0.099）。heads s2 = 0.510 / 0.499 / 0.021——**8B noul 种子波动 0.097**（s1 0.596），
+  2-seed 均值 0.548；排序结论须等 shared s2 后以 seed 均值判（单 seed 差不可信，自洽于本文方法论）。
+  shared s2 = 0.497 / 0.492 / −0.006 → seed2 臂差 noul +0.007（s1 +0.099，同向不同幅）；
+  8B 2-seed 均值差：noul +0.053 / choice −0.002 / score +0.024。跨 backbone noul 差距序列：
+  +0.151(423M no_cpt) / +0.132(423M cpt) / +0.069(0.6B) / +0.053(8B, 2-seed)——随容量略收窄
+  但不消失。heads s3 = 0.464 / 0.596 / −0.059 → **8B heads 3-seed：noul 0.564±0.026 / choice
+  0.483 / score −0.006**。choice 各 backbone 持平；score 噪声级偏 heads。**容量平坦确认**：matched 低数据下 noul = 423M(cpt,高数据)
+  0.651 > 0.6B 0.605 ≈ 8B 0.596——8B 不超 0.6B，限制因子=数据量（1680 行/族），非容量。**数据受限信号：8B heads noul 0.540 < 0.6B heads 0.605**
   ——同低数据口径下容量不再抬升，限制因子是每族 1680 行的数据量而非 backbone 容量；
   与暂态高数据 s1（0.712）对照 = 数据量效应 > 容量效应（本队列内证据）。
 - 内存注记：non-reentrant checkpoint 的 backward 重算=整段带梯度 forward，峰值∝段内 token 数
