@@ -219,6 +219,7 @@ def main():
     ap.add_argument("--per-family-early-stop", action="store_true")
     ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_taskheads")
+    ap.add_argument("--batch", type=int, default=BATCH, help="rows per update (default 64; 1 for matched low-data protocol)")
     ap.add_argument("--arm", default="no_cpt", choices=["no_cpt", "cpt"], help="encoder init: base (no_cpt) or biology-CPT checkpoint (cpt)")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
@@ -241,7 +242,7 @@ def main():
     bytask = {}; specs = {}; nout = {}; prep_fail = Counter()
     for tk in tasks:
         rows, spec = load_task_rows(rep, tk, a.max_per_task)
-        if len(rows) < max(BATCH, a.min_valid):
+        if len(rows) < max(a.batch, a.min_valid):
             prep_fail[tk] = len(rows); continue
         prim = rows[0]["primitive"]
         nout[tk] = 1 if prim == "score" else len(rows[0]["choices"])
@@ -260,7 +261,7 @@ def main():
             devrows[tk] = drows
     fam_best = {}; fam_best_step = {}; best_dev = -1.0; best_step = 0; dev_curve = []
     step = 0; trace = []; t0 = time.monotonic()
-    for epoch, tk, rr in schedule_family(bytask, a.epochs, BATCH, a.batches_per_family, rng):
+    for epoch, tk, rr in schedule_family(bytask, a.epochs, a.batch, a.batches_per_family, rng):
         step += 1
         for g in opt.param_groups: g["lr"] = g["base_lr"] * lr_factor(step, total, a.warmup_frac)
         model.train(); opt.zero_grad(set_to_none=True)
@@ -326,7 +327,7 @@ def main():
     (out/"eval_results.json").write_text(json.dumps({"name":a.name,"matched_to":str(a.task_config),
         "per_family_early_stop":a.per_family_early_stop,"results":results},ensure_ascii=False,indent=2)+"\n")
     (out/"run_config.json").write_text(json.dumps({"tasks":list(bytask),"nout":nout,"epochs":a.epochs,
-        "batches_per_family":a.batches_per_family,"total_updates":step,"warmup_frac":a.warmup_frac,"clip":a.clip,
+        "batches_per_family":a.batches_per_family,"batch":a.batch,"total_updates":step,"warmup_frac":a.warmup_frac,"clip":a.clip,
         "dev_eval_every":a.dev_eval_every,"best_step":best_step,"best_dev":best_dev,
         "per_family_early_stop":a.per_family_early_stop,"fam_best_dev":fam_best,"fam_best_step":fam_best_step,
         "elapsed_sec":round(time.monotonic()-t0,1)},indent=2)+"\n")

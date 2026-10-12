@@ -181,15 +181,15 @@ def losses(logits, rows, spec):
 
 def schedule(bytask, rng):
     # balanced: each task contributes equal-size batches; interleave batch order randomly
-    task_batches = min(len(v)//BATCH for v in bytask.values())
-    assert task_batches >= 1, "each selected task needs >= BATCH rows after capping"
+    task_batches = min(len(v)//a.batch for v in bytask.values())
+    assert task_batches >= 1, "each selected task needs >= batch rows after capping"
     for epoch in range(1, EPOCHS+1):
         for tk in bytask: rng.shuffle(bytask[tk])
         steps = []
         for b in range(task_batches):
             tasks = list(bytask); rng.shuffle(tasks)
             for tk in tasks:
-                steps.append((epoch, tk, bytask[tk][b*BATCH:(b+1)*BATCH]))
+                steps.append((epoch, tk, bytask[tk][b*a.batch:(b+1)*a.batch]))
         yield from steps
 
 
@@ -247,6 +247,7 @@ def main():
     ap.add_argument("--seed", type=int, default=20261001)
     ap.add_argument("--name", default="bv2_pilot")
     ap.add_argument("--save-init", action="store_true", help="dump the pre-training checkpoint for a clean zero-shot baseline")
+    ap.add_argument("--batch", type=int, default=BATCH, help="rows per update (default 64; 1 for matched low-data protocol)")
     ap.add_argument("--arm", default="no_cpt", choices=["no_cpt", "cpt"], help="encoder init: base tokenizer-expanded model (no_cpt) or biology-CPT checkpoint (cpt)")
     ap.add_argument("--out", type=Path, default=JEV/"artifacts/benchmark_v2_train")
     a = ap.parse_args()
@@ -285,7 +286,7 @@ def main():
             prep_fail[tk] = len(rows); continue
         bytask[tk] = rows; specs[tk] = spec
     nfam = len({family_of(x) for x in bytask})
-    total = EPOCHS * a.batches_per_family * nfam if a.family_balance else EPOCHS * min(len(v)//BATCH for v in bytask.values()) * len(bytask)
+    total = EPOCHS * a.batches_per_family * nfam if a.family_balance else EPOCHS * min(len(v)//a.batch for v in bytask.values()) * len(bytask)
     print(f"trained tasks={len(bytask)} families={nfam} balance={'family' if a.family_balance else 'task'} updates≈{total} | gated_out={len(prep_fail)}", flush=True)
     if bytask: print("  per-family task counts:", dict(Counter(family_of(x) for x in bytask)), flush=True)
     if not bytask: print("no tasks to train"); return 1
@@ -305,7 +306,7 @@ def main():
     step = 0; trace = []; best_dev = -1.0; best_step = 0; dev_curve = []
     fam_best = {}; fam_best_step = {}
     t0 = time.monotonic()
-    sched = schedule_family(bytask, EPOCHS, BATCH, a.batches_per_family, rng) if a.family_balance else schedule(bytask, rng)
+    sched = schedule_family(bytask, EPOCHS, a.batch, a.batches_per_family, rng) if a.family_balance else schedule(bytask, rng)
     for epoch, tk, rr in sched:
         step += 1
         for g in opt.param_groups: g["lr"] = g["base_lr"]*lr_factor(step, total, a.warmup_frac)
@@ -352,7 +353,7 @@ def main():
     if dev_curve:
         (out/"dev_curve.jsonl").write_text("\n".join(json.dumps(r) for r in dev_curve)+"\n")
     (out/"train_trace.jsonl").write_text("\n".join(json.dumps(r) for r in trace)+"\n")
-    config = {"tasks": list(bytask), "max_per_task": a.max_per_task, "epochs": EPOCHS, "batch": BATCH,
+    config = {"tasks": list(bytask), "max_per_task": a.max_per_task, "epochs": EPOCHS, "batch": a.batch,
               "seed": SEED, "total_updates": step, "encoder_lr": LR_ENC, "head_lr": LR_HEAD,
               "family_balance": a.family_balance, "batches_per_family": a.batches_per_family,
               "min_valid": a.min_valid, "cap_family": caps, "gated_out": dict(prep_fail),
