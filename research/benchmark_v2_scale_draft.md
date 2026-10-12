@@ -143,3 +143,29 @@ A：Laya 423M(cpt) 跑 Qwen 同款 matched 低数据协议（1 行/update×1680�
 ~45 行/任务下过拟合毁特征，LoRA 小增量 delta 保住先验——机制假设，待 B-lite 与正文表述校验。
 规模轴补行：423M shared/heads @ matched = 0.501/0.520 noul，与 0.6B 0.536/0.605、8B 0.509/0.564
 同档偏下——自研编码器在同协议不输因果 LM 的 shared 臂，heads 臂弱于 Qwen（先验差距）。
+
+## 6. B-lite：同好配方 Qwen-0.6B vs Laya-423M（2026-10-12）
+
+local_snapshots 族（专项 64 行/update×2496，单 seed）：
+| 任务 | Qwen0.6B | Laya423M | Δ |
+|---|---|---|---|
+| fold | 0.525 | 0.505 | +0.020 |
+| npp | 0.890 | 0.860 | +0.030 |
+| promoter | 0.835 | 0.785 | +0.050 |
+| signal | 0.895 | 0.855 | +0.040 |
+| subcell | 0.720 | 0.415 | **+0.305** |
+族宏 ≈ 0.773 vs 0.684。**Qwen 5/5 全胜**——通用因果 LM 先验在专项配方下反超生物 CPT 编码器。
+结合 A（matched 低数据下 423M 臂差消失、shared 臂与 Qwen 同档）与规模轴（容量平坦）：
+**生物 CPT 在这些类型化决策任务上未兑现相对通用预训练的优势**——诚实负结果，
+与 Paper-1 精神一致；Laya 路线的价值在接口/基准/协议，不在编码器先验。
+TAPE 族（13:22 出）：fluor Qwen 0.613 vs Laya 0.627（Δ−0.014 持平）；stability Qwen −0.056 vs
+Laya 0.433（**Δ−0.489，Laya 大胜**）。结论精细化：**生物 CPT 的收益在蛋白适应度 score 接口
+（回归需要域内序列-功能信号），通用 LM 先验赢在分类/命题接口**——"CPT 对特定接口有效"版。
+GB 族（15:22 出）：Qwen 6/7 胜（macro AUROC 0.806 vs 0.715；drosophila +0.345、worm +0.099、
+ocr +0.91→+0.091、nontata +0.058、coding +0.033、dummy +0.036；唯一负 cohn −0.022）。
+**终版交互结论（TABLE_11，15 行：Qwen 12 胜 / Laya 2 胜 / 1 持平）**：
+- 分类/命题接口（choice/noul，DNA+蛋白）：通用因果 LM 先验 + LoRA 全面占优（12/13 行）
+- 蛋白适应度 score 接口：生物 CPT 编码器大幅占优（stability +0.489；fluor 持平）
+即 **CPT 的价值是接口选择的函数**：回归型域内信号任务吃 CPT 红利，判别型任务吃通用先验。
+paper-2 标题级主张候选："What does biological continued pretraining buy? Interface-dependent
+priors in typed-decision sequence models"。

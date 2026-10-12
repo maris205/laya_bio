@@ -1,0 +1,28 @@
+% Table 11: same-recipe Laya vs Qwen (gen_laya_vs_qwen.py)
+\begin{table}[t]
+\centering
+\caption{Same specialized recipe (64 rows/update, 2{,}496 updates, single family, single seed): Qwen3-0.6B + LoRA vs the Laya-423M biology-CPT encoder. Positive $\Delta$ favors Qwen. Metric per primitive: accuracy (choice), AUROC (noul), Spearman (score).}
+\label{tab:layavsqwen}
+\footnotesize
+\begin{tabular}{lllrrr}
+\toprule
+Family & Task & Primitive & Qwen-0.6B & Laya-423M & $\Delta$ \\
+\midrule
+local-snapshots & lg\_fold\_class & choice & 0.525 & 0.505 & +0.020 \\
+local-snapshots & lg\_npp & choice & 0.890 & 0.860 & +0.030 \\
+local-snapshots & lg\_promoter\_detection & choice & 0.835 & 0.785 & +0.050 \\
+local-snapshots & lg\_signal\_peptide & choice & 0.895 & 0.855 & +0.040 \\
+local-snapshots & lg\_subcellular\_loc & choice & 0.720 & 0.415 & +0.305 \\
+TAPE & tape\_fluorescence & score & 0.613 & 0.627 & -0.014 \\
+TAPE & tape\_stability & score & -0.056 & 0.433 & -0.489 \\
+GenomicBenchmarks & gb\_demo\_coding\_vs\_intergenomic\_seqs & noul & 0.930 & 0.897 & +0.033 \\
+GenomicBenchmarks & gb\_demo\_human\_or\_worm & noul & 0.938 & 0.839 & +0.099 \\
+GenomicBenchmarks & gb\_drosophila\_enhancers\_stark & noul & 0.771 & 0.426 & +0.345 \\
+GenomicBenchmarks & gb\_dummy\_mouse\_enhancers\_ensembl & noul & 0.819 & 0.783 & +0.036 \\
+GenomicBenchmarks & gb\_human\_enhancers\_cohn & noul & 0.647 & 0.669 & -0.022 \\
+GenomicBenchmarks & gb\_human\_ensembl\_regulatory & choice & 0.615 & 0.515 & +0.100 \\
+GenomicBenchmarks & gb\_human\_nontata\_promoters & noul & 0.892 & 0.834 & +0.058 \\
+GenomicBenchmarks & gb\_human\_ocr\_ensembl & noul & 0.648 & 0.557 & +0.091 \\
+\bottomrule
+\end{tabular}
+\end{table}
